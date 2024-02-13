@@ -47,13 +47,13 @@ def to_map():
     sleep(1)
     id_st = pyautogui.locateCenterOnScreen(b_d.st_turgenev[2], confidence=0.85)
     if id_st:
-        pos_or1 = pyautogui.locateCenterOnScreen('img/klan_red.png', confidence=0.85)
+        pos_or1 = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.85)
         x1, y1 = pos_or1
         x1, y1 = x1 + 205, y1 + 205
         pos_or1 = x1, y1
         pyautogui.moveTo(pos_or1, duration=0.2)
     else:
-        pos_or1 = pyautogui.locateCenterOnScreen('img/klan_red.png', confidence=0.85)
+        pos_or1 = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.85)
         x1, y1 = pos_or1
         x1, y1 = x1 + 270, y1 + 180
         #

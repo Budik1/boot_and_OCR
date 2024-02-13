@@ -51,7 +51,7 @@ def obysk_vip():
 
 root = Tk()
 
-root.title(' помощник ')
+root.title(' помощник "Метро 2033"')
 root.geometry("327x380+1240+50")  # Ширина x Высота + координата X + координата Y
 root.resizable(False, False)
 

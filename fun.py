@@ -1,5 +1,5 @@
 import pyautogui
-from time import sleep, time
+from time import sleep
 import datetime
 
 # son = 1
@@ -14,7 +14,7 @@ img_sl = {'спецпредложение': 'img/spec_proposal.png', 'закры
           'продолжить как Гаврил': 'img/authorization_button.png',
           'мои игры V1': 'img/my_game1.png', 'мои игры V2': 'img/my_game2.png',
           'иконка на рабочем столе': 'img/icon_in_desktop.png'}
-iter_detect_search_region = 0
+iter_detect_search_region = 0  # ?????????
 
 
 def print_to_file(text: str) -> None:
@@ -211,104 +211,6 @@ def move_friends_list_to_top():
     sleep(1)
 
 
-# def shmon():
-#     global sum_vip
-#     start_time = time()
-#     vi = 10  # задаёт количество обнаружений
-#     analiz = 0
-#     vizit = 0
-#
-#     # ============================
-#     def detect_search_region():
-#         global iter_detect_search_region
-#         iter_detect_search_region += 1
-#         pos_klan = pyautogui.locateCenterOnScreen('img/klan_red.png', confidence=0.9)
-#         pos_settings = pyautogui.locateCenterOnScreen('img/setting.png', confidence=0.9)
-#         if pos_klan is not None:
-#             x_region, y_region = pos_klan
-#             x_region -= 125
-#             y_region += 503
-#             search_region = (x_region, y_region, 59, 132)
-#         else:
-#             x_region, y_region = pos_settings
-#             x_region -= 776
-#             y_region -= 10
-#             search_region = (x_region, y_region, 59, 132)
-#         return search_region
-#
-#     def visit_tent():
-#         """
-#         Обыск палатки
-#         :return: int (счетчик положительных обысков)
-#         """
-#         ransack = pyautogui.locateCenterOnScreen('img/visit_to_tent.png', confidence=0.8)
-#         if ransack is not None:
-#             pyautogui.moveTo(ransack, duration=1, tween=pyautogui.easeInOutQuad)
-#             pyautogui.click(ransack)
-#             # print("клик обыск" + str(visit_to_tent))
-#             vip = 1
-#         else:
-#             # print(' уже обыскан ')
-#             vip = 0
-#         return vip
-#
-#     def tent_detected():
-#         sleep(1)
-#         tent_d = pyautogui.locateCenterOnScreen('img/b_tent.png', confidence=0.9)
-#         pyautogui.moveTo(tent_d, duration=1, tween=pyautogui.easeInOutQuad)
-#         pyautogui.click(tent_d)
-#         # print('клик по дом ' + str(tent_d))
-#         sleep(1)
-#
-#     def vip_detected():
-#         region_poiska = detect_search_region()
-#         sleep(1)
-#         pos_vip = pyautogui.locateCenterOnScreen('img/b_vip.png', region=region_poiska, confidence=0.8)
-#         pyautogui.moveTo(pos_vip, duration=1, tween=pyautogui.easeInOutQuad)
-#         pyautogui.click(pos_vip)
-#         # print('клик по VIP ' + str(pos_vip))
-#         sleep(1)
-#
-#     def end_search():
-#         pyautogui.moveTo(200, 670)
-#         sleep(1)
-#         to_exit = pyautogui.locateCenterOnScreen('img/b_exit.png', confidence=0.9)
-#         pyautogui.moveTo(to_exit, duration=1, tween=pyautogui.easeInOutQuad)
-#         pyautogui.click(to_exit)
-#         print('клик на выход')
-#         pyautogui.moveTo(200, 670, duration=2, tween=pyautogui.easeInOutQuad)
-#
-#     # ================================================================================================
-#     move_friends_list_to_top()
-#     while vizit < vi:
-#         pos_vip = pyautogui.locateCenterOnScreen('img/b_vip.png', region=oblast, confidence=0.8)
-#         analiz += 1
-#         pd = 0
-#         er = 0
-#         if pos_vip is not None:
-#             vizit += 1
-#             vip_detected()
-#             # print('VIP № ' + str(vizit) + ' найден')
-#             print(f'VIP № {vizit} найден')
-#             tent = pyautogui.locateCenterOnScreen('img/b_tent.png', confidence=0.9)
-#             while tent is None and pd <= 25:
-#                 pd += 1
-#                 er += 1
-#                 vip_detected()
-#                 tent = pyautogui.locateCenterOnScreen('img/b_tent.png', confidence=0.9)
-#             tent_detected()
-#             visit_tent()
-#         if vizit < vi:
-#             move_left_friends_list()
-#     end_search()
-#     print(f'Проанализировано {analiz}  изображений. Найдено {vizit} VIP ')
-#     sum_vip = vizit
-#     finish_time = float(time() - start_time)  # общее количество секунд
-#     minutes = int(finish_time // 60)  # количество минут
-#     seconds = round((finish_time % minutes), 2)
-#     # print('Потрачено время', minutes, 'минут', seconds, 'сек.')
-#     print(f'Потрачено время {minutes} минут {seconds} сек.')
-
 def move_to_click(pos_click: tuple, z_p_k: float):
     """
     Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
@@ -335,3 +237,8 @@ def find_link():  # width=77, height=42
     pos_or_v = pyautogui.locateCenterOnScreen('img/hall_of_glory.png', confidence=0.9)
     sleep(0.5)
     return pos_or_v
+
+
+def foto(put_imya, _region):
+    im1 = pyautogui.screenshot(region=_region)
+    im1.save(put_imya)

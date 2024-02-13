@@ -1,10 +1,9 @@
 import baza_dannyx as b_d
 import pyautogui
 from time import sleep
-from fun import move_to_click, foto
+from fun import move_to_click
 
 conf = 0.97
-# son = 0.9
 
 par_conf = 0.8
 energy_availability = 1
@@ -18,13 +17,13 @@ def station_master():
     """заходит в палатку к нач станции"""
     # print('station_master')
     check = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=0.9)
+    # if check is not None:
     if check:
         pyautogui.moveTo(check, duration=1, tween=pyautogui.easeInOutQuad)
         # print(" уже у начальника ")
         sleep(1 / 3)
     else:
         pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.85)
-        # while pos_klan is None:
         while not pos_klan:
             sleep(0.1)
             pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.85)
@@ -41,8 +40,10 @@ def station_master():
 
 
 def get_areas_of_analysis():
-    """Получение значений "region=" для поиска заданий
-    :return: кортеж из трех списков значений"""
+    """
+    Получение значений "region=" для поиска заданий
+    :return: кортеж из трех списков значений
+    """
     #
     # закрыть если открыто
     close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
@@ -77,10 +78,6 @@ def get_areas_of_analysis():
     y_p_oan3 = (yor_n - yor_v) / 2 + yor_v + 167
     x_p_oan3, y_p_oan3 = int(x_p_oan3), int(y_p_oan3)
     region_3 = [x_p_oan3, y_p_oan3, width, height]
-
-    foto("img/test/obl_1.png", region_1)
-    foto("img/test/obl_2.png", region_2)
-    foto("img/test/obl_3.png", region_3)
 
     return region_1, region_2, region_3
 
@@ -122,12 +119,11 @@ def press_en(task_number, pos):
     x = pos[0]
     y = pos[1] - 20
     pos_clik = x, y
-    # pyautogui.moveTo(pos_clik) # для отладки
-    # print('тут должен быть клик') # для отладки
-    move_to_click(pos_clik, 1.5)
+    # pyautogui.moveTo(pos_clik)  # для отладки
+    # print('тут должен быть клик')  # для отладки
+    move_to_click(pos_clik, 1.5)  # для отладки убрать
     sleep(0.5)
     nal_energy = pyautogui.locateCenterOnScreen('img/low_energy.png', confidence=0.8)
-    # print(" не хватает энергии", nal_energy)
     if not nal_energy:
         print('Выполняю ', task_number, ' задание')
         enemy_battle()

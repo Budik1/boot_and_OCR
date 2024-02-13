@@ -5,7 +5,7 @@ from fun import move_left_friends_list
 
 # определить регион поиска
 def detect_region_search():
-    pos_klan = pyautogui.locateCenterOnScreen('img/klan_red.png', confidence=0.9)
+    pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
     pos_settings = pyautogui.locateCenterOnScreen('img/setting.png', confidence=0.9)
     if pos_klan:
         x_region, y_region = pos_klan

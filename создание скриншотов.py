@@ -1,6 +1,7 @@
 import pyautogui
 from time import sleep
 from fun import move_to_click
+from fun_station_master import station_master
 
 son = 0.9
 par_conf = 0.8
@@ -9,35 +10,6 @@ par_conf = 0.8
 def foto(put_imya, _region):
     im1 = pyautogui.screenshot(region=_region)
     im1.save(put_imya)
-
-
-def na4Stanc():
-    # print('na4Stanc')
-    proverka = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=0.9)
-    # print(proverka, "proverka наличия 'img/station_master.png'")
-    if proverka is not None:
-        na4 = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=par_conf)
-        # print(na4)
-        # proverka_None(na4)
-        pyautogui.moveTo(na4, duration=1, tween=pyautogui.easeInOutQuad)
-        # print(" уже у начальника ")
-        sleep(son)
-    else:
-        pos_or1 = pyautogui.locateCenterOnScreen('img/klan_red.png', confidence=0.85)
-        while pos_or1 is None:
-            sleep(0.1)
-            pos_or1 = pyautogui.locateCenterOnScreen('img/klan_red.png', confidence=0.85)
-            # print('в поиске клана', pos_or1)
-        # print('клан = ', pos_or1)
-        x1, y1 = pos_or1
-        x1, y1 = x1 - 60, y1 + 200
-        pos_or1 = x1, y1
-        move_to_click(pos_or1, 0.1)
-        # print('зашел к начальнику')
-        sleep(son)
-        na4 = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=par_conf)
-        # proverka_None(na4)
-        pyautogui.moveTo(na4, duration=1, tween=pyautogui.easeInOutQuad)
 
 
 def skriny_energii_u_na4stanc():
@@ -55,13 +27,13 @@ def skriny_energii_u_na4stanc():
         if zakr is not None:
             move_to_click(zakr, 0.3)
         # получение координат привязки
-        pos_orV = pyautogui.locateCenterOnScreen('img/klan_red.png', confidence=0.9)
+        pos_orV = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
         pyautogui.moveTo(pos_orV)
         sleep(0.5)
         # print(pos_orV, 'ориентир клан')
         x_or, y_or = pos_orV
 
-        na4Stanc()
+        station_master()
 
         # регион поиска 1 (позиция анализа)
         x_pOan1 = x_or + 518
