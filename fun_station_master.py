@@ -24,7 +24,6 @@ def station_master():
         sleep(1 / 3)
     else:
         pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.85)
-        # while pos_klan is None:
         while not pos_klan:
             sleep(0.1)
             pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.85)

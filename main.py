@@ -35,7 +35,7 @@ def dvizh_test():
     status_krysa.set(sum_krys)
 
 
-def obysk_vip():
+def tent_inspection():
     fun.move_friends_list_to_top()
     sum_vip = obysk.tent_raid()
     it = 1
@@ -63,7 +63,7 @@ ttk.Button(text=" Start ", width=13, command=fun.start_p_m).place(x=0, y=0)
 ttk.Button(text=" сбор бонуса ", width=13, command=fun.bonus, state="disabled").place(x=0, y=32)
 ttk.Label(text=status_bonus).place(x=130, y=32)
 ttk.Button(text="  сбор подарков  ", width=13, command=fun.daily_gifts, state="disabled").place(x=0, y=64)
-ttk.Button(text=" обход VIP ", width=13, command=obysk_vip).place(x=0, y=96)
+ttk.Button(text=" обход VIP ", width=13, command=tent_inspection).place(x=0, y=96)
 ttk.Label(textvariable=status_vip).place(x=130, y=96)
 # шаг 31
 ttk.Button(text=" на Киевскую ", width=11, command=touring.frunze_kiev).place(x=120, y=169)

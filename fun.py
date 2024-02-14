@@ -57,7 +57,7 @@ def daily_gifts():
         open_ = pyautogui.locateCenterOnScreen('img/b_gift_open.png', confidence=0.9)
 
 
-def push_close_all():
+def push_close_all_():
     pos_close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
     # print(pos_close)
     while pos_close:
