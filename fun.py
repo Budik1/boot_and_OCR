@@ -2,8 +2,6 @@ import pyautogui
 from time import sleep
 import datetime
 
-# son = 1
-# zadergka = 10
 sum_vip = 0
 status_bonus = "0"
 par_conf = 0.79
@@ -84,7 +82,7 @@ def bonus():
     else:
         print('Бонус не найден')
     # кнопка закрыть
-    push_close_all()
+    push_close_all_()
 
 
 def start_p_m():
@@ -232,7 +230,7 @@ def find_link():  # width=77, height=42
     Закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
     :return: Point 'Зал славы'
     """
-    push_close_all()
+    push_close_all_()
     # получение координат привязки
     pos_or_v = pyautogui.locateCenterOnScreen('img/hall_of_glory.png', confidence=0.9)
     sleep(0.5)

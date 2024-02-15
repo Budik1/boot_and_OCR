@@ -1,9 +1,10 @@
 import baza_dannyx as b_d
 import pyautogui
 from time import sleep
-from fun import move_to_click
+from fun import move_to_click, push_close_all_, foto
 
 conf = 0.97
+# son = 0.9
 
 par_conf = 0.8
 energy_availability = 1
@@ -17,7 +18,6 @@ def station_master():
     """заходит в палатку к нач станции"""
     # print('station_master')
     check = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=0.9)
-    # if check is not None:
     if check:
         pyautogui.moveTo(check, duration=1, tween=pyautogui.easeInOutQuad)
         # print(" уже у начальника ")
@@ -40,15 +40,10 @@ def station_master():
 
 
 def get_areas_of_analysis():
-    """
-    Получение значений "region=" для поиска заданий
-    :return: кортеж из трех списков значений
-    """
-    #
+    """Получение значений "region=" для поиска заданий
+    :return: кортеж из трех списков значений"""
     # закрыть если открыто
-    close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
-    if close:
-        move_to_click(close, 0.2)
+    push_close_all_()
     # получение координат привязки
     pos_or_v = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
     pyautogui.moveTo(pos_or_v)
@@ -79,51 +74,59 @@ def get_areas_of_analysis():
     x_p_oan3, y_p_oan3 = int(x_p_oan3), int(y_p_oan3)
     region_3 = [x_p_oan3, y_p_oan3, width, height]
 
+    # foto("img/test/obl_3.png", region_3)
+    # foto("img/test/obl_1.png", region_1)
+    # foto("img/test/obl_2.png", region_2)
+
     return region_1, region_2, region_3
 
 
-def enemy_battle(delay=2):
+def enemy_battle(prolong=2):
     """
-    Событие атаки противника
-    :param delay:
+    Событие сражения с противником
+    :param prolong: регулирует длительность сражения
     """
     # дождаться "пропустить бой", нажать собаку если активна, закрыть бой
-    # print('v_puti')
     battle_end = pyautogui.locateCenterOnScreen('img/b_battle_end.png', confidence=par_conf)
     skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
     dog = pyautogui.locateCenterOnScreen('img/dog.png', confidence=par_conf)
     it = 0
-    while battle_end is None:
+    # while battle_end is None:
+    while not battle_end:
         # print(battle_end, 'battle_end')
         # print('пропуск боя', skip_battle)
-        if dog is not None:  # нажать "на собаку"
+        # if dog is not None:  # нажать "на собаку"
+        if dog:  # нажать "на собаку"
             # print(dog, 'dog')
             move_to_click(dog, 0.1)
-        # print(it)
-        if skip_battle is not None and it >= 2:  # нажать "пропустить бой"
+        # if skip_battle is not None and it >= 2:  # нажать "пропустить бой"
+        if skip_battle and it >= 2:  # нажать "пропустить бой"
             move_to_click(skip_battle, 0.5)
             # print(skip_battle, 'skip_battle')
         it += 1
-        sleep(1 * delay)
+        sleep(1 * prolong)
         battle_end = pyautogui.locateCenterOnScreen('img/b_battle_end.png', confidence=par_conf)
         close = pyautogui.locateCenterOnScreen('img/close.png', confidence=par_conf)
         dog = pyautogui.locateCenterOnScreen('img/dog.png', confidence=par_conf)
         skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
-        if battle_end is not None and close is not None:  # нажать закрыть в конце боя
+        # if battle_end is not None and close is not None:  # нажать закрыть в конце боя
+        if battle_end and close:  # нажать закрыть в конце боя
             move_to_click(close, 0.2)
             sleep(0.5)
 
 
 def press_en(task_number, pos):
     global energy_availability
+    # поднять указатель из региона анализа. Для фул региона сместить по "х"
     x = pos[0]
     y = pos[1] - 20
     pos_clik = x, y
-    # pyautogui.moveTo(pos_clik)  # для отладки
-    # print('тут должен быть клик')  # для отладки
-    move_to_click(pos_clik, 1.5)  # для отладки убрать
+    # pyautogui.moveTo(pos_clik) # для отладки
+    # print('тут должен быть клик') # для отладки
+    move_to_click(pos_clik, 1.5)
     sleep(0.5)
     nal_energy = pyautogui.locateCenterOnScreen('img/low_energy.png', confidence=0.8)
+    # print(" не хватает энергии", nal_energy)
     if not nal_energy:
         print('Выполняю ', task_number, ' задание')
         enemy_battle()

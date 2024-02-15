@@ -5,7 +5,7 @@ import fun
 import fun_station_master
 import touring
 import person
-import obysk
+import revision_of_tents
 
 
 im_en1 = [1, 'img/en1v2.png', 'img/23xp.png']
@@ -37,16 +37,16 @@ def dvizh_test():
 
 def tent_inspection():
     fun.move_friends_list_to_top()
-    sum_vip = obysk.tent_raid()
+    sum_vip = revision_of_tents.tent_raid()
     it = 1
     print(f'{sum_vip} / {it}')
     while it < 10:
         it += 1
         fun.move_left_friends_list()
-        sum_vip += obysk.tent_raid()
+        sum_vip += revision_of_tents.tent_raid()
         print(f'{sum_vip} / {it}')
         status_vip.set(sum_vip)
-    obysk.end_raid()
+    revision_of_tents.end_raid()
 
 
 root = Tk()
