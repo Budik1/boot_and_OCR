@@ -1,7 +1,7 @@
 import pyautogui
-from fun_station_master import enemy_battle
+from station_master import enemy_battle
 from time import sleep
-from fun import move_to_click, move_right_friends_list, find_link
+from fun import move_to_click, move_friends_list_right, find_link
 
 
 def search_friend():
@@ -42,7 +42,7 @@ def friend_kill(required_quantity=5):  # требуемое количество
 
         else:
             print('Следующий')
-            move_right_friends_list()
+            move_friends_list_right()
 
 
 friend_kill()

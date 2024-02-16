@@ -1,6 +1,6 @@
 import pyautogui
 from time import sleep
-from fun import move_left_friends_list
+from fun import move_friends_list_left
 
 
 # определить регион поиска
@@ -67,7 +67,7 @@ def tent_raid():
     region = detect_region_search()
     pos_vip = pyautogui.locateCenterOnScreen('img/b_vip.png', region=region, confidence=0.8)
     while not pos_vip:
-        move_left_friends_list()
+        move_friends_list_left()
         region = detect_region_search()
         pos_vip = pyautogui.locateCenterOnScreen('img/b_vip.png', region=region, confidence=0.8)
     vip_click(region)

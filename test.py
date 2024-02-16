@@ -1,7 +1,7 @@
 import pyautogui
 from fun import move_to_click
 from time import sleep
-from fun_station_master import station_master
+from station_master import vizit_to_station_master
 
 
 def get_task_area_small(width=77, height=42):
@@ -20,7 +20,7 @@ def get_task_area_small(width=77, height=42):
     # print(pos_klan, 'ориентир клан')
     x_or, y_or = pos_klan
 
-    station_master()
+    vizit_to_station_master()
 
     # регион поиска 1 (позиция анализа)
     y_1an = y_or + pos_1
@@ -65,7 +65,7 @@ def get_task_area_big(width=77, height=42):
     # print(pos_klan, 'ориентир клан')
     x_or, y_or = pos_klan
 
-    station_master()
+    vizit_to_station_master()
 
     y_an = int(y_or + pos_1)
 

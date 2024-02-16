@@ -1,6 +1,6 @@
 import pyautogui
 from time import sleep, time
-from fun_station_master import enemy_battle, vybor_zadaniya_na_puli
+from station_master import enemy_battle, vybor_zadaniya_na_puli
 import baza_dannyx as b_d
 from fun import push_close_all_, move_to_click
 

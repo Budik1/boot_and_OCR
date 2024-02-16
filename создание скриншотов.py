@@ -1,7 +1,7 @@
 import pyautogui
 from time import sleep
 from fun import move_to_click
-from fun_station_master import station_master
+from station_master import vizit_to_station_master
 
 son = 0.9
 par_conf = 0.8
@@ -33,7 +33,7 @@ def skriny_energii_u_na4stanc():
         # print(pos_orV, 'ориентир клан')
         x_or, y_or = pos_orV
 
-        station_master()
+        vizit_to_station_master()
 
         # регион поиска 1 (позиция анализа)
         x_pOan1 = x_or + 518

@@ -1,6 +1,6 @@
 import pyautogui
 from time import sleep
-from fun_station_master import enemy_battle
+from station_master import enemy_battle
 from fun import move_to_click, find_link
 
 

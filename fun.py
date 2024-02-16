@@ -170,7 +170,7 @@ def start_p_m():
     spec_proposal()
 
 
-def move_left_friends_list():
+def move_friends_list_left():
     """
     Смещает список друзей в лево на одну позицию
     :return: 1
@@ -183,7 +183,7 @@ def move_left_friends_list():
     return 1
 
 
-def move_right_friends_list():
+def move_friends_list_right():
     """
     Смещает список друзей в право на одну позицию
     :return: 1
@@ -240,3 +240,96 @@ def find_link():  # width=77, height=42
 def foto(put_imya, _region):
     im1 = pyautogui.screenshot(region=_region)
     im1.save(put_imya)
+
+
+def get_task_area_small(width=77, height=42):
+    pul, xp_ = 444, 518
+    pos_1, pos_2, pos_3 = 217, 320, 423
+    # Закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
+    push_close_all_()
+    # получение координат привязки
+    pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
+    pyautogui.moveTo(pos_klan)
+    sleep(0.5)
+    x_or, y_or = pos_klan
+
+    vizit_to_station_master()
+
+    x_an_xp = x_or + xp_
+    x_an_pul = x_or + pul
+
+    # регион поиска 1 (позиция анализа)
+    y_1an = y_or + pos_1
+    # y_1an = int(y_1an)
+    region1 = [x_an_xp, y_1an, width, height]
+    region1_pul = [x_an_pul, y_1an, width, height]
+
+    # регион поиска 2 (позиция анализа)
+    y_2an = y_or + pos_2
+    # y_2an = int(y_2an)
+    region2 = [x_an_xp, y_2an, width, height]
+    region2_pul = [x_an_pul, y_2an, width, height]
+
+    # регион поиска 3 (позиция анализа)
+    y_3an = y_or + pos_3
+    # y_3an = int(y_3an)
+    region3 = [x_an_xp, y_3an, width, height]
+    region3_pul = [x_an_pul, y_3an, width, height]
+
+    return region1_pul, region2_pul, region3_pul, region1, region2, region3
+
+
+def get_task_area_big(width=77, height=42):
+    pul, xp_ = 444, 518
+    pos_1, pos_2, pos_3 = 217, 320, 423
+    big = 100
+    # Закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
+    push_close_all_()
+    # получение координат привязки
+    pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
+    pyautogui.moveTo(pos_klan)
+    sleep(0.5)
+    x_or, y_or = pos_klan
+
+    vizit_to_station_master()
+
+    x_an_pul = x_or + pul
+
+    # регион поиска 1 (позиция анализа)
+    y_1an = int(y_or + pos_1)
+    region1_big = [x_an_pul, y_1an, width + big, height]
+
+    # регион поиска 2 (позиция анализа)
+    y_2an = int(y_or + pos_2)
+    region2_big = [x_an_pul, y_2an, width + big, height]
+
+    # регион поиска 3 (позиция анализа)
+    y_3an = int(y_or + pos_3)
+    region3_big = [x_an_pul, y_3an, width + big, height]
+
+    return region1_big, region2_big, region3_big
+
+
+def vizit_to_station_master():
+    """заходит в палатку к нач станции"""
+    # print('vizit_to_station_master')
+    check = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=0.9)
+    if check:
+        pyautogui.moveTo(check, duration=1, tween=pyautogui.easeInOutQuad)
+        # print(" уже у начальника ")
+        sleep(1 / 3)
+    else:
+        pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.85)
+        while not pos_klan:
+            sleep(0.1)
+            pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.85)
+            # print('в поиске клана', pos_klan)
+        # print('клан = ', pos_klan)
+        x1, y1 = pos_klan
+        x1, y1 = x1 - 60, y1 + 300
+        pos_klan = x1, y1
+        move_to_click(pos_klan, 0.2)
+        # print('зашел к начальнику')
+        sleep(1)
+        na4 = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=par_conf)
+        pyautogui.moveTo(na4, duration=1, tween=pyautogui.easeInOutQuad)

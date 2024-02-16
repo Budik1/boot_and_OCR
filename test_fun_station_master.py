@@ -16,8 +16,8 @@ region1, region2, region3 = 0, 0, 0
 
 def station_master():
     """заходит в палатку к нач станции"""
-    # print('station_master')
-    check = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=0.9)
+    # print('vizit_to_station_master')
+    check = pyautogui.locateCenterOnScreen('img/vizit_to_station_master.png', confidence=0.9)
     if check:
         pyautogui.moveTo(check, duration=1, tween=pyautogui.easeInOutQuad)
         # print(" уже у начальника ")
@@ -35,7 +35,7 @@ def station_master():
         move_to_click(pos_klan, 0.2)
         # print('зашел к начальнику')
         sleep(1)
-        na4 = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=par_conf)
+        na4 = pyautogui.locateCenterOnScreen('img/vizit_to_station_master.png', confidence=par_conf)
         pyautogui.moveTo(na4, duration=1, tween=pyautogui.easeInOutQuad)
 
 
@@ -150,7 +150,7 @@ def task_analysis(img1, img2, region):
     # print('task_analysis')
     # print( region) # полученный region
     global variable
-    # print('вызов station_master в анализе')
+    # print('вызов vizit_to_station_master в анализе')
     station_master()
     # print('в task_analysis conf =', conf)
     variant1 = pyautogui.locateCenterOnScreen(img1, confidence=conf, region=region)

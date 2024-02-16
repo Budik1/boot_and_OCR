@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk
 import fun
-import fun_station_master
+import station_master
 import touring
 import person
 import revision_of_tents
@@ -19,15 +19,15 @@ def bonus():
 
 
 def en_1():
-    fun_station_master.en_task_number(1)
+    station_master.en_task_number(1)
 
 
 def en_2():
-    fun_station_master.en_task_number(2)
+    station_master.en_task_number(2)
 
 
 def en_3():
-    fun_station_master.en_task_number(3)
+    station_master.en_task_number(3)
 
 
 def dvizh_test():
@@ -42,7 +42,7 @@ def tent_inspection():
     print(f'{sum_vip} / {it}')
     while it < 10:
         it += 1
-        fun.move_left_friends_list()
+        fun.move_friends_list_left()
         sum_vip += revision_of_tents.tent_raid()
         print(f'{sum_vip} / {it}')
         status_vip.set(sum_vip)
@@ -90,7 +90,7 @@ ttk.Label(textvariable=status_krysa, background="#FFCDD2", foreground="#0000FF",
 ttk.Button(text="обход всех станций", width=16, command=touring.sbor_podarkov).place(x=153, y=96)
 
 imagePul = ImageTk.PhotoImage(file="img/pulya.png")
-ttk.Button(root, image=imagePul, command=fun_station_master.vybor_zadaniya_na_puli).place(x=60, y=145)
+ttk.Button(root, image=imagePul, command=station_master.vybor_zadaniya_na_puli).place(x=60, y=145)
 
 img_e1 = ImageTk.PhotoImage(file="img/en1v3.png")
 ttk.Button(root, image=img_e1, command=en_1).place(x=0, y=128)
