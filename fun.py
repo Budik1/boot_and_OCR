@@ -1,5 +1,5 @@
 import pyautogui
-from time import sleep
+from time import sleep, time
 import datetime
 
 sum_vip = 0
@@ -29,6 +29,19 @@ def time_now():
     date_time_now = (now.strftime('%Y-%m-%d %H°%M\'\'%S\''))  # '%Y-%m-%d %H:%M:%S'
     date = (now.date())
     return date_time_now, date
+
+
+def test_time(funk):
+    def wrapper(*args, **kwargs):
+        start_time = time()
+        res = funk(*args, *kwargs)
+        finish_time = float(time() - start_time)    # общее количество секунд
+        minutes = int(finish_time // 60)            # количество минут
+        seconds = round((finish_time % minutes), 2)
+        print(f'Потрачено время {minutes} минут {seconds} сек.')
+        return res
+
+    return wrapper()
 
 
 def daily_gifts():
@@ -237,12 +250,12 @@ def find_link():  # width=77, height=42
     return pos_or_v
 
 
-def foto(put_imya, _region):
+def foto(path_name, _region):
     im1 = pyautogui.screenshot(region=_region)
-    im1.save(put_imya)
+    im1.save(path_name)
 
 
-def get_task_area_small(width=77, height=42):
+def get_areas_task_small(width=77, height=42):
     pul, xp_ = 444, 518
     pos_1, pos_2, pos_3 = 217, 320, 423
     # Закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
@@ -279,7 +292,7 @@ def get_task_area_small(width=77, height=42):
     return region1_pul, region2_pul, region3_pul, region1, region2, region3
 
 
-def get_task_area_big(width=77, height=42):
+def get_areas_task_big(width=77, height=42):
     pul, xp_ = 444, 518
     pos_1, pos_2, pos_3 = 217, 320, 423
     big = 100

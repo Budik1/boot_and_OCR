@@ -36,17 +36,20 @@ def dvizh_test():
 
 
 def tent_inspection():
-    fun.move_friends_list_to_top()
-    sum_vip = revision_of_tents.tent_raid()
-    it = 1
-    print(f'{sum_vip} / {it}')
-    while it < 10:
-        it += 1
-        fun.move_friends_list_left()
-        sum_vip += revision_of_tents.tent_raid()
+
+    def vip():
+        fun.move_friends_list_to_top()
+        sum_vip = revision_of_tents.tent_raid()
+        it = 1
         print(f'{sum_vip} / {it}')
-        status_vip.set(sum_vip)
-    revision_of_tents.end_raid()
+        while it < 10:
+            it += 1
+            fun.move_friends_list_left()
+            sum_vip += revision_of_tents.tent_raid()
+            print(f'{sum_vip} / {it}')
+            status_vip.set(sum_vip)
+        revision_of_tents.end_raid()
+    vip()
 
 
 root = Tk()

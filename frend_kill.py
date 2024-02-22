@@ -1,7 +1,7 @@
 import pyautogui
 from station_master import enemy_battle
 from time import sleep
-from fun import move_to_click, move_friends_list_right, find_link
+from fun import move_to_click, move_friends_list_right, find_link, foto
 
 
 def search_friend():
@@ -14,10 +14,16 @@ def search_friend():
     x -= 160
     y += 650
     pos_frend = x, y
+    x_r = x - 78
+    y_r = y - 150
+    friend_battle_region = x_r, y_r, 160, 95
     pyautogui.moveTo(pos_frend, duration=1)
     # Point(x=613, y=627), Point(x=748, y=660)
     move_to_click(pos_frend, 0.2)
-    friend_battle = pyautogui.locateCenterOnScreen("img/hero_vs_frend.png", region=(600, 600, 160, 83), confidence=0.95)
+    sleep(0.5)
+    friend_battle = pyautogui.locateCenterOnScreen("img/hero_vs_frend.png", region=friend_battle_region,
+                                                   confidence=0.986)
+    foto('kent.png', friend_battle_region)
     # print(friend_battle)
     return friend_battle
 

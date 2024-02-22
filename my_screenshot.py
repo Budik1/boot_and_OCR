@@ -2,7 +2,7 @@
 import pyautogui
 from event_OCR import visualization_result
 from my_OCR import recognized
-from fun import get_task_area_small, get_task_area_big
+from fun import get_areas_task_small, get_areas_task_big
 
 
 def foto(path_name, _region):
@@ -26,8 +26,8 @@ def get_screenshot():
     tune_y = 1  #
     tune_s = 21  # 21 с увеличением регион уменьшается
     tune_v = 1  #
-    region1_pul, region2_pul, region3_pul, region1_xp, region2_xp, region3_xp = get_task_area_small()
-    region1_big, region2_big, region3_big = get_task_area_big()
+    region1_pul, region2_pul, region3_pul, region1_xp, region2_xp, region3_xp = get_areas_task_small()
+    region1_big, region2_big, region3_big = get_areas_task_big()
     foto_pos(region1_pul, tune_x, tune_y, tune_s, tune_v, 'img/test/1_pul.png')
     foto_pos(region2_pul, tune_x, tune_y, tune_s, tune_v, 'img/test/2_pul.png')
     foto_pos(region3_pul, tune_x, tune_y, tune_s, tune_v, 'img/test/3_pul.png')

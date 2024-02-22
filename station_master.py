@@ -1,11 +1,9 @@
 import baza_dannyx as b_d
 import pyautogui
 from time import sleep
-from fun import move_to_click, foto, push_close_all_, vizit_to_station_master, get_task_area_big
+from fun import move_to_click, foto, push_close_all_, vizit_to_station_master, get_areas_task_big
 
 conf = 0.97
-# son = 0.9
-
 par_conf = 0.8
 energy_availability = 1
 number_tasks = 1
@@ -14,7 +12,7 @@ variable = None
 region1, region2, region3 = 0, 0, 0
 
 
-def get_areas_of_analysis():  # Заменить на get_task_area_big из fun?
+def get_areas_of_analysis():  # Заменить на get_areas_task_big из fun?
     """Получение значений "region=" для поиска заданий
     :return: кортеж из трех списков значений"""
     # закрыть если открыто
@@ -148,7 +146,7 @@ def data_station():
 def vybor_zadaniya_na_puli():
     global energy_availability, number_tasks, conf
     xp_img = data_station()
-    region_1, region_2, region_3 = get_areas_of_analysis()
+    region_1, region_2, region_3 = get_areas_task_big()
     while energy_availability == 1 and number_tasks > 0:
         task_analysis(xp_img[0], xp_img[1], region_1)
         variant1 = variable
@@ -187,7 +185,7 @@ def vybor_zadaniya_na_puli():
 
 def en_task_number(task_number):
     global energy_availability, number_tasks, conf
-    region_1, region_2, region_3 = get_areas_of_analysis()
+    region_1, region_2, region_3 = get_areas_task_big()
     if task_number == 1:
         region = region_1
     elif task_number == 2:

@@ -191,6 +191,19 @@ def tasks_na_kievskoy():
 
 
 # движение от st_park_kr до Кузнецкого моста
+def most_riga():
+    # движение от
+    """Маршрут Кузнецкий мост - Киевская"""
+    start_time = time()
+    push_close_all_()
+    travel(b_d.most_riga)
+    print("пришел на Рижскую")
+    finish_time = float(time() - start_time)  # общее количество секунд
+    minutes = int(finish_time // 60)  # количество минут
+    seconds = round((finish_time % minutes), 2)
+    print('Потрачено время', minutes, ' минут', seconds, ' сек.')
+
+
 def riga_most():
     """Маршрут Рижская - Кузнецкий мост"""
     start_time = time()
@@ -223,16 +236,15 @@ def most_frunze():
     minutes = int(finish_time // 60)  # количество минут
     seconds = round((finish_time % minutes), 2)
     print('Потрачено время', minutes, 'минут', seconds, 'сек.')
-
-
 # движение от
-def most_riga():
-    # движение от
+
+
+def most_kiev():
     """Маршрут Кузнецкий мост - Киевская"""
     start_time = time()
     push_close_all_()
-    travel(b_d.most_riga)
-    print("пришел на Рижскую")
+    travel(b_d.most_kiev)
+    print("пришел на Киевскую")
     finish_time = float(time() - start_time)  # общее количество секунд
     minutes = int(finish_time // 60)  # количество минут
     seconds = round((finish_time % minutes), 2)
@@ -251,6 +263,21 @@ def kiev_most():
     print('Потрачено время', minutes, ' минут', seconds, ' сек.')
 
 
+def frunze_kiev():
+    """Маршрут Фрунзенская - Киевская"""
+    # start_time = time()
+
+    push_close_all_()
+    travel(b_d.frunze_kiev)
+    print("пришел на Киевскую")
+
+    # finish_time = float(time() - start_time)  # общее количество секунд
+    # minutes = int(finish_time // 60)  # количество минут
+    # seconds = round((finish_time % minutes), 2)
+    # print('Потрачено время', minutes, 'минут', seconds, 'сек.')
+# движение от Кузнецкого моста на Киевскую
+
+
 def kiev_frunze():
     """Маршрут Киевская - Фрунзенская"""
     start_time = time()
@@ -261,31 +288,6 @@ def kiev_frunze():
     minutes = int(finish_time // 60)  # количество минут
     seconds = round((finish_time % minutes), 2)
     print('Потрачено время', minutes, ' минут', seconds, ' сек.')
-
-
-# движение от Кузнецкого моста на Киевскую
-def most_kiev():
-    """Маршрут Кузнецкий мост - Киевская"""
-    start_time = time()
-    push_close_all_()
-    travel(b_d.most_kiev)
-    print("пришел на Киевскую")
-    finish_time = float(time() - start_time)  # общее количество секунд
-    minutes = int(finish_time // 60)  # количество минут
-    seconds = round((finish_time % minutes), 2)
-    print('Потрачено время', minutes, ' минут', seconds, ' сек.')
-
-
-def frunze_kiev():
-    """Маршрут Фрунзенская - Киевская"""
-    start_time = time()
-    push_close_all_()
-    travel(b_d.frunze_kiev)
-    print("пришел на Киевскую")
-    finish_time = float(time() - start_time)  # общее количество секунд
-    minutes = int(finish_time // 60)  # количество минут
-    seconds = round((finish_time % minutes), 2)
-    print('Потрачено время', minutes, 'минут', seconds, 'сек.')
 
 
 def frunze_riga():
