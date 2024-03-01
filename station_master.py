@@ -3,53 +3,13 @@ import pyautogui
 from time import sleep
 from fun import move_to_click, foto, push_close_all_, vizit_to_station_master, get_areas_task_big
 
-conf = 0.97
+conf_ = 0.97
 par_conf = 0.8
 energy_availability = 1
 number_tasks = 1
 width, height = 87, 39
 variable = None
 region1, region2, region3 = 0, 0, 0
-
-
-def get_areas_of_analysis():  # Заменить на get_areas_task_big из fun?
-    """Получение значений "region=" для поиска заданий
-    :return: кортеж из трех списков значений"""
-    # закрыть если открыто
-    push_close_all_()
-    # получение координат привязки
-    pos_or_v = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
-    pyautogui.moveTo(pos_or_v)
-    sleep(0.5)
-    xor_v, yor_v = pos_or_v
-    pos_or_n = pyautogui.locateCenterOnScreen('img/setting.png', confidence=0.9)
-    xor_n, yor_n = pos_or_n
-
-    vizit_to_station_master()
-
-    # регион поиска 1 (позиция анализа)
-    x_p_oan1 = (xor_n - xor_v) / 2 + xor_v + 193
-    y_p_oan1 = (yor_n - yor_v) / 2 + yor_v - 39
-    x_p_oan1, y_p_oan1 = int(x_p_oan1), int(y_p_oan1)
-    region_1 = [x_p_oan1, y_p_oan1, width, height]
-
-    # регион поиска 2 (позиция анализа)
-    x_p_oan2 = (xor_n - xor_v) / 2 + xor_v + 193
-    y_p_oan2 = (yor_n - yor_v) / 2 + yor_v + 64
-    x_p_oan2, y_p_oan2 = int(x_p_oan2), int(y_p_oan2)
-    region_2 = [x_p_oan2, y_p_oan2, width, height]
-
-    # регион поиска 3 (позиция анализа)
-    x_p_oan3 = (xor_n - xor_v) / 2 + xor_v + 193
-    y_p_oan3 = (yor_n - yor_v) / 2 + yor_v + 167
-    x_p_oan3, y_p_oan3 = int(x_p_oan3), int(y_p_oan3)
-    region_3 = [x_p_oan3, y_p_oan3, width, height]
-
-    # foto("img/test/obl_3.png", region_3)
-    # foto("img/test/obl_1.png", region_1)
-    # foto("img/test/obl_2.png", region_2)
-
-    return region_1, region_2, region_3
 
 
 def enemy_battle(prolong=2):
@@ -61,12 +21,9 @@ def enemy_battle(prolong=2):
     skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
     dog = pyautogui.locateCenterOnScreen('img/dog.png', confidence=par_conf)
     it = 0
-    # while battle_end is None:
     while not battle_end:
-        # if dog is not None:  # нажать "на собаку"
         if dog:  # нажать "на собаку"
             move_to_click(dog, 0.1)
-        # if skip_battle is not None and it >= 2:  # нажать "пропустить бой"
         if skip_battle and it >= 2:  # нажать "пропустить бой"
             move_to_click(skip_battle, 0.5)
         it += 1
@@ -75,9 +32,8 @@ def enemy_battle(prolong=2):
         close = pyautogui.locateCenterOnScreen('img/close.png', confidence=par_conf)
         dog = pyautogui.locateCenterOnScreen('img/dog.png', confidence=par_conf)
         skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
-        # if battle_end is not None and close is not None:  # нажать закрыть в конце боя
         if battle_end and close:  # нажать закрыть в конце боя
-            move_to_click(close, 0.2)
+            push_close_all_()
             sleep(0.5)
 
 
@@ -112,8 +68,8 @@ def task_analysis(img1, img2, region):
     """
     global variable
     vizit_to_station_master()
-    variant1 = pyautogui.locateCenterOnScreen(img1, confidence=conf, region=region)
-    variant2 = pyautogui.locateCenterOnScreen(img2, confidence=conf, region=region)
+    variant1 = pyautogui.locateCenterOnScreen(img1, confidence=conf_, region=region)
+    variant2 = pyautogui.locateCenterOnScreen(img2, confidence=conf_, region=region)
     if variant1:
         variable = variant1
     else:
@@ -144,7 +100,7 @@ def data_station():
 
 
 def vybor_zadaniya_na_puli():
-    global energy_availability, number_tasks, conf
+    global energy_availability, number_tasks, conf_
     xp_img = data_station()
     region_1, region_2, region_3 = get_areas_task_big()
     while energy_availability == 1 and number_tasks > 0:
@@ -171,8 +127,8 @@ def vybor_zadaniya_na_puli():
             press_en(3, region_3)
 
         if variant1 == variant2 == variant3:
-            print('confidence=', conf)
-            conf -= 0.01
+            print('confidence=', conf_)
+            conf_ -= 0.01
 
     print(' Задания выполнены!!!!')
     number_tasks = 1
@@ -183,8 +139,8 @@ def vybor_zadaniya_na_puli():
         close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
 
 
-def en_task_number(task_number):
-    global energy_availability, number_tasks, conf
+def en_task_item(task_number):
+    global energy_availability, number_tasks  # , conf_
     region_1, region_2, region_3 = get_areas_task_big()
     if task_number == 1:
         region = region_1

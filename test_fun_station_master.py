@@ -3,7 +3,7 @@ import pyautogui
 from time import sleep
 from fun import move_to_click, push_close_all_, foto
 
-conf = 0.97
+conf_ = 0.97
 # son = 0.9
 
 par_conf = 0.8
@@ -152,10 +152,10 @@ def task_analysis(img1, img2, region):
     global variable
     # print('вызов vizit_to_station_master в анализе')
     station_master()
-    # print('в task_analysis conf =', conf)
-    variant1 = pyautogui.locateCenterOnScreen(img1, confidence=conf, region=region)
+    # print('в task_analysis conf_ =', conf_)
+    variant1 = pyautogui.locateCenterOnScreen(img1, confidence=conf_, region=region)
     # print(variant1, 'variant1')
-    variant2 = pyautogui.locateCenterOnScreen(img2, confidence=conf, region=region)
+    variant2 = pyautogui.locateCenterOnScreen(img2, confidence=conf_, region=region)
     # print(variant2, 'variant2')
     if variant1:
         variable = variant1
@@ -190,7 +190,7 @@ def data_station():
 
 
 def vybor_zadaniya_na_puli():
-    global energy_availability, number_tasks, conf
+    global energy_availability, number_tasks, conf_
     xp_img = data_station()
     region_1, region_2, region_3 = get_areas_of_analysis()
     while energy_availability == 1 and number_tasks > 0:
@@ -236,7 +236,7 @@ def vybor_zadaniya_na_puli():
 
 
 def en_task_number(task_number):
-    global energy_availability, number_tasks, conf
+    global energy_availability, number_tasks, conf_
     region_1, region_2, region_3 = get_areas_of_analysis()
     if task_number == 1:
         region = region_1

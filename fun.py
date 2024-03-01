@@ -15,6 +15,15 @@ img_sl = {'спецпредложение': 'img/spec_proposal.png', 'закры
 iter_detect_search_region = 0  # ?????????
 
 
+def close_popup_window():
+    knob = pyautogui.locateCenterOnScreen('img/knob.png', confidence=0.9)
+    cancel = pyautogui.locateCenterOnScreen('img/cancel.png', confidence=0.9)
+    if knob:
+        move_to_click(knob, 1)
+    if cancel:
+        move_to_click(cancel, 1)
+
+
 def print_to_file(text: str) -> None:
     date_time, date = time_now()
     file_name = date_time + ".txt"
@@ -35,8 +44,8 @@ def test_time(funk):
     def wrapper(*args, **kwargs):
         start_time = time()
         res = funk(*args, *kwargs)
-        finish_time = float(time() - start_time)    # общее количество секунд
-        minutes = int(finish_time // 60)            # количество минут
+        finish_time = float(time() - start_time)  # общее количество секунд
+        minutes = int(finish_time // 60)  # количество минут
         seconds = round((finish_time % minutes), 2)
         print(f'Потрачено время {minutes} минут {seconds} сек.')
         return res
@@ -73,6 +82,7 @@ def push_close_all_():
     # print(pos_close)
     while pos_close:
         # print(push_close_all)
+        close_popup_window()
         pyautogui.moveTo(pos_close, duration=1, tween=pyautogui.easeInOutQuad)
         pyautogui.click(pos_close)
         sleep(1)
@@ -201,11 +211,11 @@ def move_friends_list_right():
     Смещает список друзей в право на одну позицию
     :return: 1
     """
-    sleep(1)
+    sleep(0.2)
     ar_right = pyautogui.locateCenterOnScreen('img/b_arrow_left.png', confidence=0.8)
     pyautogui.moveTo(ar_right, duration=1, tween=pyautogui.easeInOutQuad)
     pyautogui.click(ar_right)
-    sleep(1)
+    sleep(0.2)
     return 1
 
 
@@ -245,7 +255,7 @@ def find_link():  # width=77, height=42
     """
     push_close_all_()
     # получение координат привязки
-    pos_or_v = pyautogui.locateCenterOnScreen('img/hall_of_glory.png', confidence=0.9)
+    pos_or_v = pyautogui.locateCenterOnScreen('img/hall_of_glory_icon.png', confidence=0.9)
     sleep(0.5)
     return pos_or_v
 
@@ -293,6 +303,8 @@ def get_areas_task_small(width=77, height=42):
 
 
 def get_areas_task_big(width=77, height=42):
+    """Получение значений "region=" для поиска заданий
+        :return: кортеж из трех списков значений"""
     pul, xp_ = 444, 518
     pos_1, pos_2, pos_3 = 217, 320, 423
     big = 100

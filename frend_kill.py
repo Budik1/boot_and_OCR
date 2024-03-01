@@ -13,22 +13,36 @@ def search_friend():
     x, y = pos_or
     x -= 160
     y += 650
-    pos_frend = x, y
+    pos_friend = x, y
     x_r = x - 78
-    y_r = y - 150
-    friend_battle_region = x_r, y_r, 160, 95
-    pyautogui.moveTo(pos_frend, duration=1)
+    y_r = y - 350
+    friend_battle_region = x_r, y_r, 155, 295
+    pyautogui.moveTo(pos_friend, duration=1)
     # Point(x=613, y=627), Point(x=748, y=660)
-    move_to_click(pos_frend, 0.2)
-    sleep(0.5)
-    friend_battle = pyautogui.locateCenterOnScreen("img/hero_vs_frend.png", region=friend_battle_region,
-                                                   confidence=0.986)
-    foto('kent.png', friend_battle_region)
+    move_to_click(pos_friend, 0.2)
+    dom = pyautogui.locateCenterOnScreen('img/b_tent.png', region=friend_battle_region, confidence=0.9)
+    while not dom:
+        move_to_click(pos_friend, 0.2)
+        dom = pyautogui.locateCenterOnScreen('img/b_tent.png', region=friend_battle_region, confidence=0.9)
+    hero_vs_friend = pyautogui.locateCenterOnScreen("img/hero_vs_friend.png", region=friend_battle_region,
+                                                    confidence=0.95)
+    foto('img/kent.png', friend_battle_region)
+    if hero_vs_friend:
+        gangster = pyautogui.locateCenterOnScreen("img/f_gangster.png", region=friend_battle_region, confidence=0.95)
+        ganza = pyautogui.locateCenterOnScreen("img/f_ganza.png", region=friend_battle_region, confidence=0.95)
+        reich = pyautogui.locateCenterOnScreen("img/f_reich.png", region=friend_battle_region, confidence=0.95)
+        # red = pyautogui.locateCenterOnScreen("img/f_red.png", region=friend_battle_region, confidence=0.95)
+        if gangster or ganza or reich:  # or red
+            friend_battle = hero_vs_friend
+        else:
+            friend_battle = False
+    else:
+        friend_battle = False
     # print(friend_battle)
     return friend_battle
 
 
-def friend_kill(required_quantity=5):  # требуемое количество=5
+def friend_kill(required_quantity=29):  # требуемое количество=5
     quantity_battle = 0
     while quantity_battle <= required_quantity:
         friend_battle_ = search_friend()
@@ -42,13 +56,13 @@ def friend_kill(required_quantity=5):  # требуемое количество
                 hero_vs_opponent = pyautogui.locateCenterOnScreen('img/hero_vs_opponent.png', confidence=0.9)
             move_to_click(hero_vs_opponent, 0.3)
             sleep(1)
-            enemy_battle(0.1)
-            # enemy_battle()
+            enemy_battle(0.5)
             print(quantity_battle, 'quantity_battle')
-
+            move_friends_list_right()
         else:
             print('Следующий')
             move_friends_list_right()
 
 
 friend_kill()
+# search_friend()

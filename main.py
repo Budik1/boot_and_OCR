@@ -8,7 +8,7 @@ import person
 import revision_of_tents
 
 
-im_en1 = [1, 'img/en1v2.png', 'img/23xp.png']
+# im_en1 = [1, 'img/en1v2.png', 'img/23xp.png']
 # im_en2 = [2, 'img/en2v2.png', 'img/45xp.png']
 # im_en3 = [3, 'img/en3v2.png', 'img/68xp.png']
 status_bonus = "0"
@@ -19,15 +19,15 @@ def bonus():
 
 
 def en_1():
-    station_master.en_task_number(1)
+    station_master.en_task_item(1)
 
 
 def en_2():
-    station_master.en_task_number(2)
+    station_master.en_task_item(2)
 
 
 def en_3():
-    station_master.en_task_number(3)
+    station_master.en_task_item(3)
 
 
 def dvizh_test():

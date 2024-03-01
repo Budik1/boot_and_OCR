@@ -24,6 +24,15 @@ def foto_pos(name_img: str, region: tuple, tune_x=0, tune_y=0, tune_s=0, tune_v=
     foto(name_img, (x_s, y_s, width_s, height_s))
 
 
+def hall_is_open():
+    hall = pyautogui.locateCenterOnScreen('img/hall_of_glory_tabl.png', confidence=0.9)
+    while not hall:
+        sleep(0.1)
+        hall = pyautogui.locateCenterOnScreen('img/hall_of_glory_tabl.png', confidence=0.9)
+    pyautogui.moveTo(hall)
+    sleep(2)
+
+
 def create_img_arena_object():
     """Создаёт скрин arena_object из зала славы. Объект должен быть вверху списка """
     pos_or_v = find_link()  # ориентир на зал славы
@@ -31,7 +40,7 @@ def create_img_arena_object():
     # print(pos_or_v)
     move_to_click(pos_or_v, 0.3)  # открыть зал славы
     pyautogui.moveTo(pos_or_v[0] - 678, pos_or_v[1] + 144)
-    sleep(1)
+    hall_is_open()
     region = (pos_or_v[0] - 678, pos_or_v[1] + 142, 368, 80)
     # смещение внутри региона верхней левой точки на параметры (с увеличением смещение увеличивается)
     tune_x = 73
@@ -46,8 +55,9 @@ def kill():
     boy_in_arena = 0
     while True:
         pos_or_v = find_link()  # ориентир на зал славы
-        # print(pos_or_v)
+        print(pos_or_v)
         move_to_click(pos_or_v, 0.3)  # открыть зал славы
+        hall_is_open()
         # вычисление региона поиска
         x, y = pos_or_v
         x -= 665
@@ -99,9 +109,9 @@ def kill():
             hero_vs_opponent = pyautogui.locateCenterOnScreen('img/hero_vs_opponent.png', confidence=0.9)
         move_to_click(hero_vs_opponent, 0.3)
         sleep(2)
-        enemy_battle(0.1)
+        enemy_battle(0.5)
+        print("сражение окончено, новый..")
 
 
 # create_img_arena_object()  # создание метки объекта атаки
 kill()  # цикл атаки объекта
-#
