@@ -17,6 +17,7 @@ def foto_pos(region, tune_x, tune_y, tune_s, tune_v, name_img):
     y_s = y_p_an + tune_y
     width_s = width_ - tune_s
     height_s = height_ - tune_v
+    print(region, (x_s, y_s, width_s, height_s))
     foto(name_img, (x_s, y_s, width_s, height_s))
 
 
@@ -41,12 +42,14 @@ def get_screenshot():
 
 
 get_screenshot()
-list_1_xp = recognized("img/test/1_xp.png")
-list_2_xp = recognized("img/test/2_xp.png")
-list_3_xp = recognized("img/test/3_xp.png")
 list_1_pul = recognized('img/test/1_pul.png')
+list_1_xp = recognized("img/test/1_xp.png")
+
 list_2_pul = recognized('img/test/2_pul.png')
+list_2_xp = recognized("img/test/2_xp.png")
+
 list_3_pul = recognized('img/test/3_pul.png')
+list_3_xp = recognized("img/test/3_xp.png")
 #
 visualization_result(list_1_pul, list_1_xp, list_2_pul, list_2_xp, list_3_pul, list_3_xp)
 #

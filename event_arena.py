@@ -1,7 +1,7 @@
 import pyautogui
 from time import sleep
 from station_master import enemy_battle
-from fun import move_to_click, find_link
+from fun import move_to_click, find_link_hall_of_glory
 
 
 def foto(path_name, _region):
@@ -35,7 +35,7 @@ def hall_is_open():
 
 def create_img_arena_object():
     """Создаёт скрин arena_object из зала славы. Объект должен быть вверху списка """
-    pos_or_v = find_link()  # ориентир на зал славы
+    pos_or_v = find_link_hall_of_glory()  # ориентир на зал славы
     # pyautogui.moveTo(pos_or_v)
     # print(pos_or_v)
     move_to_click(pos_or_v, 0.3)  # открыть зал славы
@@ -54,7 +54,7 @@ def create_img_arena_object():
 def kill():
     boy_in_arena = 0
     while True:
-        pos_or_v = find_link()  # ориентир на зал славы
+        pos_or_v = find_link_hall_of_glory()  # ориентир на зал славы
         print(pos_or_v)
         move_to_click(pos_or_v, 0.3)  # открыть зал славы
         hall_is_open()

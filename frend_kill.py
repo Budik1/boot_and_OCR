@@ -1,7 +1,7 @@
 import pyautogui
 from station_master import enemy_battle
 from time import sleep
-from fun import move_to_click, move_friends_list_right, find_link, foto
+from fun import move_to_click, move_friends_list_right, find_link_hall_of_glory, foto
 
 
 def search_friend():
@@ -9,7 +9,7 @@ def search_friend():
     Анализ друга. Возвращает позицию активной кнопки 'Атаковать'
     :return: Point | None
     """
-    pos_or = find_link()  # ориентир на зал славы
+    pos_or = find_link_hall_of_glory()  # ориентир на зал славы
     x, y = pos_or
     x -= 160
     y += 650

@@ -79,9 +79,7 @@ def daily_gifts():
 
 def push_close_all_():
     pos_close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
-    # print(pos_close)
     while pos_close:
-        # print(push_close_all)
         close_popup_window()
         pyautogui.moveTo(pos_close, duration=1, tween=pyautogui.easeInOutQuad)
         pyautogui.click(pos_close)
@@ -248,7 +246,7 @@ def move_to_click(pos_click: tuple, z_p_k: float):
     sleep(0.18)
 
 
-def find_link():  # width=77, height=42
+def find_link_hall_of_glory():
     """
     Закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
     :return: Point 'Зал славы'
@@ -265,58 +263,76 @@ def foto(path_name, _region):
     im1.save(path_name)
 
 
+def find_link_station_master():
+    station_master = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=0.9)
+    pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
+    if station_master or pos_klan:
+        print(pos_klan)  # Point(x=192, y=158)
+        print(station_master)  # Point(x=221, y=187)
+        if pos_klan:
+            # pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
+            pyautogui.moveTo(pos_klan)
+            # получение координат привязки
+            print(pos_klan)
+            sleep(0.5)
+            x_or, y_or = pos_klan
+            vizit_to_station_master()
+        else:
+            pyautogui.moveTo(station_master)
+            x_or, y_or = station_master
+            x_or -= 29
+            y_or -= 29
+    else:
+        # Закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
+        push_close_all_()
+        pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
+        pyautogui.moveTo(pos_klan)
+        # получение координат привязки
+        print(pos_klan)
+        sleep(0.5)
+        x_or, y_or = pos_klan
+        vizit_to_station_master()
+
+    return x_or, y_or
+
+
 def get_areas_task_small(width=77, height=42):
+    """Получение значений "region=" для поиска значений в малых регионах
+        :return: кортеж из шести списков значений"""
     pul, xp_ = 444, 518
     pos_1, pos_2, pos_3 = 217, 320, 423
-    # Закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
-    push_close_all_()
-    # получение координат привязки
-    pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
-    pyautogui.moveTo(pos_klan)
-    sleep(0.5)
-    x_or, y_or = pos_klan
 
-    vizit_to_station_master()
+    x_or, y_or = find_link_station_master()
 
     x_an_xp = x_or + xp_
     x_an_pul = x_or + pul
 
     # регион поиска 1 (позиция анализа)
     y_1an = y_or + pos_1
-    # y_1an = int(y_1an)
-    region1 = [x_an_xp, y_1an, width, height]
+    region1_xp = [x_an_xp, y_1an, width, height]
     region1_pul = [x_an_pul, y_1an, width, height]
 
     # регион поиска 2 (позиция анализа)
     y_2an = y_or + pos_2
-    # y_2an = int(y_2an)
-    region2 = [x_an_xp, y_2an, width, height]
+    region2_xp = [x_an_xp, y_2an, width, height]
     region2_pul = [x_an_pul, y_2an, width, height]
 
     # регион поиска 3 (позиция анализа)
     y_3an = y_or + pos_3
-    # y_3an = int(y_3an)
-    region3 = [x_an_xp, y_3an, width, height]
+    region3_xp = [x_an_xp, y_3an, width, height]
     region3_pul = [x_an_pul, y_3an, width, height]
 
-    return region1_pul, region2_pul, region3_pul, region1, region2, region3
+    return region1_pul, region2_pul, region3_pul, region1_xp, region2_xp, region3_xp
 
 
 def get_areas_task_big(width=77, height=42):
-    """Получение значений "region=" для поиска заданий
+    """Получение значений "region=" для поиска заданий в больших регионах
         :return: кортеж из трех списков значений"""
     pul, xp_ = 444, 518
     pos_1, pos_2, pos_3 = 217, 320, 423
     big = 100
-    # Закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
-    push_close_all_()
-    # получение координат привязки
-    pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
-    pyautogui.moveTo(pos_klan)
-    sleep(0.5)
-    x_or, y_or = pos_klan
 
-    vizit_to_station_master()
+    x_or, y_or = find_link_station_master()
 
     x_an_pul = x_or + pul
 
