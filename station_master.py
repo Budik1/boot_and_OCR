@@ -17,6 +17,7 @@ def enemy_battle(prolong=2):
     Событие сражения с противником
     :param prolong: регулирует длительность сражения
     """
+    print('def "enemy_battle"')
     battle_end = pyautogui.locateCenterOnScreen('img/b_battle_end.png', confidence=par_conf)
     skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
     dog = pyautogui.locateCenterOnScreen('img/dog.png', confidence=par_conf)
@@ -35,6 +36,13 @@ def enemy_battle(prolong=2):
         if battle_end and close:  # нажать закрыть в конце боя
             push_close_all_()
             sleep(0.5)
+        # while battle_end and close:  # нажать закрыть в конце боя
+        #     push_close_all_()
+        #     sleep(0.5)
+        #     battle_end = pyautogui.locateCenterOnScreen('img/b_battle_end.png', confidence=par_conf)
+        #     close = pyautogui.locateCenterOnScreen('img/close.png', confidence=par_conf)
+        #     print(battle_end, "battle_end")
+        #     print(close, "close")
 
 
 def press_en(task_number, pos):

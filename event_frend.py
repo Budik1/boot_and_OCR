@@ -31,8 +31,8 @@ def search_friend():
         gangster = pyautogui.locateCenterOnScreen("img/f_gangster.png", region=friend_battle_region, confidence=0.95)
         ganza = pyautogui.locateCenterOnScreen("img/f_ganza.png", region=friend_battle_region, confidence=0.95)
         reich = pyautogui.locateCenterOnScreen("img/f_reich.png", region=friend_battle_region, confidence=0.95)
-        # red = pyautogui.locateCenterOnScreen("img/f_red.png", region=friend_battle_region, confidence=0.95)
-        if gangster or ganza or reich:  # or red
+        red = pyautogui.locateCenterOnScreen("img/f_red.png", region=friend_battle_region, confidence=0.95)
+        if gangster or ganza or reich or red:  #
             friend_battle = hero_vs_friend
         else:
             friend_battle = False

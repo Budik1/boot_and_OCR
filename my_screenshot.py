@@ -2,12 +2,8 @@
 import pyautogui
 from event_OCR import visualization_result
 from my_OCR import recognized
-from fun import get_areas_task_small, get_areas_task_big
-
-
-def foto(path_name, _region):
-    im1 = pyautogui.screenshot(region=_region)
-    im1.save(path_name)
+from fun import get_areas_task_small, get_areas_task_big, foto
+from time import sleep
 
 
 def foto_pos(region, tune_x, tune_y, tune_s, tune_v, name_img):
@@ -17,7 +13,7 @@ def foto_pos(region, tune_x, tune_y, tune_s, tune_v, name_img):
     y_s = y_p_an + tune_y
     width_s = width_ - tune_s
     height_s = height_ - tune_v
-    print(region, (x_s, y_s, width_s, height_s))
+    # print(region, (x_s, y_s, width_s, height_s))
     foto(name_img, (x_s, y_s, width_s, height_s))
 
 
@@ -44,10 +40,10 @@ def get_screenshot():
 get_screenshot()
 list_1_pul = recognized('img/test/1_pul.png')
 list_1_xp = recognized("img/test/1_xp.png")
-
+sleep(2)
 list_2_pul = recognized('img/test/2_pul.png')
 list_2_xp = recognized("img/test/2_xp.png")
-
+sleep(2)
 list_3_pul = recognized('img/test/3_pul.png')
 list_3_xp = recognized("img/test/3_xp.png")
 #

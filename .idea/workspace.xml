@@ -5,41 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20ccf982-a645-4c5c-8257-7785837820b0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/study_open_file_end_edit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_OCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_OCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_arena.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frend_kill.py" beforeDir="false" afterPath="$PROJECT_DIR$/frend_kill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frend_kill.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_frend.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/en1v2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/en2v2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/en3v2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/hall_of_glory.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hall_of_glory_icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/hero_vs_frend.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hero_vs_friend.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/knopka.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kent.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/kent.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/1_pul.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/1_pul.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/1_xp.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/1_xp.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/2_pul.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/2_pul.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/2_xp.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/2_xp.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/3_pul.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/3_pul.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/3_xp.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/3_xp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/arena_object.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/big_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/big_1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/big_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/big_2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/big_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/big_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_screenshot.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_screenshot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_fun_station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_fun_station_master.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_fun_station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_station_master.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="showPreview" value="true" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -56,9 +60,12 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Python.event_arena.executor&quot;: &quot;Run&quot;,
+    &quot;Python.event_frend (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.event_frend.executor&quot;: &quot;Run&quot;,
     &quot;Python.frend_kill.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.my_screenshot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -99,7 +106,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="frend_kill" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="event_frend" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -112,7 +119,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/frend_kill.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/event_frend.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -165,12 +172,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="study_open_file_end_edit" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testOCR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="D:\bot in br\testOCR\study_open_file_end_edit.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.frend_kill" />
+        <item itemvalue="Python.event_frend" />
         <item itemvalue="Python.event_arena" />
         <item itemvalue="Python.my_screenshot" />
+        <item itemvalue="Python.study_open_file_end_edit" />
       </list>
     </recent_temporary>
   </component>

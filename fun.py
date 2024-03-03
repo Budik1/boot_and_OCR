@@ -2,20 +2,24 @@ import pyautogui
 from time import sleep, time
 import datetime
 
-sum_vip = 0
-status_bonus = "0"
+# 03.03.2024
+# sum_vip = 0
+# status_bonus = "0"
 par_conf = 0.79
-energy_availability = 1
-number_tasks = 3
+# energy_availability = 1
+# number_tasks = 3
 oblast = (51, 707, 92, 111)
-img_sl = {'спецпредложение': 'img/spec_proposal.png', 'закрыть спецпредложение': 'img/s_p_close.png',
-          'продолжить как Гаврил': 'img/authorization_button.png',
-          'мои игры V1': 'img/my_game1.png', 'мои игры V2': 'img/my_game2.png',
-          'иконка на рабочем столе': 'img/icon_in_desktop.png'}
-iter_detect_search_region = 0  # ?????????
+
+
+# img_sl = {'спецпредложение': 'img/spec_proposal.png', 'закрыть спецпредложение': 'img/s_p_close.png',
+#           'продолжить как Гаврил': 'img/authorization_button.png',
+#           'мои игры V1': 'img/my_game1.png', 'мои игры V2': 'img/my_game2.png',
+#           'иконка на рабочем столе': 'img/icon_in_desktop.png'}
+# iter_detect_search_region = 0  # ?????????
 
 
 def close_popup_window():
+    print('fun. def "close_popup_window"')
     knob = pyautogui.locateCenterOnScreen('img/knob.png', confidence=0.9)
     cancel = pyautogui.locateCenterOnScreen('img/cancel.png', confidence=0.9)
     if knob:
@@ -77,14 +81,22 @@ def daily_gifts():
         open_ = pyautogui.locateCenterOnScreen('img/b_gift_open.png', confidence=0.9)
 
 
+def push_close():
+    print('fun. def "push_close"')
+    pos_close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
+    pyautogui.moveTo(pos_close, duration=1, tween=pyautogui.easeInOutQuad)
+    pyautogui.click(pos_close)
+
+
 def push_close_all_():
+    print('fun. def "push_close_all_"')
     pos_close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
     while pos_close:
         close_popup_window()
-        pyautogui.moveTo(pos_close, duration=1, tween=pyautogui.easeInOutQuad)
-        pyautogui.click(pos_close)
+        push_close()
         sleep(1)
         pos_close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
+        print("цикл закрытия")
 
 
 def bonus():
@@ -121,7 +133,7 @@ def start_p_m():
     def authorization():  # авторизация при необходимости
         sleep(2)
         pos_authorization = pyautogui.locateCenterOnScreen('img/authorization_button.png', confidence=0.8)
-        if pos_authorization is not None:
+        if pos_authorization:
             pyautogui.moveTo(pos_authorization, duration=1, tween=pyautogui.easeInOutQuad)
             pyautogui.click(pos_authorization)
             sleep(2)
@@ -134,11 +146,11 @@ def start_p_m():
             pos_my_game = pyautogui.locateCenterOnScreen('img/my_game1.png', confidence=0.8)
             pos_my_game1 = pyautogui.locateCenterOnScreen('img/my_game2.png', confidence=0.8)
             print(pos_my_game, pos_my_game1, ' в ожидании появления кнопки "my_game"')
-        if pos_my_game is not None:
+        if pos_my_game:
             pyautogui.moveTo(pos_my_game, duration=1, tween=pyautogui.easeInOutQuad)
             pyautogui.click(pos_my_game)
             print('pos_my_game ' + str(pos_my_game))
-        elif pos_my_game1 is not None:
+        elif pos_my_game1:
             pyautogui.moveTo(pos_my_game1, duration=1, tween=pyautogui.easeInOutQuad)
             pyautogui.click(pos_my_game1)
             print('pos_my_game1' + str(pos_my_game1))
@@ -148,7 +160,7 @@ def start_p_m():
             im1.save('img/screen1.png')
             sleep(2)
         pos_autor = pyautogui.locateCenterOnScreen('img/authorization_button.png', confidence=0.8)
-        if pos_autor is not None:
+        if pos_autor:
             authorization()
 
     def click_icon_game():
@@ -179,7 +191,7 @@ def start_p_m():
         # смещение ползунка на 45
         slider = pyautogui.locateCenterOnScreen('img/slider_v.png', confidence=0.7)
         print(slider, 'ползунок')
-        if slider is not None:
+        if slider:
             x, y = slider
             pyautogui.moveTo(x, y, duration=1, tween=pyautogui.easeInOutQuad)
             pyautogui.dragTo(x, y + 45, duration=1)
@@ -246,6 +258,11 @@ def move_to_click(pos_click: tuple, z_p_k: float):
     sleep(0.18)
 
 
+def foto(path_name, _region):
+    im1 = pyautogui.screenshot(region=_region)
+    im1.save(path_name)
+
+
 def find_link_hall_of_glory():
     """
     Закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
@@ -258,17 +275,10 @@ def find_link_hall_of_glory():
     return pos_or_v
 
 
-def foto(path_name, _region):
-    im1 = pyautogui.screenshot(region=_region)
-    im1.save(path_name)
-
-
 def find_link_station_master():
     station_master = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=0.9)
     pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
     if station_master or pos_klan:
-        print(pos_klan)  # Point(x=192, y=158)
-        print(station_master)  # Point(x=221, y=187)
         if pos_klan:
             # pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
             pyautogui.moveTo(pos_klan)
@@ -328,25 +338,26 @@ def get_areas_task_small(width=77, height=42):
 def get_areas_task_big(width=77, height=42):
     """Получение значений "region=" для поиска заданий в больших регионах
         :return: кортеж из трех списков значений"""
-    pul, xp_ = 444, 518
+    pul = 444
     pos_1, pos_2, pos_3 = 217, 320, 423
-    big = 100
+    big = 77  # 100
 
     x_or, y_or = find_link_station_master()
 
     x_an_pul = x_or + pul
+    width += big
 
     # регион поиска 1 (позиция анализа)
     y_1an = int(y_or + pos_1)
-    region1_big = [x_an_pul, y_1an, width + big, height]
+    region1_big = [x_an_pul, y_1an, width, height]
 
     # регион поиска 2 (позиция анализа)
     y_2an = int(y_or + pos_2)
-    region2_big = [x_an_pul, y_2an, width + big, height]
+    region2_big = [x_an_pul, y_2an, width, height]
 
     # регион поиска 3 (позиция анализа)
     y_3an = int(y_or + pos_3)
-    region3_big = [x_an_pul, y_3an, width + big, height]
+    region3_big = [x_an_pul, y_3an, width, height]
 
     return region1_big, region2_big, region3_big
 

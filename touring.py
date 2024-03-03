@@ -15,13 +15,12 @@ number_of_raptor = 0
 
 def event_gifts():
     """Поиск подарков на станции. Возвращает его позицию"""
+    print('def "event_gifts"')
     sleep(1)
     pos_gift = pyautogui.locateCenterOnScreen('img/tonelli/gift.png', confidence=0.75)
     # print(pos_gift, "подарок")
     if pos_gift:
         x, y = pos_gift
-        # x += 15
-        # y -= 15
         pyautogui.moveTo(x, y, duration=0.5, tween=pyautogui.easeInOutQuad)
         pyautogui.click(x, y)
         sleep(1 * 2)
@@ -43,7 +42,7 @@ def event_gifts():
 #
 def to_map():
     """Из окна станции открывает карту. На Тургеневской выход смещен"""
-    # print('def to_map')
+    print('def "to_map"')
     sleep(1)
     id_st = pyautogui.locateCenterOnScreen(b_d.st_turgenev[2], confidence=0.85)
     if id_st:
@@ -62,9 +61,9 @@ def to_map():
     sleep(1)
     pyautogui.click(pos_or1)
     sleep(1)
-    vss = pyautogui.locateCenterOnScreen('img/tonelli/station_exit.png', confidence=0.8)
-
-    pyautogui.moveTo(vss, duration=0.2)
+    # Убрать курсор с поля карты, чтобы ничего не перекрыл
+    station_exit = pyautogui.locateCenterOnScreen('img/tonelli/station_exit.png', confidence=0.8)
+    pyautogui.moveTo(station_exit, duration=0.2)
 
 
 def tunnel_events(st0, st2):
@@ -73,6 +72,7 @@ def tunnel_events(st0, st2):
     :param st0: название станции из списка
     :param st2: имя файла ID станции
     """
+    print('def "tunnel_events"')
     global number_of_gifts, number_of_kiki, number_of_krysa, number_of_raptor, number_of_arachne
     sleep(1)
     id_st = pyautogui.locateCenterOnScreen(st2, confidence=0.85)
@@ -101,6 +101,7 @@ def tunnel_events(st0, st2):
                 number_of_raptor += 1
                 print(f'{number_of_raptor} Detekt raptor')
             enemy_battle(1)
+            print("после enemy_battle")
         if post:
             pyautogui.moveTo(post, duration=0.2)
             attack = pyautogui.locateCenterOnScreen('img/tonelli/attack.png', confidence=0.85)
@@ -113,7 +114,7 @@ def tunnel_events(st0, st2):
                 sleep(1)
         # sleep(0.1)
         id_st = pyautogui.locateCenterOnScreen(st2, confidence=0.85)
-    # print(st0)  # название станции
+    print(st0)  # название станции
     pyautogui.moveTo(id_st, duration=1, tween=pyautogui.easeInOutQuad)
     # вызов функции "event_gifts()" и подсчет количества найденных
     pos_gift = event_gifts()
@@ -124,11 +125,12 @@ def tunnel_events(st0, st2):
 
 # принимает имя файла поиска, выдаёт Point(x, y), параметр confidence
 def poisk(chto_ishchem, param_confidence=0.99):
+    print('def "poisk"')
     sleep(1)
     pos_search = pyautogui.locateCenterOnScreen(chto_ishchem, confidence=param_confidence)
     while pos_search is None:
         param_confidence -= 0.01
-        # print('в поиске станции confidence=', param_confidence)
+        print('в поиске станции confidence=', param_confidence)
         pos_search = pyautogui.locateCenterOnScreen(chto_ishchem, confidence=param_confidence)
         # print(pos_search)
     return pos_search, param_confidence
@@ -137,6 +139,7 @@ def poisk(chto_ishchem, param_confidence=0.99):
 # Получает в переменной станцию из списка, при необходимости смещает карту. Передав в poisk название следующей станции,
 # получает из него Point(x, y) поиска и параметр confidence,
 def traffic_on_the_map(stan):
+    print('def "traffic_on_the_map"')
     to_map()
     sleep(1 * 2)
     ev_map = stan[3]
