@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20ccf982-a645-4c5c-8257-7785837820b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/study_open_file_end_edit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gifts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frend_kill.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_frend.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baza_dannyx.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza_dannyx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_arena.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_frend.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_frend.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/b_vyxod1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/b_exit1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/kent.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/kent.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/1_pul.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/1_pul.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/1_xp.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/1_xp.png" afterDir="false" />
@@ -19,11 +22,90 @@
       <change beforePath="$PROJECT_DIR$/img/test/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/arena_object.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/big_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/big_1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/big_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/big_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/test/big_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/big_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/big_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/117.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/123.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/126.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/129.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/132.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/135.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/137.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/176.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/180.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/185.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/189.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/198.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/203.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/225.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/246.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/252.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/258.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/270.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/338.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/369.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/378.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/468.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/492.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/4_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/62.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/63.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/65.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/68.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/78.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/82.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/84.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/86.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/88.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/90.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/91.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample/primer_1_pul.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/126.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/135.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/137.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/180.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/203.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/225.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/252.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/258.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/270.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/2_xp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/338.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/63.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/65.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/68.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/78.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/84.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/86.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/90.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test/sample_big/91.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_screenshot.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_screenshot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/revision_of_tents.py" beforeDir="false" afterPath="$PROJECT_DIR$/revision_of_tents.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_fun_station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_station_master.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_station_master.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,13 +145,16 @@
     &quot;Python.event_frend (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.event_frend.executor&quot;: &quot;Run&quot;,
     &quot;Python.frend_kill.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gifts.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.my_screenshot.executor&quot;: &quot;Run&quot;,
     &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_for.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Python/experimet&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/bot in br/testOCR&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PythonContentEntriesConfigurable&quot;
   }
 }</component>
@@ -150,7 +235,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="my_screenshot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -163,29 +248,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_screenshot.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="study_open_file_end_edit" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testOCR" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\bot in br\testOCR\study_open_file_end_edit.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -199,15 +262,14 @@
         <item itemvalue="Python.main" />
         <item itemvalue="Python.event_frend" />
         <item itemvalue="Python.event_arena" />
-        <item itemvalue="Python.my_screenshot" />
-        <item itemvalue="Python.study_open_file_end_edit" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11" />
+        <option value="bundled-python-sdk-d68999036c7f-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.14475.56" />
       </set>
     </attachedChunks>
   </component>
@@ -235,5 +297,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_station_master.py</url>
+          <line>112</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

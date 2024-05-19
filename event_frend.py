@@ -9,6 +9,7 @@ def search_friend():
     Анализ друга. Возвращает позицию активной кнопки 'Атаковать'
     :return: Point | None
     """
+    # print('def "e_frend.search_friend"')
     pos_or = find_link_hall_of_glory()  # ориентир на зал славы
     x, y = pos_or
     x -= 160
@@ -18,15 +19,14 @@ def search_friend():
     y_r = y - 350
     friend_battle_region = x_r, y_r, 155, 295
     pyautogui.moveTo(pos_friend, duration=1)
-    # Point(x=613, y=627), Point(x=748, y=660)
     move_to_click(pos_friend, 0.2)
     dom = pyautogui.locateCenterOnScreen('img/b_tent.png', region=friend_battle_region, confidence=0.9)
     while not dom:
         move_to_click(pos_friend, 0.2)
         dom = pyautogui.locateCenterOnScreen('img/b_tent.png', region=friend_battle_region, confidence=0.9)
     hero_vs_friend = pyautogui.locateCenterOnScreen("img/hero_vs_friend.png", region=friend_battle_region,
-                                                    confidence=0.95)
-    foto('img/kent.png', friend_battle_region)
+                                                    confidence=0.95)  # 0.95 #  0.986
+    # foto('img/kent.png', friend_battle_region)
     if hero_vs_friend:
         gangster = pyautogui.locateCenterOnScreen("img/f_gangster.png", region=friend_battle_region, confidence=0.95)
         ganza = pyautogui.locateCenterOnScreen("img/f_ganza.png", region=friend_battle_region, confidence=0.95)
@@ -42,7 +42,7 @@ def search_friend():
     return friend_battle
 
 
-def friend_kill(required_quantity=29):  # требуемое количество=5
+def friend_kill(required_quantity=49):  # требуемое количество=5
     quantity_battle = 0
     while quantity_battle <= required_quantity:
         friend_battle_ = search_friend()

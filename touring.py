@@ -15,7 +15,7 @@ number_of_raptor = 0
 
 def event_gifts():
     """Поиск подарков на станции. Возвращает его позицию"""
-    print('def "event_gifts"')
+    # print('def "event_gifts"')
     sleep(1)
     pos_gift = pyautogui.locateCenterOnScreen('img/tonelli/gift.png', confidence=0.75)
     # print(pos_gift, "подарок")
@@ -39,10 +39,9 @@ def event_gifts():
     return pos_gift
 
 
-#
 def to_map():
     """Из окна станции открывает карту. На Тургеневской выход смещен"""
-    print('def "to_map"')
+    # print('def "to_map"')
     sleep(1)
     id_st = pyautogui.locateCenterOnScreen(b_d.st_turgenev[2], confidence=0.85)
     if id_st:
@@ -72,12 +71,13 @@ def tunnel_events(st0, st2):
     :param st0: название станции из списка
     :param st2: имя файла ID станции
     """
-    print('def "tunnel_events"')
+    # print('def "tunnel_events"')
     global number_of_gifts, number_of_kiki, number_of_krysa, number_of_raptor, number_of_arachne
     sleep(1)
     id_st = pyautogui.locateCenterOnScreen(st2, confidence=0.85)
+    info = pyautogui.locateCenterOnScreen('img/info.png', confidence=0.8)
     while not id_st:
-        info = pyautogui.locateCenterOnScreen('img/info.png', confidence=0.8)
+        # info = pyautogui.locateCenterOnScreen('img/info.png', confidence=0.8)
         x, y = info
         y += 350
         pyautogui.moveTo(x, y)
@@ -125,12 +125,12 @@ def tunnel_events(st0, st2):
 
 # принимает имя файла поиска, выдаёт Point(x, y), параметр confidence
 def poisk(chto_ishchem, param_confidence=0.99):
-    print('def "poisk"')
+    # print('def "poisk"')
     sleep(1)
     pos_search = pyautogui.locateCenterOnScreen(chto_ishchem, confidence=param_confidence)
     while pos_search is None:
         param_confidence -= 0.01
-        print('в поиске станции confidence=', param_confidence)
+        # print('в поиске станции confidence=', param_confidence)
         pos_search = pyautogui.locateCenterOnScreen(chto_ishchem, confidence=param_confidence)
         # print(pos_search)
     return pos_search, param_confidence
@@ -139,7 +139,7 @@ def poisk(chto_ishchem, param_confidence=0.99):
 # Получает в переменной станцию из списка, при необходимости смещает карту. Передав в poisk название следующей станции,
 # получает из него Point(x, y) поиска и параметр confidence,
 def traffic_on_the_map(stan):
-    print('def "traffic_on_the_map"')
+    # print('def "traffic_on_the_map"')
     to_map()
     sleep(1 * 2)
     ev_map = stan[3]

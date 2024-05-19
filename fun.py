@@ -11,15 +11,11 @@ par_conf = 0.79
 oblast = (51, 707, 92, 111)
 
 
-# img_sl = {'спецпредложение': 'img/spec_proposal.png', 'закрыть спецпредложение': 'img/s_p_close.png',
-#           'продолжить как Гаврил': 'img/authorization_button.png',
-#           'мои игры V1': 'img/my_game1.png', 'мои игры V2': 'img/my_game2.png',
-#           'иконка на рабочем столе': 'img/icon_in_desktop.png'}
-# iter_detect_search_region = 0  # ?????????
+
 
 
 def close_popup_window():
-    print('fun. def "close_popup_window"')
+    # print('def "fun.close_popup_window"')
     knob = pyautogui.locateCenterOnScreen('img/knob.png', confidence=0.9)
     cancel = pyautogui.locateCenterOnScreen('img/cancel.png', confidence=0.9)
     if knob:
@@ -53,11 +49,10 @@ def test_time(funk):
         seconds = round((finish_time % minutes), 2)
         print(f'Потрачено время {minutes} минут {seconds} сек.')
         return res
-
     return wrapper()
 
 
-def daily_gifts():
+def station_gifts():
     """Обмен ежедневными подарками"""
     pass
     gifts = pyautogui.locateCenterOnScreen('img/b_gifts.png', confidence=0.91)
@@ -82,21 +77,27 @@ def daily_gifts():
 
 
 def push_close():
-    print('fun. def "push_close"')
-    pos_close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
-    pyautogui.moveTo(pos_close, duration=1, tween=pyautogui.easeInOutQuad)
-    pyautogui.click(pos_close)
+    # print('def "fun.push_close"')
+    close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
+    move_to_click(close,0.1)
 
+
+def exit_to_zero_screen():
+    push_close_all_()
+    b_exit = pyautogui.locateCenterOnScreen('img/b_exit.png', confidence=0.9)
+    print(b_exit, 'b_exit')
+    if b_exit:
+        move_to_click(b_exit, 0.1)
 
 def push_close_all_():
-    print('fun. def "push_close_all_"')
-    pos_close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
-    while pos_close:
+    # print('def "fun.push_close_all_"')
+    close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
+    while close:
         close_popup_window()
         push_close()
         sleep(1)
-        pos_close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
-        print("цикл закрытия")
+        close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
+        # print("цикл close")
 
 
 def bonus():
@@ -190,7 +191,7 @@ def start_p_m():
         pyautogui.dragTo(300, 11, duration=1)
         # смещение ползунка на 45
         slider = pyautogui.locateCenterOnScreen('img/slider_v.png', confidence=0.7)
-        print(slider, 'ползунок')
+        # print(slider, 'ползунок')
         if slider:
             x, y = slider
             pyautogui.moveTo(x, y, duration=1, tween=pyautogui.easeInOutQuad)
@@ -251,7 +252,7 @@ def move_to_click(pos_click: tuple, z_p_k: float):
     """
     # print('move_to_click', pos_click)
     sleep(0.3)
-    pyautogui.moveTo(pos_click, duration=0.1, tween=pyautogui.easeInOutQuad)
+    pyautogui.moveTo(pos_click, duration=1, tween=pyautogui.easeInOutQuad)
     # print('должен быть клик')
     sleep(z_p_k)
     pyautogui.click(pos_click)
@@ -268,11 +269,20 @@ def find_link_hall_of_glory():
     Закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
     :return: Point 'Зал славы'
     """
-    push_close_all_()
+    # print('def "fun.find_link_hall_of_glory"')
+    close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
+    while close:
+        push_close_all_()
+        close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
     # получение координат привязки
-    pos_or_v = pyautogui.locateCenterOnScreen('img/hall_of_glory_icon.png', confidence=0.9)
+    point_hall_of_glory = pyautogui.locateCenterOnScreen('img/hall_of_glory_icon.png', confidence=0.9)
+    while not point_hall_of_glory:
+        sleep(0.2)
+        point_hall_of_glory = pyautogui.locateCenterOnScreen('img/hall_of_glory_icon.png', confidence=0.9)
+
     sleep(0.5)
-    return pos_or_v
+
+    return point_hall_of_glory
 
 
 def find_link_station_master():
@@ -280,34 +290,33 @@ def find_link_station_master():
     pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
     if station_master or pos_klan:
         if pos_klan:
-            # pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
             pyautogui.moveTo(pos_klan)
             # получение координат привязки
-            print(pos_klan)
             sleep(0.5)
-            x_or, y_or = pos_klan
+            point = pos_klan
+
             vizit_to_station_master()
         else:
             pyautogui.moveTo(station_master)
             x_or, y_or = station_master
             x_or -= 29
             y_or -= 29
+            point = x_or, y_or
     else:
         # Закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
         push_close_all_()
         pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
         pyautogui.moveTo(pos_klan)
         # получение координат привязки
-        print(pos_klan)
         sleep(0.5)
-        x_or, y_or = pos_klan
+        point = pos_klan
         vizit_to_station_master()
 
-    return x_or, y_or
+    return point
 
 
 def get_areas_task_small(width=77, height=42):
-    """Получение значений "region=" для поиска значений в малых регионах
+    """Получение значений "region=" для поиска значений в малых регионах пуль и опыта
         :return: кортеж из шести списков значений"""
     pul, xp_ = 444, 518
     pos_1, pos_2, pos_3 = 217, 320, 423
@@ -333,6 +342,38 @@ def get_areas_task_small(width=77, height=42):
     region3_pul = [x_an_pul, y_3an, width, height]
 
     return region1_pul, region2_pul, region3_pul, region1_xp, region2_xp, region3_xp
+
+
+def get_areas_task_big_1(width=77, height=42):
+    # width, height = 77, 42
+    pul = 444
+    pos_1 = 217
+    big = 77  # 100
+
+    x_or, y_or = find_link_station_master()
+
+    x_an_pul = x_or + pul
+    width += big
+    # регион поиска 1 (позиция анализа)
+    y_1an = int(y_or + pos_1)
+    region_big_1 = [x_an_pul, y_1an, width, height]
+    return region_big_1
+
+
+def get_areas_task_big_2(width=77, height=42):
+    # width, height = 77, 42
+    pul = 444
+    pos_2 = 320
+    big = 77  # 100
+
+    x_or, y_or = find_link_station_master()
+
+    x_an_pul = x_or + pul                           # начальная точка
+    width += big                                    #
+    # регион поиска 2 (позиция анализа)
+    y_2an = int(y_or + pos_2)
+    region_big_2 = [x_an_pul, y_2an, width, height]
+    return region_big_2
 
 
 def get_areas_task_big(width=77, height=42):
@@ -362,6 +403,15 @@ def get_areas_task_big(width=77, height=42):
     return region1_big, region2_big, region3_big
 
 
+def find_link_klan():
+    pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.85)
+    while not pos_klan:
+        sleep(0.1)
+        pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.85)
+
+    return pos_klan
+
+
 def vizit_to_station_master():
     """заходит в палатку к нач станции"""
     # print('vizit_to_station_master')
@@ -379,9 +429,13 @@ def vizit_to_station_master():
         # print('клан = ', pos_klan)
         x1, y1 = pos_klan
         x1, y1 = x1 - 60, y1 + 300
-        pos_klan = x1, y1
-        move_to_click(pos_klan, 0.2)
+        master = x1, y1
+        move_to_click(master, 0.2)
         # print('зашел к начальнику')
         sleep(1)
-        na4 = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=par_conf)
-        pyautogui.moveTo(na4, duration=1, tween=pyautogui.easeInOutQuad)
+        station_master = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=par_conf)
+        pyautogui.moveTo(station_master, duration=1, tween=pyautogui.easeInOutQuad)
+
+
+def find_lvl():
+    pass

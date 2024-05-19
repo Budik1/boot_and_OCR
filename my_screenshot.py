@@ -17,7 +17,7 @@ def foto_pos(region, tune_x, tune_y, tune_s, tune_v, name_img):
     foto(name_img, (x_s, y_s, width_s, height_s))
 
 
-def get_screenshot():
+def get_screenshot_task():
     # смещение скриншота внутри региона
     tune_x = 4  #
     tune_y = 1  #
@@ -37,7 +37,7 @@ def get_screenshot():
     foto_pos(region3_big, tune_x, tune_y, tune_s, tune_v, "img/test/big_3.png")
 
 
-get_screenshot()
+get_screenshot_task()
 list_1_pul = recognized('img/test/1_pul.png')
 list_1_xp = recognized("img/test/1_xp.png")
 sleep(2)

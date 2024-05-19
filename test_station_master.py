@@ -2,14 +2,15 @@ import baza_dannyx as b_d
 import pyautogui
 from time import sleep
 from fun import move_to_click, foto, push_close_all_, vizit_to_station_master, get_areas_task_big
-
+# вход через vybor_zadaniya_na_puli
 conf_ = 0.97
 par_conf = 0.8
 energy_availability = 1
 number_tasks = 1
-width, height = 87, 39
 variable = None
-region1, region2, region3 = 0, 0, 0
+xp_img = ('img/test/sample_big/1.png', 'img/test/sample_big/2.png', 'img/test/sample_big/3.png',
+          'img/test/sample_big/4.png', 'img/test/sample_big/5.png', 'img/test/sample_big/6.png',
+          'img/test/sample_big/7.png', )
 
 
 def enemy_battle(prolong=2):
@@ -17,24 +18,34 @@ def enemy_battle(prolong=2):
     Событие сражения с противником
     :param prolong: регулирует длительность сражения
     """
+    # print('def "enemy_battle"')
     battle_end = pyautogui.locateCenterOnScreen('img/b_battle_end.png', confidence=par_conf)
     skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
     dog = pyautogui.locateCenterOnScreen('img/dog.png', confidence=par_conf)
     it = 0
     while not battle_end:
         if dog:  # нажать "на собаку"
+            # print(dog, 'dog')
             move_to_click(dog, 0.1)
         if skip_battle and it >= 2:  # нажать "пропустить бой"
+            # print(skip_battle, 'skip_battle')
             move_to_click(skip_battle, 0.5)
         it += 1
         sleep(1 * prolong)  # для задержки нажатия "пропустить бой"
+        # print(1 * prolong, prolong)
         battle_end = pyautogui.locateCenterOnScreen('img/b_battle_end.png', confidence=par_conf)
         close = pyautogui.locateCenterOnScreen('img/close.png', confidence=par_conf)
         dog = pyautogui.locateCenterOnScreen('img/dog.png', confidence=par_conf)
         skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
         if battle_end and close:  # нажать закрыть в конце боя
             push_close_all_()
-            sleep(0.5)
+            sleep(0.)
+    skip_battle1 = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
+    while skip_battle1:
+        # print(skip_battle1, 'skip_battle1')
+        sleep(0.2)
+        skip_battle1 = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
+        # print(skip_battle1, 'skip_battle1')
 
 
 def press_en(task_number, pos):
@@ -101,7 +112,6 @@ def data_station():
 
 def vybor_zadaniya_na_puli():
     global energy_availability, number_tasks, conf_
-    # получение списка заданий
     xp_img = data_station()
     region_1, region_2, region_3 = get_areas_task_big()
     while energy_availability == 1 and number_tasks > 0:

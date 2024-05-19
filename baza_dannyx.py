@@ -16,7 +16,7 @@ st_kitay = ['ст. Китай-город', 'img/tonelli/k_Kitay.png', 'img/tonel
 st_kropot = ['ст. Кропоткинская', 'img/tonelli/k_Kropotkin.png', 'img/tonelli/s_Kropotkin.png', 0, [0]]
 
 st_most = ['ст. Кузнецкий мост', 'img/tonelli/k_Kuzneckiy.png', 'img/tonelli/s_Kuzneckiy.png', 0,
-           ['img/23xp.png', 'img/23xp.png', 'img/45xp.png', 'img/45xp.png', 'img/68xp.png', 'img/68xp.png']]
+           ['img/t2.png', 'img/t3.png', 'img/t3.png', 'img/t4.png', 'img/t4.png', 'img/t5.png']]
 
 st_novok = ['ст. Новокузнецкая', 'img/tonelli/k_Novokuznec.png', 'img/tonelli/s_Novokuznec.png', 0, []]
 st_pavelec = ['ст. Павелецкая', 'img/tonelli/k_Pavelec.png', 'img/tonelli/s_Pavelec.png', 0, []]
@@ -34,11 +34,14 @@ st_tretya = ['ст. Третьяковская', 'img/tonelli/k_Tretyakov.png', 
 st_turgenev = ['ст. Тургеневская', 'img/tonelli/k_Turgenev.png', 'img/tonelli/s_Turgenev.png', 0, [0]]
 st_chekhov = ['ст. Чеховская', 'img/tonelli/k_Chekhov.png', 'img/tonelli/s_Chekhov.png', 'стрелка север', [0]]
 
-st_frunze = ['ст. Фрунзенская', 'img/tonelli/k_Frunze.png', 'img/tonelli/s_Frunze.png', 0, []]
+st_frunze = ['ст. Фрунзенская', 'img/tonelli/k_Frunze.png', 'img/tonelli/s_Frunze.png', 0,
+             ['img/t2.png', 'img/t2.png', 'img/t3.png', 'img/t3.png', 'img/t7.png', 'img/t7.png']]
 st_communist = ['ст. Коммунистическая', 'img/tonelli/k_Communist.png', 'img/tonelli/s_Communist.png', 0, []]
 
-list_of_stations = [st_alexs, st_biblioteka, st_borov, st_bulvar, st_vdnx, st_kiev, st_kiev_a, st_kitay, st_kropot, st_most, st_novok, st_pavelec,
-                    st_pavelec_g, st_park_g, st_park_kr, st_polyanka, st_prospekt, st_pushkin, st_riga, st_suxarev, st_teatr, st_tver, st_tretya,
+list_of_stations = [st_alexs, st_biblioteka, st_borov, st_bulvar, st_vdnx, st_kiev, st_kiev_a, st_kitay, st_kropot,
+                    st_most, st_novok, st_pavelec,
+                    st_pavelec_g, st_park_g, st_park_kr, st_polyanka, st_prospekt, st_pushkin, st_riga, st_suxarev,
+                    st_teatr, st_tver, st_tretya,
                     st_turgenev, st_chekhov, st_frunze, st_communist]
 
 # кратчайший путь от Кузнецкого моста на Рижскую и обратно
@@ -52,16 +55,20 @@ kiev_most = [st_park_g, st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekh
 most_kiev = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot, st_park_kr, st_park_g, st_kiev]
 
 # кратчайший путь от Фрунзенской до Рижской и обратно
-frunze_riga = [st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_tver, st_teatr, st_novok, st_tretya, st_kitay,
+frunze_riga = [st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_tver, st_teatr, st_novok, st_tretya,
+               st_kitay,
                st_turgenev, st_suxarev, st_prospekt, st_riga]
 riga_frunze = [st_prospekt, st_suxarev, st_turgenev, st_kitay, st_tretya, st_novok, st_teatr,
                st_tver, st_chekhov, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze]
 
 # оббежать все станции в поисках подарков
-bypass = [st_pushkin, st_tver, st_teatr, st_novok, st_pavelec, st_pavelec_g, st_pavelec, st_novok, st_tretya, st_kitay, st_turgenev, st_suxarev,
+bypass = [st_pushkin, st_tver, st_teatr, st_novok, st_pavelec, st_pavelec_g, st_pavelec, st_novok, st_tretya, st_kitay,
+          st_turgenev, st_suxarev,
           st_prospekt, st_riga, st_alexs, st_vdnx,
-          st_alexs, st_riga, st_prospekt, st_suxarev, st_turgenev, st_kitay, st_tretya, st_novok, st_teatr, st_tver, st_chekhov,
-          st_bulvar, st_chekhov, st_borov, st_polyanka, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze, st_communist,
+          st_alexs, st_riga, st_prospekt, st_suxarev, st_turgenev, st_kitay, st_tretya, st_novok, st_teatr, st_tver,
+          st_chekhov,
+          st_bulvar, st_chekhov, st_borov, st_polyanka, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze,
+          st_communist,
           st_frunze, st_park_kr, st_park_g, st_kiev, st_kiev_a,
           st_kiev, st_park_g, st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_pushkin, st_most]
 
@@ -74,13 +81,15 @@ most_kikimory = [st_pushkin, st_tver, st_teatr, st_novok, st_tretya, st_kitay,
                  st_turgenev, st_suxarev, st_prospekt, st_riga, st_prospekt, st_suxarev,
                  st_turgenev, st_kitay, st_tretya, st_novok, st_teatr, st_tver, st_pushkin, st_most]
 
-frunze_kikimory = [st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_tver, st_teatr, st_novok, st_tretya, st_kitay,
+frunze_kikimory = [st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_tver, st_teatr, st_novok, st_tretya,
+                   st_kitay,
                    st_turgenev, st_suxarev, st_prospekt, st_riga, st_prospekt, st_suxarev,
                    st_turgenev, st_suxarev, st_prospekt, st_riga, st_prospekt, st_suxarev,
                    st_turgenev, st_suxarev, st_prospekt, st_riga, st_prospekt, st_suxarev,
                    st_turgenev, st_suxarev, st_prospekt, st_riga, st_prospekt, st_suxarev,
                    st_turgenev, st_suxarev, st_prospekt, st_riga, st_prospekt, st_suxarev,
-                   st_turgenev, st_kitay, st_tretya, st_novok, st_teatr, st_tver, st_chekhov, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze]
+                   st_turgenev, st_kitay, st_tretya, st_novok, st_teatr, st_tver, st_chekhov, st_borov, st_biblioteka,
+                   st_kropot, st_park_kr, st_frunze]
 # тест передвижения между туннелями
 test_running = [st_park_kr, st_kropot, st_park_kr, st_frunze]
 
@@ -90,6 +99,8 @@ kiev_frunze = [st_park_g, st_park_kr, st_frunze]
 frunze_most = [st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_pushkin, st_most]
 most_frunze = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze]
 
-pauk_yascher = [st_communist, st_frunze, st_communist, st_frunze, st_communist, st_frunze, st_park_kr, st_frunze, st_park_kr, st_kropot, st_park_kr,
+pauk_yascher = [st_communist, st_frunze, st_communist, st_frunze, st_communist, st_frunze, st_park_kr, st_frunze,
+                st_park_kr, st_kropot, st_park_kr,
                 st_kropot,
-                st_park_kr, st_kropot, st_park_kr, st_park_g, st_kiev, st_park_g, st_kiev, st_park_g, st_kiev, st_park_g, st_park_kr, st_frunze]
+                st_park_kr, st_kropot, st_park_kr, st_park_g, st_kiev, st_park_g, st_kiev, st_park_g, st_kiev,
+                st_park_g, st_park_kr, st_frunze]

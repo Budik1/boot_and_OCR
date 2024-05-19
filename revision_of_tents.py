@@ -7,6 +7,10 @@ from fun import move_friends_list_left
 def detect_region_search():
     pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
     pos_settings = pyautogui.locateCenterOnScreen('img/setting.png', confidence=0.9)
+    while not pos_klan and not pos_settings:
+        sleep(0.2)
+        pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
+        pos_settings = pyautogui.locateCenterOnScreen('img/setting.png', confidence=0.9)
     if pos_klan:
         x_region, y_region = pos_klan
         x_region -= 125
@@ -41,7 +45,7 @@ def tent_detected(region_search):
 
 def visit_to_tent():
     """Возвращает 1 если есть и 0 если пусто """
-    visit = pyautogui.locateCenterOnScreen('img/visit_to_tent.png', confidence=0.8)
+    visit = pyautogui.locateCenterOnScreen("img/visit_to_tent.png", confidence=0.8)
     if visit:
         pyautogui.moveTo(visit, duration=1, tween=pyautogui.easeInOutQuad)
         pyautogui.click(visit)

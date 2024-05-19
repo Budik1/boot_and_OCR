@@ -36,8 +36,6 @@ def hall_is_open():
 def create_img_arena_object():
     """Создаёт скрин arena_object из зала славы. Объект должен быть вверху списка """
     pos_or_v = find_link_hall_of_glory()  # ориентир на зал славы
-    # pyautogui.moveTo(pos_or_v)
-    # print(pos_or_v)
     move_to_click(pos_or_v, 0.3)  # открыть зал славы
     pyautogui.moveTo(pos_or_v[0] - 678, pos_or_v[1] + 144)
     hall_is_open()
@@ -49,13 +47,14 @@ def create_img_arena_object():
     tune_s = 243
     tune_v = 20
     foto_pos('img/test/arena_object.png', region, tune_x, tune_y, tune_s, tune_v)
+    print('фото сделано')
 
 
 def kill():
     boy_in_arena = 0
-    while True:
+    while boy_in_arena < 101:
         pos_or_v = find_link_hall_of_glory()  # ориентир на зал славы
-        print(pos_or_v)
+        # print(pos_or_v)
         move_to_click(pos_or_v, 0.3)  # открыть зал славы
         hall_is_open()
         # вычисление региона поиска
@@ -111,7 +110,8 @@ def kill():
         sleep(2)
         enemy_battle(0.5)
         print("сражение окончено, новый..")
+        ver = find_link_hall_of_glory()
 
 
 # create_img_arena_object()  # создание метки объекта атаки
-kill()  # цикл атаки объекта
+# kill()  # цикл атаки объекта
