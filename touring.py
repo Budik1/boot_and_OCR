@@ -2,7 +2,7 @@ import pyautogui
 from time import sleep, time
 from station_master import enemy_battle, vybor_zadaniya_na_puli
 import baza_dannyx as b_d
-from fun import push_close_all_, move_to_click
+from fun import push_close_all_, move_to_click, my_print_to_file
 
 # son = 1
 # station = 1
@@ -15,10 +15,10 @@ number_of_raptor = 0
 
 def event_gifts():
     """Поиск подарков на станции. Возвращает его позицию"""
-    # print('def "event_gifts"')
+    my_print_to_file('touring.event_gifts')
     sleep(1)
     pos_gift = pyautogui.locateCenterOnScreen('img/tonelli/gift.png', confidence=0.75)
-    # print(pos_gift, "подарок")
+    my_print_to_file(f'pos_gift = {pos_gift}')
     if pos_gift:
         x, y = pos_gift
         pyautogui.moveTo(x, y, duration=0.5, tween=pyautogui.easeInOutQuad)
@@ -41,10 +41,11 @@ def event_gifts():
 
 def to_map():
     """Из окна станции открывает карту. На Тургеневской выход смещен"""
-    # print('def "to_map"')
+    my_print_to_file('touring.to_map')
     sleep(1)
-    id_st = pyautogui.locateCenterOnScreen(b_d.st_turgenev[2], confidence=0.85)
-    if id_st:
+    turgenev_st = pyautogui.locateCenterOnScreen(b_d.st_turgenev[2], confidence=0.85)
+    my_print_to_file(f'turgenev_st = {turgenev_st}')
+    if turgenev_st:
         pos_or1 = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.85)
         x1, y1 = pos_or1
         x1, y1 = x1 + 205, y1 + 205
@@ -71,23 +72,30 @@ def tunnel_events(st0, st2):
     :param st0: название станции из списка
     :param st2: имя файла ID станции
     """
-    # print('def "tunnel_events"')
+    my_print_to_file('touring.tunnel_events')
     global number_of_gifts, number_of_kiki, number_of_krysa, number_of_raptor, number_of_arachne
+
     sleep(1)
     id_st = pyautogui.locateCenterOnScreen(st2, confidence=0.85)
+    my_print_to_file(f'id_st = {id_st}')
     info = pyautogui.locateCenterOnScreen('img/info.png', confidence=0.8)
+    my_print_to_file(f'info = {info}')
     while not id_st:
-        # info = pyautogui.locateCenterOnScreen('img/info.png', confidence=0.8)
         x, y = info
         y += 350
         pyautogui.moveTo(x, y)
         post = pyautogui.locateCenterOnScreen('img/tonelli/post.png', confidence=0.8)
         skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=0.79)
+        my_print_to_file(f'skip_battle = {skip_battle}')
         if skip_battle:
             raptor = pyautogui.locateCenterOnScreen('img/tonelli/raptor.png', confidence=0.85)
+            my_print_to_file(f'raptor = {raptor}')
             arachne = pyautogui.locateCenterOnScreen('img/tonelli/arachne.png', confidence=0.85)
+            my_print_to_file(f'arachne = {arachne}')
             krysa = pyautogui.locateCenterOnScreen('img/tonelli/krysa.png', confidence=0.85)
+            my_print_to_file(f'krysa = {krysa}')
             kiki = pyautogui.locateCenterOnScreen('img/tonelli/kikimora.png', confidence=0.85)
+            my_print_to_file(f'kiki = {kiki}')
             if krysa:
                 number_of_krysa += 1
                 print(f'{number_of_krysa} Detekt krysa')
@@ -101,31 +109,36 @@ def tunnel_events(st0, st2):
                 number_of_raptor += 1
                 print(f'{number_of_raptor} Detekt raptor')
             enemy_battle(1)
-            print("после enemy_battle")
         if post:
+            my_print_to_file(f'post = {post}')
             pyautogui.moveTo(post, duration=0.2)
             attack = pyautogui.locateCenterOnScreen('img/tonelli/attack.png', confidence=0.85)
             entry = pyautogui.locateCenterOnScreen('img/tonelli/entry_station.png', confidence=0.8)
             if entry:
+                my_print_to_file(f'entry = {entry}')
                 move_to_click(entry, 0.3)
                 sleep(1)
             elif attack:
+                my_print_to_file(f'attack = {attack}')
                 move_to_click(attack, 0.3)
                 sleep(1)
-        # sleep(0.1)
         id_st = pyautogui.locateCenterOnScreen(st2, confidence=0.85)
+        my_print_to_file(f'id_st = {id_st}')
     print(st0)  # название станции
+    my_print_to_file(st0)
     pyautogui.moveTo(id_st, duration=1, tween=pyautogui.easeInOutQuad)
     # вызов функции "event_gifts()" и подсчет количества найденных
     pos_gift = event_gifts()
+    my_print_to_file(f'pos_gift = {pos_gift}')
     if pos_gift:
         number_of_gifts += 1
-    # print(st0, ' подарков ', number_of_gifts)
+    if number_of_gifts:
+        print(st0, ' подарков ', number_of_gifts)
 
 
 # принимает имя файла поиска, выдаёт Point(x, y), параметр confidence
 def poisk(chto_ishchem, param_confidence=0.99):
-    # print('def "poisk"')
+    my_print_to_file('touring.poisk')
     sleep(1)
     pos_search = pyautogui.locateCenterOnScreen(chto_ishchem, confidence=param_confidence)
     while pos_search is None:
@@ -139,20 +152,25 @@ def poisk(chto_ishchem, param_confidence=0.99):
 # Получает в переменной станцию из списка, при необходимости смещает карту. Передав в poisk название следующей станции,
 # получает из него Point(x, y) поиска и параметр confidence,
 def traffic_on_the_map(stan):
-    # print('def "traffic_on_the_map"')
+    my_print_to_file('touring.traffic_on_the_map')
     to_map()
     sleep(1 * 2)
     ev_map = stan[3]
+    my_print_to_file(f'ev_map = {ev_map}')
     pos_stan = pyautogui.locateCenterOnScreen(stan[1], confidence=0.84)
+    my_print_to_file(f'pos_stan = {pos_stan}, stan[1] = {stan[1]}')
     if ev_map == 'стрелка север' and pos_stan is None:
         pos_click = pyautogui.locateCenterOnScreen('img/tonelli/mark_sever.png', confidence=0.85)
+        my_print_to_file(f'pos_click = {pos_click}, нажал на стрелку "север"')
         move_to_click(pos_click, 0.3)
         sleep(1)
     elif ev_map == 'стрелка юг' and pos_stan is None:
         pos_click = pyautogui.locateCenterOnScreen('img/tonelli/mark_yug.png', confidence=0.85)
+        my_print_to_file(f'pos_click = {pos_click}, нажал на стрелку "юг"')
         move_to_click(pos_click, 0.3)
         sleep(1)
     point_poisk, confidence_poisk = poisk(stan[1])
+    my_print_to_file(f'point_poisk = {point_poisk}, confidence_poisk = {confidence_poisk}')
     move_to_click(point_poisk, 0.3)
     tunnel_events(stan[0], stan[2])
 
@@ -163,6 +181,7 @@ def travel(track: list):
     Принимает список содержащий маршрут
     :param track: list
     """
+    my_print_to_file('touring.travel')
     for it in range(len(track)):
         k = it % len(track)
         # print(k, track[k])
@@ -174,6 +193,7 @@ def test():
     Тест передвижения между станциями
     :return: количество встреченных крыс
     """
+    my_print_to_file('touring.test')
     global number_of_krysa
     push_close_all_()
     travel(b_d.test_running)
@@ -184,6 +204,7 @@ def test():
 def tasks_na_kievskoy():
     """Движение от Кузнецкого моста на Киевскую - выполнение заданий нач. станции - движение до Кузнецкого моста -
     выполнение заданий нач. станции пока есть задания удовлетворяющие поиск"""
+    my_print_to_file('touring.tasks_na_kievskoy')
     push_close_all_()
     most_kiev()
     vybor_zadaniya_na_puli()
@@ -197,6 +218,7 @@ def tasks_na_kievskoy():
 def most_riga():
     # движение от
     """Маршрут Кузнецкий мост - Киевская"""
+    my_print_to_file('touring.most_riga')
     start_time = time()
     push_close_all_()
     travel(b_d.most_riga)
@@ -209,6 +231,7 @@ def most_riga():
 
 def riga_most():
     """Маршрут Рижская - Кузнецкий мост"""
+    my_print_to_file('touring.riga_most')
     start_time = time()
     push_close_all_()
     travel(b_d.riga_most)
@@ -221,6 +244,7 @@ def riga_most():
 
 def frunze_most():
     """Маршрут Фрунзенская - Кузнецкий мост"""
+    my_print_to_file('touring.frunze_most')
     start_time = time()
     push_close_all_()
     travel(b_d.frunze_most)
@@ -232,6 +256,7 @@ def frunze_most():
 
 def most_frunze():
     """Маршрут Кузнецкий мост - Фрунзенская"""
+    my_print_to_file('touring.most_frunze')
     start_time = time()
     push_close_all_()
     travel(b_d.most_frunze)
@@ -239,11 +264,14 @@ def most_frunze():
     minutes = int(finish_time // 60)  # количество минут
     seconds = round((finish_time % minutes), 2)
     print('Потрачено время', minutes, 'минут', seconds, 'сек.')
+
+
 # движение от
 
 
 def most_kiev():
     """Маршрут Кузнецкий мост - Киевская"""
+    my_print_to_file('touring.most_kiev')
     start_time = time()
     push_close_all_()
     travel(b_d.most_kiev)
@@ -256,6 +284,7 @@ def most_kiev():
 
 def kiev_most():
     """Маршрут Киевская - Кузнецккий мост """
+    my_print_to_file('touring.kiev_most')
     start_time = time()
     push_close_all_()
     travel(b_d.kiev_most)
@@ -268,21 +297,15 @@ def kiev_most():
 
 def frunze_kiev():
     """Маршрут Фрунзенская - Киевская"""
-    # start_time = time()
-
+    my_print_to_file('touring.frunze_kiev')
     push_close_all_()
     travel(b_d.frunze_kiev)
     print("пришел на Киевскую")
 
-    # finish_time = float(time() - start_time)  # общее количество секунд
-    # minutes = int(finish_time // 60)  # количество минут
-    # seconds = round((finish_time % minutes), 2)
-    # print('Потрачено время', minutes, 'минут', seconds, 'сек.')
-# движение от Кузнецкого моста на Киевскую
-
 
 def kiev_frunze():
     """Маршрут Киевская - Фрунзенская"""
+    my_print_to_file('touring.kiev_frunze')
     start_time = time()
     push_close_all_()
     travel(b_d.kiev_frunze)
@@ -295,6 +318,7 @@ def kiev_frunze():
 
 def frunze_riga():
     """Маршрут Фрунзенская"""
+    my_print_to_file('touring.frunze_riga')
     start_time = time()
     push_close_all_()
     travel(b_d.frunze_riga)
@@ -307,6 +331,7 @@ def frunze_riga():
 
 def riga_frunze():
     """Маршрут  Фрунзенская"""
+    my_print_to_file('touring.riga_frunze')
     start_time = time()
     push_close_all_()
     travel(b_d.riga_frunze)
@@ -319,9 +344,10 @@ def riga_frunze():
 
 def za_kikimorami():
     """При смене станции прописки список содержащий маршрут надо переписывать вручную."""
+    my_print_to_file('touring.za_kikimorami')
     start_time = time()
     push_close_all_()
-    travel(b_d.frunze_kikimory)
+    travel(b_d.most_kikimory)
     print('на сегодня кикиморы выбиты')
     finish_time = float(time() - start_time)  # общее количество секунд
     minutes = int(finish_time // 60)  # количество минут
@@ -331,6 +357,7 @@ def za_kikimorami():
 
 def pauk_yascher():
     """При смене станции прописки список содержащий маршрут надо переписывать вручную."""
+    my_print_to_file('touring.pauk_yascher')
     start_time = time()
     push_close_all_()
     travel(b_d.pauk_yascher)
@@ -343,6 +370,7 @@ def pauk_yascher():
 
 def sbor_podarkov():
     """Обход всех станций. При смене станции прописки список содержащий маршрут надо переписывать вручную."""
+    my_print_to_file('touring.sbor_podarkov')
     push_close_all_()
     # travel(b_d.bypass)
     for it in range(len(b_d.bypass)):
@@ -350,3 +378,5 @@ def sbor_podarkov():
         # print(k, b_d.bypass[k])
         traffic_on_the_map(b_d.bypass[k])
     print("все подарки под ёлками собраны")
+
+# 353

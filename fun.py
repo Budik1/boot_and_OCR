@@ -2,19 +2,36 @@ import pyautogui
 from time import sleep, time
 import datetime
 
-# 03.03.2024
-# sum_vip = 0
-# status_bonus = "0"
 par_conf = 0.79
-# energy_availability = 1
-# number_tasks = 3
 oblast = (51, 707, 92, 111)
+log = 1
 
 
+def my_print_to_file(text):
+    if log == 1:
+        date_time, date = time_now()
+        file_name = date + ".txt"
+        file = open(file_name, 'a+', encoding='utf-8')
+        print(date_time, text, file=file)
+        file.close()  # закрыть файл после работы с ним.
 
+
+def time_now():
+    now = datetime.datetime.now()
+    # '%Y-%m-%d_%H:%M:%S' '%Y-%m-%d %H°%M\'\'%S\''
+    date_time_now = (now.strftime('%Y-%m-%d %H:%M:%S'))
+    date = (now.strftime('%Y-%m-%d'))
+    return date_time_now, date
+
+
+def name_f():
+    now = datetime.datetime.now()
+    date_time_now_f = (now.strftime('%Y-%m-%d %H-%M-%S'))
+    return date_time_now_f
 
 
 def close_popup_window():
+    my_print_to_file('fun.close_popup_window')
     # print('def "fun.close_popup_window"')
     knob = pyautogui.locateCenterOnScreen('img/knob.png', confidence=0.9)
     cancel = pyautogui.locateCenterOnScreen('img/cancel.png', confidence=0.9)
@@ -22,22 +39,6 @@ def close_popup_window():
         move_to_click(knob, 1)
     if cancel:
         move_to_click(cancel, 1)
-
-
-def print_to_file(text: str) -> None:
-    date_time, date = time_now()
-    file_name = date_time + ".txt"
-    file = open(file_name, 'a+', encoding='utf-8')
-    print(date_time, text, file=file)
-    file.close()  # закрыть файл после работы с ним.
-
-
-def time_now():
-    """Получение текущего времени и даты. Отдаёт формирование имени файла"""
-    now = datetime.datetime.now()
-    date_time_now = (now.strftime('%Y-%m-%d %H°%M\'\'%S\''))  # '%Y-%m-%d %H:%M:%S'
-    date = (now.date())
-    return date_time_now, date
 
 
 def test_time(funk):
@@ -49,11 +50,13 @@ def test_time(funk):
         seconds = round((finish_time % minutes), 2)
         print(f'Потрачено время {minutes} минут {seconds} сек.')
         return res
+
     return wrapper()
 
 
 def station_gifts():
     """Обмен ежедневными подарками"""
+    my_print_to_file('fun.station_gifts')
     pass
     gifts = pyautogui.locateCenterOnScreen('img/b_gifts.png', confidence=0.91)
     pyautogui.moveTo(gifts, duration=1, tween=pyautogui.easeInOutQuad)
@@ -77,30 +80,39 @@ def station_gifts():
 
 
 def push_close():
-    # print('def "fun.push_close"')
+    my_print_to_file('fun.push_close')
+    kv_close = pyautogui.locateCenterOnScreen('img/kv/kv_close.png', confidence=par_conf)
     close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
-    move_to_click(close,0.1)
+    if kv_close:
+        move_to_click(kv_close, 0.1)
+    else:
+        move_to_click(close, 0.1)
 
 
 def exit_to_zero_screen():
+    my_print_to_file('fun.exit_to_zero_screen')
     push_close_all_()
     b_exit = pyautogui.locateCenterOnScreen('img/b_exit.png', confidence=0.9)
     print(b_exit, 'b_exit')
     if b_exit:
         move_to_click(b_exit, 0.1)
 
+
 def push_close_all_():
-    # print('def "fun.push_close_all_"')
+    my_print_to_file('fun.push_close_all_')
     close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
-    while close:
+    kv_close = pyautogui.locateCenterOnScreen('img/kv/kv_close.png', confidence=par_conf)
+    while close or kv_close:
         close_popup_window()
         push_close()
         sleep(1)
+        kv_close = pyautogui.locateCenterOnScreen('img/kv/kv_close.png', confidence=par_conf)
         close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
         # print("цикл close")
 
 
 def bonus():
+    my_print_to_file('fun.bonus')
     # кнопка добавить
     add_bonus = pyautogui.locateCenterOnScreen('img/add.png', confidence=0.8)
     pyautogui.moveTo(add_bonus, duration=1, tween=pyautogui.easeInOutQuad)
@@ -120,6 +132,7 @@ def bonus():
 
 
 def start_p_m():
+    my_print_to_file('fun.start_p_m')
     def spec_proposal():
         sz = 0
         proposal = pyautogui.locateCenterOnScreen('img/spec_proposal.png', confidence=0.96)
@@ -209,6 +222,7 @@ def move_friends_list_left():
     Смещает список друзей в лево на одну позицию
     :return: 1
     """
+    my_print_to_file('fun.move_friends_list_left')
     sleep(1)
     ar_right = pyautogui.locateCenterOnScreen('img/b_arrow_right.png', confidence=0.8)
     pyautogui.moveTo(ar_right, duration=1, tween=pyautogui.easeInOutQuad)
@@ -222,6 +236,7 @@ def move_friends_list_right():
     Смещает список друзей в право на одну позицию
     :return: 1
     """
+    my_print_to_file('fun.move_friends_list_right')
     sleep(0.2)
     ar_right = pyautogui.locateCenterOnScreen('img/b_arrow_left.png', confidence=0.8)
     pyautogui.moveTo(ar_right, duration=1, tween=pyautogui.easeInOutQuad)
@@ -232,6 +247,7 @@ def move_friends_list_right():
 
 def move_friends_list_to_top():
     """Смещает список друзей в лево в начало"""
+    my_print_to_file('fun.move_friends_list_to_top')
     begin = pyautogui.locateCenterOnScreen('img/b_begin.png', confidence=0.96)
     if begin:  # если увидел
         pyautogui.moveTo(begin, duration=1, tween=pyautogui.easeInOutQuad)
@@ -250,6 +266,7 @@ def move_to_click(pos_click: tuple, z_p_k: float):
     :param z_p_k: задержка перед кликом(float)
     :return: None
     """
+    my_print_to_file('fun.move_to_click')
     # print('move_to_click', pos_click)
     sleep(0.3)
     pyautogui.moveTo(pos_click, duration=1, tween=pyautogui.easeInOutQuad)
@@ -260,6 +277,7 @@ def move_to_click(pos_click: tuple, z_p_k: float):
 
 
 def foto(path_name, _region):
+    my_print_to_file('fun.foto')
     im1 = pyautogui.screenshot(region=_region)
     im1.save(path_name)
 
@@ -269,7 +287,7 @@ def find_link_hall_of_glory():
     Закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
     :return: Point 'Зал славы'
     """
-    # print('def "fun.find_link_hall_of_glory"')
+    my_print_to_file('fun.find_link_hall_of_glory')
     close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
     while close:
         push_close_all_()
@@ -286,6 +304,7 @@ def find_link_hall_of_glory():
 
 
 def find_link_station_master():
+    my_print_to_file('fun.find_link_station_master')
     station_master = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=0.9)
     pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
     if station_master or pos_klan:
@@ -318,6 +337,7 @@ def find_link_station_master():
 def get_areas_task_small(width=77, height=42):
     """Получение значений "region=" для поиска значений в малых регионах пуль и опыта
         :return: кортеж из шести списков значений"""
+    my_print_to_file('fun.get_areas_task_small')
     pul, xp_ = 444, 518
     pos_1, pos_2, pos_3 = 217, 320, 423
 
@@ -345,6 +365,7 @@ def get_areas_task_small(width=77, height=42):
 
 
 def get_areas_task_big_1(width=77, height=42):
+    my_print_to_file('fun.get_areas_task_big_1')
     # width, height = 77, 42
     pul = 444
     pos_1 = 217
@@ -361,6 +382,7 @@ def get_areas_task_big_1(width=77, height=42):
 
 
 def get_areas_task_big_2(width=77, height=42):
+    my_print_to_file('fun.get_areas_task_big_2')
     # width, height = 77, 42
     pul = 444
     pos_2 = 320
@@ -368,8 +390,8 @@ def get_areas_task_big_2(width=77, height=42):
 
     x_or, y_or = find_link_station_master()
 
-    x_an_pul = x_or + pul                           # начальная точка
-    width += big                                    #
+    x_an_pul = x_or + pul  # начальная точка
+    width += big  #
     # регион поиска 2 (позиция анализа)
     y_2an = int(y_or + pos_2)
     region_big_2 = [x_an_pul, y_2an, width, height]
@@ -379,6 +401,7 @@ def get_areas_task_big_2(width=77, height=42):
 def get_areas_task_big(width=77, height=42):
     """Получение значений "region=" для поиска заданий в больших регионах
         :return: кортеж из трех списков значений"""
+    my_print_to_file('fun.get_areas_task_big')
     pul = 444
     pos_1, pos_2, pos_3 = 217, 320, 423
     big = 77  # 100
@@ -404,6 +427,7 @@ def get_areas_task_big(width=77, height=42):
 
 
 def find_link_klan():
+    my_print_to_file('fun.find_link_klan')
     pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.85)
     while not pos_klan:
         sleep(0.1)
@@ -414,7 +438,7 @@ def find_link_klan():
 
 def vizit_to_station_master():
     """заходит в палатку к нач станции"""
-    # print('vizit_to_station_master')
+    my_print_to_file('fun.vizit_to_station_master')
     check = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=0.9)
     if check:
         pyautogui.moveTo(check, duration=1, tween=pyautogui.easeInOutQuad)
@@ -438,4 +462,5 @@ def vizit_to_station_master():
 
 
 def find_lvl():
+    my_print_to_file('fun.find_lvl')
     pass

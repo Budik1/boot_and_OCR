@@ -1,7 +1,7 @@
 import baza_dannyx as b_d
 import pyautogui
 from time import sleep
-from fun import move_to_click, foto, push_close_all_, vizit_to_station_master, get_areas_task_big
+from fun import move_to_click, push_close_all_, vizit_to_station_master, get_areas_task_big, my_print_to_file
 
 conf_ = 0.97
 par_conf = 0.799
@@ -17,42 +17,40 @@ def enemy_battle(prolong=2):
     Событие сражения с противником
     :param prolong: регулирует длительность сражения
     """
-    # print('def "enemy_battle"')
+    my_print_to_file('station_master.enemy_battle')
+    my_print_to_file(' поиск battle_end, skip_battle, dog')
     battle_end = pyautogui.locateCenterOnScreen('img/b_battle_end.png', confidence=par_conf)
     skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
     dog = pyautogui.locateCenterOnScreen('img/dog.png', confidence=par_conf)
     it = 0
     while not battle_end:
         if dog:  # нажать "на собаку"
-            # print(dog, 'dog')
+            my_print_to_file(f'dog = {dog}')
+            my_print_to_file("нажал на собаку")
             move_to_click(dog, 0.1)
         if skip_battle and it >= 2:  # нажать "пропустить бой"
-            # print(skip_battle, 'skip_battle')
+            my_print_to_file(f'skip_battle = {skip_battle}')
             move_to_click(skip_battle, 0.5)
         it += 1
         sleep(1 * prolong)  # для задержки нажатия "пропустить бой"
-        # print(1 * prolong, prolong)
+        my_print_to_file('ожидание battle_end, close, dog, skip_battle')
         battle_end = pyautogui.locateCenterOnScreen('img/b_battle_end.png', confidence=par_conf)
         close = pyautogui.locateCenterOnScreen('img/close.png', confidence=par_conf)
         dog = pyautogui.locateCenterOnScreen('img/dog.png', confidence=par_conf)
         skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
-        # battle_end_gp = pyautogui.locateCenterOnScreen('img/b_battle_end_gp.png', confidence=par_conf)
-        # close_gp = pyautogui.locateCenterOnScreen('img/close_gp.png', confidence=par_conf)
         if battle_end and close:  # нажать закрыть в конце боя
-            # print('battle_end, close')
+            my_print_to_file("нажать закрыть в конце боя")
             push_close_all_()
             sleep(0.)
-        # if battle_end_gp and close_gp:  # нажать закрыть в конце боя
-        #     print('battle_end_gp, close_gp')
-        #     push_close_all_()
-        #     sleep(0.)
-    skip_battle1 = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
-    while skip_battle1:
-        # print(skip_battle1, 'skip_battle1')
-        sleep(0.2)
-        skip_battle1 = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
-        # print(skip_battle1, 'skip_battle1')
 
+    skip_battle1_end_ver = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
+    my_print_to_file(f'skip_battle1_end_ver = {skip_battle1_end_ver}')
+    while skip_battle1_end_ver:
+        sleep(0.2)
+        skip_battle1_end_ver = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
+        my_print_to_file(f'skip_battle1_end_ver = {skip_battle1_end_ver}')
+
+    my_print_to_file("выход из 'enemy_battle")
 
 def press_en(task_number, pos):
     global energy_availability
