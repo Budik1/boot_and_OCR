@@ -1,19 +1,14 @@
 import pyautogui
-from fun import move_to_click, my_print_to_file, foto, time_now, name_f
+from fun import move_to_click, my_print_to_file, foto, name_f
 from time import sleep
-
-from station_master import enemy_battle
 
 
 def foto_danger():
     kv_close = pyautogui.locateCenterOnScreen('img/kv/kv_close.png', confidence=0.9)
-    # pyautogui.moveTo(kv_close, duration=2)
-
     x, y = kv_close
     x -= 585
     y -= 435
     x_s, y_s = x, y
-
     x += 862
     y += 485
     x_r, y_r = x, y
@@ -32,11 +27,9 @@ def battle(q_call):
     while not kv_skip_battle:
         sleep(1)
         kv_skip_battle = pyautogui.locateCenterOnScreen('img/kv/kv_skip_battle.png', confidence=0.9)
-
     it_kv = 0
     while not kv_close:
         it_kv += 1
-
         if not danger and kv_skip_battle and it_kv >= 5:
             move_to_click(kv_skip_battle, 0.5)
             print(' пропуск боя')
@@ -63,7 +56,6 @@ def kv():
         print('ждем начало кв')
     it_w_a = 0
     while True:
-
         if kv_wait_attack:
             it_w_a += 1
             if it_w_a == 1:
@@ -75,7 +67,6 @@ def kv():
             q_attack += 1
             move_to_click(kv_attak, 0)
             battle(q_attack)
-
         kv_wait_attack = pyautogui.locateCenterOnScreen('img/kv/kv_wait_attack.png', confidence=0.9)
         kv_attak = pyautogui.locateCenterOnScreen('img/kv/kv_attak.png', confidence=0.9)
 

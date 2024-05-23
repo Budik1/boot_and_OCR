@@ -25,6 +25,9 @@ st_tretya = ['ст. Третьяковская', 'img/tonelli/k_Tretyakov.png', 
 st_turgenev = ['ст. Тургеневская', 'img/tonelli/k_Turgenev.png', 'img/tonelli/s_Turgenev.png', 0, [0]]
 st_chekhov = ['ст. Чеховская', 'img/tonelli/k_Chekhov.png', 'img/tonelli/s_Chekhov.png', 'стрелка север', [0]]
 st_communist = ['ст. Коммунистическая', 'img/tonelli/k_Communist.png', 'img/tonelli/s_Communist.png', 0, []]
+st_univer = ['ст. Университет', 'img/tonelli/k_Univer.png', 'img/tonelli/s_Univer.png', 0, []]
+st_vernadskogo = ['ст. Пр-кт Вернадского', 'img/tonelli/k_Pr-kt_Vernadskogo.png', 'img/tonelli/s_Pr-kt_Vernadskogo.png',
+                  0, []]
 
 st_kiev = ['ст. Киевская', 'img/tonelli/k_Kiev.png', 'img/tonelli/s_Kiev.png', 0,
            ['img/tasks/t2.png', 'img/tasks/t3.png', 'img/tasks/t3.png', 'img/tasks/t4.png', 'img/tasks/t4.png',
@@ -42,7 +45,7 @@ list_of_stations = [st_alexs, st_biblioteka, st_borov, st_bulvar, st_vdnx, st_ki
                     st_most, st_novok, st_pavelec,
                     st_pavelec_g, st_park_g, st_park_kr, st_polyanka, st_prospekt, st_pushkin, st_riga, st_suxarev,
                     st_teatr, st_tver, st_tretya,
-                    st_turgenev, st_chekhov, st_frunze, st_communist]
+                    st_turgenev, st_chekhov, st_frunze, st_communist, st_univer, st_vernadskogo]
 
 # кратчайший путь от Кузнецкого моста на Рижскую и обратно
 most_riga = [st_pushkin, st_tver, st_teatr, st_novok, st_tretya, st_kitay, st_turgenev, st_suxarev,
@@ -68,7 +71,7 @@ bypass = [st_pushkin, st_tver, st_teatr, st_novok, st_pavelec, st_pavelec_g, st_
           st_alexs, st_riga, st_prospekt, st_suxarev, st_turgenev, st_kitay, st_tretya, st_novok, st_teatr, st_tver,
           st_chekhov,
           st_bulvar, st_chekhov, st_borov, st_polyanka, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze,
-          st_communist,
+          st_communist, st_univer, st_vernadskogo, st_univer,
           st_frunze, st_park_kr, st_park_g, st_kiev, st_kiev_a,
           st_kiev, st_park_g, st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_pushkin, st_most]
 
@@ -91,7 +94,6 @@ frunze_kikimory = [st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, s
                    st_turgenev, st_kitay, st_tretya, st_novok, st_teatr, st_tver, st_chekhov, st_borov, st_biblioteka,
                    st_kropot, st_park_kr, st_frunze]
 # тест передвижения между туннелями
-test_running = [st_park_kr, st_kropot, st_park_kr, st_frunze]
 
 frunze_kiev = [st_park_kr, st_park_g, st_kiev]
 kiev_frunze = [st_park_g, st_park_kr, st_frunze]
@@ -105,14 +107,17 @@ most_frunze = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot, st_pa
 #                 st_park_kr, st_kropot, st_park_kr, st_park_g, st_kiev, st_park_g, st_kiev, st_park_g, st_kiev,
 #                 st_park_g, st_park_kr, st_frunze]
 
+test_running = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze, st_communist,
+                st_univer, st_vernadskogo, st_univer, st_communist, st_frunze, st_park_kr, st_kropot, st_biblioteka,
+                st_borov, st_chekhov, st_pushkin, st_most]
 
 pauk_yascher = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot,
 
-                st_park_kr, st_frunze, st_communist, st_frunze,
-                st_park_kr, st_frunze, st_communist, st_frunze,
-                st_park_kr, st_frunze, st_communist, st_frunze,
-                st_park_kr, st_frunze, st_communist, st_frunze,
-                st_park_kr, st_frunze, st_communist, st_frunze, st_park_kr,
+                st_park_kr, st_frunze, st_communist, st_univer, st_vernadskogo, st_univer, st_communist, st_frunze,
+                st_park_kr, st_frunze, st_communist, st_univer, st_vernadskogo, st_univer, st_communist,st_frunze,
+                st_park_kr, st_frunze, st_communist, st_univer, st_vernadskogo, st_univer, st_communist,st_frunze,
+                st_park_kr, st_frunze, st_communist, st_univer, st_vernadskogo, st_univer, st_communist,st_frunze,
+                st_park_kr, st_frunze, st_communist, st_univer, st_vernadskogo, st_univer, st_communist,st_frunze, st_park_kr,
 
                 st_park_g, st_kiev, st_park_g, st_kiev, st_park_g, st_kiev,
                 st_park_g, st_kiev, st_park_g, st_kiev, st_park_g,
