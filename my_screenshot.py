@@ -38,14 +38,14 @@ def get_screenshot_task():
 
 
 get_screenshot_task()
-list_1_pul = recognized('img/test/1_pul.png')
-list_1_xp = recognized("img/test/1_xp.png")
-sleep(2)
-list_2_pul = recognized('img/test/2_pul.png')
-list_2_xp = recognized("img/test/2_xp.png")
-sleep(2)
-list_3_pul = recognized('img/test/3_pul.png')
-list_3_xp = recognized("img/test/3_xp.png")
-#
-visualization_result(list_1_pul, list_1_xp, list_2_pul, list_2_xp, list_3_pul, list_3_xp)
+# list_1_pul = recognized('img/test/1_pul.png')
+# list_1_xp = recognized("img/test/1_xp.png")
+# sleep(2)
+# list_2_pul = recognized('img/test/2_pul.png')
+# list_2_xp = recognized("img/test/2_xp.png")
+# sleep(2)
+# list_3_pul = recognized('img/test/3_pul.png')
+# list_3_xp = recognized("img/test/3_xp.png")
+# #
+# visualization_result(list_1_pul, list_1_xp, list_2_pul, list_2_xp, list_3_pul, list_3_xp)
 #

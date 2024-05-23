@@ -5,22 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20ccf982-a645-4c5c-8257-7785837820b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-05-20.txt" beforeDir="false" afterPath="$PROJECT_DIR$/2024-05-20.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baza_dannyx.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza_dannyx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-05-19 22-46-16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tasks/t2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/t3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/t4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/t5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/t7.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/1_pul.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/1_pul.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/1_xp.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/1_xp.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/2_pul.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/2_pul.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/2_xp.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/2_xp.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/3_pul.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/3_pul.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/test/3_xp.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test/3_xp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/test/arena_object.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/test/big_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/test/big_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_for.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_screenshot.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_screenshot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,32 +54,35 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.event_arena.executor": "Run",
-    "Python.event_frend (1).executor": "Run",
-    "Python.event_frend.executor": "Run",
-    "Python.frend_kill.executor": "Run",
-    "Python.gifts.executor": "Run",
-    "Python.kv_and_raid (1).executor": "Run",
-    "Python.kv_and_raid.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.my_screenshot.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.test_for.executor": "Run",
-    "Python.создание скриншотов.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Python/experimet",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PythonContentEntriesConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.event_arena.executor&quot;: &quot;Run&quot;,
+    &quot;Python.event_frend (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.event_frend.executor&quot;: &quot;Run&quot;,
+    &quot;Python.frend_kill.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gifts.executor&quot;: &quot;Run&quot;,
+    &quot;Python.kv_and_raid (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.kv_and_raid.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.my_screenshot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_for.executor&quot;: &quot;Run&quot;,
+    &quot;Python.создание скриншотов.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Python/experimet&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PythonContentEntriesConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\bot in br\testOCR" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\bot in br\testOCR\img\tasks" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -100,28 +105,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/создание скриншотов.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="event_arena" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testOCR" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/event_arena.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -196,13 +179,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="my_screenshot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testOCR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_screenshot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.kv_and_raid" />
+        <item itemvalue="Python.my_screenshot" />
         <item itemvalue="Python.создание скриншотов" />
         <item itemvalue="Python.event_frend" />
-        <item itemvalue="Python.event_arena" />
       </list>
     </recent_temporary>
   </component>
@@ -254,6 +259,11 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/event_arena.py</url>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/baza_dannyx.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

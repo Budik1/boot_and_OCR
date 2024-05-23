@@ -73,7 +73,7 @@ ttk.Button(text=" обход VIP ", width=13, command=tent_inspection).place(x=0
 ttk.Label(textvariable=status_vip).place(x=130, y=96)
 # шаг 31
 ttk.Button(text=" на Киевскую ", width=11, command=touring.frunze_kiev).place(x=120, y=169)
-ttk.Button(text=" домой ", width=11, command=touring.kiev_frunze).place(x=120, y=200)
+ttk.Button(text=" домой ", width=11, command=touring.kiev_most).place(x=120, y=200)
 ttk.Button(text="кикиморы", width=11, command=touring.za_kikimorami).place(x=153, y=31)
 ttk.Label(textvariable=status_kiki, background="#FFCDD2", foreground="#B71C1C", padding=4).place(x=263, y=31)
 ttk.Button(text="Паук + Ящер", width=11, command=touring.pauk_yascher).place(x=153, y=0)

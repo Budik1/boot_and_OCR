@@ -2,22 +2,13 @@
 
 st_alexs = ['ст. Алексеевская', 'img/tonelli/k_Alexs.png', 'img/tonelli/s_Alexs.png', 0, []]
 st_biblioteka = ['ст. Библиотека им. Ленина', 'img/tonelli/k_Biblioteka.png', 'img/tonelli/s_Biblioteka.png', 0, []]
-
 st_borov = ['ст. Боровицкая', 'img/tonelli/k_Borov.png', 'img/tonelli/s_Borov.png', 'стрелка юг', []]
-
 st_bulvar = ['ст. Цветной бульвар', 'img/tonelli/k_Cvetnoy.png', 'img/tonelli/s_Cvetnoy.png', 0, []]
 st_vdnx = ['ст. ВДНХ', 'img/tonelli/k_VDNX.png', 'img/tonelli/s_VDNX.png', 0, []]
-
-st_kiev = ['ст. Киевская', 'img/tonelli/k_Kiev.png', 'img/tonelli/s_Kiev.png', 0,
-           ['img/45xp.png', 'img/68xp.png', 'img/68xp.png', 'img/90xp.png', 'img/90xp.png', 'img/113xp.png']]
 
 st_kiev_a = ['ст. Киевская A', 'img/tonelli/k_Kiev_a.png', 'img/tonelli/s_Kiev_a.png', 0, [0]]
 st_kitay = ['ст. Китай-город', 'img/tonelli/k_Kitay.png', 'img/tonelli/s_Kitay.png', 'стрелка север', []]
 st_kropot = ['ст. Кропоткинская', 'img/tonelli/k_Kropotkin.png', 'img/tonelli/s_Kropotkin.png', 0, [0]]
-
-st_most = ['ст. Кузнецкий мост', 'img/tonelli/k_Kuzneckiy.png', 'img/tonelli/s_Kuzneckiy.png', 0,
-           ['img/t2.png', 'img/t3.png', 'img/t3.png', 'img/t4.png', 'img/t4.png', 'img/t5.png']]
-
 st_novok = ['ст. Новокузнецкая', 'img/tonelli/k_Novokuznec.png', 'img/tonelli/s_Novokuznec.png', 0, []]
 st_pavelec = ['ст. Павелецкая', 'img/tonelli/k_Pavelec.png', 'img/tonelli/s_Pavelec.png', 0, []]
 st_pavelec_g = ['ст. Павелецкая ганза', 'img/tonelli/k_Pavelec_g.png', 'img/tonelli/s_Pavelec_g.png', 0, []]
@@ -33,10 +24,19 @@ st_tver = ['ст. Тверская', 'img/tonelli/k_Tver.png', 'img/tonelli/s_Tv
 st_tretya = ['ст. Третьяковская', 'img/tonelli/k_Tretyakov.png', 'img/tonelli/s_Tretyakov.png', 'стрелка юг', [0]]
 st_turgenev = ['ст. Тургеневская', 'img/tonelli/k_Turgenev.png', 'img/tonelli/s_Turgenev.png', 0, [0]]
 st_chekhov = ['ст. Чеховская', 'img/tonelli/k_Chekhov.png', 'img/tonelli/s_Chekhov.png', 'стрелка север', [0]]
+st_communist = ['ст. Коммунистическая', 'img/tonelli/k_Communist.png', 'img/tonelli/s_Communist.png', 0, []]
+
+st_kiev = ['ст. Киевская', 'img/tonelli/k_Kiev.png', 'img/tonelli/s_Kiev.png', 0,
+           ['img/tasks/t2.png', 'img/tasks/t3.png', 'img/tasks/t3.png', 'img/tasks/t4.png', 'img/tasks/t4.png',
+            'img/tasks/t5.png']]
 
 st_frunze = ['ст. Фрунзенская', 'img/tonelli/k_Frunze.png', 'img/tonelli/s_Frunze.png', 0,
-             ['img/t2.png', 'img/t2.png', 'img/t3.png', 'img/t3.png', 'img/t7.png', 'img/t7.png']]
-st_communist = ['ст. Коммунистическая', 'img/tonelli/k_Communist.png', 'img/tonelli/s_Communist.png', 0, []]
+             ['img/tasks/t2.png', 'img/tasks/t2.png', 'img/tasks/t3.png', 'img/tasks/t3.png', 'img/tasks/t7.png',
+              'img/tasks/t7.png']]
+
+st_most = ['ст. Кузнецкий мост', 'img/tonelli/k_Kuzneckiy.png', 'img/tonelli/s_Kuzneckiy.png', 0,
+           ['img/tasks/t1.png', 'img/tasks/t1.png', 'img/tasks/t2.png', 'img/tasks/t2.png', 'img/tasks/t3.png',
+            'img/tasks/t3.png']]
 
 list_of_stations = [st_alexs, st_biblioteka, st_borov, st_bulvar, st_vdnx, st_kiev, st_kiev_a, st_kitay, st_kropot,
                     st_most, st_novok, st_pavelec,
@@ -99,8 +99,24 @@ kiev_frunze = [st_park_g, st_park_kr, st_frunze]
 frunze_most = [st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_pushkin, st_most]
 most_frunze = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze]
 
-pauk_yascher = [st_communist, st_frunze, st_communist, st_frunze, st_communist, st_frunze, st_park_kr, st_frunze,
-                st_park_kr, st_kropot, st_park_kr,
-                st_kropot,
-                st_park_kr, st_kropot, st_park_kr, st_park_g, st_kiev, st_park_g, st_kiev, st_park_g, st_kiev,
-                st_park_g, st_park_kr, st_frunze]
+# pauk_yascher(с фрунзенской ) = [st_communist, st_frunze, st_communist, st_frunze, st_communist, st_frunze, st_park_kr, st_frunze,
+#                 st_park_kr, st_kropot, st_park_kr,
+#                 st_kropot,
+#                 st_park_kr, st_kropot, st_park_kr, st_park_g, st_kiev, st_park_g, st_kiev, st_park_g, st_kiev,
+#                 st_park_g, st_park_kr, st_frunze]
+
+
+pauk_yascher = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot,
+
+                st_park_kr, st_frunze, st_communist, st_frunze,
+                st_park_kr, st_frunze, st_communist, st_frunze,
+                st_park_kr, st_frunze, st_communist, st_frunze,
+                st_park_kr, st_frunze, st_communist, st_frunze,
+                st_park_kr, st_frunze, st_communist, st_frunze, st_park_kr,
+
+                st_park_g, st_kiev, st_park_g, st_kiev, st_park_g, st_kiev,
+                st_park_g, st_kiev, st_park_g, st_kiev, st_park_g,
+                st_park_kr, st_kropot, st_park_kr, st_kropot,
+                st_park_kr, st_kropot, st_park_kr, st_kropot, st_park_kr, st_kropot,
+                st_biblioteka, st_borov, st_chekhov, st_pushkin, st_most
+                ]
