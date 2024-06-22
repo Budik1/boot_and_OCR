@@ -3,6 +3,7 @@ from tkinter import ttk
 from PIL import ImageTk
 import fun
 import station_master
+import kv_and_raid
 import touring
 import person
 import revision_of_tents
@@ -106,6 +107,7 @@ ttk.Button(root, image=img_e2, command=en_2).place(x=0, y=168)
 #
 img_e3 = ImageTk.PhotoImage(file="img/en3v3.png")
 ttk.Button(root, image=img_e3, command=en_3).place(x=0, y=208)
+ttk.Button(text="КВ", width=5, command=kv_and_raid.kv).place(x=250, y=208)
 
 ttk.Button(text="фото противника", width=16, command=create_img_arena_object).place(x=0, y=340)
 ttk.Button(text="атака противника", width=16, command=kill).place(x=170, y=340)

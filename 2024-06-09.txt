@@ -1,0 +1,1389 @@
+2024-06-09 20:11:58 fun.move_to_click
+2024-06-09 20:12:00 battle
+2024-06-09 20:12:00 None kv_skip_battle
+2024-06-09 20:12:00 None danger
+2024-06-09 20:12:00 None, kv_close
+2024-06-09 20:12:02 Point(x=497, y=114) kv_skip_battle цикл ожидания
+2024-06-09 20:12:29 fun.foto
+2024-06-09 20:12:30 fun.move_to_click
+2024-06-09 20:12:33 fun.move_to_click
+2024-06-09 20:14:00 
+2024-06-09 20:14:00 *******                      *******
+2024-06-09 20:14:00 ******* перезапуск программы *******
+2024-06-09 20:14:00 *******                      *******
+2024-06-09 20:14:00 
+2024-06-09 20:14:04 kv_and_raid.kv
+2024-06-09 20:14:04 нажать 'обновить'
+2024-06-09 20:14:04 fun.move_to_click
+2024-06-09 20:14:09 fun.move_to_click
+2024-06-09 20:17:02 fun.move_to_click
+2024-06-09 20:17:04 battle
+2024-06-09 20:17:04 None kv_skip_battle
+2024-06-09 20:17:04 None danger
+2024-06-09 20:17:04 None, kv_close
+2024-06-09 20:17:05 Point(x=497, y=114) kv_skip_battle цикл ожидания
+2024-06-09 20:17:28 fun.foto
+2024-06-09 20:17:29 fun.move_to_click
+2024-06-09 20:17:32 fun.move_to_click
+2024-06-09 20:22:05 fun.move_to_click
+2024-06-09 20:22:06 battle
+2024-06-09 20:22:07 Point(x=497, y=114) kv_skip_battle
+2024-06-09 20:22:07 Point(x=784, y=149) danger
+2024-06-09 20:22:07 None, kv_close
+2024-06-09 20:22:41 fun.foto
+2024-06-09 20:22:41 fun.move_to_click
+2024-06-09 20:22:44 fun.move_to_click
+2024-06-09 20:27:07 fun.move_to_click
+2024-06-09 20:27:09 battle
+2024-06-09 20:27:10 Point(x=497, y=114) kv_skip_battle
+2024-06-09 20:27:10 Point(x=784, y=149) danger
+2024-06-09 20:27:10 None, kv_close
+2024-06-09 20:27:35 fun.foto
+2024-06-09 20:27:36 fun.move_to_click
+2024-06-09 20:27:39 fun.move_to_click
+2024-06-09 20:32:10 fun.move_to_click
+2024-06-09 20:32:12 battle
+2024-06-09 20:32:13 Point(x=497, y=114) kv_skip_battle
+2024-06-09 20:32:14 Point(x=784, y=149) danger
+2024-06-09 20:32:14 None, kv_close
+2024-06-09 20:32:45 fun.foto
+2024-06-09 20:32:45 fun.move_to_click
+2024-06-09 20:32:48 fun.move_to_click
+2024-06-09 20:37:13 fun.move_to_click
+2024-06-09 20:37:15 battle
+2024-06-09 20:37:16 Point(x=497, y=114) kv_skip_battle
+2024-06-09 20:37:17 Point(x=784, y=149) danger
+2024-06-09 20:37:17 None, kv_close
+2024-06-09 20:37:51 fun.foto
+2024-06-09 20:37:51 fun.move_to_click
+2024-06-09 20:37:54 fun.move_to_click
+2024-06-09 20:42:17 fun.move_to_click
+2024-06-09 20:42:19 battle
+2024-06-09 20:42:20 Point(x=497, y=114) kv_skip_battle
+2024-06-09 20:42:20 Point(x=784, y=149) danger
+2024-06-09 20:42:20 None, kv_close
+2024-06-09 20:42:37 fun.foto
+2024-06-09 20:42:37 fun.move_to_click
+2024-06-09 20:42:40 fun.move_to_click
+2024-06-09 20:47:21 fun.move_to_click
+2024-06-09 20:47:22 battle
+2024-06-09 20:47:23 None kv_skip_battle
+2024-06-09 20:47:23 Point(x=784, y=149) danger
+2024-06-09 20:47:23 None, kv_close
+2024-06-09 20:47:24 Point(x=497, y=114) kv_skip_battle цикл ожидания
+2024-06-09 20:48:07 fun.foto
+2024-06-09 20:48:09 fun.move_to_click
+2024-06-09 20:48:12 fun.move_to_click
+2024-06-09 20:52:23 fun.move_to_click
+2024-06-09 20:52:25 battle
+2024-06-09 20:52:26 Point(x=497, y=114) kv_skip_battle
+2024-06-09 20:52:26 Point(x=784, y=149) danger
+2024-06-09 20:52:26 None, kv_close
+2024-06-09 20:52:45 fun.foto
+2024-06-09 20:52:46 fun.move_to_click
+2024-06-09 20:52:49 fun.move_to_click
+2024-06-09 20:57:27 fun.move_to_click
+2024-06-09 20:57:28 battle
+2024-06-09 20:57:29 Point(x=497, y=114) kv_skip_battle
+2024-06-09 20:57:29 Point(x=784, y=149) danger
+2024-06-09 20:57:29 None, kv_close
+2024-06-09 20:58:04 fun.foto
+2024-06-09 20:58:04 fun.move_to_click
+2024-06-09 20:58:07 fun.move_to_click
+2024-06-09 21:02:29 fun.move_to_click
+2024-06-09 21:02:31 battle
+2024-06-09 21:02:32 Point(x=497, y=114) kv_skip_battle
+2024-06-09 21:02:32 Point(x=784, y=149) danger
+2024-06-09 21:02:33 None, kv_close
+2024-06-09 21:02:52 fun.foto
+2024-06-09 21:02:52 fun.move_to_click
+2024-06-09 21:02:55 fun.move_to_click
+2024-06-09 21:07:33 fun.move_to_click
+2024-06-09 21:07:34 battle
+2024-06-09 21:07:36 Point(x=497, y=114) kv_skip_battle
+2024-06-09 21:07:36 Point(x=784, y=149) danger
+2024-06-09 21:07:36 None, kv_close
+2024-06-09 21:08:11 fun.foto
+2024-06-09 21:08:11 fun.move_to_click
+2024-06-09 21:08:14 fun.move_to_click
+2024-06-09 21:08:31 fun.move_to_click
+2024-06-09 21:08:33 battle
+2024-06-09 21:08:33 None kv_skip_battle
+2024-06-09 21:08:33 None danger
+2024-06-09 21:08:33 None, kv_close
+2024-06-09 21:08:35 None kv_skip_battle цикл ожидания
+2024-06-09 21:08:36 None kv_skip_battle цикл ожидания
+2024-06-09 21:08:37 None kv_skip_battle цикл ожидания
+2024-06-09 21:08:38 None kv_skip_battle цикл ожидания
+2024-06-09 21:08:39 None kv_skip_battle цикл ожидания
+2024-06-09 21:08:40 None kv_skip_battle цикл ожидания
+2024-06-09 21:08:41 None kv_skip_battle цикл ожидания
+2024-06-09 21:08:43 None kv_skip_battle цикл ожидания
+2024-06-09 21:08:44 Point(x=497, y=114) kv_skip_battle цикл ожидания
+2024-06-09 21:08:50 fun.move_to_click
+2024-06-09 21:08:55 fun.foto
+2024-06-09 21:08:55 fun.move_to_click
+2024-06-09 21:08:58 fun.move_to_click
+2024-06-09 21:12:35 fun.move_to_click
+2024-06-09 21:12:37 battle
+2024-06-09 21:12:37 None kv_skip_battle
+2024-06-09 21:12:37 None danger
+2024-06-09 21:12:37 None, kv_close
+2024-06-09 21:12:38 Point(x=497, y=114) kv_skip_battle цикл ожидания
+2024-06-09 21:12:44 fun.move_to_click
+2024-06-09 21:12:49 fun.foto
+2024-06-09 21:12:50 fun.move_to_click
+2024-06-09 21:12:53 fun.move_to_click
+2024-06-09 21:15:32 fun.move_to_click
+2024-06-09 21:15:33 battle
+2024-06-09 21:15:34 None kv_skip_battle
+2024-06-09 21:15:35 None danger
+2024-06-09 21:15:35 None, kv_close
+2024-06-09 21:15:36 None kv_skip_battle цикл ожидания
+2024-06-09 21:15:38 None kv_skip_battle цикл ожидания
+2024-06-09 21:15:39 None kv_skip_battle цикл ожидания
+2024-06-09 21:15:40 None kv_skip_battle цикл ожидания
+2024-06-09 21:15:41 None kv_skip_battle цикл ожидания
+2024-06-09 21:15:42 None kv_skip_battle цикл ожидания
+2024-06-09 21:15:43 None kv_skip_battle цикл ожидания
+2024-06-09 21:15:45 Point(x=497, y=114) kv_skip_battle цикл ожидания
+2024-06-09 21:15:50 fun.move_to_click
+2024-06-09 21:15:56 fun.foto
+2024-06-09 21:15:56 fun.move_to_click
+2024-06-09 21:15:59 fun.move_to_click
+2024-06-09 21:17:37 fun.move_to_click
+2024-06-09 21:17:39 battle
+2024-06-09 21:17:40 Point(x=497, y=114) kv_skip_battle
+2024-06-09 21:17:40 None danger
+2024-06-09 21:17:40 None, kv_close
+2024-06-09 21:17:46 fun.move_to_click
+2024-06-09 21:17:51 fun.foto
+2024-06-09 21:17:52 fun.move_to_click
+2024-06-09 21:17:54 fun.move_to_click
+2024-06-09 21:23:35 fun.move_to_click
+2024-06-09 21:23:37 battle
+2024-06-09 21:23:38 None kv_skip_battle
+2024-06-09 21:23:38 None danger
+2024-06-09 21:23:38 None, kv_close
+2024-06-09 21:23:39 None kv_skip_battle цикл ожидания
+2024-06-09 21:23:40 None kv_skip_battle цикл ожидания
+2024-06-09 21:23:41 None kv_skip_battle цикл ожидания
+2024-06-09 21:23:42 None kv_skip_battle цикл ожидания
+2024-06-09 21:23:44 None kv_skip_battle цикл ожидания
+2024-06-09 21:23:45 None kv_skip_battle цикл ожидания
+2024-06-09 21:23:46 None kv_skip_battle цикл ожидания
+2024-06-09 21:23:47 None kv_skip_battle цикл ожидания
+2024-06-09 21:23:48 Point(x=497, y=114) kv_skip_battle цикл ожидания
+2024-06-09 21:23:55 fun.move_to_click
+2024-06-09 21:24:01 fun.foto
+2024-06-09 21:24:01 fun.move_to_click
+2024-06-09 21:24:05 fun.move_to_click
+2024-06-09 21:28:38 fun.move_to_click
+2024-06-09 21:28:39 battle
+2024-06-09 21:28:41 None kv_skip_battle
+2024-06-09 21:28:41 None danger
+2024-06-09 21:28:41 None, kv_close
+2024-06-09 21:28:42 None kv_skip_battle цикл ожидания
+2024-06-09 21:28:43 None kv_skip_battle цикл ожидания
+2024-06-09 21:28:44 None kv_skip_battle цикл ожидания
+2024-06-09 21:28:46 None kv_skip_battle цикл ожидания
+2024-06-09 21:28:47 None kv_skip_battle цикл ожидания
+2024-06-09 21:28:48 None kv_skip_battle цикл ожидания
+2024-06-09 21:28:49 None kv_skip_battle цикл ожидания
+2024-06-09 21:28:50 None kv_skip_battle цикл ожидания
+2024-06-09 21:28:51 Point(x=497, y=114) kv_skip_battle цикл ожидания
+2024-06-09 21:28:57 fun.move_to_click
+2024-06-09 21:29:03 fun.foto
+2024-06-09 21:29:03 fun.move_to_click
+2024-06-09 21:29:06 fun.move_to_click
+2024-06-09 21:33:40 fun.move_to_click
+2024-06-09 21:33:42 battle
+2024-06-09 21:33:42 None kv_skip_battle
+2024-06-09 21:33:43 None danger
+2024-06-09 21:33:43 None, kv_close
+2024-06-09 21:33:44 None kv_skip_battle цикл ожидания
+2024-06-09 21:33:45 None kv_skip_battle цикл ожидания
+2024-06-09 21:33:46 None kv_skip_battle цикл ожидания
+2024-06-09 21:33:47 None kv_skip_battle цикл ожидания
+2024-06-09 21:33:49 None kv_skip_battle цикл ожидания
+2024-06-09 21:33:50 None kv_skip_battle цикл ожидания
+2024-06-09 21:33:51 None kv_skip_battle цикл ожидания
+2024-06-09 21:33:52 None kv_skip_battle цикл ожидания
+2024-06-09 21:33:54 Point(x=497, y=114) kv_skip_battle цикл ожидания
+2024-06-09 21:34:00 fun.move_to_click
+2024-06-09 21:34:05 fun.foto
+2024-06-09 21:34:06 fun.move_to_click
+2024-06-09 21:34:09 fun.move_to_click
+2024-06-09 21:38:42 fun.move_to_click
+2024-06-09 21:38:44 battle
+2024-06-09 21:38:45 None kv_skip_battle
+2024-06-09 21:38:45 None danger
+2024-06-09 21:38:45 None, kv_close
+2024-06-09 21:38:46 None kv_skip_battle цикл ожидания
+2024-06-09 21:38:47 None kv_skip_battle цикл ожидания
+2024-06-09 21:38:48 None kv_skip_battle цикл ожидания
+2024-06-09 21:38:50 None kv_skip_battle цикл ожидания
+2024-06-09 21:38:51 None kv_skip_battle цикл ожидания
+2024-06-09 21:38:52 None kv_skip_battle цикл ожидания
+2024-06-09 21:38:53 None kv_skip_battle цикл ожидания
+2024-06-09 21:38:54 None kv_skip_battle цикл ожидания
+2024-06-09 21:38:55 Point(x=497, y=114) kv_skip_battle цикл ожидания
+2024-06-09 21:39:02 fun.move_to_click
+2024-06-09 21:39:08 fun.foto
+2024-06-09 21:39:09 fun.move_to_click
+2024-06-09 21:39:11 fun.move_to_click
+2024-06-09 21:43:45 fun.move_to_click
+2024-06-09 21:43:47 battle
+2024-06-09 21:43:48 None kv_skip_battle
+2024-06-09 21:43:49 None danger
+2024-06-09 21:43:49 None, kv_close
+2024-06-09 21:43:50 None kv_skip_battle цикл ожидания
+2024-06-09 21:43:51 None kv_skip_battle цикл ожидания
+2024-06-09 21:43:53 None kv_skip_battle цикл ожидания
+2024-06-09 21:43:54 None kv_skip_battle цикл ожидания
+2024-06-09 21:43:55 None kv_skip_battle цикл ожидания
+2024-06-09 21:43:56 None kv_skip_battle цикл ожидания
+2024-06-09 21:43:58 None kv_skip_battle цикл ожидания
+2024-06-09 21:43:59 Point(x=497, y=114) kv_skip_battle цикл ожидания
+2024-06-09 21:44:05 fun.move_to_click
+2024-06-09 21:44:11 fun.foto
+2024-06-09 21:44:11 fun.move_to_click
+2024-06-09 21:44:14 fun.move_to_click
+2024-06-09 21:48:48 fun.move_to_click
+2024-06-09 21:48:50 battle
+2024-06-09 21:48:50 None kv_skip_battle
+2024-06-09 21:48:50 None danger
+2024-06-09 21:48:51 Point(x=620, y=513), kv_close
+2024-06-09 21:48:52 None kv_skip_battle цикл ожидания
+2024-06-09 21:48:53 None kv_skip_battle цикл ожидания
+2024-06-09 21:48:54 None kv_skip_battle цикл ожидания
+2024-06-09 21:48:55 None kv_skip_battle цикл ожидания
+2024-06-09 21:48:56 None kv_skip_battle цикл ожидания
+2024-06-09 21:48:58 None kv_skip_battle цикл ожидания
+2024-06-09 21:48:59 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:00 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:01 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:02 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:03 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:04 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:06 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:07 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:08 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:09 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:10 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:11 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:13 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:14 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:15 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:16 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:17 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:18 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:20 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:21 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:22 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:23 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:24 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:25 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:26 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:28 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:29 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:30 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:31 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:32 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:33 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:35 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:36 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:37 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:39 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:40 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:41 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:42 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:44 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:45 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:46 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:48 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:49 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:51 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:52 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:53 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:55 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:56 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:57 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:58 None kv_skip_battle цикл ожидания
+2024-06-09 21:49:59 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:01 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:02 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:03 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:04 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:06 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:07 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:08 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:09 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:10 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:11 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:12 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:14 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:15 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:16 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:17 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:18 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:19 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:20 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:22 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:23 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:24 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:25 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:26 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:27 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:29 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:30 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:31 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:32 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:33 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:34 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:36 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:37 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:38 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:39 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:41 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:42 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:43 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:44 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:45 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:47 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:48 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:49 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:50 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:51 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:52 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:54 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:55 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:56 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:57 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:58 None kv_skip_battle цикл ожидания
+2024-06-09 21:50:59 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:00 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:02 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:03 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:04 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:05 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:06 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:07 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:08 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:10 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:11 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:12 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:13 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:14 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:15 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:17 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:18 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:19 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:21 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:22 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:23 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:24 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:25 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:27 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:28 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:29 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:30 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:31 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:32 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:33 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:35 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:36 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:37 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:38 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:39 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:40 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:41 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:43 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:44 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:45 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:46 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:48 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:49 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:50 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:51 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:52 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:54 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:55 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:56 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:57 None kv_skip_battle цикл ожидания
+2024-06-09 21:51:58 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:00 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:01 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:02 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:03 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:04 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:05 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:07 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:08 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:09 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:10 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:11 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:12 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:13 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:14 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:16 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:17 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:18 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:19 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:21 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:22 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:23 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:24 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:25 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:27 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:28 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:29 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:30 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:31 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:33 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:34 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:35 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:36 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:38 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:39 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:40 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:41 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:42 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:43 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:45 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:46 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:47 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:48 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:49 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:50 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:51 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:53 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:54 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:55 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:56 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:57 None kv_skip_battle цикл ожидания
+2024-06-09 21:52:59 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:00 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:01 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:02 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:03 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:04 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:05 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:07 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:08 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:09 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:10 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:11 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:12 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:13 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:15 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:16 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:17 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:18 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:19 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:20 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:21 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:23 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:24 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:25 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:26 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:27 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:28 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:30 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:31 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:32 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:33 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:34 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:35 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:36 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:38 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:39 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:40 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:41 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:42 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:43 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:45 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:46 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:47 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:48 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:49 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:50 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:52 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:53 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:54 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:55 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:56 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:57 None kv_skip_battle цикл ожидания
+2024-06-09 21:53:58 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:00 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:01 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:02 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:03 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:05 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:06 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:08 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:09 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:10 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:11 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:12 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:13 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:14 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:16 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:17 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:18 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:19 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:20 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:21 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:22 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:24 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:25 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:26 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:27 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:29 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:30 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:31 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:32 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:33 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:35 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:36 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:37 None kv_skip_battle цикл ожидания
+2024-06-09 21:54:39 
+2024-06-09 21:54:39 *******                      *******
+2024-06-09 21:54:39 ******* перезапуск программы *******
+2024-06-09 21:54:39 *******                      *******
+2024-06-09 21:54:39 
+2024-06-09 21:58:11 fun.move_friends_list_to_top
+2024-06-09 21:58:22 fun.move_friends_list_left
+2024-06-09 21:58:34 fun.move_friends_list_left
+2024-06-09 21:58:46 fun.move_friends_list_left
+2024-06-09 21:58:59 fun.move_friends_list_left
+2024-06-09 21:59:03 fun.move_friends_list_left
+2024-06-09 21:59:14 fun.move_friends_list_left
+2024-06-09 21:59:18 fun.move_friends_list_left
+2024-06-09 21:59:21 fun.move_friends_list_left
+2024-06-09 21:59:25 fun.move_friends_list_left
+2024-06-09 21:59:29 fun.move_friends_list_left
+2024-06-09 21:59:41 fun.move_friends_list_left
+2024-06-09 21:59:46 fun.move_friends_list_left
+2024-06-09 21:59:58 fun.move_friends_list_left
+2024-06-09 22:00:10 fun.move_friends_list_left
+2024-06-09 22:00:21 fun.move_friends_list_left
+2024-06-09 22:00:33 fun.move_friends_list_left
+2024-06-09 22:00:37 fun.move_friends_list_left
+2024-06-09 22:02:26 fun.get_areas_task_big
+2024-06-09 22:02:26 fun.find_link_station_master
+2024-06-09 22:02:27 fun.vizit_to_station_master
+2024-06-09 22:02:27 fun.move_to_click
+2024-06-09 22:02:32 fun.vizit_to_station_master
+2024-06-09 22:02:34 fun.vizit_to_station_master
+2024-06-09 22:02:36 fun.vizit_to_station_master
+2024-06-09 22:02:38 fun.vizit_to_station_master
+2024-06-09 22:02:40 fun.vizit_to_station_master
+2024-06-09 22:02:42 fun.vizit_to_station_master
+2024-06-09 22:02:44 fun.vizit_to_station_master
+2024-06-09 22:02:46 fun.vizit_to_station_master
+2024-06-09 22:02:48 fun.vizit_to_station_master
+2024-06-09 22:02:50 fun.vizit_to_station_master
+2024-06-09 22:02:52 fun.vizit_to_station_master
+2024-06-09 22:02:54 fun.vizit_to_station_master
+2024-06-09 22:02:55 fun.vizit_to_station_master
+2024-06-09 22:02:57 fun.vizit_to_station_master
+2024-06-09 22:02:59 fun.vizit_to_station_master
+2024-06-09 22:03:01 fun.vizit_to_station_master
+2024-06-09 22:03:03 fun.vizit_to_station_master
+2024-06-09 22:03:05 fun.vizit_to_station_master
+2024-06-09 22:03:07 fun.vizit_to_station_master
+2024-06-09 22:03:09 fun.vizit_to_station_master
+2024-06-09 22:03:11 fun.vizit_to_station_master
+2024-06-09 22:03:13 fun.vizit_to_station_master
+2024-06-09 22:03:15 fun.vizit_to_station_master
+2024-06-09 22:03:17 fun.vizit_to_station_master
+2024-06-09 22:03:19 fun.vizit_to_station_master
+2024-06-09 22:03:21 fun.vizit_to_station_master
+2024-06-09 22:03:23 fun.vizit_to_station_master
+2024-06-09 22:03:25 fun.vizit_to_station_master
+2024-06-09 22:03:31 fun.vizit_to_station_master
+2024-06-09 22:03:33 fun.vizit_to_station_master
+2024-06-09 22:03:35 fun.move_to_click
+2024-06-09 22:03:39 station_master.enemy_battle
+2024-06-09 22:03:39  поиск battle_end, skip_battle, dog
+2024-06-09 22:03:41 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:03:44 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:03:47 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:03:50 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:03:52 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:03:55 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:03:57 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:04:00 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:04:02 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:04:05 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:04:08 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:04:10 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:04:13 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:04:15 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:04:18 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:04:21 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:04:23 skip_battle = Point(x=496, y=117)
+2024-06-09 22:04:23 fun.move_to_click
+2024-06-09 22:04:27 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:04:28 нажать закрыть в конце боя
+2024-06-09 22:04:28 fun.push_close_all_
+2024-06-09 22:04:28 fun.close_popup_window
+2024-06-09 22:04:28 fun.push_close
+2024-06-09 22:04:29 fun.move_to_click
+2024-06-09 22:04:32 skip_battle1_end_ver = None
+2024-06-09 22:04:32 выход из 'enemy_battle
+2024-06-09 22:04:32 fun.vizit_to_station_master
+2024-06-09 22:04:32 fun.move_to_click
+2024-06-09 22:04:37 fun.vizit_to_station_master
+2024-06-09 22:04:39 fun.vizit_to_station_master
+2024-06-09 22:04:45 fun.move_to_click
+2024-06-09 22:04:49 station_master.enemy_battle
+2024-06-09 22:04:49  поиск battle_end, skip_battle, dog
+2024-06-09 22:04:51 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:04:54 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:04:56 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:04:59 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:02 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:04 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:07 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:10 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:13 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:16 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:19 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:21 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:24 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:26 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:29 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:31 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:34 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:37 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:39 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:42 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:44 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:47 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:49 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:52 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:54 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:05:57 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:00 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:02 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:05 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:07 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:10 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:13 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:15 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:18 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:20 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:23 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:26 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:28 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:31 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:33 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:36 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:38 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:41 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:44 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:47 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:49 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:52 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:54 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:57 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:06:58 dog = Point(x=145, y=621)
+2024-06-09 22:06:58 нажал на собаку
+2024-06-09 22:06:58 fun.move_to_click
+2024-06-09 22:06:59 skip_battle = Point(x=496, y=117)
+2024-06-09 22:06:59 fun.move_to_click
+2024-06-09 22:07:04 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:07:04 нажать закрыть в конце боя
+2024-06-09 22:07:04 fun.push_close_all_
+2024-06-09 22:07:05 fun.close_popup_window
+2024-06-09 22:07:05 fun.push_close
+2024-06-09 22:07:05 fun.move_to_click
+2024-06-09 22:07:09 skip_battle1_end_ver = None
+2024-06-09 22:07:09 выход из 'enemy_battle
+2024-06-09 22:07:09 fun.vizit_to_station_master
+2024-06-09 22:07:09 fun.move_to_click
+2024-06-09 22:07:14 fun.vizit_to_station_master
+2024-06-09 22:07:21 fun.vizit_to_station_master
+2024-06-09 22:07:23 fun.move_to_click
+2024-06-09 22:07:27 station_master.enemy_battle
+2024-06-09 22:07:27  поиск battle_end, skip_battle, dog
+2024-06-09 22:07:29 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:07:32 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:07:34 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:07:37 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:07:40 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:07:43 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:07:45 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:07:48 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:07:50 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:07:53 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:07:55 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:07:58 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:00 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:03 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:06 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:09 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:11 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:14 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:18 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:21 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:24 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:26 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:29 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:31 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:34 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:36 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:39 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:41 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:44 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:47 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:50 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:52 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:53 skip_battle = Point(x=496, y=117)
+2024-06-09 22:08:53 fun.move_to_click
+2024-06-09 22:08:57 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:08:58 нажать закрыть в конце боя
+2024-06-09 22:08:58 fun.push_close_all_
+2024-06-09 22:08:58 fun.close_popup_window
+2024-06-09 22:08:58 fun.push_close
+2024-06-09 22:08:59 fun.move_to_click
+2024-06-09 22:09:02 skip_battle1_end_ver = None
+2024-06-09 22:09:02 выход из 'enemy_battle
+2024-06-09 22:09:02 fun.vizit_to_station_master
+2024-06-09 22:09:02 fun.move_to_click
+2024-06-09 22:09:07 fun.vizit_to_station_master
+2024-06-09 22:09:13 fun.vizit_to_station_master
+2024-06-09 22:09:15 fun.move_to_click
+2024-06-09 22:09:19 station_master.enemy_battle
+2024-06-09 22:09:19  поиск battle_end, skip_battle, dog
+2024-06-09 22:09:22 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:09:25 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:09:27 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:09:30 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:09:32 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:09:35 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:09:38 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:09:40 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:09:43 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:09:45 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:09:48 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:09:50 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:09:53 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:09:55 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:09:58 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:01 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:03 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:06 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:08 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:11 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:13 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:16 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:18 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:21 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:24 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:26 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:29 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:31 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:34 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:37 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:39 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:42 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:44 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:45 skip_battle = Point(x=496, y=117)
+2024-06-09 22:10:45 fun.move_to_click
+2024-06-09 22:10:49 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:10:50 нажать закрыть в конце боя
+2024-06-09 22:10:50 fun.push_close_all_
+2024-06-09 22:10:50 fun.close_popup_window
+2024-06-09 22:10:50 fun.push_close
+2024-06-09 22:10:51 fun.move_to_click
+2024-06-09 22:10:54 skip_battle1_end_ver = None
+2024-06-09 22:10:54 выход из 'enemy_battle
+2024-06-09 22:10:54 fun.vizit_to_station_master
+2024-06-09 22:10:54 fun.move_to_click
+2024-06-09 22:10:59 fun.vizit_to_station_master
+2024-06-09 22:11:01 fun.vizit_to_station_master
+2024-06-09 22:11:07 fun.move_to_click
+2024-06-09 22:11:11 station_master.enemy_battle
+2024-06-09 22:11:11  поиск battle_end, skip_battle, dog
+2024-06-09 22:11:13 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:16 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:18 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:21 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:23 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:26 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:28 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:31 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:33 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:36 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:39 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:41 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:44 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:46 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:49 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:52 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:55 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:11:57 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:00 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:02 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:05 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:08 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:10 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:13 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:15 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:18 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:20 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:23 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:25 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:28 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:31 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:33 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:36 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:38 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:41 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:44 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:46 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:49 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:51 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:54 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:57 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:12:59 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:13:02 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:13:05 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:13:07 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:13:10 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:13:12 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:13:15 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:13:17 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:13:20 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:13:21 skip_battle = Point(x=496, y=117)
+2024-06-09 22:13:21 fun.move_to_click
+2024-06-09 22:13:25 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:13:26 нажать закрыть в конце боя
+2024-06-09 22:13:26 fun.push_close_all_
+2024-06-09 22:13:26 fun.close_popup_window
+2024-06-09 22:13:26 fun.push_close
+2024-06-09 22:13:26 fun.move_to_click
+2024-06-09 22:13:30 skip_battle1_end_ver = None
+2024-06-09 22:13:30 выход из 'enemy_battle
+2024-06-09 22:13:30 fun.vizit_to_station_master
+2024-06-09 22:13:30 fun.move_to_click
+2024-06-09 22:13:35 fun.vizit_to_station_master
+2024-06-09 22:13:37 fun.vizit_to_station_master
+2024-06-09 22:13:43 fun.move_to_click
+2024-06-09 22:13:47 station_master.enemy_battle
+2024-06-09 22:13:47  поиск battle_end, skip_battle, dog
+2024-06-09 22:13:49 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:13:52 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:13:54 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:13:58 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:00 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:03 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:06 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:08 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:11 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:13 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:16 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:18 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:21 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:24 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:26 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:29 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:32 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:34 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:37 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:40 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:42 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:45 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:49 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:51 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:54 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:56 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:14:59 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:01 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:04 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:06 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:09 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:12 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:14 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:17 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:19 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:22 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:24 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:27 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:29 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:32 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:35 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:37 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:40 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:42 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:45 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:47 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:50 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:53 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:55 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:15:56 skip_battle = Point(x=496, y=117)
+2024-06-09 22:15:56 fun.move_to_click
+2024-06-09 22:16:00 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:16:01 нажать закрыть в конце боя
+2024-06-09 22:16:01 fun.push_close_all_
+2024-06-09 22:16:01 fun.close_popup_window
+2024-06-09 22:16:01 fun.push_close
+2024-06-09 22:16:01 fun.move_to_click
+2024-06-09 22:16:05 skip_battle1_end_ver = None
+2024-06-09 22:16:05 выход из 'enemy_battle
+2024-06-09 22:16:05 fun.vizit_to_station_master
+2024-06-09 22:16:05 fun.move_to_click
+2024-06-09 22:16:10 fun.vizit_to_station_master
+2024-06-09 22:16:12 fun.vizit_to_station_master
+2024-06-09 22:16:18 fun.move_to_click
+2024-06-09 22:16:22 station_master.enemy_battle
+2024-06-09 22:16:22  поиск battle_end, skip_battle, dog
+2024-06-09 22:16:24 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:16:27 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:16:30 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:16:33 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:16:35 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:16:38 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:16:40 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:16:44 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:16:47 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:16:49 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:16:52 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:16:54 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:16:57 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:16:59 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:02 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:05 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:07 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:10 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:12 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:15 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:17 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:20 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:22 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:25 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:28 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:30 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:33 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:35 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:38 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:41 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:43 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:46 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:48 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:51 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:53 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:56 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:17:58 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:18:01 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:18:04 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:18:06 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:18:09 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:18:11 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:18:14 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:18:16 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:18:19 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:18:21 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:18:25 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:18:28 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:18:30 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:18:31 skip_battle = Point(x=496, y=117)
+2024-06-09 22:18:31 fun.move_to_click
+2024-06-09 22:18:35 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:18:36 нажать закрыть в конце боя
+2024-06-09 22:18:36 fun.push_close_all_
+2024-06-09 22:18:36 fun.close_popup_window
+2024-06-09 22:18:36 fun.push_close
+2024-06-09 22:18:37 fun.move_to_click
+2024-06-09 22:18:40 skip_battle1_end_ver = None
+2024-06-09 22:18:40 выход из 'enemy_battle
+2024-06-09 22:18:40 fun.vizit_to_station_master
+2024-06-09 22:18:40 fun.move_to_click
+2024-06-09 22:18:45 fun.vizit_to_station_master
+2024-06-09 22:18:47 fun.vizit_to_station_master
+2024-06-09 22:18:53 fun.move_to_click
+2024-06-09 22:18:57 station_master.enemy_battle
+2024-06-09 22:18:57  поиск battle_end, skip_battle, dog
+2024-06-09 22:18:59 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:02 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:04 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:07 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:09 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:12 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:15 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:19 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:21 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:24 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:28 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:30 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:33 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:35 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:38 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:40 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:43 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:45 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:48 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:51 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:53 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:56 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:19:59 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:02 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:05 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:08 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:10 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:13 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:15 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:18 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:20 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:23 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:26 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:28 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:31 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:34 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:37 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:40 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:42 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:45 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:47 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:50 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:52 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:55 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:20:57 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:21:00 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:21:03 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:21:05 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:21:06 skip_battle = Point(x=496, y=117)
+2024-06-09 22:21:06 fun.move_to_click
+2024-06-09 22:21:10 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:21:11 нажать закрыть в конце боя
+2024-06-09 22:21:11 fun.push_close_all_
+2024-06-09 22:21:11 fun.close_popup_window
+2024-06-09 22:21:11 fun.push_close
+2024-06-09 22:21:12 fun.move_to_click
+2024-06-09 22:21:15 skip_battle1_end_ver = None
+2024-06-09 22:21:15 выход из 'enemy_battle
+2024-06-09 22:21:15 fun.vizit_to_station_master
+2024-06-09 22:21:15 fun.move_to_click
+2024-06-09 22:21:20 fun.vizit_to_station_master
+2024-06-09 22:21:26 fun.vizit_to_station_master
+2024-06-09 22:21:28 fun.move_to_click
+2024-06-09 22:21:32 station_master.enemy_battle
+2024-06-09 22:21:32  поиск battle_end, skip_battle, dog
+2024-06-09 22:21:34 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:21:37 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:21:39 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:21:42 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:21:45 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:21:47 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:21:50 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:21:53 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:21:55 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:21:58 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:00 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:03 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:05 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:08 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:11 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:13 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:16 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:18 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:21 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:23 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:26 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:28 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:31 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:34 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:36 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:39 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:42 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:45 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:47 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:50 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:53 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:56 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:59 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:22:59 skip_battle = Point(x=496, y=117)
+2024-06-09 22:22:59 fun.move_to_click
+2024-06-09 22:23:03 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:23:05 нажать закрыть в конце боя
+2024-06-09 22:23:05 fun.push_close_all_
+2024-06-09 22:23:05 fun.close_popup_window
+2024-06-09 22:23:06 fun.push_close
+2024-06-09 22:23:06 fun.move_to_click
+2024-06-09 22:23:10 skip_battle1_end_ver = None
+2024-06-09 22:23:10 выход из 'enemy_battle
+2024-06-09 22:23:10 fun.vizit_to_station_master
+2024-06-09 22:23:10 fun.move_to_click
+2024-06-09 22:23:15 fun.vizit_to_station_master
+2024-06-09 22:23:17 fun.vizit_to_station_master
+2024-06-09 22:23:23 fun.move_to_click
+2024-06-09 22:23:27 station_master.enemy_battle
+2024-06-09 22:23:27  поиск battle_end, skip_battle, dog
+2024-06-09 22:23:29 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:23:32 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:23:35 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:23:38 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:23:41 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:23:43 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:23:46 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:23:48 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:23:51 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:23:53 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:23:57 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:00 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:02 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:05 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:07 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:10 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:12 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:15 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:17 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:20 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:23 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:25 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:28 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:30 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:33 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:35 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:38 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:40 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:43 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:47 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:49 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:52 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:54 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:24:57 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:00 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:02 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:05 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:07 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:10 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:12 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:16 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:19 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:21 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:24 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:26 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:29 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:31 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:34 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:36 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:37 skip_battle = Point(x=496, y=117)
+2024-06-09 22:25:37 fun.move_to_click
+2024-06-09 22:25:41 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:25:42 нажать закрыть в конце боя
+2024-06-09 22:25:42 fun.push_close_all_
+2024-06-09 22:25:42 fun.close_popup_window
+2024-06-09 22:25:42 fun.push_close
+2024-06-09 22:25:43 fun.move_to_click
+2024-06-09 22:25:46 skip_battle1_end_ver = None
+2024-06-09 22:25:46 выход из 'enemy_battle
+2024-06-09 22:25:46 fun.vizit_to_station_master
+2024-06-09 22:25:46 fun.move_to_click
+2024-06-09 22:25:51 fun.vizit_to_station_master
+2024-06-09 22:25:53 fun.vizit_to_station_master
+2024-06-09 22:25:59 fun.move_to_click
+2024-06-09 22:26:03 station_master.enemy_battle
+2024-06-09 22:26:03  поиск battle_end, skip_battle, dog
+2024-06-09 22:26:05 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:09 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:12 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:14 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:17 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:19 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:22 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:24 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:27 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:29 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:32 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:34 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:37 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:39 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:42 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:45 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:48 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:51 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:53 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:56 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:26:58 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:01 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:04 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:06 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:09 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:11 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:14 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:16 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:19 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:21 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:24 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:27 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:29 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:32 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:34 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:37 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:39 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:42 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:44 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:47 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:49 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:52 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:56 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:27:58 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:28:01 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:28:03 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:28:06 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:28:08 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:28:11 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:28:11 dog = Point(x=145, y=621)
+2024-06-09 22:28:11 нажал на собаку
+2024-06-09 22:28:11 fun.move_to_click
+2024-06-09 22:28:13 skip_battle = Point(x=496, y=117)
+2024-06-09 22:28:13 fun.move_to_click
+2024-06-09 22:28:18 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:28:18 нажать закрыть в конце боя
+2024-06-09 22:28:18 fun.push_close_all_
+2024-06-09 22:28:19 fun.close_popup_window
+2024-06-09 22:28:19 fun.push_close
+2024-06-09 22:28:19 fun.move_to_click
+2024-06-09 22:28:22 skip_battle1_end_ver = None
+2024-06-09 22:28:22 выход из 'enemy_battle
+2024-06-09 22:28:22 fun.vizit_to_station_master
+2024-06-09 22:28:23 fun.move_to_click
+2024-06-09 22:28:27 fun.vizit_to_station_master
+2024-06-09 22:28:33 fun.vizit_to_station_master
+2024-06-09 22:28:35 fun.move_to_click
+2024-06-09 22:28:39 station_master.enemy_battle
+2024-06-09 22:28:39  поиск battle_end, skip_battle, dog
+2024-06-09 22:28:42 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:28:44 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:28:47 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:28:50 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:28:52 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:28:55 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:28:57 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:00 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:02 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:05 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:07 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:10 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:13 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:16 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:18 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:21 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:24 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:26 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:29 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:31 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:34 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:36 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:39 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:41 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:44 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:47 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:49 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:52 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:54 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:57 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:29:59 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:30:02 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:30:04 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:30:07 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:30:08 skip_battle = Point(x=496, y=117)
+2024-06-09 22:30:08 fun.move_to_click
+2024-06-09 22:30:12 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:30:12 нажать закрыть в конце боя
+2024-06-09 22:30:12 fun.push_close_all_
+2024-06-09 22:30:13 fun.close_popup_window
+2024-06-09 22:30:13 fun.push_close
+2024-06-09 22:30:13 fun.move_to_click
+2024-06-09 22:30:17 skip_battle1_end_ver = None
+2024-06-09 22:30:17 выход из 'enemy_battle
+2024-06-09 22:30:17 fun.vizit_to_station_master
+2024-06-09 22:30:17 fun.move_to_click
+2024-06-09 22:30:26 fun.vizit_to_station_master
+2024-06-09 22:30:28 fun.vizit_to_station_master
+2024-06-09 22:30:30 fun.move_to_click
+2024-06-09 22:30:35 fun.move_to_click
+2024-06-09 22:30:37 fun.move_to_click
+2024-06-09 22:30:39 fun.move_to_click
+2024-06-09 22:35:45 fun.find_link_hall_of_glory
+2024-06-09 22:35:45 fun.push_close_all_
+2024-06-09 22:35:45 fun.close_popup_window
+2024-06-09 22:35:46 fun.move_to_click
+2024-06-09 22:35:48 fun.push_close
+2024-06-09 22:35:50 fun.move_to_click
+2024-06-09 22:35:54 fun.move_to_click
+2024-06-09 22:36:29 fun.find_link_hall_of_glory
+2024-06-09 22:36:29 fun.push_close_all_
+2024-06-09 22:36:29 fun.close_popup_window
+2024-06-09 22:36:30 fun.move_to_click
+2024-06-09 22:36:33 fun.push_close
+2024-06-09 22:36:33 fun.move_to_click
+2024-06-09 22:36:37 fun.move_to_click
+2024-06-09 22:36:44 fun.move_to_click
+2024-06-09 22:36:46 fun.move_to_click
+2024-06-09 22:36:50 station_master.enemy_battle
+2024-06-09 22:36:50  поиск battle_end, skip_battle, dog
+2024-06-09 22:36:51 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:36:52 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:36:53 skip_battle = Point(x=496, y=117)
+2024-06-09 22:36:53 fun.move_to_click
+2024-06-09 22:36:55 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:36:56 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:36:57 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:36:58 нажать закрыть в конце боя
+2024-06-09 22:36:58 fun.push_close_all_
+2024-06-09 22:36:58 fun.close_popup_window
+2024-06-09 22:36:59 fun.push_close
+2024-06-09 22:36:59 fun.move_to_click
+2024-06-09 22:37:02 skip_battle1_end_ver = None
+2024-06-09 22:37:02 выход из 'enemy_battle
+2024-06-09 22:37:02 fun.find_link_hall_of_glory
+2024-06-09 22:37:03 fun.find_link_hall_of_glory
+2024-06-09 22:37:04 fun.move_to_click
+2024-06-09 22:37:11 fun.move_to_click
+2024-06-09 22:41:49 fun.move_to_click
+2024-06-09 22:41:53 station_master.enemy_battle
+2024-06-09 22:41:53  поиск battle_end, skip_battle, dog
+2024-06-09 22:41:54 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:41:55 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:41:55 skip_battle = Point(x=496, y=117)
+2024-06-09 22:41:55 fun.move_to_click
+2024-06-09 22:41:58 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:41:59 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:42:02 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:42:03 нажать закрыть в конце боя
+2024-06-09 22:42:03 fun.push_close_all_
+2024-06-09 22:42:03 fun.close_popup_window
+2024-06-09 22:42:03 fun.push_close
+2024-06-09 22:42:03 fun.move_to_click
+2024-06-09 22:42:07 skip_battle1_end_ver = None
+2024-06-09 22:42:07 выход из 'enemy_battle
+2024-06-09 22:42:07 fun.find_link_hall_of_glory
+2024-06-09 22:42:08 fun.find_link_hall_of_glory
+2024-06-09 22:42:08 fun.move_to_click
+2024-06-09 22:42:15 fun.move_to_click
+2024-06-09 22:46:52 fun.move_to_click
+2024-06-09 22:46:57 station_master.enemy_battle
+2024-06-09 22:46:57  поиск battle_end, skip_battle, dog
+2024-06-09 22:46:57 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:46:58 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:46:59 skip_battle = Point(x=496, y=117)
+2024-06-09 22:46:59 fun.move_to_click
+2024-06-09 22:47:01 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:47:02 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:47:03 ожидание battle_end, close, dog, skip_battle
+2024-06-09 22:47:04 нажать закрыть в конце боя
+2024-06-09 22:47:04 fun.push_close_all_
+2024-06-09 22:47:04 fun.close_popup_window
+2024-06-09 22:47:04 fun.push_close
+2024-06-09 22:47:04 fun.move_to_click
+2024-06-09 22:47:07 skip_battle1_end_ver = None
+2024-06-09 22:47:07 выход из 'enemy_battle
+2024-06-09 22:47:07 fun.find_link_hall_of_glory
+2024-06-09 22:47:08 fun.find_link_hall_of_glory
+2024-06-09 22:47:09 fun.move_to_click
+2024-06-09 22:47:16 fun.move_to_click

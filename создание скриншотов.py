@@ -12,7 +12,7 @@ def foto(put_imya, _region):
     im1.save(put_imya)
 
 
-def skriny_energii_u_na4stanc():
+def skriny_zadaniy_u_na4stanc():
     shirina, vysota = 77, 42
     # смещение скрина внутри региона
     popravka_x_s = 4
@@ -157,7 +157,7 @@ def skriny_energii_u_na4stanc():
     pokaz_pos_xp()
 
 
-skriny_energii_u_na4stanc()
+skriny_zadaniy_u_na4stanc()
 
 # 13 20 21 22 23 26 39 41 42 43 45
 # 52 59 62 63 65 68 78 82 84 86 88 90 91

@@ -21,12 +21,16 @@ def battle(q_call):
     print(f'{q_call} бой')
     my_print_to_file('battle')
 
-    kv_skip_battle = pyautogui.locateCenterOnScreen('img/kv/kv_skip_battle.png', confidence=0.9)
+    kv_skip_battle = pyautogui.locateCenterOnScreen('img/kv/kv_skip_battle.png', confidence=0.85)
+    my_print_to_file(f'{kv_skip_battle} kv_skip_battle')
     danger = pyautogui.locateCenterOnScreen('img/kv/kv_danger.png', confidence=0.9)
+    my_print_to_file(f'{danger} danger')
     kv_close = pyautogui.locateCenterOnScreen('img/kv/kv_close.png', confidence=0.9)
+    my_print_to_file(f"{kv_close}, kv_close")
     while not kv_skip_battle:
         sleep(1)
-        kv_skip_battle = pyautogui.locateCenterOnScreen('img/kv/kv_skip_battle.png', confidence=0.9)
+        kv_skip_battle = pyautogui.locateCenterOnScreen('img/kv/kv_skip_battle.png', confidence=0.85)
+        my_print_to_file(f'{kv_skip_battle} kv_skip_battle цикл ожидания')
     it_kv = 0
     while not kv_close:
         it_kv += 1
@@ -34,7 +38,7 @@ def battle(q_call):
             move_to_click(kv_skip_battle, 0.5)
             print(' пропуск боя')
         sleep(1)
-        kv_skip_battle = pyautogui.locateCenterOnScreen('img/kv/kv_skip_battle.png', confidence=0.9)
+        kv_skip_battle = pyautogui.locateCenterOnScreen('img/kv/kv_skip_battle.png', confidence=0.85)
         danger = pyautogui.locateCenterOnScreen('img/kv/kv_danger.png', confidence=0.9)
         kv_close = pyautogui.locateCenterOnScreen('img/kv/kv_close.png', confidence=0.9)
     if danger:
@@ -46,16 +50,23 @@ def battle(q_call):
 
 
 def kv():
+    my_print_to_file('kv_and_raid.kv')
     kv_reload = pyautogui.locateCenterOnScreen('img/kv/kv_reload.png', confidence=0.9)
+    # my_print_to_file(f'kv_reload {kv_reload}')
+    my_print_to_file("нажать 'обновить'")
     move_to_click(kv_reload, 1)
 
     q_attack = 0
     kv_wait_attack = pyautogui.locateCenterOnScreen('img/kv/kv_wait_attack.png', confidence=0.9)
+    # my_print_to_file(f'kv_wait_attack {kv_wait_attack}')
     kv_attak = pyautogui.locateCenterOnScreen('img/kv/kv_attak.png', confidence=0.9)
+    # my_print_to_file(f'kv_attak {kv_attak}')
     if not kv_attak and not kv_wait_attack:
         print('ждем начало кв')
     it_w_a = 0
+    it_w_rel = 0
     while True:
+
         if kv_wait_attack:
             it_w_a += 1
             if it_w_a == 1:
@@ -71,12 +82,6 @@ def kv():
         kv_attak = pyautogui.locateCenterOnScreen('img/kv/kv_attak.png', confidence=0.9)
 
 
-kv()
-
-
-# mining_loot = pyautogui.locateCenterOnScreen('img/kv/mining_loot.png', confidence=0.9)
-# print(mining_loot)
-# pyautogui.moveTo(mining_loot, duration=2)
 
 
 def loot():

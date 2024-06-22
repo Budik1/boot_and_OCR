@@ -23,6 +23,11 @@ def time_now():
     date = (now.strftime('%Y-%m-%d'))
     return date_time_now, date
 
+def minutes_now():
+    now = datetime.datetime.now()
+    minutes_now_ = (now.strftime('%M'))
+    return minutes_now_
+
 
 def name_f():
     now = datetime.datetime.now()
