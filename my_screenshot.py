@@ -9,10 +9,10 @@ from time import sleep
 def foto_pos(region, tune_x, tune_y, tune_s, tune_v, name_img):
     # получает регион и корректировки снимка внутри него
     x_p_an, y_p_an, width_, height_ = region
-    x_s = x_p_an + tune_x
-    y_s = y_p_an + tune_y
-    width_s = width_ - tune_s
-    height_s = height_ - tune_v
+    x_s = x_p_an + tune_x                                          # внесение изменений в параметр координаты "х"
+    y_s = y_p_an + tune_y                                          # внесение изменений в параметр координаты "y"
+    width_s = width_ - tune_s                                      # внесение изменений в параметр ширина "width"
+    height_s = height_ - tune_v                                    # внесение изменений в параметр длинна "height"
     # print(region, (x_s, y_s, width_s, height_s))
     foto(name_img, (x_s, y_s, width_s, height_s))
 
@@ -37,7 +37,7 @@ def get_screenshot_task():
     foto_pos(region3_big, tune_x, tune_y, tune_s, tune_v, "img/test/big_3.png")
 
 
-get_screenshot_task()
+# get_screenshot_task()
 # list_1_pul = recognized('img/test/1_pul.png')
 # list_1_xp = recognized("img/test/1_xp.png")
 # sleep(2)

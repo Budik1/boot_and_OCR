@@ -2,13 +2,16 @@ import baza_dannyx as b_d
 import pyautogui
 from time import sleep
 from fun import move_to_click, push_close_all_, vizit_to_station_master, get_areas_task_big, my_print_to_file
+from my_screenshot import get_screenshot_task
 
-conf_ = 0.97
+conf_ = 0.95
 par_conf = 0.799
 energy_availability = 1
 number_tasks = 1
 # width, height = 87, 39
 variable = None
+
+
 # region1, region2, region3 = 0, 0, 0
 
 
@@ -52,8 +55,9 @@ def enemy_battle(prolong=2):
 
     my_print_to_file("выход из 'enemy_battle")
 
+
 def press_en(task_number, pos):
-    global energy_availability
+    global energy_availability, conf_
     x = pos[0]
     y = pos[1] - 20
     pos_clik = x, y
@@ -63,7 +67,7 @@ def press_en(task_number, pos):
     sleep(0.5)
     nal_energy = pyautogui.locateCenterOnScreen('img/low_energy.png', confidence=0.8)
     if not nal_energy:
-        print('Выполняю ', task_number, ' задание')
+        print(f'Выполняю  {task_number}  задание, conf_={conf_}')
         enemy_battle()
     else:
         energy_availability = 0
@@ -145,6 +149,11 @@ def vybor_zadaniya_na_puli():
             print('confidence=', conf_)
             conf_ -= 0.005
             conf_ = round(conf_, 3)
+        if conf_ <= 0.8:
+            print('задания не найдены, результаты "D:\\bot in br\\testOCR\img\\test" ')
+            get_screenshot_task()
+            number_tasks = 1
+            energy_availability = 0
 
     print(' Задания выполнены!!!!')
     number_tasks = 1

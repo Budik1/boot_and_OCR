@@ -32,7 +32,7 @@ def search_friend():
         ganza = pyautogui.locateCenterOnScreen("img/f_ganza.png", region=friend_battle_region, confidence=0.95)
         reich = pyautogui.locateCenterOnScreen("img/f_reich.png", region=friend_battle_region, confidence=0.95)
         red = pyautogui.locateCenterOnScreen("img/f_red.png", region=friend_battle_region, confidence=0.95)
-        if gangster or ganza or reich or red:  #
+        if  not gangster or not ganza or not reich or not red:  #
             friend_battle = hero_vs_friend
         else:
             friend_battle = False
@@ -42,7 +42,7 @@ def search_friend():
     return friend_battle
 
 
-def friend_kill(required_quantity=49):  # требуемое количество=5
+def friend_kill(required_quantity=30):  # требуемое количество=5
     quantity_battle = 0
     while quantity_battle <= required_quantity:
         friend_battle_ = search_friend()
