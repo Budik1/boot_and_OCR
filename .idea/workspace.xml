@@ -4,13 +4,61 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20ccf982-a645-4c5c-8257-7785837820b0" name="Changes" comment="">
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/testOCR.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/testOCR.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2024-06-22.txt" beforeDir="false" afterPath="$PROJECT_DIR$/2024-06-22.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_frend.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_frend.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tasks/t4.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tasks/t4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tasks/t5.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tasks/t5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_screenshot.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_screenshot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-02.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-03.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-04.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-05.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-06.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-07.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-09.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-11.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-12.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-13.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-14.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-15.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-16.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-17.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-18.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-19.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-20.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-21.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-22.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024-06-23.txt" beforeDir="false" afterPath="$PROJECT_DIR$/2024-06-23.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_arena.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 19-06-36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 19-12-07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 19-16-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 19-21-56.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 19-26-58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 19-32-07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 19-37-20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 19-41-57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 19-47-20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 19-52-24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 19-57-13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 20-02-09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 20-07-09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 20-12-24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 20-17-39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 20-22-27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 20-27-32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 20-32-38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 20-37-25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 20-42-29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 20-48-00.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 20-52-34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 20-57-57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Cr/2024-06-22 21-02-39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hall_of_glory_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tasks/t3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tasks/t3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tasks/t7.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tasks/t7.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,25 +66,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
-    <option name="showPreview" value="true" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2cMimmvyHSw26B9usfZzvlCd6Wh" />
+  <component name="ProjectId" id="2iGCwrABuOzDAZrSuUMoIxoOtBF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,85 +82,14 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.event_arena.executor&quot;: &quot;Run&quot;,
-    &quot;Python.event_frend (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.event_frend.executor&quot;: &quot;Run&quot;,
-    &quot;Python.frend_kill.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gifts.executor&quot;: &quot;Run&quot;,
-    &quot;Python.kv_and_raid (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.kv_and_raid.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.my_screenshot.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_for.executor&quot;: &quot;Run&quot;,
-    &quot;Python.создание скриншотов.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Python/experimet&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PythonContentEntriesConfigurable&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\bot in br\testOCR" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\bot in br\testOCR\img\tasks" />
-    </key>
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="width" />
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="создание скриншотов" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testOCR" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/создание скриншотов.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="event_frend" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testOCR" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/event_frend.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
@@ -146,57 +112,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="my_screenshot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testOCR" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_screenshot.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testOCR" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.event_frend" />
-        <item itemvalue="Python.my_screenshot" />
-        <item itemvalue="Python.создание скриншотов" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -210,51 +128,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="20ccf982-a645-4c5c-8257-7785837820b0" name="Changes" comment="" />
-      <created>1707928010847</created>
+      <changelist id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="" />
+      <created>1719107771429</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1707928010847</updated>
+      <updated>1719107771429</updated>
     </task>
     <servers />
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="*.cfg" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test_station_master.py</url>
-          <line>112</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>155</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/event_arena.py</url>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>109</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -4,15 +4,12 @@ from time import sleep
 from fun import move_to_click, push_close_all_, vizit_to_station_master, get_areas_task_big, my_print_to_file
 from my_screenshot import get_screenshot_task
 
-conf_ = 0.95
+conf_ = 0.9
 par_conf = 0.799
 energy_availability = 1
 number_tasks = 1
 # width, height = 87, 39
 variable = None
-
-
-# region1, region2, region3 = 0, 0, 0
 
 
 def enemy_battle(prolong=2):
@@ -149,7 +146,7 @@ def vybor_zadaniya_na_puli():
             print('confidence=', conf_)
             conf_ -= 0.005
             conf_ = round(conf_, 3)
-        if conf_ <= 0.8:
+        if conf_ <= 0.75:
             print('задания не найдены, результаты "D:\\bot in br\\testOCR\img\\test" ')
             get_screenshot_task()
             number_tasks = 1

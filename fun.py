@@ -298,10 +298,10 @@ def find_link_hall_of_glory():
         push_close_all_()
         close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
     # получение координат привязки
-    point_hall_of_glory = pyautogui.locateCenterOnScreen('img/hall_of_glory_icon.png', confidence=0.9)
+    point_hall_of_glory = pyautogui.locateCenterOnScreen('img/arena/hall_of_glory_icon.png', confidence=0.9)
     while not point_hall_of_glory:
         sleep(0.2)
-        point_hall_of_glory = pyautogui.locateCenterOnScreen('img/hall_of_glory_icon.png', confidence=0.9)
+        point_hall_of_glory = pyautogui.locateCenterOnScreen('img/arena/hall_of_glory_icon.png', confidence=0.9)
 
     sleep(0.5)
 
@@ -469,3 +469,12 @@ def vizit_to_station_master():
 def find_lvl():
     my_print_to_file('fun.find_lvl')
     pass
+
+
+def await_arena(region):
+    attack_arena_object = pyautogui.locateCenterOnScreen('img/arena/attack.png', confidence=0.9,
+                                                         region=region)
+    while attack_arena_object is None:
+        attack_arena_object = pyautogui.locateCenterOnScreen('img/arena/attack.png', confidence=0.9,
+                                                             region=region)
+    pyautogui.moveTo(attack_arena_object)
