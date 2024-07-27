@@ -111,13 +111,18 @@ test_running = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot, st_p
                 st_univer, st_vernadskogo, st_univer, st_communist, st_frunze, st_park_kr, st_kropot, st_biblioteka,
                 st_borov, st_chekhov, st_pushkin, st_most]
 
+test_running1 = [st_pushkin, st_chekhov, st_bulvar, st_chekhov, st_pushkin, st_most]
+
+test_running2 = [st_pushkin, st_most]
+
 pauk_yascher = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot,
 
                 st_park_kr, st_frunze, st_communist, st_univer, st_vernadskogo, st_univer, st_communist, st_frunze,
-                st_park_kr, st_frunze, st_communist, st_univer, st_vernadskogo, st_univer, st_communist,st_frunze,
-                st_park_kr, st_frunze, st_communist, st_univer, st_vernadskogo, st_univer, st_communist,st_frunze,
-                st_park_kr, st_frunze, st_communist, st_univer, st_vernadskogo, st_univer, st_communist,st_frunze,
-                st_park_kr, st_frunze, st_communist, st_univer, st_vernadskogo, st_univer, st_communist,st_frunze, st_park_kr,
+                st_park_kr, st_frunze, st_communist, st_univer, st_vernadskogo, st_univer, st_communist, st_frunze,
+                st_park_kr, st_frunze, st_communist, st_univer, st_vernadskogo, st_univer, st_communist, st_frunze,
+                st_park_kr, st_frunze, st_communist, st_univer, st_vernadskogo, st_univer, st_communist, st_frunze,
+                st_park_kr, st_frunze, st_communist, st_univer, st_vernadskogo, st_univer, st_communist, st_frunze,
+                st_park_kr,
 
                 st_park_g, st_kiev, st_park_g, st_kiev, st_park_g, st_kiev,
                 st_park_g, st_kiev, st_park_g, st_kiev, st_park_g,

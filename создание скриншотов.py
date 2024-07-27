@@ -157,7 +157,20 @@ def skriny_zadaniy_u_na4stanc():
     pokaz_pos_xp()
 
 
-skriny_zadaniy_u_na4stanc()
+def skrin_viktori():
+    battle_end = pyautogui.locateCenterOnScreen('img/b_battle_end.png', confidence=par_conf)
+    pyautogui.moveTo(battle_end, duration=2)
+    x, y = battle_end
+    x = x + 165
+    y = y + 40
+    pyautogui.moveTo(x, y, duration=2)
+    # x = x + 185
+    # y = y + 55
+    # pyautogui.moveTo(x, y, duration=2)
+    foto("img/arena/result.png", (x, y, 185, 55))
+
+skrin_viktori()
+# skriny_zadaniy_u_na4stanc()
 
 # 13 20 21 22 23 26 39 41 42 43 45
 # 52 59 62 63 65 68 78 82 84 86 88 90 91

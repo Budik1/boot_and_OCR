@@ -7,10 +7,10 @@ from fun import push_close_all_, move_to_click, my_print_to_file
 # son = 1
 # station = 1
 number_of_gifts = 0
-number_of_kiki = 0
-number_of_krysa = 0
-number_of_arachne = 0
-number_of_raptor = 0
+kiki_q = 0
+krysa_q = 0
+arachne_q = 0
+raptor_q = 0
 
 
 def event_gifts():
@@ -66,14 +66,14 @@ def to_map():
     pyautogui.moveTo(station_exit, duration=0.2)
 
 
-def tunnel_events(st0, st2):
+def events_tunnel(st0, st2):
     """
     События в туннеле
     :param st0: название станции из списка
     :param st2: имя файла ID станции
     """
-    my_print_to_file('touring.tunnel_events')
-    global number_of_gifts, number_of_kiki, number_of_krysa, number_of_raptor, number_of_arachne
+    my_print_to_file('touring.events_tunnel')
+    global number_of_gifts, kiki_q, krysa_q, raptor_q, arachne_q
 
     sleep(1)
     id_st = pyautogui.locateCenterOnScreen(st2, confidence=0.85)
@@ -97,17 +97,17 @@ def tunnel_events(st0, st2):
             kiki = pyautogui.locateCenterOnScreen('img/tonelli/kikimora.png', confidence=0.85)
             my_print_to_file(f'kiki = {kiki}')
             if krysa:
-                number_of_krysa += 1
-                print(f'{number_of_krysa} Detekt krysa')
+                krysa_q += 1
+                print(f'{krysa_q} Detekt krysa')
             if kiki:
-                number_of_kiki += 1
-                print(f'{number_of_kiki} Detekt Kikimora')
+                kiki_q += 1
+                print(f'{kiki_q} Detekt Kikimora')
             if arachne:
-                number_of_arachne += 1
-                print(f'{number_of_arachne} Detekt arachne')
+                arachne_q += 1
+                print(f'{arachne_q} Detekt arachne')
             if raptor:
-                number_of_raptor += 1
-                print(f'{number_of_raptor} Detekt raptor')
+                raptor_q += 1
+                print(f'{raptor_q} Detekt raptor')
             enemy_battle(1)
         if post:
             my_print_to_file(f'post = {post}')
@@ -172,7 +172,7 @@ def traffic_on_the_map(stan):
     point_poisk, confidence_poisk = poisk(stan[1])
     my_print_to_file(f'point_poisk = {point_poisk}, confidence_poisk = {confidence_poisk}')
     move_to_click(point_poisk, 0.3)
-    tunnel_events(stan[0], stan[2])
+    events_tunnel(stan[0], stan[2])
 
 
 # получает список маршрута и осуществляет движение по нему
@@ -194,11 +194,11 @@ def test():
     :return: количество встреченных крыс
     """
     my_print_to_file('touring.test')
-    global number_of_krysa
+    global krysa_q
     push_close_all_()
-    travel(b_d.test_running)
+    travel(b_d.test_running2)
     print("тест успешно выполнен")
-    return number_of_krysa
+    return krysa_q
 
 
 def tasks_na_kievskoy():
@@ -345,6 +345,7 @@ def riga_frunze():
 def za_kikimorami():
     """При смене станции прописки список содержащий маршрут надо переписывать вручную."""
     my_print_to_file('touring.za_kikimorami')
+
     start_time = time()
     push_close_all_()
     travel(b_d.most_kikimory)

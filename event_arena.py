@@ -2,6 +2,8 @@ import pyautogui
 from time import sleep
 from station_master import enemy_battle
 from fun import move_to_click, find_link_hall_of_glory, await_arena
+from my_text_color import text_blue, text_cyan, text_red, text_green, text_yellow, text_magenta
+
 
 
 def foto(path_name, _region):
@@ -44,11 +46,13 @@ def create_img_arena_object():
     hall_is_open()
     region = (pos_or_v[0] - 678, pos_or_v[1] + 142, 368, 80)
     # смещение внутри региона верхней левой точки на параметры (с увеличением смещение увеличивается)
-    tune_x = 73
+    tune_x = 13
     tune_y = 7
     # смещение внутри региона правой нижней точки на параметр (с увеличением размер уменьшается)
-    tune_s = 243
+    tune_s = 183
     tune_v = 20
+    foto('img/test/object.png', region)
+    # foto_pos('img/test/object1.png', region, tune_x - 60, tune_y, tune_s - 60, tune_v)
     foto_pos('img/test/arena_object.png', region, tune_x, tune_y, tune_s, tune_v)
     print('фото сделано')
 
@@ -104,7 +108,7 @@ def kill():
         boy_in_arena += 1
         name_file = str("img/test/arena_obl_поиска" + str(boy_in_arena) + ".png")
         # print(boy_in_arena)
-        print(name_file)
+        # print(name_file)
         foto(name_file, region)
         attack_arena_object = pyautogui.locateCenterOnScreen('img/arena/attack.png', confidence=0.9, region=region)
         pyautogui.moveTo(attack_arena_object)
@@ -115,8 +119,12 @@ def kill():
             hero_vs_opponent = pyautogui.locateCenterOnScreen('img/hero_vs_opponent.png', confidence=0.9)
         move_to_click(hero_vs_opponent, 0.1)
         sleep(2)
-        enemy_battle(0.5)
-        print("сражение окончено, новый..")
+        res = enemy_battle(0.5)
+        if res == "победа":
+            result = text_yellow("победа")
+        else:
+            result = text_red("поражение")
+        print(f"сражение окончено, {result}, новый..")
         ver = find_link_hall_of_glory()
 
 # create_img_arena_object()  # создание метки объекта атаки

@@ -1,0 +1,3267 @@
+2024-07-26 19:08:50 
+2024-07-26 19:08:50 *******                      *******
+2024-07-26 19:08:50 ******* перезапуск программы *******
+2024-07-26 19:08:50 *******                      *******
+2024-07-26 19:08:50 
+2024-07-26 19:15:33 
+2024-07-26 19:15:33 *******                      *******
+2024-07-26 19:15:34 ******* перезапуск программы *******
+2024-07-26 19:15:34 *******                      *******
+2024-07-26 19:15:34 
+2024-07-26 19:18:17 kv_and_raid.kv
+2024-07-26 19:18:17 нажать 'обновить'
+2024-07-26 19:18:17 fun.move_to_click
+2024-07-26 19:22:00 fun.move_to_click
+2024-07-26 19:22:02 battle
+2024-07-26 19:22:03 Point(x=497, y=116) kv_skip_battle
+2024-07-26 19:22:03 None danger
+2024-07-26 19:22:03 None, kv_close
+2024-07-26 19:22:12 fun.move_to_click
+2024-07-26 19:22:18 fun.foto
+2024-07-26 19:22:18 fun.move_to_click
+2024-07-26 19:22:21 fun.move_to_click
+2024-07-26 19:27:03 fun.move_to_click
+2024-07-26 19:27:05 battle
+2024-07-26 19:27:05 None kv_skip_battle
+2024-07-26 19:27:06 None danger
+2024-07-26 19:27:06 None, kv_close
+2024-07-26 19:27:07 Point(x=497, y=116) kv_skip_battle цикл ожидания
+2024-07-26 19:27:15 fun.move_to_click
+2024-07-26 19:27:21 fun.foto
+2024-07-26 19:27:21 fun.move_to_click
+2024-07-26 19:27:24 fun.move_to_click
+2024-07-26 19:32:06 fun.move_to_click
+2024-07-26 19:32:08 battle
+2024-07-26 19:32:08 None kv_skip_battle
+2024-07-26 19:32:08 None danger
+2024-07-26 19:32:08 None, kv_close
+2024-07-26 19:32:10 Point(x=497, y=116) kv_skip_battle цикл ожидания
+2024-07-26 19:32:44 fun.foto
+2024-07-26 19:32:44 fun.move_to_click
+2024-07-26 19:32:47 fun.move_to_click
+2024-07-26 19:37:10 fun.move_to_click
+2024-07-26 19:37:11 battle
+2024-07-26 19:37:12 None kv_skip_battle
+2024-07-26 19:37:13 Point(x=784, y=151) danger
+2024-07-26 19:37:14 None, kv_close
+2024-07-26 19:37:15 Point(x=497, y=116) kv_skip_battle цикл ожидания
+2024-07-26 19:37:54 fun.foto
+2024-07-26 19:37:55 fun.move_to_click
+2024-07-26 19:37:58 fun.move_to_click
+2024-07-26 19:42:13 fun.move_to_click
+2024-07-26 19:42:15 battle
+2024-07-26 19:42:15 None kv_skip_battle
+2024-07-26 19:42:15 None danger
+2024-07-26 19:42:15 None, kv_close
+2024-07-26 19:42:17 Point(x=497, y=116) kv_skip_battle цикл ожидания
+2024-07-26 19:42:36 fun.foto
+2024-07-26 19:42:37 fun.move_to_click
+2024-07-26 19:42:40 fun.move_to_click
+2024-07-26 19:47:16 fun.move_to_click
+2024-07-26 19:47:18 battle
+2024-07-26 19:47:19 None kv_skip_battle
+2024-07-26 19:47:19 None danger
+2024-07-26 19:47:19 None, kv_close
+2024-07-26 19:47:20 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:21 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:23 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:24 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:25 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:26 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:28 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:29 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:30 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:31 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:33 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:34 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:35 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:36 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:37 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:38 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:40 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:41 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:42 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:43 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:44 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:46 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:47 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:48 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:50 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:51 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:52 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:53 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:55 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:56 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:57 None kv_skip_battle цикл ожидания
+2024-07-26 19:47:58 None kv_skip_battle цикл ожидания
+2024-07-26 19:48:00 None kv_skip_battle цикл ожидания
+2024-07-26 19:48:01 None kv_skip_battle цикл ожидания
+2024-07-26 19:48:02 None kv_skip_battle цикл ожидания
+2024-07-26 19:48:03 None kv_skip_battle цикл ожидания
+2024-07-26 19:48:05 None kv_skip_battle цикл ожидания
+2024-07-26 19:48:06 None kv_skip_battle цикл ожидания
+2024-07-26 19:48:07 None kv_skip_battle цикл ожидания
+2024-07-26 19:48:08 None kv_skip_battle цикл ожидания
+2024-07-26 19:48:09 None kv_skip_battle цикл ожидания
+2024-07-26 19:48:10 None kv_skip_battle цикл ожидания
+2024-07-26 19:48:11 None kv_skip_battle цикл ожидания
+2024-07-26 19:48:12 None kv_skip_battle цикл ожидания
+2024-07-26 19:50:55 
+2024-07-26 19:50:55 *******                      *******
+2024-07-26 19:50:55 ******* перезапуск программы *******
+2024-07-26 19:50:55 *******                      *******
+2024-07-26 19:50:55 
+2024-07-26 19:50:59 kv_and_raid.kv
+2024-07-26 19:50:59 нажать 'обновить'
+2024-07-26 19:50:59 fun.move_to_click
+2024-07-26 19:51:03 fun.move_to_click
+2024-07-26 19:52:19 fun.move_to_click
+2024-07-26 19:52:21 battle
+2024-07-26 19:52:21 None kv_skip_battle
+2024-07-26 19:52:22 None danger
+2024-07-26 19:52:22 None, kv_close
+2024-07-26 19:52:23 Point(x=497, y=116) kv_skip_battle цикл ожидания
+2024-07-26 19:52:58 fun.foto
+2024-07-26 19:52:59 fun.move_to_click
+2024-07-26 19:53:02 fun.move_to_click
+2024-07-26 19:57:23 fun.move_to_click
+2024-07-26 19:57:24 battle
+2024-07-26 19:57:25 None kv_skip_battle
+2024-07-26 19:57:25 None danger
+2024-07-26 19:57:25 None, kv_close
+2024-07-26 19:57:26 Point(x=497, y=116) kv_skip_battle цикл ожидания
+2024-07-26 19:57:57 fun.foto
+2024-07-26 19:57:57 fun.move_to_click
+2024-07-26 19:58:00 fun.move_to_click
+2024-07-26 20:02:26 fun.move_to_click
+2024-07-26 20:02:27 battle
+2024-07-26 20:02:29 Point(x=497, y=116) kv_skip_battle
+2024-07-26 20:02:29 Point(x=784, y=151) danger
+2024-07-26 20:02:30 None, kv_close
+2024-07-26 20:02:53 fun.foto
+2024-07-26 20:02:53 fun.move_to_click
+2024-07-26 20:02:58 fun.move_to_click
+2024-07-26 20:07:28 fun.move_to_click
+2024-07-26 20:07:30 battle
+2024-07-26 20:07:32 Point(x=497, y=116) kv_skip_battle
+2024-07-26 20:07:32 Point(x=784, y=151) danger
+2024-07-26 20:07:32 None, kv_close
+2024-07-26 20:07:54 fun.foto
+2024-07-26 20:07:54 fun.move_to_click
+2024-07-26 20:07:57 fun.move_to_click
+2024-07-26 20:12:31 fun.move_to_click
+2024-07-26 20:12:32 battle
+2024-07-26 20:12:34 Point(x=497, y=116) kv_skip_battle
+2024-07-26 20:12:34 None danger
+2024-07-26 20:12:34 None, kv_close
+2024-07-26 20:12:41 fun.move_to_click
+2024-07-26 20:12:47 fun.foto
+2024-07-26 20:12:47 fun.move_to_click
+2024-07-26 20:12:50 fun.move_to_click
+2024-07-26 20:17:35 fun.move_to_click
+2024-07-26 20:17:37 battle
+2024-07-26 20:17:37 None kv_skip_battle
+2024-07-26 20:17:37 None danger
+2024-07-26 20:17:37 None, kv_close
+2024-07-26 20:17:38 Point(x=497, y=116) kv_skip_battle цикл ожидания
+2024-07-26 20:17:47 fun.move_to_click
+2024-07-26 20:17:52 fun.foto
+2024-07-26 20:17:53 fun.move_to_click
+2024-07-26 20:17:55 fun.move_to_click
+2024-07-26 20:22:38 fun.move_to_click
+2024-07-26 20:22:40 battle
+2024-07-26 20:22:41 Point(x=497, y=116) kv_skip_battle
+2024-07-26 20:22:41 None danger
+2024-07-26 20:22:41 None, kv_close
+2024-07-26 20:22:50 fun.move_to_click
+2024-07-26 20:22:55 fun.foto
+2024-07-26 20:22:55 fun.move_to_click
+2024-07-26 20:22:58 fun.move_to_click
+2024-07-26 20:27:41 fun.move_to_click
+2024-07-26 20:27:43 battle
+2024-07-26 20:27:44 Point(x=497, y=116) kv_skip_battle
+2024-07-26 20:27:44 Point(x=784, y=151) danger
+2024-07-26 20:27:44 None, kv_close
+2024-07-26 20:28:13 fun.foto
+2024-07-26 20:28:14 fun.move_to_click
+2024-07-26 20:28:18 fun.move_to_click
+2024-07-26 20:32:43 fun.move_to_click
+2024-07-26 20:32:45 battle
+2024-07-26 20:32:46 Point(x=497, y=116) kv_skip_battle
+2024-07-26 20:32:46 None danger
+2024-07-26 20:32:47 None, kv_close
+2024-07-26 20:32:53 fun.move_to_click
+2024-07-26 20:32:59 fun.foto
+2024-07-26 20:32:59 fun.move_to_click
+2024-07-26 20:33:02 fun.move_to_click
+2024-07-26 20:37:45 fun.move_to_click
+2024-07-26 20:37:47 battle
+2024-07-26 20:37:47 None kv_skip_battle
+2024-07-26 20:37:47 None danger
+2024-07-26 20:37:48 None, kv_close
+2024-07-26 20:37:49 Point(x=497, y=116) kv_skip_battle цикл ожидания
+2024-07-26 20:38:16 fun.foto
+2024-07-26 20:38:16 fun.move_to_click
+2024-07-26 20:38:19 fun.move_to_click
+2024-07-26 20:42:48 fun.move_to_click
+2024-07-26 20:42:49 battle
+2024-07-26 20:42:49 None kv_skip_battle
+2024-07-26 20:42:50 None danger
+2024-07-26 20:42:50 None, kv_close
+2024-07-26 20:42:51 Point(x=497, y=116) kv_skip_battle цикл ожидания
+2024-07-26 20:42:58 fun.move_to_click
+2024-07-26 20:43:03 fun.foto
+2024-07-26 20:43:03 fun.move_to_click
+2024-07-26 20:43:06 fun.move_to_click
+2024-07-26 20:47:50 fun.move_to_click
+2024-07-26 20:47:51 battle
+2024-07-26 20:47:53 None kv_skip_battle
+2024-07-26 20:47:53 None danger
+2024-07-26 20:47:53 None, kv_close
+2024-07-26 20:47:54 Point(x=497, y=116) kv_skip_battle цикл ожидания
+2024-07-26 20:48:03 fun.move_to_click
+2024-07-26 20:48:10 fun.foto
+2024-07-26 20:48:10 fun.move_to_click
+2024-07-26 20:48:14 fun.move_to_click
+2024-07-26 20:51:23 
+2024-07-26 20:51:23 *******                      *******
+2024-07-26 20:51:23 ******* перезапуск программы *******
+2024-07-26 20:51:23 *******                      *******
+2024-07-26 20:51:23 
+2024-07-26 20:51:50 kv_and_raid.kv
+2024-07-26 20:51:50 нажать 'обновить'
+2024-07-26 20:51:50 fun.move_to_click
+2024-07-26 20:51:54 fun.move_to_click
+2024-07-26 20:52:52 fun.move_to_click
+2024-07-26 20:52:54 battle
+2024-07-26 20:52:55 None kv_skip_battle
+2024-07-26 20:52:55 None danger
+2024-07-26 20:52:56 None, kv_close
+2024-07-26 20:52:57 Point(x=497, y=116) kv_skip_battle цикл ожидания
+2024-07-26 20:53:33 fun.foto
+2024-07-26 20:53:33 fun.move_to_click
+2024-07-26 20:53:36 fun.move_to_click
+2024-07-26 20:57:54 fun.move_to_click
+2024-07-26 20:57:56 battle
+2024-07-26 20:57:57 Point(x=497, y=116) kv_skip_battle
+2024-07-26 20:57:58 Point(x=784, y=151) danger
+2024-07-26 20:57:58 None, kv_close
+2024-07-26 20:58:23 fun.foto
+2024-07-26 20:58:23 fun.move_to_click
+2024-07-26 20:58:26 fun.move_to_click
+2024-07-26 21:02:57 fun.move_to_click
+2024-07-26 21:02:58 battle
+2024-07-26 21:03:00 Point(x=497, y=116) kv_skip_battle
+2024-07-26 21:03:00 Point(x=784, y=151) danger
+2024-07-26 21:03:00 None, kv_close
+2024-07-26 21:03:26 fun.foto
+2024-07-26 21:03:27 fun.move_to_click
+2024-07-26 21:03:31 fun.move_to_click
+2024-07-26 21:08:00 fun.move_to_click
+2024-07-26 21:08:01 battle
+2024-07-26 21:08:02 Point(x=497, y=116) kv_skip_battle
+2024-07-26 21:08:03 None danger
+2024-07-26 21:08:03 None, kv_close
+2024-07-26 21:08:12 fun.move_to_click
+2024-07-26 21:08:18 fun.foto
+2024-07-26 21:08:18 fun.move_to_click
+2024-07-26 21:08:21 fun.move_to_click
+2024-07-26 21:13:02 fun.move_to_click
+2024-07-26 21:13:04 battle
+2024-07-26 21:13:06 Point(x=497, y=116) kv_skip_battle
+2024-07-26 21:13:06 Point(x=784, y=151) danger
+2024-07-26 21:13:06 None, kv_close
+2024-07-26 21:13:23 fun.foto
+2024-07-26 21:13:23 fun.move_to_click
+2024-07-26 21:13:26 fun.move_to_click
+2024-07-26 21:16:19 fun.move_to_click
+2024-07-26 21:16:21 battle
+2024-07-26 21:16:21 None kv_skip_battle
+2024-07-26 21:16:22 None danger
+2024-07-26 21:16:22 None, kv_close
+2024-07-26 21:16:23 None kv_skip_battle цикл ожидания
+2024-07-26 21:16:24 None kv_skip_battle цикл ожидания
+2024-07-26 21:16:26 None kv_skip_battle цикл ожидания
+2024-07-26 21:16:27 None kv_skip_battle цикл ожидания
+2024-07-26 21:16:28 None kv_skip_battle цикл ожидания
+2024-07-26 21:16:29 None kv_skip_battle цикл ожидания
+2024-07-26 21:16:31 None kv_skip_battle цикл ожидания
+2024-07-26 21:16:32 None kv_skip_battle цикл ожидания
+2024-07-26 21:16:33 Point(x=497, y=116) kv_skip_battle цикл ожидания
+2024-07-26 21:16:41 fun.move_to_click
+2024-07-26 21:16:47 fun.foto
+2024-07-26 21:16:47 fun.move_to_click
+2024-07-26 21:16:50 fun.move_to_click
+2024-07-26 21:18:05 fun.move_to_click
+2024-07-26 21:18:07 battle
+2024-07-26 21:18:07 None kv_skip_battle
+2024-07-26 21:18:08 None danger
+2024-07-26 21:18:08 None, kv_close
+2024-07-26 21:18:09 Point(x=497, y=116) kv_skip_battle цикл ожидания
+2024-07-26 21:18:16 fun.move_to_click
+2024-07-26 21:18:22 fun.foto
+2024-07-26 21:18:22 fun.move_to_click
+2024-07-26 21:18:25 fun.move_to_click
+2024-07-26 21:22:59 
+2024-07-26 21:22:59 *******                      *******
+2024-07-26 21:22:59 ******* перезапуск программы *******
+2024-07-26 21:22:59 *******                      *******
+2024-07-26 21:22:59 
+2024-07-26 21:24:36 
+2024-07-26 21:24:36 *******                      *******
+2024-07-26 21:24:36 ******* перезапуск программы *******
+2024-07-26 21:24:36 *******                      *******
+2024-07-26 21:24:36 
+2024-07-26 21:24:40 touring.test
+2024-07-26 21:24:40 fun.push_close_all_
+2024-07-26 21:24:41 touring.travel
+2024-07-26 21:24:41 touring.traffic_on_the_map
+2024-07-26 21:24:41 touring.to_map
+2024-07-26 21:24:42 turgenev_st = None
+2024-07-26 21:24:47 ev_map = 0
+2024-07-26 21:24:48 pos_stan = Point(x=253, y=466), stan[1] = img/tonelli/k_Pushkin.png
+2024-07-26 21:24:48 touring.poisk
+2024-07-26 21:24:49 point_poisk = Point(x=253, y=466), confidence_poisk = 0.98
+2024-07-26 21:24:49 fun.move_to_click
+2024-07-26 21:24:51 touring.events_tunnel
+2024-07-26 21:24:52 id_st = None
+2024-07-26 21:24:53 info = Point(x=189, y=160)
+2024-07-26 21:24:53 skip_battle = None
+2024-07-26 21:24:54 id_st = None
+2024-07-26 21:24:54 skip_battle = None
+2024-07-26 21:24:54 id_st = None
+2024-07-26 21:24:54 skip_battle = None
+2024-07-26 21:24:55 id_st = None
+2024-07-26 21:24:55 skip_battle = None
+2024-07-26 21:24:55 id_st = None
+2024-07-26 21:24:55 skip_battle = None
+2024-07-26 21:24:56 id_st = None
+2024-07-26 21:24:56 skip_battle = None
+2024-07-26 21:24:56 id_st = None
+2024-07-26 21:24:56 skip_battle = None
+2024-07-26 21:24:57 id_st = None
+2024-07-26 21:24:57 skip_battle = None
+2024-07-26 21:24:57 id_st = None
+2024-07-26 21:24:57 skip_battle = None
+2024-07-26 21:24:58 id_st = None
+2024-07-26 21:24:58 skip_battle = None
+2024-07-26 21:24:58 id_st = None
+2024-07-26 21:24:58 skip_battle = None
+2024-07-26 21:24:58 id_st = None
+2024-07-26 21:24:59 skip_battle = None
+2024-07-26 21:24:59 id_st = None
+2024-07-26 21:24:59 skip_battle = None
+2024-07-26 21:24:59 id_st = None
+2024-07-26 21:25:00 skip_battle = None
+2024-07-26 21:25:00 id_st = None
+2024-07-26 21:25:00 skip_battle = None
+2024-07-26 21:25:00 id_st = None
+2024-07-26 21:25:01 skip_battle = None
+2024-07-26 21:25:01 id_st = None
+2024-07-26 21:25:01 skip_battle = None
+2024-07-26 21:25:01 id_st = None
+2024-07-26 21:25:02 skip_battle = None
+2024-07-26 21:25:02 id_st = None
+2024-07-26 21:25:02 skip_battle = None
+2024-07-26 21:25:02 id_st = None
+2024-07-26 21:25:03 skip_battle = None
+2024-07-26 21:25:03 id_st = None
+2024-07-26 21:25:03 skip_battle = None
+2024-07-26 21:25:03 id_st = None
+2024-07-26 21:25:04 skip_battle = None
+2024-07-26 21:25:04 id_st = None
+2024-07-26 21:25:05 skip_battle = None
+2024-07-26 21:25:06 id_st = None
+2024-07-26 21:25:06 skip_battle = None
+2024-07-26 21:25:06 id_st = None
+2024-07-26 21:25:07 skip_battle = None
+2024-07-26 21:25:07 id_st = None
+2024-07-26 21:25:07 skip_battle = None
+2024-07-26 21:25:07 id_st = None
+2024-07-26 21:25:07 skip_battle = None
+2024-07-26 21:25:08 id_st = None
+2024-07-26 21:25:08 skip_battle = None
+2024-07-26 21:25:08 id_st = None
+2024-07-26 21:25:08 skip_battle = None
+2024-07-26 21:25:09 id_st = None
+2024-07-26 21:25:10 skip_battle = None
+2024-07-26 21:25:10 id_st = None
+2024-07-26 21:25:11 skip_battle = None
+2024-07-26 21:25:11 id_st = None
+2024-07-26 21:25:11 skip_battle = None
+2024-07-26 21:25:11 id_st = None
+2024-07-26 21:25:12 skip_battle = None
+2024-07-26 21:25:12 id_st = None
+2024-07-26 21:25:12 skip_battle = None
+2024-07-26 21:25:12 id_st = None
+2024-07-26 21:25:13 skip_battle = None
+2024-07-26 21:25:13 id_st = None
+2024-07-26 21:25:13 skip_battle = None
+2024-07-26 21:25:13 post = Point(x=436, y=180)
+2024-07-26 21:25:14 entry = Point(x=366, y=509)
+2024-07-26 21:25:14 fun.move_to_click
+2024-07-26 21:25:17 id_st = Point(x=466, y=688)
+2024-07-26 21:25:17 ст. Пушкинская
+2024-07-26 21:25:18 touring.event_gifts
+2024-07-26 21:25:19 pos_gift = None
+2024-07-26 21:25:19 pos_gift = None
+2024-07-26 21:25:19 touring.traffic_on_the_map
+2024-07-26 21:25:20 touring.to_map
+2024-07-26 21:25:21 turgenev_st = None
+2024-07-26 21:25:26 ev_map = стрелка север
+2024-07-26 21:25:26 pos_stan = Point(x=618, y=422), stan[1] = img/tonelli/k_Chekhov.png
+2024-07-26 21:25:26 touring.poisk
+2024-07-26 21:25:27 point_poisk = Point(x=619, y=422), confidence_poisk = 0.96
+2024-07-26 21:25:27 fun.move_to_click
+2024-07-26 21:25:29 touring.events_tunnel
+2024-07-26 21:25:31 id_st = Point(x=460, y=688)
+2024-07-26 21:25:31 info = Point(x=189, y=160)
+2024-07-26 21:25:31 ст. Чеховская
+2024-07-26 21:25:32 touring.event_gifts
+2024-07-26 21:25:33 pos_gift = None
+2024-07-26 21:25:33 pos_gift = None
+2024-07-26 21:25:33 touring.traffic_on_the_map
+2024-07-26 21:25:33 touring.to_map
+2024-07-26 21:25:34 turgenev_st = None
+2024-07-26 21:25:39 ev_map = стрелка юг
+2024-07-26 21:25:40 pos_stan = None, stan[1] = img/tonelli/k_Borov.png
+2024-07-26 21:25:40 pos_click = Point(x=495, y=726), нажал на стрелку "юг"
+2024-07-26 21:25:40 fun.move_to_click
+2024-07-26 21:25:43 touring.poisk
+2024-07-26 21:25:44 point_poisk = Point(x=589, y=628), confidence_poisk = 0.97
+2024-07-26 21:25:44 fun.move_to_click
+2024-07-26 21:25:46 touring.events_tunnel
+2024-07-26 21:25:47 id_st = None
+2024-07-26 21:25:48 info = Point(x=189, y=160)
+2024-07-26 21:25:48 skip_battle = None
+2024-07-26 21:25:48 id_st = None
+2024-07-26 21:25:48 skip_battle = None
+2024-07-26 21:25:49 id_st = None
+2024-07-26 21:25:49 skip_battle = None
+2024-07-26 21:25:49 id_st = None
+2024-07-26 21:25:49 skip_battle = None
+2024-07-26 21:25:50 id_st = None
+2024-07-26 21:25:50 skip_battle = None
+2024-07-26 21:25:50 id_st = None
+2024-07-26 21:25:50 skip_battle = None
+2024-07-26 21:25:51 id_st = None
+2024-07-26 21:25:51 skip_battle = None
+2024-07-26 21:25:51 id_st = None
+2024-07-26 21:25:51 skip_battle = None
+2024-07-26 21:25:52 id_st = None
+2024-07-26 21:25:52 skip_battle = None
+2024-07-26 21:25:52 id_st = None
+2024-07-26 21:25:52 skip_battle = None
+2024-07-26 21:25:52 id_st = None
+2024-07-26 21:25:53 skip_battle = None
+2024-07-26 21:25:53 id_st = None
+2024-07-26 21:25:53 skip_battle = None
+2024-07-26 21:25:53 id_st = None
+2024-07-26 21:25:54 skip_battle = None
+2024-07-26 21:25:54 id_st = None
+2024-07-26 21:25:54 skip_battle = None
+2024-07-26 21:25:54 id_st = None
+2024-07-26 21:25:55 skip_battle = None
+2024-07-26 21:25:55 id_st = None
+2024-07-26 21:25:55 skip_battle = None
+2024-07-26 21:25:55 id_st = None
+2024-07-26 21:25:56 skip_battle = None
+2024-07-26 21:25:56 id_st = None
+2024-07-26 21:25:56 skip_battle = None
+2024-07-26 21:25:56 id_st = None
+2024-07-26 21:25:57 skip_battle = None
+2024-07-26 21:25:57 id_st = None
+2024-07-26 21:25:57 skip_battle = Point(x=497, y=116)
+2024-07-26 21:25:57 raptor = None
+2024-07-26 21:25:57 arachne = None
+2024-07-26 21:25:58 krysa = Point(x=871, y=150)
+2024-07-26 21:25:58 kiki = None
+2024-07-26 21:25:58 station_master.enemy_battle
+2024-07-26 21:25:58  поиск battle_end, skip_battle, dog
+2024-07-26 21:25:59 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:26:00 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:26:02 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:26:03 нажать закрыть в конце боя
+2024-07-26 21:26:03 fun.push_close_all_
+2024-07-26 21:26:03 fun.close_popup_window
+2024-07-26 21:26:03 fun.push_close
+2024-07-26 21:26:04 fun.move_to_click
+2024-07-26 21:26:08 skip_battle1_end_ver = None
+2024-07-26 21:26:08 выход из 'enemy_battle
+2024-07-26 21:26:08 id_st = None
+2024-07-26 21:26:09 skip_battle = None
+2024-07-26 21:26:09 id_st = None
+2024-07-26 21:26:09 skip_battle = None
+2024-07-26 21:26:09 id_st = None
+2024-07-26 21:26:10 skip_battle = None
+2024-07-26 21:26:10 id_st = None
+2024-07-26 21:26:10 skip_battle = None
+2024-07-26 21:26:10 id_st = None
+2024-07-26 21:26:11 skip_battle = None
+2024-07-26 21:26:11 id_st = None
+2024-07-26 21:26:11 skip_battle = None
+2024-07-26 21:26:11 id_st = None
+2024-07-26 21:26:11 skip_battle = None
+2024-07-26 21:26:12 id_st = None
+2024-07-26 21:26:12 skip_battle = None
+2024-07-26 21:26:12 id_st = None
+2024-07-26 21:26:12 skip_battle = None
+2024-07-26 21:26:13 id_st = None
+2024-07-26 21:26:13 skip_battle = None
+2024-07-26 21:26:13 id_st = None
+2024-07-26 21:26:13 skip_battle = None
+2024-07-26 21:26:13 id_st = None
+2024-07-26 21:26:14 skip_battle = None
+2024-07-26 21:26:14 id_st = None
+2024-07-26 21:26:14 skip_battle = None
+2024-07-26 21:26:14 id_st = None
+2024-07-26 21:26:15 skip_battle = None
+2024-07-26 21:26:15 id_st = None
+2024-07-26 21:26:15 skip_battle = None
+2024-07-26 21:26:15 id_st = None
+2024-07-26 21:26:16 skip_battle = None
+2024-07-26 21:26:16 id_st = None
+2024-07-26 21:26:16 skip_battle = None
+2024-07-26 21:26:16 id_st = None
+2024-07-26 21:26:17 skip_battle = None
+2024-07-26 21:26:17 post = Point(x=436, y=180)
+2024-07-26 21:26:17 attack = Point(x=365, y=683)
+2024-07-26 21:26:17 fun.move_to_click
+2024-07-26 21:26:21 id_st = None
+2024-07-26 21:26:22 skip_battle = Point(x=497, y=116)
+2024-07-26 21:26:22 raptor = None
+2024-07-26 21:26:22 arachne = None
+2024-07-26 21:26:23 krysa = None
+2024-07-26 21:26:23 kiki = None
+2024-07-26 21:26:23 station_master.enemy_battle
+2024-07-26 21:26:23  поиск battle_end, skip_battle, dog
+2024-07-26 21:26:24 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:26:26 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:26:26 skip_battle = Point(x=496, y=117)
+2024-07-26 21:26:26 fun.move_to_click
+2024-07-26 21:26:29 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:26:30 нажать закрыть в конце боя
+2024-07-26 21:26:30 fun.push_close_all_
+2024-07-26 21:26:30 fun.close_popup_window
+2024-07-26 21:26:31 fun.push_close
+2024-07-26 21:26:31 fun.move_to_click
+2024-07-26 21:26:34 skip_battle1_end_ver = None
+2024-07-26 21:26:34 выход из 'enemy_battle
+2024-07-26 21:26:34 id_st = Point(x=495, y=688)
+2024-07-26 21:26:34 ст. Боровицкая
+2024-07-26 21:26:35 touring.event_gifts
+2024-07-26 21:26:36 pos_gift = None
+2024-07-26 21:26:36 pos_gift = None
+2024-07-26 21:26:37 touring.traffic_on_the_map
+2024-07-26 21:26:37 touring.to_map
+2024-07-26 21:26:38 turgenev_st = None
+2024-07-26 21:26:43 ev_map = 0
+2024-07-26 21:26:43 pos_stan = Point(x=333, y=441), stan[1] = img/tonelli/k_Biblioteka.png
+2024-07-26 21:26:44 touring.poisk
+2024-07-26 21:26:45 point_poisk = Point(x=333, y=442), confidence_poisk = 0.98
+2024-07-26 21:26:45 fun.move_to_click
+2024-07-26 21:26:47 touring.events_tunnel
+2024-07-26 21:26:48 id_st = Point(x=495, y=688)
+2024-07-26 21:26:48 info = Point(x=189, y=160)
+2024-07-26 21:26:48 ст. Библиотека им. Ленина
+2024-07-26 21:26:49 touring.event_gifts
+2024-07-26 21:26:50 pos_gift = None
+2024-07-26 21:26:50 pos_gift = None
+2024-07-26 21:26:50 touring.traffic_on_the_map
+2024-07-26 21:26:50 touring.to_map
+2024-07-26 21:26:52 turgenev_st = None
+2024-07-26 21:26:57 ev_map = 0
+2024-07-26 21:26:57 pos_stan = Point(x=548, y=516), stan[1] = img/tonelli/k_Kropotkin.png
+2024-07-26 21:26:57 touring.poisk
+2024-07-26 21:26:58 point_poisk = Point(x=548, y=517), confidence_poisk = 0.97
+2024-07-26 21:26:58 fun.move_to_click
+2024-07-26 21:27:00 touring.events_tunnel
+2024-07-26 21:27:01 id_st = None
+2024-07-26 21:27:01 info = Point(x=189, y=160)
+2024-07-26 21:27:02 skip_battle = None
+2024-07-26 21:27:02 id_st = None
+2024-07-26 21:27:02 skip_battle = None
+2024-07-26 21:27:02 id_st = None
+2024-07-26 21:27:03 skip_battle = None
+2024-07-26 21:27:03 id_st = None
+2024-07-26 21:27:03 skip_battle = None
+2024-07-26 21:27:03 id_st = None
+2024-07-26 21:27:04 skip_battle = None
+2024-07-26 21:27:04 id_st = None
+2024-07-26 21:27:04 skip_battle = None
+2024-07-26 21:27:04 id_st = None
+2024-07-26 21:27:05 skip_battle = None
+2024-07-26 21:27:05 id_st = None
+2024-07-26 21:27:05 skip_battle = None
+2024-07-26 21:27:05 id_st = None
+2024-07-26 21:27:06 skip_battle = None
+2024-07-26 21:27:06 id_st = None
+2024-07-26 21:27:06 skip_battle = None
+2024-07-26 21:27:06 id_st = None
+2024-07-26 21:27:06 skip_battle = None
+2024-07-26 21:27:07 id_st = None
+2024-07-26 21:27:07 skip_battle = None
+2024-07-26 21:27:07 id_st = None
+2024-07-26 21:27:07 skip_battle = None
+2024-07-26 21:27:07 id_st = None
+2024-07-26 21:27:08 skip_battle = None
+2024-07-26 21:27:08 id_st = None
+2024-07-26 21:27:08 skip_battle = None
+2024-07-26 21:27:08 id_st = None
+2024-07-26 21:27:09 skip_battle = None
+2024-07-26 21:27:09 id_st = None
+2024-07-26 21:27:09 skip_battle = None
+2024-07-26 21:27:09 id_st = None
+2024-07-26 21:27:10 skip_battle = None
+2024-07-26 21:27:10 id_st = None
+2024-07-26 21:27:10 skip_battle = None
+2024-07-26 21:27:10 id_st = None
+2024-07-26 21:27:11 skip_battle = None
+2024-07-26 21:27:11 id_st = None
+2024-07-26 21:27:11 skip_battle = Point(x=497, y=116)
+2024-07-26 21:27:12 raptor = None
+2024-07-26 21:27:12 arachne = None
+2024-07-26 21:27:12 krysa = Point(x=871, y=150)
+2024-07-26 21:27:13 kiki = None
+2024-07-26 21:27:13 station_master.enemy_battle
+2024-07-26 21:27:13  поиск battle_end, skip_battle, dog
+2024-07-26 21:27:15 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:27:16 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:27:18 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:27:19 нажать закрыть в конце боя
+2024-07-26 21:27:19 fun.push_close_all_
+2024-07-26 21:27:19 fun.close_popup_window
+2024-07-26 21:27:19 fun.push_close
+2024-07-26 21:27:19 fun.move_to_click
+2024-07-26 21:27:23 skip_battle1_end_ver = None
+2024-07-26 21:27:23 выход из 'enemy_battle
+2024-07-26 21:27:23 id_st = None
+2024-07-26 21:27:23 skip_battle = None
+2024-07-26 21:27:23 id_st = None
+2024-07-26 21:27:24 skip_battle = None
+2024-07-26 21:27:24 id_st = None
+2024-07-26 21:27:24 skip_battle = None
+2024-07-26 21:27:24 id_st = None
+2024-07-26 21:27:25 skip_battle = None
+2024-07-26 21:27:25 id_st = None
+2024-07-26 21:27:25 skip_battle = None
+2024-07-26 21:27:25 id_st = None
+2024-07-26 21:27:26 skip_battle = None
+2024-07-26 21:27:26 id_st = None
+2024-07-26 21:27:26 skip_battle = None
+2024-07-26 21:27:26 id_st = None
+2024-07-26 21:27:27 skip_battle = None
+2024-07-26 21:27:27 id_st = None
+2024-07-26 21:27:27 skip_battle = None
+2024-07-26 21:27:27 id_st = None
+2024-07-26 21:27:27 skip_battle = None
+2024-07-26 21:27:28 id_st = None
+2024-07-26 21:27:28 skip_battle = None
+2024-07-26 21:27:28 id_st = None
+2024-07-26 21:27:28 skip_battle = None
+2024-07-26 21:27:29 id_st = None
+2024-07-26 21:27:29 skip_battle = None
+2024-07-26 21:27:29 id_st = None
+2024-07-26 21:27:29 skip_battle = None
+2024-07-26 21:27:29 id_st = None
+2024-07-26 21:27:30 skip_battle = None
+2024-07-26 21:27:30 id_st = None
+2024-07-26 21:27:31 skip_battle = None
+2024-07-26 21:27:31 id_st = None
+2024-07-26 21:27:32 skip_battle = None
+2024-07-26 21:27:32 id_st = None
+2024-07-26 21:27:33 skip_battle = None
+2024-07-26 21:27:33 post = Point(x=436, y=180)
+2024-07-26 21:27:33 attack = Point(x=365, y=683)
+2024-07-26 21:27:33 fun.move_to_click
+2024-07-26 21:27:37 id_st = None
+2024-07-26 21:27:37 skip_battle = Point(x=497, y=116)
+2024-07-26 21:27:37 raptor = None
+2024-07-26 21:27:37 arachne = None
+2024-07-26 21:27:37 krysa = None
+2024-07-26 21:27:38 kiki = None
+2024-07-26 21:27:38 station_master.enemy_battle
+2024-07-26 21:27:38  поиск battle_end, skip_battle, dog
+2024-07-26 21:27:39 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:27:40 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:27:41 skip_battle = Point(x=496, y=117)
+2024-07-26 21:27:41 fun.move_to_click
+2024-07-26 21:27:45 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:27:45 skip_battle = Point(x=497, y=117)
+2024-07-26 21:27:45 fun.move_to_click
+2024-07-26 21:27:49 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:27:49 нажать закрыть в конце боя
+2024-07-26 21:27:49 fun.push_close_all_
+2024-07-26 21:27:50 fun.close_popup_window
+2024-07-26 21:27:50 fun.push_close
+2024-07-26 21:27:50 fun.move_to_click
+2024-07-26 21:27:53 skip_battle1_end_ver = None
+2024-07-26 21:27:53 выход из 'enemy_battle
+2024-07-26 21:27:53 id_st = Point(x=476, y=688)
+2024-07-26 21:27:53 ст. Кропоткинская
+2024-07-26 21:27:55 touring.event_gifts
+2024-07-26 21:27:56 pos_gift = None
+2024-07-26 21:27:56 pos_gift = None
+2024-07-26 21:27:56 touring.traffic_on_the_map
+2024-07-26 21:27:56 touring.to_map
+2024-07-26 21:27:57 turgenev_st = None
+2024-07-26 21:28:02 ev_map = 0
+2024-07-26 21:28:03 pos_stan = Point(x=232, y=524), stan[1] = img/tonelli/k_Park_kr.png
+2024-07-26 21:28:03 touring.poisk
+2024-07-26 21:28:04 point_poisk = Point(x=232, y=525), confidence_poisk = 0.99
+2024-07-26 21:28:04 fun.move_to_click
+2024-07-26 21:28:06 touring.events_tunnel
+2024-07-26 21:28:07 id_st = None
+2024-07-26 21:28:07 info = Point(x=189, y=160)
+2024-07-26 21:28:08 skip_battle = None
+2024-07-26 21:28:08 id_st = None
+2024-07-26 21:28:08 skip_battle = None
+2024-07-26 21:28:08 id_st = None
+2024-07-26 21:28:09 skip_battle = None
+2024-07-26 21:28:09 id_st = None
+2024-07-26 21:28:09 skip_battle = None
+2024-07-26 21:28:09 id_st = None
+2024-07-26 21:28:10 skip_battle = None
+2024-07-26 21:28:10 id_st = None
+2024-07-26 21:28:10 skip_battle = None
+2024-07-26 21:28:10 id_st = None
+2024-07-26 21:28:10 skip_battle = None
+2024-07-26 21:28:11 id_st = None
+2024-07-26 21:28:11 skip_battle = None
+2024-07-26 21:28:11 id_st = None
+2024-07-26 21:28:11 skip_battle = None
+2024-07-26 21:28:12 id_st = None
+2024-07-26 21:28:12 skip_battle = None
+2024-07-26 21:28:13 id_st = None
+2024-07-26 21:28:14 skip_battle = None
+2024-07-26 21:28:14 id_st = None
+2024-07-26 21:28:15 skip_battle = None
+2024-07-26 21:28:15 id_st = None
+2024-07-26 21:28:15 skip_battle = None
+2024-07-26 21:28:16 id_st = None
+2024-07-26 21:28:16 skip_battle = None
+2024-07-26 21:28:16 id_st = None
+2024-07-26 21:28:16 skip_battle = None
+2024-07-26 21:28:16 id_st = None
+2024-07-26 21:28:17 skip_battle = None
+2024-07-26 21:28:17 id_st = None
+2024-07-26 21:28:17 skip_battle = None
+2024-07-26 21:28:17 id_st = None
+2024-07-26 21:28:18 skip_battle = None
+2024-07-26 21:28:18 id_st = None
+2024-07-26 21:28:18 skip_battle = None
+2024-07-26 21:28:18 id_st = None
+2024-07-26 21:28:19 skip_battle = None
+2024-07-26 21:28:19 id_st = None
+2024-07-26 21:28:19 skip_battle = None
+2024-07-26 21:28:19 id_st = None
+2024-07-26 21:28:20 skip_battle = None
+2024-07-26 21:28:20 id_st = None
+2024-07-26 21:28:20 skip_battle = None
+2024-07-26 21:28:20 id_st = None
+2024-07-26 21:28:20 skip_battle = None
+2024-07-26 21:28:21 id_st = None
+2024-07-26 21:28:21 skip_battle = None
+2024-07-26 21:28:21 id_st = None
+2024-07-26 21:28:21 skip_battle = None
+2024-07-26 21:28:22 id_st = None
+2024-07-26 21:28:22 skip_battle = None
+2024-07-26 21:28:22 id_st = None
+2024-07-26 21:28:22 skip_battle = None
+2024-07-26 21:28:22 id_st = None
+2024-07-26 21:28:23 skip_battle = None
+2024-07-26 21:28:23 id_st = None
+2024-07-26 21:28:23 skip_battle = None
+2024-07-26 21:28:23 id_st = None
+2024-07-26 21:28:24 skip_battle = None
+2024-07-26 21:28:24 id_st = None
+2024-07-26 21:28:24 skip_battle = None
+2024-07-26 21:28:24 id_st = None
+2024-07-26 21:28:25 skip_battle = None
+2024-07-26 21:28:25 id_st = None
+2024-07-26 21:28:25 skip_battle = None
+2024-07-26 21:28:25 id_st = None
+2024-07-26 21:28:26 skip_battle = None
+2024-07-26 21:28:26 id_st = None
+2024-07-26 21:28:27 skip_battle = None
+2024-07-26 21:28:27 id_st = None
+2024-07-26 21:28:28 skip_battle = None
+2024-07-26 21:28:28 id_st = Point(x=473, y=688)
+2024-07-26 21:28:28 ст. Парк культуры кр
+2024-07-26 21:28:29 touring.event_gifts
+2024-07-26 21:28:31 pos_gift = None
+2024-07-26 21:28:31 pos_gift = None
+2024-07-26 21:28:31 touring.traffic_on_the_map
+2024-07-26 21:28:31 touring.to_map
+2024-07-26 21:28:32 turgenev_st = None
+2024-07-26 21:28:37 ev_map = 0
+2024-07-26 21:28:37 pos_stan = Point(x=425, y=561), stan[1] = img/tonelli/k_Frunze.png
+2024-07-26 21:28:37 touring.poisk
+2024-07-26 21:28:38 point_poisk = Point(x=425, y=562), confidence_poisk = 0.98
+2024-07-26 21:28:38 fun.move_to_click
+2024-07-26 21:28:41 touring.events_tunnel
+2024-07-26 21:28:42 id_st = None
+2024-07-26 21:28:42 info = Point(x=189, y=160)
+2024-07-26 21:28:42 skip_battle = None
+2024-07-26 21:28:42 id_st = None
+2024-07-26 21:28:43 skip_battle = None
+2024-07-26 21:28:43 id_st = None
+2024-07-26 21:28:43 skip_battle = None
+2024-07-26 21:28:43 id_st = None
+2024-07-26 21:28:44 skip_battle = None
+2024-07-26 21:28:44 id_st = None
+2024-07-26 21:28:44 skip_battle = None
+2024-07-26 21:28:44 id_st = None
+2024-07-26 21:28:44 skip_battle = None
+2024-07-26 21:28:45 id_st = None
+2024-07-26 21:28:45 skip_battle = None
+2024-07-26 21:28:45 id_st = None
+2024-07-26 21:28:45 skip_battle = None
+2024-07-26 21:28:46 id_st = None
+2024-07-26 21:28:46 skip_battle = None
+2024-07-26 21:28:46 id_st = None
+2024-07-26 21:28:46 skip_battle = None
+2024-07-26 21:28:46 id_st = None
+2024-07-26 21:28:47 skip_battle = None
+2024-07-26 21:28:47 id_st = None
+2024-07-26 21:28:47 skip_battle = None
+2024-07-26 21:28:47 id_st = None
+2024-07-26 21:28:48 skip_battle = None
+2024-07-26 21:28:48 id_st = None
+2024-07-26 21:28:48 skip_battle = None
+2024-07-26 21:28:48 id_st = None
+2024-07-26 21:28:49 skip_battle = None
+2024-07-26 21:28:49 id_st = None
+2024-07-26 21:28:49 skip_battle = None
+2024-07-26 21:28:49 id_st = None
+2024-07-26 21:28:50 skip_battle = None
+2024-07-26 21:28:50 id_st = None
+2024-07-26 21:28:50 skip_battle = None
+2024-07-26 21:28:50 id_st = None
+2024-07-26 21:28:50 skip_battle = None
+2024-07-26 21:28:51 id_st = None
+2024-07-26 21:28:51 skip_battle = None
+2024-07-26 21:28:51 id_st = None
+2024-07-26 21:28:51 skip_battle = None
+2024-07-26 21:28:52 id_st = None
+2024-07-26 21:28:52 skip_battle = None
+2024-07-26 21:28:52 id_st = None
+2024-07-26 21:28:52 skip_battle = None
+2024-07-26 21:28:52 id_st = None
+2024-07-26 21:28:53 skip_battle = None
+2024-07-26 21:28:53 id_st = None
+2024-07-26 21:28:53 skip_battle = None
+2024-07-26 21:28:53 id_st = None
+2024-07-26 21:28:54 skip_battle = None
+2024-07-26 21:28:54 id_st = None
+2024-07-26 21:28:54 skip_battle = None
+2024-07-26 21:28:54 id_st = None
+2024-07-26 21:28:55 skip_battle = None
+2024-07-26 21:28:55 id_st = None
+2024-07-26 21:28:55 skip_battle = None
+2024-07-26 21:28:55 id_st = None
+2024-07-26 21:28:56 skip_battle = None
+2024-07-26 21:28:56 id_st = None
+2024-07-26 21:28:56 skip_battle = None
+2024-07-26 21:28:56 id_st = None
+2024-07-26 21:28:57 skip_battle = None
+2024-07-26 21:28:57 id_st = None
+2024-07-26 21:28:57 skip_battle = None
+2024-07-26 21:28:57 id_st = None
+2024-07-26 21:28:58 skip_battle = None
+2024-07-26 21:28:58 id_st = None
+2024-07-26 21:28:58 skip_battle = None
+2024-07-26 21:28:58 id_st = None
+2024-07-26 21:28:58 skip_battle = None
+2024-07-26 21:28:59 id_st = None
+2024-07-26 21:28:59 skip_battle = None
+2024-07-26 21:28:59 id_st = None
+2024-07-26 21:28:59 skip_battle = None
+2024-07-26 21:28:59 id_st = None
+2024-07-26 21:29:00 skip_battle = None
+2024-07-26 21:29:00 id_st = None
+2024-07-26 21:29:00 skip_battle = None
+2024-07-26 21:29:00 id_st = None
+2024-07-26 21:29:01 skip_battle = None
+2024-07-26 21:29:01 id_st = None
+2024-07-26 21:29:01 skip_battle = None
+2024-07-26 21:29:01 id_st = None
+2024-07-26 21:29:02 skip_battle = None
+2024-07-26 21:29:02 id_st = None
+2024-07-26 21:29:02 skip_battle = None
+2024-07-26 21:29:02 id_st = None
+2024-07-26 21:29:03 skip_battle = None
+2024-07-26 21:29:03 post = Point(x=436, y=180)
+2024-07-26 21:29:03 entry = Point(x=366, y=509)
+2024-07-26 21:29:03 fun.move_to_click
+2024-07-26 21:29:06 id_st = Point(x=497, y=687)
+2024-07-26 21:29:06 ст. Фрунзенская
+2024-07-26 21:29:08 touring.event_gifts
+2024-07-26 21:29:09 pos_gift = None
+2024-07-26 21:29:09 pos_gift = None
+2024-07-26 21:29:09 touring.traffic_on_the_map
+2024-07-26 21:29:09 touring.to_map
+2024-07-26 21:29:10 turgenev_st = None
+2024-07-26 21:29:15 ev_map = 0
+2024-07-26 21:29:16 pos_stan = Point(x=444, y=572), stan[1] = img/tonelli/k_Communist.png
+2024-07-26 21:29:16 touring.poisk
+2024-07-26 21:29:17 point_poisk = Point(x=444, y=573), confidence_poisk = 0.98
+2024-07-26 21:29:17 fun.move_to_click
+2024-07-26 21:29:19 touring.events_tunnel
+2024-07-26 21:29:20 id_st = None
+2024-07-26 21:29:20 info = Point(x=189, y=160)
+2024-07-26 21:29:21 skip_battle = None
+2024-07-26 21:29:21 id_st = None
+2024-07-26 21:29:21 skip_battle = None
+2024-07-26 21:29:21 id_st = None
+2024-07-26 21:29:22 skip_battle = None
+2024-07-26 21:29:22 id_st = None
+2024-07-26 21:29:22 skip_battle = None
+2024-07-26 21:29:22 id_st = None
+2024-07-26 21:29:22 skip_battle = None
+2024-07-26 21:29:23 id_st = None
+2024-07-26 21:29:23 skip_battle = None
+2024-07-26 21:29:23 id_st = None
+2024-07-26 21:29:23 skip_battle = None
+2024-07-26 21:29:24 id_st = None
+2024-07-26 21:29:24 skip_battle = None
+2024-07-26 21:29:24 id_st = None
+2024-07-26 21:29:24 skip_battle = None
+2024-07-26 21:29:24 id_st = None
+2024-07-26 21:29:25 skip_battle = None
+2024-07-26 21:29:25 id_st = None
+2024-07-26 21:29:25 skip_battle = None
+2024-07-26 21:29:25 id_st = None
+2024-07-26 21:29:26 skip_battle = None
+2024-07-26 21:29:26 id_st = None
+2024-07-26 21:29:26 skip_battle = None
+2024-07-26 21:29:26 id_st = None
+2024-07-26 21:29:27 skip_battle = None
+2024-07-26 21:29:27 id_st = None
+2024-07-26 21:29:27 skip_battle = None
+2024-07-26 21:29:27 id_st = None
+2024-07-26 21:29:28 skip_battle = None
+2024-07-26 21:29:28 id_st = None
+2024-07-26 21:29:28 skip_battle = None
+2024-07-26 21:29:28 id_st = None
+2024-07-26 21:29:29 skip_battle = None
+2024-07-26 21:29:29 id_st = None
+2024-07-26 21:29:29 skip_battle = None
+2024-07-26 21:29:29 id_st = None
+2024-07-26 21:29:30 skip_battle = None
+2024-07-26 21:29:30 id_st = None
+2024-07-26 21:29:30 skip_battle = None
+2024-07-26 21:29:30 id_st = None
+2024-07-26 21:29:30 skip_battle = None
+2024-07-26 21:29:31 id_st = None
+2024-07-26 21:29:31 skip_battle = None
+2024-07-26 21:29:31 id_st = None
+2024-07-26 21:29:32 skip_battle = None
+2024-07-26 21:29:32 id_st = None
+2024-07-26 21:29:33 skip_battle = None
+2024-07-26 21:29:33 id_st = None
+2024-07-26 21:29:34 skip_battle = None
+2024-07-26 21:29:34 id_st = None
+2024-07-26 21:29:34 skip_battle = None
+2024-07-26 21:29:34 id_st = None
+2024-07-26 21:29:35 skip_battle = None
+2024-07-26 21:29:35 id_st = None
+2024-07-26 21:29:35 skip_battle = None
+2024-07-26 21:29:35 id_st = None
+2024-07-26 21:29:35 skip_battle = None
+2024-07-26 21:29:36 id_st = None
+2024-07-26 21:29:36 skip_battle = None
+2024-07-26 21:29:36 id_st = None
+2024-07-26 21:29:36 skip_battle = None
+2024-07-26 21:29:37 id_st = None
+2024-07-26 21:29:37 skip_battle = None
+2024-07-26 21:29:37 id_st = None
+2024-07-26 21:29:37 skip_battle = None
+2024-07-26 21:29:37 id_st = None
+2024-07-26 21:29:38 skip_battle = None
+2024-07-26 21:29:38 id_st = None
+2024-07-26 21:29:39 skip_battle = None
+2024-07-26 21:29:39 id_st = None
+2024-07-26 21:29:40 skip_battle = None
+2024-07-26 21:29:41 id_st = None
+2024-07-26 21:29:41 skip_battle = None
+2024-07-26 21:29:41 id_st = Point(x=490, y=688)
+2024-07-26 21:29:41 ст. Коммунистическая
+2024-07-26 21:29:42 touring.event_gifts
+2024-07-26 21:29:43 pos_gift = None
+2024-07-26 21:29:43 pos_gift = None
+2024-07-26 21:29:43 touring.traffic_on_the_map
+2024-07-26 21:29:43 touring.to_map
+2024-07-26 21:29:45 turgenev_st = None
+2024-07-26 21:29:50 ev_map = 0
+2024-07-26 21:29:50 pos_stan = Point(x=424, y=630), stan[1] = img/tonelli/k_Univer.png
+2024-07-26 21:29:50 touring.poisk
+2024-07-26 21:29:51 point_poisk = Point(x=424, y=631), confidence_poisk = 0.99
+2024-07-26 21:29:51 fun.move_to_click
+2024-07-26 21:29:53 touring.events_tunnel
+2024-07-26 21:29:55 id_st = None
+2024-07-26 21:29:55 info = Point(x=189, y=160)
+2024-07-26 21:29:55 skip_battle = None
+2024-07-26 21:29:55 id_st = None
+2024-07-26 21:29:56 skip_battle = None
+2024-07-26 21:29:56 id_st = None
+2024-07-26 21:29:56 skip_battle = None
+2024-07-26 21:29:56 id_st = None
+2024-07-26 21:29:56 skip_battle = None
+2024-07-26 21:29:57 id_st = None
+2024-07-26 21:29:57 skip_battle = None
+2024-07-26 21:29:57 id_st = None
+2024-07-26 21:29:57 skip_battle = None
+2024-07-26 21:29:58 id_st = None
+2024-07-26 21:29:58 skip_battle = None
+2024-07-26 21:29:58 id_st = None
+2024-07-26 21:29:58 skip_battle = None
+2024-07-26 21:29:58 id_st = None
+2024-07-26 21:29:59 skip_battle = None
+2024-07-26 21:29:59 id_st = None
+2024-07-26 21:29:59 skip_battle = None
+2024-07-26 21:29:59 id_st = None
+2024-07-26 21:30:00 skip_battle = None
+2024-07-26 21:30:00 id_st = None
+2024-07-26 21:30:00 skip_battle = None
+2024-07-26 21:30:00 id_st = None
+2024-07-26 21:30:01 skip_battle = None
+2024-07-26 21:30:01 id_st = None
+2024-07-26 21:30:01 skip_battle = None
+2024-07-26 21:30:01 id_st = None
+2024-07-26 21:30:02 skip_battle = None
+2024-07-26 21:30:02 id_st = None
+2024-07-26 21:30:02 skip_battle = None
+2024-07-26 21:30:02 id_st = None
+2024-07-26 21:30:03 skip_battle = None
+2024-07-26 21:30:03 id_st = None
+2024-07-26 21:30:03 skip_battle = None
+2024-07-26 21:30:03 id_st = None
+2024-07-26 21:30:04 skip_battle = None
+2024-07-26 21:30:04 id_st = None
+2024-07-26 21:30:04 skip_battle = None
+2024-07-26 21:30:05 id_st = None
+2024-07-26 21:30:06 skip_battle = None
+2024-07-26 21:30:06 id_st = None
+2024-07-26 21:30:06 skip_battle = None
+2024-07-26 21:30:06 id_st = None
+2024-07-26 21:30:07 skip_battle = None
+2024-07-26 21:30:07 id_st = None
+2024-07-26 21:30:07 skip_battle = None
+2024-07-26 21:30:07 id_st = None
+2024-07-26 21:30:08 skip_battle = None
+2024-07-26 21:30:08 id_st = None
+2024-07-26 21:30:08 skip_battle = None
+2024-07-26 21:30:08 id_st = None
+2024-07-26 21:30:08 skip_battle = None
+2024-07-26 21:30:09 id_st = None
+2024-07-26 21:30:09 skip_battle = None
+2024-07-26 21:30:09 id_st = None
+2024-07-26 21:30:10 skip_battle = None
+2024-07-26 21:30:11 id_st = None
+2024-07-26 21:30:11 skip_battle = None
+2024-07-26 21:30:12 id_st = None
+2024-07-26 21:30:12 skip_battle = None
+2024-07-26 21:30:12 id_st = None
+2024-07-26 21:30:13 skip_battle = None
+2024-07-26 21:30:13 id_st = None
+2024-07-26 21:30:13 skip_battle = None
+2024-07-26 21:30:13 id_st = None
+2024-07-26 21:30:14 skip_battle = None
+2024-07-26 21:30:14 id_st = None
+2024-07-26 21:30:14 skip_battle = None
+2024-07-26 21:30:15 id_st = None
+2024-07-26 21:30:16 skip_battle = None
+2024-07-26 21:30:16 id_st = None
+2024-07-26 21:30:17 skip_battle = None
+2024-07-26 21:30:17 post = Point(x=436, y=180)
+2024-07-26 21:30:17 entry = Point(x=366, y=509)
+2024-07-26 21:30:17 fun.move_to_click
+2024-07-26 21:30:21 id_st = Point(x=496, y=686)
+2024-07-26 21:30:21 ст. Университет
+2024-07-26 21:30:22 touring.event_gifts
+2024-07-26 21:30:23 pos_gift = None
+2024-07-26 21:30:23 pos_gift = None
+2024-07-26 21:30:23 touring.traffic_on_the_map
+2024-07-26 21:30:23 touring.to_map
+2024-07-26 21:30:24 turgenev_st = None
+2024-07-26 21:30:29 ev_map = 0
+2024-07-26 21:30:29 pos_stan = Point(x=474, y=690), stan[1] = img/tonelli/k_Pr-kt_Vernadskogo.png
+2024-07-26 21:30:29 touring.poisk
+2024-07-26 21:30:31 point_poisk = Point(x=474, y=691), confidence_poisk = 0.99
+2024-07-26 21:30:31 fun.move_to_click
+2024-07-26 21:30:33 touring.events_tunnel
+2024-07-26 21:30:34 id_st = None
+2024-07-26 21:30:34 info = Point(x=189, y=160)
+2024-07-26 21:30:34 skip_battle = None
+2024-07-26 21:30:34 id_st = None
+2024-07-26 21:30:35 skip_battle = None
+2024-07-26 21:30:35 id_st = None
+2024-07-26 21:30:36 skip_battle = None
+2024-07-26 21:30:36 id_st = None
+2024-07-26 21:30:37 skip_battle = None
+2024-07-26 21:30:37 id_st = None
+2024-07-26 21:30:37 skip_battle = None
+2024-07-26 21:30:38 id_st = None
+2024-07-26 21:30:38 skip_battle = None
+2024-07-26 21:30:38 id_st = None
+2024-07-26 21:30:38 skip_battle = None
+2024-07-26 21:30:38 id_st = None
+2024-07-26 21:30:39 skip_battle = None
+2024-07-26 21:30:39 id_st = None
+2024-07-26 21:30:39 skip_battle = None
+2024-07-26 21:30:39 id_st = None
+2024-07-26 21:30:40 skip_battle = None
+2024-07-26 21:30:40 id_st = None
+2024-07-26 21:30:40 skip_battle = None
+2024-07-26 21:30:40 id_st = None
+2024-07-26 21:30:41 skip_battle = None
+2024-07-26 21:30:41 id_st = None
+2024-07-26 21:30:41 skip_battle = None
+2024-07-26 21:30:41 id_st = None
+2024-07-26 21:30:42 skip_battle = None
+2024-07-26 21:30:42 id_st = None
+2024-07-26 21:30:42 skip_battle = None
+2024-07-26 21:30:42 id_st = None
+2024-07-26 21:30:42 skip_battle = None
+2024-07-26 21:30:43 id_st = None
+2024-07-26 21:30:43 skip_battle = None
+2024-07-26 21:30:43 id_st = None
+2024-07-26 21:30:43 skip_battle = None
+2024-07-26 21:30:44 id_st = None
+2024-07-26 21:30:44 skip_battle = None
+2024-07-26 21:30:44 id_st = None
+2024-07-26 21:30:44 skip_battle = None
+2024-07-26 21:30:44 id_st = None
+2024-07-26 21:30:45 skip_battle = None
+2024-07-26 21:30:45 id_st = None
+2024-07-26 21:30:45 skip_battle = None
+2024-07-26 21:30:45 id_st = None
+2024-07-26 21:30:46 skip_battle = None
+2024-07-26 21:30:46 id_st = None
+2024-07-26 21:30:46 skip_battle = None
+2024-07-26 21:30:46 id_st = None
+2024-07-26 21:30:47 skip_battle = None
+2024-07-26 21:30:47 id_st = None
+2024-07-26 21:30:47 skip_battle = None
+2024-07-26 21:30:47 id_st = None
+2024-07-26 21:30:48 skip_battle = None
+2024-07-26 21:30:48 id_st = None
+2024-07-26 21:30:48 skip_battle = None
+2024-07-26 21:30:48 id_st = None
+2024-07-26 21:30:48 skip_battle = None
+2024-07-26 21:30:49 id_st = None
+2024-07-26 21:30:49 skip_battle = None
+2024-07-26 21:30:49 id_st = None
+2024-07-26 21:30:49 skip_battle = None
+2024-07-26 21:30:49 id_st = None
+2024-07-26 21:30:50 skip_battle = None
+2024-07-26 21:30:50 id_st = None
+2024-07-26 21:30:50 skip_battle = None
+2024-07-26 21:30:50 id_st = None
+2024-07-26 21:30:51 skip_battle = None
+2024-07-26 21:30:52 id_st = None
+2024-07-26 21:30:53 skip_battle = None
+2024-07-26 21:30:53 id_st = None
+2024-07-26 21:30:53 skip_battle = None
+2024-07-26 21:30:53 id_st = None
+2024-07-26 21:30:53 skip_battle = None
+2024-07-26 21:30:54 id_st = None
+2024-07-26 21:30:54 skip_battle = None
+2024-07-26 21:30:54 id_st = None
+2024-07-26 21:30:54 skip_battle = None
+2024-07-26 21:30:55 id_st = Point(x=496, y=687)
+2024-07-26 21:30:55 ст. Пр-кт Вернадского
+2024-07-26 21:30:56 touring.event_gifts
+2024-07-26 21:30:57 pos_gift = None
+2024-07-26 21:30:57 pos_gift = None
+2024-07-26 21:30:57 touring.traffic_on_the_map
+2024-07-26 21:30:57 touring.to_map
+2024-07-26 21:30:58 turgenev_st = None
+2024-07-26 21:31:03 ev_map = 0
+2024-07-26 21:31:03 pos_stan = Point(x=424, y=630), stan[1] = img/tonelli/k_Univer.png
+2024-07-26 21:31:03 touring.poisk
+2024-07-26 21:31:04 point_poisk = Point(x=424, y=631), confidence_poisk = 0.99
+2024-07-26 21:31:04 fun.move_to_click
+2024-07-26 21:31:06 touring.events_tunnel
+2024-07-26 21:31:08 id_st = None
+2024-07-26 21:31:08 info = Point(x=189, y=160)
+2024-07-26 21:31:08 skip_battle = None
+2024-07-26 21:31:08 id_st = None
+2024-07-26 21:31:09 skip_battle = None
+2024-07-26 21:31:09 id_st = None
+2024-07-26 21:31:09 skip_battle = None
+2024-07-26 21:31:09 id_st = None
+2024-07-26 21:31:10 skip_battle = None
+2024-07-26 21:31:10 id_st = None
+2024-07-26 21:31:10 skip_battle = None
+2024-07-26 21:31:10 id_st = None
+2024-07-26 21:31:11 skip_battle = None
+2024-07-26 21:31:11 id_st = None
+2024-07-26 21:31:11 skip_battle = None
+2024-07-26 21:31:11 id_st = None
+2024-07-26 21:31:12 skip_battle = None
+2024-07-26 21:31:12 id_st = None
+2024-07-26 21:31:12 skip_battle = None
+2024-07-26 21:31:12 id_st = None
+2024-07-26 21:31:12 skip_battle = None
+2024-07-26 21:31:13 id_st = None
+2024-07-26 21:31:13 skip_battle = None
+2024-07-26 21:31:13 id_st = None
+2024-07-26 21:31:13 skip_battle = None
+2024-07-26 21:31:14 id_st = None
+2024-07-26 21:31:14 skip_battle = None
+2024-07-26 21:31:14 id_st = None
+2024-07-26 21:31:14 skip_battle = None
+2024-07-26 21:31:14 id_st = None
+2024-07-26 21:31:15 skip_battle = None
+2024-07-26 21:31:15 id_st = None
+2024-07-26 21:31:15 skip_battle = None
+2024-07-26 21:31:15 id_st = None
+2024-07-26 21:31:16 skip_battle = None
+2024-07-26 21:31:16 id_st = None
+2024-07-26 21:31:16 skip_battle = None
+2024-07-26 21:31:16 id_st = None
+2024-07-26 21:31:17 skip_battle = None
+2024-07-26 21:31:17 id_st = None
+2024-07-26 21:31:17 skip_battle = None
+2024-07-26 21:31:17 id_st = None
+2024-07-26 21:31:17 skip_battle = None
+2024-07-26 21:31:18 id_st = None
+2024-07-26 21:31:18 skip_battle = None
+2024-07-26 21:31:18 id_st = None
+2024-07-26 21:31:19 skip_battle = None
+2024-07-26 21:31:19 id_st = None
+2024-07-26 21:31:20 skip_battle = None
+2024-07-26 21:31:21 id_st = None
+2024-07-26 21:31:21 skip_battle = None
+2024-07-26 21:31:21 id_st = None
+2024-07-26 21:31:21 skip_battle = None
+2024-07-26 21:31:22 id_st = None
+2024-07-26 21:31:22 skip_battle = None
+2024-07-26 21:31:22 id_st = None
+2024-07-26 21:31:22 skip_battle = None
+2024-07-26 21:31:22 id_st = None
+2024-07-26 21:31:23 skip_battle = None
+2024-07-26 21:31:23 id_st = None
+2024-07-26 21:31:23 skip_battle = None
+2024-07-26 21:31:23 id_st = None
+2024-07-26 21:31:24 skip_battle = None
+2024-07-26 21:31:24 id_st = None
+2024-07-26 21:31:24 skip_battle = None
+2024-07-26 21:31:25 id_st = None
+2024-07-26 21:31:25 skip_battle = None
+2024-07-26 21:31:25 id_st = None
+2024-07-26 21:31:25 skip_battle = None
+2024-07-26 21:31:25 id_st = None
+2024-07-26 21:31:26 skip_battle = None
+2024-07-26 21:31:26 id_st = None
+2024-07-26 21:31:26 skip_battle = None
+2024-07-26 21:31:26 id_st = None
+2024-07-26 21:31:27 skip_battle = None
+2024-07-26 21:31:27 id_st = None
+2024-07-26 21:31:27 skip_battle = None
+2024-07-26 21:31:27 id_st = None
+2024-07-26 21:31:28 skip_battle = None
+2024-07-26 21:31:28 id_st = None
+2024-07-26 21:31:28 skip_battle = None
+2024-07-26 21:31:28 id_st = Point(x=496, y=686)
+2024-07-26 21:31:28 ст. Университет
+2024-07-26 21:31:29 touring.event_gifts
+2024-07-26 21:31:31 pos_gift = None
+2024-07-26 21:31:31 pos_gift = None
+2024-07-26 21:31:31 touring.traffic_on_the_map
+2024-07-26 21:31:31 touring.to_map
+2024-07-26 21:31:32 turgenev_st = None
+2024-07-26 21:31:37 ev_map = 0
+2024-07-26 21:31:37 pos_stan = Point(x=444, y=572), stan[1] = img/tonelli/k_Communist.png
+2024-07-26 21:31:37 touring.poisk
+2024-07-26 21:31:39 point_poisk = Point(x=444, y=573), confidence_poisk = 0.97
+2024-07-26 21:31:39 fun.move_to_click
+2024-07-26 21:31:41 touring.events_tunnel
+2024-07-26 21:31:43 id_st = None
+2024-07-26 21:31:43 info = Point(x=189, y=160)
+2024-07-26 21:31:44 skip_battle = None
+2024-07-26 21:31:44 id_st = None
+2024-07-26 21:31:44 skip_battle = None
+2024-07-26 21:31:45 id_st = None
+2024-07-26 21:31:45 skip_battle = None
+2024-07-26 21:31:45 id_st = None
+2024-07-26 21:31:45 skip_battle = None
+2024-07-26 21:31:46 id_st = None
+2024-07-26 21:31:46 skip_battle = None
+2024-07-26 21:31:46 id_st = None
+2024-07-26 21:31:46 skip_battle = None
+2024-07-26 21:31:46 id_st = None
+2024-07-26 21:31:47 skip_battle = None
+2024-07-26 21:31:47 id_st = None
+2024-07-26 21:31:47 skip_battle = None
+2024-07-26 21:31:47 id_st = None
+2024-07-26 21:31:48 skip_battle = None
+2024-07-26 21:31:48 id_st = None
+2024-07-26 21:31:48 skip_battle = None
+2024-07-26 21:31:48 id_st = None
+2024-07-26 21:31:49 skip_battle = None
+2024-07-26 21:31:49 id_st = None
+2024-07-26 21:31:49 skip_battle = None
+2024-07-26 21:31:49 id_st = None
+2024-07-26 21:31:49 skip_battle = None
+2024-07-26 21:31:50 id_st = None
+2024-07-26 21:31:50 skip_battle = None
+2024-07-26 21:31:50 id_st = None
+2024-07-26 21:31:50 skip_battle = None
+2024-07-26 21:31:50 id_st = None
+2024-07-26 21:31:51 skip_battle = None
+2024-07-26 21:31:51 id_st = None
+2024-07-26 21:31:51 skip_battle = None
+2024-07-26 21:31:51 id_st = None
+2024-07-26 21:31:52 skip_battle = None
+2024-07-26 21:31:52 id_st = None
+2024-07-26 21:31:52 skip_battle = None
+2024-07-26 21:31:52 id_st = None
+2024-07-26 21:31:53 skip_battle = None
+2024-07-26 21:31:53 id_st = None
+2024-07-26 21:31:53 skip_battle = None
+2024-07-26 21:31:53 id_st = None
+2024-07-26 21:31:54 skip_battle = None
+2024-07-26 21:31:54 id_st = None
+2024-07-26 21:31:54 skip_battle = None
+2024-07-26 21:31:54 id_st = None
+2024-07-26 21:31:55 skip_battle = None
+2024-07-26 21:31:55 id_st = None
+2024-07-26 21:31:55 skip_battle = None
+2024-07-26 21:31:55 id_st = None
+2024-07-26 21:31:56 skip_battle = None
+2024-07-26 21:31:56 id_st = None
+2024-07-26 21:31:56 skip_battle = None
+2024-07-26 21:31:56 id_st = None
+2024-07-26 21:31:56 skip_battle = None
+2024-07-26 21:31:57 id_st = None
+2024-07-26 21:31:57 skip_battle = None
+2024-07-26 21:31:57 id_st = None
+2024-07-26 21:31:57 skip_battle = None
+2024-07-26 21:31:58 id_st = None
+2024-07-26 21:31:58 skip_battle = None
+2024-07-26 21:31:58 id_st = None
+2024-07-26 21:31:59 skip_battle = None
+2024-07-26 21:31:59 id_st = None
+2024-07-26 21:32:00 skip_battle = None
+2024-07-26 21:32:01 id_st = None
+2024-07-26 21:32:02 skip_battle = None
+2024-07-26 21:32:02 id_st = None
+2024-07-26 21:32:03 skip_battle = None
+2024-07-26 21:32:04 id_st = None
+2024-07-26 21:32:04 skip_battle = None
+2024-07-26 21:32:04 id_st = None
+2024-07-26 21:32:05 skip_battle = None
+2024-07-26 21:32:05 post = Point(x=436, y=180)
+2024-07-26 21:32:05 entry = Point(x=366, y=509)
+2024-07-26 21:32:05 fun.move_to_click
+2024-07-26 21:32:09 id_st = Point(x=490, y=688)
+2024-07-26 21:32:09 ст. Коммунистическая
+2024-07-26 21:32:10 touring.event_gifts
+2024-07-26 21:32:11 pos_gift = None
+2024-07-26 21:32:11 pos_gift = None
+2024-07-26 21:32:11 touring.traffic_on_the_map
+2024-07-26 21:32:11 touring.to_map
+2024-07-26 21:32:12 turgenev_st = None
+2024-07-26 21:32:17 ev_map = 0
+2024-07-26 21:32:17 pos_stan = Point(x=425, y=511), stan[1] = img/tonelli/k_Frunze.png
+2024-07-26 21:32:17 touring.poisk
+2024-07-26 21:32:19 point_poisk = Point(x=425, y=512), confidence_poisk = 0.97
+2024-07-26 21:32:19 fun.move_to_click
+2024-07-26 21:32:21 touring.events_tunnel
+2024-07-26 21:32:23 id_st = None
+2024-07-26 21:32:23 info = Point(x=189, y=160)
+2024-07-26 21:32:24 skip_battle = None
+2024-07-26 21:32:25 id_st = None
+2024-07-26 21:32:25 skip_battle = None
+2024-07-26 21:32:25 id_st = None
+2024-07-26 21:32:25 skip_battle = None
+2024-07-26 21:32:26 id_st = None
+2024-07-26 21:32:26 skip_battle = None
+2024-07-26 21:32:26 id_st = None
+2024-07-26 21:32:26 skip_battle = None
+2024-07-26 21:32:26 id_st = None
+2024-07-26 21:32:27 skip_battle = None
+2024-07-26 21:32:27 id_st = None
+2024-07-26 21:32:27 skip_battle = None
+2024-07-26 21:32:27 id_st = None
+2024-07-26 21:32:28 skip_battle = None
+2024-07-26 21:32:28 id_st = None
+2024-07-26 21:32:28 skip_battle = None
+2024-07-26 21:32:28 id_st = None
+2024-07-26 21:32:29 skip_battle = None
+2024-07-26 21:32:29 id_st = None
+2024-07-26 21:32:29 skip_battle = None
+2024-07-26 21:32:29 id_st = None
+2024-07-26 21:32:30 skip_battle = None
+2024-07-26 21:32:30 id_st = None
+2024-07-26 21:32:30 skip_battle = None
+2024-07-26 21:32:30 id_st = None
+2024-07-26 21:32:31 skip_battle = None
+2024-07-26 21:32:31 id_st = None
+2024-07-26 21:32:31 skip_battle = None
+2024-07-26 21:32:31 id_st = None
+2024-07-26 21:32:32 skip_battle = None
+2024-07-26 21:32:32 id_st = None
+2024-07-26 21:32:32 skip_battle = None
+2024-07-26 21:32:32 id_st = None
+2024-07-26 21:32:33 skip_battle = None
+2024-07-26 21:32:33 id_st = None
+2024-07-26 21:32:33 skip_battle = None
+2024-07-26 21:32:33 id_st = None
+2024-07-26 21:32:34 skip_battle = None
+2024-07-26 21:32:34 id_st = None
+2024-07-26 21:32:34 skip_battle = None
+2024-07-26 21:32:34 id_st = None
+2024-07-26 21:32:35 skip_battle = None
+2024-07-26 21:32:36 id_st = None
+2024-07-26 21:32:37 skip_battle = None
+2024-07-26 21:32:37 id_st = None
+2024-07-26 21:32:37 skip_battle = None
+2024-07-26 21:32:38 id_st = None
+2024-07-26 21:32:39 skip_battle = None
+2024-07-26 21:32:39 id_st = None
+2024-07-26 21:32:40 skip_battle = None
+2024-07-26 21:32:40 id_st = None
+2024-07-26 21:32:41 skip_battle = None
+2024-07-26 21:32:41 id_st = None
+2024-07-26 21:32:41 skip_battle = None
+2024-07-26 21:32:41 id_st = None
+2024-07-26 21:32:42 skip_battle = None
+2024-07-26 21:32:42 id_st = None
+2024-07-26 21:32:42 skip_battle = None
+2024-07-26 21:32:42 id_st = None
+2024-07-26 21:32:43 skip_battle = None
+2024-07-26 21:32:43 id_st = None
+2024-07-26 21:32:44 skip_battle = None
+2024-07-26 21:32:44 id_st = Point(x=497, y=687)
+2024-07-26 21:32:44 ст. Фрунзенская
+2024-07-26 21:32:45 touring.event_gifts
+2024-07-26 21:32:47 pos_gift = None
+2024-07-26 21:32:47 pos_gift = None
+2024-07-26 21:32:47 touring.traffic_on_the_map
+2024-07-26 21:32:47 touring.to_map
+2024-07-26 21:32:48 turgenev_st = None
+2024-07-26 21:32:53 ev_map = 0
+2024-07-26 21:32:53 pos_stan = Point(x=232, y=415), stan[1] = img/tonelli/k_Park_kr.png
+2024-07-26 21:32:53 touring.poisk
+2024-07-26 21:32:55 point_poisk = Point(x=232, y=415), confidence_poisk = 0.96
+2024-07-26 21:32:55 fun.move_to_click
+2024-07-26 21:32:57 touring.events_tunnel
+2024-07-26 21:32:58 id_st = None
+2024-07-26 21:32:58 info = Point(x=189, y=160)
+2024-07-26 21:32:59 skip_battle = None
+2024-07-26 21:33:00 id_st = None
+2024-07-26 21:33:01 skip_battle = None
+2024-07-26 21:33:01 id_st = None
+2024-07-26 21:33:01 skip_battle = None
+2024-07-26 21:33:01 id_st = None
+2024-07-26 21:33:02 skip_battle = None
+2024-07-26 21:33:02 id_st = None
+2024-07-26 21:33:02 skip_battle = None
+2024-07-26 21:33:02 id_st = None
+2024-07-26 21:33:03 skip_battle = None
+2024-07-26 21:33:03 id_st = None
+2024-07-26 21:33:03 skip_battle = None
+2024-07-26 21:33:03 id_st = None
+2024-07-26 21:33:04 skip_battle = None
+2024-07-26 21:33:05 id_st = None
+2024-07-26 21:33:05 skip_battle = None
+2024-07-26 21:33:05 id_st = None
+2024-07-26 21:33:06 skip_battle = None
+2024-07-26 21:33:06 id_st = None
+2024-07-26 21:33:06 skip_battle = None
+2024-07-26 21:33:06 id_st = None
+2024-07-26 21:33:07 skip_battle = None
+2024-07-26 21:33:07 id_st = None
+2024-07-26 21:33:07 skip_battle = None
+2024-07-26 21:33:07 id_st = None
+2024-07-26 21:33:08 skip_battle = None
+2024-07-26 21:33:08 id_st = None
+2024-07-26 21:33:08 skip_battle = None
+2024-07-26 21:33:08 id_st = None
+2024-07-26 21:33:09 skip_battle = None
+2024-07-26 21:33:09 id_st = None
+2024-07-26 21:33:09 skip_battle = None
+2024-07-26 21:33:09 id_st = None
+2024-07-26 21:33:10 skip_battle = None
+2024-07-26 21:33:10 id_st = None
+2024-07-26 21:33:10 skip_battle = None
+2024-07-26 21:33:10 id_st = None
+2024-07-26 21:33:11 skip_battle = None
+2024-07-26 21:33:11 id_st = None
+2024-07-26 21:33:11 skip_battle = None
+2024-07-26 21:33:11 id_st = None
+2024-07-26 21:33:12 skip_battle = None
+2024-07-26 21:33:12 id_st = None
+2024-07-26 21:33:12 skip_battle = None
+2024-07-26 21:33:12 id_st = None
+2024-07-26 21:33:13 skip_battle = None
+2024-07-26 21:33:13 id_st = None
+2024-07-26 21:33:13 skip_battle = None
+2024-07-26 21:33:13 id_st = None
+2024-07-26 21:33:14 skip_battle = None
+2024-07-26 21:33:14 id_st = None
+2024-07-26 21:33:14 skip_battle = None
+2024-07-26 21:33:14 id_st = None
+2024-07-26 21:33:15 skip_battle = None
+2024-07-26 21:33:15 id_st = None
+2024-07-26 21:33:15 skip_battle = None
+2024-07-26 21:33:15 id_st = None
+2024-07-26 21:33:16 skip_battle = None
+2024-07-26 21:33:16 id_st = None
+2024-07-26 21:33:17 skip_battle = None
+2024-07-26 21:33:18 id_st = None
+2024-07-26 21:33:18 skip_battle = None
+2024-07-26 21:33:18 id_st = None
+2024-07-26 21:33:19 skip_battle = None
+2024-07-26 21:33:19 id_st = None
+2024-07-26 21:33:19 skip_battle = None
+2024-07-26 21:33:19 post = Point(x=436, y=180)
+2024-07-26 21:33:20 entry = Point(x=366, y=509)
+2024-07-26 21:33:20 fun.move_to_click
+2024-07-26 21:33:23 id_st = Point(x=473, y=688)
+2024-07-26 21:33:23 ст. Парк культуры кр
+2024-07-26 21:33:24 touring.event_gifts
+2024-07-26 21:33:25 pos_gift = None
+2024-07-26 21:33:25 pos_gift = None
+2024-07-26 21:33:25 touring.traffic_on_the_map
+2024-07-26 21:33:26 touring.to_map
+2024-07-26 21:33:27 turgenev_st = None
+2024-07-26 21:33:32 ev_map = 0
+2024-07-26 21:33:32 pos_stan = Point(x=547, y=406), stan[1] = img/tonelli/k_Kropotkin.png
+2024-07-26 21:33:32 touring.poisk
+2024-07-26 21:33:34 point_poisk = Point(x=548, y=406), confidence_poisk = 0.95
+2024-07-26 21:33:34 fun.move_to_click
+2024-07-26 21:33:36 touring.events_tunnel
+2024-07-26 21:33:37 id_st = None
+2024-07-26 21:33:37 info = Point(x=189, y=160)
+2024-07-26 21:33:38 skip_battle = None
+2024-07-26 21:33:38 id_st = None
+2024-07-26 21:33:38 skip_battle = None
+2024-07-26 21:33:38 id_st = None
+2024-07-26 21:33:39 skip_battle = None
+2024-07-26 21:33:39 id_st = None
+2024-07-26 21:33:39 skip_battle = None
+2024-07-26 21:33:39 id_st = None
+2024-07-26 21:33:40 skip_battle = None
+2024-07-26 21:33:40 id_st = None
+2024-07-26 21:33:40 skip_battle = None
+2024-07-26 21:33:40 id_st = None
+2024-07-26 21:33:40 skip_battle = None
+2024-07-26 21:33:41 id_st = None
+2024-07-26 21:33:41 skip_battle = None
+2024-07-26 21:33:41 id_st = None
+2024-07-26 21:33:41 skip_battle = None
+2024-07-26 21:33:42 id_st = None
+2024-07-26 21:33:42 skip_battle = None
+2024-07-26 21:33:42 id_st = None
+2024-07-26 21:33:42 skip_battle = None
+2024-07-26 21:33:43 id_st = None
+2024-07-26 21:33:43 skip_battle = None
+2024-07-26 21:33:43 id_st = None
+2024-07-26 21:33:44 skip_battle = None
+2024-07-26 21:33:44 id_st = None
+2024-07-26 21:33:45 skip_battle = None
+2024-07-26 21:33:46 id_st = None
+2024-07-26 21:33:46 skip_battle = None
+2024-07-26 21:33:46 id_st = None
+2024-07-26 21:33:47 skip_battle = None
+2024-07-26 21:33:47 id_st = None
+2024-07-26 21:33:47 skip_battle = None
+2024-07-26 21:33:47 id_st = None
+2024-07-26 21:33:48 skip_battle = None
+2024-07-26 21:33:48 id_st = None
+2024-07-26 21:33:48 skip_battle = None
+2024-07-26 21:33:48 id_st = None
+2024-07-26 21:33:48 skip_battle = None
+2024-07-26 21:33:49 id_st = None
+2024-07-26 21:33:49 skip_battle = None
+2024-07-26 21:33:49 id_st = None
+2024-07-26 21:33:49 skip_battle = None
+2024-07-26 21:33:50 id_st = None
+2024-07-26 21:33:50 skip_battle = None
+2024-07-26 21:33:50 id_st = None
+2024-07-26 21:33:50 skip_battle = None
+2024-07-26 21:33:50 id_st = None
+2024-07-26 21:33:51 skip_battle = None
+2024-07-26 21:33:51 id_st = None
+2024-07-26 21:33:51 skip_battle = None
+2024-07-26 21:33:52 id_st = None
+2024-07-26 21:33:52 skip_battle = None
+2024-07-26 21:33:53 id_st = None
+2024-07-26 21:33:54 skip_battle = None
+2024-07-26 21:33:54 id_st = None
+2024-07-26 21:33:54 skip_battle = None
+2024-07-26 21:33:54 id_st = None
+2024-07-26 21:33:54 skip_battle = None
+2024-07-26 21:33:55 id_st = None
+2024-07-26 21:33:55 skip_battle = None
+2024-07-26 21:33:55 id_st = None
+2024-07-26 21:33:55 skip_battle = None
+2024-07-26 21:33:56 id_st = None
+2024-07-26 21:33:56 skip_battle = None
+2024-07-26 21:33:56 id_st = None
+2024-07-26 21:33:56 skip_battle = None
+2024-07-26 21:33:57 id_st = None
+2024-07-26 21:33:57 skip_battle = None
+2024-07-26 21:33:57 id_st = None
+2024-07-26 21:33:57 skip_battle = None
+2024-07-26 21:33:57 id_st = None
+2024-07-26 21:33:58 skip_battle = None
+2024-07-26 21:33:58 id_st = Point(x=476, y=688)
+2024-07-26 21:33:58 ст. Кропоткинская
+2024-07-26 21:33:59 touring.event_gifts
+2024-07-26 21:34:01 pos_gift = None
+2024-07-26 21:34:01 pos_gift = None
+2024-07-26 21:34:01 touring.traffic_on_the_map
+2024-07-26 21:34:01 touring.to_map
+2024-07-26 21:34:02 turgenev_st = None
+2024-07-26 21:34:07 ev_map = 0
+2024-07-26 21:34:07 pos_stan = Point(x=390, y=375), stan[1] = img/tonelli/k_Biblioteka.png
+2024-07-26 21:34:07 touring.poisk
+2024-07-26 21:34:09 point_poisk = Point(x=390, y=376), confidence_poisk = 0.98
+2024-07-26 21:34:09 fun.move_to_click
+2024-07-26 21:34:11 touring.events_tunnel
+2024-07-26 21:34:12 id_st = None
+2024-07-26 21:34:12 info = Point(x=189, y=160)
+2024-07-26 21:34:13 skip_battle = None
+2024-07-26 21:34:13 id_st = None
+2024-07-26 21:34:13 skip_battle = None
+2024-07-26 21:34:13 id_st = None
+2024-07-26 21:34:14 skip_battle = None
+2024-07-26 21:34:14 id_st = None
+2024-07-26 21:34:14 skip_battle = None
+2024-07-26 21:34:15 id_st = None
+2024-07-26 21:34:16 skip_battle = None
+2024-07-26 21:34:16 id_st = None
+2024-07-26 21:34:17 skip_battle = None
+2024-07-26 21:34:17 id_st = None
+2024-07-26 21:34:17 skip_battle = None
+2024-07-26 21:34:17 id_st = None
+2024-07-26 21:34:18 skip_battle = None
+2024-07-26 21:34:19 id_st = None
+2024-07-26 21:34:20 skip_battle = None
+2024-07-26 21:34:20 id_st = None
+2024-07-26 21:34:20 skip_battle = None
+2024-07-26 21:34:21 id_st = None
+2024-07-26 21:34:21 skip_battle = None
+2024-07-26 21:34:21 id_st = None
+2024-07-26 21:34:21 skip_battle = None
+2024-07-26 21:34:22 id_st = None
+2024-07-26 21:34:22 skip_battle = None
+2024-07-26 21:34:22 id_st = None
+2024-07-26 21:34:22 skip_battle = Point(x=497, y=116)
+2024-07-26 21:34:22 raptor = None
+2024-07-26 21:34:23 arachne = None
+2024-07-26 21:34:23 krysa = Point(x=871, y=150)
+2024-07-26 21:34:23 kiki = None
+2024-07-26 21:34:23 station_master.enemy_battle
+2024-07-26 21:34:23  поиск battle_end, skip_battle, dog
+2024-07-26 21:34:24 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:34:26 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:34:27 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:34:29 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:34:29 нажать закрыть в конце боя
+2024-07-26 21:34:29 fun.push_close_all_
+2024-07-26 21:34:30 fun.close_popup_window
+2024-07-26 21:34:30 fun.push_close
+2024-07-26 21:34:30 fun.move_to_click
+2024-07-26 21:34:33 skip_battle1_end_ver = None
+2024-07-26 21:34:33 выход из 'enemy_battle
+2024-07-26 21:34:33 id_st = None
+2024-07-26 21:34:34 skip_battle = None
+2024-07-26 21:34:34 id_st = None
+2024-07-26 21:34:34 skip_battle = None
+2024-07-26 21:34:35 id_st = None
+2024-07-26 21:34:35 skip_battle = None
+2024-07-26 21:34:35 id_st = None
+2024-07-26 21:34:35 skip_battle = None
+2024-07-26 21:34:35 id_st = None
+2024-07-26 21:34:36 skip_battle = None
+2024-07-26 21:34:36 id_st = None
+2024-07-26 21:34:36 skip_battle = None
+2024-07-26 21:34:36 id_st = None
+2024-07-26 21:34:37 skip_battle = None
+2024-07-26 21:34:38 id_st = None
+2024-07-26 21:34:39 skip_battle = None
+2024-07-26 21:34:39 id_st = None
+2024-07-26 21:34:39 skip_battle = None
+2024-07-26 21:34:39 id_st = None
+2024-07-26 21:34:40 skip_battle = None
+2024-07-26 21:34:40 id_st = None
+2024-07-26 21:34:40 skip_battle = None
+2024-07-26 21:34:40 id_st = None
+2024-07-26 21:34:41 skip_battle = None
+2024-07-26 21:34:41 id_st = None
+2024-07-26 21:34:41 skip_battle = None
+2024-07-26 21:34:41 id_st = None
+2024-07-26 21:34:41 skip_battle = None
+2024-07-26 21:34:42 id_st = None
+2024-07-26 21:34:42 skip_battle = None
+2024-07-26 21:34:42 id_st = None
+2024-07-26 21:34:42 skip_battle = None
+2024-07-26 21:34:43 id_st = None
+2024-07-26 21:34:43 skip_battle = None
+2024-07-26 21:34:43 post = Point(x=436, y=180)
+2024-07-26 21:34:44 attack = Point(x=365, y=683)
+2024-07-26 21:34:44 fun.move_to_click
+2024-07-26 21:34:47 id_st = None
+2024-07-26 21:34:47 skip_battle = Point(x=497, y=116)
+2024-07-26 21:34:47 raptor = None
+2024-07-26 21:34:47 arachne = None
+2024-07-26 21:34:47 krysa = None
+2024-07-26 21:34:48 kiki = None
+2024-07-26 21:34:48 station_master.enemy_battle
+2024-07-26 21:34:48  поиск battle_end, skip_battle, dog
+2024-07-26 21:34:49 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:34:51 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:34:51 skip_battle = Point(x=496, y=117)
+2024-07-26 21:34:51 fun.move_to_click
+2024-07-26 21:34:54 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:34:55 нажать закрыть в конце боя
+2024-07-26 21:34:55 fun.push_close_all_
+2024-07-26 21:34:55 fun.close_popup_window
+2024-07-26 21:34:56 fun.push_close
+2024-07-26 21:34:56 fun.move_to_click
+2024-07-26 21:34:59 skip_battle1_end_ver = None
+2024-07-26 21:34:59 выход из 'enemy_battle
+2024-07-26 21:34:59 id_st = Point(x=495, y=688)
+2024-07-26 21:34:59 ст. Библиотека им. Ленина
+2024-07-26 21:35:00 touring.event_gifts
+2024-07-26 21:35:02 pos_gift = None
+2024-07-26 21:35:02 pos_gift = None
+2024-07-26 21:35:02 touring.traffic_on_the_map
+2024-07-26 21:35:02 touring.to_map
+2024-07-26 21:35:03 turgenev_st = None
+2024-07-26 21:35:08 ev_map = стрелка юг
+2024-07-26 21:35:08 pos_stan = Point(x=645, y=449), stan[1] = img/tonelli/k_Borov.png
+2024-07-26 21:35:08 touring.poisk
+2024-07-26 21:35:10 point_poisk = Point(x=645, y=450), confidence_poisk = 0.96
+2024-07-26 21:35:10 fun.move_to_click
+2024-07-26 21:35:12 touring.events_tunnel
+2024-07-26 21:35:13 id_st = Point(x=495, y=688)
+2024-07-26 21:35:13 info = Point(x=189, y=160)
+2024-07-26 21:35:13 ст. Боровицкая
+2024-07-26 21:35:14 touring.event_gifts
+2024-07-26 21:35:15 pos_gift = None
+2024-07-26 21:35:15 pos_gift = None
+2024-07-26 21:35:15 touring.traffic_on_the_map
+2024-07-26 21:35:15 touring.to_map
+2024-07-26 21:35:16 turgenev_st = None
+2024-07-26 21:35:21 ev_map = стрелка север
+2024-07-26 21:35:22 pos_stan = None, stan[1] = img/tonelli/k_Chekhov.png
+2024-07-26 21:35:22 pos_click = Point(x=497, y=200), нажал на стрелку "север"
+2024-07-26 21:35:22 fun.move_to_click
+2024-07-26 21:35:25 touring.poisk
+2024-07-26 21:35:26 point_poisk = Point(x=578, y=301), confidence_poisk = 0.94
+2024-07-26 21:35:26 fun.move_to_click
+2024-07-26 21:35:29 touring.events_tunnel
+2024-07-26 21:35:30 id_st = None
+2024-07-26 21:35:30 info = Point(x=189, y=160)
+2024-07-26 21:35:30 skip_battle = None
+2024-07-26 21:35:30 id_st = None
+2024-07-26 21:35:31 skip_battle = None
+2024-07-26 21:35:31 id_st = None
+2024-07-26 21:35:31 skip_battle = None
+2024-07-26 21:35:31 id_st = None
+2024-07-26 21:35:32 skip_battle = None
+2024-07-26 21:35:32 id_st = None
+2024-07-26 21:35:33 skip_battle = None
+2024-07-26 21:35:33 id_st = None
+2024-07-26 21:35:34 skip_battle = None
+2024-07-26 21:35:35 id_st = None
+2024-07-26 21:35:35 skip_battle = None
+2024-07-26 21:35:35 id_st = None
+2024-07-26 21:35:36 skip_battle = None
+2024-07-26 21:35:36 id_st = None
+2024-07-26 21:35:36 skip_battle = None
+2024-07-26 21:35:36 id_st = None
+2024-07-26 21:35:36 skip_battle = None
+2024-07-26 21:35:37 id_st = None
+2024-07-26 21:35:37 skip_battle = None
+2024-07-26 21:35:37 id_st = None
+2024-07-26 21:35:37 skip_battle = None
+2024-07-26 21:35:38 id_st = None
+2024-07-26 21:35:38 skip_battle = None
+2024-07-26 21:35:38 id_st = None
+2024-07-26 21:35:38 skip_battle = None
+2024-07-26 21:35:38 id_st = None
+2024-07-26 21:35:39 skip_battle = None
+2024-07-26 21:35:39 id_st = None
+2024-07-26 21:35:39 skip_battle = Point(x=497, y=116)
+2024-07-26 21:35:39 raptor = None
+2024-07-26 21:35:40 arachne = None
+2024-07-26 21:35:40 krysa = Point(x=871, y=150)
+2024-07-26 21:35:40 kiki = None
+2024-07-26 21:35:40 station_master.enemy_battle
+2024-07-26 21:35:40  поиск battle_end, skip_battle, dog
+2024-07-26 21:35:41 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:35:44 ожидание battle_end, close, dog, skip_battle
+2024-07-26 21:35:44 нажать закрыть в конце боя
+2024-07-26 21:35:44 fun.push_close_all_
+2024-07-26 21:35:45 fun.close_popup_window
+2024-07-26 21:35:45 fun.push_close
+2024-07-26 21:35:45 fun.move_to_click
+2024-07-26 21:35:49 skip_battle1_end_ver = None
+2024-07-26 21:35:49 выход из 'enemy_battle
+2024-07-26 21:35:49 id_st = None
+2024-07-26 21:35:49 skip_battle = None
+2024-07-26 21:35:49 id_st = None
+2024-07-26 21:35:50 skip_battle = None
+2024-07-26 21:35:50 id_st = None
+2024-07-26 21:35:50 skip_battle = None
+2024-07-26 21:35:50 id_st = None
+2024-07-26 21:35:51 skip_battle = None
+2024-07-26 21:35:51 id_st = None
+2024-07-26 21:35:51 skip_battle = None
+2024-07-26 21:35:51 id_st = None
+2024-07-26 21:35:52 skip_battle = None
+2024-07-26 21:35:52 id_st = None
+2024-07-26 21:35:52 skip_battle = None
+2024-07-26 21:35:52 id_st = None
+2024-07-26 21:35:52 skip_battle = None
+2024-07-26 21:35:53 id_st = None
+2024-07-26 21:35:54 skip_battle = None
+2024-07-26 21:35:55 id_st = None
+2024-07-26 21:35:55 skip_battle = None
+2024-07-26 21:35:55 id_st = None
+2024-07-26 21:35:56 skip_battle = None
+2024-07-26 21:35:56 id_st = None
+2024-07-26 21:35:57 skip_battle = None
+2024-07-26 21:35:57 id_st = None
+2024-07-26 21:35:58 skip_battle = None
+2024-07-26 21:35:58 id_st = Point(x=460, y=688)
+2024-07-26 21:35:58 ст. Чеховская
+2024-07-26 21:36:00 touring.event_gifts
+2024-07-26 21:36:01 pos_gift = None
+2024-07-26 21:36:01 pos_gift = None
+2024-07-26 21:36:01 touring.traffic_on_the_map
+2024-07-26 21:36:01 touring.to_map
+2024-07-26 21:36:02 turgenev_st = None
+2024-07-26 21:36:07 ev_map = 0
+2024-07-26 21:36:07 pos_stan = Point(x=371, y=508), stan[1] = img/tonelli/k_Pushkin.png
+2024-07-26 21:36:07 touring.poisk
+2024-07-26 21:36:09 point_poisk = Point(x=372, y=508), confidence_poisk = 0.9199999999999999
+2024-07-26 21:36:09 fun.move_to_click
+2024-07-26 21:36:11 touring.events_tunnel
+2024-07-26 21:36:12 id_st = Point(x=466, y=688)
+2024-07-26 21:36:13 info = Point(x=189, y=160)
+2024-07-26 21:36:13 ст. Пушкинская
+2024-07-26 21:36:14 touring.event_gifts
+2024-07-26 21:36:15 pos_gift = None
+2024-07-26 21:36:15 pos_gift = None
+2024-07-26 21:36:15 touring.traffic_on_the_map
+2024-07-26 21:36:15 touring.to_map
+2024-07-26 21:36:16 turgenev_st = None
+2024-07-26 21:36:22 ev_map = 0
+2024-07-26 21:36:22 pos_stan = Point(x=721, y=465), stan[1] = img/tonelli/k_Kuzneckiy.png
+2024-07-26 21:36:22 touring.poisk
+2024-07-26 21:36:24 point_poisk = Point(x=722, y=465), confidence_poisk = 0.95
+2024-07-26 21:36:24 fun.move_to_click
+2024-07-26 21:36:26 touring.events_tunnel
+2024-07-26 21:36:27 id_st = None
+2024-07-26 21:36:27 info = Point(x=189, y=160)
+2024-07-26 21:36:27 skip_battle = None
+2024-07-26 21:36:27 id_st = None
+2024-07-26 21:36:28 skip_battle = None
+2024-07-26 21:36:28 id_st = None
+2024-07-26 21:36:28 skip_battle = None
+2024-07-26 21:36:28 id_st = None
+2024-07-26 21:36:29 skip_battle = None
+2024-07-26 21:36:29 id_st = None
+2024-07-26 21:36:29 skip_battle = None
+2024-07-26 21:36:29 id_st = None
+2024-07-26 21:36:30 skip_battle = None
+2024-07-26 21:36:30 id_st = None
+2024-07-26 21:36:30 skip_battle = None
+2024-07-26 21:36:30 id_st = None
+2024-07-26 21:36:31 skip_battle = None
+2024-07-26 21:36:31 id_st = None
+2024-07-26 21:36:31 skip_battle = None
+2024-07-26 21:36:31 id_st = None
+2024-07-26 21:36:32 skip_battle = None
+2024-07-26 21:36:32 id_st = None
+2024-07-26 21:36:32 skip_battle = None
+2024-07-26 21:36:32 id_st = None
+2024-07-26 21:36:33 skip_battle = None
+2024-07-26 21:36:33 id_st = None
+2024-07-26 21:36:33 skip_battle = None
+2024-07-26 21:36:33 id_st = None
+2024-07-26 21:36:34 skip_battle = None
+2024-07-26 21:36:34 id_st = None
+2024-07-26 21:36:34 skip_battle = None
+2024-07-26 21:36:34 id_st = None
+2024-07-26 21:36:35 skip_battle = None
+2024-07-26 21:36:35 id_st = None
+2024-07-26 21:36:35 skip_battle = None
+2024-07-26 21:36:35 id_st = None
+2024-07-26 21:36:36 skip_battle = None
+2024-07-26 21:36:36 id_st = None
+2024-07-26 21:36:36 skip_battle = None
+2024-07-26 21:36:36 id_st = None
+2024-07-26 21:36:36 skip_battle = None
+2024-07-26 21:36:37 id_st = None
+2024-07-26 21:36:37 skip_battle = None
+2024-07-26 21:36:37 id_st = None
+2024-07-26 21:36:37 skip_battle = None
+2024-07-26 21:36:38 id_st = None
+2024-07-26 21:36:38 skip_battle = None
+2024-07-26 21:36:38 id_st = None
+2024-07-26 21:36:38 skip_battle = None
+2024-07-26 21:36:38 id_st = None
+2024-07-26 21:36:39 skip_battle = None
+2024-07-26 21:36:39 id_st = None
+2024-07-26 21:36:39 skip_battle = None
+2024-07-26 21:36:39 id_st = None
+2024-07-26 21:36:40 skip_battle = None
+2024-07-26 21:36:40 id_st = None
+2024-07-26 21:36:40 skip_battle = None
+2024-07-26 21:36:40 id_st = None
+2024-07-26 21:36:41 skip_battle = None
+2024-07-26 21:36:41 id_st = None
+2024-07-26 21:36:41 skip_battle = None
+2024-07-26 21:36:41 id_st = None
+2024-07-26 21:36:42 skip_battle = None
+2024-07-26 21:36:42 id_st = None
+2024-07-26 21:36:42 skip_battle = None
+2024-07-26 21:36:42 id_st = None
+2024-07-26 21:36:43 skip_battle = None
+2024-07-26 21:36:43 id_st = None
+2024-07-26 21:36:43 skip_battle = None
+2024-07-26 21:36:43 id_st = None
+2024-07-26 21:36:43 skip_battle = None
+2024-07-26 21:36:44 id_st = None
+2024-07-26 21:36:44 skip_battle = None
+2024-07-26 21:36:44 id_st = None
+2024-07-26 21:36:44 skip_battle = None
+2024-07-26 21:36:45 id_st = None
+2024-07-26 21:36:45 skip_battle = None
+2024-07-26 21:36:45 id_st = None
+2024-07-26 21:36:45 skip_battle = None
+2024-07-26 21:36:45 id_st = None
+2024-07-26 21:36:46 skip_battle = None
+2024-07-26 21:36:46 id_st = None
+2024-07-26 21:36:46 skip_battle = None
+2024-07-26 21:36:46 id_st = None
+2024-07-26 21:36:47 skip_battle = None
+2024-07-26 21:36:47 id_st = None
+2024-07-26 21:36:47 skip_battle = None
+2024-07-26 21:36:47 id_st = None
+2024-07-26 21:36:48 skip_battle = None
+2024-07-26 21:36:48 post = Point(x=436, y=180)
+2024-07-26 21:36:48 entry = Point(x=366, y=509)
+2024-07-26 21:36:48 fun.move_to_click
+2024-07-26 21:36:51 id_st = Point(x=497, y=689)
+2024-07-26 21:36:51 ст. Кузнецкий мост
+2024-07-26 21:36:53 touring.event_gifts
+2024-07-26 21:36:54 pos_gift = None
+2024-07-26 21:36:54 pos_gift = None
+2024-07-26 21:38:12 
+2024-07-26 21:38:12 *******                      *******
+2024-07-26 21:38:12 ******* перезапуск программы *******
+2024-07-26 21:38:12 *******                      *******
+2024-07-26 21:38:12 
+2024-07-26 21:52:00 
+2024-07-26 21:52:00 *******                      *******
+2024-07-26 21:52:00 ******* перезапуск программы *******
+2024-07-26 21:52:00 *******                      *******
+2024-07-26 21:52:00 
+2024-07-26 21:52:09 touring.test
+2024-07-26 21:52:09 fun.push_close_all_
+2024-07-26 21:52:10 touring.travel
+2024-07-26 21:52:10 touring.traffic_on_the_map
+2024-07-26 21:52:10 touring.to_map
+2024-07-26 21:52:11 turgenev_st = None
+2024-07-26 21:52:16 ev_map = 0
+2024-07-26 21:52:16 pos_stan = Point(x=253, y=466), stan[1] = img/tonelli/k_Pushkin.png
+2024-07-26 21:52:16 touring.poisk
+2024-07-26 21:52:18 point_poisk = Point(x=253, y=466), confidence_poisk = 0.98
+2024-07-26 21:52:18 fun.move_to_click
+2024-07-26 21:55:51 
+2024-07-26 21:55:51 *******                      *******
+2024-07-26 21:55:51 ******* перезапуск программы *******
+2024-07-26 21:55:51 *******                      *******
+2024-07-26 21:55:51 
+2024-07-26 21:56:06 touring.test
+2024-07-26 21:56:06 fun.push_close_all_
+2024-07-26 21:56:07 touring.travel
+2024-07-26 21:56:07 touring.traffic_on_the_map
+2024-07-26 21:56:07 touring.to_map
+2024-07-26 21:56:08 turgenev_st = None
+2024-07-26 21:56:13 ev_map = 0
+2024-07-26 21:56:13 pos_stan = Point(x=253, y=466), stan[1] = img/tonelli/k_Pushkin.png
+2024-07-26 21:56:13 touring.poisk
+2024-07-26 21:56:15 point_poisk = Point(x=253, y=466), confidence_poisk = 0.98
+2024-07-26 21:56:15 fun.move_to_click
+2024-07-26 21:56:17 touring.events_tunnel
+2024-07-26 21:56:18 id_st = None
+2024-07-26 21:56:18 info = Point(x=189, y=160)
+2024-07-26 21:56:18 skip_battle = None
+2024-07-26 21:56:18 id_st = None
+2024-07-26 21:56:19 skip_battle = None
+2024-07-26 21:56:19 id_st = None
+2024-07-26 21:56:19 skip_battle = None
+2024-07-26 21:56:19 id_st = None
+2024-07-26 21:56:20 skip_battle = None
+2024-07-26 21:56:20 id_st = None
+2024-07-26 21:56:20 skip_battle = None
+2024-07-26 21:56:20 id_st = None
+2024-07-26 21:56:21 skip_battle = None
+2024-07-26 21:56:21 id_st = None
+2024-07-26 21:56:21 skip_battle = None
+2024-07-26 21:56:21 id_st = None
+2024-07-26 21:56:22 skip_battle = None
+2024-07-26 21:56:22 id_st = None
+2024-07-26 21:56:22 skip_battle = None
+2024-07-26 21:56:22 id_st = None
+2024-07-26 21:56:22 skip_battle = None
+2024-07-26 21:56:23 id_st = None
+2024-07-26 21:56:23 skip_battle = None
+2024-07-26 21:56:23 id_st = None
+2024-07-26 21:56:23 skip_battle = None
+2024-07-26 21:56:23 id_st = None
+2024-07-26 21:56:24 skip_battle = None
+2024-07-26 21:56:24 id_st = None
+2024-07-26 21:56:24 skip_battle = None
+2024-07-26 21:56:24 id_st = None
+2024-07-26 21:56:25 skip_battle = None
+2024-07-26 21:56:25 id_st = None
+2024-07-26 21:56:25 skip_battle = None
+2024-07-26 21:56:25 id_st = None
+2024-07-26 21:56:26 skip_battle = None
+2024-07-26 21:56:26 id_st = None
+2024-07-26 21:56:26 skip_battle = None
+2024-07-26 21:56:26 id_st = None
+2024-07-26 21:56:27 skip_battle = None
+2024-07-26 21:56:27 id_st = None
+2024-07-26 21:56:27 skip_battle = None
+2024-07-26 21:56:27 id_st = None
+2024-07-26 21:56:28 skip_battle = None
+2024-07-26 21:56:28 id_st = None
+2024-07-26 21:56:28 skip_battle = None
+2024-07-26 21:56:28 id_st = None
+2024-07-26 21:56:28 skip_battle = None
+2024-07-26 21:56:29 id_st = None
+2024-07-26 21:56:29 skip_battle = None
+2024-07-26 21:56:29 id_st = None
+2024-07-26 21:56:29 skip_battle = None
+2024-07-26 21:56:29 id_st = None
+2024-07-26 21:56:30 skip_battle = None
+2024-07-26 21:56:30 id_st = None
+2024-07-26 21:56:30 skip_battle = None
+2024-07-26 21:56:30 id_st = None
+2024-07-26 21:56:31 skip_battle = None
+2024-07-26 21:56:31 id_st = None
+2024-07-26 21:56:31 skip_battle = None
+2024-07-26 21:56:31 id_st = None
+2024-07-26 21:56:32 skip_battle = None
+2024-07-26 21:56:32 id_st = None
+2024-07-26 21:56:32 skip_battle = None
+2024-07-26 21:56:32 id_st = None
+2024-07-26 21:56:33 skip_battle = None
+2024-07-26 21:56:33 id_st = None
+2024-07-26 21:56:33 skip_battle = None
+2024-07-26 21:56:33 id_st = None
+2024-07-26 21:56:34 skip_battle = None
+2024-07-26 21:56:34 id_st = None
+2024-07-26 21:56:34 skip_battle = None
+2024-07-26 21:56:34 id_st = None
+2024-07-26 21:56:34 skip_battle = None
+2024-07-26 21:56:35 id_st = None
+2024-07-26 21:56:35 skip_battle = None
+2024-07-26 21:56:35 id_st = None
+2024-07-26 21:56:35 skip_battle = None
+2024-07-26 21:56:35 id_st = None
+2024-07-26 21:56:36 skip_battle = None
+2024-07-26 21:56:36 id_st = None
+2024-07-26 21:56:36 skip_battle = None
+2024-07-26 21:56:36 id_st = None
+2024-07-26 21:56:37 skip_battle = None
+2024-07-26 21:56:37 id_st = None
+2024-07-26 21:56:37 skip_battle = None
+2024-07-26 21:56:37 id_st = None
+2024-07-26 21:56:38 skip_battle = None
+2024-07-26 21:56:38 id_st = None
+2024-07-26 21:56:38 skip_battle = None
+2024-07-26 21:56:38 id_st = None
+2024-07-26 21:56:39 skip_battle = None
+2024-07-26 21:56:39 post = Point(x=436, y=180)
+2024-07-26 21:56:39 entry = Point(x=366, y=509)
+2024-07-26 21:56:39 fun.move_to_click
+2024-07-26 21:56:42 id_st = Point(x=466, y=688)
+2024-07-26 21:56:42 ст. Пушкинская
+2024-07-26 21:56:44 touring.event_gifts
+2024-07-26 21:56:45 pos_gift = None
+2024-07-26 21:56:45 pos_gift = None
+2024-07-26 21:56:45 touring.traffic_on_the_map
+2024-07-26 21:56:45 touring.to_map
+2024-07-26 21:56:46 turgenev_st = None
+2024-07-26 21:56:51 ev_map = 0
+2024-07-26 21:56:51 pos_stan = Point(x=721, y=465), stan[1] = img/tonelli/k_Kuzneckiy.png
+2024-07-26 21:56:51 touring.poisk
+2024-07-26 21:56:53 point_poisk = Point(x=722, y=465), confidence_poisk = 0.95
+2024-07-26 21:56:53 fun.move_to_click
+2024-07-26 21:56:55 touring.events_tunnel
+2024-07-26 21:56:56 id_st = None
+2024-07-26 21:56:56 info = Point(x=189, y=160)
+2024-07-26 21:56:57 skip_battle = None
+2024-07-26 21:56:57 id_st = None
+2024-07-26 21:56:57 skip_battle = None
+2024-07-26 21:56:57 id_st = None
+2024-07-26 21:56:58 skip_battle = None
+2024-07-26 21:56:58 id_st = None
+2024-07-26 21:56:58 skip_battle = None
+2024-07-26 21:56:58 id_st = None
+2024-07-26 21:56:59 skip_battle = None
+2024-07-26 21:56:59 id_st = None
+2024-07-26 21:56:59 skip_battle = None
+2024-07-26 21:56:59 id_st = None
+2024-07-26 21:57:00 skip_battle = None
+2024-07-26 21:57:00 id_st = None
+2024-07-26 21:57:00 skip_battle = None
+2024-07-26 21:57:01 id_st = None
+2024-07-26 21:57:02 skip_battle = None
+2024-07-26 21:57:02 id_st = None
+2024-07-26 21:57:02 skip_battle = None
+2024-07-26 21:57:02 id_st = None
+2024-07-26 21:57:03 skip_battle = None
+2024-07-26 21:57:03 id_st = None
+2024-07-26 21:57:03 skip_battle = None
+2024-07-26 21:57:03 id_st = None
+2024-07-26 21:57:04 skip_battle = None
+2024-07-26 21:57:04 id_st = None
+2024-07-26 21:57:04 skip_battle = None
+2024-07-26 21:57:04 id_st = None
+2024-07-26 21:57:05 skip_battle = None
+2024-07-26 21:57:05 id_st = None
+2024-07-26 21:57:05 skip_battle = None
+2024-07-26 21:57:05 id_st = None
+2024-07-26 21:57:06 skip_battle = None
+2024-07-26 21:57:06 id_st = None
+2024-07-26 21:57:06 skip_battle = None
+2024-07-26 21:57:06 id_st = None
+2024-07-26 21:57:06 skip_battle = None
+2024-07-26 21:57:07 id_st = None
+2024-07-26 21:57:07 skip_battle = None
+2024-07-26 21:57:07 id_st = None
+2024-07-26 21:57:08 skip_battle = None
+2024-07-26 21:57:08 id_st = None
+2024-07-26 21:57:08 skip_battle = None
+2024-07-26 21:57:08 id_st = None
+2024-07-26 21:57:08 skip_battle = None
+2024-07-26 21:57:09 id_st = None
+2024-07-26 21:57:09 skip_battle = None
+2024-07-26 21:57:09 id_st = None
+2024-07-26 21:57:09 skip_battle = None
+2024-07-26 21:57:10 id_st = None
+2024-07-26 21:57:10 skip_battle = None
+2024-07-26 21:57:10 id_st = None
+2024-07-26 21:57:10 skip_battle = None
+2024-07-26 21:57:10 id_st = None
+2024-07-26 21:57:11 skip_battle = None
+2024-07-26 21:57:11 id_st = None
+2024-07-26 21:57:11 skip_battle = None
+2024-07-26 21:57:11 id_st = None
+2024-07-26 21:57:12 skip_battle = None
+2024-07-26 21:57:12 id_st = None
+2024-07-26 21:57:12 skip_battle = None
+2024-07-26 21:57:12 id_st = None
+2024-07-26 21:57:13 skip_battle = None
+2024-07-26 21:57:14 id_st = None
+2024-07-26 21:57:14 skip_battle = None
+2024-07-26 21:57:15 id_st = None
+2024-07-26 21:57:15 skip_battle = None
+2024-07-26 21:57:15 id_st = None
+2024-07-26 21:57:15 skip_battle = None
+2024-07-26 21:57:16 id_st = None
+2024-07-26 21:57:16 skip_battle = None
+2024-07-26 21:57:16 id_st = None
+2024-07-26 21:57:16 skip_battle = None
+2024-07-26 21:57:16 id_st = None
+2024-07-26 21:57:17 skip_battle = None
+2024-07-26 21:57:17 id_st = None
+2024-07-26 21:57:17 skip_battle = None
+2024-07-26 21:57:17 post = Point(x=436, y=180)
+2024-07-26 21:57:18 entry = Point(x=366, y=509)
+2024-07-26 21:57:18 fun.move_to_click
+2024-07-26 21:57:21 id_st = Point(x=497, y=689)
+2024-07-26 21:57:21 ст. Кузнецкий мост
+2024-07-26 21:57:22 touring.event_gifts
+2024-07-26 21:57:23 pos_gift = None
+2024-07-26 21:57:23 pos_gift = None
+2024-07-26 21:57:37 
+2024-07-26 21:57:37 *******                      *******
+2024-07-26 21:57:37 ******* перезапуск программы *******
+2024-07-26 21:57:37 *******                      *******
+2024-07-26 21:57:37 
+2024-07-26 22:07:20 
+2024-07-26 22:07:20 *******                      *******
+2024-07-26 22:07:20 ******* перезапуск программы *******
+2024-07-26 22:07:20 *******                      *******
+2024-07-26 22:07:20 
+2024-07-26 22:07:29 touring.test
+2024-07-26 22:07:29 fun.push_close_all_
+2024-07-26 22:07:30 touring.travel
+2024-07-26 22:07:30 touring.traffic_on_the_map
+2024-07-26 22:07:30 touring.to_map
+2024-07-26 22:07:31 turgenev_st = None
+2024-07-26 22:07:36 ev_map = 0
+2024-07-26 22:07:36 pos_stan = Point(x=253, y=466), stan[1] = img/tonelli/k_Pushkin.png
+2024-07-26 22:07:36 touring.poisk
+2024-07-26 22:07:38 point_poisk = Point(x=253, y=466), confidence_poisk = 0.98
+2024-07-26 22:07:38 fun.move_to_click
+2024-07-26 22:07:40 touring.events_tunnel
+2024-07-26 22:07:41 id_st = None
+2024-07-26 22:07:41 info = Point(x=189, y=160)
+2024-07-26 22:07:41 skip_battle = None
+2024-07-26 22:07:42 id_st = None
+2024-07-26 22:07:42 skip_battle = None
+2024-07-26 22:07:42 id_st = None
+2024-07-26 22:07:42 skip_battle = None
+2024-07-26 22:07:42 id_st = None
+2024-07-26 22:07:43 skip_battle = None
+2024-07-26 22:07:43 id_st = None
+2024-07-26 22:07:43 skip_battle = None
+2024-07-26 22:07:43 id_st = None
+2024-07-26 22:07:44 skip_battle = None
+2024-07-26 22:07:44 id_st = None
+2024-07-26 22:07:44 skip_battle = None
+2024-07-26 22:07:44 id_st = None
+2024-07-26 22:07:45 skip_battle = None
+2024-07-26 22:07:45 id_st = None
+2024-07-26 22:07:45 skip_battle = None
+2024-07-26 22:07:45 id_st = None
+2024-07-26 22:07:46 skip_battle = None
+2024-07-26 22:07:46 id_st = None
+2024-07-26 22:07:46 skip_battle = None
+2024-07-26 22:07:46 id_st = None
+2024-07-26 22:07:46 skip_battle = None
+2024-07-26 22:07:47 id_st = None
+2024-07-26 22:07:47 skip_battle = None
+2024-07-26 22:07:47 id_st = None
+2024-07-26 22:07:47 skip_battle = None
+2024-07-26 22:07:47 id_st = None
+2024-07-26 22:07:48 skip_battle = None
+2024-07-26 22:07:48 id_st = None
+2024-07-26 22:07:48 skip_battle = None
+2024-07-26 22:07:48 id_st = None
+2024-07-26 22:07:49 skip_battle = None
+2024-07-26 22:07:49 id_st = None
+2024-07-26 22:07:49 skip_battle = None
+2024-07-26 22:07:49 id_st = None
+2024-07-26 22:07:50 skip_battle = None
+2024-07-26 22:07:50 id_st = None
+2024-07-26 22:07:50 skip_battle = None
+2024-07-26 22:07:50 id_st = None
+2024-07-26 22:07:51 skip_battle = None
+2024-07-26 22:07:51 id_st = None
+2024-07-26 22:07:51 skip_battle = None
+2024-07-26 22:07:51 id_st = None
+2024-07-26 22:07:51 skip_battle = None
+2024-07-26 22:07:52 id_st = None
+2024-07-26 22:07:52 skip_battle = None
+2024-07-26 22:07:52 id_st = None
+2024-07-26 22:07:52 skip_battle = None
+2024-07-26 22:07:53 id_st = None
+2024-07-26 22:07:53 skip_battle = None
+2024-07-26 22:07:53 id_st = None
+2024-07-26 22:07:53 skip_battle = None
+2024-07-26 22:07:53 id_st = None
+2024-07-26 22:07:54 skip_battle = None
+2024-07-26 22:07:54 id_st = None
+2024-07-26 22:07:54 skip_battle = None
+2024-07-26 22:07:54 id_st = None
+2024-07-26 22:07:55 skip_battle = None
+2024-07-26 22:07:55 id_st = None
+2024-07-26 22:07:55 skip_battle = None
+2024-07-26 22:07:55 id_st = None
+2024-07-26 22:07:56 skip_battle = None
+2024-07-26 22:07:56 id_st = None
+2024-07-26 22:07:56 skip_battle = None
+2024-07-26 22:07:56 id_st = None
+2024-07-26 22:07:57 skip_battle = None
+2024-07-26 22:07:57 id_st = None
+2024-07-26 22:07:57 skip_battle = None
+2024-07-26 22:07:57 id_st = None
+2024-07-26 22:07:58 skip_battle = None
+2024-07-26 22:07:58 id_st = None
+2024-07-26 22:07:58 skip_battle = None
+2024-07-26 22:07:58 id_st = None
+2024-07-26 22:07:59 skip_battle = None
+2024-07-26 22:07:59 id_st = None
+2024-07-26 22:07:59 skip_battle = None
+2024-07-26 22:07:59 id_st = None
+2024-07-26 22:08:00 skip_battle = None
+2024-07-26 22:08:01 id_st = None
+2024-07-26 22:08:01 skip_battle = None
+2024-07-26 22:08:02 id_st = None
+2024-07-26 22:08:02 skip_battle = None
+2024-07-26 22:08:02 post = Point(x=436, y=180)
+2024-07-26 22:08:03 entry = Point(x=366, y=509)
+2024-07-26 22:08:03 fun.move_to_click
+2024-07-26 22:08:06 id_st = Point(x=466, y=688)
+2024-07-26 22:08:06 ст. Пушкинская
+2024-07-26 22:08:07 touring.event_gifts
+2024-07-26 22:08:08 pos_gift = None
+2024-07-26 22:08:08 pos_gift = None
+2024-07-26 22:08:08 touring.traffic_on_the_map
+2024-07-26 22:08:08 touring.to_map
+2024-07-26 22:08:10 turgenev_st = None
+2024-07-26 22:08:15 ev_map = стрелка север
+2024-07-26 22:08:15 pos_stan = Point(x=618, y=422), stan[1] = img/tonelli/k_Chekhov.png
+2024-07-26 22:08:15 touring.poisk
+2024-07-26 22:08:16 point_poisk = Point(x=619, y=422), confidence_poisk = 0.96
+2024-07-26 22:08:16 fun.move_to_click
+2024-07-26 22:08:18 touring.events_tunnel
+2024-07-26 22:08:20 id_st = Point(x=460, y=688)
+2024-07-26 22:08:20 info = Point(x=189, y=160)
+2024-07-26 22:08:20 ст. Чеховская
+2024-07-26 22:08:21 touring.event_gifts
+2024-07-26 22:08:22 pos_gift = None
+2024-07-26 22:08:22 pos_gift = None
+2024-07-26 22:08:22 touring.traffic_on_the_map
+2024-07-26 22:08:22 touring.to_map
+2024-07-26 22:08:23 turgenev_st = None
+2024-07-26 22:08:28 ev_map = 0
+2024-07-26 22:08:28 pos_stan = Point(x=469, y=351), stan[1] = img/tonelli/k_Cvetnoy.png
+2024-07-26 22:08:28 touring.poisk
+2024-07-26 22:08:30 point_poisk = Point(x=469, y=351), confidence_poisk = 0.96
+2024-07-26 22:08:30 fun.move_to_click
+2024-07-26 22:08:32 touring.events_tunnel
+2024-07-26 22:08:33 id_st = None
+2024-07-26 22:08:33 info = Point(x=189, y=160)
+2024-07-26 22:08:33 skip_battle = None
+2024-07-26 22:08:34 id_st = None
+2024-07-26 22:08:34 skip_battle = None
+2024-07-26 22:08:35 id_st = None
+2024-07-26 22:08:36 skip_battle = None
+2024-07-26 22:08:36 id_st = None
+2024-07-26 22:08:37 skip_battle = None
+2024-07-26 22:08:37 id_st = None
+2024-07-26 22:08:37 skip_battle = None
+2024-07-26 22:08:37 id_st = None
+2024-07-26 22:08:38 skip_battle = None
+2024-07-26 22:08:38 id_st = None
+2024-07-26 22:08:38 skip_battle = None
+2024-07-26 22:08:38 id_st = None
+2024-07-26 22:08:38 skip_battle = None
+2024-07-26 22:08:39 id_st = None
+2024-07-26 22:08:39 skip_battle = None
+2024-07-26 22:08:39 id_st = None
+2024-07-26 22:08:39 skip_battle = None
+2024-07-26 22:08:40 id_st = None
+2024-07-26 22:08:40 skip_battle = None
+2024-07-26 22:08:40 id_st = None
+2024-07-26 22:08:40 skip_battle = None
+2024-07-26 22:08:40 id_st = None
+2024-07-26 22:08:41 skip_battle = None
+2024-07-26 22:08:41 id_st = None
+2024-07-26 22:08:41 skip_battle = None
+2024-07-26 22:08:41 id_st = None
+2024-07-26 22:08:42 skip_battle = None
+2024-07-26 22:08:42 id_st = None
+2024-07-26 22:08:42 skip_battle = None
+2024-07-26 22:08:42 id_st = None
+2024-07-26 22:08:43 skip_battle = None
+2024-07-26 22:08:43 id_st = None
+2024-07-26 22:08:43 skip_battle = Point(x=497, y=116)
+2024-07-26 22:08:43 raptor = None
+2024-07-26 22:08:43 arachne = None
+2024-07-26 22:08:43 krysa = Point(x=871, y=150)
+2024-07-26 22:08:44 kiki = None
+2024-07-26 22:08:44 station_master.enemy_battle
+2024-07-26 22:08:44  поиск battle_end, skip_battle, dog
+2024-07-26 22:08:45 ожидание battle_end, close, dog, skip_battle
+2024-07-26 22:08:46 ожидание battle_end, close, dog, skip_battle
+2024-07-26 22:08:47 skip_battle = Point(x=496, y=117)
+2024-07-26 22:08:47 fun.move_to_click
+2024-07-26 22:08:50 ожидание battle_end, close, dog, skip_battle
+2024-07-26 22:08:52 ожидание battle_end, close, dog, skip_battle
+2024-07-26 22:08:54 нажать закрыть в конце боя
+2024-07-26 22:08:54 fun.push_close_all_
+2024-07-26 22:08:54 fun.close_popup_window
+2024-07-26 22:08:54 fun.push_close
+2024-07-26 22:08:55 fun.move_to_click
+2024-07-26 22:08:58 skip_battle1_end_ver = None
+2024-07-26 22:08:58 выход из 'enemy_battle
+2024-07-26 22:08:59 id_st = None
+2024-07-26 22:08:59 skip_battle = None
+2024-07-26 22:08:59 id_st = None
+2024-07-26 22:08:59 skip_battle = None
+2024-07-26 22:08:59 id_st = None
+2024-07-26 22:09:00 skip_battle = None
+2024-07-26 22:09:00 id_st = None
+2024-07-26 22:09:00 skip_battle = None
+2024-07-26 22:09:00 id_st = None
+2024-07-26 22:09:01 skip_battle = None
+2024-07-26 22:09:01 id_st = None
+2024-07-26 22:09:01 skip_battle = None
+2024-07-26 22:09:01 id_st = None
+2024-07-26 22:09:02 skip_battle = None
+2024-07-26 22:09:02 id_st = None
+2024-07-26 22:09:02 skip_battle = None
+2024-07-26 22:09:02 id_st = None
+2024-07-26 22:09:03 skip_battle = None
+2024-07-26 22:09:03 id_st = None
+2024-07-26 22:09:03 skip_battle = None
+2024-07-26 22:09:03 id_st = None
+2024-07-26 22:09:04 skip_battle = None
+2024-07-26 22:09:04 id_st = None
+2024-07-26 22:09:04 skip_battle = None
+2024-07-26 22:09:04 id_st = None
+2024-07-26 22:09:04 skip_battle = None
+2024-07-26 22:09:05 id_st = None
+2024-07-26 22:09:05 skip_battle = None
+2024-07-26 22:09:06 id_st = None
+2024-07-26 22:09:07 skip_battle = None
+2024-07-26 22:09:07 id_st = None
+2024-07-26 22:09:08 skip_battle = None
+2024-07-26 22:09:08 post = Point(x=436, y=180)
+2024-07-26 22:09:08 entry = Point(x=366, y=509)
+2024-07-26 22:09:08 fun.move_to_click
+2024-07-26 22:09:12 id_st = Point(x=496, y=689)
+2024-07-26 22:09:12 ст. Цветной бульвар
+2024-07-26 22:09:13 touring.event_gifts
+2024-07-26 22:09:14 pos_gift = None
+2024-07-26 22:09:14 pos_gift = None
+2024-07-26 22:09:14 touring.traffic_on_the_map
+2024-07-26 22:09:14 touring.to_map
+2024-07-26 22:09:15 turgenev_st = None
+2024-07-26 22:09:20 ev_map = стрелка север
+2024-07-26 22:09:21 pos_stan = Point(x=535, y=578), stan[1] = img/tonelli/k_Chekhov.png
+2024-07-26 22:09:21 touring.poisk
+2024-07-26 22:09:22 point_poisk = Point(x=535, y=578), confidence_poisk = 0.9299999999999999
+2024-07-26 22:09:22 fun.move_to_click
+2024-07-26 22:09:25 touring.events_tunnel
+2024-07-26 22:09:26 id_st = None
+2024-07-26 22:09:26 info = Point(x=189, y=160)
+2024-07-26 22:09:26 skip_battle = None
+2024-07-26 22:09:26 id_st = None
+2024-07-26 22:09:27 skip_battle = None
+2024-07-26 22:09:27 id_st = None
+2024-07-26 22:09:27 skip_battle = None
+2024-07-26 22:09:27 id_st = None
+2024-07-26 22:09:28 skip_battle = None
+2024-07-26 22:09:28 id_st = None
+2024-07-26 22:09:28 skip_battle = None
+2024-07-26 22:09:28 id_st = None
+2024-07-26 22:09:28 skip_battle = None
+2024-07-26 22:09:29 id_st = None
+2024-07-26 22:09:29 skip_battle = None
+2024-07-26 22:09:29 id_st = None
+2024-07-26 22:09:29 skip_battle = None
+2024-07-26 22:09:29 id_st = None
+2024-07-26 22:09:30 skip_battle = None
+2024-07-26 22:09:30 id_st = None
+2024-07-26 22:09:30 skip_battle = None
+2024-07-26 22:09:30 id_st = None
+2024-07-26 22:09:31 skip_battle = None
+2024-07-26 22:09:31 id_st = None
+2024-07-26 22:09:31 skip_battle = None
+2024-07-26 22:09:31 id_st = None
+2024-07-26 22:09:32 skip_battle = None
+2024-07-26 22:09:32 id_st = None
+2024-07-26 22:09:32 skip_battle = None
+2024-07-26 22:09:32 id_st = None
+2024-07-26 22:09:33 skip_battle = None
+2024-07-26 22:09:33 id_st = None
+2024-07-26 22:09:33 skip_battle = None
+2024-07-26 22:09:33 id_st = None
+2024-07-26 22:09:33 skip_battle = None
+2024-07-26 22:09:34 id_st = None
+2024-07-26 22:09:34 skip_battle = None
+2024-07-26 22:09:34 id_st = None
+2024-07-26 22:09:34 skip_battle = None
+2024-07-26 22:09:34 id_st = None
+2024-07-26 22:09:35 skip_battle = None
+2024-07-26 22:09:35 id_st = None
+2024-07-26 22:09:35 skip_battle = Point(x=497, y=116)
+2024-07-26 22:09:35 raptor = None
+2024-07-26 22:09:35 arachne = None
+2024-07-26 22:09:36 krysa = Point(x=871, y=150)
+2024-07-26 22:09:36 kiki = None
+2024-07-26 22:09:36 station_master.enemy_battle
+2024-07-26 22:09:36  поиск battle_end, skip_battle, dog
+2024-07-26 22:09:37 ожидание battle_end, close, dog, skip_battle
+2024-07-26 22:09:39 ожидание battle_end, close, dog, skip_battle
+2024-07-26 22:09:39 skip_battle = Point(x=496, y=117)
+2024-07-26 22:09:39 fun.move_to_click
+2024-07-26 22:09:42 ожидание battle_end, close, dog, skip_battle
+2024-07-26 22:09:43 нажать закрыть в конце боя
+2024-07-26 22:09:43 fun.push_close_all_
+2024-07-26 22:09:43 fun.close_popup_window
+2024-07-26 22:09:44 fun.push_close
+2024-07-26 22:09:44 fun.move_to_click
+2024-07-26 22:09:48 skip_battle1_end_ver = None
+2024-07-26 22:09:48 выход из 'enemy_battle
+2024-07-26 22:09:48 id_st = None
+2024-07-26 22:09:49 skip_battle = None
+2024-07-26 22:09:49 id_st = None
+2024-07-26 22:09:49 skip_battle = None
+2024-07-26 22:09:49 id_st = None
+2024-07-26 22:09:50 skip_battle = None
+2024-07-26 22:09:50 id_st = None
+2024-07-26 22:09:50 skip_battle = None
+2024-07-26 22:09:50 id_st = None
+2024-07-26 22:09:51 skip_battle = None
+2024-07-26 22:09:51 id_st = None
+2024-07-26 22:09:51 skip_battle = None
+2024-07-26 22:09:51 id_st = None
+2024-07-26 22:09:51 skip_battle = None
+2024-07-26 22:09:52 id_st = None
+2024-07-26 22:09:52 skip_battle = None
+2024-07-26 22:09:52 id_st = None
+2024-07-26 22:09:52 skip_battle = None
+2024-07-26 22:09:53 id_st = None
+2024-07-26 22:09:53 skip_battle = None
+2024-07-26 22:09:53 id_st = None
+2024-07-26 22:09:53 skip_battle = None
+2024-07-26 22:09:53 id_st = None
+2024-07-26 22:09:54 skip_battle = None
+2024-07-26 22:09:54 id_st = None
+2024-07-26 22:09:54 skip_battle = None
+2024-07-26 22:09:54 id_st = None
+2024-07-26 22:09:55 skip_battle = None
+2024-07-26 22:09:55 id_st = None
+2024-07-26 22:09:56 skip_battle = None
+2024-07-26 22:09:56 id_st = None
+2024-07-26 22:09:57 skip_battle = None
+2024-07-26 22:09:58 id_st = Point(x=460, y=688)
+2024-07-26 22:09:58 ст. Чеховская
+2024-07-26 22:09:59 touring.event_gifts
+2024-07-26 22:10:00 pos_gift = None
+2024-07-26 22:10:00 pos_gift = None
+2024-07-26 22:10:00 touring.traffic_on_the_map
+2024-07-26 22:10:00 touring.to_map
+2024-07-26 22:10:01 turgenev_st = None
+2024-07-26 22:10:07 ev_map = 0
+2024-07-26 22:10:07 pos_stan = Point(x=371, y=508), stan[1] = img/tonelli/k_Pushkin.png
+2024-07-26 22:10:07 touring.poisk
+2024-07-26 22:10:09 point_poisk = Point(x=372, y=508), confidence_poisk = 0.9199999999999999
+2024-07-26 22:10:09 fun.move_to_click
+2024-07-26 22:10:11 touring.events_tunnel
+2024-07-26 22:10:12 id_st = Point(x=466, y=688)
+2024-07-26 22:10:12 info = Point(x=189, y=160)
+2024-07-26 22:10:12 ст. Пушкинская
+2024-07-26 22:10:13 touring.event_gifts
+2024-07-26 22:10:14 pos_gift = None
+2024-07-26 22:10:14 pos_gift = None
+2024-07-26 22:10:14 touring.traffic_on_the_map
+2024-07-26 22:10:14 touring.to_map
+2024-07-26 22:10:15 turgenev_st = None
+2024-07-26 22:10:20 ev_map = 0
+2024-07-26 22:10:21 pos_stan = Point(x=721, y=465), stan[1] = img/tonelli/k_Kuzneckiy.png
+2024-07-26 22:10:21 touring.poisk
+2024-07-26 22:10:22 point_poisk = Point(x=722, y=465), confidence_poisk = 0.95
+2024-07-26 22:10:22 fun.move_to_click
+2024-07-26 22:10:24 touring.events_tunnel
+2024-07-26 22:10:25 id_st = None
+2024-07-26 22:10:25 info = Point(x=189, y=160)
+2024-07-26 22:10:26 skip_battle = None
+2024-07-26 22:10:26 id_st = None
+2024-07-26 22:10:26 skip_battle = None
+2024-07-26 22:10:26 id_st = None
+2024-07-26 22:10:27 skip_battle = None
+2024-07-26 22:10:27 id_st = None
+2024-07-26 22:10:27 skip_battle = None
+2024-07-26 22:10:27 id_st = None
+2024-07-26 22:10:28 skip_battle = None
+2024-07-26 22:10:28 id_st = None
+2024-07-26 22:10:28 skip_battle = None
+2024-07-26 22:10:28 id_st = None
+2024-07-26 22:10:29 skip_battle = None
+2024-07-26 22:10:29 id_st = None
+2024-07-26 22:10:29 skip_battle = None
+2024-07-26 22:10:29 id_st = None
+2024-07-26 22:10:29 skip_battle = None
+2024-07-26 22:10:30 id_st = None
+2024-07-26 22:10:31 skip_battle = None
+2024-07-26 22:10:31 id_st = None
+2024-07-26 22:10:32 skip_battle = None
+2024-07-26 22:10:32 id_st = None
+2024-07-26 22:10:32 skip_battle = None
+2024-07-26 22:10:33 id_st = None
+2024-07-26 22:10:33 skip_battle = None
+2024-07-26 22:10:33 id_st = None
+2024-07-26 22:10:33 skip_battle = None
+2024-07-26 22:10:33 id_st = None
+2024-07-26 22:10:34 skip_battle = None
+2024-07-26 22:10:34 id_st = None
+2024-07-26 22:10:34 skip_battle = None
+2024-07-26 22:10:34 id_st = None
+2024-07-26 22:10:35 skip_battle = None
+2024-07-26 22:10:35 id_st = None
+2024-07-26 22:10:36 skip_battle = None
+2024-07-26 22:10:37 id_st = None
+2024-07-26 22:10:37 skip_battle = None
+2024-07-26 22:10:37 id_st = None
+2024-07-26 22:10:37 skip_battle = None
+2024-07-26 22:10:38 id_st = None
+2024-07-26 22:10:38 skip_battle = None
+2024-07-26 22:10:38 id_st = None
+2024-07-26 22:10:38 skip_battle = None
+2024-07-26 22:10:38 id_st = None
+2024-07-26 22:10:39 skip_battle = None
+2024-07-26 22:10:39 id_st = None
+2024-07-26 22:10:39 skip_battle = None
+2024-07-26 22:10:39 id_st = None
+2024-07-26 22:10:40 skip_battle = None
+2024-07-26 22:10:40 id_st = None
+2024-07-26 22:10:40 skip_battle = None
+2024-07-26 22:10:40 id_st = None
+2024-07-26 22:10:41 skip_battle = None
+2024-07-26 22:10:41 id_st = None
+2024-07-26 22:10:41 skip_battle = None
+2024-07-26 22:10:41 id_st = None
+2024-07-26 22:10:42 skip_battle = None
+2024-07-26 22:10:42 id_st = None
+2024-07-26 22:10:42 skip_battle = None
+2024-07-26 22:10:42 id_st = None
+2024-07-26 22:10:42 skip_battle = None
+2024-07-26 22:10:43 id_st = None
+2024-07-26 22:10:43 skip_battle = None
+2024-07-26 22:10:43 id_st = None
+2024-07-26 22:10:43 skip_battle = None
+2024-07-26 22:10:44 id_st = None
+2024-07-26 22:10:45 skip_battle = None
+2024-07-26 22:10:45 id_st = None
+2024-07-26 22:10:46 skip_battle = None
+2024-07-26 22:10:46 id_st = None
+2024-07-26 22:10:47 skip_battle = None
+2024-07-26 22:10:47 post = Point(x=436, y=180)
+2024-07-26 22:10:47 entry = Point(x=366, y=509)
+2024-07-26 22:10:47 fun.move_to_click
+2024-07-26 22:10:51 id_st = Point(x=497, y=689)
+2024-07-26 22:10:51 ст. Кузнецкий мост
+2024-07-26 22:10:52 touring.event_gifts
+2024-07-26 22:10:53 pos_gift = None
+2024-07-26 22:10:53 pos_gift = None
+2024-07-26 22:11:13 
+2024-07-26 22:11:13 *******                      *******
+2024-07-26 22:11:13 ******* перезапуск программы *******
+2024-07-26 22:11:13 *******                      *******
+2024-07-26 22:11:13 
+2024-07-26 22:15:51 
+2024-07-26 22:15:51 *******                      *******
+2024-07-26 22:15:51 ******* перезапуск программы *******
+2024-07-26 22:15:51 *******                      *******
+2024-07-26 22:15:51 
+2024-07-26 22:18:09 
+2024-07-26 22:18:09 *******                      *******
+2024-07-26 22:18:09 ******* перезапуск программы *******
+2024-07-26 22:18:09 *******                      *******
+2024-07-26 22:18:09 
+2024-07-26 22:18:14 touring.test
+2024-07-26 22:18:14 fun.push_close_all_
+2024-07-26 22:18:15 touring.travel
+2024-07-26 22:18:15 touring.traffic_on_the_map
+2024-07-26 22:18:15 touring.to_map
+2024-07-26 22:18:16 turgenev_st = None
+2024-07-26 22:18:21 ev_map = 0
+2024-07-26 22:18:21 pos_stan = Point(x=253, y=466), stan[1] = img/tonelli/k_Pushkin.png
+2024-07-26 22:18:21 touring.poisk
+2024-07-26 22:18:22 point_poisk = Point(x=253, y=466), confidence_poisk = 0.98
+2024-07-26 22:18:22 fun.move_to_click
+2024-07-26 22:18:24 touring.events_tunnel
+2024-07-26 22:18:25 id_st = None
+2024-07-26 22:18:25 info = Point(x=189, y=160)
+2024-07-26 22:18:26 skip_battle = None
+2024-07-26 22:18:26 id_st = None
+2024-07-26 22:18:26 skip_battle = None
+2024-07-26 22:18:27 id_st = None
+2024-07-26 22:18:28 skip_battle = None
+2024-07-26 22:18:28 id_st = None
+2024-07-26 22:18:29 skip_battle = None
+2024-07-26 22:18:29 id_st = None
+2024-07-26 22:18:29 skip_battle = None
+2024-07-26 22:18:29 id_st = None
+2024-07-26 22:18:29 skip_battle = None
+2024-07-26 22:18:30 id_st = None
+2024-07-26 22:18:30 skip_battle = None
+2024-07-26 22:18:30 id_st = None
+2024-07-26 22:18:30 skip_battle = None
+2024-07-26 22:18:30 id_st = None
+2024-07-26 22:18:31 skip_battle = None
+2024-07-26 22:18:31 id_st = None
+2024-07-26 22:18:31 skip_battle = None
+2024-07-26 22:18:31 id_st = None
+2024-07-26 22:18:32 skip_battle = None
+2024-07-26 22:18:32 id_st = None
+2024-07-26 22:18:32 skip_battle = None
+2024-07-26 22:18:32 id_st = None
+2024-07-26 22:18:33 skip_battle = None
+2024-07-26 22:18:33 id_st = None
+2024-07-26 22:18:33 skip_battle = None
+2024-07-26 22:18:33 id_st = None
+2024-07-26 22:18:34 skip_battle = None
+2024-07-26 22:18:35 id_st = None
+2024-07-26 22:18:36 skip_battle = None
+2024-07-26 22:18:36 id_st = None
+2024-07-26 22:18:36 skip_battle = None
+2024-07-26 22:18:37 id_st = None
+2024-07-26 22:18:37 skip_battle = None
+2024-07-26 22:18:37 id_st = None
+2024-07-26 22:18:37 skip_battle = None
+2024-07-26 22:18:37 id_st = None
+2024-07-26 22:18:38 skip_battle = None
+2024-07-26 22:18:38 id_st = None
+2024-07-26 22:18:38 skip_battle = None
+2024-07-26 22:18:38 id_st = None
+2024-07-26 22:18:39 skip_battle = None
+2024-07-26 22:18:39 id_st = None
+2024-07-26 22:18:39 skip_battle = None
+2024-07-26 22:18:39 id_st = None
+2024-07-26 22:18:40 skip_battle = None
+2024-07-26 22:18:40 id_st = None
+2024-07-26 22:18:40 skip_battle = None
+2024-07-26 22:18:41 id_st = None
+2024-07-26 22:18:42 skip_battle = None
+2024-07-26 22:18:42 id_st = None
+2024-07-26 22:18:43 skip_battle = None
+2024-07-26 22:18:43 id_st = None
+2024-07-26 22:18:43 skip_battle = None
+2024-07-26 22:18:43 id_st = None
+2024-07-26 22:18:44 skip_battle = None
+2024-07-26 22:18:44 id_st = None
+2024-07-26 22:18:44 skip_battle = None
+2024-07-26 22:18:44 id_st = None
+2024-07-26 22:18:44 skip_battle = None
+2024-07-26 22:18:45 id_st = None
+2024-07-26 22:18:45 skip_battle = None
+2024-07-26 22:18:45 id_st = None
+2024-07-26 22:18:45 skip_battle = None
+2024-07-26 22:18:45 id_st = None
+2024-07-26 22:18:46 skip_battle = None
+2024-07-26 22:18:46 id_st = None
+2024-07-26 22:18:46 skip_battle = None
+2024-07-26 22:18:46 post = Point(x=436, y=180)
+2024-07-26 22:18:47 entry = Point(x=366, y=509)
+2024-07-26 22:18:47 fun.move_to_click
+2024-07-26 22:18:50 id_st = Point(x=466, y=688)
+2024-07-26 22:18:50 ст. Пушкинская
+2024-07-26 22:18:52 touring.event_gifts
+2024-07-26 22:18:53 pos_gift = None
+2024-07-26 22:18:53 pos_gift = None
+2024-07-26 22:18:53 touring.traffic_on_the_map
+2024-07-26 22:18:53 touring.to_map
+2024-07-26 22:18:54 turgenev_st = None
+2024-07-26 22:18:59 ev_map = стрелка север
+2024-07-26 22:18:59 pos_stan = Point(x=618, y=422), stan[1] = img/tonelli/k_Chekhov.png
+2024-07-26 22:18:59 touring.poisk
+2024-07-26 22:19:01 point_poisk = Point(x=619, y=422), confidence_poisk = 0.96
+2024-07-26 22:19:01 fun.move_to_click
+2024-07-26 22:19:03 touring.events_tunnel
+2024-07-26 22:19:04 id_st = Point(x=460, y=688)
+2024-07-26 22:19:04 info = Point(x=189, y=160)
+2024-07-26 22:19:04 ст. Чеховская
+2024-07-26 22:19:05 touring.event_gifts
+2024-07-26 22:19:06 pos_gift = None
+2024-07-26 22:19:06 pos_gift = None
+2024-07-26 22:19:06 touring.traffic_on_the_map
+2024-07-26 22:19:06 touring.to_map
+2024-07-26 22:19:07 turgenev_st = None
+2024-07-26 22:19:13 ev_map = 0
+2024-07-26 22:19:13 pos_stan = Point(x=469, y=351), stan[1] = img/tonelli/k_Cvetnoy.png
+2024-07-26 22:19:13 touring.poisk
+2024-07-26 22:19:14 point_poisk = Point(x=469, y=351), confidence_poisk = 0.96
+2024-07-26 22:19:14 fun.move_to_click
+2024-07-26 22:19:16 touring.events_tunnel
+2024-07-26 22:19:17 id_st = None
+2024-07-26 22:19:18 info = Point(x=189, y=160)
+2024-07-26 22:19:18 skip_battle = None
+2024-07-26 22:19:18 id_st = None
+2024-07-26 22:19:18 skip_battle = None
+2024-07-26 22:19:18 id_st = None
+2024-07-26 22:19:19 skip_battle = None
+2024-07-26 22:19:19 id_st = None
+2024-07-26 22:19:19 skip_battle = None
+2024-07-26 22:19:19 id_st = None
+2024-07-26 22:19:20 skip_battle = None
+2024-07-26 22:19:20 id_st = None
+2024-07-26 22:19:20 skip_battle = None
+2024-07-26 22:19:20 id_st = None
+2024-07-26 22:19:21 skip_battle = None
+2024-07-26 22:19:21 id_st = None
+2024-07-26 22:19:21 skip_battle = None
+2024-07-26 22:19:21 id_st = None
+2024-07-26 22:19:21 skip_battle = None
+2024-07-26 22:19:22 id_st = None
+2024-07-26 22:19:22 skip_battle = None
+2024-07-26 22:19:22 id_st = None
+2024-07-26 22:19:22 skip_battle = None
+2024-07-26 22:19:23 id_st = None
+2024-07-26 22:19:23 skip_battle = None
+2024-07-26 22:19:23 id_st = None
+2024-07-26 22:19:23 skip_battle = None
+2024-07-26 22:19:23 id_st = None
+2024-07-26 22:19:24 skip_battle = None
+2024-07-26 22:19:24 id_st = None
+2024-07-26 22:19:24 skip_battle = None
+2024-07-26 22:19:24 id_st = None
+2024-07-26 22:19:25 skip_battle = None
+2024-07-26 22:19:25 id_st = None
+2024-07-26 22:19:25 skip_battle = None
+2024-07-26 22:19:25 id_st = None
+2024-07-26 22:19:26 skip_battle = None
+2024-07-26 22:19:26 id_st = None
+2024-07-26 22:19:26 skip_battle = None
+2024-07-26 22:19:26 id_st = None
+2024-07-26 22:19:27 skip_battle = None
+2024-07-26 22:19:27 id_st = None
+2024-07-26 22:19:27 skip_battle = None
+2024-07-26 22:19:27 id_st = None
+2024-07-26 22:19:27 skip_battle = Point(x=497, y=116)
+2024-07-26 22:19:28 raptor = None
+2024-07-26 22:19:28 arachne = None
+2024-07-26 22:19:28 krysa = Point(x=871, y=150)
+2024-07-26 22:19:28 kiki = None
+2024-07-26 22:19:28 station_master.enemy_battle
+2024-07-26 22:19:28  поиск battle_end, skip_battle, dog
+2024-07-26 22:19:29 ожидание battle_end, close, dog, skip_battle
+2024-07-26 22:19:32 ожидание battle_end, close, dog, skip_battle
+2024-07-26 22:19:33 ожидание battle_end, close, dog, skip_battle
+2024-07-26 22:19:34 нажать закрыть в конце боя
+2024-07-26 22:19:34 fun.push_close_all_
+2024-07-26 22:19:34 fun.close_popup_window
+2024-07-26 22:19:34 fun.push_close
+2024-07-26 22:19:35 fun.move_to_click
+2024-07-26 22:19:38 skip_battle1_end_ver = None
+2024-07-26 22:19:38 выход из 'enemy_battle
+2024-07-26 22:19:38 id_st = None
+2024-07-26 22:19:38 skip_battle = None
+2024-07-26 22:19:39 id_st = None
+2024-07-26 22:19:39 skip_battle = None
+2024-07-26 22:19:39 id_st = None
+2024-07-26 22:19:39 skip_battle = None
+2024-07-26 22:19:40 id_st = None
+2024-07-26 22:19:40 skip_battle = None
+2024-07-26 22:19:40 id_st = None
+2024-07-26 22:19:40 skip_battle = None
+2024-07-26 22:19:40 id_st = None
+2024-07-26 22:19:41 skip_battle = None
+2024-07-26 22:19:41 id_st = None
+2024-07-26 22:19:41 skip_battle = None
+2024-07-26 22:19:41 id_st = None
+2024-07-26 22:19:42 skip_battle = None
+2024-07-26 22:19:42 id_st = None
+2024-07-26 22:19:42 skip_battle = None
+2024-07-26 22:19:42 id_st = None
+2024-07-26 22:19:43 skip_battle = None
+2024-07-26 22:19:43 id_st = None
+2024-07-26 22:19:43 skip_battle = None
+2024-07-26 22:19:43 id_st = None
+2024-07-26 22:19:44 skip_battle = None
+2024-07-26 22:19:44 id_st = None
+2024-07-26 22:19:44 skip_battle = None
+2024-07-26 22:19:44 id_st = None
+2024-07-26 22:19:45 skip_battle = None
+2024-07-26 22:19:45 id_st = None
+2024-07-26 22:19:45 skip_battle = None
+2024-07-26 22:19:45 id_st = None
+2024-07-26 22:19:46 skip_battle = None
+2024-07-26 22:19:46 id_st = None
+2024-07-26 22:19:46 skip_battle = None
+2024-07-26 22:19:46 id_st = None
+2024-07-26 22:19:46 skip_battle = None
+2024-07-26 22:19:47 id_st = None
+2024-07-26 22:19:47 skip_battle = None
+2024-07-26 22:19:47 id_st = None
+2024-07-26 22:19:47 skip_battle = None
+2024-07-26 22:19:48 id_st = None
+2024-07-26 22:19:48 skip_battle = None
+2024-07-26 22:19:48 post = Point(x=436, y=180)
+2024-07-26 22:19:49 entry = Point(x=366, y=509)
+2024-07-26 22:19:49 fun.move_to_click
+2024-07-26 22:19:52 id_st = Point(x=496, y=689)
+2024-07-26 22:19:52 ст. Цветной бульвар
+2024-07-26 22:19:53 touring.event_gifts
+2024-07-26 22:19:54 pos_gift = None
+2024-07-26 22:19:54 pos_gift = None
+2024-07-26 22:19:54 touring.traffic_on_the_map
+2024-07-26 22:19:54 touring.to_map
+2024-07-26 22:19:55 turgenev_st = None
+2024-07-26 22:20:00 ev_map = стрелка север
+2024-07-26 22:20:01 pos_stan = Point(x=535, y=578), stan[1] = img/tonelli/k_Chekhov.png
+2024-07-26 22:20:01 touring.poisk
+2024-07-26 22:20:03 point_poisk = Point(x=535, y=578), confidence_poisk = 0.9299999999999999
+2024-07-26 22:20:03 fun.move_to_click
+2024-07-26 22:20:05 touring.events_tunnel
+2024-07-26 22:20:06 id_st = None
+2024-07-26 22:20:06 info = Point(x=189, y=160)
+2024-07-26 22:20:07 skip_battle = None
+2024-07-26 22:20:07 id_st = None
+2024-07-26 22:20:07 skip_battle = None
+2024-07-26 22:20:07 id_st = None
+2024-07-26 22:20:07 skip_battle = None
+2024-07-26 22:20:08 id_st = None
+2024-07-26 22:20:08 skip_battle = None
+2024-07-26 22:20:08 id_st = None
+2024-07-26 22:20:09 skip_battle = None
+2024-07-26 22:20:09 id_st = None
+2024-07-26 22:20:09 skip_battle = None
+2024-07-26 22:20:09 id_st = None
+2024-07-26 22:20:09 skip_battle = None
+2024-07-26 22:20:10 id_st = None
+2024-07-26 22:20:10 skip_battle = None
+2024-07-26 22:20:10 id_st = None
+2024-07-26 22:20:10 skip_battle = None
+2024-07-26 22:20:10 id_st = None
+2024-07-26 22:20:11 skip_battle = None
+2024-07-26 22:20:11 id_st = None
+2024-07-26 22:20:11 skip_battle = None
+2024-07-26 22:20:11 id_st = None
+2024-07-26 22:20:12 skip_battle = None
+2024-07-26 22:20:12 id_st = None
+2024-07-26 22:20:12 skip_battle = None
+2024-07-26 22:20:12 id_st = None
+2024-07-26 22:20:13 skip_battle = None
+2024-07-26 22:20:13 id_st = None
+2024-07-26 22:20:13 skip_battle = None
+2024-07-26 22:20:13 id_st = None
+2024-07-26 22:20:14 skip_battle = None
+2024-07-26 22:20:14 id_st = None
+2024-07-26 22:20:14 skip_battle = None
+2024-07-26 22:20:14 id_st = None
+2024-07-26 22:20:15 skip_battle = None
+2024-07-26 22:20:15 id_st = None
+2024-07-26 22:20:15 skip_battle = None
+2024-07-26 22:20:15 id_st = None
+2024-07-26 22:20:15 skip_battle = Point(x=497, y=116)
+2024-07-26 22:20:16 raptor = None
+2024-07-26 22:20:16 arachne = None
+2024-07-26 22:20:16 krysa = Point(x=871, y=150)
+2024-07-26 22:20:16 kiki = None
+2024-07-26 22:20:16 station_master.enemy_battle
+2024-07-26 22:20:16  поиск battle_end, skip_battle, dog
+2024-07-26 22:20:17 ожидание battle_end, close, dog, skip_battle
+2024-07-26 22:20:20 ожидание battle_end, close, dog, skip_battle
+2024-07-26 22:20:22 ожидание battle_end, close, dog, skip_battle
+2024-07-26 22:20:23 нажать закрыть в конце боя
+2024-07-26 22:20:23 fun.push_close_all_
+2024-07-26 22:20:23 fun.close_popup_window
+2024-07-26 22:20:24 fun.push_close
+2024-07-26 22:20:24 fun.move_to_click
+2024-07-26 22:20:27 skip_battle1_end_ver = None
+2024-07-26 22:20:27 выход из 'enemy_battle
+2024-07-26 22:20:27 id_st = None
+2024-07-26 22:20:28 skip_battle = None
+2024-07-26 22:20:28 id_st = None
+2024-07-26 22:20:28 skip_battle = None
+2024-07-26 22:20:28 id_st = None
+2024-07-26 22:20:29 skip_battle = None
+2024-07-26 22:20:29 id_st = None
+2024-07-26 22:20:29 skip_battle = None
+2024-07-26 22:20:29 id_st = None
+2024-07-26 22:20:29 skip_battle = None
+2024-07-26 22:20:30 id_st = None
+2024-07-26 22:20:30 skip_battle = None
+2024-07-26 22:20:30 id_st = None
+2024-07-26 22:20:30 skip_battle = None
+2024-07-26 22:20:30 id_st = None
+2024-07-26 22:20:31 skip_battle = None
+2024-07-26 22:20:31 id_st = None
+2024-07-26 22:20:31 skip_battle = None
+2024-07-26 22:20:31 id_st = None
+2024-07-26 22:20:32 skip_battle = None
+2024-07-26 22:20:32 id_st = None
+2024-07-26 22:20:32 skip_battle = None
+2024-07-26 22:20:32 id_st = None
+2024-07-26 22:20:33 skip_battle = None
+2024-07-26 22:20:33 id_st = None
+2024-07-26 22:20:33 skip_battle = None
+2024-07-26 22:20:33 id_st = None
+2024-07-26 22:20:33 skip_battle = None
+2024-07-26 22:20:34 id_st = None
+2024-07-26 22:20:34 skip_battle = None
+2024-07-26 22:20:34 id_st = None
+2024-07-26 22:20:35 skip_battle = None
+2024-07-26 22:20:36 id_st = None
+2024-07-26 22:20:36 skip_battle = None
+2024-07-26 22:20:37 id_st = Point(x=460, y=688)
+2024-07-26 22:20:37 ст. Чеховская
+2024-07-26 22:20:38 touring.event_gifts
+2024-07-26 22:20:39 pos_gift = None
+2024-07-26 22:20:39 pos_gift = None
+2024-07-26 22:20:39 touring.traffic_on_the_map
+2024-07-26 22:20:39 touring.to_map
+2024-07-26 22:20:40 turgenev_st = None
+2024-07-26 22:20:45 ev_map = 0
+2024-07-26 22:20:45 pos_stan = Point(x=371, y=508), stan[1] = img/tonelli/k_Pushkin.png
+2024-07-26 22:20:45 touring.poisk
+2024-07-26 22:20:47 point_poisk = Point(x=372, y=508), confidence_poisk = 0.9199999999999999
+2024-07-26 22:20:47 fun.move_to_click
+2024-07-26 22:20:49 touring.events_tunnel
+2024-07-26 22:20:50 id_st = Point(x=466, y=688)
+2024-07-26 22:20:50 info = Point(x=189, y=160)
+2024-07-26 22:20:50 ст. Пушкинская
+2024-07-26 22:20:52 touring.event_gifts
+2024-07-26 22:20:53 pos_gift = None
+2024-07-26 22:20:53 pos_gift = None
+2024-07-26 22:20:53 touring.traffic_on_the_map
+2024-07-26 22:20:53 touring.to_map
+2024-07-26 22:20:54 turgenev_st = None
+2024-07-26 22:20:59 ev_map = 0
+2024-07-26 22:21:00 pos_stan = Point(x=721, y=465), stan[1] = img/tonelli/k_Kuzneckiy.png
+2024-07-26 22:21:00 touring.poisk
+2024-07-26 22:21:02 point_poisk = Point(x=722, y=465), confidence_poisk = 0.95
+2024-07-26 22:21:02 fun.move_to_click
+2024-07-26 22:21:04 touring.events_tunnel
+2024-07-26 22:21:05 id_st = None
+2024-07-26 22:21:05 info = Point(x=189, y=160)
+2024-07-26 22:21:05 skip_battle = None
+2024-07-26 22:21:06 id_st = None
+2024-07-26 22:21:06 skip_battle = None
+2024-07-26 22:21:06 id_st = None
+2024-07-26 22:21:06 skip_battle = None
+2024-07-26 22:21:06 id_st = None
+2024-07-26 22:21:07 skip_battle = None
+2024-07-26 22:21:07 id_st = None
+2024-07-26 22:21:07 skip_battle = None
+2024-07-26 22:21:07 id_st = None
+2024-07-26 22:21:08 skip_battle = None
+2024-07-26 22:21:08 id_st = None
+2024-07-26 22:21:08 skip_battle = None
+2024-07-26 22:21:08 id_st = None
+2024-07-26 22:21:09 skip_battle = None
+2024-07-26 22:21:09 id_st = None
+2024-07-26 22:21:09 skip_battle = None
+2024-07-26 22:21:09 id_st = None
+2024-07-26 22:21:10 skip_battle = None
+2024-07-26 22:21:10 id_st = None
+2024-07-26 22:21:10 skip_battle = None
+2024-07-26 22:21:10 id_st = None
+2024-07-26 22:21:11 skip_battle = None
+2024-07-26 22:21:11 id_st = None
+2024-07-26 22:21:12 skip_battle = None
+2024-07-26 22:21:12 id_st = None
+2024-07-26 22:21:13 skip_battle = None
+2024-07-26 22:21:13 id_st = None
+2024-07-26 22:21:13 skip_battle = None
+2024-07-26 22:21:13 id_st = None
+2024-07-26 22:21:14 skip_battle = None
+2024-07-26 22:21:14 id_st = None
+2024-07-26 22:21:14 skip_battle = None
+2024-07-26 22:21:14 id_st = None
+2024-07-26 22:21:15 skip_battle = None
+2024-07-26 22:21:15 id_st = None
+2024-07-26 22:21:15 skip_battle = None
+2024-07-26 22:21:15 id_st = None
+2024-07-26 22:21:15 skip_battle = None
+2024-07-26 22:21:16 id_st = None
+2024-07-26 22:21:16 skip_battle = None
+2024-07-26 22:21:16 id_st = None
+2024-07-26 22:21:16 skip_battle = None
+2024-07-26 22:21:17 id_st = None
+2024-07-26 22:21:17 skip_battle = None
+2024-07-26 22:21:17 id_st = None
+2024-07-26 22:21:17 skip_battle = None
+2024-07-26 22:21:17 id_st = None
+2024-07-26 22:21:18 skip_battle = None
+2024-07-26 22:21:18 id_st = None
+2024-07-26 22:21:18 skip_battle = None
+2024-07-26 22:21:18 id_st = None
+2024-07-26 22:21:19 skip_battle = None
+2024-07-26 22:21:19 id_st = None
+2024-07-26 22:21:19 skip_battle = None
+2024-07-26 22:21:19 id_st = None
+2024-07-26 22:21:20 skip_battle = None
+2024-07-26 22:21:20 id_st = None
+2024-07-26 22:21:20 skip_battle = None
+2024-07-26 22:21:20 id_st = None
+2024-07-26 22:21:21 skip_battle = None
+2024-07-26 22:21:21 id_st = None
+2024-07-26 22:21:22 skip_battle = None
+2024-07-26 22:21:23 id_st = None
+2024-07-26 22:21:23 skip_battle = None
+2024-07-26 22:21:23 id_st = None
+2024-07-26 22:21:24 skip_battle = None
+2024-07-26 22:21:24 id_st = None
+2024-07-26 22:21:25 skip_battle = None
+2024-07-26 22:21:25 id_st = None
+2024-07-26 22:21:26 skip_battle = None
+2024-07-26 22:21:26 id_st = None
+2024-07-26 22:21:27 skip_battle = None
+2024-07-26 22:21:27 post = Point(x=436, y=180)
+2024-07-26 22:21:27 entry = Point(x=366, y=509)
+2024-07-26 22:21:27 fun.move_to_click
+2024-07-26 22:21:31 id_st = Point(x=497, y=689)
+2024-07-26 22:21:31 ст. Кузнецкий мост
+2024-07-26 22:21:32 touring.event_gifts
+2024-07-26 22:21:33 pos_gift = None
+2024-07-26 22:21:33 pos_gift = None
+2024-07-26 22:21:50 
+2024-07-26 22:21:50 *******                      *******
+2024-07-26 22:21:50 ******* перезапуск программы *******
+2024-07-26 22:21:50 *******                      *******
+2024-07-26 22:21:50 
+2024-07-26 22:23:38 
+2024-07-26 22:23:38 *******                      *******
+2024-07-26 22:23:38 ******* перезапуск программы *******
+2024-07-26 22:23:38 *******                      *******
+2024-07-26 22:23:38 
+2024-07-26 22:24:50 
+2024-07-26 22:24:50 *******                      *******
+2024-07-26 22:24:50 ******* перезапуск программы *******
+2024-07-26 22:24:50 *******                      *******
+2024-07-26 22:24:50 
+2024-07-26 22:25:00 fun.get_areas_task_big
+2024-07-26 22:25:00 fun.find_link_station_master
+2024-07-26 22:25:01 fun.vizit_to_station_master
+2024-07-26 22:25:02 fun.move_to_click
+2024-07-26 22:25:06 fun.vizit_to_station_master
+2024-07-26 22:25:07 fun.move_to_click
+2024-07-26 22:25:12 fun.move_to_click
+2024-07-26 22:25:15 fun.move_to_click
+2024-07-26 22:25:17 fun.move_to_click
+2024-07-26 22:25:33 
+2024-07-26 22:25:33 *******                      *******
+2024-07-26 22:25:33 ******* перезапуск программы *******
+2024-07-26 22:25:33 *******                      *******
+2024-07-26 22:25:33 
+2024-07-26 22:26:58 
+2024-07-26 22:26:58 *******                      *******
+2024-07-26 22:26:58 ******* перезапуск программы *******
+2024-07-26 22:26:58 *******                      *******
+2024-07-26 22:26:58 
+2024-07-26 22:27:02 fun.get_areas_task_big
+2024-07-26 22:27:02 fun.find_link_station_master
+2024-07-26 22:27:03 fun.vizit_to_station_master
+2024-07-26 22:27:03 fun.move_to_click
+2024-07-26 22:27:07 fun.vizit_to_station_master
+2024-07-26 22:27:09 fun.move_to_click
+2024-07-26 22:27:14 fun.move_to_click
+2024-07-26 22:27:16 fun.move_to_click
+2024-07-26 22:27:19 fun.move_to_click
+2024-07-26 22:28:49 
+2024-07-26 22:28:49 *******                      *******
+2024-07-26 22:28:49 ******* перезапуск программы *******
+2024-07-26 22:28:49 *******                      *******
+2024-07-26 22:28:49 
+2024-07-26 22:29:44 
+2024-07-26 22:29:44 *******                      *******
+2024-07-26 22:29:44 ******* перезапуск программы *******
+2024-07-26 22:29:44 *******                      *******
+2024-07-26 22:29:44 
+2024-07-26 22:33:54 
+2024-07-26 22:33:54 *******                      *******
+2024-07-26 22:33:54 ******* перезапуск программы *******
+2024-07-26 22:33:54 *******                      *******
+2024-07-26 22:33:54 
+2024-07-26 22:34:06 fun.get_areas_task_big
+2024-07-26 22:34:06 fun.find_link_station_master
+2024-07-26 22:34:07 fun.vizit_to_station_master
+2024-07-26 22:34:07 fun.move_to_click
+2024-07-26 22:34:11 fun.vizit_to_station_master
+2024-07-26 22:34:13 fun.move_to_click
+2024-07-26 22:34:18 fun.move_to_click
+2024-07-26 22:34:21 fun.move_to_click
+2024-07-26 22:34:23 fun.move_to_click
+2024-07-26 22:34:52 
+2024-07-26 22:34:52 *******                      *******
+2024-07-26 22:34:52 ******* перезапуск программы *******
+2024-07-26 22:34:52 *******                      *******
+2024-07-26 22:34:52 
+2024-07-26 22:37:09 
+2024-07-26 22:37:09 *******                      *******
+2024-07-26 22:37:09 ******* перезапуск программы *******
+2024-07-26 22:37:09 *******                      *******
+2024-07-26 22:37:09 
+2024-07-26 22:41:39 
+2024-07-26 22:41:39 *******                      *******
+2024-07-26 22:41:39 ******* перезапуск программы *******
+2024-07-26 22:41:40 *******                      *******
+2024-07-26 22:41:40 
+2024-07-26 22:44:09 
+2024-07-26 22:44:09 *******                      *******
+2024-07-26 22:44:09 ******* перезапуск программы *******
+2024-07-26 22:44:09 *******                      *******
+2024-07-26 22:44:09 
+2024-07-26 22:44:51 
+2024-07-26 22:44:51 *******                      *******
+2024-07-26 22:44:51 ******* перезапуск программы *******
+2024-07-26 22:44:51 *******                      *******
+2024-07-26 22:44:51 
+2024-07-26 22:45:39 
+2024-07-26 22:45:39 *******                      *******
+2024-07-26 22:45:39 ******* перезапуск программы *******
+2024-07-26 22:45:39 *******                      *******
+2024-07-26 22:45:39 
+2024-07-26 22:47:28 
+2024-07-26 22:47:28 *******                      *******
+2024-07-26 22:47:28 ******* перезапуск программы *******
+2024-07-26 22:47:28 *******                      *******
+2024-07-26 22:47:28 
+2024-07-26 22:49:59 
+2024-07-26 22:49:59 *******                      *******
+2024-07-26 22:49:59 ******* перезапуск программы *******
+2024-07-26 22:49:59 *******                      *******
+2024-07-26 22:49:59 
+2024-07-26 22:51:23 
+2024-07-26 22:51:23 *******                      *******
+2024-07-26 22:51:23 ******* перезапуск программы *******
+2024-07-26 22:51:23 *******                      *******
+2024-07-26 22:51:23 
+2024-07-26 22:56:05 
+2024-07-26 22:56:05 *******                      *******
+2024-07-26 22:56:05 ******* перезапуск программы *******
+2024-07-26 22:56:05 *******                      *******
+2024-07-26 22:56:05 
+2024-07-26 22:58:13 
+2024-07-26 22:58:13 *******                      *******
+2024-07-26 22:58:13 ******* перезапуск программы *******
+2024-07-26 22:58:13 *******                      *******
+2024-07-26 22:58:13 
+2024-07-26 22:58:35 
+2024-07-26 22:58:35 *******                      *******
+2024-07-26 22:58:35 ******* перезапуск программы *******
+2024-07-26 22:58:35 *******                      *******
+2024-07-26 22:58:35 
+2024-07-26 23:00:20 
+2024-07-26 23:00:20 *******                      *******
+2024-07-26 23:00:20 ******* перезапуск программы *******
+2024-07-26 23:00:20 *******                      *******
+2024-07-26 23:00:20 
+2024-07-26 23:01:31 
+2024-07-26 23:01:31 *******                      *******
+2024-07-26 23:01:31 ******* перезапуск программы *******
+2024-07-26 23:01:31 *******                      *******
+2024-07-26 23:01:31 
+2024-07-26 23:11:33 
+2024-07-26 23:11:33 *******                      *******
+2024-07-26 23:11:33 ******* перезапуск программы *******
+2024-07-26 23:11:33 *******                      *******
+2024-07-26 23:11:33 
+2024-07-26 23:12:05 
+2024-07-26 23:12:05 *******                      *******
+2024-07-26 23:12:05 ******* перезапуск программы *******
+2024-07-26 23:12:05 *******                      *******
+2024-07-26 23:12:05 
+2024-07-26 23:13:12 
+2024-07-26 23:13:12 *******                      *******
+2024-07-26 23:13:12 ******* перезапуск программы *******
+2024-07-26 23:13:12 *******                      *******
+2024-07-26 23:13:12 
+2024-07-26 23:28:43 
+2024-07-26 23:28:43 *******                      *******
+2024-07-26 23:28:43 ******* перезапуск программы *******
+2024-07-26 23:28:43 *******                      *******
+2024-07-26 23:28:43 
+2024-07-26 23:28:56 fun.start_p_m
+2024-07-26 23:41:30 
+2024-07-26 23:41:30 *******                      *******
+2024-07-26 23:41:30 ******* перезапуск программы *******
+2024-07-26 23:41:30 *******                      *******
+2024-07-26 23:41:30 
+2024-07-26 23:44:49 
+2024-07-26 23:44:49 *******                      *******
+2024-07-26 23:44:49 ******* перезапуск программы *******
+2024-07-26 23:44:49 *******                      *******
+2024-07-26 23:44:49 
+2024-07-26 23:47:16 
+2024-07-26 23:47:16 *******                      *******
+2024-07-26 23:47:16 ******* перезапуск программы *******
+2024-07-26 23:47:16 *******                      *******
+2024-07-26 23:47:16 

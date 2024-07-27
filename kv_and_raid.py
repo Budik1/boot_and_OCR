@@ -34,7 +34,7 @@ def battle(q_call):
     it_kv = 0
     while not kv_close:
         it_kv += 1
-        if not danger and kv_skip_battle and it_kv >= 5:
+        if not danger and kv_skip_battle and it_kv >= 6:
             move_to_click(kv_skip_battle, 0.5)
             print(' пропуск боя')
         sleep(1)
@@ -44,6 +44,14 @@ def battle(q_call):
     if danger:
         print(" опасный")
     kv_close = pyautogui.locateCenterOnScreen('img/kv/kv_close.png', confidence=0.9)
+    victory = pyautogui.locateCenterOnScreen('img/arena/victory.png', confidence=0.8)
+    defeat = pyautogui.locateCenterOnScreen('img/arena/defeat.png', confidence=0.8)
+    if victory:
+        result = "победа"
+        print(result)
+    elif defeat:
+        result = "поражение"
+        print(result)
     foto_danger()
     move_to_click(kv_close, 0.3)
     print("закрыть результат боя")

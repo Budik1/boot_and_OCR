@@ -1,6 +1,9 @@
+
 import pyautogui
 from time import sleep, time
 import datetime
+
+
 
 par_conf = 0.79
 oblast = (51, 707, 92, 111)
@@ -11,9 +14,15 @@ def my_print_to_file(text):
     if log == 1:
         date_time, date = time_now()
         file_name = date + ".txt"
-        file = open(file_name, 'a+', encoding='utf-8')
+        file = open('log/' + str(file_name), 'a+', encoding='utf-8')
         print(date_time, text, file=file)
-        file.close()  # закрыть файл после работы с ним.
+        file.close()
+
+
+def date_utc_now():
+    now = datetime.datetime.utcnow()
+    date_utc = (now.strftime('%Y-%m-%d'))
+    return date_utc
 
 
 def time_now():
@@ -168,11 +177,11 @@ def start_p_m():
         if pos_my_game:
             pyautogui.moveTo(pos_my_game, duration=1, tween=pyautogui.easeInOutQuad)
             pyautogui.click(pos_my_game)
-            print('pos_my_game ' + str(pos_my_game))
+            # print('pos_my_game ' + str(pos_my_game))
         elif pos_my_game1:
             pyautogui.moveTo(pos_my_game1, duration=1, tween=pyautogui.easeInOutQuad)
             pyautogui.click(pos_my_game1)
-            print('pos_my_game1' + str(pos_my_game1))
+            # print('pos_my_game1' + str(pos_my_game1))
         else:
             print('Не найдено кнопки "My game"')
             im1 = pyautogui.screenshot('img/screen1.png')
