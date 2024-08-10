@@ -1,6 +1,6 @@
 import pyautogui
 from time import sleep, time
-from station_master import enemy_battle, vybor_zadaniya_na_puli
+from station_master import enemy_battle, vybor_zadaniya_na_puli, en_task_item
 import baza_dannyx as b_d
 from fun import push_close_all_, move_to_click, my_print_to_file
 
@@ -8,7 +8,7 @@ from fun import push_close_all_, move_to_click, my_print_to_file
 # station = 1
 number_of_gifts = 0
 kiki_q = 0
-krysa_q = 0
+rat_q = 0
 arachne_q = 0
 raptor_q = 0
 
@@ -73,7 +73,7 @@ def events_tunnel(st0, st2):
     :param st2: имя файла ID станции
     """
     my_print_to_file('touring.events_tunnel')
-    global number_of_gifts, kiki_q, krysa_q, raptor_q, arachne_q
+    global number_of_gifts, kiki_q, rat_q, raptor_q, arachne_q
 
     sleep(1)
     id_st = pyautogui.locateCenterOnScreen(st2, confidence=0.85)
@@ -97,8 +97,8 @@ def events_tunnel(st0, st2):
             kiki = pyautogui.locateCenterOnScreen('img/tonelli/kikimora.png', confidence=0.85)
             my_print_to_file(f'kiki = {kiki}')
             if krysa:
-                krysa_q += 1
-                print(f'{krysa_q} Detekt krysa')
+                rat_q += 1
+                print(f'{rat_q} Detekt krysa')
             if kiki:
                 kiki_q += 1
                 print(f'{kiki_q} Detekt Kikimora')
@@ -194,24 +194,56 @@ def test():
     :return: количество встреченных крыс
     """
     my_print_to_file('touring.test')
-    global krysa_q
+    global rat_q
     push_close_all_()
     travel(b_d.test_running2)
     print("тест успешно выполнен")
-    return krysa_q
+    return rat_q
 
 
 def tasks_na_kievskoy():
-    """Движение от Кузнецкого моста на Киевскую - выполнение заданий нач. станции - движение до Кузнецкого моста -
-    выполнение заданий нач. станции пока есть задания удовлетворяющие поиск"""
+    """ С Фрунзенской на Киевскую,
+     задания на пули, потом на Университет,
+     на ч.крыс потратить остаток,
+     и домой на Фрунзенскую.
+    """
     my_print_to_file('touring.tasks_na_kievskoy')
     push_close_all_()
-    most_kiev()
+    frunze_kiev()
     vybor_zadaniya_na_puli()
     print('задания на Киевской выполнены')
-    kiev_most()
-    vybor_zadaniya_na_puli()
+    kiev_univer()
+    en_task_item(1)
     print('энергия исчерпана')
+    univer_frunze()
+    # """Движение от Кузнецкого моста на Киевскую - выполнение заданий нач. станции - движение до Кузнецкого моста -
+    # выполнение заданий нач. станции пока есть задания удовлетворяющие поиск"""
+    # my_print_to_file('touring.tasks_na_kievskoy')
+    # push_close_all_()
+    # frunze_kiev()
+    # vybor_zadaniya_na_puli()
+    # print('задания на Киевской выполнены')
+    # kiev_frunze()
+    # vybor_zadaniya_na_puli()
+    # print('энергия исчерпана')
+
+
+def univer_frunze():
+    my_print_to_file('touring.univer_frunze')
+
+    push_close_all_()
+    travel(b_d.univer_frunze)
+    print("пришел на Фрунзе")
+
+
+
+def kiev_univer():
+    my_print_to_file('touring.kiev_univer')
+
+    push_close_all_()
+    travel(b_d.kiev_univer)
+    print("пришел на Универ")
+
 
 
 # движение от st_park_kr до Кузнецкого моста
@@ -348,7 +380,7 @@ def za_kikimorami():
 
     start_time = time()
     push_close_all_()
-    travel(b_d.most_kikimory)
+    travel(b_d.frunze_kikimory)
     print('на сегодня кикиморы выбиты')
     finish_time = float(time() - start_time)  # общее количество секунд
     minutes = int(finish_time // 60)  # количество минут

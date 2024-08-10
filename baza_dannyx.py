@@ -64,17 +64,31 @@ frunze_riga = [st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_tv
 riga_frunze = [st_prospekt, st_suxarev, st_turgenev, st_kitay, st_tretya, st_novok, st_teatr,
                st_tver, st_chekhov, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze]
 
-# оббежать все станции в поисках подарков
-bypass = [st_pushkin, st_tver, st_teatr, st_novok, st_pavelec, st_pavelec_g, st_pavelec, st_novok, st_tretya, st_kitay,
-          st_turgenev, st_suxarev,
-          st_prospekt, st_riga, st_alexs, st_vdnx,
-          st_alexs, st_riga, st_prospekt, st_suxarev, st_turgenev, st_kitay, st_tretya, st_novok, st_teatr, st_tver,
-          st_chekhov,
-          st_bulvar, st_chekhov, st_borov, st_polyanka, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze,
-          st_communist, st_univer, st_vernadskogo, st_univer,
-          st_frunze, st_park_kr, st_park_g, st_kiev, st_kiev_a,
-          st_kiev, st_park_g, st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_pushkin, st_most]
+# с моста оббежать все станции в поисках подарков
+bypass2 = [st_pushkin, st_tver, st_teatr, st_novok, st_pavelec, st_pavelec_g, st_pavelec, st_novok, st_tretya, st_kitay,
+           st_turgenev, st_suxarev,
+           st_prospekt, st_riga, st_alexs, st_vdnx,
+           st_alexs, st_riga, st_prospekt, st_suxarev, st_turgenev, st_kitay, st_tretya, st_novok, st_teatr, st_tver,
+           st_chekhov,
+           st_bulvar, st_chekhov, st_borov, st_polyanka, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze,
+           st_communist, st_univer, st_vernadskogo, st_univer, st_communist,
+           st_frunze, st_park_kr, st_park_g, st_kiev, st_kiev_a,
+           st_kiev, st_park_g, st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_pushkin, st_most]
 
+#  с фрунзе оббежать все станции в поисках подарков
+bypass = [
+    st_park_kr, st_park_g, st_kiev, st_kiev_a, st_kiev, st_park_g,
+    st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov,
+    st_tver, st_teatr, st_novok, st_pavelec, st_pavelec_g, st_pavelec, st_novok, st_tretya, st_kitay,
+    st_turgenev, st_suxarev, st_prospekt, st_riga, st_alexs, st_vdnx,
+    st_alexs, st_riga, st_prospekt, st_suxarev, st_turgenev, st_kitay,
+    st_tretya, st_novok, st_teatr, st_tver, st_pushkin, st_most, st_pushkin,
+    st_chekhov, st_bulvar, st_chekhov,
+    st_borov, st_polyanka, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze,
+    st_communist, st_univer, st_vernadskogo, st_univer, st_communist,
+    st_frunze,
+
+]
 # за кикиморами в туннелях
 most_kikimory = [st_pushkin, st_tver, st_teatr, st_novok, st_tretya, st_kitay,
                  st_turgenev, st_suxarev, st_prospekt, st_riga, st_prospekt, st_suxarev,
@@ -83,6 +97,10 @@ most_kikimory = [st_pushkin, st_tver, st_teatr, st_novok, st_tretya, st_kitay,
                  st_turgenev, st_suxarev, st_prospekt, st_riga, st_prospekt, st_suxarev,
                  st_turgenev, st_suxarev, st_prospekt, st_riga, st_prospekt, st_suxarev,
                  st_turgenev, st_kitay, st_tretya, st_novok, st_teatr, st_tver, st_pushkin, st_most]
+
+
+
+
 
 frunze_kikimory = [st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_tver, st_teatr, st_novok, st_tretya,
                    st_kitay,
@@ -95,17 +113,14 @@ frunze_kikimory = [st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, s
                    st_kropot, st_park_kr, st_frunze]
 # тест передвижения между туннелями
 
+kiev_univer = [st_park_g, st_park_kr, st_frunze, st_communist, st_univer]
+univer_frunze = [st_communist, st_frunze]
+
 frunze_kiev = [st_park_kr, st_park_g, st_kiev]
 kiev_frunze = [st_park_g, st_park_kr, st_frunze]
 
 frunze_most = [st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_pushkin, st_most]
 most_frunze = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze]
-
-# pauk_yascher(с фрунзенской ) = [st_communist, st_frunze, st_communist, st_frunze, st_communist, st_frunze, st_park_kr, st_frunze,
-#                 st_park_kr, st_kropot, st_park_kr,
-#                 st_kropot,
-#                 st_park_kr, st_kropot, st_park_kr, st_park_g, st_kiev, st_park_g, st_kiev, st_park_g, st_kiev,
-#                 st_park_g, st_park_kr, st_frunze]
 
 test_running = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze, st_communist,
                 st_univer, st_vernadskogo, st_univer, st_communist, st_frunze, st_park_kr, st_kropot, st_biblioteka,
@@ -130,3 +145,6 @@ pauk_yascher = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot,
                 st_park_kr, st_kropot, st_park_kr, st_kropot, st_park_kr, st_kropot,
                 st_biblioteka, st_borov, st_chekhov, st_pushkin, st_most
                 ]
+pauk_yascher2 = [
+
+]

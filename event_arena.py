@@ -2,7 +2,7 @@ import pyautogui
 from time import sleep
 from station_master import enemy_battle
 from fun import move_to_click, find_link_hall_of_glory, await_arena
-from my_text_color import text_blue, text_cyan, text_red, text_green, text_yellow, text_magenta
+from my_text_color import (text_blue, text_cyan, text_red, text_green, text_yellow, text_magenta)
 
 
 

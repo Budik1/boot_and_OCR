@@ -10,6 +10,11 @@ oblast = (51, 707, 92, 111)
 log = 1
 
 
+def loc_center_img(name_img, confidence_=0.9):
+    pos_img = pyautogui.locateCenterOnScreen(name_img, confidence=confidence_)
+    return pos_img
+
+
 def my_print_to_file(text):
     if log == 1:
         date_time, date = time_now()

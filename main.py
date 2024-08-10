@@ -21,68 +21,85 @@ sum_vip = 0
 status_bonus = "0"
 date_start = fun.date_utc_now()
 sum_kiki = touring.kiki_q
-sum_krys = touring.krysa_q
+sum_rat = touring.rat_q
 sum_arachne = touring.arachne_q
 sum_raptor = touring.raptor_q
 
 
 def transform():
-    global sum_vip, sum_krys, sum_kiki, sum_arachne, sum_raptor
-    sum_krys = touring.krysa_q
+    global sum_vip, sum_rat, sum_kiki, sum_arachne, sum_raptor
+
+    sum_rat = touring.rat_q
     sum_kiki = touring.kiki_q
     sum_arachne = touring.arachne_q
     sum_raptor = touring.raptor_q
-    status_krysa.set(sum_krys)
+
+    status_rat.set(sum_rat)
     status_kiki.set(sum_kiki)
     status_arachne.set(sum_arachne)
     status_raptor.set(sum_raptor)
 
 
 def check_date(loaded_data):
-    global sum_vip, sum_krys, sum_kiki, sum_arachne, sum_raptor
+    global sum_vip, sum_rat, sum_kiki, sum_arachne, sum_raptor
 
     date_ver = loaded_data['date']
     if date_ver == date_start:
         print(text_blue("даты совпадают"))
+
         sum_vip = loaded_data['vip']
-        sum_krys = loaded_data['krysy']
+        sum_rat = loaded_data['krysy']
         sum_kiki = loaded_data['kiki']
-        # sum_kiki = 30
         sum_arachne = loaded_data['arachne']
         sum_raptor = loaded_data['raptor']
 
         status_vip.set(sum_vip)
-        status_krysa.set(sum_krys)
+        status_rat.set(sum_rat)
         status_kiki.set(sum_kiki)
         status_arachne.set(sum_arachne)
         status_raptor.set(sum_raptor)
 
-        touring.krysa_q = sum_krys
+        touring.rat_q = sum_rat
         touring.kiki_q = sum_kiki
         touring.arachne_q = sum_arachne
         touring.raptor_q = sum_raptor
 
     else:
         print(text_cyan("даты не совпадают, смена суток"))
-
         status_vip.set(sum_vip)
-        status_krysa.set(touring.krysa_q)
-        status_kiki.set(touring.kiki_q)
-        status_arachne.set(touring.arachne_q)
-        status_raptor.set(touring.raptor_q)
+        # sum_rat = touring.rat_q
+        # sum_kiki = touring.kiki_q
+        # sum_arachne = touring.arachne_q
+        # sum_raptor = touring.raptor_q
+        #
+        # status_rat.set(sum_rat)
+        # status_kiki.set(sum_kiki)
+        # status_arachne.set(sum_arachne)
+        # status_raptor.set(sum_raptor)
+        save_to_file()
 
 
 def save_to_file():
     print(text_green("запись состояния"))
-    global date_start, sum_vip, sum_krys, sum_kiki, sum_arachne, sum_raptor
+    global date_start, sum_vip, sum_rat, sum_kiki, sum_arachne, sum_raptor
+
+    sum_rat = touring.rat_q
+    sum_kiki = touring.kiki_q
+    sum_arachne = touring.arachne_q
+    sum_raptor = touring.raptor_q
+
+    status_rat.set(sum_rat)
+    status_kiki.set(sum_kiki)
+    status_arachne.set(sum_arachne)
+    status_raptor.set(sum_raptor)
+
     data_to_save = {
         'date': date_start,
         'vip': sum_vip,
-        'krysy': sum_krys,
+        'krysy': sum_rat,
         'kiki': sum_kiki,
         'arachne': sum_arachne,
-        'raptor': sum_raptor
-
+        'raptor': sum_raptor,
     }
     print(data_to_save)
     file1 = open('config.bin', 'wb')
@@ -91,7 +108,6 @@ def save_to_file():
 
 
 def read_from_file():
-    global date_start, sum_vip, sum_krys, sum_kiki, sum_arachne, sum_raptor
     print(text_green("чтение состояния"))
     try:
         file1 = open('config.bin', 'rb')
@@ -127,19 +143,19 @@ def en_3():
 
 def dvizh_test():
     touring.test()
-    transform()
+    # transform()
     save_to_file()
 
 
 def kiki():
     touring.za_kikimorami()
-    transform()
+    # transform()
     save_to_file()
 
 
 def arachne_and_raptor():
     touring.pauk_yascher()
-    transform()
+    # transform()
     save_to_file()
 
 
@@ -164,58 +180,62 @@ def tent_inspection():
 
 def frunze_kiev():
     touring.frunze_kiev()
-    transform()
+    # transform()
     save_to_file()
 
 
 def kiev_most():
     touring.kiev_most()
-    transform()
+    # transform()
     save_to_file()
 
 
 def most_frunze():
     touring.most_frunze()
-    transform()
+    # transform()
     save_to_file()
 
 
 def frunze_most():
     touring.frunze_most()
-    transform()
+    # transform()
     save_to_file()
+
 
 def most_riga():
     touring.most_riga()
-    transform()
+    # transform()
     save_to_file()
+
 
 def riga_most():
     touring.riga_most()
-    transform()
+    # transform()
     save_to_file()
+
 
 def frunze_riga():
     touring.frunze_riga()
-    transform()
+    # transform()
     save_to_file()
+
 
 def riga_frunze():
     touring.riga_frunze()
-    transform()
+    # transform()
     save_to_file()
 
 
 def tasks_na_kievskoy():
     touring.tasks_na_kievskoy()
-    transform()
+    # transform()
     save_to_file()
+
 
 def sbor_podarkov():
     touring.sbor_podarkov()
-    transform()
+    # transform()
     save_to_file()
-
 
 
 root = Tk()
@@ -225,7 +245,7 @@ root.geometry("327x380+1240+50")  # Ширина x Высота + координ
 root.resizable(False, False)
 
 status_vip = StringVar()
-status_krysa = StringVar()
+status_rat = StringVar()
 status_kiki = StringVar()
 status_arachne = StringVar()
 status_raptor = StringVar()
@@ -235,7 +255,7 @@ read_from_file()
 # шаг 31
 ttk.Button(text=" Start ", width=13, command=fun.start_p_m).place(x=0, y=0)
 ttk.Button(text=" сбор бонуса ", width=13, command=fun.bonus, state="disabled").place(x=0, y=32)
-ttk.Label(text=status_bonus).place(x=130, y=32)
+ttk.Label(text=status_bonus, background="#FFCDD2", foreground="#B71C1C", padding=4).place(x=130, y=32)
 ttk.Button(text="  сбор подарков  ", width=13, command=fun.station_gifts, state="disabled").place(x=0, y=64)
 #
 ttk.Button(text=" обход VIP ", width=13, command=tent_inspection).place(x=0, y=96)
@@ -245,7 +265,7 @@ ttk.Button(text="(f)на Киев", width=11, command=frunze_kiev).place(x=120, 
 ttk.Button(text="(k)домой(m) ", width=11, command=kiev_most).place(x=120, y=200)
 #
 ttk.Button(text="кикиморы", width=11, command=kiki).place(x=153, y=31)
-ttk.Label(textvariable=status_kiki, background="#FFCDD2", foreground="#B71C1C", padding=4).place(x=285, y=31)
+ttk.Label(textvariable=status_kiki).place(x=285, y=31)
 #
 ttk.Button(text="Паук + Ящер", width=11, command=arachne_and_raptor).place(x=153, y=0)
 ttk.Label(textvariable=status_arachne).place(x=262, y=0)
@@ -267,7 +287,7 @@ ttk.Button(text="riga_frunze", width=11, command=riga_frunze).place(x=0, y=308)
 ttk.Button(text="задания на Киевской", width=17, command=tasks_na_kievskoy).place(x=120, y=138)
 # тест пробежка
 ttk.Button(text="тест пробежка", width=13, command=dvizh_test).place(x=153, y=64)
-ttk.Label(textvariable=status_krysa, background="#FFCDD2", foreground="#0000FF", padding=4).place(x=285, y=64)
+ttk.Label(textvariable=status_rat).place(x=285, y=64)
 
 ttk.Button(text="обход всех станций", width=16, command=sbor_podarkov).place(x=153, y=96)
 

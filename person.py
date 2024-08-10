@@ -5,24 +5,33 @@ from time import sleep
 # duration=d_drag и duration=d с предметом и в свободном состоянии
 d = 0.4
 d_drag = 1.4
-item_person = {'куртка рейдовая': 'img/person/jacket_r.png',
-               'куртка броня': 'img/person/jacket_b.png',
-               'брюки Бурбон': 'img/person/trousers_bourbon.png',
-               'брюки броня': 'img/person/trousers_b.png',
-               'перчатки': 'img/person/gloves.png',
-               'место перчаток': 'img/person/gloves_point.png',
-               'орден': 'img/person/orden.png',
-               'инвентарь': 'img/person/inventory.png',
-               'пустой слот': 'img/person/slot.png',
-               'маленький слот': 'img/person/smol_slot.png',
-               'фото героя': 'img/person/hero.png',
-               'выход': 'img/b_exit.png',
-               }
+item_person = {
+    'куртка рейдовая': 'img/person/jacket_r.png',
+    'брюки рейдовые': '',
+    'брюки броня': 'img/person/trousers_b.png',
+    'куртка броня Гаврил': 'img/person/jacket_b.png',
+
+    'брюки Бурбон': 'img/person/trousers_bourbon.png',
+    'куртка Бурбон': '',
+
+    'перчатки': 'img/person/gloves.png',
+    'место перчаток': 'img/person/gloves_point.png',
+    'орден': 'img/person/orden.png',
+    'инвентарь': 'img/person/inventory.png',
+    'пустой слот': 'img/person/slot.png',
+    'маленький слот': 'img/person/smol_slot.png',
+    'фото героя': 'img/person/hero.png',
+    'выход': 'img/b_exit.png',
+}
 
 
-def change_jacket():
+def change_jacket_green():
+    pass
+
+
+def change_jacket_raid():
     jacket_r = pyautogui.locateCenterOnScreen(item_person["куртка рейдовая"], confidence=0.9)
-    jacket_b = pyautogui.locateCenterOnScreen(item_person['куртка броня'], confidence=0.9)
+    jacket_b = pyautogui.locateCenterOnScreen(item_person['куртка броня Гаврил'], confidence=0.9)
     pyautogui.moveTo(jacket_r, duration=d)
     pyautogui.dragTo(jacket_b, duration=d_drag)
     # отводим указатель
@@ -66,7 +75,7 @@ def smena_garderoba():
     # цикл в ожидании появления инвентаря
     move_to_click(inventar, 0.3)
     print('готов к переодеванию')
-    change_jacket()
+    change_jacket_raid()
     change_trousers()
     change_gloves()
     print('переодет')
