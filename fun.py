@@ -1,16 +1,14 @@
-
 import pyautogui
 from time import sleep, time
 import datetime
-
-
+import my_text_color as my_c
 
 par_conf = 0.79
 oblast = (51, 707, 92, 111)
 log = 1
 
 
-def loc_center_img(name_img, confidence_=0.9):
+def locCenterImg(name_img, confidence_=0.9):
     pos_img = pyautogui.locateCenterOnScreen(name_img, confidence=confidence_)
     return pos_img
 
@@ -37,6 +35,7 @@ def time_now():
     date = (now.strftime('%Y-%m-%d'))
     return date_time_now, date
 
+
 def minutes_now():
     now = datetime.datetime.now()
     minutes_now_ = (now.strftime('%M'))
@@ -52,8 +51,8 @@ def name_f():
 def close_popup_window():
     my_print_to_file('fun.close_popup_window')
     # print('def "fun.close_popup_window"')
-    knob = pyautogui.locateCenterOnScreen('img/knob.png', confidence=0.9)
-    cancel = pyautogui.locateCenterOnScreen('img/cancel.png', confidence=0.9)
+    knob = locCenterImg('img/overall/knob.png',0.9)
+    cancel = locCenterImg('img/overall/cancel.png', 0.9)
     if knob:
         move_to_click(knob, 1)
     if cancel:
@@ -77,31 +76,31 @@ def station_gifts():
     """Обмен ежедневными подарками"""
     my_print_to_file('fun.station_gifts')
     pass
-    gifts = pyautogui.locateCenterOnScreen('img/b_gifts.png', confidence=0.91)
+    gifts = locCenterImg('img/b_gifts.png', 0.91)
     pyautogui.moveTo(gifts, duration=1, tween=pyautogui.easeInOutQuad)
     pyautogui.click(gifts)
 
-    open_ = pyautogui.locateCenterOnScreen('img/b_gift_open.png', confidence=0.9)
+    open_ = locCenterImg('img/b_gift_open.png', 0.9)
     while open_:
         pyautogui.moveTo(open_, duration=1, tween=pyautogui.easeInOutQuad)
         pyautogui.click(open_)
         sleep(1)
-        thanks = pyautogui.locateCenterOnScreen('img/b_thanks.png', confidence=0.9)
+        thanks = locCenterImg('img/b_thanks.png', 0.9)
         pyautogui.moveTo(thanks, duration=1, tween=pyautogui.easeInOutQuad)
         pyautogui.click(thanks)
         sleep(1)
-        give = pyautogui.locateCenterOnScreen('img/b_give.png', confidence=0.85)
+        give = locCenterImg('img/b_give.png', 0.85)
         print(give)
         pyautogui.moveTo(give, duration=1, tween=pyautogui.easeInOutQuad)
         pyautogui.click(give)
 
-        open_ = pyautogui.locateCenterOnScreen('img/b_gift_open.png', confidence=0.9)
+        open_ = locCenterImg('img/b_gift_open.png', 0.9)
 
 
 def push_close():
     my_print_to_file('fun.push_close')
-    kv_close = pyautogui.locateCenterOnScreen('img/kv/kv_close.png', confidence=par_conf)
-    close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
+    kv_close = locCenterImg('img/kv/kv_close.png', par_conf)
+    close = locCenterImg('img/overall/close.png', 0.9)
     if kv_close:
         move_to_click(kv_close, 0.1)
     else:
@@ -111,7 +110,7 @@ def push_close():
 def exit_to_zero_screen():
     my_print_to_file('fun.exit_to_zero_screen')
     push_close_all_()
-    b_exit = pyautogui.locateCenterOnScreen('img/b_exit.png', confidence=0.9)
+    b_exit = locCenterImg('img/b_exit.png', 0.9)
     print(b_exit, 'b_exit')
     if b_exit:
         move_to_click(b_exit, 0.1)
@@ -119,27 +118,27 @@ def exit_to_zero_screen():
 
 def push_close_all_():
     my_print_to_file('fun.push_close_all_')
-    close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
-    kv_close = pyautogui.locateCenterOnScreen('img/kv/kv_close.png', confidence=par_conf)
+    close = locCenterImg('img/overall/close.png', 0.9)
+    kv_close = locCenterImg('img/kv/kv_close.png', par_conf)
     while close or kv_close:
         close_popup_window()
         push_close()
         sleep(1)
-        kv_close = pyautogui.locateCenterOnScreen('img/kv/kv_close.png', confidence=par_conf)
-        close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
+        kv_close = locCenterImg('img/kv/kv_close.png', par_conf)
+        close = locCenterImg('img/overall/close.png', 0.9)
         # print("цикл close")
 
 
 def bonus():
     my_print_to_file('fun.bonus')
     # кнопка добавить
-    add_bonus = pyautogui.locateCenterOnScreen('img/add.png', confidence=0.8)
+    add_bonus = locCenterImg('img/add.png', 0.8)
     pyautogui.moveTo(add_bonus, duration=1, tween=pyautogui.easeInOutQuad)
     sleep(1)
     pyautogui.click(add_bonus)
     sleep(2)
     # кнопка забрать
-    take_bonus = pyautogui.locateCenterOnScreen('img/take.png', confidence=0.9)
+    take_bonus = locCenterImg('img/take.png', 0.9)
     if take_bonus:  # != None:
         pyautogui.moveTo(take_bonus, duration=1, tween=pyautogui.easeInOutQuad)
         pyautogui.click()
@@ -152,32 +151,33 @@ def bonus():
 
 def start_p_m():
     my_print_to_file('fun.start_p_m')
+
     def spec_proposal():
         sz = 0
-        proposal = pyautogui.locateCenterOnScreen('img/spec_proposal.png', confidence=0.96)
+        proposal = locCenterImg('img/spec_proposal.png', 0.96)
         if proposal is not None:
-            s_p_close = pyautogui.locateCenterOnScreen('img/s_p_close.png', confidence=0.96)
+            s_p_close = locCenterImg('img/overall/s_p_close.png', 0.96)
             while s_p_close is not None and sz <= 5:
                 sleep(2)
-                s_p_close = pyautogui.locateCenterOnScreen('img/s_p_close.png', confidence=0.96)
+                s_p_close = locCenterImg('img/overall/icon_in_desktop/s_p_close.png', 0.96)
                 sz += 1
             pyautogui.click(s_p_close)
 
     def authorization():  # авторизация при необходимости
         sleep(2)
-        pos_authorization = pyautogui.locateCenterOnScreen('img/authorization_button.png', confidence=0.8)
+        pos_authorization = locCenterImg('img/overall/authorization_button.png', 0.8)
         if pos_authorization:
             pyautogui.moveTo(pos_authorization, duration=1, tween=pyautogui.easeInOutQuad)
             pyautogui.click(pos_authorization)
             sleep(2)
 
     def click_my_game():
-        pos_my_game = pyautogui.locateCenterOnScreen('img/my_game1.png', confidence=0.8)
-        pos_my_game1 = pyautogui.locateCenterOnScreen('img/my_game2.png', confidence=0.8)
+        pos_my_game = locCenterImg('img/overall/my_game1.png', 0.8)
+        pos_my_game1 = locCenterImg('img/overall/my_game2.png', 0.8)
         while pos_my_game is None and pos_my_game1 is None:
             sleep(0.5)
-            pos_my_game = pyautogui.locateCenterOnScreen('img/my_game1.png', confidence=0.8)
-            pos_my_game1 = pyautogui.locateCenterOnScreen('img/my_game2.png', confidence=0.8)
+            pos_my_game = locCenterImg('img/overall/my_game1.png', 0.8)
+            pos_my_game1 = locCenterImg('img/overall/my_game2.png', 0.8)
             print(pos_my_game, pos_my_game1, ' в ожидании появления кнопки "my_game"')
         if pos_my_game:
             pyautogui.moveTo(pos_my_game, duration=1, tween=pyautogui.easeInOutQuad)
@@ -192,18 +192,18 @@ def start_p_m():
             im1 = pyautogui.screenshot('img/screen1.png')
             im1.save('img/screen1.png')
             sleep(2)
-        pos_autor = pyautogui.locateCenterOnScreen('img/authorization_button.png', confidence=0.8)
+        pos_autor = locCenterImg('img/overall/authorization_button.png', 0.8)
         if pos_autor:
             authorization()
 
     def click_icon_game():
         p_i = 0
         # sleep(2)
-        pos_icon_game = pyautogui.locateCenterOnScreen('img/icon_game.png', confidence=0.8)
+        pos_icon_game = locCenterImg('img/overall/icon_game.png', 0.8)
         while pos_icon_game is None and p_i <= 100:
             p_i += 1
             sleep(1)
-            pos_icon_game = pyautogui.locateCenterOnScreen('img/icon_game.png', confidence=0.8)
+            pos_icon_game = locCenterImg('img/overall/icon_game.png', 0.8)
         pyautogui.click(pos_icon_game)
         sleep(1)
 
@@ -222,8 +222,7 @@ def start_p_m():
         pyautogui.moveTo(682, 11, duration=1, tween=pyautogui.easeInOutQuad)
         pyautogui.dragTo(300, 11, duration=1)
         # смещение ползунка на 45
-        slider = pyautogui.locateCenterOnScreen('img/slider_v.png', confidence=0.7)
-        # print(slider, 'ползунок')
+        slider = locCenterImg('img/overall/slider_v.png', 0.7)
         if slider:
             x, y = slider
             pyautogui.moveTo(x, y, duration=1, tween=pyautogui.easeInOutQuad)
@@ -243,7 +242,7 @@ def move_friends_list_left():
     """
     my_print_to_file('fun.move_friends_list_left')
     sleep(1)
-    ar_right = pyautogui.locateCenterOnScreen('img/b_arrow_right.png', confidence=0.8)
+    ar_right = locCenterImg('img/overall/b_arrow_right.png', 0.8)
     pyautogui.moveTo(ar_right, duration=1, tween=pyautogui.easeInOutQuad)
     pyautogui.click(ar_right)
     sleep(1)
@@ -257,7 +256,7 @@ def move_friends_list_right():
     """
     my_print_to_file('fun.move_friends_list_right')
     sleep(0.2)
-    ar_right = pyautogui.locateCenterOnScreen('img/b_arrow_left.png', confidence=0.8)
+    ar_right = locCenterImg('img/overall/b_arrow_left.png', 0.8)
     pyautogui.moveTo(ar_right, duration=1, tween=pyautogui.easeInOutQuad)
     pyautogui.click(ar_right)
     sleep(0.2)
@@ -267,7 +266,7 @@ def move_friends_list_right():
 def move_friends_list_to_top():
     """Смещает список друзей в лево в начало"""
     my_print_to_file('fun.move_friends_list_to_top')
-    begin = pyautogui.locateCenterOnScreen('img/b_begin.png', confidence=0.96)
+    begin = locCenterImg('img/overall/b_begin.png', 0.96)
     if begin:  # если увидел
         pyautogui.moveTo(begin, duration=1, tween=pyautogui.easeInOutQuad)
         print(' перемотка в начало ')
@@ -307,15 +306,15 @@ def find_link_hall_of_glory():
     :return: Point 'Зал славы'
     """
     my_print_to_file('fun.find_link_hall_of_glory')
-    close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
+    close = locCenterImg('img/overall/close.png', 0.9)
     while close:
         push_close_all_()
-        close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
+        close = locCenterImg('img/overall/close.png', 0.9)
     # получение координат привязки
-    point_hall_of_glory = pyautogui.locateCenterOnScreen('img/arena/hall_of_glory_icon.png', confidence=0.9)
+    point_hall_of_glory = locCenterImg('img/arena/hall_of_glory_icon.png', 0.9)
     while not point_hall_of_glory:
         sleep(0.2)
-        point_hall_of_glory = pyautogui.locateCenterOnScreen('img/arena/hall_of_glory_icon.png', confidence=0.9)
+        point_hall_of_glory = locCenterImg('img/arena/hall_of_glory_icon.png', 0.9)
 
     sleep(0.5)
 
@@ -324,8 +323,8 @@ def find_link_hall_of_glory():
 
 def find_link_station_master():
     my_print_to_file('fun.find_link_station_master')
-    station_master = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=0.9)
-    pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
+    station_master = locCenterImg('img/station_master.png', 0.9)
+    pos_klan = locCenterImg('img/overall/klan.png', 0.9)
     if station_master or pos_klan:
         if pos_klan:
             pyautogui.moveTo(pos_klan)
@@ -343,7 +342,7 @@ def find_link_station_master():
     else:
         # Закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
         push_close_all_()
-        pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
+        pos_klan = locCenterImg('img/overall/klan.png', 0.9)
         pyautogui.moveTo(pos_klan)
         # получение координат привязки
         sleep(0.5)
@@ -447,10 +446,10 @@ def get_areas_task_big(width=77, height=42):
 
 def find_link_klan():
     my_print_to_file('fun.find_link_klan')
-    pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.85)
+    pos_klan = locCenterImg('img/overall/klan.png', 0.85)
     while not pos_klan:
         sleep(0.1)
-        pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.85)
+        pos_klan = locCenterImg('img/overall/klan.png', 0.85)
 
     return pos_klan
 
@@ -458,16 +457,16 @@ def find_link_klan():
 def vizit_to_station_master():
     """заходит в палатку к нач станции"""
     my_print_to_file('fun.vizit_to_station_master')
-    check = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=0.9)
+    check = locCenterImg('img/station_master.png', 0.9)
     if check:
         pyautogui.moveTo(check, duration=1, tween=pyautogui.easeInOutQuad)
         # print(" уже у начальника ")
         sleep(1 / 3)
     else:
-        pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.85)
+        pos_klan = locCenterImg('img/overall/klan.png', 0.85)
         while not pos_klan:
             sleep(0.1)
-            pos_klan = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.85)
+            pos_klan = locCenterImg('img/overall/b_arrow_right.png', 0.85)
             # print('в поиске клана', pos_klan)
         # print('клан = ', pos_klan)
         x1, y1 = pos_klan
@@ -476,7 +475,7 @@ def vizit_to_station_master():
         move_to_click(master, 0.2)
         # print('зашел к начальнику')
         sleep(1)
-        station_master = pyautogui.locateCenterOnScreen('img/station_master.png', confidence=par_conf)
+        station_master = locCenterImg('img/station_master.png', par_conf)
         pyautogui.moveTo(station_master, duration=1, tween=pyautogui.easeInOutQuad)
 
 
@@ -492,3 +491,24 @@ def await_arena(region):
         attack_arena_object = pyautogui.locateCenterOnScreen('img/arena/attack.png', confidence=0.9,
                                                              region=region)
     pyautogui.moveTo(attack_arena_object)
+
+
+def selection_hero():
+    hero_gadya = locCenterImg('img/person/her_gadya.png')
+    hero_gavr = locCenterImg('img/person/her_gavr.png')
+    hero_veles = locCenterImg('img/person/her_veles.png')
+
+    if hero_gadya:
+        # print(my_c.text_yellow('Гадя'))
+        hero = 'Gady'
+    elif hero_gavr:
+        # print(my_c.text_yellow('Гавр'))
+        hero = 'Gavr'
+    elif hero_veles:
+        # print(my_c.text_yellow('Велес'))
+        hero = 'Велес'
+    else:
+        print(my_c.text_red("Невозможно опознать героя (("))
+        hero = None
+
+    return hero

@@ -1,15 +1,15 @@
 import baza_dannyx as b_d
 import pyautogui
 from time import sleep
-from fun import move_to_click, push_close_all_, vizit_to_station_master, get_areas_task_big, my_print_to_file
-from my_text_color import text_blue, text_cyan, text_red, text_green, text_yellow, text_magenta
-from my_screenshot import get_screenshot_task
+from fun import selection_hero, move_to_click, push_close_all_, vizit_to_station_master, get_areas_task_big, \
+    my_print_to_file
+from create_img import get_screenshot_task
+import my_text_color as my_c
 
-conf_ = 0.9
+conf_ = 0.95
 par_conf = 0.799
 energy_availability = 1
 number_tasks = 1
-# width, height = 87, 39
 variable = None
 
 
@@ -36,7 +36,7 @@ def enemy_battle(prolong_=2):
         sleep(1 * prolong_)  # для задержки нажатия "пропустить бой"
         my_print_to_file('ожидание battle_end, close, dog, skip_battle')
         battle_end = pyautogui.locateCenterOnScreen('img/b_battle_end.png', confidence=par_conf)
-        close = pyautogui.locateCenterOnScreen('img/close.png', confidence=par_conf)
+        close = pyautogui.locateCenterOnScreen('img/overall/close.png', confidence=par_conf)
         dog = pyautogui.locateCenterOnScreen('img/dog.png', confidence=par_conf)
         skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
         if battle_end and close:  # нажать закрыть в конце боя
@@ -60,13 +60,14 @@ def enemy_battle(prolong_=2):
     my_print_to_file("выход из 'enemy_battle")
     return result
 
+
 def press_en(task_number, pos):
     global energy_availability, conf_
-    x = pos[0]
+    x = pos[0] - 100
     y = pos[1] - 20
     pos_clik = x, y
-    # pyautogui.moveTo(pos_clik) # для отладки
-    # print('тут должен быть клик') # для отладки
+    # pyautogui.moveTo(pos_clik)  # для отладки раскомментировать
+    # print('тут должен быть клик')  # для отладки
     move_to_click(pos_clik, 1.5)  # для отладки закомментировать
     sleep(0.5)
     nal_energy = pyautogui.locateCenterOnScreen('img/low_energy.png', confidence=0.8)
@@ -77,7 +78,7 @@ def press_en(task_number, pos):
         energy_availability = 0
         print(' Энергия закончилась!!')
         sleep(1)
-        close = pyautogui.locateCenterOnScreen('img/close.png')
+        close = pyautogui.locateCenterOnScreen('img/overall/close.png')
         move_to_click(close, 0.5)
 
 
@@ -123,21 +124,30 @@ def data_station():
 
 
 def vybor_zadaniya_na_puli():
-    global energy_availability, number_tasks, conf_
-    xp_img = data_station()
+    global energy_availability, number_tasks  # , conf_
+    conf_ = 0.95
+    task = data_station()
+    hero = selection_hero()
+    if hero == 'Gady':
+        path = 'img/person/tasks_gady/'
+    elif hero == 'Gavr':
+        path = 'img/person/tasks_gavr/'
+    else:
+        return
     region_1, region_2, region_3 = get_areas_task_big()
     while energy_availability == 1 and number_tasks > 0:
-        task_analysis(xp_img[0], xp_img[1], region_1)
+        task_analysis(F'{path}{task[0]}', F'{path}{task[1]}', region_1)
+        # print(f'{path}{task[0]}', f"{path}{task[1]}")
         variant1 = variable
         move(variant1)
         sleep(0.1)
 
-        task_analysis(xp_img[2], xp_img[3], region_2)
+        task_analysis(F'{path}{task[2]}', F'{path}{task[3]}', region_2)
         variant2 = variable
         move(variant2)
         sleep(0.1)
 
-        task_analysis(xp_img[4], xp_img[5], region_3)
+        task_analysis(F'{path}{task[4]}', F'{path}{task[5]}', region_3)
         variant3 = variable
         move(variant3)
         sleep(0.1)
@@ -150,25 +160,81 @@ def vybor_zadaniya_na_puli():
             press_en(3, region_3)
 
         if variant1 == variant2 == variant3:
-            print('confidence=', conf_)
+            print(F'confidence={conf_}')
             conf_ -= 0.005
             conf_ = round(conf_, 3)
-        if conf_ <= 0.75:
-            print('задания не найдены, результаты "D:\\bot in br\\testOCR\img\\test" ')
+        if conf_ <= 0.92:
+            print(my_c.text_cyan('задания не найдены, результаты "D:\\bot in br\\testOCR\img\\test" '))
+            get_screenshot_task()
+            number_tasks = 1
+            energy_availability = 0
+            return
+    print(my_c.text_green(' Задания выполнены!!!!'))
+    number_tasks = 1
+    energy_availability = 1
+    close = pyautogui.locateCenterOnScreen('img/overall/close.png', confidence=0.9)
+    while close:
+        move_to_click(close, 0.3)
+        close = pyautogui.locateCenterOnScreen('img/overall/close.png', confidence=0.9)
+
+
+def vybor_zadaniya_na_puli_S():
+    global energy_availability, number_tasks, conf_
+
+    task = data_station()
+    hero = selection_hero()
+    if hero == 'Gady':
+        pass
+    elif hero == 'Gavr':
+        path = 'img/person/tasks_gavr/'
+        pass
+    else:
+        return
+    region_1, region_2, region_3 = get_areas_task_big()
+    while energy_availability == 1 and number_tasks > 0:
+        task_analysis(f'{path}{task[0]}', task[1], region_1)
+        variant1 = variable
+        move(variant1)
+        sleep(0.1)
+
+        task_analysis(task[2], task[3], region_2)
+        variant2 = variable
+        move(variant2)
+        sleep(0.1)
+
+        task_analysis(task[4], task[5], region_3)
+        variant3 = variable
+        move(variant3)
+        sleep(0.1)
+
+        if variant1:
+            press_en(1, region_1)
+        if variant2:
+            press_en(2, region_2)
+        if variant3:
+            press_en(3, region_3)
+
+        if variant1 == variant2 == variant3:
+            print(F'confidence= {conf_} строка 217')
+            conf_ -= 0.005
+            conf_ = round(conf_, 3)
+        if conf_ <= 0.92:
+            print(my_c.text_cyan('задания не найдены, результаты "D:\\bot in br\\testOCR\img\\test" '))
             get_screenshot_task()
             number_tasks = 1
             energy_availability = 0
 
-    print(' Задания выполнены!!!!')
+    print(my_c.text_green(' Задания выполнены!!!!'))
     number_tasks = 1
     energy_availability = 1
-    close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
+    close = pyautogui.locateCenterOnScreen('img/overall/close.png', confidence=0.9)
     while close:
         move_to_click(close, 0.3)
-        close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
+        close = pyautogui.locateCenterOnScreen('img/overall/close.png', confidence=0.9)
 
 
 def en_task_item(task_number):
+    """ Выбор по позиции задания """
     global energy_availability, number_tasks  # , conf_
     region_1, region_2, region_3 = get_areas_task_big()
     if task_number == 1:
@@ -181,10 +247,10 @@ def en_task_item(task_number):
     while energy_availability == 1 and number_tasks > 0:
         vizit_to_station_master()
         press_en(task_number, region)
-    print(' Задания выполнены!!!!')
+    print(my_c.text_green(' Задания выполнены'))
     number_tasks = 1
     energy_availability = 1
-    close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
+    close = pyautogui.locateCenterOnScreen('img/overall/close.png', confidence=0.9)
     while close:
         move_to_click(close, 0.3)
-        close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
+        close = pyautogui.locateCenterOnScreen('img/overall/close.png', confidence=0.9)

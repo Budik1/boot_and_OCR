@@ -25,17 +25,20 @@ st_tretya = ['ст. Третьяковская', 'img/tonelli/k_Tretyakov.png', 
 st_turgenev = ['ст. Тургеневская', 'img/tonelli/k_Turgenev.png', 'img/tonelli/s_Turgenev.png', 0, [0]]
 st_chekhov = ['ст. Чеховская', 'img/tonelli/k_Chekhov.png', 'img/tonelli/s_Chekhov.png', 'стрелка север', [0]]
 st_communist = ['ст. Коммунистическая', 'img/tonelli/k_Communist.png', 'img/tonelli/s_Communist.png', 0, []]
-st_univer = ['ст. Университет', 'img/tonelli/k_Univer.png', 'img/tonelli/s_Univer.png', 0, []]
+st_univer = ['ст. Университет', 'img/tonelli/k_Univer.png', 'img/tonelli/s_Univer.png', 0,
+             ['t1.png', 't1.png', 't2.png', 't2.png', 't7.png', 't7.png']]
 st_vernadskogo = ['ст. Пр-кт Вернадского', 'img/tonelli/k_Pr-kt_Vernadskogo.png', 'img/tonelli/s_Pr-kt_Vernadskogo.png',
                   0, []]
 
 st_kiev = ['ст. Киевская', 'img/tonelli/k_Kiev.png', 'img/tonelli/s_Kiev.png', 0,
-           ['img/tasks/t2.png', 'img/tasks/t3.png', 'img/tasks/t3.png', 'img/tasks/t4.png', 'img/tasks/t4.png',
-            'img/tasks/t5.png']]
+           ['t2.png', 't3.png', 't3.png', 't4.png', 't4.png', 't5.png']]
+
+# st_frunze_zip = ['ст. Фрунзенская', 'img/tonelli/k_Frunze.png', 'img/tonelli/s_Frunze.png', 0,
+#              ['img/tasks/t2.png', 'img/tasks/t2.png', 'img/tasks/t3.png', 'img/tasks/t3.png', 'img/tasks/t7.png',
+#               'img/tasks/t7.png']]
 
 st_frunze = ['ст. Фрунзенская', 'img/tonelli/k_Frunze.png', 'img/tonelli/s_Frunze.png', 0,
-             ['img/tasks/t2.png', 'img/tasks/t2.png', 'img/tasks/t3.png', 'img/tasks/t3.png', 'img/tasks/t7.png',
-              'img/tasks/t7.png']]
+             ['t2.png', 't2.png', 't3.png', 't3.png', 't7.png', 't7.png']]
 
 st_most = ['ст. Кузнецкий мост', 'img/tonelli/k_Kuzneckiy.png', 'img/tonelli/s_Kuzneckiy.png', 0,
            ['img/tasks/t1.png', 'img/tasks/t1.png', 'img/tasks/t2.png', 'img/tasks/t2.png', 'img/tasks/t3.png',
@@ -98,10 +101,6 @@ most_kikimory = [st_pushkin, st_tver, st_teatr, st_novok, st_tretya, st_kitay,
                  st_turgenev, st_suxarev, st_prospekt, st_riga, st_prospekt, st_suxarev,
                  st_turgenev, st_kitay, st_tretya, st_novok, st_teatr, st_tver, st_pushkin, st_most]
 
-
-
-
-
 frunze_kikimory = [st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_tver, st_teatr, st_novok, st_tretya,
                    st_kitay,
                    st_turgenev, st_suxarev, st_prospekt, st_riga, st_prospekt, st_suxarev,
@@ -118,10 +117,13 @@ univer_frunze = [st_communist, st_frunze]
 
 frunze_kiev = [st_park_kr, st_park_g, st_kiev]
 kiev_frunze = [st_park_g, st_park_kr, st_frunze]
-
+#
 frunze_most = [st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_pushkin, st_most]
 most_frunze = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze]
-
+#
+frunze_bulvar = [st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_bulvar]
+bulvar_frunze = [st_chekhov, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze]
+#
 test_running = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze, st_communist,
                 st_univer, st_vernadskogo, st_univer, st_communist, st_frunze, st_park_kr, st_kropot, st_biblioteka,
                 st_borov, st_chekhov, st_pushkin, st_most]

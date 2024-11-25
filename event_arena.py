@@ -1,9 +1,8 @@
 import pyautogui
 from time import sleep
 from station_master import enemy_battle
-from fun import move_to_click, find_link_hall_of_glory, await_arena
-from my_text_color import (text_blue, text_cyan, text_red, text_green, text_yellow, text_magenta)
-
+from fun import move_to_click, find_link_hall_of_glory, await_arena, locCenterImg
+from my_text_color import text_blue, text_cyan, text_red, text_green, text_yellow, text_magenta
 
 
 def foto(path_name, _region):
@@ -26,14 +25,11 @@ def foto_pos(name_img: str, region: tuple, tune_x=0, tune_y=0, tune_s=0, tune_v=
     foto(name_img, (x_s, y_s, width_s, height_s))
 
 
-
-
-
 def hall_is_open():
-    hall = pyautogui.locateCenterOnScreen('img/hall_of_glory_tabl.png', confidence=0.9)
+    hall = pyautogui.locateCenterOnScreen('img/arena/hall_of_glory_tabl.png', confidence=0.9)
     while not hall:
         sleep(0.1)
-        hall = pyautogui.locateCenterOnScreen('img/hall_of_glory_tabl.png', confidence=0.9)
+        hall = pyautogui.locateCenterOnScreen('img/arena/hall_of_glory_tabl.png', confidence=0.9)
     pyautogui.moveTo(hall)
     sleep(2)
 
@@ -51,9 +47,9 @@ def create_img_arena_object():
     # смещение внутри региона правой нижней точки на параметр (с увеличением размер уменьшается)
     tune_s = 183
     tune_v = 20
-    foto('img/test/object.png', region)
+    foto('img/arena/object.png', region)
     # foto_pos('img/test/object1.png', region, tune_x - 60, tune_y, tune_s - 60, tune_v)
-    foto_pos('img/test/arena_object.png', region, tune_x, tune_y, tune_s, tune_v)
+    foto_pos('img/arena/arena_object.png', region, tune_x, tune_y, tune_s, tune_v)
     print('фото сделано')
 
 
@@ -72,10 +68,10 @@ def kill():
         const_region = region  # сохранение региона
         pyautogui.moveTo(174, 260)
         sleep(1)
-        arena_object = pyautogui.locateCenterOnScreen("img/test/arena_object.png", region=region,
+        arena_object = pyautogui.locateCenterOnScreen("img/arena/arena_object.png", region=region,
                                                       confidence=0.89)
         pyautogui.moveTo(arena_object)
-        scroll_up = pyautogui.locateCenterOnScreen('img/scroll_up.png', confidence=0.9)
+        scroll_up = locCenterImg('img/arena/scroll_up.png', 0.9)
         if arena_object is None:
             _it = 0
             x, y, sh, v = region
@@ -84,27 +80,24 @@ def kill():
                 y += 68
                 # print(_it, y)
                 region = (x, y, sh, v)
-                arena_object = pyautogui.locateCenterOnScreen("img/test/arena_object.png", region=region,
+                arena_object = pyautogui.locateCenterOnScreen("img/arena/arena_object.png", region=region,
                                                               confidence=0.89)
-
         while arena_object is None:
             region = const_region
             # Если не найден раньше ищем со смещением списка в начало
             while scroll_up is not None and arena_object is None:
                 move_to_click(scroll_up, 0.01)
                 # pyautogui.moveTo(174, 260)
-                scroll_up = pyautogui.locateCenterOnScreen('img/scroll_up.png', confidence=0.9)
+                scroll_up = locCenterImg('img/arena/scroll_up.png', 0.9)
                 await_arena(region)
-
-                arena_object = pyautogui.locateCenterOnScreen("img/test/arena_object.png", region=region,
+                arena_object = pyautogui.locateCenterOnScreen("img/arena/arena_object.png", region=region,
                                                               confidence=0.85)
             if arena_object is None:  # Если не найден раньше ищем со смещением списка в конец
-                scroll_down = pyautogui.locateCenterOnScreen('img/scroll_down.png', confidence=0.9)
+                scroll_down = locCenterImg('img/arena/scroll_down.png', 0.9)
                 move_to_click(scroll_down, 0.01)
                 await_arena(region)
-                arena_object = pyautogui.locateCenterOnScreen("img/test/arena_object.png", region=region,
+                arena_object = pyautogui.locateCenterOnScreen("img/arena/arena_object.png", region=region,
                                                               confidence=0.85)
-
         boy_in_arena += 1
         name_file = str("img/test/arena_obl_поиска" + str(boy_in_arena) + ".png")
         # print(boy_in_arena)
@@ -113,11 +106,11 @@ def kill():
         attack_arena_object = pyautogui.locateCenterOnScreen('img/arena/attack.png', confidence=0.9, region=region)
         pyautogui.moveTo(attack_arena_object)
         move_to_click(attack_arena_object, 0.5)
-        hero_vs_opponent = pyautogui.locateCenterOnScreen('img/hero_vs_opponent.png', confidence=0.9)
-        while hero_vs_opponent is None:
+        hero_vs_opponent_img = locCenterImg('img/arena/hero_vs_opponent.png', 0.9)
+        while hero_vs_opponent_img is None:
             sleep(0.1)
-            hero_vs_opponent = pyautogui.locateCenterOnScreen('img/hero_vs_opponent.png', confidence=0.9)
-        move_to_click(hero_vs_opponent, 0.1)
+            hero_vs_opponent_img = locCenterImg('img/arena/hero_vs_opponent.png', 0.9)
+        move_to_click(hero_vs_opponent_img, 0.1)
         sleep(2)
         res = enemy_battle(0.5)
         if res == "победа":

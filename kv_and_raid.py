@@ -49,10 +49,12 @@ def battle(q_call):
     if victory:
         result = "победа"
         print(result)
+        if danger:
+            foto_danger()
     elif defeat:
         result = "поражение"
         print(result)
-    foto_danger()
+    # foto_danger()
     move_to_click(kv_close, 0.3)
     print("закрыть результат боя")
 

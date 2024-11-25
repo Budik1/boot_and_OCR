@@ -5,315 +5,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cr_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/baza_dannyx.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza_dannyx.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/config.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_arena.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_frend.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_frend.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-19 19-59-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 08-03-48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 08-08-39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 08-13-38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 08-18-49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 08-23-57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 08-28-40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 08-34-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 08-38-50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 08-43-51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 08-48-55.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 08-54-14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 08-59-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 09-04-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 09-09-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 09-14-29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 09-19-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 09-24-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 09-29-34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 09-34-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 09-39-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 09-44-29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 09-49-45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 09-54-40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-20 09-59-36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 09-02-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 09-07-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 09-12-43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 09-17-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 09-22-30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 09-27-40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 09-32-48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 09-37-59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 09-42-58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 09-48-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 09-52-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 09-58-15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 10-03-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 10-08-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 19-32-46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 19-38-09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 19-43-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 19-47-52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 19-53-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 19-58-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 20-03-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 20-08-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 20-13-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 20-18-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 20-23-31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 20-28-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 20-33-37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 20-38-34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 20-43-31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 20-48-40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 20-53-38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 20-58-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 21-03-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 21-04-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 21-08-27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 21-09-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 21-13-29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 21-14-30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 21-18-33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 21-19-33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 21-23-34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 21-24-42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 21-28-39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 21-33-43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-21 21-38-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 08-04-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 08-08-44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 08-13-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 08-19-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 08-23-53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 08-29-09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 08-33-58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 08-39-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 08-44-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 08-49-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 08-54-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 08-59-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 09-04-40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 09-09-59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 09-14-57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 09-19-49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 09-24-54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 09-29-29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 09-35-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 09-39-59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 09-45-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 09-50-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 09-55-00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 09-59-51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 19-40-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 19-45-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 19-50-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 19-55-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 20-00-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 20-05-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 20-10-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 20-15-28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 20-20-30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 20-25-52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 20-30-43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 20-35-41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 20-40-55.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 20-45-44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 20-51-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 20-55-54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 21-00-59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 21-06-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-22 21-08-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 09-37-15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 09-42-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 09-47-33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 09-52-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 09-57-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 19-30-42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 19-35-48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 19-41-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 19-46-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 19-51-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 19-55-57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 20-01-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 20-06-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 20-11-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 20-16-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 20-21-25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 20-26-30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 20-31-15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 20-36-40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 20-41-38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 20-46-37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 20-51-32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 20-56-57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 21-01-54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 21-02-51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 21-06-35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 21-11-53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 21-16-41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 21-22-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-23 21-26-45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 08-02-58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 08-08-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 08-13-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 08-18-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 08-23-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 08-28-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 08-33-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 08-38-37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 08-43-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 08-48-27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 08-53-32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 08-58-35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 09-03-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 09-08-25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 09-13-50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 09-18-48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 09-23-37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 09-28-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 09-34-00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 09-38-57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 09-44-14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 09-49-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 09-54-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 09-59-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 19-15-15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 19-20-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 19-25-37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 19-30-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 19-35-36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 19-40-43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 19-45-53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 19-50-44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 19-55-31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 20-00-53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 20-06-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 20-10-59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 20-15-52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 20-20-48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 20-25-51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 20-31-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 20-36-15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 20-41-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 20-46-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 20-51-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 20-56-27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 21-01-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 21-06-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-24 21-11-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 08-31-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 08-36-32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 08-41-30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 08-46-41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 08-51-39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 08-56-39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 09-01-43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 09-06-37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 09-11-45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 09-16-54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 09-21-56.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 09-26-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 09-31-52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 09-37-09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 09-42-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 09-46-59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 09-52-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 09-57-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 10-02-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 19-38-46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 19-43-38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 19-48-49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 19-53-33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 19-58-56.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 20-03-58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 20-08-40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 20-14-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 20-18-44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 20-24-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 20-28-52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 20-33-57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 20-38-58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 20-44-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 20-49-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 20-54-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 20-59-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 21-02-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 21-04-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 21-07-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 21-09-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 21-12-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 21-14-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 21-17-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 21-22-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 21-27-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 21-32-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 21-37-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-25 21-42-29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 08-04-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 08-09-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 08-14-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 08-19-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 08-24-33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 08-30-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 08-34-55.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 08-39-38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 08-44-57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 08-49-42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 08-54-44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 09-00-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 09-05-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 09-09-53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 09-15-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 09-20-00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 09-25-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 09-30-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 09-35-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 09-40-35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 09-45-30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 09-50-28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 09-55-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 10-00-39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 19-22-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 19-27-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 19-32-44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 19-37-54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 19-42-36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 19-52-58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 19-57-57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 20-02-53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 20-07-54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 20-12-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 20-17-52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 20-22-55.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 20-28-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 20-32-59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 20-38-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 20-43-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 20-48-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 20-53-33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 20-58-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 21-03-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 21-08-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 21-13-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 21-16-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-26 21-18-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-27 08-52-00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-27 08-57-14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-27 09-02-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-27 09-07-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-27 09-12-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-27 09-17-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-27 09-22-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-27 09-27-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-27 09-32-46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-27 09-37-40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-27 09-42-39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-27 09-47-32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Cr/2024-07-27 09-53-14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/2024-07-27.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/2024-07-27.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/113xp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/135xp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/23xp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/45xp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/68xp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/90xp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/_en1v2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/_en2v2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/_en3v2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/authorization_button.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/authorization_button.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/b_arrow_left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/b_arrow_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/b_arrow_right.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/b_begin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/b_tent.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tents_R/b_tent.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/b_vip.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tents_R/b_vip.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/cancel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/en1v3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/en2v3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/en3v3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/f_gangster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/f_ganza.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/f_red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/f_reich.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hall_of_glory_tabl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero_vs_friend.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero_vs_opponent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icon_game.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icon_in_desktop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/klan.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/klan.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/knob.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/knob.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/my_game1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/my_game2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/polzun.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/pulya.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/s_p_close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/scroll_down.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/scroll_down.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/scroll_up.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/scroll_up.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/slider_v.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tasks/t1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tasks/t2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tasks/t3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tasks/t4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tasks/t5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tasks/t7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/visit_to_tent.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tents_R/visit_to_tent.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2024-07-26.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2024-07-27.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/person.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_screenshot.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/revision_of_tents.py" beforeDir="false" afterPath="$PROJECT_DIR$/revision_of_tents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/план.txt" beforeDir="false" afterPath="$PROJECT_DIR$/план.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -344,7 +97,12 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.cr_img.executor&quot;: &quot;Run&quot;,
+    &quot;Python.create_img.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.www.executor&quot;: &quot;Run&quot;,
+    &quot;Python.www1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.www2.executor&quot;: &quot;Run&quot;,
     &quot;Python.создание скриншотов.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -353,8 +111,16 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\bot in br\testOCR\img\overall" />
+      <recent name="D:\bot in br\testOCR\img\arena" />
+      <recent name="D:\bot in br\testOCR\img\tents_R" />
+      <recent name="D:\bot in br\testOCR\img\Revision tents" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="создание скриншотов" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="cr_img" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -367,7 +133,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/создание скриншотов.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cr_img.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -398,10 +164,79 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="www" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testOCR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Python/куски кода для бота" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Python/куски кода для бота/www.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="www1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testOCR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Python/куски кода для бота" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Python/куски кода для бота/www1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="www2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testOCR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Python/куски кода для бота" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Python/куски кода для бота/www2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.создание скриншотов" />
+        <item itemvalue="Python.www2" />
+        <item itemvalue="Python.www1" />
+        <item itemvalue="Python.www" />
+        <item itemvalue="Python.cr_img" />
       </list>
     </recent_temporary>
   </component>
@@ -439,8 +274,38 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>382</line>
+          <line>435</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/event_frend.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fun.py</url>
+          <line>326</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/station_master.py</url>
+          <line>165</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/station_master.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/station_master.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>46</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

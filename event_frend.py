@@ -1,7 +1,7 @@
 import pyautogui
 from station_master import enemy_battle
 from time import sleep
-from fun import move_to_click, move_friends_list_right, find_link_hall_of_glory, foto
+from fun import move_to_click, move_friends_list_right, find_link_hall_of_glory, locCenterImg, foto
 
 
 def search_friend():
@@ -20,18 +20,18 @@ def search_friend():
     friend_battle_region = x_r, y_r, 155, 295
     pyautogui.moveTo(pos_friend, duration=1)
     move_to_click(pos_friend, 0.2)
-    dom = pyautogui.locateCenterOnScreen('img/b_tent.png', region=friend_battle_region, confidence=0.9)
+    dom = pyautogui.locateCenterOnScreen('img/tents_R/b_tent.png', region=friend_battle_region, confidence=0.9)
     while not dom:
         move_to_click(pos_friend, 0.2)
-        dom = pyautogui.locateCenterOnScreen('img/b_tent.png', region=friend_battle_region, confidence=0.9)
-    hero_vs_friend = pyautogui.locateCenterOnScreen("img/hero_vs_friend.png", region=friend_battle_region,
+        dom = pyautogui.locateCenterOnScreen('img/tents_R/b_tent.png', region=friend_battle_region, confidence=0.9)
+    hero_vs_friend = pyautogui.locateCenterOnScreen("img/frends/hero_vs_friend.png", region=friend_battle_region,
                                                     confidence=0.95)  # 0.95 #  0.986
     # foto('img/kent.png', friend_battle_region)
     if hero_vs_friend:
-        gangster = pyautogui.locateCenterOnScreen("img/f_gangster.png", region=friend_battle_region, confidence=0.95)
-        ganza = pyautogui.locateCenterOnScreen("img/f_ganza.png", region=friend_battle_region, confidence=0.95)
-        reich = pyautogui.locateCenterOnScreen("img/f_reich.png", region=friend_battle_region, confidence=0.95)
-        red = pyautogui.locateCenterOnScreen("img/f_red.png", region=friend_battle_region, confidence=0.95)
+        gangster = pyautogui.locateCenterOnScreen("img/frends/f_gangster.png", region=friend_battle_region, confidence=0.95)
+        ganza = pyautogui.locateCenterOnScreen("img/frends/f_ganza.png", region=friend_battle_region, confidence=0.95)
+        reich = pyautogui.locateCenterOnScreen("img/frends/f_reich.png", region=friend_battle_region, confidence=0.95)
+        red = pyautogui.locateCenterOnScreen("img/frends/f_red.png", region=friend_battle_region, confidence=0.95)
         if  not gangster or not ganza or not reich or not red:  #
             friend_battle = hero_vs_friend
         else:
@@ -50,10 +50,10 @@ def friend_kill(required_quantity=30):  # требуемое количеств�
             print('Атакую')
             quantity_battle += 1
             move_to_click(friend_battle_, 0.5)
-            hero_vs_opponent = pyautogui.locateCenterOnScreen('img/hero_vs_opponent.png', confidence=0.9)
+            hero_vs_opponent = locCenterImg('img/frends/hero_vs_opponent.png', 0.9)
             while hero_vs_opponent is None:
                 sleep(0.1)
-                hero_vs_opponent = pyautogui.locateCenterOnScreen('img/hero_vs_opponent.png', confidence=0.9)
+                hero_vs_opponent = locCenterImg('img/frends/hero_vs_opponent.png', 0.9)
             move_to_click(hero_vs_opponent, 0.3)
             sleep(1)
             enemy_battle(0.5)

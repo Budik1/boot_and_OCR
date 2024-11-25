@@ -1,1 +1,7 @@
-
+нажал на кнопку
+main.kiki->
+опознать героя -
+touring.za_kikimorami() -> touring.travel -
+> touring.traffic_on_the_map -> touring.events_tunnel
+ - выполнение действий и возврат данных.
+.
