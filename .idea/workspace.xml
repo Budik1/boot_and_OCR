@@ -5,68 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cr_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baza_dannyx.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza_dannyx.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/config.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_arena.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_frend.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_frend.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/113xp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/135xp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/23xp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/45xp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/68xp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/90xp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/_en1v2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/_en2v2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/_en3v2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/authorization_button.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/authorization_button.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/b_arrow_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/b_arrow_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/b_arrow_right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/b_begin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/b_tent.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tents_R/b_tent.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/b_vip.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tents_R/b_vip.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/cancel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/en1v3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/en2v3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/en3v3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/f_gangster.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/f_ganza.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/f_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/f_reich.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/hall_of_glory_tabl.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/hero_vs_friend.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/hero_vs_opponent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/icon_game.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/icon_in_desktop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/klan.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/klan.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/knob.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/knob.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/my_game1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/my_game2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/polzun.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/pulya.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/s_p_close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/scroll_down.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/scroll_down.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/scroll_up.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/scroll_up.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/slider_v.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tasks/t1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tasks/t2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tasks/t3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tasks/t4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tasks/t5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tasks/t7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/visit_to_tent.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tents_R/visit_to_tent.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/2024-07-26.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/2024-07-27.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_screenshot.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/revision_of_tents.py" beforeDir="false" afterPath="$PROJECT_DIR$/revision_of_tents.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/план.txt" beforeDir="false" afterPath="$PROJECT_DIR$/план.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/arena_object.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/object.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,23 +36,23 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.cr_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.create_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.www.executor&quot;: &quot;Run&quot;,
-    &quot;Python.www1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.www2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.создание скриншотов.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/bot in br/LOV_helper&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.cr_img.executor": "Run",
+    "Python.create_img.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.www.executor": "Run",
+    "Python.www1.executor": "Run",
+    "Python.www2.executor": "Run",
+    "Python.создание скриншотов.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/bot in br/testOCR",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\bot in br\testOCR\img\overall" />
