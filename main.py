@@ -5,7 +5,6 @@ import fun
 import station_master
 import kv_and_raid
 import touring
-import touring_test
 import person
 import revision_of_tents
 from event_arena import create_img_arena_object, kill
@@ -162,16 +161,6 @@ def dvizh_test():
 
 def kiki():
     touring.za_kikimorami()
-    # transform()
-    save_to_file()
-
-
-def kiki_test():
-    hero = fun.selection_hero()
-
-    if hero == 'Gady':
-
-        touring_test.za_kikimorami()
     # transform()
     save_to_file()
 
