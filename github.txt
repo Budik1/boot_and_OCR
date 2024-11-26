@@ -1,5 +1,0 @@
-https://www.youtube.com/playlist?list=PLlKID9PnOE5hNxXTOG8pOHwIlpmDtL6FM
-
-git add .
-git commit -m ""
-git push
