@@ -9,7 +9,7 @@ import person
 import revision_of_tents
 from event_arena import create_img_arena_object, kill
 import pickle
-from my_text_color import text_green, text_cyan, text_blue, text_red
+from my_color_text import tc_green, tc_cyan, tc_blue, tc_red
 
 fun.my_print_to_file('')
 fun.my_print_to_file('*******                      *******')
@@ -57,7 +57,7 @@ def check_date(loaded_data):
 
     date_ver = loaded_data['date']
     if date_ver == date_start:
-        print(text_blue("даты совпадают"))
+        print(tc_blue("даты совпадают"))
 
         gavr_sum_vip = loaded_data['gavr_vip']
         gady_sum_vip = loaded_data['gady_vip']
@@ -86,14 +86,14 @@ def check_date(loaded_data):
         gady_raptor.set(gady_sum_raptor)
 
     else:
-        print(text_cyan("даты не совпадают, смена суток"))
+        print(tc_cyan("даты не совпадают, смена суток"))
         gavr_vip.set(gavr_sum_vip)
         gady_vip.set(gady_sum_vip)
         save_to_file()
 
 
 def save_to_file():
-    print(text_green("запись состояния"))
+    print(tc_green("запись состояния"))
     # global date_start, gavr_sum_vip, gavr_sum_rat, gavr_sum_kiki, gavr_sum_arachne, gavr_sum_raptor
 
     data_to_save = {
@@ -120,7 +120,7 @@ def save_to_file():
 
 
 def read_from_file():
-    print(text_green("чтение состояния"))
+    print(tc_green("чтение состояния"))
     try:
         file1 = open('config.bin', 'rb')
         data_to_load = pickle.load(file1)
@@ -128,7 +128,7 @@ def read_from_file():
         # print(data_to_load)
         check_date(data_to_load)
     except:
-        print(text_red("файл поврежден или не создан"))
+        print(tc_red("файл поврежден или не создан"))
         save_to_file()
 
 
@@ -160,6 +160,7 @@ def dvizh_test():
 
 
 def kiki():
+
     touring.za_kikimorami()
     # transform()
     save_to_file()

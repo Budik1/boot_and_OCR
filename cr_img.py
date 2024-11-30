@@ -1,6 +1,8 @@
 import pyautogui
 from fun import find_link_klan, get_areas_task_small, get_areas_task_big, foto
+import fun
 from time import sleep
+
 
 def foto_pos(region, tune_x, tune_y, tune_s, tune_v, name_img):
     # получает регион и корректировки снимка внутри него
@@ -45,4 +47,87 @@ def hero_img():
     print("сделано")
 
 
-hero_img()
+def victory_battle_in_kv():
+    kv_close = fun.locCenterImg('img/kv/kv_close.png', confidence=0.9)
+    if kv_close:
+        print(kv_close, 'kv_close')
+        x, y = kv_close
+        x -= 390
+        y -= 264
+        pos_foto = x, y
+        pyautogui.moveTo(pos_foto, duration=1)
+        # x += 140
+        # y += 65
+        # region = x, y
+        # pyautogui.moveTo(region, duration=1)
+        foto('img/kv/victory_battle_in_kv.png', _region=(x, y, 140, 65))
+
+
+def defeat_battle_in_kv():
+    kv_close = fun.locCenterImg('img/kv/kv_close.png', confidence=0.9)
+    if kv_close:
+        print(kv_close, 'kv_close')
+        x, y = kv_close
+        x -= 390
+        y -= 264
+        pos_foto = x, y
+        pyautogui.moveTo(pos_foto, duration=1)
+        # x += 140
+        # y += 65
+        region = x, y
+        pyautogui.moveTo(region, duration=1)
+        foto('img/kv/defeat_battle_in_kv.png', _region=(x, y, 140, 65))
+
+
+def detecting():
+    victory = fun.locCenterImg('img/kv/victory_battle_in_kv.png', confidence=0.95)
+    defeat = fun.locCenterImg('img/kv/defeat_battle_in_kv.png', confidence=0.95)
+    if victory:
+        result = "победа"
+        print(result)
+
+    elif defeat:
+        result = "поражение"
+        print(result)
+
+
+def victory_in_arena():
+    kv_close = fun.locCenterImg('img/kv/kv_close.png', confidence=0.9)
+    if kv_close:
+        print(kv_close, 'kv_close')
+        x, y = kv_close
+        x -= 55
+        y -= 405
+        pos_foto = x, y
+        pyautogui.moveTo(pos_foto, duration=1)
+        # x += 140
+        # y += 65
+        region = x, y
+        pyautogui.moveTo(region, duration=1)
+        foto('img/arena/victory_in_arena.png', _region=(x, y, 140, 65))
+    print('отработал')
+
+
+def defeat_in_arena():
+    kv_close = fun.locCenterImg('img/kv/kv_close.png', confidence=0.9)
+    if kv_close:
+        print(kv_close, 'kv_close')
+        x, y = kv_close
+        x -= 110
+        y -= 295
+        pos_foto = x, y
+        pyautogui.moveTo(pos_foto, duration=1)
+        # x += 180
+        # y += 65
+        region = x, y
+        pyautogui.moveTo(region, duration=1)
+        foto('img/arena/defeat_in_arena.png', _region=(x, y, 180, 65))
+    print('отработал')
+
+
+# defeat_in_arena()
+# victory_in_arena()
+# detecting()
+# defeat_battle_in_kv()
+# victory_battle_in_kv()
+# hero_img()
