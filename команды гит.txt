@@ -1,3 +1,9 @@
+https://www.youtube.com/playlist?list=PLlKID9PnOE5hNxXTOG8pOHwIlpmDtL6FM
+
+git add .
+git commit -m ""
+git push
+
 git pull - обновить все файлы
 
 git branch - показывает доступные ветки на локальном репозитории

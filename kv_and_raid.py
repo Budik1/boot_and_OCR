@@ -1,10 +1,11 @@
 import pyautogui
-from fun import move_to_click, my_print_to_file, foto, name_f
+import fun
 from time import sleep
+import my_color_text as my_ct
 
 
 def foto_danger():
-    kv_close = pyautogui.locateCenterOnScreen('img/kv/kv_close.png', confidence=0.9)
+    kv_close = fun.locCenterImg('img/kv/kv_close.png', confidence=0.9)
     x, y = kv_close
     x -= 585
     y -= 435
@@ -12,65 +13,68 @@ def foto_danger():
     x += 862
     y += 485
     x_r, y_r = x, y
-    name_foto = name_f() + ".png"
-    foto(('img/Cr/' + name_foto), (x_s, y_s, x_r, y_r))
+    name_foto = fun.date_and_time_in_name_file() + ".png"
+    fun.foto(('img/Cr/' + name_foto), (x_s, y_s, x_r, y_r))
     print('foto')
 
 
 def battle(q_call):
     print(f'{q_call} бой')
-    my_print_to_file('battle')
+    fun.my_print_to_file('battle')
 
-    kv_skip_battle = pyautogui.locateCenterOnScreen('img/kv/kv_skip_battle.png', confidence=0.85)
-    my_print_to_file(f'{kv_skip_battle} kv_skip_battle')
-    danger = pyautogui.locateCenterOnScreen('img/kv/kv_danger.png', confidence=0.9)
-    my_print_to_file(f'{danger} danger')
-    kv_close = pyautogui.locateCenterOnScreen('img/kv/kv_close.png', confidence=0.9)
-    my_print_to_file(f"{kv_close}, kv_close")
+    kv_skip_battle = fun.locCenterImg('img/kv/kv_skip_battle.png', confidence=0.85)
+    fun.my_print_to_file(f'{kv_skip_battle} kv_skip_battle')
+    danger = fun.locCenterImg('img/kv/kv_danger.png', confidence=0.9)
+    fun.my_print_to_file(f'{danger} danger')
+    kv_close = fun.locCenterImg('img/kv/kv_close.png', confidence=0.9)
+    fun.my_print_to_file(f"{kv_close}, kv_close")
     while not kv_skip_battle:
         sleep(1)
-        kv_skip_battle = pyautogui.locateCenterOnScreen('img/kv/kv_skip_battle.png', confidence=0.85)
-        my_print_to_file(f'{kv_skip_battle} kv_skip_battle цикл ожидания')
+        kv_skip_battle = fun.locCenterImg('img/kv/kv_skip_battle.png', confidence=0.85)
+        fun.my_print_to_file(f'{kv_skip_battle} kv_skip_battle цикл ожидания')
     it_kv = 0
     while not kv_close:
         it_kv += 1
-        if not danger and kv_skip_battle and it_kv >= 6:
-            move_to_click(kv_skip_battle, 0.5)
-            print(' пропуск боя')
+        if not danger and kv_skip_battle and it_kv >= 10:
+            fun.move_to_click(kv_skip_battle, 0.5)
+            # print(' пропуск боя')
         sleep(1)
-        kv_skip_battle = pyautogui.locateCenterOnScreen('img/kv/kv_skip_battle.png', confidence=0.85)
-        danger = pyautogui.locateCenterOnScreen('img/kv/kv_danger.png', confidence=0.9)
-        kv_close = pyautogui.locateCenterOnScreen('img/kv/kv_close.png', confidence=0.9)
+        kv_skip_battle = fun.locCenterImg('img/kv/kv_skip_battle.png', confidence=0.85)
+        danger = fun.locCenterImg('img/kv/kv_danger.png', confidence=0.9)
+        kv_close = fun.locCenterImg('img/kv/kv_close.png', confidence=0.9)
     if danger:
         print(" опасный")
-    kv_close = pyautogui.locateCenterOnScreen('img/kv/kv_close.png', confidence=0.9)
-    victory = pyautogui.locateCenterOnScreen('img/arena/victory.png', confidence=0.8)
-    defeat = pyautogui.locateCenterOnScreen('img/arena/defeat.png', confidence=0.8)
-    if victory:
-        result = "победа"
-        print(result)
-        if danger:
-            foto_danger()
-    elif defeat:
-        result = "поражение"
-        print(result)
+    kv_close = fun.locCenterImg('img/kv/kv_close.png', confidence=0.9)
+    if kv_close:
+        # print(kv_close, 'kv_close')
+        victory = fun.locCenterImg('img/kv/victory_battle_in_kv.png', confidence=0.95)
+        defeat = fun.locCenterImg('img/kv/defeat_battle_in_kv.png', confidence=0.95)
+        if victory:
+            result = "победа"
+            print(my_ct.tc_yellow(result))
+            if danger:
+                # print('победа над опасным')
+                foto_danger()
+        elif defeat:
+            result = "поражение"
+            print(my_ct.tc_red(result))
     # foto_danger()
-    move_to_click(kv_close, 0.3)
-    print("закрыть результат боя")
+    fun.move_to_click(kv_close, 0.3)
+    # print("закрыть результат боя")
 
 
 def kv():
-    my_print_to_file('kv_and_raid.kv')
-    kv_reload = pyautogui.locateCenterOnScreen('img/kv/kv_reload.png', confidence=0.9)
-    # my_print_to_file(f'kv_reload {kv_reload}')
-    my_print_to_file("нажать 'обновить'")
-    move_to_click(kv_reload, 1)
+    fun.my_print_to_file('kv_and_raid.kv')
+    kv_reload = fun.locCenterImg('img/kv/kv_reload.png', confidence=0.9)
+    # fun.my_print_to_file(f'kv_reload {kv_reload}')
+    fun.my_print_to_file("нажать 'обновить'")
+    fun.move_to_click(kv_reload, 1)
 
     q_attack = 0
-    kv_wait_attack = pyautogui.locateCenterOnScreen('img/kv/kv_wait_attack.png', confidence=0.9)
-    # my_print_to_file(f'kv_wait_attack {kv_wait_attack}')
-    kv_attak = pyautogui.locateCenterOnScreen('img/kv/kv_attak.png', confidence=0.9)
-    # my_print_to_file(f'kv_attak {kv_attak}')
+    kv_wait_attack = fun.locCenterImg('img/kv/kv_wait_attack.png', confidence=0.9)
+    # fun.my_print_to_file(f'kv_wait_attack {kv_wait_attack}')
+    kv_attak = fun.locCenterImg('img/kv/kv_attak.png', confidence=0.9)
+    # fun.my_print_to_file(f'kv_attak {kv_attak}')
     if not kv_attak and not kv_wait_attack:
         print('ждем начало кв')
     it_w_a = 0
@@ -80,22 +84,20 @@ def kv():
         if kv_wait_attack:
             it_w_a += 1
             if it_w_a == 1:
-                print("ждем возможность атаковать")
-                kv_reload = pyautogui.locateCenterOnScreen('img/kv/kv_reload.png', confidence=0.9)
-                move_to_click(kv_reload, 1)
+                # print("ждем возможность атаковать")
+                kv_reload = fun.locCenterImg('img/kv/kv_reload.png', confidence=0.9)
+                fun.move_to_click(kv_reload, 1)
         if kv_attak:
             it_w_a = 0
             q_attack += 1
-            move_to_click(kv_attak, 0)
+            fun.move_to_click(kv_attak, 0)
             battle(q_attack)
-        kv_wait_attack = pyautogui.locateCenterOnScreen('img/kv/kv_wait_attack.png', confidence=0.9)
-        kv_attak = pyautogui.locateCenterOnScreen('img/kv/kv_attak.png', confidence=0.9)
-
-
+        kv_wait_attack = fun.locCenterImg('img/kv/kv_wait_attack.png', confidence=0.9)
+        kv_attak = fun.locCenterImg('img/kv/kv_attak.png', confidence=0.9)
 
 
 def loot():
-    backpack = pyautogui.locateCenterOnScreen('img/kv/backpack.png', confidence=0.9)
+    backpack = fun.locCenterImg('img/kv/backpack.png', confidence=0.9)
     pyautogui.moveTo(backpack, duration=2)
 
     x, y = backpack
@@ -112,5 +114,5 @@ def loot():
     pos = x, y
     pyautogui.moveTo(pos, duration=2)
 
-    name_foto = name_f() + ".png"
-    foto(('img/Cr/' + name_foto), (x_s, y_s, x_r, y_r))
+    name_foto = fun.date_and_time_in_name_file() + ".png"
+    fun.foto(('img/Cr/' + name_foto), (x_s, y_s, x_r, y_r))

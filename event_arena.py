@@ -1,8 +1,8 @@
 import pyautogui
 from time import sleep
 from station_master import enemy_battle
-from fun import move_to_click, find_link_hall_of_glory, await_arena, locCenterImg
-from my_text_color import text_blue, text_cyan, text_red, text_green, text_yellow, text_magenta
+import fun
+from my_color_text import tc_blue, tc_cyan, tc_red, tc_green, tc_yellow, tc_magenta
 
 
 def foto(path_name, _region):
@@ -36,8 +36,8 @@ def hall_is_open():
 
 def create_img_arena_object():
     """Создаёт скрин arena_object из зала славы. Объект должен быть вверху списка """
-    pos_or_v = find_link_hall_of_glory()  # ориентир на зал славы
-    move_to_click(pos_or_v, 0.3)  # открыть зал славы
+    pos_or_v = fun.find_link_hall_of_glory()  # ориентир на зал славы
+    fun.move_to_click(pos_or_v, 0.3)  # открыть зал славы
     pyautogui.moveTo(pos_or_v[0] - 678, pos_or_v[1] + 144)
     hall_is_open()
     region = (pos_or_v[0] - 678, pos_or_v[1] + 142, 368, 80)
@@ -56,9 +56,9 @@ def create_img_arena_object():
 def kill():
     boy_in_arena = 0
     while boy_in_arena < 101:
-        pos_or_v = find_link_hall_of_glory()  # ориентир на зал славы
+        pos_or_v = fun.find_link_hall_of_glory()  # ориентир на зал славы
         # print(pos_or_v)
-        move_to_click(pos_or_v, 0.3)  # открыть зал славы
+        fun.move_to_click(pos_or_v, 0.3)  # открыть зал славы
         hall_is_open()
         # вычисление региона поиска
         x, y = pos_or_v
@@ -71,7 +71,7 @@ def kill():
         arena_object = pyautogui.locateCenterOnScreen("img/arena/arena_object.png", region=region,
                                                       confidence=0.89)
         pyautogui.moveTo(arena_object)
-        scroll_up = locCenterImg('img/arena/scroll_up.png', 0.9)
+        scroll_up = fun.locCenterImg('img/arena/scroll_up.png', 0.9)
         if arena_object is None:
             _it = 0
             x, y, sh, v = region
@@ -86,16 +86,16 @@ def kill():
             region = const_region
             # Если не найден раньше ищем со смещением списка в начало
             while scroll_up is not None and arena_object is None:
-                move_to_click(scroll_up, 0.01)
+                fun.move_to_click(scroll_up, 0.01)
                 # pyautogui.moveTo(174, 260)
-                scroll_up = locCenterImg('img/arena/scroll_up.png', 0.9)
-                await_arena(region)
+                scroll_up = fun.locCenterImg('img/arena/scroll_up.png', 0.9)
+                fun.await_arena(region)
                 arena_object = pyautogui.locateCenterOnScreen("img/arena/arena_object.png", region=region,
                                                               confidence=0.85)
             if arena_object is None:  # Если не найден раньше ищем со смещением списка в конец
-                scroll_down = locCenterImg('img/arena/scroll_down.png', 0.9)
-                move_to_click(scroll_down, 0.01)
-                await_arena(region)
+                scroll_down = fun.locCenterImg('img/arena/scroll_down.png', 0.9)
+                fun.move_to_click(scroll_down, 0.01)
+                fun.await_arena(region)
                 arena_object = pyautogui.locateCenterOnScreen("img/arena/arena_object.png", region=region,
                                                               confidence=0.85)
         boy_in_arena += 1
@@ -105,20 +105,20 @@ def kill():
         foto(name_file, region)
         attack_arena_object = pyautogui.locateCenterOnScreen('img/arena/attack.png', confidence=0.9, region=region)
         pyautogui.moveTo(attack_arena_object)
-        move_to_click(attack_arena_object, 0.5)
-        hero_vs_opponent_img = locCenterImg('img/arena/hero_vs_opponent.png', 0.9)
+        fun.move_to_click(attack_arena_object, 0.5)
+        hero_vs_opponent_img = fun.locCenterImg('img/arena/hero_vs_opponent.png', 0.9)
         while hero_vs_opponent_img is None:
             sleep(0.1)
-            hero_vs_opponent_img = locCenterImg('img/arena/hero_vs_opponent.png', 0.9)
-        move_to_click(hero_vs_opponent_img, 0.1)
+            hero_vs_opponent_img = fun.locCenterImg('img/arena/hero_vs_opponent.png', 0.9)
+        fun.move_to_click(hero_vs_opponent_img, 0.1)
         sleep(2)
         res = enemy_battle(0.5)
         if res == "победа":
-            result = text_yellow("победа")
+            result = tc_yellow("победа")
         else:
-            result = text_red("поражение")
+            result = tc_red("поражение")
         print(f"сражение окончено, {result}, новый..")
-        ver = find_link_hall_of_glory()
+        ver = fun.find_link_hall_of_glory()
 
 # create_img_arena_object()  # создание метки объекта атаки
 # kill()  # цикл атаки объекта

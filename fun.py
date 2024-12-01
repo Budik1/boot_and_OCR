@@ -1,15 +1,15 @@
 import pyautogui
 from time import sleep, time
 import datetime
-import my_text_color as my_c
+import my_color_text as my_c_t
 
 par_conf = 0.79
 oblast = (51, 707, 92, 111)
 log = 1
 
 
-def locCenterImg(name_img, confidence_=0.9):
-    pos_img = pyautogui.locateCenterOnScreen(name_img, confidence=confidence_)
+def locCenterImg(name_img, confidence=0.9):
+    pos_img = pyautogui.locateCenterOnScreen(name_img, confidence=confidence)
     return pos_img
 
 
@@ -42,7 +42,7 @@ def minutes_now():
     return minutes_now_
 
 
-def name_f():
+def date_and_time_in_name_file():
     now = datetime.datetime.now()
     date_time_now_f = (now.strftime('%Y-%m-%d %H-%M-%S'))
     return date_time_now_f
@@ -51,7 +51,7 @@ def name_f():
 def close_popup_window():
     my_print_to_file('fun.close_popup_window')
     # print('def "fun.close_popup_window"')
-    knob = locCenterImg('img/overall/knob.png',0.9)
+    knob = locCenterImg('img/overall/knob.png', 0.9)
     cancel = locCenterImg('img/overall/cancel.png', 0.9)
     if knob:
         move_to_click(knob, 1)
@@ -499,16 +499,16 @@ def selection_hero():
     hero_veles = locCenterImg('img/person/her_veles.png')
 
     if hero_gadya:
-        # print(my_c.text_yellow('Гадя'))
+        # print(my_c.tc_yellow('Гадя'))
         hero = 'Gady'
     elif hero_gavr:
-        # print(my_c.text_yellow('Гавр'))
+        # print(my_c.tc_yellow('Гавр'))
         hero = 'Gavr'
     elif hero_veles:
-        # print(my_c.text_yellow('Велес'))
+        # print(my_c.tc_yellow('Велес'))
         hero = 'Велес'
     else:
-        print(my_c.text_red("Невозможно опознать героя (("))
+        print(my_c_t.tc_red("Невозможно опознать героя (("))
         hero = None
 
     return hero
