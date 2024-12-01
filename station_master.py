@@ -4,7 +4,7 @@ from time import sleep
 import fun
 from fun import selection_hero, move_to_click, push_close_all_, vizit_to_station_master, get_areas_task_big, \
     my_print_to_file
-from create_img import get_screenshot_task
+from create_and_analiz_img import get_screenshot_task
 import my_color_text as myCt
 
 conf_ = 0.95
@@ -23,7 +23,8 @@ def enemy_battle(prolong_=2):
     my_print_to_file(' поиск battle_end, skip_battle, dog')
     battle_end = fun.locCenterImg('img/b_battle_end.png', confidence=par_conf)
     skip_battle = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
-    dog = fun.locCenterImg('img/dog.png', confidence=par_conf)
+    dog = fun.locCenterImg('img/dog_2.png', confidence=par_conf)
+    # print('dog', dog)
     it = 0
     while not battle_end:
         if dog:  # нажать "на собаку"

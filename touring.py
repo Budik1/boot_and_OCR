@@ -1,6 +1,6 @@
 import pyautogui
 from time import sleep, time
-from station_master import enemy_battle, vybor_zadaniya_na_puli, en_task_item
+import station_master
 import baza_dannyx as b_d
 import fun
 
@@ -126,7 +126,7 @@ def events_tunnel(st0, st2):
                 elif hero == 'Gady':
                     gady_raptor_q += 1
                     print(f'{gady_raptor_q} Detekt raptor')
-            enemy_battle(1)
+            station_master.enemy_battle(1)
         if post:
             fun.my_print_to_file(f'post = {post}')
             pyautogui.moveTo(post, duration=0.2)
@@ -236,10 +236,10 @@ def tasks_na_kievskoy():
     fun.my_print_to_file('touring.tasks_na_kievskoy')
     fun.push_close_all_()
     frunze_kiev()
-    vybor_zadaniya_na_puli()
+    station_master.vybor_zadaniya_na_puli()
     print('задания на Киевской выполнены')
     kiev_univer()
-    en_task_item(1)
+    station_master.en_task_item(1)
     print('энергия исчерпана')
     univer_frunze()
     # """Движение от Кузнецкого моста на Киевскую - выполнение заданий нач. станции - движение до Кузнецкого моста -
@@ -247,10 +247,10 @@ def tasks_na_kievskoy():
     # fun.my_print_to_file('touring.tasks_na_kievskoy')
     # fun.push_close_all_()
     # frunze_kiev()
-    # vybor_zadaniya_na_puli()
+    # station_master.vybor_zadaniya_na_puli()
     # print('задания на Киевской выполнены')
     # kiev_frunze()
-    # vybor_zadaniya_na_puli()
+    # station_master.vybor_zadaniya_na_puli()
     # print('энергия исчерпана')
 
 

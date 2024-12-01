@@ -51,7 +51,7 @@ def date_and_time_in_name_file():
 def close_popup_window():
     my_print_to_file('fun.close_popup_window')
     # print('def "fun.close_popup_window"')
-    knob = locCenterImg('img/overall/knob.png',0.9)
+    knob = locCenterImg('img/overall/knob.png', 0.9)
     cancel = locCenterImg('img/overall/cancel.png', 0.9)
     if knob:
         move_to_click(knob, 1)
