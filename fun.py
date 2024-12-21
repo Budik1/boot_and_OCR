@@ -208,6 +208,9 @@ def start_p_m():
         sleep(1)
 
     def geography():
+        # уменьшение масштаба
+        pyautogui.hotkey('Ctrl', '-')
+        pyautogui.hotkey('Ctrl', '-')
         # растягивание вверх
         pyautogui.moveTo(670, 86, duration=1, tween=pyautogui.easeInOutQuad)
         pyautogui.dragTo(670, 1, duration=1)
@@ -215,9 +218,7 @@ def start_p_m():
         # растягивание вниз
         pyautogui.moveTo(670, 763, duration=1, tween=pyautogui.easeInOutQuad)
         pyautogui.dragTo(670, 848, duration=1)
-        # уменьшение масштаба
-        pyautogui.hotkey('Ctrl', '-')
-        pyautogui.hotkey('Ctrl', '-')
+
         # смещение окна в лево на 382
         pyautogui.moveTo(682, 11, duration=1, tween=pyautogui.easeInOutQuad)
         pyautogui.dragTo(300, 11, duration=1)
@@ -497,6 +498,7 @@ def selection_hero():
     hero_gadya = locCenterImg('img/person/her_gadya.png')
     hero_gavr = locCenterImg('img/person/her_gavr.png')
     hero_veles = locCenterImg('img/person/her_veles.png')
+    hero_mara = locCenterImg('img/person/her_mara.png')
 
     if hero_gadya:
         # print(my_c.tc_yellow('Гадя'))
@@ -507,6 +509,9 @@ def selection_hero():
     elif hero_veles:
         # print(my_c.tc_yellow('Велес'))
         hero = 'Велес'
+    elif hero_mara:
+        # print(my_c.tc_yellow('Мар`яна'))
+        hero = 'Mara'
     else:
         print(my_c_t.tc_red("Невозможно опознать героя (("))
         hero = None

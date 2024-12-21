@@ -55,6 +55,7 @@ def create_img_arena_object():
 
 def kill():
     boy_in_arena = 0
+    vict_in_arena = 0
     while boy_in_arena < 101:
         pos_or_v = fun.find_link_hall_of_glory()  # ориентир на зал славы
         # print(pos_or_v)
@@ -114,10 +115,11 @@ def kill():
         sleep(2)
         res = enemy_battle(0.5)
         if res == "победа":
-            result = tc_yellow("победа")
+            vict_in_arena += 1
+            result = tc_yellow(F"победа,{vict_in_arena}")
         else:
             result = tc_red("поражение")
-        print(f"сражение окончено, {result}, новый..")
+        print(f"боёв {boy_in_arena}, {result}, следующий..")
         ver = fun.find_link_hall_of_glory()
 
 # create_img_arena_object()  # создание метки объекта атаки

@@ -19,8 +19,10 @@ st_prospekt = ['ст. Проспект мира', 'img/tonelli/k_Prospekt.png', 
 st_pushkin = ['ст. Пушкинская', 'img/tonelli/k_Pushkin.png', 'img/tonelli/s_Pushkin.png', 0, []]
 st_riga = ['ст. Рижская', 'img/tonelli/k_Rizgskaya.png', 'img/tonelli/s_Rizgskaya.png', 0, []]
 st_suxarev = ['ст. Сухаревская', 'img/tonelli/k_Suxarev.png', 'img/tonelli/s_Suxarev.png', 0, []]
-st_teatr = ['ст. Театральная', 'img/tonelli/k_Teatr.png', 'img/tonelli/s_Teatr.png', 0, []]
-st_tver = ['ст. Тверская', 'img/tonelli/k_Tver.png', 'img/tonelli/s_Tver.png', 0, []]
+st_teatr = ['ст. Театральная', 'img/tonelli/k_Teatr.png', 'img/tonelli/s_Teatr.png', 0,
+            ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
+st_tver = ['ст. Тверская', 'img/tonelli/k_Tver.png', 'img/tonelli/s_Tver.png', 0,
+           ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
 st_tretya = ['ст. Третьяковская', 'img/tonelli/k_Tretyakov.png', 'img/tonelli/s_Tretyakov.png', 'стрелка юг', [0]]
 st_turgenev = ['ст. Тургеневская', 'img/tonelli/k_Turgenev.png', 'img/tonelli/s_Turgenev.png', 0, [0]]
 st_chekhov = ['ст. Чеховская', 'img/tonelli/k_Chekhov.png', 'img/tonelli/s_Chekhov.png', 'стрелка север', [0]]
@@ -32,10 +34,6 @@ st_vernadskogo = ['ст. Пр-кт Вернадского', 'img/tonelli/k_Pr-kt
 
 st_kiev = ['ст. Киевская', 'img/tonelli/k_Kiev.png', 'img/tonelli/s_Kiev.png', 0,
            ['t2.png', 't3.png', 't3.png', 't4.png', 't4.png', 't5.png']]
-
-# st_frunze_zip = ['ст. Фрунзенская', 'img/tonelli/k_Frunze.png', 'img/tonelli/s_Frunze.png', 0,
-#              ['img/tasks/t2.png', 'img/tasks/t2.png', 'img/tasks/t3.png', 'img/tasks/t3.png', 'img/tasks/t7.png',
-#               'img/tasks/t7.png']]
 
 st_frunze = ['ст. Фрунзенская', 'img/tonelli/k_Frunze.png', 'img/tonelli/s_Frunze.png', 0,
              ['t2.png', 't2.png', 't3.png', 't3.png', 't7.png', 't7.png']]
@@ -150,3 +148,4 @@ pauk_yascher = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot,
 pauk_yascher2 = [
 
 ]
+task_list = ['t1.png', 't2.png', 't3.png', 't4.png', 't5.png', 't6.png', 't7.png']

@@ -53,8 +53,6 @@ def get_screenshot_task():
 # event_OCR.visualization_tascks_result(list_1_pul, list_1_xp, list_2_pul, list_2_xp, list_3_pul, list_3_xp)
 
 
-
-
 def lvl_img():
     pos = fun.find_link_klan()
     x, y = pos
@@ -66,6 +64,7 @@ def lvl_img():
     # pyautogui.moveTo((x_r, y_r), duration=1)
     fun.foto('img/test/lvl.png', (x_f, y_f, 55, 40))
     print("сделано")
+
 
 # опознание уровня
 # lvl_img()

@@ -17,6 +17,6 @@ def visualization_tascks_result(list_1_pul, list_1_xp, list_2_pul, list_2_xp, li
     print(f"{list_3_pul[0]} / {list_3_xp[0]} => {round(int(list_3_pul[0]) / int(list_3_xp[0]))}")
 
 def visualization_lvl_result(list_lvl):
-
+    rezult = list_lvl[0]
     print(f"{list_lvl}")
 

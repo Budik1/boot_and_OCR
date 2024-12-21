@@ -107,7 +107,7 @@ def move(pos):
         sleep(3)
 
 
-def data_station():
+def station_task_list():
     """ Получение списка заданий """
     it = 0
     n_in_list = 0
@@ -119,19 +119,21 @@ def data_station():
         else:
             n_in_list += 1
             it += 1
-    task_options = (b_d.list_of_stations[n_in_list][4])
-    return task_options
+    task_list = (b_d.list_of_stations[n_in_list][4])
+    return task_list
 
 
 def vybor_zadaniya_na_puli():
     global energy_availability, number_tasks  # , conf_
     conf_ = 0.95
-    task = data_station()
+    task = station_task_list()
     hero = fun.selection_hero()
     if hero == 'Gady':
         path = 'img/person/tasks_gady/'
     elif hero == 'Gavr':
         path = 'img/person/tasks_gavr/'
+    elif hero == 'Mara':
+        path = 'img/person/tasks_mara/'
     else:
         return
     region_1, region_2, region_3 = fun.get_areas_task_big()
@@ -181,7 +183,7 @@ def vybor_zadaniya_na_puli():
 def vybor_zadaniya_na_puli_S():
     global energy_availability, number_tasks, conf_
 
-    task = data_station()
+    task = station_task_list()
     hero = fun.selection_hero()
     if hero == 'Gady':
         pass
