@@ -410,8 +410,8 @@ ttk.Button(text="test гардероб", width=11, command=person.pereodevanie).
 ttk.Button(text="фото противника", width=16, command=create_img_arena_object).place(x=0, y=377)
 ttk.Button(text="атака противника", width=16, command=kill).place(x=170, y=377)
 
-ttk.Button(text="bulvar_frunze", width=11, command=bulvar_frunze).place(x=0, y=339)
-ttk.Button(text="frunze_bulvar", width=11, command=frunze_bulvar).place(x=218, y=339)
+ttk.Button(text="bulvar_frunze", width=11, command=bulvar_frunze).place(x=218, y=339)
+ttk.Button(text="frunze_bulvar", width=11, command=frunze_bulvar).place(x=0, y=339)
 
 root.mainloop()
 
