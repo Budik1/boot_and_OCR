@@ -35,25 +35,46 @@ gady_sum_arachne = 0
 gavr_sum_raptor = 0
 gady_sum_raptor = 0
 
+gavr_sum_gifts = 0
+gady_sum_gifts = 0
 
-def transform(gady_entity, gavr_entity):
-    gady_sum_rat, gady_sum_kiki, gady_sum_arachne, gady_sum_raptor, gady_number_of_gifts = gady_entity
-    gavr_sum_rat, gavr_sum_kiki, gavr_sum_arachne, gavr_sum_raptor, gavr_number_of_gifts = gavr_entity
 
-    gady_rat.set(gady_sum_rat)
-    gady_kiki.set(gady_sum_kiki)
-    gady_arachne.set(gady_sum_arachne)
-    gady_raptor.set(gady_sum_raptor)
+def transform():
+    global gady_sum_rat, gady_sum_kiki, gady_sum_arachne, gady_sum_raptor
+    global gavr_sum_rat, gavr_sum_kiki, gavr_sum_arachne, gavr_sum_raptor
+    global gavr_sum_gifts, gady_sum_gifts
 
-    gavr_rat.set(gavr_sum_rat)
-    gavr_kiki.set(gavr_sum_kiki)
-    gavr_arachne.set(gavr_sum_arachne)
-    gavr_raptor.set(gavr_sum_raptor)
+    gady_sum_rat += touring.gady_rat_q
+    gady_sum_kiki += touring.gady_kiki_q
+    gady_sum_arachne += touring.gady_arachne_q
+    gady_sum_raptor += touring.gady_raptor_q
+    gady_sum_gifts += touring.gady_number_of_gifts
+
+    gavr_sum_rat += touring.gavr_rat_q
+    gavr_sum_kiki += touring.gavr_kiki_q
+    gavr_sum_arachne += touring.gavr_arachne_q
+    gavr_sum_raptor += touring.gavr_raptor_q
+    gavr_sum_gifts += touring.gavr_number_of_gifts
+
+    gady_rat.set(str(gady_sum_rat))
+    gady_kiki.set(str(gady_sum_kiki))
+    gady_arachne.set(str(gady_sum_arachne))
+    gady_raptor.set(str(gady_sum_raptor))
+
+    gavr_rat.set(str(gavr_sum_rat))
+    gavr_kiki.set(str(gavr_sum_kiki))
+    gavr_arachne.set(str(gavr_sum_arachne))
+    gavr_raptor.set(str(gavr_sum_raptor))
+
+    touring.gady_rat_q, touring.gady_kiki_q, touring.gady_arachne_q, touring.gady_raptor_q = 0, 0, 0, 0
+    touring.gavr_rat_q, touring.gavr_kiki_q, touring.gavr_arachne_q, touring.gavr_raptor_q = 0, 0, 0, 0
+    touring.gavr_number_of_gifts, touring.gady_number_of_gifts = 0, 0
 
 
 def check_date(loaded_data):
     global gavr_sum_vip, gavr_sum_rat, gavr_sum_kiki, gavr_sum_arachne, gavr_sum_raptor
     global gady_sum_vip, gady_sum_rat, gady_sum_kiki, gady_sum_arachne, gady_sum_raptor
+    global gavr_sum_gifts, gady_sum_gifts
 
     date_ver = loaded_data['date']
     if date_ver == date_start:
@@ -74,6 +95,9 @@ def check_date(loaded_data):
         gavr_sum_raptor = loaded_data['gavr_raptor']
         gady_sum_raptor = loaded_data['gady_raptor']
 
+        gavr_sum_gifts = loaded_data['gavr_gifts']
+        gady_sum_gifts = loaded_data['gady_gifts']
+
         gavr_vip.set(gavr_sum_vip)
         gady_vip.set(gady_sum_vip)
         gavr_rat.set(gavr_sum_rat)
@@ -84,17 +108,28 @@ def check_date(loaded_data):
         gady_arachne.set(gady_sum_arachne)
         gavr_raptor.set(gavr_sum_raptor)
         gady_raptor.set(gady_sum_raptor)
+        gavr_gift.set(gavr_sum_gifts)
+        gady_gift.set(gady_sum_gifts)
 
     else:
         print(tc_cyan("даты не совпадают, смена суток"))
         gavr_vip.set(gavr_sum_vip)
         gady_vip.set(gady_sum_vip)
+        gavr_rat.set(gavr_sum_rat)
+        gady_rat.set(gady_sum_rat)
+        gavr_kiki.set(gavr_sum_kiki)
+        gady_kiki.set(gady_sum_kiki)
+        gavr_arachne.set(gavr_sum_arachne)
+        gady_arachne.set(gady_sum_arachne)
+        gavr_raptor.set(gavr_sum_raptor)
+        gady_raptor.set(gady_sum_raptor)
+        gavr_gift.set(gavr_sum_gifts)
+        gady_gift.set(gady_sum_gifts)
         save_to_file()
 
 
 def save_to_file():
     print(tc_green("запись состояния"))
-    # global date_start, gavr_sum_vip, gavr_sum_rat, gavr_sum_kiki, gavr_sum_arachne, gavr_sum_raptor
 
     data_to_save = {
         'date': date_start,
@@ -102,7 +137,7 @@ def save_to_file():
         'gady_vip': gady_sum_vip,
 
         'gavr_krysy': gavr_sum_rat,
-        'gady_krysy': gavr_sum_rat,
+        'gady_krysy': gady_sum_rat,
 
         'gavr_kiki': gavr_sum_kiki,
         'gady_kiki': gady_sum_kiki,
@@ -112,6 +147,10 @@ def save_to_file():
 
         'gavr_raptor': gavr_sum_raptor,
         'gady_raptor': gady_sum_raptor,
+
+        'gavr_gifts': gavr_sum_gifts,
+        'gady_gifts': gady_sum_gifts,
+
     }
     # print(data_to_save)
     file1 = open('config.bin', 'wb')
@@ -152,24 +191,19 @@ def en_3():
 
 
 def dvizh_test():
-    rezult_gady, rezult_gavr = touring.frunze_kiev()
-    rezult_gady, rezult_gavr = touring.kiev_frunze()
-
-    transform(rezult_gady, rezult_gavr)
+    transform()
     save_to_file()
 
 
 def kiki():
-
     touring.za_kikimorami()
     # transform()
     save_to_file()
 
 
 def arachne_and_raptor():
-    rezult_gady, rezult_gavr = touring.pauk_yascher()
-
-    transform(rezult_gady, rezult_gavr)
+    touring.pauk_yascher()
+    transform()
     save_to_file()
 
 
@@ -186,7 +220,6 @@ def tent_inspection():
             fun.move_friends_list_left()
             vip_q += revision_of_tents.tent_raid()
             print(f'{vip_q} / {it}')
-            # gavr_vip.set(gavr_sum_vip)
         revision_of_tents.end_raid()
         return vip_q
 
@@ -218,7 +251,7 @@ def kiev_frunze():
         touring.kiev_frunze()
     if hero == "Gavr":
         touring.kiev_frunze()
-    # transform()
+    transform()
     save_to_file()
 
 
@@ -230,55 +263,55 @@ def most_frunze():
 
 def frunze_most():
     touring.frunze_most()
-    # transform()
+    transform()
     save_to_file()
 
 
 def bulvar_frunze():
     touring.bulvar_frunze()
-    # transform()
+    transform()
     save_to_file()
 
 
 def frunze_bulvar():
     touring.frunze_bulvar()
-    # transform()
+    transform()
     save_to_file()
 
 
 def most_riga():
     touring.most_riga()
-    # transform()
+    transform()
     save_to_file()
 
 
 def riga_most():
     touring.riga_most()
-    # transform()
+    transform()
     save_to_file()
 
 
 def frunze_riga():
     touring.frunze_riga()
-    # transform()
+    transform()
     save_to_file()
 
 
 def riga_frunze():
     touring.riga_frunze()
-    # transform()
+    transform()
     save_to_file()
 
 
 def tasks_na_kievskoy():
     touring.tasks_na_kievskoy()
-    # transform()
+    transform()
     save_to_file()
 
 
 def sbor_podarkov():
     touring.sbor_podarkov()
-    # transform()
+    transform()
     save_to_file()
 
 
@@ -303,6 +336,9 @@ gady_arachne = StringVar()
 gavr_raptor = StringVar()
 gady_raptor = StringVar()
 
+gavr_gift = StringVar()
+gady_gift = StringVar()
+
 read_from_file()
 
 line0 = 0
@@ -311,26 +347,31 @@ line2 = 64
 line3 = 96
 line4 = 128
 line5 = 160
+line6 = 192 + 22
+line7 = 224 + 22
+line8 = 224 + 32 + 22
 
 # шаг 31
+# line0
 ttk.Button(text=" Start ", width=13, command=fun.start_p_m).place(x=190, y=line0)
 # ttk.Button(text=" сбор бонуса ", width=13, command=fun.bonus, state="disabled").place(x=0, y=line1)
 # ttk.Label(text=status_bonus, background="#FFCDD2", foreground="#B71C1C", padding=4).place(x=130, y=line1)
 # ttk.Button(text="  сбор подарков  ", width=13, command=fun.station_gifts, state="disabled").place(x=0, y=line2)
-#
-ttk.Button(text=" обход VIP ", width=13, command=tent_inspection).place(x=0, y=line1)
-ttk.Label(textvariable=gavr_vip).place(x=130, y=line1)
-ttk.Label(text='|').place(x=150, y=line1)
-ttk.Label(textvariable=gady_vip).place(x=160, y=line1)
-#
-#
 ttk.Button(text="кикиморы", width=13, command=kiki).place(x=0, y=line0)
 ttk.Label(textvariable=gavr_kiki).place(x=130, y=line0)
 ttk.Label(text='|').place(x=150, y=line0)
 ttk.Label(textvariable=gady_kiki).place(x=160, y=line0)
-#
+# line1
+ttk.Button(text=" обход VIP ", width=13, command=tent_inspection).place(x=0, y=line1)
+ttk.Label(textvariable=gavr_vip).place(x=130, y=line1)
+ttk.Label(text='|').place(x=150, y=line1)
+ttk.Label(textvariable=gady_vip).place(x=160, y=line1)
+ttk.Button(text="тест пробежка", width=13, command=dvizh_test).place(x=190, y=line1)
+# line2
 ttk.Button(text="Паук + Ящер", width=13, command=arachne_and_raptor).place(x=0, y=line2)
-
+ttk.Label(textvariable=gavr_rat).place(x=230, y=line2)
+ttk.Label(textvariable=gady_rat).place(x=280, y=line2)
+# line3
 ttk.Label(textvariable=gavr_arachne).place(x=0, y=line3)
 ttk.Label(text='|').place(x=20, y=line3)
 ttk.Label(textvariable=gavr_raptor).place(x=30, y=line3)
@@ -339,15 +380,10 @@ ttk.Label(textvariable=gady_arachne).place(x=65, y=line3)
 ttk.Label(text='|').place(x=85, y=line3)
 ttk.Label(textvariable=gady_raptor).place(x=95, y=line3)
 #
+ttk.Label(textvariable=gavr_gift).place(x=230, y=line6)
+ttk.Label(textvariable=gady_gift).place(x=280, y=line6)
 #
-#
-
-# тест пробежка
-ttk.Button(text="тест пробежка", width=13, command=dvizh_test).place(x=190, y=line1)
-ttk.Label(textvariable=gavr_rat).place(x=230, y=line2)
-ttk.Label(textvariable=gady_rat).place(x=280, y=line2)
-
-ttk.Button(text="обход всех станций", width=16, command=sbor_podarkov).place(x=153, y=246)
+ttk.Button(text="обход всех станций", width=16, command=sbor_podarkov).place(x=153, y=line7)
 # блок выбора заданий
 imagePul = ImageTk.PhotoImage(file="img/overall/pulya.png")
 ttk.Button(root, image=imagePul, command=station_master.vybor_zadaniya_na_puli).place(x=60, y=145)

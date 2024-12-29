@@ -1,8 +1,9 @@
 .idea
 .venv
-study_open_file_end_edit.py
-test.py
-план.txt
 img/test
 /img/Cr/
 /log/
+study_open_file_end_edit.py
+test.py
+план.txt
+config.bin

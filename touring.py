@@ -15,25 +15,29 @@ def event_gifts():
     """Поиск подарков на станции. Возвращает его позицию"""
     fun.my_print_to_file('touring.event_gifts')
     sleep(1)
-    pos_gift = pyautogui.locateCenterOnScreen('img/tonelli/gift.png', confidence=0.75)
+    pos_gift = fun.locCenterImg('img/tonelli/gift.png', confidence=0.75)
+    if not pos_gift:
+        pos_gift_komun = fun.locCenterImg('img/tonelli/gift2.png', confidence=0.75)
+        pos_gift = pos_gift_komun
     fun.my_print_to_file(f'pos_gift = {pos_gift}')
     if pos_gift:
         x, y = pos_gift
-        pyautogui.moveTo(x, y, duration=0.5, tween=pyautogui.easeInOutQuad)
-        pyautogui.click(x, y)
+        pyautogui.moveTo(pos_gift, duration=0.5, tween=pyautogui.easeInOutQuad)
+        pyautogui.click(pos_gift)
         sleep(1 * 2)
-        close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
+        close = pyautogui.locateCenterOnScreen('img/overall/close.png', confidence=0.9)
         # если тормозит отрисовка, ожидает появление кнопки "закрыть"
         it = 0
         while not close:
             it += 1
             sleep(1)
-            close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
+            close = pyautogui.locateCenterOnScreen('img/overall/close.png', confidence=0.9)
             print(it, 'поиск закрыть в подарках')
         # print(close)
         pyautogui.moveTo(close, duration=1, tween=pyautogui.easeInOutQuad)
         pyautogui.click(close)
         sleep(1)
+
     return pos_gift
 
 
@@ -44,13 +48,13 @@ def to_map():
     turgenev_st = pyautogui.locateCenterOnScreen(b_d.st_turgenev[2], confidence=0.85)
     fun.my_print_to_file(f'turgenev_st = {turgenev_st}')
     if turgenev_st:
-        pos_or1 = pyautogui.locateCenterOnScreen('img/overall/klan.png', confidence=0.85)
+        pos_or1 = fun.find_link_klan()
         x1, y1 = pos_or1
         x1, y1 = x1 + 205, y1 + 205
         pos_or1 = x1, y1
         pyautogui.moveTo(pos_or1, duration=0.2)
     else:
-        pos_or1 = pyautogui.locateCenterOnScreen('img/overall/klan.png', confidence=0.85)
+        pos_or1 = fun.find_link_klan()
         x1, y1 = pos_or1
         x1, y1 = x1 + 270, y1 + 180
         #
@@ -60,7 +64,7 @@ def to_map():
     pyautogui.click(pos_or1)
     sleep(1)
     # Убрать курсор с поля карты, чтобы ничего не перекрыл
-    station_exit = pyautogui.locateCenterOnScreen('img/tonelli/station_exit.png', confidence=0.8)
+    station_exit = fun.locCenterImg('img/tonelli/station_exit.png', confidence=0.8)
     pyautogui.moveTo(station_exit, duration=0.2)
 
 
@@ -211,6 +215,7 @@ def travel(track: list):
     for it in range(len(track)):
         k = it % len(track)
         # print(k, track[k])
+
         traffic_on_the_map(track[k])
 
 
@@ -431,7 +436,9 @@ def za_kikimorami():
 
     start_time = time()
     fun.push_close_all_()
+
     travel(b_d.frunze_kikimory)
+
     print('на сегодня кикиморы выбиты')
     finish_time = float(time() - start_time)  # общее количество секунд
     minutes = int(finish_time // 60)  # количество минут

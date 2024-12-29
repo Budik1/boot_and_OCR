@@ -125,6 +125,23 @@ def defeat_in_arena():
     print('отработал')
 
 
+def gift_img():
+    pos = fun.find_link_klan()
+    x, y = pos
+    x += 118 # 148
+    y += 350 # 300
+    pyautogui.moveTo(x,y)
+    x_v = x
+    y_v = y
+    x_v += 28
+    pyautogui.moveTo(x_v, y)
+    y_v += 40
+    # pyautogui.moveTo(x_v, y_v)
+    fun.foto('img/test/gift2.png', (x, y, 28, 25))
+    print("сделано")
+
+
+gift_img()
 # defeat_in_arena()
 # victory_in_arena()
 # detecting()
