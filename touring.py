@@ -219,17 +219,15 @@ def travel(track: list):
         traffic_on_the_map(track[k])
 
 
-def test():
+def test_run():
     """
     Тест передвижения между станциями
     :return: количество встреченных крыс
     """
     fun.my_print_to_file('touring.test')
-    global gavr_rat_q
     fun.push_close_all_()
-    travel(b_d.test_running2)
+    travel(b_d.test_running3)
     print("тест успешно выполнен")
-    return gavr_rat_q
 
 
 def tasks_na_kievskoy():
@@ -458,7 +456,7 @@ def pauk_yascher():
 
 def sbor_podarkov():
     """Обход всех станций. При смене станции прописки список содержащий маршрут надо переписывать вручную."""
-    fun.my_print_to_file('touring.sbor_podarkov')
+    fun.my_print_to_file('touring.collecting_gifts_at_stations')
     fun.push_close_all_()
     # travel(b_d.bypass)
     for it in range(len(b_d.bypass)):
