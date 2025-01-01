@@ -4,12 +4,6 @@ import station_master
 import baza_dannyx as b_d
 import fun
 
-gavr_gifts_q, gady_gifts_q = 0, 0
-gavr_kiki_q, gady_kiki_q = 0, 0
-gavr_rat_q, gady_rat_q = 0, 0
-gavr_arachne_q, gady_arachne_q = 0, 0
-gavr_raptor_q, gady_raptor_q = 0, 0
-
 
 def event_gifts():
     """Поиск подарков на станции. Возвращает его позицию"""
@@ -75,10 +69,7 @@ def events_tunnel(st0, st2):
     :param st2: имя файла ID станции
     """
     fun.my_print_to_file('touring.events_tunnel')
-    global gavr_gifts_q, gady_gifts_q
-    global gavr_kiki_q, gavr_rat_q, gavr_raptor_q, gavr_arachne_q
-    global gady_kiki_q, gady_rat_q, gady_raptor_q, gady_arachne_q
-
+    display_element = '***'
     hero = fun.selection_hero()
 
     sleep(1)
@@ -104,32 +95,61 @@ def events_tunnel(st0, st2):
             fun.my_print_to_file(f'kiki = {kiki}')
             if krysa:
                 if hero == 'Gavr':
-                    gavr_rat_q += 1
-                    print(f'{gavr_rat_q} Detekt krysa')
+                    b_d.gavr_rat_q += 1
+                    display_element = b_d.gavr_rat_q
+                    # print(f'{b_d.gavr_rat_q} Detekt krysa')
                 elif hero == 'Gady':
-                    gady_rat_q += 1
-                    print(f'{gady_rat_q} Detekt krysa')
+                    b_d.gady_rat_q += 1
+                    display_element = b_d.gady_rat_q
+                    # print(f'{b_d.gady_rat_q} Detekt krysa')
+                elif hero == 'Mara':
+                    b_d.mara_rat_q += 1
+                    display_element = b_d.mara_rat_q
+                    # print(f'{b_d.mara_rat_q} Detekt krysa')
+                elif hero == 'Велес':
+                    b_d.veles_rat_q += 1
+                    display_element = b_d.veles_rat_q
+                    # print(f'{b_d.veles_rat_q} Detekt krysa')
+                print(f'{display_element} Detekt krysa')
             if kiki:
                 if hero == 'Gavr':
-                    gavr_kiki_q += 1
-                    print(f'{gavr_kiki_q} Detekt Kikimora')
+                    b_d.gavr_kiki_q += 1
+                    print(f'{b_d.gavr_kiki_q} Detekt Kikimora')
                 elif hero == 'Gady':
-                    gady_kiki_q += 1
-                    print(f'{gady_kiki_q} Detekt Kikimora')
+                    b_d.gady_kiki_q += 1
+                    print(f'{b_d.gady_kiki_q} Detekt Kikimora')
+                elif hero == 'Mara':
+                    b_d.mara_kiki_q += 1
+                    print(f'{b_d.mara_kiki_q} Detekt Kikimora')
+                elif hero == 'Велес':
+                    b_d.veles_kiki_q += 1
+                    print(f'{b_d.veles_kiki_q} Detekt Kikimora')
             if arachne:
                 if hero == 'Gavr':
-                    gavr_arachne_q += 1
-                    print(f'{gavr_arachne_q} Detekt arachne')
+                    b_d.gavr_arachne_q += 1
+                    print(f'{b_d.gavr_arachne_q} Detekt arachne')
                 elif hero == 'Gady':
-                    gady_arachne_q += 1
-                    print(f'{gady_arachne_q} Detekt arachne')
+                    b_d.gady_arachne_q += 1
+                    print(f'{b_d.gady_arachne_q} Detekt arachne')
+                elif hero == 'Mara':
+                    b_d.mara_arachne_q += 1
+                    print(f'{b_d.mara_arachne_q} Detekt arachne')
+                elif hero == 'Велес':
+                    b_d.veles_arachne_q += 1
+                    print(f'{b_d.veles_arachne_q} Detekt arachne')
             if raptor:
                 if hero == 'Gavr':
-                    gavr_raptor_q += 1
-                    print(f'{gavr_raptor_q} Detekt raptor')
+                    b_d.gavr_raptor_q += 1
+                    print(f'{b_d.gavr_raptor_q} Detekt raptor')
                 elif hero == 'Gady':
-                    gady_raptor_q += 1
-                    print(f'{gady_raptor_q} Detekt raptor')
+                    b_d.gady_raptor_q += 1
+                    print(f'{b_d.gady_raptor_q} Detekt raptor')
+                elif hero == 'Mara':
+                    b_d.mara_raptor_q += 1
+                    print(f'{b_d.mara_raptor_q} Detekt raptor')
+                elif hero == 'Велес':
+                    b_d.veles_raptor_q += 1
+                    print(f'{b_d.veles_raptor_q} Detekt raptor')
             station_master.enemy_battle(1)
         if post:
             fun.my_print_to_file(f'post = {post}')
@@ -154,16 +174,21 @@ def events_tunnel(st0, st2):
     fun.my_print_to_file(f'pos_gift = {pos_gift}')
     if pos_gift:
         if hero == 'Gavr':
-            gavr_gifts_q += 1
-            if gavr_gifts_q:
-                print(st0, ' подарков ', gavr_gifts_q)
+            b_d.gavr_gifts_q += 1
+            if b_d.gavr_gifts_q:
+                print(st0, ' подарков ', b_d.gavr_gifts_q)
         elif hero == 'Gady':
-            gady_gifts_q += 1
-            if gady_gifts_q:
-                print(st0, ' подарков ', gady_gifts_q)
-    gavr_entity = gavr_rat_q, gavr_kiki_q, gavr_arachne_q, gavr_raptor_q, gavr_gifts_q
-    gady_entity = gady_rat_q, gady_kiki_q, gady_arachne_q, gady_raptor_q, gady_gifts_q
-    return gady_entity, gavr_entity
+            b_d.gady_gifts_q += 1
+            if b_d.gady_gifts_q:
+                print(st0, ' подарков ', b_d.gady_gifts_q)
+        elif hero == 'Mara':
+            b_d.mara_gifts_q += 1
+            if b_d.mara_gifts_q:
+                print(st0, ' подарков ', b_d.mara_gifts_q)
+        elif hero == 'Велес':
+            b_d.veles_gifts_q += 1
+            if b_d.veles_gifts_q:
+                print(st0, ' подарков ', b_d.veles_gifts_q)
 
 
 # принимает имя файла поиска, выдаёт Point(x, y), параметр confidence
@@ -224,10 +249,17 @@ def test_run():
     Тест передвижения между станциями
     :return: количество встреченных крыс
     """
-    fun.my_print_to_file('touring.test')
-    fun.push_close_all_()
-    travel(b_d.test_running3)
-    print("тест успешно выполнен")
+    hero = fun.selection_hero()
+    if hero == 'Mara':
+        fun.my_print_to_file('touring.test')
+        fun.push_close_all_()
+        travel(b_d.test_running_mara)
+        print("тест успешно выполнен")
+    else:
+        fun.my_print_to_file('touring.test')
+        fun.push_close_all_()
+        travel(b_d.test_running3)
+        print("тест успешно выполнен")
 
 
 def tasks_na_kievskoy():
@@ -454,13 +486,9 @@ def pauk_yascher():
     print('Потрачено время', minutes, 'минут', seconds, 'сек.')
 
 
-def sbor_podarkov():
+def sbor_podarkov(bypass_hero):
     """Обход всех станций. При смене станции прописки список содержащий маршрут надо переписывать вручную."""
     fun.my_print_to_file('touring.collecting_gifts_at_stations')
-    fun.push_close_all_()
-    # travel(b_d.bypass)
-    for it in range(len(b_d.bypass)):
-        k = it % len(b_d.bypass)
-        # print(k, b_d.bypass[k])
-        traffic_on_the_map(b_d.bypass[k])
-    print("все подарки под ёлками собраны")
+    for it in range(len(bypass_hero)):
+        k = it % len(bypass_hero)
+        traffic_on_the_map(bypass_hero[k])

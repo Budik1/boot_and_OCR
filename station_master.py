@@ -126,6 +126,7 @@ def station_task_list():
 def vybor_zadaniya_na_puli():
     global energy_availability, number_tasks  # , conf_
     conf_ = 0.95
+    fun.push_close_all_()
     task = station_task_list()
     hero = fun.selection_hero()
     if hero == 'Gady':
@@ -134,6 +135,8 @@ def vybor_zadaniya_na_puli():
         path = 'img/person/tasks_gavr/'
     elif hero == 'Mara':
         path = 'img/person/tasks_mara/'
+    elif hero == 'Велес':
+        path = 'img/person/tasks_veles/'
     else:
         return
     region_1, region_2, region_3 = fun.get_areas_task_big()
