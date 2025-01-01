@@ -4,7 +4,7 @@ import station_master
 import baza_dannyx as b_d
 import fun
 
-gavr_number_of_gifts, gady_number_of_gifts = 0, 0
+gavr_gifts_q, gady_gifts_q = 0, 0
 gavr_kiki_q, gady_kiki_q = 0, 0
 gavr_rat_q, gady_rat_q = 0, 0
 gavr_arachne_q, gady_arachne_q = 0, 0
@@ -25,13 +25,13 @@ def event_gifts():
         pyautogui.moveTo(pos_gift, duration=0.5, tween=pyautogui.easeInOutQuad)
         pyautogui.click(pos_gift)
         sleep(1 * 2)
-        close = pyautogui.locateCenterOnScreen('img/overall/close.png', confidence=0.9)
+        close = fun.locCenterImg('img/overall/close.png', confidence=0.9)
         # если тормозит отрисовка, ожидает появление кнопки "закрыть"
         it = 0
         while not close:
             it += 1
             sleep(1)
-            close = pyautogui.locateCenterOnScreen('img/overall/close.png', confidence=0.9)
+            close = fun.locCenterImg('img/overall/close.png', confidence=0.9)
             print(it, 'поиск закрыть в подарках')
         # print(close)
         pyautogui.moveTo(close, duration=1, tween=pyautogui.easeInOutQuad)
@@ -45,7 +45,7 @@ def to_map():
     """Из окна станции открывает карту. На Тургеневской выход смещен"""
     fun.my_print_to_file('touring.to_map')
     sleep(1)
-    turgenev_st = pyautogui.locateCenterOnScreen(b_d.st_turgenev[2], confidence=0.85)
+    turgenev_st = fun.locCenterImg(b_d.st_turgenev[2], confidence=0.85)
     fun.my_print_to_file(f'turgenev_st = {turgenev_st}')
     if turgenev_st:
         pos_or1 = fun.find_link_klan()
@@ -75,32 +75,32 @@ def events_tunnel(st0, st2):
     :param st2: имя файла ID станции
     """
     fun.my_print_to_file('touring.events_tunnel')
-    global gavr_number_of_gifts, gady_number_of_gifts
+    global gavr_gifts_q, gady_gifts_q
     global gavr_kiki_q, gavr_rat_q, gavr_raptor_q, gavr_arachne_q
     global gady_kiki_q, gady_rat_q, gady_raptor_q, gady_arachne_q
 
     hero = fun.selection_hero()
 
     sleep(1)
-    id_st = pyautogui.locateCenterOnScreen(st2, confidence=0.85)
+    id_st = fun.locCenterImg(st2, confidence=0.85)
     fun.my_print_to_file(f'id_st = {id_st}')
-    info = pyautogui.locateCenterOnScreen('img/info.png', confidence=0.8)
+    info = fun.locCenterImg('img/info.png', confidence=0.8)
     fun.my_print_to_file(f'info = {info}')
     while not id_st:
         x, y = info
         y += 350
         pyautogui.moveTo(x, y)
-        post = pyautogui.locateCenterOnScreen('img/tonelli/post.png', confidence=0.8)
-        skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=0.79)
+        post = fun.locCenterImg('img/tonelli/post.png', confidence=0.8)
+        skip_battle = fun.locCenterImg('img/skip_battle.png', confidence=0.79)
         fun.my_print_to_file(f'skip_battle = {skip_battle}')
         if skip_battle:
-            raptor = pyautogui.locateCenterOnScreen('img/tonelli/raptor.png', confidence=0.85)
+            raptor = fun.locCenterImg('img/tonelli/raptor.png', confidence=0.85)
             fun.my_print_to_file(f'raptor = {raptor}')
-            arachne = pyautogui.locateCenterOnScreen('img/tonelli/arachne.png', confidence=0.85)
+            arachne = fun.locCenterImg('img/tonelli/arachne.png', confidence=0.85)
             fun.my_print_to_file(f'arachne = {arachne}')
-            krysa = pyautogui.locateCenterOnScreen('img/tonelli/krysa.png', confidence=0.85)
+            krysa = fun.locCenterImg('img/tonelli/krysa.png', confidence=0.85)
             fun.my_print_to_file(f'krysa = {krysa}')
-            kiki = pyautogui.locateCenterOnScreen('img/tonelli/kikimora.png', confidence=0.85)
+            kiki = fun.locCenterImg('img/tonelli/kikimora.png', confidence=0.85)
             fun.my_print_to_file(f'kiki = {kiki}')
             if krysa:
                 if hero == 'Gavr':
@@ -134,8 +134,8 @@ def events_tunnel(st0, st2):
         if post:
             fun.my_print_to_file(f'post = {post}')
             pyautogui.moveTo(post, duration=0.2)
-            attack = pyautogui.locateCenterOnScreen('img/tonelli/attack.png', confidence=0.85)
-            entry = pyautogui.locateCenterOnScreen('img/tonelli/entry_station.png', confidence=0.8)
+            attack = fun.locCenterImg('img/tonelli/attack.png', confidence=0.85)
+            entry = fun.locCenterImg('img/tonelli/entry_station.png', confidence=0.8)
             if entry:
                 fun.my_print_to_file(f'entry = {entry}')
                 fun.move_to_click(entry, 0.3)
@@ -144,7 +144,7 @@ def events_tunnel(st0, st2):
                 fun.my_print_to_file(f'attack = {attack}')
                 fun.move_to_click(attack, 0.3)
                 sleep(1)
-        id_st = pyautogui.locateCenterOnScreen(st2, confidence=0.85)
+        id_st = fun.locCenterImg(st2, confidence=0.85)
         fun.my_print_to_file(f'id_st = {id_st}')
     print(st0)  # название станции
     fun.my_print_to_file(st0)
@@ -154,27 +154,27 @@ def events_tunnel(st0, st2):
     fun.my_print_to_file(f'pos_gift = {pos_gift}')
     if pos_gift:
         if hero == 'Gavr':
-            gavr_number_of_gifts += 1
-            if gavr_number_of_gifts:
-                print(st0, ' подарков ', gavr_number_of_gifts)
+            gavr_gifts_q += 1
+            if gavr_gifts_q:
+                print(st0, ' подарков ', gavr_gifts_q)
         elif hero == 'Gady':
-            gady_number_of_gifts += 1
-            if gady_number_of_gifts:
-                print(st0, ' подарков ', gady_number_of_gifts)
-    gavr_entity = gavr_rat_q, gavr_kiki_q, gavr_arachne_q, gavr_raptor_q, gavr_number_of_gifts
-    gady_entity = gady_rat_q, gady_kiki_q, gady_arachne_q, gady_raptor_q, gady_number_of_gifts
+            gady_gifts_q += 1
+            if gady_gifts_q:
+                print(st0, ' подарков ', gady_gifts_q)
+    gavr_entity = gavr_rat_q, gavr_kiki_q, gavr_arachne_q, gavr_raptor_q, gavr_gifts_q
+    gady_entity = gady_rat_q, gady_kiki_q, gady_arachne_q, gady_raptor_q, gady_gifts_q
     return gady_entity, gavr_entity
 
 
 # принимает имя файла поиска, выдаёт Point(x, y), параметр confidence
-def poisk(chto_ishchem, param_confidence=0.99):
+def poisk(search_object, param_confidence=0.99):
     fun.my_print_to_file('touring.poisk')
     sleep(1)
-    pos_search = pyautogui.locateCenterOnScreen(chto_ishchem, confidence=param_confidence)
+    pos_search = fun.locCenterImg(search_object, confidence=param_confidence)
     while pos_search is None:
         param_confidence -= 0.01
         # print('в поиске станции confidence=', param_confidence)
-        pos_search = pyautogui.locateCenterOnScreen(chto_ishchem, confidence=param_confidence)
+        pos_search = fun.locCenterImg(search_object, confidence=param_confidence)
         # print(pos_search)
     return pos_search, param_confidence
 
@@ -187,15 +187,15 @@ def traffic_on_the_map(stan):
     sleep(1 * 2)
     ev_map = stan[3]
     fun.my_print_to_file(f'ev_map = {ev_map}')
-    pos_stan = pyautogui.locateCenterOnScreen(stan[1], confidence=0.84)
+    pos_stan = fun.locCenterImg(stan[1], confidence=0.84)
     fun.my_print_to_file(f'pos_stan = {pos_stan}, stan[1] = {stan[1]}')
     if ev_map == 'стрелка север' and pos_stan is None:
-        pos_click = pyautogui.locateCenterOnScreen('img/tonelli/mark_sever.png', confidence=0.85)
+        pos_click = fun.locCenterImg('img/tonelli/mark_sever.png', confidence=0.85)
         fun.my_print_to_file(f'pos_click = {pos_click}, нажал на стрелку "север"')
         fun.move_to_click(pos_click, 0.3)
         sleep(1)
     elif ev_map == 'стрелка юг' and pos_stan is None:
-        pos_click = pyautogui.locateCenterOnScreen('img/tonelli/mark_yug.png', confidence=0.85)
+        pos_click = fun.locCenterImg('img/tonelli/mark_yug.png', confidence=0.85)
         fun.my_print_to_file(f'pos_click = {pos_click}, нажал на стрелку "юг"')
         fun.move_to_click(pos_click, 0.3)
         sleep(1)
@@ -219,17 +219,15 @@ def travel(track: list):
         traffic_on_the_map(track[k])
 
 
-def test():
+def test_run():
     """
     Тест передвижения между станциями
     :return: количество встреченных крыс
     """
     fun.my_print_to_file('touring.test')
-    global gavr_rat_q
     fun.push_close_all_()
-    travel(b_d.test_running2)
+    travel(b_d.test_running3)
     print("тест успешно выполнен")
-    return gavr_rat_q
 
 
 def tasks_na_kievskoy():
@@ -354,9 +352,6 @@ def most_frunze():
     print('Потрачено время', minutes, 'минут', seconds, 'сек.')
 
 
-# движение от
-
-
 def most_kiev():
     """Маршрут Кузнецкий мост - Киевская"""
     fun.my_print_to_file('touring.most_kiev')
@@ -461,7 +456,7 @@ def pauk_yascher():
 
 def sbor_podarkov():
     """Обход всех станций. При смене станции прописки список содержащий маршрут надо переписывать вручную."""
-    fun.my_print_to_file('touring.sbor_podarkov')
+    fun.my_print_to_file('touring.collecting_gifts_at_stations')
     fun.push_close_all_()
     # travel(b_d.bypass)
     for it in range(len(b_d.bypass)):
@@ -469,5 +464,3 @@ def sbor_podarkov():
         # print(k, b_d.bypass[k])
         traffic_on_the_map(b_d.bypass[k])
     print("все подарки под ёлками собраны")
-
-# 353

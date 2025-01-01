@@ -1,5 +1,4 @@
 import pyautogui
-from fun import find_link_klan
 import fun
 from time import sleep
 

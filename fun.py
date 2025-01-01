@@ -24,7 +24,7 @@ def my_print_to_file(text):
 
 def date_utc_now():
     now = datetime.datetime.utcnow()
-    date_utc = (now.strftime('%Y-%m-%d'))
+    date_utc = (now.strftime('%Y-%m-%d'))  # год-месяц-день
     return date_utc
 
 

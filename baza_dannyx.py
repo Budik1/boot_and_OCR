@@ -129,6 +129,7 @@ test_running = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot, st_p
 test_running1 = [st_pushkin, st_chekhov, st_bulvar, st_chekhov, st_pushkin, st_most]
 
 test_running2 = [st_pushkin, st_most]
+test_running3 = [st_communist, st_univer, st_vernadskogo, st_univer, st_communist, st_frunze]
 
 pauk_yascher = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot,
 
