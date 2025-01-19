@@ -154,11 +154,12 @@ def read_from_file():
         data_to_load = pickle.load(file1)
         file1.close()
         check_date(data_to_load)
-
     except:
         print(tc_red("файл поврежден или не создан"))
         displaying_values()
         save_to_file()
+    finally:
+        pass
 
 
 def bonus():
