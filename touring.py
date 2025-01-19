@@ -96,61 +96,61 @@ def events_tunnel(st0, st2):
             fun.my_print_to_file(f'kiki = {kiki}')
             if krysa:
                 if hero == 'Gavr':
-                    b_d.gavr_rat_q += 1
-                    display_element = b_d.gavr_rat_q
+                    her.gavr.rat += 1
+                    display_element = her.gavr.rat
                     # print(f'{b_d.gavr_rat_q} Detekt krysa')
                 elif hero == 'Gady':
-                    b_d.gady_rat_q += 1
-                    display_element = b_d.gady_rat_q
+                    her.gady.rat += 1
+                    display_element = her.gady.rat
                     # print(f'{b_d.gady_rat_q} Detekt krysa')
                 elif hero == 'Mara':
                     her.mara.rat += 1
                     display_element = her.mara.rat
                     # print(f'{b_d.mara_rat_q} Detekt krysa')
                 elif hero == 'Велес':
-                    b_d.veles_rat_q += 1
-                    display_element = b_d.veles_rat_q
+                    her.veles.rat += 1
+                    display_element = her.veles.rat
                     # print(f'{b_d.veles_rat_q} Detekt krysa')
                 print(f'{display_element} Detekt krysa')
             if kiki:
                 if hero == 'Gavr':
-                    b_d.gavr_kiki_q += 1
-                    print(f'{b_d.gavr_kiki_q} Detekt Kikimora')
+                    her.gavr.kiki += 1
+                    print(f'{her.gavr.kiki} Detekt Kikimora')
                 elif hero == 'Gady':
-                    b_d.gady_kiki_q += 1
-                    print(f'{b_d.gady_kiki_q} Detekt Kikimora')
+                    her.gady.kiki += 1
+                    print(f'{her.gady.kiki} Detekt Kikimora')
                 elif hero == 'Mara':
                     her.mara.kiki += 1
                     print(f'{her.mara.kiki} Detekt Kikimora')
                 elif hero == 'Велес':
-                    b_d.veles_kiki_q += 1
-                    print(f'{b_d.veles_kiki_q} Detekt Kikimora')
+                    her.veles.kiki += 1
+                    print(f'{her.veles.kiki} Detekt Kikimora')
             if arachne:
                 if hero == 'Gavr':
-                    b_d.gavr_arachne_q += 1
-                    print(f'{b_d.gavr_arachne_q} Detekt arachne')
+                    her.gavr.arachne += 1
+                    print(f'{her.gavr.arachne} Detekt arachne')
                 elif hero == 'Gady':
-                    b_d.gady_arachne_q += 1
-                    print(f'{b_d.gady_arachne_q} Detekt arachne')
+                    her.gady.arachne += 1
+                    print(f'{her.gady.arachne} Detekt arachne')
                 elif hero == 'Mara':
                     her.mara.arachne += 1
                     print(f'{her.mara.arachne} Detekt arachne')
                 elif hero == 'Велес':
-                    b_d.veles_arachne_q += 1
-                    print(f'{b_d.veles_arachne_q} Detekt arachne')
+                    her.veles.arachne += 1
+                    print(f'{her.veles.arachne} Detekt arachne')
             if raptor:
                 if hero == 'Gavr':
-                    b_d.gavr_raptor_q += 1
-                    print(f'{b_d.gavr_raptor_q} Detekt raptor')
+                    her.gavr.raptor += 1
+                    print(f'{her.gavr.raptor} Detekt raptor')
                 elif hero == 'Gady':
-                    b_d.gady_raptor_q += 1
-                    print(f'{b_d.gady_raptor_q} Detekt raptor')
+                    her.gady.raptor += 1
+                    print(f'{her.gady.raptor} Detekt raptor')
                 elif hero == 'Mara':
                     her.mara.raptor += 1
                     print(f'{her.mara.raptor} Detekt raptor')
                 elif hero == 'Велес':
-                    b_d.veles_raptor_q += 1
-                    print(f'{b_d.veles_raptor_q} Detekt raptor')
+                    her.veles.raptor += 1
+                    print(f'{her.veles.raptor} Detekt raptor')
             station_master.enemy_battle(1)
         if post:
             fun.my_print_to_file(f'post = {post}')
@@ -175,21 +175,21 @@ def events_tunnel(st0, st2):
     fun.my_print_to_file(f'pos_gift = {pos_gift}')
     if pos_gift:
         if hero == 'Gavr':
-            b_d.gavr_gifts_q += 1
-            if b_d.gavr_gifts_q:
-                print(st0, ' подарков ', b_d.gavr_gifts_q)
+            her.gavr.gifts += 1
+            if her.gavr.gifts:
+                print(st0, ' подарков ', her.gavr.gifts)
         elif hero == 'Gady':
-            b_d.gady_gifts_q += 1
-            if b_d.gady_gifts_q:
-                print(st0, ' подарков ', b_d.gady_gifts_q)
+            her.gady.gifts += 1
+            if her.gady.gifts:
+                print(st0, ' подарков ', her.gady.gifts)
         elif hero == 'Mara':
             her.mara.gifts += 1
             if her.mara.gifts:
                 print(st0, ' подарков ', her.mara.gifts)
         elif hero == 'Велес':
-            b_d.veles_gifts_q += 1
-            if b_d.veles_gifts_q:
-                print(st0, ' подарков ', b_d.veles_gifts_q)
+            her.veles.gifts += 1
+            if her.veles.gifts:
+                print(st0, ' подарков ', her.veles.gifts)
 
 
 # принимает имя файла поиска, выдаёт Point(x, y), параметр confidence
