@@ -11,6 +11,7 @@ from event_arena import create_img_arena_object, kill
 import pickle
 from my_color_text import tc_green, tc_cyan, tc_blue, tc_red
 import baza_dannyx as b_d
+import heroes as her
 
 fun.my_print_to_file('')
 fun.my_print_to_file('*******                      *******')
@@ -22,75 +23,86 @@ date_start = fun.date_utc_now()
 # стартовые значения
 starting_value = 0
 
+# gady_rat_q = her.gady.rat
+# gady_kiki_q = her.gady.kiki
+# gady_arachne_q = her.gady.arachne
+# gady_raptor_q = her.gady.raptor
+# gady_gifts_q = her.gady.gifts
+#
+# gavr_rat_q = her.gavr.rat
+# gavr_kiki_q = her.gavr.kiki
+# gavr_arachne_q = her.gavr.arachne
+# gavr_raptor_q = her.gavr.raptor
+# gavr_gifts_q = her.gavr.gifts
+
 
 def displaying_values():
-    gady_rat.set(b_d.gady_rat_q)
-    gady_kiki.set(b_d.gady_kiki_q)
-    gady_arachne.set(b_d.gady_arachne_q)
-    gady_raptor.set(b_d.gady_raptor_q)
-    gady_gift.set(b_d.gady_gifts_q)
+    gady_rat.set(her.gady.rat)
+    gady_kiki.set(her.gady.kiki)
+    gady_arachne.set(her.gady.arachne)
+    gady_raptor.set(her.gady.raptor)
+    gady_gift.set(her.gady.gifts)
 
-    gavr_rat.set(b_d.gavr_rat_q)
-    gavr_kiki.set(b_d.gavr_kiki_q)
-    gavr_arachne.set(b_d.gavr_arachne_q)
-    gavr_raptor.set(b_d.gavr_raptor_q)
-    gavr_gift.set(b_d.gavr_gifts_q)
+    gavr_rat.set(her.gavr.rat)
+    gavr_kiki.set(her.gavr.kiki)
+    gavr_arachne.set(her.gavr.arachne)
+    gavr_raptor.set(her.gavr.raptor)
+    gavr_gift.set(her.gavr.gifts)
 
-    mara_rat.set(b_d.mara_rat_q)
-    mara_kiki.set(b_d.mara_kiki_q)
-    mara_arachne.set(b_d.mara_arachne_q)
-    mara_raptor.set(b_d.mara_raptor_q)
-    mara_gift.set(b_d.mara_gifts_q)
+    mara_rat.set(her.mara.rat)
+    mara_kiki.set(her.mara.kiki)
+    mara_arachne.set(her.mara.arachne)
+    mara_raptor.set(her.mara.raptor)
+    mara_gift.set(her.mara.gifts)
 
-    veles_rat.set(b_d.veles_rat_q)
-    veles_kiki.set(b_d.veles_kiki_q)
-    veles_arachne.set(b_d.veles_arachne_q)
-    veles_raptor.set(b_d.veles_raptor_q)
-    veles_gift.set(b_d.veles_gifts_q)
+    veles_rat.set(her.veles.rat)
+    veles_kiki.set(her.veles.kiki)
+    veles_arachne.set(her.veles.arachne)
+    veles_raptor.set(her.veles.raptor)
+    veles_gift.set(her.veles.gifts)
 
 
 def check_date(loaded_data):
     """Установка значений при (пере)запуске программы"""
-    # global gavr_sum_vip, gady_sum_vip, mara_sum_vip
     date_ver = loaded_data['date']
     # если даты совпадают:- значения устанавливаются из файла
     if date_ver == date_start:
         print(tc_blue("даты совпадают"))
         # присваиваем значения
-        b_d.gavr_sum_vip = loaded_data['gavr_vip']
-        b_d.gady_sum_vip = loaded_data['gady_vip']
-        b_d.mara_sum_vip = loaded_data['mara_vip']
-        b_d.veles_sum_vip = loaded_data['veles_vip']
+        her.gavr.vip = loaded_data['gavr_vip']
+        her.gady.vip = loaded_data['gady_vip']
+        her.mara.vip = loaded_data['mara_vip']
+        her.veles.vip = loaded_data['veles_vip']
 
-        b_d.gavr_rat_q = loaded_data['gavr_krysy']
-        b_d.gady_rat_q = loaded_data['gady_krysy']
-        b_d.mara_rat_q = loaded_data['mara_krysy']
-        b_d.veles_rat_q = loaded_data['veles_krysy']
+        her.gavr.rat = loaded_data['gavr_krysy']
+        her.gady.rat = loaded_data['gady_krysy']
+        her.mara.rat = loaded_data['mara_krysy']
+        her.veles.rat = loaded_data['veles_krysy']
 
-        b_d.gavr_kiki_q = loaded_data['gavr_kiki']
-        b_d.gady_kiki_q = loaded_data['gady_kiki']
-        b_d.mara_kiki_q = loaded_data['mara_kiki']
-        b_d.veles_kiki_q = loaded_data['veles_kiki']
+        her.gavr.kiki = loaded_data['gavr_kiki']
+        her.gady.kiki = loaded_data['gady_kiki']
+        her.mara.kiki = loaded_data['mara_kiki']
+        her.veles.kiki = loaded_data['veles_kiki']
 
-        b_d.gavr_arachne_q = loaded_data['gavr_arachne']
-        b_d.gady_arachne_q = loaded_data['gady_arachne']
-        b_d.mara_arachne_q = loaded_data['mara_arachne']
-        b_d.veles_arachne_q = loaded_data['veles_arachne']
+        her.gavr.arachne = loaded_data['gavr_arachne']
+        her.gady.arachne = loaded_data['gady_arachne']
+        her.mara.arachne = loaded_data['mara_arachne']
+        her.veles.arachne = loaded_data['veles_arachne']
 
-        b_d.gavr_raptor_q = loaded_data['gavr_raptor']
-        b_d.gady_raptor_q = loaded_data['gady_raptor']
-        b_d.mara_raptor_q = loaded_data['mara_raptor']
-        b_d.veles_raptor_q = loaded_data['veles_raptor']
+        her.gavr.raptor = loaded_data['gavr_raptor']
+        her.gady.raptor = loaded_data['gady_raptor']
+        her.mara.raptor = loaded_data['mara_raptor']
+        her.veles.raptor = loaded_data['veles_raptor']
 
-        b_d.gavr_gifts_q = loaded_data['gavr_gifts']
-        b_d.gady_gifts_q = loaded_data['gady_gifts']
-        b_d.mara_gifts_q = loaded_data['mara_gifts']
-        b_d.veles_gifts_q = loaded_data['veles_gifts']
+        her.gavr.gifts = loaded_data['gavr_gifts']
+        her.gady.gifts = loaded_data['gady_gifts']
+        her.mara.gifts = loaded_data['mara_gifts']
+        her.veles.gifts = loaded_data['veles_gifts']
         # отображаем значения
-        gavr_vip.set(b_d.gavr_sum_vip)
-        gady_vip.set(b_d.gady_sum_vip)
-        mara_vip.set(b_d.mara_sum_vip)
-        veles_vip.set(b_d.veles_sum_vip)
+        gavr_vip.set(her.gavr.vip)
+        gady_vip.set(her.gady.vip)
+        mara_vip.set(her.mara.vip)
+        veles_vip.set(her.veles.vip)
 
         displaying_values()
     # иначе отображение и сохранение стартовых значений
@@ -111,35 +123,35 @@ def save_to_file():
 
     data_to_save = {
         'date': date_start,
-        'gavr_vip': b_d.gavr_sum_vip,
-        'gady_vip': b_d.gady_sum_vip,
-        'mara_vip': b_d.mara_sum_vip,
-        'veles_vip': b_d.veles_sum_vip,
+        'gavr_vip': her.gavr.vip,
+        'gady_vip': her.gady.vip,
+        'mara_vip': her.mara.vip,
+        'veles_vip': her.veles.vip,
 
-        'gavr_krysy': b_d.gavr_rat_q,
-        'gady_krysy': b_d.gady_rat_q,
-        'mara_krysy': b_d.mara_rat_q,
-        'veles_krysy': b_d.veles_rat_q,
+        'gavr_krysy': her.gavr.rat,
+        'gady_krysy': her.gady.rat,
+        'mara_krysy': her.mara.rat,
+        'veles_krysy': her.veles.rat,
 
-        'gavr_kiki': b_d.gavr_kiki_q,
-        'gady_kiki': b_d.gady_kiki_q,
-        'mara_kiki': b_d.mara_kiki_q,
-        'veles_kiki': b_d.veles_kiki_q,
+        'gavr_kiki': her.gavr.kiki,
+        'gady_kiki': her.gady.kiki,
+        'mara_kiki': her.mara.kiki,
+        'veles_kiki': her.veles.kiki,
 
-        'gavr_arachne': b_d.gavr_arachne_q,
-        'gady_arachne': b_d.gady_arachne_q,
-        'mara_arachne': b_d.mara_arachne_q,
-        'veles_arachne': b_d.veles_arachne_q,
+        'gavr_arachne': her.gavr.arachne,
+        'gady_arachne': her.gady.arachne,
+        'mara_arachne': her.mara.arachne,
+        'veles_arachne': her.veles.arachne,
 
-        'gavr_raptor': b_d.gavr_raptor_q,
-        'gady_raptor': b_d.gady_raptor_q,
-        'mara_raptor': b_d.mara_raptor_q,
-        'veles_raptor': b_d.veles_raptor_q,
+        'gavr_raptor': her.gavr.raptor,
+        'gady_raptor': her.gady.raptor,
+        'mara_raptor': her.mara.raptor,
+        'veles_raptor': her.veles.raptor,
 
-        'gavr_gifts': b_d.gavr_gifts_q,
-        'gady_gifts': b_d.gady_gifts_q,
-        'mara_gifts': b_d.mara_gifts_q,
-        'veles_gifts': b_d.veles_gifts_q,
+        'gavr_gifts': her.gavr.gifts,
+        'gady_gifts': her.gady.gifts,
+        'mara_gifts': her.mara.gifts,
+        'veles_gifts': her.veles.gifts,
     }
     # print(data_to_save)
     file1 = open('config.bin', 'wb')
@@ -158,8 +170,6 @@ def read_from_file():
         print(tc_red("файл поврежден или не создан"))
         displaying_values()
         save_to_file()
-    finally:
-        pass
 
 
 def bonus():
@@ -208,40 +218,40 @@ def tent_inspection():
     while it_s < 10:
         if hero == 'Gady':
             it_s += revision_of_tents.tent_raid()
-            b_d.gady_sum_vip = it_s
-            gady_vip.set(str(b_d.gady_sum_vip))
+            her.gady.vip = it_s
+            gady_vip.set(str(her.gady.vip))
             fun.move_friends_list_left()
         if hero == 'Gavr':
             it_s += revision_of_tents.tent_raid()
-            b_d.gavr_sum_vip = it_s
-            gavr_vip.set(str(b_d.gavr_sum_vip))
+            her.gavr.vip = it_s
+            gavr_vip.set(str(her.gavr.vip))
             fun.move_friends_list_left()
         if hero == 'Mara':
             it_s += revision_of_tents.tent_raid()
-            b_d.mara_sum_vip = it_s
-            mara_vip.set(b_d.mara_sum_vip)
+            her.mara.vip = it_s
+            mara_vip.set(her.mara.vip)
             fun.move_friends_list_left()
         if hero == 'Велес':
             it_s += revision_of_tents.tent_raid()
-            b_d.veles_sum_vip = it_s
-            veles_vip.set(b_d.veles_sum_vip)
+            her.veles.vip = it_s
+            veles_vip.set(her.veles.vip)
             fun.move_friends_list_left()
         it_revision += 1
         print(f'{it_s} из {it_revision}')
         if it_revision == 12:
             it_s = 10
             if hero == 'Gady':
-                b_d.gady_sum_vip = it_s
-                gady_vip.set(str(b_d.gady_sum_vip))
+                her.gady.vip = it_s
+                gady_vip.set(str(her.gady.vip))
             if hero == 'Gavr':
-                b_d.gavr_sum_vip = it_s
-                gavr_vip.set(str(b_d.gavr_sum_vip))
+                her.gavr.vip = it_s
+                gavr_vip.set(str(her.gavr.vip))
             if hero == 'Mara':
-                b_d.mara_sum_vip = it_s
-                mara_vip.set(b_d.mara_sum_vip)
+                her.mara.vip = it_s
+                mara_vip.set(her.mara.vip)
             if hero == 'Велес':
-                b_d.veles_sum_vip = it_s
-                veles_vip.set(b_d.veles_sum_vip)
+                her.veles.vip = it_s
+                veles_vip.set(her.veles.vip)
     revision_of_tents.end_raid()
     save_to_file()
 
@@ -326,13 +336,13 @@ def collecting_gifts_at_stations():
     touring.sbor_podarkov(bypass_hero)
     # получение количества собранных подарков
     if hero == 'Велес':
-        q_gifts = b_d.veles_gifts_q
+        q_gifts = her.veles.gifts
     elif hero == 'Mara':
-        q_gifts = b_d.mara_gifts_q
+        q_gifts = her.mara.gifts
     elif hero == 'Gady':
-        q_gifts = b_d.gady_gifts_q
+        q_gifts = her.gady.gifts
     elif hero == 'Gavr':
-        q_gifts = b_d.gavr_gifts_q
+        q_gifts = her.gavr.gifts
     else:
         print('герой не опознан')
         return

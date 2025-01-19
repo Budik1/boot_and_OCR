@@ -162,9 +162,10 @@ pauk_yascher2 = [
 ]
 task_list = ['t1.png', 't2.png', 't3.png', 't4.png', 't5.png', 't6.png', 't7.png']
 # переменные
-gavr_sum_vip, gady_sum_vip, mara_sum_vip, veles_sum_vip = 0, 0, 0, 0
-gavr_gifts_q, gady_gifts_q, mara_gifts_q, veles_gifts_q = 0, 0, 0, 0
-gavr_kiki_q, gady_kiki_q, mara_kiki_q, veles_kiki_q = 0, 0, 0, 0
-gavr_rat_q, gady_rat_q, mara_rat_q, veles_rat_q = 0, 0, 0, 0
-gavr_arachne_q, gady_arachne_q, mara_arachne_q, veles_arachne_q = 0, 0, 0, 0
-gavr_raptor_q, gady_raptor_q, mara_raptor_q, veles_raptor_q = 0, 0, 0, 0
+# закомментировал 19.01.2025
+# gavr_sum_vip, gady_sum_vip, mara_sum_vip, veles_sum_vip = 0, 0, 0, 0
+# gavr_gifts_q, gady_gifts_q, mara_gifts_q, veles_gifts_q = 0, 0, 0, 0
+# gavr_kiki_q, gady_kiki_q, mara_kiki_q, veles_kiki_q = 0, 0, 0, 0
+# gavr_rat_q, gady_rat_q, mara_rat_q, veles_rat_q = 0, 0, 0, 0
+# gavr_arachne_q, gady_arachne_q, mara_arachne_q, veles_arachne_q = 0, 0, 0, 0
+# gavr_raptor_q, gady_raptor_q, mara_raptor_q, veles_raptor_q = 0, 0, 0, 0

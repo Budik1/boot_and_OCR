@@ -3,6 +3,7 @@ from time import sleep, time
 import station_master
 import baza_dannyx as b_d
 import fun
+import heroes as her
 
 
 def event_gifts():
@@ -103,8 +104,8 @@ def events_tunnel(st0, st2):
                     display_element = b_d.gady_rat_q
                     # print(f'{b_d.gady_rat_q} Detekt krysa')
                 elif hero == 'Mara':
-                    b_d.mara_rat_q += 1
-                    display_element = b_d.mara_rat_q
+                    her.mara.rat += 1
+                    display_element = her.mara.rat
                     # print(f'{b_d.mara_rat_q} Detekt krysa')
                 elif hero == 'Велес':
                     b_d.veles_rat_q += 1
@@ -119,8 +120,8 @@ def events_tunnel(st0, st2):
                     b_d.gady_kiki_q += 1
                     print(f'{b_d.gady_kiki_q} Detekt Kikimora')
                 elif hero == 'Mara':
-                    b_d.mara_kiki_q += 1
-                    print(f'{b_d.mara_kiki_q} Detekt Kikimora')
+                    her.mara.kiki += 1
+                    print(f'{her.mara.kiki} Detekt Kikimora')
                 elif hero == 'Велес':
                     b_d.veles_kiki_q += 1
                     print(f'{b_d.veles_kiki_q} Detekt Kikimora')
@@ -132,8 +133,8 @@ def events_tunnel(st0, st2):
                     b_d.gady_arachne_q += 1
                     print(f'{b_d.gady_arachne_q} Detekt arachne')
                 elif hero == 'Mara':
-                    b_d.mara_arachne_q += 1
-                    print(f'{b_d.mara_arachne_q} Detekt arachne')
+                    her.mara.arachne += 1
+                    print(f'{her.mara.arachne} Detekt arachne')
                 elif hero == 'Велес':
                     b_d.veles_arachne_q += 1
                     print(f'{b_d.veles_arachne_q} Detekt arachne')
@@ -145,8 +146,8 @@ def events_tunnel(st0, st2):
                     b_d.gady_raptor_q += 1
                     print(f'{b_d.gady_raptor_q} Detekt raptor')
                 elif hero == 'Mara':
-                    b_d.mara_raptor_q += 1
-                    print(f'{b_d.mara_raptor_q} Detekt raptor')
+                    her.mara.raptor += 1
+                    print(f'{her.mara.raptor} Detekt raptor')
                 elif hero == 'Велес':
                     b_d.veles_raptor_q += 1
                     print(f'{b_d.veles_raptor_q} Detekt raptor')
@@ -182,9 +183,9 @@ def events_tunnel(st0, st2):
             if b_d.gady_gifts_q:
                 print(st0, ' подарков ', b_d.gady_gifts_q)
         elif hero == 'Mara':
-            b_d.mara_gifts_q += 1
-            if b_d.mara_gifts_q:
-                print(st0, ' подарков ', b_d.mara_gifts_q)
+            her.mara.gifts += 1
+            if her.mara.gifts:
+                print(st0, ' подарков ', her.mara.gifts)
         elif hero == 'Велес':
             b_d.veles_gifts_q += 1
             if b_d.veles_gifts_q:
