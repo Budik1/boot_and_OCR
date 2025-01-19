@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="изменил сохранение и отображение счетчиков">
-      <change afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/arena/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/arena_object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/arena/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/person/tasks_mara/t1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/tasks_mara/t1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/person/tasks_mara/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/tasks_mara/t2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/person/tasks_mara/t3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/tasks_mara/t3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/person/tasks_veles/t1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/tasks_veles/t1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/person/tasks_veles/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/tasks_veles/t2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/person/tasks_veles/t3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/tasks_veles/t3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="изменил сохранение и отображение счетчиков" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
