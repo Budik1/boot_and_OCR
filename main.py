@@ -23,18 +23,6 @@ date_start = fun.date_utc_now()
 # стартовые значения
 starting_value = 0
 
-# gady_rat_q = her.gady.rat
-# gady_kiki_q = her.gady.kiki
-# gady_arachne_q = her.gady.arachne
-# gady_raptor_q = her.gady.raptor
-# gady_gifts_q = her.gady.gifts
-#
-# gavr_rat_q = her.gavr.rat
-# gavr_kiki_q = her.gavr.kiki
-# gavr_arachne_q = her.gavr.arachne
-# gavr_raptor_q = her.gavr.raptor
-# gavr_gifts_q = her.gavr.gifts
-
 
 def displaying_values():
     gady_rat.set(her.gady.rat)

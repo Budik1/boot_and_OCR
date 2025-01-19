@@ -98,19 +98,15 @@ def events_tunnel(st0, st2):
                 if hero == 'Gavr':
                     her.gavr.rat += 1
                     display_element = her.gavr.rat
-                    # print(f'{b_d.gavr_rat_q} Detekt krysa')
                 elif hero == 'Gady':
                     her.gady.rat += 1
                     display_element = her.gady.rat
-                    # print(f'{b_d.gady_rat_q} Detekt krysa')
                 elif hero == 'Mara':
                     her.mara.rat += 1
                     display_element = her.mara.rat
-                    # print(f'{b_d.mara_rat_q} Detekt krysa')
                 elif hero == 'Велес':
                     her.veles.rat += 1
                     display_element = her.veles.rat
-                    # print(f'{b_d.veles_rat_q} Detekt krysa')
                 print(f'{display_element} Detekt krysa')
             if kiki:
                 if hero == 'Gavr':
