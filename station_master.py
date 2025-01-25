@@ -73,7 +73,8 @@ def press_en(task_number, pos):
     sleep(0.5)
     nal_energy = fun.locCenterImg('img/low_energy.png', confidence=0.8)
     if not nal_energy:
-        print(f'Выполняю  {task_number}  задание, conf_={conf_}')
+        vers_in_print = "" if conf_ == 0.95 else f', conf_={conf_}'
+        print(f'Выполняю  {task_number}  задание{vers_in_print}')
         enemy_battle()
     else:
         energy_availability = 0
