@@ -24,6 +24,7 @@ def enemy_battle(prolong_=2):
     dog = fun.locCenterImg('img/dog_2.png', confidence=par_conf)
     # print('dog', dog)
     it = 0
+    result = None
     while not battle_end:
         if dog:  # нажать "на собаку"
             fun.my_print_to_file(f'dog = {dog}')
@@ -72,7 +73,8 @@ def press_en(task_number, pos):
     sleep(0.5)
     nal_energy = fun.locCenterImg('img/low_energy.png', confidence=0.8)
     if not nal_energy:
-        print(f'Выполняю  {task_number}  задание, conf_={conf_}')
+        vers_in_print = "" if conf_ == 0.95 else f', conf_={conf_}'
+        print(f'Выполняю  {task_number}  задание{vers_in_print}')
         enemy_battle()
     else:
         energy_availability = 0
@@ -126,6 +128,7 @@ def station_task_list():
 def vybor_zadaniya_na_puli():
     global energy_availability, number_tasks  # , conf_
     conf_ = 0.95
+    fun.push_close_all_()
     task = station_task_list()
     hero = fun.selection_hero()
     if hero == 'Gady':
@@ -134,6 +137,8 @@ def vybor_zadaniya_na_puli():
         path = 'img/person/tasks_gavr/'
     elif hero == 'Mara':
         path = 'img/person/tasks_mara/'
+    elif hero == 'Велес':
+        path = 'img/person/tasks_veles/'
     else:
         return
     region_1, region_2, region_3 = fun.get_areas_task_big()
@@ -166,66 +171,11 @@ def vybor_zadaniya_na_puli():
             conf_ -= 0.005
             conf_ = round(conf_, 3)
         if conf_ <= 0.92:
-            print(myCt.tc_cyan('задания не найдены, результаты "D:\\bot in br\\testOCR\img\\test" '))
+            print(myCt.tc_cyan('задания не найдены, результаты "D:\\bot in br\\testOCR\\img\\test" '))
             create_and_analiz_img.get_screenshot_task()
             number_tasks = 1
             energy_availability = 0
             return
-    print(myCt.tc_green(' Задания выполнены!!!!'))
-    number_tasks = 1
-    energy_availability = 1
-    close = fun.locCenterImg('img/overall/close.png', confidence=0.9)
-    while close:
-        fun.move_to_click(close, 0.3)
-        close = fun.locCenterImg('img/overall/close.png', confidence=0.9)
-
-
-def vybor_zadaniya_na_puli_S():
-    global energy_availability, number_tasks, conf_
-
-    task = station_task_list()
-    hero = fun.selection_hero()
-    if hero == 'Gady':
-        pass
-    elif hero == 'Gavr':
-        path = 'img/person/tasks_gavr/'
-        pass
-    else:
-        return
-    region_1, region_2, region_3 = fun.get_areas_task_big()
-    while energy_availability == 1 and number_tasks > 0:
-        task_analysis(f'{path}{task[0]}', task[1], region_1)
-        variant1 = variable
-        move(variant1)
-        sleep(0.1)
-
-        task_analysis(task[2], task[3], region_2)
-        variant2 = variable
-        move(variant2)
-        sleep(0.1)
-
-        task_analysis(task[4], task[5], region_3)
-        variant3 = variable
-        move(variant3)
-        sleep(0.1)
-
-        if variant1:
-            press_en(1, region_1)
-        if variant2:
-            press_en(2, region_2)
-        if variant3:
-            press_en(3, region_3)
-
-        if variant1 == variant2 == variant3:
-            print(F'confidence= {conf_} строка 217')
-            conf_ -= 0.005
-            conf_ = round(conf_, 3)
-        if conf_ <= 0.92:
-            print(myCt.tc_cyan('задания не найдены, результаты "D:\\bot in br\\testOCR\img\\test" '))
-            create_and_analiz_img.get_screenshot_task()
-            number_tasks = 1
-            energy_availability = 0
-
     print(myCt.tc_green(' Задания выполнены!!!!'))
     number_tasks = 1
     energy_availability = 1
@@ -256,3 +206,58 @@ def en_task_item(task_number):
     while close:
         fun.move_to_click(close, 0.3)
         close = fun.locCenterImg('img/overall/close.png', confidence=0.9)
+
+# закоментировал 19.01.25
+# def vybor_zadaniya_na_puli_S():
+#     global energy_availability, number_tasks, conf_
+#
+#     task = station_task_list()
+#     hero = fun.selection_hero()
+#     if hero == 'Gady':
+#         pass
+#     elif hero == 'Gavr':
+#         path = 'img/person/tasks_gavr/'
+#         pass
+#     else:
+#         return
+#     region_1, region_2, region_3 = fun.get_areas_task_big()
+#     while energy_availability == 1 and number_tasks > 0:
+#         task_analysis(f'{path}{task[0]}', task[1], region_1)
+#         variant1 = variable
+#         move(variant1)
+#         sleep(0.1)
+#
+#         task_analysis(task[2], task[3], region_2)
+#         variant2 = variable
+#         move(variant2)
+#         sleep(0.1)
+#
+#         task_analysis(task[4], task[5], region_3)
+#         variant3 = variable
+#         move(variant3)
+#         sleep(0.1)
+#
+#         if variant1:
+#             press_en(1, region_1)
+#         if variant2:
+#             press_en(2, region_2)
+#         if variant3:
+#             press_en(3, region_3)
+#
+#         if variant1 == variant2 == variant3:
+#             print(F'confidence= {conf_} строка 217')
+#             conf_ -= 0.005
+#             conf_ = round(conf_, 3)
+#         if conf_ <= 0.92:
+#             print(myCt.tc_cyan('задания не найдены, результаты "D:\\bot in br\\testOCR\img\\test" '))
+#             create_and_analiz_img.get_screenshot_task()
+#             number_tasks = 1
+#             energy_availability = 0
+#
+#     print(myCt.tc_green(' Задания выполнены!!!!'))
+#     number_tasks = 1
+#     energy_availability = 1
+#     close = fun.locCenterImg('img/overall/close.png', confidence=0.9)
+#     while close:
+#         fun.move_to_click(close, 0.3)
+#         close = fun.locCenterImg('img/overall/close.png', confidence=0.9)

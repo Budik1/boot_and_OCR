@@ -50,7 +50,6 @@ def date_and_time_in_name_file():
 
 def close_popup_window():
     my_print_to_file('fun.close_popup_window')
-    # print('def "fun.close_popup_window"')
     knob = locCenterImg('img/overall/knob.png', 0.9)
     cancel = locCenterImg('img/overall/cancel.png', 0.9)
     if knob:
@@ -159,7 +158,7 @@ def start_p_m():
             s_p_close = locCenterImg('img/overall/s_p_close.png', 0.96)
             while s_p_close is not None and sz <= 5:
                 sleep(2)
-                s_p_close = locCenterImg('img/overall/icon_in_desktop/s_p_close.png', 0.96)
+                s_p_close = locCenterImg('img/overall/s_p_close.png', 0.96)
                 sz += 1
             pyautogui.click(s_p_close)
 
@@ -517,3 +516,11 @@ def selection_hero():
         hero = None
 
     return hero
+
+
+def q_st_in_bypass(bypass_hero):
+    arr2 = []
+    for i in bypass_hero:
+        if i not in arr2:
+            arr2.append(i)
+    return len(arr2)
