@@ -4,6 +4,7 @@ import station_master
 import baza_dannyx as b_d
 import fun
 import heroes as her
+from heroes import Hero, Activ
 
 
 def event_gifts():
@@ -95,18 +96,20 @@ def events_tunnel(st0, st2):
             kiki = fun.locCenterImg('img/tonelli/kikimora.png', confidence=0.85)
             fun.my_print_to_file(f'kiki = {kiki}')
             if krysa:
-                if hero == 'Gavr':
-                    her.gavr.rat += 1
-                    display_element = her.gavr.rat
-                elif hero == 'Gady':
-                    her.gady.rat += 1
-                    display_element = her.gady.rat
-                elif hero == 'Mara':
-                    her.mara.rat += 1
-                    display_element = her.mara.rat
-                elif hero == 'Велес':
-                    her.veles.rat += 1
-                    display_element = her.veles.rat
+                Hero.app_rat(Activ.hero_activ)
+                display_element = Hero.get_qty_rat(Activ.hero_activ)
+                # if hero == 'Gavr':
+                #     her.gavr.rat += 1
+                #     display_element = her.gavr.rat
+                # elif hero == 'Gady':
+                #     her.gady.rat += 1
+                #     display_element = her.gady.rat
+                # elif hero == 'Mara':
+                #     her.mara.rat += 1
+                #     display_element = her.mara.rat
+                # elif hero == 'Велес':
+                #     her.veles.rat += 1
+                #     display_element = her.veles.rat
                 print(f'{display_element} Detekt krysa')
             if kiki:
                 if hero == 'Gavr':
@@ -147,7 +150,7 @@ def events_tunnel(st0, st2):
                 elif hero == 'Велес':
                     her.veles.raptor += 1
                     print(f'{her.veles.raptor} Detekt raptor')
-            station_master.enemy_battle(1)
+            station_master.enemy_battle(1, add_up=False)  # вызов обработки события
         if post:
             fun.my_print_to_file(f'post = {post}')
             pyautogui.moveTo(post, duration=0.2)

@@ -26,28 +26,32 @@ starting_value = 0
 
 def displaying_values():
     gady_rat.set(her.gady.rat)
-    gady_kiki.set(her.gady.kiki)
-    gady_arachne.set(her.gady.arachne)
-    gady_raptor.set(her.gady.raptor)
-    gady_gift.set(her.gady.gifts)
-
     gavr_rat.set(her.gavr.rat)
-    gavr_kiki.set(her.gavr.kiki)
-    gavr_arachne.set(her.gavr.arachne)
-    gavr_raptor.set(her.gavr.raptor)
-    gavr_gift.set(her.gavr.gifts)
-
     mara_rat.set(her.mara.rat)
-    mara_kiki.set(her.mara.kiki)
-    mara_arachne.set(her.mara.arachne)
-    mara_raptor.set(her.mara.raptor)
-    mara_gift.set(her.mara.gifts)
-
     veles_rat.set(her.veles.rat)
+
+    gady_kiki.set(her.gady.kiki)
+    gavr_kiki.set(her.gavr.kiki)
+    mara_kiki.set(her.mara.kiki)
     veles_kiki.set(her.veles.kiki)
+
+    gady_arachne.set(her.gady.arachne)
+    gavr_arachne.set(her.gavr.arachne)
+    mara_arachne.set(her.mara.arachne)
     veles_arachne.set(her.veles.arachne)
+
+    gady_raptor.set(her.gady.raptor)
+    gavr_raptor.set(her.gavr.raptor)
+    mara_raptor.set(her.mara.raptor)
     veles_raptor.set(her.veles.raptor)
+
+    gady_gift.set(her.gady.gifts)
+    gavr_gift.set(her.gavr.gifts)
+    mara_gift.set(her.mara.gifts)
     veles_gift.set(her.veles.gifts)
+
+    gady_wild.set(her.gady.wildman)
+    gavr_wild.set(her.gavr.wildman)
 
 
 def check_date(loaded_data):
@@ -86,6 +90,11 @@ def check_date(loaded_data):
         her.gady.gifts = loaded_data['gady_gifts']
         her.mara.gifts = loaded_data['mara_gifts']
         her.veles.gifts = loaded_data['veles_gifts']
+
+        her.gavr.wildman = loaded_data['gavr_wild']
+        her.gady.wildman = loaded_data['gady_wild']
+        her.mara.wildman = loaded_data['mara_wild']
+        her.veles.wildman = loaded_data['veles_wild']
         # отображаем значения
         gavr_vip.set(her.gavr.vip)
         gady_vip.set(her.gady.vip)
@@ -140,6 +149,12 @@ def save_to_file():
         'gady_gifts': her.gady.gifts,
         'mara_gifts': her.mara.gifts,
         'veles_gifts': her.veles.gifts,
+
+        'gavr_wild': her.gavr.wildman,
+        'gady_wild': her.gady.wildman,
+        'mara_wild': her.mara.wildman,
+        'veles_wild': her.veles.wildman,
+
     }
     # print(data_to_save)
     file1 = open('config.bin', 'wb')
@@ -166,16 +181,25 @@ def bonus():
 
 def en_1():
     station_master.en_task_item(1)
+    displaying_values()
     save_to_file()
 
 
 def en_2():
     station_master.en_task_item(2)
+    displaying_values()
     save_to_file()
 
 
 def en_3():
     station_master.en_task_item(3)
+    displaying_values()
+    save_to_file()
+
+
+def puli():
+    station_master.vybor_zadaniya_na_puli()
+    displaying_values()
     save_to_file()
 
 
@@ -199,46 +223,43 @@ def arachne_and_raptor():
 
 def tent_inspection():
     hero = fun.selection_hero()
-    it_s = 0
+    vip_case_all = 0
     it_revision = 0
     fun.move_friends_list_to_top()
 
-    while it_s < 10:
+    while vip_case_all < 10:
         if hero == 'Gady':
-            it_s += revision_of_tents.tent_raid()
-            her.gady.vip = it_s
+            vip_case_all += revision_of_tents.tent_raid()
+            her.gady.vip = vip_case_all
             gady_vip.set(str(her.gady.vip))
-            fun.move_friends_list_left()
         if hero == 'Gavr':
-            it_s += revision_of_tents.tent_raid()
-            her.gavr.vip = it_s
+            vip_case_all += revision_of_tents.tent_raid()
+            her.gavr.vip = vip_case_all
             gavr_vip.set(str(her.gavr.vip))
-            fun.move_friends_list_left()
         if hero == 'Mara':
-            it_s += revision_of_tents.tent_raid()
-            her.mara.vip = it_s
+            vip_case_all += revision_of_tents.tent_raid()
+            her.mara.vip = vip_case_all
             mara_vip.set(her.mara.vip)
-            fun.move_friends_list_left()
         if hero == 'Велес':
-            it_s += revision_of_tents.tent_raid()
-            her.veles.vip = it_s
+            vip_case_all += revision_of_tents.tent_raid()
+            her.veles.vip = vip_case_all
             veles_vip.set(her.veles.vip)
-            fun.move_friends_list_left()
         it_revision += 1
-        print(f'{it_s} из {it_revision}')
+        print(f'{vip_case_all} из {it_revision} осмотренных')
+        fun.move_friends_list_left()
         if it_revision == 12:
-            it_s = 10
+            vip_case_all = 10
             if hero == 'Gady':
-                her.gady.vip = it_s
+                her.gady.vip = vip_case_all
                 gady_vip.set(str(her.gady.vip))
             if hero == 'Gavr':
-                her.gavr.vip = it_s
+                her.gavr.vip = vip_case_all
                 gavr_vip.set(str(her.gavr.vip))
             if hero == 'Mara':
-                her.mara.vip = it_s
+                her.mara.vip = vip_case_all
                 mara_vip.set(her.mara.vip)
             if hero == 'Велес':
-                her.veles.vip = it_s
+                her.veles.vip = vip_case_all
                 veles_vip.set(her.veles.vip)
     revision_of_tents.end_raid()
     save_to_file()
@@ -335,7 +356,7 @@ def collecting_gifts_at_stations():
         print('герой не опознан')
         return
     # получение количества станций на маршруте
-    q_st = fun.q_st_in_bypass(bypass_hero)
+    q_st = fun.get_len_bypass(bypass_hero)
     # вывод информации
     print(f'На {q_st} станциях собрано {q_gifts} подарков')
 
@@ -346,7 +367,7 @@ def collecting_gifts_at_stations():
 root = Tk()
 
 root.title(' помощник "Метро 2033"')
-root.geometry("370x332+1200+50")  # Ширина x Высота + координата X + координата Y
+root.geometry("370x362+1200+50")  # Ширина x Высота + координата X + координата Y
 root.resizable(False, False)
 
 gavr_vip = StringVar()
@@ -379,6 +400,11 @@ gady_gift = StringVar()
 mara_gift = IntVar()
 veles_gift = IntVar()
 
+gavr_wild = IntVar()
+gady_wild = IntVar()
+mara_wild = IntVar()
+veles_wild = IntVar()
+
 read_from_file()
 
 height_line = 30  # высота линии
@@ -393,96 +419,148 @@ line7 = height_line * 7
 line8 = height_line * 8
 line9 = height_line * 9
 line10 = height_line * 10
+line11 = height_line * 11
+line12 = height_line * 12
+line13 = height_line * 13
+line14 = height_line * 14
+line15 = height_line * 15
+line16 = height_line * 16
+line17 = height_line * 17
+line18 = height_line * 18
+line19 = height_line * 19
 
 label_shift = 3  # смещение строки для Label
-l_line0 = line0 + label_shift
-l_line1 = line1 + label_shift
-l_line2 = line2 + label_shift
-l_line3 = line3 + label_shift
-l_line4 = line4 + label_shift
-l_line5 = line5 + label_shift
-l_line6 = line6 + label_shift
-l_line7 = line7 + label_shift
-l_line8 = line8 + label_shift
-l_line9 = line9 + label_shift
-l_line10 = line10 + label_shift
+label_line0 = line0 + label_shift
+label_line1 = line1 + label_shift
+label_line2 = line2 + label_shift
+label_line3 = line3 + label_shift
+label_line4 = line4 + label_shift
+label_line5 = line5 + label_shift
+label_line6 = line6 + label_shift
+label_line7 = line7 + label_shift
+label_line8 = line8 + label_shift
+label_line9 = line9 + label_shift
+label_line10 = line10 + label_shift
 
 # блок командных кнопок
-ttk.Button(text="КВ", width=8, command=kv_and_raid.kv).place(x=0, y=line0)
-ttk.Button(text=" Start ", width=14, command=fun.start_p_m).place(x=96, y=line0)
-ttk.Button(text=" обход VIP ", width=10, command=tent_inspection).place(x=114, y=line1)
-ttk.Button(text="кикиморы", width=10, command=kiki).place(x=114, y=line2)
-ttk.Button(text="Паук+Ящер", width=10, command=arachne_and_raptor).place(x=114, y=line3)
-ttk.Button(text="за дикарями", width=10, command=tasks_na_kievskoy).place(x=114, y=line4)
-ttk.Button(text="обход всех станций", width=17, command=collecting_gifts_at_stations).place(x=51, y=line6)
-ttk.Button(text="на Киев", width=8, command=frunze_kiev).place(x=51, y=line5)
-ttk.Button(text="домой ", width=8, command=kiev_frunze).place(x=132, y=line5)
-ttk.Button(text="frunze_riga", width=12, command=frunze_riga).place(x=0, y=line7)
-ttk.Button(text="riga_frunze", width=12, command=riga_frunze).place(x=125, y=line7)
-ttk.Button(text="test гардероб", width=12, command=person.pereodevanie).place(x=250, y=line7)
-ttk.Button(text="frunze_bulvar", width=12, command=frunze_bulvar).place(x=0, y=line8)
-ttk.Button(text="bulvar_frunze", width=12, command=bulvar_frunze).place(x=125, y=line8)
-ttk.Button(text="тест tour", width=12, command=dvizh_test).place(x=250, y=line8)
+ttk.Button(text="КВ", width=8, command=kv_and_raid.kv).place(x=114, y=line5)
+ttk.Button(text=" Start ", width=14, command=fun.start_p_m).place(x=200, y=line5)
+ttk.Button(text="Паук+Ящер", width=10, command=arachne_and_raptor).place(x=267, y=line7)
+ttk.Button(text="за дикарями", width=10, command=tasks_na_kievskoy).place(x=114, y=line6)
+ttk.Button(text="на Киев", width=7, command=frunze_kiev).place(x=215, y=line6)
+ttk.Button(text="домой ", width=7, command=kiev_frunze).place(x=291, y=line6)
+ttk.Button(text="обход всех станций", width=16, command=collecting_gifts_at_stations).place(x=114, y=line7)
+ttk.Button(text="frunze_riga", width=12, command=frunze_riga).place(x=0, y=line9)
+ttk.Button(text="riga_frunze", width=12, command=riga_frunze).place(x=125, y=line9)
+ttk.Button(text="test гардероб", width=12, command=person.pereodevanie).place(x=250, y=line9)
+ttk.Button(text="frunze_bulvar", width=12, command=frunze_bulvar).place(x=0, y=line10)
+ttk.Button(text="bulvar_frunze", width=12, command=bulvar_frunze).place(x=125, y=line10)
+ttk.Button(text="тест tour", width=12, command=dvizh_test).place(x=250, y=line10)
 
-ttk.Button(text="фото противника", width=17, command=create_img_arena_object).place(x=0, y=line10)
-ttk.Button(text="атака противника", width=17, command=kill).place(x=205, y=line10)
+ttk.Button(text="фото противника", width=17, command=create_img_arena_object).place(x=0, y=line11)
+ttk.Button(text="атака противника", width=17, command=kill).place(x=205, y=line11)
 # блок инфо строк
-st_gady = 255  # столб инфо Гавр
-st_gavr = st_gady + 41  # столб инфо Гадя
-st_veles = st_gady + 82
-st_item = st_gady - 39  # столб инфо
-separator = st_gady + 26
-separator_2 = st_veles - 14  # st_gavr + 26 + 43
-ttk.Label(text="Gady", background='#858585', foreground='#050505').place(x=st_gady - 10, y=l_line0)
-ttk.Label(text="Gavr", background='#858585', foreground='#050505').place(x=st_gavr - 9, y=l_line0)
-ttk.Label(text="Велес", background='#858585', foreground='#050505').place(x=st_veles - 11, y=l_line0)
-ttk.Label(text="VIP", width=4, background='#858585', foreground='#050505').place(x=st_item, y=l_line1)
-ttk.Label(textvariable=gady_vip).place(x=st_gady, y=l_line1)
-ttk.Label(text='|').place(x=separator, y=l_line1)
-ttk.Label(textvariable=gavr_vip).place(x=st_gavr, y=l_line1)
-ttk.Label(text='|').place(x=separator_2, y=l_line1)
-ttk.Label(textvariable=veles_vip).place(x=st_veles, y=l_line1)
+gady_y = label_line1
+gavr_y = label_line2
+veles_y = label_line3
+mara_y = label_line4
 
-ttk.Label(text="kiki", width=4, background='#858585', foreground='#050505').place(x=st_item, y=l_line2)
-ttk.Label(textvariable=gavr_kiki).place(x=st_gavr, y=l_line2)
-ttk.Label(text='|').place(x=separator, y=l_line2)
-ttk.Label(textvariable=gady_kiki).place(x=st_gady, y=l_line2)
-ttk.Label(text='|').place(x=separator_2, y=l_line2)
-ttk.Label(textvariable=veles_kiki).place(x=st_veles, y=l_line2)
+step = 47
+s = 14
+g_st0 = 0
+vip_x = step + s
+kiki_x = step * 2 + s
+arah_x = step * 3 + s
+rapt_x = step * 4 + s
+rat_x = step * 5 + s
+gift_x = step * 6 + s
+wild_x = step * 7 + s
 
-ttk.Label(text="arah", width=4, background='#858585', foreground='#050505').place(x=st_item, y=l_line3)
-ttk.Label(textvariable=gavr_arachne).place(x=st_gavr, y=l_line3)
-ttk.Label(text='|').place(x=separator, y=l_line3)
-ttk.Label(textvariable=gady_arachne).place(x=st_gady, y=l_line3)
-ttk.Label(text='|').place(x=separator_2, y=l_line3)
-ttk.Label(textvariable=veles_arachne).place(x=st_veles, y=l_line3)
+separator_1 = kiki_x - 18
+separator_2 = arah_x - 18
+separator_3 = rapt_x - 18
+separator_4 = rat_x - 18
+separator_5 = gift_x - 18
+separator_6 = wild_x - 18
 
-ttk.Label(text="rapt", width=4, background='#858585', foreground='#050505').place(x=st_item, y=l_line4)
-ttk.Label(textvariable=gavr_raptor).place(x=st_gavr, y=l_line4)
-ttk.Label(text='|').place(x=separator, y=l_line4)
-ttk.Label(textvariable=gady_raptor).place(x=st_gady, y=l_line4)
-ttk.Label(text='|').place(x=separator_2, y=l_line4)
-ttk.Label(textvariable=veles_raptor).place(x=st_veles, y=l_line4)
+ttk.Label(text="Gady", width=5, background='#858585', foreground='#050505').place(x=0, y=gady_y)
+ttk.Label(text="Gavr", width=5, background='#858585', foreground='#050505').place(x=0, y=gavr_y)
+ttk.Label(text="Велес", width=5, background='#858585', foreground='#050505').place(x=0, y=veles_y)
+ttk.Label(text="Мара", width=5, background='#858585', foreground='#050505').place(x=0, y=mara_y)
 
-ttk.Label(text="rat", width=4, background='#858585', foreground='#050505').place(x=st_item, y=l_line5)
-ttk.Label(textvariable=gavr_rat).place(x=st_gavr, y=l_line5)
-ttk.Label(text='|').place(x=separator, y=l_line5)
-ttk.Label(textvariable=gady_rat).place(x=st_gady, y=l_line5)
-ttk.Label(text='|').place(x=separator_2, y=l_line5)
-ttk.Label(textvariable=veles_rat).place(x=st_veles, y=l_line5)
+# ttk.Button(text=" обход VIP ", width=10, command=tent_inspection).place(x=114, y=line10)
+ttk.Button(text="VIP", width=4, command=tent_inspection).place(x=vip_x - s, y=label_line0 - 3)
+ttk.Label(textvariable=gady_vip).place(x=vip_x, y=gady_y)
+ttk.Label(textvariable=gavr_vip).place(x=vip_x, y=gavr_y)
+ttk.Label(textvariable=veles_vip).place(x=vip_x, y=veles_y)
+ttk.Label(textvariable=mara_vip).place(x=vip_x, y=mara_y)
+ttk.Label(text='|').place(x=separator_1, y=gady_y)
+ttk.Label(text='|').place(x=separator_1, y=gavr_y)
+ttk.Label(text='|').place(x=separator_1, y=veles_y)
+ttk.Label(text='|').place(x=separator_1, y=mara_y)
 
-ttk.Label(text="gift", width=4, background='#858585', foreground='#050505').place(x=st_item, y=l_line6)
-ttk.Label(textvariable=gavr_gift).place(x=st_gavr, y=l_line6)
-ttk.Label(text='|').place(x=separator, y=l_line6)
-ttk.Label(textvariable=gady_gift).place(x=st_gady, y=l_line6)
-ttk.Label(text='|').place(x=separator_2, y=l_line6)
-ttk.Label(textvariable=veles_gift).place(x=st_veles, y=l_line6)
+# ttk.Button(text="кикиморы", width=10, command=kiki).place(x=114, y=line11)
+ttk.Button(text="kiki", width=4, command=kiki).place(x=kiki_x - s, y=label_line0 - 3)
+ttk.Label(textvariable=gavr_kiki).place(x=kiki_x, y=gavr_y)
+ttk.Label(textvariable=gady_kiki).place(x=kiki_x, y=gady_y)
+ttk.Label(textvariable=veles_kiki).place(x=kiki_x, y=veles_y)
+ttk.Label(textvariable=mara_kiki).place(x=kiki_x, y=mara_y)
+ttk.Label(text='|').place(x=separator_2, y=gady_y)
+ttk.Label(text='|').place(x=separator_2, y=gavr_y)
+ttk.Label(text='|').place(x=separator_2, y=veles_y)
+ttk.Label(text='|').place(x=separator_2, y=mara_y)
+
+ttk.Label(text="arah", width=4, background='#858585', foreground='#050505').place(x=arah_x - s, y=label_line0)
+ttk.Label(textvariable=gavr_arachne).place(x=arah_x, y=gavr_y)
+ttk.Label(textvariable=gady_arachne).place(x=arah_x, y=gady_y)
+ttk.Label(textvariable=veles_arachne).place(x=arah_x, y=veles_y)
+ttk.Label(textvariable=mara_arachne).place(x=arah_x, y=mara_y)
+ttk.Label(text='|').place(x=separator_3, y=gady_y)
+ttk.Label(text='|').place(x=separator_3, y=gavr_y)
+ttk.Label(text='|').place(x=separator_3, y=veles_y)
+ttk.Label(text='|').place(x=separator_3, y=mara_y)
+
+ttk.Label(text="rapt", width=4, background='#858585', foreground='#050505').place(x=rapt_x - s, y=label_line0)
+ttk.Label(textvariable=gavr_raptor).place(x=rapt_x, y=gavr_y)
+ttk.Label(textvariable=gady_raptor).place(x=rapt_x, y=gady_y)
+ttk.Label(textvariable=veles_raptor).place(x=rapt_x, y=veles_y)
+ttk.Label(textvariable=mara_raptor).place(x=rapt_x, y=mara_y)
+ttk.Label(text='|').place(x=separator_4, y=gady_y)
+ttk.Label(text='|').place(x=separator_4, y=gavr_y)
+ttk.Label(text='|').place(x=separator_4, y=veles_y)
+ttk.Label(text='|').place(x=separator_4, y=mara_y)
+
+ttk.Label(text="rat", width=4, background='#858585', foreground='#050505').place(x=rat_x - s, y=label_line0)
+ttk.Label(textvariable=gavr_rat).place(x=rat_x, y=gavr_y)
+ttk.Label(textvariable=gady_rat).place(x=rat_x, y=gady_y)
+ttk.Label(textvariable=veles_rat).place(x=rat_x, y=veles_y)
+ttk.Label(textvariable=mara_rat).place(x=rat_x, y=mara_y)
+ttk.Label(text='|').place(x=separator_5, y=gady_y)
+ttk.Label(text='|').place(x=separator_5, y=gavr_y)
+ttk.Label(text='|').place(x=separator_5, y=veles_y)
+ttk.Label(text='|').place(x=separator_5, y=mara_y)
+
+ttk.Label(text="gift", width=4, background='#858585', foreground='#050505').place(x=gift_x - s, y=label_line0)
+ttk.Label(textvariable=gavr_gift).place(x=gift_x, y=gavr_y)
+ttk.Label(textvariable=gady_gift).place(x=gift_x, y=gady_y)
+ttk.Label(textvariable=veles_gift).place(x=gift_x, y=veles_y)
+ttk.Label(textvariable=mara_gift).place(x=gift_x, y=mara_y)
+ttk.Label(text='|').place(x=separator_6, y=gady_y)
+ttk.Label(text='|').place(x=separator_6, y=gavr_y)
+ttk.Label(text='|').place(x=separator_6, y=veles_y)
+ttk.Label(text='|').place(x=separator_6, y=mara_y)
+
+ttk.Label(text="wild", width=4, background='#858585', foreground='#050505').place(x=wild_x - s, y=label_line0)
+ttk.Label(textvariable=gavr_wild).place(x=wild_x, y=gavr_y)
+ttk.Label(textvariable=gady_wild).place(x=wild_x, y=gady_y)
+ttk.Label(textvariable=veles_wild).place(x=wild_x, y=veles_y)
+ttk.Label(textvariable=mara_wild).place(x=wild_x, y=mara_y)
 
 # блок выбора заданий
 difference_str_img = 11
-line_img = line1
+line_img = line5 + 1
 imagePul = ImageTk.PhotoImage(file="img/overall/pulya.png")
-ttk.Button(root, image=imagePul, command=station_master.vybor_zadaniya_na_puli).place(x=56, y=line_img + 15)
+ttk.Button(root, image=imagePul, command=puli).place(x=56, y=line_img + 15)
 img_e1 = ImageTk.PhotoImage(file="img/overall/en1v3.png")
 ttk.Button(root, image=img_e1, command=en_1).place(x=0, y=line_img)
 img_e2 = ImageTk.PhotoImage(file="img/overall/en2v3.png")

@@ -7,7 +7,18 @@
     <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="изменил сохранение и отображение счетчиков">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/baza_dannyx.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza_dannyx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cr_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_and_analiz_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_and_analiz_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_OCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/sketches_of_the_future/event_OCR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/arena_object.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/object.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_OCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/sketches_of_the_future/my_OCR.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks_analiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks_analiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +59,7 @@
     &quot;Python.create_and_analiz_img (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.create_img.executor&quot;: &quot;Run&quot;,
     &quot;Python.event_frend.executor&quot;: &quot;Run&quot;,
+    &quot;Python.heroes.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.tasks_analiz.executor&quot;: &quot;Run&quot;,
     &quot;Python.test.executor&quot;: &quot;Run&quot;,
@@ -57,13 +69,14 @@
     &quot;Python.создание скриншотов.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;create__class__hero&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/bot in br/tes_rep_1&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Python/test1&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\bot in br\testOCR\sketches_of_the_future" />
       <recent name="D:\bot in br\testOCR\img\overall" />
       <recent name="D:\bot in br\testOCR\img\arena" />
       <recent name="D:\bot in br\testOCR\img\tents_R" />
@@ -71,28 +84,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="cr_img" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testOCR" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cr_img.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="event_frend" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
@@ -107,6 +98,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/event_frend.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="heroes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testOCR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/heroes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -185,9 +198,9 @@
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.heroes" />
         <item itemvalue="Python.tasks_analiz" />
         <item itemvalue="Python.event_frend" />
-        <item itemvalue="Python.cr_img" />
       </list>
     </recent_temporary>
   </component>
@@ -260,18 +273,53 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fun.py</url>
-          <line>326</line>
+          <line>329</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/create_and_analiz_img.py</url>
-          <line>32</line>
+          <line>28</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>106</line>
+          <line>109</line>
           <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>240</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>450</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/station_master.py</url>
+          <line>166</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/station_master.py</url>
+          <line>199</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/station_master.py</url>
+          <line>127</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/station_master.py</url>
+          <line>125</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/station_master.py</url>
+          <line>105</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

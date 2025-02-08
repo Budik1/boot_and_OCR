@@ -1,6 +1,5 @@
 import pyautogui
 import fun
-from time import sleep
 
 
 def foto_pos(region, tune_x, tune_y, tune_s, tune_v, name_img):
@@ -127,9 +126,9 @@ def defeat_in_arena():
 def gift_img():
     pos = fun.find_link_klan()
     x, y = pos
-    x += 118 # 148
-    y += 350 # 300
-    pyautogui.moveTo(x,y)
+    x += 118  # 148
+    y += 350  # 300
+    pyautogui.moveTo(x, y)
     x_v = x
     y_v = y
     x_v += 28
@@ -140,7 +139,20 @@ def gift_img():
     print("сделано")
 
 
-gift_img()
+def lvl_img():
+    pos = fun.find_link_klan()
+    x, y = pos
+    x_f = x - 85
+    y_f = y - 70
+    # pyautogui.moveTo((x_f, y_f), duration=1)
+    # x_r = x_f + 55
+    # y_r = y_f + 40
+    # pyautogui.moveTo((x_r, y_r), duration=1)
+    fun.foto('img/test/lvl.png', (x_f, y_f, 55, 40))
+    print("сделано")
+
+
+# gift_img()
 # defeat_in_arena()
 # victory_in_arena()
 # detecting()

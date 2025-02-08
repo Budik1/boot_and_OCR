@@ -1,10 +1,6 @@
 """Файл показывает как перевести картинку в текст
  и создаёт картинку уровня"""
-import pyautogui
-import event_OCR
-import my_OCR
 import fun
-from time import sleep
 
 
 def foto_pos(region, tune_x, tune_y, tune_s, tune_v, name_img):
@@ -53,17 +49,7 @@ def get_screenshot_task():
 # event_OCR.visualization_tascks_result(list_1_pul, list_1_xp, list_2_pul, list_2_xp, list_3_pul, list_3_xp)
 
 
-def lvl_img():
-    pos = fun.find_link_klan()
-    x, y = pos
-    x_f = x - 85
-    y_f = y - 70
-    # pyautogui.moveTo((x_f, y_f), duration=1)
-    # x_r = x_f + 55
-    # y_r = y_f + 40
-    # pyautogui.moveTo((x_r, y_r), duration=1)
-    fun.foto('img/test/lvl.png', (x_f, y_f, 55, 40))
-    print("сделано")
+
 
 
 # опознание уровня

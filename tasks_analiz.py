@@ -1,6 +1,5 @@
 import fun
-import my_OCR
-import baza_dannyx as b_d
+from sketches_of_the_future import my_OCR
 
 # Параметр смещения от позиции 'Начстанции'
 pul = 444

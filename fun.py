@@ -1,7 +1,10 @@
 import pyautogui
 from time import sleep, time
 import datetime
+
+import fun
 import my_color_text as my_c_t
+import heroes as her
 
 par_conf = 0.79
 oblast = (51, 707, 92, 111)
@@ -493,32 +496,46 @@ def await_arena(region):
     pyautogui.moveTo(attack_arena_object)
 
 
-def selection_hero():
+def selection_hero(class_select=False):
+    print('fun.selection_hero')
     hero_gadya = locCenterImg('img/person/her_gadya.png')
     hero_gavr = locCenterImg('img/person/her_gavr.png')
     hero_veles = locCenterImg('img/person/her_veles.png')
     hero_mara = locCenterImg('img/person/her_mara.png')
 
     if hero_gadya:
-        # print(my_c.tc_yellow('Гадя'))
+        print(my_c_t.tc_yellow('Гадя'))
         hero = 'Gady'
+        her.Activ.hero_activ_name = 'Gady'
+        her.Activ.hero_activ = her.gady
     elif hero_gavr:
-        # print(my_c.tc_yellow('Гавр'))
+        print(my_c_t.tc_yellow('Гавр'))
         hero = 'Gavr'
+        her.Activ.hero_activ_name = 'Gavr'
+        her.Activ.hero_activ = her.gavr
     elif hero_veles:
-        # print(my_c.tc_yellow('Велес'))
+        print(my_c_t.tc_yellow('Велес'))
         hero = 'Велес'
+        her.Activ.hero_activ_name = 'Велес'
+        her.Activ.hero_activ = her.veles
     elif hero_mara:
-        # print(my_c.tc_yellow('Мар`яна'))
+        print(my_c_t.tc_yellow('Мар`яна'))
         hero = 'Mara'
+        her.Activ.hero_activ_name = 'Mara'
+        her.Activ.hero_activ = her.mara
     else:
         print(my_c_t.tc_red("Невозможно опознать героя (("))
         hero = None
+        her.Activ.hero_activ = None
+
+    if class_select:
+
+        her.Hero.her_message(her.Activ.hero_activ)
 
     return hero
 
 
-def q_st_in_bypass(bypass_hero):
+def get_len_bypass(bypass_hero):
     arr2 = []
     for i in bypass_hero:
         if i not in arr2:

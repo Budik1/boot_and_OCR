@@ -16,7 +16,7 @@ class Station:
         self.map_offset = variable[3]
         self.task_list = variable[4]
 
-    def set_value(self):
+    def set_value(self, details):
         pass
 
 
