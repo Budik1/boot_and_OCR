@@ -2,17 +2,19 @@ import pyautogui
 from time import sleep, time
 import datetime
 
-import fun
-import my_color_text as my_c_t
+import my_color_text as myCt
 import heroes as her
+from heroes import Hero, Activ
 
 par_conf = 0.79
 oblast = (51, 707, 92, 111)
 log = 1
 
 
-def locCenterImg(name_img, confidence=0.9):
-    pos_img = pyautogui.locateCenterOnScreen(name_img, confidence=confidence)
+def locCenterImg(name_img, confidence=0.9, region: tuple[int, int, int, int] | None = None):
+    pos_img = pyautogui.locateCenterOnScreen(name_img,
+                                             confidence=confidence,
+                                             region=region)
     return pos_img
 
 
@@ -20,9 +22,9 @@ def my_print_to_file(text):
     if log == 1:
         date_time, date = time_now()
         file_name = date + ".txt"
-        file = open('log/' + str(file_name), 'a+', encoding='utf-8')
-        print(date_time, text, file=file)
-        file.close()
+        file_1 = open('log/' + str(file_name), 'a+', encoding='utf-8')
+        print(date_time, text, file=file_1)
+        file_1.close()
 
 
 def date_utc_now():
@@ -105,8 +107,13 @@ def push_close():
     close = locCenterImg('img/overall/close.png', 0.9)
     if kv_close:
         move_to_click(kv_close, 0.1)
-    else:
+        cl = True
+    elif close:
         move_to_click(close, 0.1)
+        cl = True
+    else:
+        cl = False
+    return cl
 
 
 def exit_to_zero_screen():
@@ -280,7 +287,7 @@ def move_friends_list_to_top():
     sleep(1)
 
 
-def move_to_click(pos_click: tuple, z_p_k: float):
+def move_to_click(pos_click: tuple, z_p_k=0.05):
     """
     Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
     :param pos_click: Point
@@ -293,6 +300,7 @@ def move_to_click(pos_click: tuple, z_p_k: float):
     pyautogui.moveTo(pos_click, duration=1, tween=pyautogui.easeInOutQuad)
     # print('должен быть клик')
     sleep(z_p_k)
+    pyautogui.hotkey('Ctrl')
     pyautogui.click(pos_click)
     sleep(0.18)
 
@@ -496,41 +504,37 @@ def await_arena(region):
     pyautogui.moveTo(attack_arena_object)
 
 
-def selection_hero(class_select=False):
-    print('fun.selection_hero')
+def selection_hero():
+    # print('fun.selection_hero')
     hero_gadya = locCenterImg('img/person/her_gadya.png')
     hero_gavr = locCenterImg('img/person/her_gavr.png')
     hero_veles = locCenterImg('img/person/her_veles.png')
     hero_mara = locCenterImg('img/person/her_mara.png')
 
     if hero_gadya:
-        print(my_c_t.tc_yellow('Гадя'))
+        print(myCt.tc_yellow('Гадя'))
         hero = 'Gady'
-        her.Activ.hero_activ_name = 'Gady'
-        her.Activ.hero_activ = her.gady
+        Activ.hero_activ_name = 'Gady'
+        Activ.hero_activ = her.gady
     elif hero_gavr:
-        print(my_c_t.tc_yellow('Гавр'))
+        print(myCt.tc_yellow('Гавр'))
         hero = 'Gavr'
-        her.Activ.hero_activ_name = 'Gavr'
-        her.Activ.hero_activ = her.gavr
+        Activ.hero_activ_name = 'Gavr'
+        Activ.hero_activ = her.gavr
     elif hero_veles:
-        print(my_c_t.tc_yellow('Велес'))
+        print(myCt.tc_yellow('Велес'))
         hero = 'Велес'
-        her.Activ.hero_activ_name = 'Велес'
-        her.Activ.hero_activ = her.veles
+        Activ.hero_activ_name = 'Велес'
+        Activ.hero_activ = her.veles
     elif hero_mara:
-        print(my_c_t.tc_yellow('Мар`яна'))
+        print(myCt.tc_yellow('Мар`яна'))
         hero = 'Mara'
-        her.Activ.hero_activ_name = 'Mara'
-        her.Activ.hero_activ = her.mara
+        Activ.hero_activ_name = 'Mara'
+        Activ.hero_activ = her.mara
     else:
-        print(my_c_t.tc_red("Невозможно опознать героя (("))
+        print(myCt.tc_red("Невозможно опознать героя (("))
         hero = None
-        her.Activ.hero_activ = None
-
-    if class_select:
-
-        her.Hero.her_message(her.Activ.hero_activ)
+        Activ.hero_activ = None
 
     return hero
 
@@ -541,3 +545,18 @@ def get_len_bypass(bypass_hero):
         if i not in arr2:
             arr2.append(i)
     return len(arr2)
+
+
+def transform_days(qty_days: int):
+    days_des = qty_days % 10
+    days_col = qty_days // 10
+
+    if days_des == 1 and days_col != 1:
+        return 'день'
+    elif days_des in [2, 3, 4] and days_col != 1:
+        return 'дня'
+    elif days_col == 1:
+        return 'дней'
+    elif days_des in [0, 5, 6, 7, 8, 9] and days_col != 1:
+        return 'дней'
+

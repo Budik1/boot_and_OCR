@@ -97,60 +97,18 @@ def events_tunnel(st0, st2):
             fun.my_print_to_file(f'kiki = {kiki}')
             if krysa:
                 Hero.app_rat(Activ.hero_activ)
-                display_element = Hero.get_qty_rat(Activ.hero_activ)
-                # if hero == 'Gavr':
-                #     her.gavr.rat += 1
-                #     display_element = her.gavr.rat
-                # elif hero == 'Gady':
-                #     her.gady.rat += 1
-                #     display_element = her.gady.rat
-                # elif hero == 'Mara':
-                #     her.mara.rat += 1
-                #     display_element = her.mara.rat
-                # elif hero == 'Велес':
-                #     her.veles.rat += 1
-                #     display_element = her.veles.rat
-                print(f'{display_element} Detekt krysa')
+                print(f' Detekt {Hero.get_qty_rat(Activ.hero_activ)} krysa')
             if kiki:
-                if hero == 'Gavr':
-                    her.gavr.kiki += 1
-                    print(f'{her.gavr.kiki} Detekt Kikimora')
-                elif hero == 'Gady':
-                    her.gady.kiki += 1
-                    print(f'{her.gady.kiki} Detekt Kikimora')
-                elif hero == 'Mara':
-                    her.mara.kiki += 1
-                    print(f'{her.mara.kiki} Detekt Kikimora')
-                elif hero == 'Велес':
-                    her.veles.kiki += 1
-                    print(f'{her.veles.kiki} Detekt Kikimora')
+                Hero.app_kiki(Activ.hero_activ)
+                print(f' Detekt {Hero.get_qty_kiki(Activ.hero_activ)} kikimora')
             if arachne:
-                if hero == 'Gavr':
-                    her.gavr.arachne += 1
-                    print(f'{her.gavr.arachne} Detekt arachne')
-                elif hero == 'Gady':
-                    her.gady.arachne += 1
-                    print(f'{her.gady.arachne} Detekt arachne')
-                elif hero == 'Mara':
-                    her.mara.arachne += 1
-                    print(f'{her.mara.arachne} Detekt arachne')
-                elif hero == 'Велес':
-                    her.veles.arachne += 1
-                    print(f'{her.veles.arachne} Detekt arachne')
+                Hero.app_arachne(Activ.hero_activ)
+                print(f'detekt {Hero.get_qty_arachne(Activ.hero_activ)} arachne')
             if raptor:
-                if hero == 'Gavr':
-                    her.gavr.raptor += 1
-                    print(f'{her.gavr.raptor} Detekt raptor')
-                elif hero == 'Gady':
-                    her.gady.raptor += 1
-                    print(f'{her.gady.raptor} Detekt raptor')
-                elif hero == 'Mara':
-                    her.mara.raptor += 1
-                    print(f'{her.mara.raptor} Detekt raptor')
-                elif hero == 'Велес':
-                    her.veles.raptor += 1
-                    print(f'{her.veles.raptor} Detekt raptor')
-            station_master.enemy_battle(1, add_up=False)  # вызов обработки события
+                Hero.app_raptor(Activ.hero_activ)
+                print(f'Detekt {Hero.get_qty_raptor(Activ.hero_activ)} raptor')
+
+            station_master.enemy_battle(1, add_up=True)  # вызов обработки события
         if post:
             fun.my_print_to_file(f'post = {post}')
             pyautogui.moveTo(post, duration=0.2)
@@ -173,22 +131,8 @@ def events_tunnel(st0, st2):
     pos_gift = event_gifts()
     fun.my_print_to_file(f'pos_gift = {pos_gift}')
     if pos_gift:
-        if hero == 'Gavr':
-            her.gavr.gifts += 1
-            if her.gavr.gifts:
-                print(st0, ' подарков ', her.gavr.gifts)
-        elif hero == 'Gady':
-            her.gady.gifts += 1
-            if her.gady.gifts:
-                print(st0, ' подарков ', her.gady.gifts)
-        elif hero == 'Mara':
-            her.mara.gifts += 1
-            if her.mara.gifts:
-                print(st0, ' подарков ', her.mara.gifts)
-        elif hero == 'Велес':
-            her.veles.gifts += 1
-            if her.veles.gifts:
-                print(st0, ' подарков ', her.veles.gifts)
+        Hero.app_gifts(Activ.hero_activ)
+        print(st0, ' подарков ', Hero.get_qty_gift(Activ.hero_activ))
 
 
 # принимает имя файла поиска, выдаёт Point(x, y), параметр confidence

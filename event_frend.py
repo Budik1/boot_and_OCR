@@ -20,18 +20,18 @@ def search_friend():
     friend_battle_region = x_r, y_r, 155, 295
     pyautogui.moveTo(pos_friend, duration=1)
     fun.move_to_click(pos_friend, 0.2)
-    dom = pyautogui.locateCenterOnScreen('img/tents_R/b_tent.png', region=friend_battle_region, confidence=0.9)
+    dom = fun.locCenterImg('img/tents_R/b_tent.png', region=friend_battle_region, confidence=0.9)
     while not dom:
         fun.move_to_click(pos_friend, 0.2)
-        dom = pyautogui.locateCenterOnScreen('img/tents_R/b_tent.png', region=friend_battle_region, confidence=0.9)
-    hero_vs_friend = pyautogui.locateCenterOnScreen("img/frends/hero_vs_friend.png", region=friend_battle_region,
+        dom = fun.locCenterImg('img/tents_R/b_tent.png', region=friend_battle_region, confidence=0.9)
+    hero_vs_friend = fun.locCenterImg("img/frends/hero_vs_friend.png", region=friend_battle_region,
                                                     confidence=0.95)  # 0.95 #  0.986
     # foto('img/kent.png', friend_battle_region)
     if hero_vs_friend:
-        gangster = pyautogui.locateCenterOnScreen("img/frends/f_gangster.png", region=friend_battle_region, confidence=0.95)
-        ganza = pyautogui.locateCenterOnScreen("img/frends/f_ganza.png", region=friend_battle_region, confidence=0.95)
-        reich = pyautogui.locateCenterOnScreen("img/frends/f_reich.png", region=friend_battle_region, confidence=0.95)
-        red = pyautogui.locateCenterOnScreen("img/frends/f_red.png", region=friend_battle_region, confidence=0.95)
+        gangster = fun.locCenterImg("img/frends/f_gangster.png", region=friend_battle_region, confidence=0.95)
+        ganza = fun.locCenterImg("img/frends/f_ganza.png", region=friend_battle_region, confidence=0.95)
+        reich = fun.locCenterImg("img/frends/f_reich.png", region=friend_battle_region, confidence=0.95)
+        red = fun.locCenterImg("img/frends/f_red.png", region=friend_battle_region, confidence=0.95)
         if  not gangster or not ganza or not reich or not red:  #
             friend_battle = hero_vs_friend
         else:

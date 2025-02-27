@@ -187,6 +187,8 @@ def task_selection():
         print(f"img создан с именем {name_img}")
 
 
-task_selection()
+# task_selection()
 # опознание уровня
 # lvl_img()
+
+

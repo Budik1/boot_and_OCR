@@ -1,3 +1,5 @@
+from fileinput import close
+
 import pyautogui
 from time import sleep
 from fun import move_friends_list_left
@@ -50,8 +52,14 @@ def visit_to_tent():
     if visit:
         pyautogui.moveTo(visit, duration=1, tween=pyautogui.easeInOutQuad)
         pyautogui.click(visit)
-        # print("клик обыск" + str(visit))
-        vip = 1
+
+        cl = fun.push_close()
+        if not cl:
+
+            # print("клик обыск" + str(visit))
+            vip = 1
+        else:
+            vip = 0
     else:
         # print(' уже обыскан ')
         vip = 0

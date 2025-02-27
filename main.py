@@ -12,6 +12,7 @@ import pickle
 from my_color_text import tc_green, tc_cyan, tc_blue, tc_red
 import baza_dannyx as b_d
 import heroes as her
+from heroes import Hero, Activ
 
 fun.my_print_to_file('')
 fun.my_print_to_file('*******                      *******')
@@ -20,8 +21,17 @@ fun.my_print_to_file('*******                      *******')
 fun.my_print_to_file('')
 
 date_start = fun.date_utc_now()
+# date_start = 1
 # стартовые значения
 starting_value = 0
+
+'''
+wildman_all
+    при встрече увеличивается
+    при загрузке считывается состояние из файла
+    при записи сохраняется состояние
+days_counting
+'''
 
 
 def displaying_values():
@@ -57,6 +67,15 @@ def displaying_values():
 def check_date(loaded_data):
     """Установка значений при (пере)запуске программы"""
     date_ver = loaded_data['date']
+    # date_ver = 0
+
+    her.gady.wildman_count = loaded_data['gady.wildman_all']
+    her.gavr.wildman_count = loaded_data['gavr.wildman_all']
+
+    her.gady.days_count = loaded_data['gady.days_counting']
+    her.gavr.days_count = loaded_data['gavr.days_counting']
+    # her.gavr.days_counting += 1
+
     # если даты совпадают:- значения устанавливаются из файла
     if date_ver == date_start:
         print(tc_blue("даты совпадают"))
@@ -95,6 +114,7 @@ def check_date(loaded_data):
         her.gady.wildman = loaded_data['gady_wild']
         her.mara.wildman = loaded_data['mara_wild']
         her.veles.wildman = loaded_data['veles_wild']
+
         # отображаем значения
         gavr_vip.set(her.gavr.vip)
         gady_vip.set(her.gady.vip)
@@ -104,6 +124,13 @@ def check_date(loaded_data):
         displaying_values()
     # иначе отображение и сохранение стартовых значений
     else:
+
+        her.gady.days_count +=1
+        # her.gady.days_counting = 0
+        her.gavr.days_count +=1
+        # her.gavr.days_counting = 0
+        print(f"gady {her.gady.days_count} дней, {her.gady.wildman_count} дикарей")
+        print(f'gavr {her.gavr.days_count} дней, {her.gavr.wildman_count} дикарей')
 
         print(tc_cyan("даты не совпадают, смена суток"))
         gavr_vip.set(str(starting_value))
@@ -154,6 +181,12 @@ def save_to_file():
         'gady_wild': her.gady.wildman,
         'mara_wild': her.mara.wildman,
         'veles_wild': her.veles.wildman,
+
+        'gady.wildman_all': her.gady.wildman_count,
+        'gavr.wildman_all': her.gavr.wildman_count,
+
+        'gady.days_counting': her.gady.days_count,
+        'gavr.days_counting': her.gavr.days_count,
 
     }
     # print(data_to_save)
@@ -330,33 +363,38 @@ def collecting_gifts_at_stations():
     # определение героя
     hero = fun.selection_hero()
     # получение маршрута для определенного героя
-    if hero == 'Велес':
-        bypass_hero = b_d.bypass_veles
-    elif hero == 'Mara':
-        bypass_hero = b_d.bypass_mara
-    elif hero == 'Gady':
-        bypass_hero = b_d.bypass
-    elif hero == 'Gavr':
-        bypass_hero = b_d.bypass
+    if hero:
+        bypass_hero = Hero.get_bypass(Activ.hero_activ)
+    # if hero == 'Велес':
+    #     bypass_hero = b_d.bypass_veles
+    # elif hero == 'Mara':
+    #     bypass_hero = b_d.bypass_mara
+    # elif hero == 'Gady':
+    #     bypass_hero = b_d.bypass
+    # elif hero == 'Gavr':
+    #     bypass_hero = b_d.bypass
     else:
         print('герой не опознан')
         return
     # движение по маршруту
     touring.sbor_podarkov(bypass_hero)
+    # получение количества станций на маршруте
+    q_st = fun.get_len_bypass(bypass_hero)
     # получение количества собранных подарков
-    if hero == 'Велес':
-        q_gifts = her.veles.gifts
-    elif hero == 'Mara':
-        q_gifts = her.mara.gifts
-    elif hero == 'Gady':
-        q_gifts = her.gady.gifts
-    elif hero == 'Gavr':
-        q_gifts = her.gavr.gifts
+    if hero:
+        q_gifts = Hero.get_qty_gift(Activ.hero_activ)
+    # if hero == 'Велес':
+    #     q_gifts = her.veles.gifts
+    # elif hero == 'Mara':
+    #     q_gifts = her.mara.gifts
+    # elif hero == 'Gady':
+    #     q_gifts = her.gady.gifts
+    # elif hero == 'Gavr':
+    #     q_gifts = her.gavr.gifts
     else:
         print('герой не опознан')
         return
-    # получение количества станций на маршруте
-    q_st = fun.get_len_bypass(bypass_hero)
+
     # вывод информации
     print(f'На {q_st} станциях собрано {q_gifts} подарков')
 
@@ -445,11 +483,12 @@ label_line10 = line10 + label_shift
 # блок командных кнопок
 ttk.Button(text="КВ", width=8, command=kv_and_raid.kv).place(x=114, y=line5)
 ttk.Button(text=" Start ", width=14, command=fun.start_p_m).place(x=200, y=line5)
-ttk.Button(text="Паук+Ящер", width=10, command=arachne_and_raptor).place(x=267, y=line7)
 ttk.Button(text="за дикарями", width=10, command=tasks_na_kievskoy).place(x=114, y=line6)
 ttk.Button(text="на Киев", width=7, command=frunze_kiev).place(x=215, y=line6)
 ttk.Button(text="домой ", width=7, command=kiev_frunze).place(x=291, y=line6)
+ttk.Button(text="Паук+Ящер", width=10, command=arachne_and_raptor).place(x=267, y=line7)
 ttk.Button(text="обход всех станций", width=16, command=collecting_gifts_at_stations).place(x=114, y=line7)
+ttk.Button(text='Save', width=12, command=save_to_file).place(x=125, y=line8)
 ttk.Button(text="frunze_riga", width=12, command=frunze_riga).place(x=0, y=line9)
 ttk.Button(text="riga_frunze", width=12, command=riga_frunze).place(x=125, y=line9)
 ttk.Button(text="test гардероб", width=12, command=person.pereodevanie).place(x=250, y=line9)

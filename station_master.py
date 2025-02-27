@@ -5,8 +5,10 @@ from time import sleep
 import fun
 import create_and_analiz_img
 import my_color_text as myCt
+from heroes import Hero, Activ
 import heroes as her
-import station_master
+import cr_img
+# import station_master
 
 conf_ = 0.95
 par_conf = 0.799
@@ -15,12 +17,15 @@ number_tasks = 1
 variable = None
 
 
-def enemy_battle(hero, prolong_=2, add_up=True):
+def enemy_battle(prolong_=2, add_up=True):
     fun.my_print_to_file('station_master.enemy_battle()')
     fun.my_print_to_file(' поиск battle_end, skip_battle, dog')
+    her.nam += 1
     battle_end = fun.locCenterImg('img/b_battle_end.png', confidence=par_conf)
     skip_battle = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
     dog = fun.locCenterImg('img/dog_2.png', confidence=par_conf)
+
+    raptor = fun.locCenterImg('img/tonelli/raptor.png', confidence=0.85)
     wildman = fun.locCenterImg('img/tonelli/wildman.png', confidence=par_conf)
     rat = fun.locCenterImg('img/tonelli/krysa.png', confidence=0.85)
     arachne = fun.locCenterImg('img/tonelli/arachne.png', confidence=0.85)
@@ -29,26 +34,23 @@ def enemy_battle(hero, prolong_=2, add_up=True):
     cikl = True
     result = None
     while not battle_end:
+        cr_img.mob_foto(her.nam)
         if add_up:
+            # print('detect - mobi')
+            # print(f'{cikl=}')
             if wildman and cikl:
                 cikl = False
-                her.Hero.wildman_app(her.Activ.hero_activ)
-                print(her.Hero.get_qty_wildman(her.Activ.hero_activ))
-                # if her.Activ.hero_activ_name == 'Gady':
-                #     her.gady.wildman += 1
-                # if her.Activ.hero_activ_name == 'Gavr':
-                #     her.gavr.wildman += 1
-                # if her.Activ.hero_activ_name == 'Mara':
-                #     her.mara.wildman += 1
-                # if her.Activ.hero_activ_name == 'Велес':
-                #     her.veles.wildman += 1
-            if arachne and cikl:
-                cikl = False
-                her.Hero.app_arachne(her.Activ.hero_activ)
+                Hero.app_wildman(Activ.hero_activ)
+                print(f'сегодня {Hero.get_qty_wildman(Activ.hero_activ)}')
+                # Х штук за Х дней. Х,Х в день
+                print(Hero.get_report_wildman(Activ.hero_activ))
+
             if rat and cikl:
                 cikl = False
-                print('detekt rat')
-                her.Hero.app_rat(her.Activ.hero_activ)
+                Hero.app_rat(Activ.hero_activ)
+                print(f'detekt {Hero.get_qty_rat(Activ.hero_activ)} rat')
+                cr_img.mob_foto(her.nam)
+
         if dog:  # нажать "на собаку"
             fun.my_print_to_file(f'dog = {dog}')
             fun.my_print_to_file("нажал на собаку")
@@ -61,6 +63,8 @@ def enemy_battle(hero, prolong_=2, add_up=True):
         fun.my_print_to_file('ожидание battle_end, close, dog, skip_battle')
         battle_end = fun.locCenterImg('img/b_battle_end.png', confidence=par_conf)
         close = fun.locCenterImg('img/overall/close.png', confidence=par_conf)
+
+        raptor = fun.locCenterImg('img/tonelli/raptor.png', confidence=0.85)
         wildman = fun.locCenterImg('img/tonelli/wildman.png', confidence=par_conf)
         arachne = fun.locCenterImg('img/tonelli/arachne.png', confidence=0.85)
         rat = fun.locCenterImg('img/tonelli/krysa.png', confidence=0.85)
@@ -89,7 +93,7 @@ def enemy_battle(hero, prolong_=2, add_up=True):
     return result
 
 
-def press_en(task_number, pos, hero):
+def press_en(task_number, pos):
     fun.my_print_to_file("station_master.press_en()")
     global energy_availability, conf_
     x = pos[0] - 100
@@ -103,10 +107,13 @@ def press_en(task_number, pos, hero):
     if not nal_energy:
         vers_in_print = "" if conf_ == 0.95 else f', conf_={conf_}'
         print(f'Выполняю  {task_number}  задание{vers_in_print}')
-        enemy_battle(hero)
+        enemy_battle()
+        energy_availability = 1
     else:
         energy_availability = 0
         print(' Энергия закончилась!!')
+        print(Hero.get_report_wildman_now(Activ.hero_activ))
+        print(Hero.get_report_wildman(Activ.hero_activ))
         sleep(1)
         close = fun.locCenterImg('img/overall/close.png')
         fun.move_to_click(close, 0.5)
@@ -123,9 +130,9 @@ def task_analysis(img1, img2, region):
     fun.my_print_to_file('station_master.task_analysis()')
     global variable
     fun.vizit_to_station_master()
-    variant1 = pyautogui.locateCenterOnScreen(img1, region=region, confidence=conf_)
+    variant1 = pyautogui.locateCenterOnScreen(img1, minSearchTime=1.0,region=region, confidence=conf_)
     # v3 = pyautogui.locateCenterOnScreen(img2, minSearchTime=1.0, region=region, confidence=conf_)
-    variant2 = pyautogui.locateCenterOnScreen(img2, confidence=conf_, region=region)
+    variant2 = pyautogui.locateCenterOnScreen(img2, minSearchTime=1.0,confidence=conf_, region=region)
     if variant1:
         variable = variant1
     else:
@@ -159,25 +166,16 @@ def station_task_list():
 
 def vybor_zadaniya_na_puli():
     fun.my_print_to_file("station_master.vybor_zadaniya_na_puli()")
-    print('station_master.vybor_zadaniya_na_puli')
+    # print('station_master.vybor_zadaniya_na_puli')
     global energy_availability, number_tasks  # , conf_
     conf_ = 0.95
     fun.push_close_all_()
     task = station_task_list()
     hero = fun.selection_hero()
-    print('герой определён station_master.стр 168')
+    # print('герой определён station_master.стр 168')
     if hero:
-        # hero_ = her.Activ.hero_activ
-        path = her.Hero.get_path_task(her.Activ.hero_activ)
-        print(path)
-    # if hero == 'Gady':
-    #     path = 'img/person/tasks_gady/'
-    # elif hero == 'Gavr':
-    #     path = 'img/person/tasks_gavr/'
-    # elif hero == 'Mara':
-    #     path = 'img/person/tasks_mara/'
-    # elif hero == 'Велес':
-    #     path = 'img/person/tasks_veles/'
+        path = Hero.get_path_task(Activ.hero_activ)
+        # print(path, "station_master.vybor_zadaniya_na_puli стр 172")
     else:
         return
     region_1, region_2, region_3 = fun.get_areas_task_big()
@@ -199,11 +197,11 @@ def vybor_zadaniya_na_puli():
         sleep(0.1)
 
         if variant1:
-            press_en(1, region_1, hero)
+            press_en(1, region_1)
         if variant2:
-            press_en(2, region_2, hero)
+            press_en(2, region_2)
         if variant3:
-            press_en(3, region_3, hero)
+            press_en(3, region_3)
 
         if variant1 == variant2 == variant3:
             print(F'confidence={conf_}')
@@ -238,7 +236,7 @@ def en_task_item(task_number):
 
     while energy_availability == 1 and number_tasks > 0:
         fun.vizit_to_station_master()
-        press_en(task_number, region, hero)
+        press_en(task_number, region)
     print(myCt.tc_green(' Задания выполнены'))
     number_tasks = 1
     energy_availability = 1

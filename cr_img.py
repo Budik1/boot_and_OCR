@@ -1,5 +1,6 @@
 import pyautogui
 import fun
+from time import sleep
 
 
 def foto_pos(region, tune_x, tune_y, tune_s, tune_v, name_img):
@@ -151,6 +152,30 @@ def lvl_img():
     fun.foto('img/test/lvl.png', (x_f, y_f, 55, 40))
     print("сделано")
 
+
+def mob_foto(nam):
+    skip_battle = fun.locCenterImg('img/skip_battle.png', confidence=0.79)
+    if skip_battle:
+        raptor = fun.locCenterImg('img/tonelli/raptor.png', confidence=0.85)
+        arachne = fun.locCenterImg('img/tonelli/arachne.png', confidence=0.85)
+        krysa = fun.locCenterImg('img/tonelli/krysa.png', confidence=0.85)
+        kiki = fun.locCenterImg('img/tonelli/kikimora.png', confidence=0.85)
+        if raptor or arachne or krysa or kiki:
+            return
+        else:
+            print(f'{skip_battle}')
+            x, y = skip_battle
+            x_f = x + 300 + 14
+            y_f = y - 35 + 13
+            pyautogui.moveTo((x_f, y_f), duration=1)
+            sleep(1)
+            cor_x = 130 - 16
+            cor_y = 130 - 16
+            x_cor = x_f + cor_x
+            y_cor = y_f + cor_y
+            pyautogui.moveTo(x_cor, y_cor, duration=1)
+            fun.foto(f'img/test/mobi{nam}.png', (x_f, y_f, cor_x, cor_y))
+            print(f'mobi{nam}')
 
 # gift_img()
 # defeat_in_arena()

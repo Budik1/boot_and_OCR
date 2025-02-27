@@ -2,7 +2,7 @@ import pyautogui
 from time import sleep
 from station_master import enemy_battle
 import fun
-from my_color_text import tc_blue, tc_cyan, tc_red, tc_green, tc_yellow, tc_magenta
+import my_color_text as myCt
 
 
 def foto(path_name, _region):
@@ -116,9 +116,9 @@ def kill():
         res = enemy_battle(0.5)
         if res == "победа":
             vict_in_arena += 1
-            result = tc_yellow(F"победа,{vict_in_arena}")
+            result = myCt.tc_yellow(F"победа,{vict_in_arena}")
         else:
-            result = tc_red("поражение")
+            result = myCt.tc_red("поражение")
         print(f"боёв {boy_in_arena}, {result}, следующий..")
         ver = fun.find_link_hall_of_glory()
 
