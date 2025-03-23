@@ -42,7 +42,7 @@ def search_friend():
     return friend_battle
 
 
-def friend_kill(required_quantity=30):  # требуемое количество=5
+def friend_kill(required_quantity=10):  # требуемое количество=5
     quantity_battle = 0
     while quantity_battle <= required_quantity:
         friend_battle_ = search_friend()

@@ -1,7 +1,6 @@
 import pyautogui
 from time import sleep
-from fun import move_to_click
-from station_master import vizit_to_station_master
+from fun import move_to_click, vizit_to_station_master
 
 son = 0.9
 par_conf = 0.8

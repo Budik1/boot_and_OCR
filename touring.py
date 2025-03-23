@@ -77,7 +77,7 @@ def events_tunnel(st0, st2):
     sleep(1)
     id_st = fun.locCenterImg(st2, confidence=0.85)
     fun.my_print_to_file(f'id_st = {id_st}')
-    info = fun.locCenterImg('img/info.png', confidence=0.8)
+    info = fun.locCenterImg('img/overall/info.png', confidence=0.8)
     fun.my_print_to_file(f'info = {info}')
     while not id_st:
         x, y = info
@@ -87,27 +87,6 @@ def events_tunnel(st0, st2):
         skip_battle = fun.locCenterImg('img/skip_battle.png', confidence=0.79)
         fun.my_print_to_file(f'skip_battle = {skip_battle}')
         if skip_battle:
-            raptor = fun.locCenterImg('img/tonelli/raptor.png', confidence=0.85)
-            fun.my_print_to_file(f'raptor = {raptor}')
-            arachne = fun.locCenterImg('img/tonelli/arachne.png', confidence=0.85)
-            fun.my_print_to_file(f'arachne = {arachne}')
-            krysa = fun.locCenterImg('img/tonelli/krysa.png', confidence=0.85)
-            fun.my_print_to_file(f'krysa = {krysa}')
-            kiki = fun.locCenterImg('img/tonelli/kikimora.png', confidence=0.85)
-            fun.my_print_to_file(f'kiki = {kiki}')
-            if krysa:
-                Hero.app_rat(Activ.hero_activ)
-                print(f' Detekt {Hero.get_qty_rat(Activ.hero_activ)} krysa')
-            if kiki:
-                Hero.app_kiki(Activ.hero_activ)
-                print(f' Detekt {Hero.get_qty_kiki(Activ.hero_activ)} kikimora')
-            if arachne:
-                Hero.app_arachne(Activ.hero_activ)
-                print(f'detekt {Hero.get_qty_arachne(Activ.hero_activ)} arachne')
-            if raptor:
-                Hero.app_raptor(Activ.hero_activ)
-                print(f'Detekt {Hero.get_qty_raptor(Activ.hero_activ)} raptor')
-
             station_master.enemy_battle(1, add_up=True)  # вызов обработки события
         if post:
             fun.my_print_to_file(f'post = {post}')
@@ -215,7 +194,7 @@ def tasks_na_kievskoy():
     fun.my_print_to_file('touring.tasks_na_kievskoy')
     fun.push_close_all_()
     frunze_kiev()
-    station_master.vybor_zadaniya_na_puli()
+    station_master.choosing_task_money()
     print('задания на Киевской выполнены')
     kiev_univer()
     station_master.en_task_item(1)
@@ -226,10 +205,10 @@ def tasks_na_kievskoy():
     # fun.my_print_to_file('touring.tasks_na_kievskoy')
     # fun.push_close_all_()
     # frunze_kiev()
-    # station_master.vybor_zadaniya_na_puli()
+    # station_master.choosing_task_money()
     # print('задания на Киевской выполнены')
     # kiev_frunze()
-    # station_master.vybor_zadaniya_na_puli()
+    # station_master.choosing_task_money()
     # print('энергия исчерпана')
 
 
@@ -415,6 +394,7 @@ def za_kikimorami():
     minutes = int(finish_time // 60)  # количество минут
     seconds = round((finish_time % minutes), 2)
     print('Потрачено время', minutes, 'минут', seconds, 'сек.')
+    fun.work_8_hour()
 
 
 def pauk_yascher():

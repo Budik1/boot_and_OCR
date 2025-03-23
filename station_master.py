@@ -8,55 +8,154 @@ import my_color_text as myCt
 from heroes import Hero, Activ
 import heroes as her
 import cr_img
+
 # import station_master
 
 conf_ = 0.95
 par_conf = 0.799
+conf_mobs = 0.99
 energy_availability = 1
 number_tasks = 1
 variable = None
 
 
+def wait_skip_battle_button():
+    skip_battle = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
+    while not skip_battle:
+        skip_battle = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
+    # if skip_battle:
+    #     cr_img.cri_event_img(x_reg=96, y_reg=36, name='img/skip_battle.png')
+
+
 def enemy_battle(prolong_=2, add_up=True):
     fun.my_print_to_file('station_master.enemy_battle()')
     fun.my_print_to_file(' поиск battle_end, skip_battle, dog')
+
     her.nam += 1
+
     battle_end = fun.locCenterImg('img/b_battle_end.png', confidence=par_conf)
     skip_battle = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
     dog = fun.locCenterImg('img/dog_2.png', confidence=par_conf)
 
-    raptor = fun.locCenterImg('img/tonelli/raptor.png', confidence=0.85)
-    wildman = fun.locCenterImg('img/tonelli/wildman.png', confidence=par_conf)
-    rat = fun.locCenterImg('img/tonelli/krysa.png', confidence=0.85)
-    arachne = fun.locCenterImg('img/tonelli/arachne.png', confidence=0.85)
+    # 1 серая крыса
+    name1_grey_rat = fun.locCenterImg('img/tonelli/mobi/name1_grey_rat.png', confidence=conf_mobs)
+    # 1 белая крыса
+    name1_white_rat = fun.locCenterImg('img/tonelli/mobi/name1_white_rat.png', confidence=conf_mobs)
+    # 1 черная крыса
+    name1_black_rat = fun.locCenterImg('img/tonelli/mobi/name1_black_rat.png', confidence=conf_mobs)
+    # 1 песчаная крыса
+    # name1_sand_rat = fun.locCenterImg('img/tonelli/mobi/name1_sand_rat.png', confidence=conf_mobs)
+    # 2 шпион
+    name2_spy = fun.locCenterImg('img/tonelli/mobi/name2_spy.png', confidence=conf_mobs)
+    # 3 контрабандисты
+    name3_smuggler = fun.locCenterImg('img/tonelli/mobi/name3_smuggler.png', confidence=conf_mobs)
+    # 4 паук
+    name4_arachne = fun.locCenterImg('img/tonelli/mobi/name4_arachne.png', confidence=conf_mobs)
+    # 5 дикарь
+    name5_wildman = fun.locCenterImg('img/tonelli/mobi/name5_wildman.png', confidence=conf_mobs)
+    # 6 кикиморы
+    name6_kikimora = fun.locCenterImg('img/tonelli/mobi/name6_kikimora.png', confidence=conf_mobs)
+    # 7 ящер
+    name7_raptor = fun.locCenterImg('img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
+
     # print('dog', dog)
     it = 0
-    cikl = True
+    mob_identified = None
+    count_mob_identified = 0
+    cycle = True
     result = None
     while not battle_end:
-        cr_img.mob_foto(her.nam)
+        # cr_img.mob_foto(her.nam)
         if add_up:
-            # print('detect - mobi')
-            # print(f'{cikl=}')
-            if wildman and cikl:
-                cikl = False
-                Hero.app_wildman(Activ.hero_activ)
-                print(f'сегодня {Hero.get_qty_wildman(Activ.hero_activ)}')
-                # Х штук за Х дней. Х,Х в день
-                print(Hero.get_report_wildman(Activ.hero_activ))
+            while not mob_identified and count_mob_identified <= 3:
+                count_mob_identified += 1
+                # if count_mob_identified > 1:
+                #     print(f'{count_mob_identified=}')
+                if name1_grey_rat and cycle:
+                    cycle = False
+                    fun.move_mause(pos=name1_grey_rat, speed=0.5)
+                    Hero.app_rat(Activ.hero_activ)
+                    print(myCt.tc_magenta(f'detekt {Hero.get_qty_grey_rat(Activ.hero_activ)} grey rat'))
+                    mob_identified = 'grey_rat'
+                if name1_black_rat and cycle:
+                    cycle = False
+                    fun.move_mause(pos=name1_black_rat, speed=0.5)
+                    mob_identified = 'black_rat'
+                    print(myCt.tc_magenta('черная крыса'))
+                if name1_white_rat and cycle:
+                    cycle = False
+                    fun.move_mause(pos=name1_white_rat, speed=0.5)
+                    mob_identified = 'white_rat'
+                    print(myCt.tc_magenta('белая крыса'))
+                if name2_spy and cycle:
+                    cycle = False
+                    fun.move_mause(pos=name2_spy, speed=0.5)
+                    mob_identified = 'spy'
+                    print(myCt.tc_magenta('шпион пойман'))
+                if name3_smuggler and cycle:
+                    cycle = False
+                    fun.move_mause(pos=name3_smuggler, speed=0.5)
+                    mob_identified = 'smuggler'
+                    print(myCt.tc_magenta('контрабандист пойман'))
+                if name4_arachne and cycle:
+                    cycle = False
+                    fun.my_print_to_file(f'{name4_arachne=}')
+                    # cr_img.mob_id('arachne')
+                    Hero.app_arachne(Activ.hero_activ)
+                    print(f'detekt {Hero.get_qty_arachne(Activ.hero_activ)} arachne')
+                    mob_identified = 'arachne'
+                if name5_wildman and cycle:
+                    cycle = False
+                    fun.move_mause(pos=name5_wildman, speed=1)
+                    Hero.app_wildman(Activ.hero_activ)
+                    print(Hero.get_report_wildman_now(Activ.hero_activ))
+                    print(Hero.get_report_wildman(Activ.hero_activ))
+                    mob_identified = "wildman"
+                if name6_kikimora and cycle:
+                    cycle = False
+                    fun.my_print_to_file(f'{name6_kikimora=}')
+                    # cr_img.mob_id('kikimora')
+                    Hero.app_kiki(Activ.hero_activ)
+                    print(f' Detekt {Hero.get_qty_kiki(Activ.hero_activ)} kikimora')
+                    mob_identified = 'kikimora'
+                if name7_raptor and cycle:
+                    cycle = False
+                    fun.move_mause(pos=name7_raptor, speed=0.5)
+                    Hero.app_raptor(Activ.hero_activ)
+                    print(f'Detekt {Hero.get_qty_raptor(Activ.hero_activ)} raptor')
+                    mob_identified = 'raptor'
+                # if count_mob_identified == 3:
+                #     cr_img.mob_id(her.nam)
+                # 1 серая крыса
+                name1_grey_rat = fun.locCenterImg('img/tonelli/mobi/name1_grey_rat.png', confidence=conf_mobs)
+                # 1 белая крыса
+                name1_white_rat = fun.locCenterImg('img/tonelli/mobi/name1_white_rat.png', confidence=conf_mobs)
+                # 1 черная крыса
+                name1_black_rat = fun.locCenterImg('img/tonelli/mobi/name1_black_rat.png', confidence=conf_mobs)
+                # 1 песчаная крыса
+                # name1_sand_rat = fun.locCenterImg('img/tonelli/mobi/name1_sand_rat.png', confidence=0.85)
+                # 2 шпион
+                name2_spy = fun.locCenterImg('img/tonelli/mobi/name2_spy.png', confidence=conf_mobs)
+                # 3 контрабандисты
+                name3_smuggler = fun.locCenterImg('img/tonelli/mobi/name3_smuggler.png', confidence=conf_mobs)
+                # 4 паук
+                name4_arachne = fun.locCenterImg('img/tonelli/mobi/name4_arachne.png', confidence=conf_mobs)
+                # 5 дикарь
+                name5_wildman = fun.locCenterImg('img/tonelli/mobi/name5_wildman.png', confidence=conf_mobs)
+                # 6 кикиморы
+                name6_kikimora = fun.locCenterImg('img/tonelli/mobi/name6_kikimora.png', confidence=conf_mobs)
+                # 7 ящер
+                name7_raptor = fun.locCenterImg('img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
 
-            if rat and cikl:
-                cikl = False
-                Hero.app_rat(Activ.hero_activ)
-                print(f'detekt {Hero.get_qty_rat(Activ.hero_activ)} rat')
-                cr_img.mob_foto(her.nam)
+                # print(f'{mob_identified=}, {count_mob_identified=}')
 
+            # print(f'{mob_identified=}, {count_mob_identified=}')
         if dog:  # нажать "на собаку"
-            fun.my_print_to_file(f'dog = {dog}')
+            fun.my_print_to_file(f'{dog=}')
             fun.my_print_to_file("нажал на собаку")
             fun.move_to_click(dog, 0.1)
         if skip_battle and it >= 2:  # нажать "пропустить бой"
-            fun.my_print_to_file(f'skip_battle = {skip_battle}')
+            fun.my_print_to_file(f'{skip_battle=}')
             fun.move_to_click(skip_battle, 0.5)
         it += 1
         sleep(1 * prolong_)  # для задержки нажатия "пропустить бой"
@@ -64,10 +163,26 @@ def enemy_battle(prolong_=2, add_up=True):
         battle_end = fun.locCenterImg('img/b_battle_end.png', confidence=par_conf)
         close = fun.locCenterImg('img/overall/close.png', confidence=par_conf)
 
-        raptor = fun.locCenterImg('img/tonelli/raptor.png', confidence=0.85)
-        wildman = fun.locCenterImg('img/tonelli/wildman.png', confidence=par_conf)
-        arachne = fun.locCenterImg('img/tonelli/arachne.png', confidence=0.85)
-        rat = fun.locCenterImg('img/tonelli/krysa.png', confidence=0.85)
+        # 1 серая крыса
+        name1_grey_rat = fun.locCenterImg('img/tonelli/mobi/name1_grey_rat.png', confidence=conf_mobs)
+        # 1 белая крыса
+        name1_white_rat = fun.locCenterImg('img/tonelli/mobi/name1_white_rat.png', confidence=conf_mobs)
+        # 1 черная крыса
+        name1_black_rat = fun.locCenterImg('img/tonelli/mobi/name1_black_rat.png', confidence=conf_mobs)
+        # 1 песчаная крыса
+        # name1_sand_rat = fun.locCenterImg('img/tonelli/mobi/name1_sand_rat.png', confidence=0.85)
+        # 2 шпион
+        name2_spy = fun.locCenterImg('img/tonelli/mobi/name2_spy.png', confidence=conf_mobs)
+        # 3 контрабандисты
+        name3_smuggler = fun.locCenterImg('img/tonelli/mobi/name3_smuggler.png', confidence=conf_mobs)
+        # 4 паук
+        name4_arachne = fun.locCenterImg('img/tonelli/mobi/name4_arachne.png', confidence=conf_mobs)
+        # 5 дикарь
+        name5_wildman = fun.locCenterImg('img/tonelli/mobi/name5_wildman.png', confidence=conf_mobs)
+        # 6 кикиморы
+        name6_kikimora = fun.locCenterImg('img/tonelli/mobi/name6_kikimora.png', confidence=conf_mobs)
+        # 7 ящер
+        name7_raptor = fun.locCenterImg('img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
 
         dog = fun.locCenterImg('img/dog.png', confidence=par_conf)
         skip_battle = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
@@ -83,11 +198,12 @@ def enemy_battle(prolong_=2, add_up=True):
             sleep(0)
 
     skip_battle1_end_ver = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
-    fun.my_print_to_file(f'skip_battle1_end_ver = {skip_battle1_end_ver}')
+    fun.my_print_to_file(f'{skip_battle1_end_ver=}')
     while skip_battle1_end_ver:
+        fun.push_close()
         sleep(0.2)
         skip_battle1_end_ver = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
-        fun.my_print_to_file(f'skip_battle1_end_ver = {skip_battle1_end_ver}')
+        fun.my_print_to_file(f'{skip_battle1_end_ver=}')
 
     fun.my_print_to_file("выход из 'enemy_battle")
     return result
@@ -107,6 +223,7 @@ def press_en(task_number, pos):
     if not nal_energy:
         vers_in_print = "" if conf_ == 0.95 else f', conf_={conf_}'
         print(f'Выполняю  {task_number}  задание{vers_in_print}')
+        wait_skip_battle_button()
         enemy_battle()
         energy_availability = 1
     else:
@@ -130,9 +247,9 @@ def task_analysis(img1, img2, region):
     fun.my_print_to_file('station_master.task_analysis()')
     global variable
     fun.vizit_to_station_master()
-    variant1 = pyautogui.locateCenterOnScreen(img1, minSearchTime=1.0,region=region, confidence=conf_)
+    variant1 = pyautogui.locateCenterOnScreen(img1, minSearchTime=1.0, region=region, confidence=conf_)
     # v3 = pyautogui.locateCenterOnScreen(img2, minSearchTime=1.0, region=region, confidence=conf_)
-    variant2 = pyautogui.locateCenterOnScreen(img2, minSearchTime=1.0,confidence=conf_, region=region)
+    variant2 = pyautogui.locateCenterOnScreen(img2, minSearchTime=1.0, confidence=conf_, region=region)
     if variant1:
         variable = variant1
     else:
@@ -164,9 +281,9 @@ def station_task_list():
     return task_list
 
 
-def vybor_zadaniya_na_puli():
-    fun.my_print_to_file("station_master.vybor_zadaniya_na_puli()")
-    # print('station_master.vybor_zadaniya_na_puli')
+def choosing_task_money():
+    fun.my_print_to_file("station_master.choosing_task_money()")
+    # print('station_master.choosing_task_money')
     global energy_availability, number_tasks  # , conf_
     conf_ = 0.95
     fun.push_close_all_()
@@ -175,7 +292,7 @@ def vybor_zadaniya_na_puli():
     # print('герой определён station_master.стр 168')
     if hero:
         path = Hero.get_path_task(Activ.hero_activ)
-        # print(path, "station_master.vybor_zadaniya_na_puli стр 172")
+        # print(path, "station_master.choosing_task_money стр 172")
     else:
         return
     region_1, region_2, region_3 = fun.get_areas_task_big()
@@ -224,7 +341,7 @@ def vybor_zadaniya_na_puli():
 
 def en_task_item(task_number):
     """ Выбор по позиции задания """
-    hero = fun.selection_hero()
+    fun.selection_hero()
     global energy_availability, number_tasks  # , conf_
     region_1, region_2, region_3 = fun.get_areas_task_big()
     if task_number == 1:

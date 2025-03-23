@@ -35,10 +35,10 @@ days_counting
 
 
 def displaying_values():
-    gady_rat.set(her.gady.rat)
-    gavr_rat.set(her.gavr.rat)
-    mara_rat.set(her.mara.rat)
-    veles_rat.set(her.veles.rat)
+    gady_rat.set(her.gady.grey_rat)
+    gavr_rat.set(her.gavr.grey_rat)
+    mara_rat.set(her.mara.grey_rat)
+    veles_rat.set(her.veles.grey_rat)
 
     gady_kiki.set(her.gady.kiki)
     gavr_kiki.set(her.gavr.kiki)
@@ -85,10 +85,10 @@ def check_date(loaded_data):
         her.mara.vip = loaded_data['mara_vip']
         her.veles.vip = loaded_data['veles_vip']
 
-        her.gavr.rat = loaded_data['gavr_krysy']
-        her.gady.rat = loaded_data['gady_krysy']
-        her.mara.rat = loaded_data['mara_krysy']
-        her.veles.rat = loaded_data['veles_krysy']
+        her.gavr.grey_rat = loaded_data['gavr_krysy']
+        her.gady.grey_rat = loaded_data['gady_krysy']
+        her.mara.grey_rat = loaded_data['mara_krysy']
+        her.veles.grey_rat = loaded_data['veles_krysy']
 
         her.gavr.kiki = loaded_data['gavr_kiki']
         her.gady.kiki = loaded_data['gady_kiki']
@@ -115,6 +115,8 @@ def check_date(loaded_data):
         her.mara.wildman = loaded_data['mara_wild']
         her.veles.wildman = loaded_data['veles_wild']
 
+        # her.gady.completing_tasks = l
+
         # отображаем значения
         gavr_vip.set(her.gavr.vip)
         gady_vip.set(her.gady.vip)
@@ -125,12 +127,12 @@ def check_date(loaded_data):
     # иначе отображение и сохранение стартовых значений
     else:
 
-        her.gady.days_count +=1
+        her.gady.days_count += 1
         # her.gady.days_counting = 0
-        her.gavr.days_count +=1
+        her.gavr.days_count += 1
         # her.gavr.days_counting = 0
-        print(f"gady {her.gady.days_count} дней, {her.gady.wildman_count} дикарей")
-        print(f'gavr {her.gavr.days_count} дней, {her.gavr.wildman_count} дикарей')
+        print(f"gady {her.gady.days_count} {fun.transform_days(her.gady.days_count)}, {her.gady.wildman_count} дикарей")
+        print(f'gavr {her.gavr.days_count} {fun.transform_days(her.gavr.days_count)}, {her.gavr.wildman_count} дикарей')
 
         print(tc_cyan("даты не совпадают, смена суток"))
         gavr_vip.set(str(starting_value))
@@ -152,10 +154,10 @@ def save_to_file():
         'mara_vip': her.mara.vip,
         'veles_vip': her.veles.vip,
 
-        'gavr_krysy': her.gavr.rat,
-        'gady_krysy': her.gady.rat,
-        'mara_krysy': her.mara.rat,
-        'veles_krysy': her.veles.rat,
+        'gavr_krysy': her.gavr.grey_rat,
+        'gady_krysy': her.gady.grey_rat,
+        'mara_krysy': her.mara.grey_rat,
+        'veles_krysy': her.veles.grey_rat,
 
         'gavr_kiki': her.gavr.kiki,
         'gady_kiki': her.gady.kiki,
@@ -187,6 +189,9 @@ def save_to_file():
 
         'gady.days_counting': her.gady.days_count,
         'gavr.days_counting': her.gavr.days_count,
+
+        'gady.completing_tasks' : her.gady.completing_tasks,
+        'gavr.completing_tasks' : her.gavr.completing_tasks,
 
     }
     # print(data_to_save)
@@ -231,7 +236,7 @@ def en_3():
 
 
 def puli():
-    station_master.vybor_zadaniya_na_puli()
+    station_master.choosing_task_money()
     displaying_values()
     save_to_file()
 
@@ -402,6 +407,27 @@ def collecting_gifts_at_stations():
     save_to_file()
 
 
+def change_gady():
+    person.change_acc(hero_name_in_file='gady')
+
+
+def change_gavr():
+    person.change_acc(hero_name_in_file='gavr')
+
+
+def change_veles():
+    person.change_acc(hero_name_in_file='veles')
+
+
+def change_mara():
+    person.change_acc(hero_name_in_file='mara')
+
+
+def report():
+    print(f'Gady {Hero.get_report_wildman(her.gady)}')
+    print(f'Gavr {Hero.get_report_wildman(her.gavr)}')
+
+
 root = Tk()
 
 root.title(' помощник "Метро 2033"')
@@ -489,6 +515,7 @@ ttk.Button(text="домой ", width=7, command=kiev_frunze).place(x=291, y=line
 ttk.Button(text="Паук+Ящер", width=10, command=arachne_and_raptor).place(x=267, y=line7)
 ttk.Button(text="обход всех станций", width=16, command=collecting_gifts_at_stations).place(x=114, y=line7)
 ttk.Button(text='Save', width=12, command=save_to_file).place(x=125, y=line8)
+ttk.Button(text='рапорт', width=12, command=report).place(x=250, y=line8)
 ttk.Button(text="frunze_riga", width=12, command=frunze_riga).place(x=0, y=line9)
 ttk.Button(text="riga_frunze", width=12, command=riga_frunze).place(x=125, y=line9)
 ttk.Button(text="test гардероб", width=12, command=person.pereodevanie).place(x=250, y=line9)
@@ -507,7 +534,7 @@ mara_y = label_line4
 step = 47
 s = 14
 g_st0 = 0
-vip_x = step + s
+vip_x = step  + s
 kiki_x = step * 2 + s
 arah_x = step * 3 + s
 rapt_x = step * 4 + s
@@ -522,10 +549,10 @@ separator_4 = rat_x - 18
 separator_5 = gift_x - 18
 separator_6 = wild_x - 18
 
-ttk.Label(text="Gady", width=5, background='#858585', foreground='#050505').place(x=0, y=gady_y)
-ttk.Label(text="Gavr", width=5, background='#858585', foreground='#050505').place(x=0, y=gavr_y)
-ttk.Label(text="Велес", width=5, background='#858585', foreground='#050505').place(x=0, y=veles_y)
-ttk.Label(text="Мара", width=5, background='#858585', foreground='#050505').place(x=0, y=mara_y)
+ttk.Button(text="Gady", width=5, command=change_gady).place(x=0, y=gady_y)
+ttk.Button(text="Gavr", width=5, command=change_gavr).place(x=0, y=gavr_y)
+ttk.Button(text="Велес", width=5, command=change_veles).place(x=0, y=veles_y)
+ttk.Button(text="Мара", width=5, command=change_mara).place(x=0, y=mara_y)
 
 # ttk.Button(text=" обход VIP ", width=10, command=tent_inspection).place(x=114, y=line10)
 ttk.Button(text="VIP", width=4, command=tent_inspection).place(x=vip_x - s, y=label_line0 - 3)
@@ -589,7 +616,7 @@ ttk.Label(text='|').place(x=separator_6, y=gavr_y)
 ttk.Label(text='|').place(x=separator_6, y=veles_y)
 ttk.Label(text='|').place(x=separator_6, y=mara_y)
 
-ttk.Label(text="wild", width=4, background='#858585', foreground='#050505').place(x=wild_x - s, y=label_line0)
+ttk.Button(text="wild", width=4, command=tasks_na_kievskoy).place(x=wild_x - (s + 3), y=label_line0 - 3)
 ttk.Label(textvariable=gavr_wild).place(x=wild_x, y=gavr_y)
 ttk.Label(textvariable=gady_wild).place(x=wild_x, y=gady_y)
 ttk.Label(textvariable=veles_wild).place(x=wild_x, y=veles_y)

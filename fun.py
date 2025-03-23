@@ -1,7 +1,9 @@
 import pyautogui
 from time import sleep, time
 import datetime
+from playsound3 import playsound
 
+import fun
 import my_color_text as myCt
 import heroes as her
 from heroes import Hero, Activ
@@ -107,13 +109,13 @@ def push_close():
     close = locCenterImg('img/overall/close.png', 0.9)
     if kv_close:
         move_to_click(kv_close, 0.1)
-        cl = True
+        close_flag = True
     elif close:
         move_to_click(close, 0.1)
-        cl = True
+        close_flag = True
     else:
-        cl = False
-    return cl
+        close_flag = False
+    return close_flag
 
 
 def exit_to_zero_screen():
@@ -196,14 +198,14 @@ def start_p_m():
             pyautogui.moveTo(pos_my_game1, duration=1, tween=pyautogui.easeInOutQuad)
             pyautogui.click(pos_my_game1)
             # print('pos_my_game1' + str(pos_my_game1))
-        else:
-            print('Не найдено кнопки "My game"')
-            im1 = pyautogui.screenshot('img/screen1.png')
-            im1.save('img/screen1.png')
-            sleep(2)
-        pos_autor = locCenterImg('img/overall/authorization_button.png', 0.8)
-        if pos_autor:
-            authorization()
+        # else:
+        #     print('Не найдено кнопки "My game"')
+        #     im1 = pyautogui.screenshot('img/screen1.png')
+        #     im1.save('img/screen1.png')
+        #     sleep(2)
+        # pos_autor = locCenterImg('img/overall/authorization_button.png', 0.8)
+        # if pos_autor:
+        #     authorization()
 
     def click_icon_game():
         p_i = 0
@@ -238,7 +240,7 @@ def start_p_m():
             pyautogui.moveTo(x, y, duration=1, tween=pyautogui.easeInOutQuad)
             pyautogui.dragTo(x, y + 45, duration=1)
 
-    authorization()
+    # authorization()
     click_my_game()
     click_icon_game()
     geography()
@@ -301,6 +303,7 @@ def move_to_click(pos_click: tuple, z_p_k=0.05):
     # print('должен быть клик')
     sleep(z_p_k)
     pyautogui.hotkey('Ctrl')
+    playsound('sound/mouse-click.wav')
     pyautogui.click(pos_click)
     sleep(0.18)
 
@@ -468,17 +471,13 @@ def find_link_klan():
 def vizit_to_station_master():
     """заходит в палатку к нач станции"""
     my_print_to_file('fun.vizit_to_station_master')
-    check = locCenterImg('img/station_master.png', 0.9)
-    if check:
-        pyautogui.moveTo(check, duration=1, tween=pyautogui.easeInOutQuad)
+    station_master = locCenterImg('img/station_master.png', 0.9)
+    if station_master:
+        pyautogui.moveTo(station_master, duration=1, tween=pyautogui.easeInOutQuad)
         # print(" уже у начальника ")
         sleep(1 / 3)
     else:
-        pos_klan = locCenterImg('img/overall/klan.png', 0.85)
-        while not pos_klan:
-            sleep(0.1)
-            pos_klan = locCenterImg('img/overall/b_arrow_right.png', 0.85)
-            # print('в поиске клана', pos_klan)
+        pos_klan = find_link_klan()
         # print('клан = ', pos_klan)
         x1, y1 = pos_klan
         x1, y1 = x1 - 60, y1 + 300
@@ -488,6 +487,7 @@ def vizit_to_station_master():
         sleep(1)
         station_master = locCenterImg('img/station_master.png', par_conf)
         pyautogui.moveTo(station_master, duration=1, tween=pyautogui.easeInOutQuad)
+    return station_master
 
 
 def find_lvl():
@@ -559,4 +559,15 @@ def transform_days(qty_days: int):
         return 'дней'
     elif days_des in [0, 5, 6, 7, 8, 9] and days_col != 1:
         return 'дней'
+
+
+def move_mause(*, pos:tuple, speed=0.2):
+    pyautogui.moveTo(pos, duration=speed)
+
+def work_8_hour():
+    vizit_to_station_master()
+    pos_work = fun.locCenterImg('img/overall/work.png')
+    move_to_click(pos_work)
+    work_8_hour = fun.locCenterImg(f'img/overall/work_8_hour.png')
+    move_to_click(work_8_hour)
 

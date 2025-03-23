@@ -4,3 +4,4 @@ import fun
 count = 3
 
 print(f' now {myCt.tc_green(str(count))}.')
+print(f'{count=}')
