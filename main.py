@@ -66,8 +66,8 @@ def displaying_values():
 
 def check_date(loaded_data):
     """Установка значений при (пере)запуске программы"""
-    date_ver = loaded_data['date']
-    # date_ver = 0
+    check_date_ = loaded_data['date']
+    # check_date_ = 0
 
     her.gady.wildman_count = loaded_data['gady.wildman_all']
     her.gavr.wildman_count = loaded_data['gavr.wildman_all']
@@ -77,9 +77,14 @@ def check_date(loaded_data):
     # her.gavr.days_counting += 1
 
     # если даты совпадают:- значения устанавливаются из файла
-    if date_ver == date_start:
+    if check_date_ == date_start:
         print(tc_blue("даты совпадают"))
         # присваиваем значения
+        her.gady.wild_activ = loaded_data['gady.wild_activ']
+        her.gavr.wild_activ = loaded_data['gavr.wild_activ']
+        her.gavr.completing_tasks = loaded_data['gavr.completing_tasks']
+        her.gady.completing_tasks = loaded_data['gady.completing_tasks']
+
         her.gavr.vip = loaded_data['gavr_vip']
         her.gady.vip = loaded_data['gady_vip']
         her.mara.vip = loaded_data['mara_vip']
@@ -128,7 +133,6 @@ def check_date(loaded_data):
     else:
 
         her.gady.days_count += 1
-        # her.gady.days_counting = 0
         her.gavr.days_count += 1
         # her.gavr.days_counting = 0
         print(f"gady {her.gady.days_count} {fun.transform_days(her.gady.days_count)}, {her.gady.wildman_count} дикарей")
@@ -190,8 +194,10 @@ def save_to_file():
         'gady.days_counting': her.gady.days_count,
         'gavr.days_counting': her.gavr.days_count,
 
-        'gady.completing_tasks' : her.gady.completing_tasks,
-        'gavr.completing_tasks' : her.gavr.completing_tasks,
+        'gady.completing_tasks': her.gady.completing_tasks,
+        'gady.wild_activ': her.gady.wild_activ,
+        'gavr.completing_tasks': her.gavr.completing_tasks,
+        'gavr.wild_activ': her.gavr.wild_activ,
 
     }
     # print(data_to_save)
@@ -218,19 +224,19 @@ def bonus():
 
 
 def en_1():
-    station_master.en_task_item(1)
+    station_master.task_pos_item(1)
     displaying_values()
     save_to_file()
 
 
 def en_2():
-    station_master.en_task_item(2)
+    station_master.task_pos_item(2)
     displaying_values()
     save_to_file()
 
 
 def en_3():
-    station_master.en_task_item(3)
+    station_master.task_pos_item(3)
     displaying_values()
     save_to_file()
 
@@ -370,14 +376,6 @@ def collecting_gifts_at_stations():
     # получение маршрута для определенного героя
     if hero:
         bypass_hero = Hero.get_bypass(Activ.hero_activ)
-    # if hero == 'Велес':
-    #     bypass_hero = b_d.bypass_veles
-    # elif hero == 'Mara':
-    #     bypass_hero = b_d.bypass_mara
-    # elif hero == 'Gady':
-    #     bypass_hero = b_d.bypass
-    # elif hero == 'Gavr':
-    #     bypass_hero = b_d.bypass
     else:
         print('герой не опознан')
         return
@@ -534,7 +532,7 @@ mara_y = label_line4
 step = 47
 s = 14
 g_st0 = 0
-vip_x = step  + s
+vip_x = step + s
 kiki_x = step * 2 + s
 arah_x = step * 3 + s
 rapt_x = step * 4 + s

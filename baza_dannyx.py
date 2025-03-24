@@ -5,7 +5,7 @@ st_alexs = ['ст. Алексеевская', 'img/tonelli/map_item/k_Alexs.png'
 st_biblioteka = ['ст. Библиотека им. Ленина', 'img/tonelli/map_item/k_Biblioteka.png',
                  'img/tonelli/id_stations/s_Biblioteka.png', 0, []]
 st_borov = ['ст. Боровицкая', 'img/tonelli/map_item/k_Borov.png', 'img/tonelli/id_stations/s_Borov.png', 'стрелка юг',
-            []]
+            ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
 st_bulvar = ['ст. Цветной бульвар', 'img/tonelli/map_item/k_Cvetnoy.png', 'img/tonelli/id_stations/s_Cvetnoy.png', 0,
              ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
 st_vdnx = ['ст. ВДНХ', 'img/tonelli/map_item/k_VDNX.png', 'img/tonelli/id_stations/s_VDNX.png', 0, []]

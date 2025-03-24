@@ -350,7 +350,7 @@ def mob_name(name):
 
 
 def mob_id(name):
-    con = 0.98
+    con = 0.99
     print(f'поиск {name}')
     skip_battle = fun.locCenterImg('img/overall/skip_battle.png', confidence=con)
     while not skip_battle:
@@ -367,12 +367,12 @@ def mob_id(name):
     # белая *
     white_rat = fun.locCenterImg('img/tonelli/mobi/mobi1_white_rat.png', confidence=con)
     name_white_rat = fun.locCenterImg('img/tonelli/mobi/name1_white_rat.png', confidence=con)
-    # 2 шпион *
-    name_spy = fun.locCenterImg('img/tonelli/mobi/name2_spy.png', confidence=con)
-    mobi_spy = fun.locCenterImg('img/tonelli/mobi/mobi2_spy.png', confidence=con)
-    # 3 контрабандист *
-    name_smuggler = fun.locCenterImg('img/tonelli/mobi/name3_smuggler.png', confidence=con)
-    mobi_smuggler = fun.locCenterImg('img/tonelli/mobi/mobi3_smuggler.png', confidence=con)
+    # # 2 шпион *
+    # name_spy = fun.locCenterImg('img/tonelli/mobi/name2_spy.png', confidence=con)
+    # mobi_spy = fun.locCenterImg('img/tonelli/mobi/mobi2_spy.png', confidence=con)
+    # # 3 контрабандист *
+    # name_smuggler = fun.locCenterImg('img/tonelli/mobi/name3_smuggler.png', confidence=con)
+    # mobi_smuggler = fun.locCenterImg('img/tonelli/mobi/mobi3_smuggler.png', confidence=con)
 
     # 5 дикарь *
     name_wildman = fun.locCenterImg('img/tonelli/mobi/name5_wildman.png', confidence=con)
@@ -422,27 +422,27 @@ def mob_id(name):
         if not name_black_rat:
             mob_name(name)
     # 2 шпион
-    if mobi_spy or name_spy:
-        if mobi_spy and name_spy:
-            fun.move_mause(pos=mobi_spy, speed=0.5)
-            fun.move_mause(pos=name_spy, speed=0.5)
-            print('шпион пойман')
-            return
-        if not mobi_spy:
-            mob_foto(name)
-        if not name_spy:
-            mob_name(name)
-    # 3 контрабандист
-    if mobi_smuggler or name_smuggler:
-        if mobi_smuggler and name_smuggler:
-            fun.move_mause(pos=mobi_smuggler, speed=0.5)
-            fun.move_mause(pos=name_smuggler, speed=0.5)
-            print('контрабандист пойман')
-            return
-        if not mobi_smuggler:
-            mob_foto(name)
-        if name_smuggler:
-            mob_name(name)
+    # if mobi_spy or name_spy:
+    #     if mobi_spy and name_spy:
+    #         fun.move_mause(pos=mobi_spy, speed=0.5)
+    #         fun.move_mause(pos=name_spy, speed=0.5)
+    #         print('шпион пойман')
+    #         return
+    #     if not mobi_spy:
+    #         mob_foto(name)
+    #     if not name_spy:
+    #         mob_name(name)
+    # # 3 контрабандист
+    # if mobi_smuggler or name_smuggler:
+    #     if mobi_smuggler and name_smuggler:
+    #         fun.move_mause(pos=mobi_smuggler, speed=0.5)
+    #         fun.move_mause(pos=name_smuggler, speed=0.5)
+    #         print('контрабандист пойман')
+    #         return
+    #     if not mobi_smuggler:
+    #         mob_foto(name)
+    #     if name_smuggler:
+    #         mob_name(name)
     # 5 дикарь
     if mobi_wildman or name_wildman:
         if mobi_wildman and name_wildman:

@@ -19,7 +19,7 @@ def event_gifts():
     if pos_gift:
         x, y = pos_gift
         pyautogui.moveTo(pos_gift, duration=0.5, tween=pyautogui.easeInOutQuad)
-        pyautogui.click(pos_gift)
+        fun.mouse_l_click(pos=pos_gift)
         sleep(1 * 2)
         close = fun.locCenterImg('img/overall/close.png', confidence=0.9)
         # если тормозит отрисовка, ожидает появление кнопки "закрыть"
@@ -31,7 +31,7 @@ def event_gifts():
             print(it, 'поиск закрыть в подарках')
         # print(close)
         pyautogui.moveTo(close, duration=1, tween=pyautogui.easeInOutQuad)
-        pyautogui.click(close)
+        fun.mouse_l_click(pos=close)
         sleep(1)
 
     return pos_gift
@@ -57,7 +57,7 @@ def to_map():
         pos_or1 = x1, y1
         pyautogui.moveTo(pos_or1, duration=0.2)
     sleep(1)
-    pyautogui.click(pos_or1)
+    fun.mouse_l_click(pos=pos_or1)
     sleep(1)
     # Убрать курсор с поля карты, чтобы ничего не перекрыл
     station_exit = fun.locCenterImg('img/tonelli/station_exit.png', confidence=0.8)
@@ -197,7 +197,7 @@ def tasks_na_kievskoy():
     station_master.choosing_task_money()
     print('задания на Киевской выполнены')
     kiev_univer()
-    station_master.en_task_item(1)
+    station_master.task_pos_item(1)
     print('энергия исчерпана')
     univer_frunze()
     # """Движение от Кузнецкого моста на Киевскую - выполнение заданий нач. станции - движение до Кузнецкого моста -
