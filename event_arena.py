@@ -1,7 +1,8 @@
 import pyautogui
 from time import sleep
-from station_master import enemy_battle
+
 import fun
+import station_master
 import my_color_text as myCt
 
 
@@ -113,7 +114,9 @@ def kill():
             hero_vs_opponent_img = fun.locCenterImg('img/arena/hero_vs_opponent.png', 0.9)
         fun.move_to_click(hero_vs_opponent_img, 0.1)
         sleep(2)
-        res = enemy_battle(0.5)
+        # print('переход в enemy_battle')
+        res = station_master.enemy_battle(0.5, arena=True, add_up=False, dog_activ=False)
+        # print('выход из enemy_battle')
         if res == "победа":
             vict_in_arena += 1
             result = myCt.tc_yellow(F"победа,{vict_in_arena}")

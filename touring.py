@@ -1,9 +1,10 @@
 import pyautogui
 from time import sleep, time
+
+import fun
 import station_master
 import baza_dannyx as b_d
-import fun
-import heroes as her
+# import heroes as her
 from heroes import Hero, Activ
 
 
@@ -18,8 +19,8 @@ def event_gifts():
     fun.my_print_to_file(f'pos_gift = {pos_gift}')
     if pos_gift:
         x, y = pos_gift
-        pyautogui.moveTo(pos_gift, duration=0.5, tween=pyautogui.easeInOutQuad)
-        fun.mouse_l_click(pos=pos_gift)
+        pyautogui.moveTo(pos_gift, duration=0.5)
+        fun.mouse_left_click(pos=pos_gift)
         sleep(1 * 2)
         close = fun.locCenterImg('img/overall/close.png', confidence=0.9)
         # если тормозит отрисовка, ожидает появление кнопки "закрыть"
@@ -30,8 +31,8 @@ def event_gifts():
             close = fun.locCenterImg('img/overall/close.png', confidence=0.9)
             print(it, 'поиск закрыть в подарках')
         # print(close)
-        pyautogui.moveTo(close, duration=1, tween=pyautogui.easeInOutQuad)
-        fun.mouse_l_click(pos=close)
+        pyautogui.moveTo(close, duration=1)
+        fun.mouse_left_click(pos=close)
         sleep(1)
 
     return pos_gift
@@ -57,7 +58,7 @@ def to_map():
         pos_or1 = x1, y1
         pyautogui.moveTo(pos_or1, duration=0.2)
     sleep(1)
-    fun.mouse_l_click(pos=pos_or1)
+    fun.mouse_left_click(pos=pos_or1)
     sleep(1)
     # Убрать курсор с поля карты, чтобы ничего не перекрыл
     station_exit = fun.locCenterImg('img/tonelli/station_exit.png', confidence=0.8)
@@ -105,7 +106,7 @@ def events_tunnel(st0, st2):
         fun.my_print_to_file(f'id_st = {id_st}')
     print(st0)  # название станции
     fun.my_print_to_file(st0)
-    pyautogui.moveTo(id_st, duration=1, tween=pyautogui.easeInOutQuad)
+    pyautogui.moveTo(id_st, duration=1)
     # вызов функции "event_gifts()" и подсчет количества найденных
     pos_gift = event_gifts()
     fun.my_print_to_file(f'pos_gift = {pos_gift}')
@@ -200,16 +201,6 @@ def tasks_na_kievskoy():
     station_master.task_pos_item(1)
     print('энергия исчерпана')
     univer_frunze()
-    # """Движение от Кузнецкого моста на Киевскую - выполнение заданий нач. станции - движение до Кузнецкого моста -
-    # выполнение заданий нач. станции пока есть задания удовлетворяющие поиск"""
-    # fun.my_print_to_file('touring.tasks_na_kievskoy')
-    # fun.push_close_all_()
-    # frunze_kiev()
-    # station_master.choosing_task_money()
-    # print('задания на Киевской выполнены')
-    # kiev_frunze()
-    # station_master.choosing_task_money()
-    # print('энергия исчерпана')
 
 
 def univer_frunze():
@@ -394,7 +385,6 @@ def za_kikimorami():
     minutes = int(finish_time // 60)  # количество минут
     seconds = round((finish_time % minutes), 2)
     print('Потрачено время', minutes, 'минут', seconds, 'сек.')
-    fun.work_8_hour()
 
 
 def pauk_yascher():

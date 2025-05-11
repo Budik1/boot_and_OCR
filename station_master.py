@@ -1,4 +1,4 @@
-""" Точка для отладки, остановка на выбранном задании, на строках 103 - 105 """
+""" Точки для отладки в press_en()"""
 import baza_dannyx as b_d
 import pyautogui
 from time import sleep
@@ -27,7 +27,7 @@ def wait_skip_battle_button():
     #     cr_img.cri_event_img(x_reg=96, y_reg=36, name='img/skip_battle.png')
 
 
-def enemy_battle(prolong_=2, add_up=True):
+def enemy_battle(prolong_=2, dog_activ=True,add_up=True, count_task=False, arena=False):
     fun.my_print_to_file('station_master.enemy_battle()')
     fun.my_print_to_file(' поиск battle_end, skip_battle, dog')
 
@@ -49,11 +49,15 @@ def enemy_battle(prolong_=2, add_up=True):
     name7_raptor = fun.locCenterImg('img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
 
     it = 0
-    dog_count = 0
+    dog_count = True
+    skip_battle_count = True
     mob_identified = None
     count_mob_identified = 0
     cycle = True
     result = None
+    if not arena:
+        count_task_now = Hero.get_task_count(Activ.hero_activ)
+
     while not battle_end:
         if add_up:
             while not mob_identified and count_mob_identified <= 3:
@@ -62,59 +66,89 @@ def enemy_battle(prolong_=2, add_up=True):
                     cycle = False
                     fun.move_mause(pos=name1_grey_rat, speed=0.5)
                     Hero.app_rat(Activ.hero_activ)
-                    print(myCt.tc_magenta(f'detekt {Hero.get_qty_grey_rat(Activ.hero_activ)} grey rat'))
+                    if count_task:
+                        print(myCt.tc_magenta(f'detekt {Hero.get_qty_grey_rat(Activ.hero_activ)} grey rat. {count_task_now}'))
+                    else:
+                        print(myCt.tc_magenta(f'detekt {Hero.get_qty_grey_rat(Activ.hero_activ)} grey rat'))
                     mob_identified = 'grey_rat'
                 if name1_black_rat and cycle:
                     cycle = False
                     fun.move_mause(pos=name1_black_rat, speed=0.5)
                     mob_identified = 'black_rat'
-                    print(myCt.tc_magenta('черная крыса'))
+                    if count_task:
+                        print(myCt.tc_magenta(f'черная крыса. {count_task_now}'))
+                    else:
+                        print(myCt.tc_magenta('черная крыса'))
                 if name1_white_rat and cycle:
                     cycle = False
                     fun.move_mause(pos=name1_white_rat, speed=0.5)
                     mob_identified = 'white_rat'
-                    print(myCt.tc_magenta('белая крыса'))
+                    if count_task:
+                        print(myCt.tc_magenta(f'белая крыса. {count_task_now}'))
+                    else:
+                        print(myCt.tc_magenta('белая крыса'))
                 if name1_sand_rat and cycle:
                     cycle = False
                     fun.move_mause(pos=name1_sand_rat, speed=0.5)
                     mob_identified = 'sand_rat'
-                    print(myCt.tc_magenta('песчаная крыса'))
+                    if count_task:
+                        print(myCt.tc_magenta(f'песчаная крыса. {count_task_now}'))
+                    else:
+                        print(myCt.tc_magenta('песчаная крыса'))
                 if name2_spy and cycle:
                     cycle = False
                     fun.move_mause(pos=name2_spy, speed=0.5)
                     mob_identified = 'spy'
-                    print(myCt.tc_magenta('шпион пойман'))
+                    if count_task:
+                        print(myCt.tc_magenta(f'шпион пойман. {count_task_now}'))
+                    else:
+                        print(myCt.tc_magenta('шпион пойман'))
                 if name3_smuggler and cycle:
                     cycle = False
                     fun.move_mause(pos=name3_smuggler, speed=0.5)
                     mob_identified = 'smuggler'
-                    print(myCt.tc_magenta('контрабандист пойман'))
+                    if count_task:
+                        print(myCt.tc_magenta(f'контрабандист пойман. {count_task_now}'))
+                    else:
+                        print(myCt.tc_magenta('контрабандист пойман'))
                 if name4_arachne and cycle:
                     cycle = False
                     fun.my_print_to_file(f'{name4_arachne=}')
                     # cr_img.mob_id('arachne')
                     Hero.app_arachne(Activ.hero_activ)
-                    print(f'detekt {Hero.get_qty_arachne(Activ.hero_activ)} arachne')
+                    if count_task:
+                        print(f'detekt {Hero.get_qty_arachne(Activ.hero_activ)} arachne. {count_task_now}')
+                    else:
+                        print(f'detekt {Hero.get_qty_arachne(Activ.hero_activ)} arachne')
                     mob_identified = 'arachne'
                 if name5_wildman and cycle:
                     cycle = False
                     fun.move_mause(pos=name5_wildman, speed=1)
                     Hero.app_wildman(Activ.hero_activ)
-                    print(Hero.get_report_wildman_now(Activ.hero_activ))
-                    print(Hero.get_report_wildman(Activ.hero_activ))
+                    if count_task:
+                        print(f'{Hero.get_report_wildman_now(Activ.hero_activ)}. {count_task_now}')
+                        print(Hero.get_report_wildman(Activ.hero_activ))
+                    else:
+                        print(f'{Hero.get_report_wildman_now(Activ.hero_activ)}')
+                        print(Hero.get_report_wildman(Activ.hero_activ))
                     mob_identified = "wildman"
                 if name6_kikimora and cycle:
                     cycle = False
                     fun.my_print_to_file(f'{name6_kikimora=}')
-                    # cr_img.mob_id('kikimora')
                     Hero.app_kiki(Activ.hero_activ)
-                    print(f' Detekt {Hero.get_qty_kiki(Activ.hero_activ)} kikimora')
+                    if count_task:
+                        print(f' Detekt {Hero.get_qty_kiki(Activ.hero_activ)} kikimora. {count_task_now}')
+                    else:
+                        print(f' Detekt {Hero.get_qty_kiki(Activ.hero_activ)} kikimora')
                     mob_identified = 'kikimora'
                 if name7_raptor and cycle:
                     cycle = False
                     fun.move_mause(pos=name7_raptor, speed=0.5)
                     Hero.app_raptor(Activ.hero_activ)
-                    print(f'Detekt {Hero.get_qty_raptor(Activ.hero_activ)} raptor')
+                    if count_task:
+                        print(f'Detekt {Hero.get_qty_raptor(Activ.hero_activ)} raptor. {count_task_now}')
+                    else:
+                        print(f'Detekt {Hero.get_qty_raptor(Activ.hero_activ)} raptor')
                     mob_identified = 'raptor'
 
                 name1_grey_rat = fun.locCenterImg('img/tonelli/mobi/name1_grey_rat.png', confidence=conf_mobs)
@@ -127,17 +161,22 @@ def enemy_battle(prolong_=2, add_up=True):
                 name5_wildman = fun.locCenterImg('img/tonelli/mobi/name5_wildman.png', confidence=conf_mobs)
                 name6_kikimora = fun.locCenterImg('img/tonelli/mobi/name6_kikimora.png', confidence=conf_mobs)
                 name7_raptor = fun.locCenterImg('img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
-
-        if dog and dog_count == 0:
-            # нажать "на собаку"
-            dog_count = 1
-            fun.my_print_to_file(f'{dog=}')
-            fun.my_print_to_file("нажал на собаку")
-            fun.move_to_click(dog, 0.1)
-        if skip_battle and it >= 2:  # нажать "пропустить бой"
+        if dog_activ:
+            if dog and dog_count:
+                # нажать "на собаку"
+                dog_count = False
+                fun.my_print_to_file(f'{dog=}')
+                # print(f'{dog=}')
+                fun.my_print_to_file("нажал на собаку")
+                # print('"нажал на собаку"')
+                fun.move_to_click(dog, 0.1)
+        if skip_battle and skip_battle_count and it >= 3:  # нажать "пропустить бой"
+            skip_battle_count = False
             fun.my_print_to_file(f'{skip_battle=}')
+            print(f'{skip_battle=}')
+            print('жму пропустить бой')
             fun.move_to_click(skip_battle, 0.5)
-        it += 1
+            it += 1
         sleep(1 * prolong_)  # для задержки нажатия "пропустить бой"
         fun.my_print_to_file('ожидание battle_end, close, dog, skip_battle')
         battle_end = fun.locCenterImg('img/b_battle_end.png', confidence=par_conf)
@@ -179,7 +218,7 @@ def enemy_battle(prolong_=2, add_up=True):
     return result
 
 
-def press_en(task_number, pos):
+def press_en(*, task_number, pos, value_energy):
     fun.my_print_to_file("station_master.press_en()")
     global energy_availability, conf_
     x = pos[0] - 100
@@ -189,18 +228,26 @@ def press_en(task_number, pos):
     # print('тут должен быть клик')         # для отладки раскомментировать
     fun.move_to_click(pos_clik, 1.5)  # для отладки закомментировать
     sleep(0.5)
-    nal_energy = fun.locCenterImg('img/low_energy.png', confidence=0.8)
-    if not nal_energy:
+    low_energy = fun.locCenterImg('img/low_energy.png', confidence=0.8)
+    if not low_energy:
         vers_in_print = "" if conf_ == 0.95 else f', conf_={conf_}'
-        print(f'Выполняю  {task_number}  задание{vers_in_print}')
+        Hero.app_task_count(Activ.hero_activ)
+        Hero.app_energy_count_today(Activ.hero_activ, value_energy)
+        value_energy_today = Hero.get_energy_count_today(Activ.hero_activ)
+        value_energy_all = Hero.get_energy_count_all(Activ.hero_activ)
+        # Выполняю 3 задание, conf_=0.94. Сейчас 3, сегодня 20, всего 120
+        print(f'Выполняю {task_number} задание, {vers_in_print}.'
+              f' Сейчас {value_energy}, сегодня {value_energy_today}, всего {value_energy_all}')
         wait_skip_battle_button()
-        enemy_battle()
-        energy_availability = 1
+        enemy_battle(count_task=True)
+        energy_availability = 1 # для выполнения всех заданий
+        # energy_availability = 0 # для выполнения одного задания
     else:
         energy_availability = 0
         print(' Энергия закончилась!!')
-        print(Hero.get_report_wildman_now(Activ.hero_activ))
-        print(Hero.get_report_wildman(Activ.hero_activ))
+        if Hero.get_report_wildman(Activ.hero_activ):
+            print(Hero.get_report_wildman_now(Activ.hero_activ))
+            print(Hero.get_report_wildman(Activ.hero_activ))
         sleep(1)
         close = fun.locCenterImg('img/overall/close.png')
         fun.move_to_click(close, 0.5)
@@ -221,10 +268,14 @@ def task_analysis(img1, img2, region):
     # v3 = pyautogui.locateCenterOnScreen(img2, minSearchTime=1.0, region=region, confidence=conf_)
     variant2 = pyautogui.locateCenterOnScreen(img2, minSearchTime=1.0, confidence=conf_, region=region)
     if variant1:
-        variable = variant1
-    else:
+        price_task = int(''.join(c if c.isdigit() else ' ' for c in img1))
+        return variant1, price_task
+    elif variant2:
         variable = variant2
-    return variable
+        price_task = int(''.join(c if c.isdigit() else ' ' for c in img2))
+        return variant2, price_task
+    else:
+        return None, None
 
 
 def move(pos):
@@ -255,6 +306,7 @@ def choosing_task_money():
     fun.my_print_to_file("station_master.choosing_task_money()")
     # print('station_master.choosing_task_money')
     global energy_availability, number_tasks  # , conf_
+    price_task = None
     conf_ = 0.95
     fun.push_close_all_()
     task = station_task_list()
@@ -262,33 +314,38 @@ def choosing_task_money():
     # print('герой определён station_master.стр 168')
     if hero:
         path = Hero.get_path_task(Activ.hero_activ)
-        # print(path, "station_master.choosing_task_money стр 172")
+        # print(path, "station_master.choosing_task_money стр 297")
     else:
         return
     region_1, region_2, region_3 = fun.get_areas_task_big()
     while energy_availability == 1 and number_tasks > 0:
-        task_analysis(F'{path}{task[0]}', F'{path}{task[1]}', region_1)
+        # task_analysis(F'{path}{task[0]}', F'{path}{task[1]}', region_1)
         # print(f'{path}{task[0]}', f"{path}{task[1]}")
-        variant1 = variable
+        variant1, price_task1 = task_analysis(F'{path}{task[0]}', F'{path}{task[1]}', region_1)
+        # print(f'{variant1=}, {price_task1=}')
         move(variant1)
         sleep(0.1)
 
-        task_analysis(F'{path}{task[2]}', F'{path}{task[3]}', region_2)
-        variant2 = variable
+        variant2, price_task2 = task_analysis(F'{path}{task[2]}', F'{path}{task[3]}', region_2)
+        # print(f'{variant2}, {price_task2=}')
         move(variant2)
         sleep(0.1)
 
-        task_analysis(F'{path}{task[4]}', F'{path}{task[5]}', region_3)
-        variant3 = variable
+        variant3, price_task3 = task_analysis(F'{path}{task[4]}', F'{path}{task[5]}', region_3)
+        # print(f'{variant3}, {price_task3=}')
         move(variant3)
         sleep(0.1)
 
         if variant1:
-            press_en(1, region_1)
+            price_task = price_task1
+            press_en(task_number=1, pos=region_1, value_energy=price_task)
         if variant2:
-            press_en(2, region_2)
+            price_task = price_task2
+            press_en(task_number=2, pos=region_2, value_energy=price_task)
         if variant3:
-            press_en(3, region_3)
+            price_task = price_task3
+            press_en(task_number=3, pos=region_3, value_energy=price_task)
+
 
         if variant1 == variant2 == variant3:
             print(F'confidence={conf_}')
@@ -300,6 +357,7 @@ def choosing_task_money():
             number_tasks = 1
             energy_availability = 0
             return
+
     print(myCt.tc_green(' Задания выполнены!!!!'))
     number_tasks = 1
     energy_availability = 1
@@ -309,21 +367,21 @@ def choosing_task_money():
         close = fun.locCenterImg('img/overall/close.png', confidence=0.9)
 
 
-def task_pos_item(task_number):
+def task_pos_item(task_num):
     """ Выбор по позиции задания """
     fun.selection_hero()
     global energy_availability, number_tasks  # , conf_
     region_1, region_2, region_3 = fun.get_areas_task_big()
-    if task_number == 1:
+    if task_num == 1:
         region = region_1
-    elif task_number == 2:
+    elif task_num == 2:
         region = region_2
     else:
         region = region_3
 
     while energy_availability == 1 and number_tasks > 0:
         fun.vizit_to_station_master()
-        press_en(task_number, region)
+        press_en(task_number=task_num, pos=region, value_energy=1)
     print(myCt.tc_green(' Задания выполнены'))
     number_tasks = 1
     energy_availability = 1

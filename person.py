@@ -95,7 +95,10 @@ def pereodevanie():
 
 
 def change_acc(*, hero_name_in_file):
-    fun.selection_hero()
+    vid = fun.selection_hero()
+    while not vid:
+        fun.push_close_all_()
+        vid = fun.selection_hero()
     activ_hero = Hero.get_hero_name_in_file(Activ.hero_activ)
     # print(f'{hero_name_in_file=}, {activ_hero=}')
     if hero_name_in_file == activ_hero:

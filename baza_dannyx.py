@@ -1,6 +1,5 @@
 # имя станции = [имя для Print, поиск на карте, ID станции, если её не видно на карте,[задания]]
-
-
+energy_capacity =('en1.png', 'en2.png', 'en3.png', 'en4.png', 'en5.png', 'en6.png', 'en7.png')
 st_alexs = ['ст. Алексеевская', 'img/tonelli/map_item/k_Alexs.png', 'img/tonelli/id_stations/s_Alexs.png', 0, []]
 st_biblioteka = ['ст. Библиотека им. Ленина', 'img/tonelli/map_item/k_Biblioteka.png',
                  'img/tonelli/id_stations/s_Biblioteka.png', 0, []]
@@ -109,7 +108,8 @@ bypass_mara = [
     st_most, st_pushkin, st_chekhov, st_bulvar, st_chekhov, st_tver, st_teatr
 ]
 bypass_veles = [st_pavelec, st_novok, st_tretya, st_novok, st_teatr, st_tver, st_pushkin, st_most, st_pushkin,
-                st_chekhov, st_bulvar, st_chekhov, st_borov, st_polyanka, st_borov, st_biblioteka, st_borov, st_chekhov,
+                st_chekhov, st_bulvar, st_chekhov, st_borov, st_polyanka, st_borov, st_biblioteka,
+                st_kropot, st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov,
                 st_tver, st_teatr, st_novok, st_pavelec, st_pavelec_g]
 # за кикиморами в туннелях
 most_kikimory = [st_pushkin, st_tver, st_teatr, st_novok, st_tretya, st_kitay,
@@ -171,53 +171,56 @@ pauk_yascher = [st_pushkin, st_chekhov, st_borov, st_biblioteka, st_kropot,
 pauk_yascher2 = []
 task_list = ['t1.png', 't2.png', 't3.png', 't4.png', 't5.png', 't6.png', 't7.png']
 
-# class Station:
-#     name_for_print = ''
-#     name_map = ''
-#     name_ident = ''
-#     map_offset = False
-#     task_list = []
-#
-#     def __init__(self):
-#         pass
-#
-#     def get_value(self, variable):
-#         self.name_for_print = variable[0]
-#         self.name_map = variable[1]
-#         self.name_ident = variable[2]
-#         self.map_offset = variable[3]
-#         self.task_list = variable[4]
-#
-#     def set_value(self, details):
-#         pass
-#
-#
-# st_alexseevskaya = Station()
-# st_biblioteka_ = Station()
-# st_borovickaya = Station()
-# st_cvetnoy_bulvar = Station()
-# st_vdnx_ = Station()
-# st_kievskaya_a_ = Station()
-# st_kitay_gorod = Station()
-# st_kropotkinskaya = Station()
-# st_novokuzneckaya = Station()
-# st_paveleckaya = Station()
-# st_paveleckaya_g_ = Station()
-# st_park_kultury_g_ = Station()
-# st_park_kultury_kr_ = Station()
-# st_polyanka_ = Station()
-# st_prospekt_mira_ = Station()
-# st_pushkinskaya = Station()
-# st_rigskaya = Station()
-# st_suxarevskaya = Station()
-# st_teatralnaya = Station()
-# st_tverskaya = Station()
-# st_tretyakovskaya = Station()
-# st_turgenevskaya = Station()
-# st_chekhovskaya = Station()
-# st_communisticheskaya = Station()
-# st_universitet = Station()
-# st_vernadskogo = Station()
-# st_kievskaya = Station()
-# st_frunzenskaya = Station()
-# st_kuzneckiy_most = Station()
+height_line = 30  # высота линии
+line0 = 0
+line1 = height_line * 1
+line2 = height_line * 2
+line3 = height_line * 3
+line4 = height_line * 4
+line5 = height_line * 5
+line6 = height_line * 6
+line7 = height_line * 7
+line8 = height_line * 8
+line9 = height_line * 9
+line10 = height_line * 10
+line11 = height_line * 11
+line12 = height_line * 12
+line13 = height_line * 13
+line14 = height_line * 14
+line15 = height_line * 15
+line16 = height_line * 16
+line17 = height_line * 17
+line18 = height_line * 18
+line19 = height_line * 19
+
+label_shift = 3  # смещение строки для Label
+label_line0 = line0 + label_shift
+label_line1 = line1 + label_shift
+label_line2 = line2 + label_shift
+label_line3 = line3 + label_shift
+label_line4 = line4 + label_shift
+
+gady_y = label_line1
+gavr_y = label_line2
+veles_y = label_line3
+mara_y = label_line4
+
+step = 47
+s = 14
+g_st0 = 0
+vip_x = step + s
+kiki_x = step * 2 + s
+arah_x = step * 3 + s
+rapt_x = step * 4 + s
+rat_x = step * 5 + s
+gift_x = step * 6 + s
+wild_x = step * 7 + s
+
+separator_1 = kiki_x - 18
+separator_2 = arah_x - 18
+separator_3 = rapt_x - 18
+separator_4 = rat_x - 18
+separator_5 = gift_x - 18
+separator_6 = wild_x - 18
+
+states_select = 0

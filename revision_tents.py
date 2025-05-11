@@ -32,7 +32,7 @@ def vip_click(region_search):
     sleep(1)
     pos_vip = pyautogui.locateCenterOnScreen('img/tents_R/b_vip.png', region=region_search, confidence=0.8)
     pyautogui.moveTo(pos_vip, duration=1, tween=pyautogui.easeInOutQuad)
-    fun.mouse_l_click(pos=pos_vip)
+    fun.mouse_left_click(pos=pos_vip)
     # print('клик по VIP ' + str(pos_vip))
     sleep(1)
 
@@ -41,7 +41,7 @@ def tent_detected(region_search):
     sleep(1)
     dom = pyautogui.locateCenterOnScreen('img/tents_R/b_tent.png', region=region_search, confidence=0.9)
     pyautogui.moveTo(dom, duration=1, tween=pyautogui.easeInOutQuad)
-    fun.mouse_l_click(pos=dom)
+    fun.mouse_left_click(pos=dom)
     # print('клик по дом ' + str(dom))
     sleep(1)
 
@@ -51,7 +51,7 @@ def visit_to_tent():
     visit = fun.locCenterImg("img/tents_R/visit_to_tent.png", 0.8)
     if visit:
         pyautogui.moveTo(visit, duration=1, tween=pyautogui.easeInOutQuad)
-        fun.mouse_l_click(pos=visit)
+        fun.mouse_left_click(pos=visit)
         cl = fun.push_close()
         if not cl:
             # print("клик обыск" + str(visit))
@@ -69,7 +69,7 @@ def end_raid():
     sleep(1)
     b_exit = fun.locCenterImg('img/b_exit.png', confidence=0.9)
     pyautogui.moveTo(b_exit, duration=1, tween=pyautogui.easeInOutQuad)
-    fun.mouse_l_click(pos=b_exit)
+    fun.mouse_left_click(pos=b_exit)
     print('обход палаток окончен')
     pyautogui.moveTo(200, 670, duration=2, tween=pyautogui.easeInOutQuad)
 

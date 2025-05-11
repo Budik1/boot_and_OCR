@@ -42,7 +42,7 @@ def search_friend():
     return friend_battle
 
 
-def friend_kill(required_quantity=10):  # требуемое количество=5
+def friend_kill(required_quantity=10):  # требуемое количество=7
     quantity_battle = 0
     while quantity_battle <= required_quantity:
         friend_battle_ = search_friend()
@@ -53,10 +53,11 @@ def friend_kill(required_quantity=10):  # требуемое количеств�
             hero_vs_opponent = fun.locCenterImg('img/frends/hero_vs_opponent.png', 0.9)
             while hero_vs_opponent is None:
                 sleep(0.1)
+
                 hero_vs_opponent = fun.locCenterImg('img/frends/hero_vs_opponent.png', 0.9)
             fun.move_to_click(hero_vs_opponent, 0.3)
             sleep(1)
-            enemy_battle(0.5)
+            enemy_battle(0.5, arena=True)
             print(quantity_battle, 'quantity_battle')
             fun.move_friends_list_right()
         else:

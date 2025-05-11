@@ -5,6 +5,15 @@ from time import sleep
 # delay_before_shot = pyautogui.PAUSE
 
 
+def cri_event_img(*,x_reg,y_reg,name):
+    pos =fun.locCenterImg(name)
+    if pos:
+        x, y = pos
+        x -= x_reg / 2
+        y -= y_reg / 2
+        fun.foto(name, (x, y, x_reg, y_reg))
+
+
 def foto_pos(region, tune_x, tune_y, tune_s, tune_v, name_img):
     # получает регион и корректировки снимка внутри него
     x_p_an, y_p_an, width_, height_ = region
@@ -258,7 +267,6 @@ def img(pos_clic):
         print('her Veles')
         fun.move_mause(pos=her_veles, speed=1)
         sleep(2)
-
     if her_gady:
         print('her Gady')
         fun.move_mause(pos=her_gady, speed=1)
@@ -495,13 +503,7 @@ def conti_hero():
         fun.foto('img/overall/event_entry/continue_mara.png', (x, y, 270, 60))
 
 
-def cri_event_img(*,x_reg,y_reg,name):
-    pos =fun.locCenterImg(name)
-    if pos:
-        x, y = pos
-        x -= x_reg / 2
-        y -= y_reg / 2
-        fun.foto(name, (x, y, x_reg, y_reg))
+
 
 # conti_hero()
 # aktiv_win_game()

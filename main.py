@@ -1,18 +1,20 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk
+from time import time
+
 import fun
 import station_master
 import kv_and_raid
 import touring
 import person
-import revision_of_tents
-from event_arena import create_img_arena_object, kill
-import pickle
-from my_color_text import tc_green, tc_cyan, tc_blue, tc_red
+import revision_tents
 import baza_dannyx as b_d
+import solid_memory
 import heroes as her
 from heroes import Hero, Activ
+from event_arena import create_img_arena_object, kill
+from my_color_text import tc_red, tc_green
 
 fun.my_print_to_file('')
 fun.my_print_to_file('*******                      *******')
@@ -20,203 +22,60 @@ fun.my_print_to_file("******* перезапуск программы *******")
 fun.my_print_to_file('*******                      *******')
 fun.my_print_to_file('')
 
-date_start = fun.date_utc_now()
-# date_start = 1
-# стартовые значения
-starting_value = 0
+Activ.date_now = fun.date_utc_now()
 
-'''
-wildman_all
-    при встрече увеличивается
-    при загрузке считывается состояние из файла
-    при записи сохраняется состояние
-days_counting
-'''
+
+def start_prog():
+    state_file, data_to_load = solid_memory.read_from_file()
+    if state_file:
+        # print(tc_green('установка значений из файла'))
+        try:
+            solid_memory.setting_cumulative_values(data_to_load)
+            solid_memory.setting_updatable_values(data_to_load)
+        except KeyError:
+            print(tc_red('KeyError'))
+        except Exception as cod:
+            print(tc_red(f'Не понятно что произошло)). Код ошибки {cod}'))
+        displaying_values()
+    else:
+        displaying_values()
 
 
 def displaying_values():
     gady_rat.set(her.gady.grey_rat)
     gavr_rat.set(her.gavr.grey_rat)
-    mara_rat.set(her.mara.grey_rat)
     veles_rat.set(her.veles.grey_rat)
+    mara_rat.set(her.mara.grey_rat)
 
     gady_kiki.set(her.gady.kiki)
     gavr_kiki.set(her.gavr.kiki)
-    mara_kiki.set(her.mara.kiki)
     veles_kiki.set(her.veles.kiki)
+    mara_kiki.set(her.mara.kiki)
 
     gady_arachne.set(her.gady.arachne)
     gavr_arachne.set(her.gavr.arachne)
-    mara_arachne.set(her.mara.arachne)
     veles_arachne.set(her.veles.arachne)
+    mara_arachne.set(her.mara.arachne)
 
     gady_raptor.set(her.gady.raptor)
     gavr_raptor.set(her.gavr.raptor)
-    mara_raptor.set(her.mara.raptor)
     veles_raptor.set(her.veles.raptor)
+    mara_raptor.set(her.mara.raptor)
 
     gady_gift.set(her.gady.gifts)
     gavr_gift.set(her.gavr.gifts)
-    mara_gift.set(her.mara.gifts)
     veles_gift.set(her.veles.gifts)
+    mara_gift.set(her.mara.gifts)
+
+    gavr_vip.set(her.gavr.vip)
+    gady_vip.set(her.gady.vip)
+    veles_vip.set(her.veles.vip)
+    mara_vip.set(her.mara.vip)
 
     gady_wild.set(her.gady.wildman)
     gavr_wild.set(her.gavr.wildman)
 
-
-def check_date(loaded_data):
-    """Установка значений при (пере)запуске программы"""
-    check_date_ = loaded_data['date']
-    # check_date_ = 0
-
-    her.gady.wildman_count = loaded_data['gady.wildman_all']
-    her.gavr.wildman_count = loaded_data['gavr.wildman_all']
-
-    her.gady.days_count = loaded_data['gady.days_counting']
-    her.gavr.days_count = loaded_data['gavr.days_counting']
-    # her.gavr.days_counting += 1
-
-    # если даты совпадают:- значения устанавливаются из файла
-    if check_date_ == date_start:
-        print(tc_blue("даты совпадают"))
-        # присваиваем значения
-        her.gady.wild_activ = loaded_data['gady.wild_activ']
-        her.gavr.wild_activ = loaded_data['gavr.wild_activ']
-        her.gavr.completing_tasks = loaded_data['gavr.completing_tasks']
-        her.gady.completing_tasks = loaded_data['gady.completing_tasks']
-
-        her.gavr.vip = loaded_data['gavr_vip']
-        her.gady.vip = loaded_data['gady_vip']
-        her.mara.vip = loaded_data['mara_vip']
-        her.veles.vip = loaded_data['veles_vip']
-
-        her.gavr.grey_rat = loaded_data['gavr_krysy']
-        her.gady.grey_rat = loaded_data['gady_krysy']
-        her.mara.grey_rat = loaded_data['mara_krysy']
-        her.veles.grey_rat = loaded_data['veles_krysy']
-
-        her.gavr.kiki = loaded_data['gavr_kiki']
-        her.gady.kiki = loaded_data['gady_kiki']
-        her.mara.kiki = loaded_data['mara_kiki']
-        her.veles.kiki = loaded_data['veles_kiki']
-
-        her.gavr.arachne = loaded_data['gavr_arachne']
-        her.gady.arachne = loaded_data['gady_arachne']
-        her.mara.arachne = loaded_data['mara_arachne']
-        her.veles.arachne = loaded_data['veles_arachne']
-
-        her.gavr.raptor = loaded_data['gavr_raptor']
-        her.gady.raptor = loaded_data['gady_raptor']
-        her.mara.raptor = loaded_data['mara_raptor']
-        her.veles.raptor = loaded_data['veles_raptor']
-
-        her.gavr.gifts = loaded_data['gavr_gifts']
-        her.gady.gifts = loaded_data['gady_gifts']
-        her.mara.gifts = loaded_data['mara_gifts']
-        her.veles.gifts = loaded_data['veles_gifts']
-
-        her.gavr.wildman = loaded_data['gavr_wild']
-        her.gady.wildman = loaded_data['gady_wild']
-        her.mara.wildman = loaded_data['mara_wild']
-        her.veles.wildman = loaded_data['veles_wild']
-
-        # her.gady.completing_tasks = l
-
-        # отображаем значения
-        gavr_vip.set(her.gavr.vip)
-        gady_vip.set(her.gady.vip)
-        mara_vip.set(her.mara.vip)
-        veles_vip.set(her.veles.vip)
-
-        displaying_values()
-    # иначе отображение и сохранение стартовых значений
-    else:
-
-        her.gady.days_count += 1
-        her.gavr.days_count += 1
-        # her.gavr.days_counting = 0
-        print(f"gady {her.gady.days_count} {fun.transform_days(her.gady.days_count)}, {her.gady.wildman_count} дикарей")
-        print(f'gavr {her.gavr.days_count} {fun.transform_days(her.gavr.days_count)}, {her.gavr.wildman_count} дикарей')
-
-        print(tc_cyan("даты не совпадают, смена суток"))
-        gavr_vip.set(str(starting_value))
-        gady_vip.set(str(starting_value))
-        mara_vip.set(starting_value)
-        veles_vip.set(starting_value)
-
-        displaying_values()
-        save_to_file()
-
-
-def save_to_file():
-    print(tc_green("запись состояния"))
-
-    data_to_save = {
-        'date': date_start,
-        'gavr_vip': her.gavr.vip,
-        'gady_vip': her.gady.vip,
-        'mara_vip': her.mara.vip,
-        'veles_vip': her.veles.vip,
-
-        'gavr_krysy': her.gavr.grey_rat,
-        'gady_krysy': her.gady.grey_rat,
-        'mara_krysy': her.mara.grey_rat,
-        'veles_krysy': her.veles.grey_rat,
-
-        'gavr_kiki': her.gavr.kiki,
-        'gady_kiki': her.gady.kiki,
-        'mara_kiki': her.mara.kiki,
-        'veles_kiki': her.veles.kiki,
-
-        'gavr_arachne': her.gavr.arachne,
-        'gady_arachne': her.gady.arachne,
-        'mara_arachne': her.mara.arachne,
-        'veles_arachne': her.veles.arachne,
-
-        'gavr_raptor': her.gavr.raptor,
-        'gady_raptor': her.gady.raptor,
-        'mara_raptor': her.mara.raptor,
-        'veles_raptor': her.veles.raptor,
-
-        'gavr_gifts': her.gavr.gifts,
-        'gady_gifts': her.gady.gifts,
-        'mara_gifts': her.mara.gifts,
-        'veles_gifts': her.veles.gifts,
-
-        'gavr_wild': her.gavr.wildman,
-        'gady_wild': her.gady.wildman,
-        'mara_wild': her.mara.wildman,
-        'veles_wild': her.veles.wildman,
-
-        'gady.wildman_all': her.gady.wildman_count,
-        'gavr.wildman_all': her.gavr.wildman_count,
-
-        'gady.days_counting': her.gady.days_count,
-        'gavr.days_counting': her.gavr.days_count,
-
-        'gady.completing_tasks': her.gady.completing_tasks,
-        'gady.wild_activ': her.gady.wild_activ,
-        'gavr.completing_tasks': her.gavr.completing_tasks,
-        'gavr.wild_activ': her.gavr.wild_activ,
-
-    }
-    # print(data_to_save)
-    file1 = open('config.bin', 'wb')
-    pickle.dump(data_to_save, file1)
-    file1.close()
-
-
-def read_from_file():
-    print(tc_green("чтение состояния"))
-    try:
-        file1 = open('config.bin', 'rb')
-        data_to_load = pickle.load(file1)
-        file1.close()
-        check_date(data_to_load)
-    except:
-        print(tc_red("файл поврежден или не создан"))
-        displaying_values()
-        save_to_file()
+    solid_memory.save_to_file()
 
 
 def bonus():
@@ -226,43 +85,37 @@ def bonus():
 def en_1():
     station_master.task_pos_item(1)
     displaying_values()
-    save_to_file()
 
 
 def en_2():
     station_master.task_pos_item(2)
     displaying_values()
-    save_to_file()
 
 
 def en_3():
     station_master.task_pos_item(3)
     displaying_values()
-    save_to_file()
 
 
 def puli():
     station_master.choosing_task_money()
     displaying_values()
-    save_to_file()
 
 
 def dvizh_test():
     touring.test_run()
     displaying_values()
-    save_to_file()
 
 
 def kiki():
     touring.za_kikimorami()
+    fun.work_8_hour()
     displaying_values()
-    save_to_file()
 
 
 def arachne_and_raptor():
     touring.pauk_yascher()
     displaying_values()
-    save_to_file()
 
 
 def tent_inspection():
@@ -273,100 +126,110 @@ def tent_inspection():
 
     while vip_case_all < 10:
         if hero == 'Gady':
-            vip_case_all += revision_of_tents.tent_raid()
+            vip_case_all += revision_tents.tent_raid()
             her.gady.vip = vip_case_all
-            gady_vip.set(str(her.gady.vip))
         if hero == 'Gavr':
-            vip_case_all += revision_of_tents.tent_raid()
+            vip_case_all += revision_tents.tent_raid()
             her.gavr.vip = vip_case_all
-            gavr_vip.set(str(her.gavr.vip))
         if hero == 'Mara':
-            vip_case_all += revision_of_tents.tent_raid()
+            vip_case_all += revision_tents.tent_raid()
             her.mara.vip = vip_case_all
-            mara_vip.set(her.mara.vip)
         if hero == 'Велес':
-            vip_case_all += revision_of_tents.tent_raid()
+            vip_case_all += revision_tents.tent_raid()
             her.veles.vip = vip_case_all
-            veles_vip.set(her.veles.vip)
         it_revision += 1
         print(f'{vip_case_all} из {it_revision} осмотренных')
         fun.move_friends_list_left()
-        if it_revision == 12:
+        if it_revision == 13:
             vip_case_all = 10
             if hero == 'Gady':
                 her.gady.vip = vip_case_all
-                gady_vip.set(str(her.gady.vip))
             if hero == 'Gavr':
                 her.gavr.vip = vip_case_all
-                gavr_vip.set(str(her.gavr.vip))
             if hero == 'Mara':
                 her.mara.vip = vip_case_all
-                mara_vip.set(her.mara.vip)
             if hero == 'Велес':
                 her.veles.vip = vip_case_all
-                veles_vip.set(her.veles.vip)
-    revision_of_tents.end_raid()
-    save_to_file()
+    revision_tents.end_raid()
+    displaying_values()
 
 
 def frunze_kiev():
     touring.frunze_kiev()
     displaying_values()
-    save_to_file()
 
 
 def kiev_frunze():
     touring.kiev_frunze()
     displaying_values()
-    save_to_file()
 
 
 def most_frunze():
     touring.most_frunze()
     displaying_values()
-    save_to_file()
 
 
 def bulvar_frunze():
     touring.bulvar_frunze()
     displaying_values()
-    save_to_file()
 
 
 def frunze_bulvar():
     touring.frunze_bulvar()
     displaying_values()
-    save_to_file()
 
 
 def most_riga():
     touring.most_riga()
     displaying_values()
-    save_to_file()
 
 
 def riga_most():
     touring.riga_most()
     displaying_values()
-    save_to_file()
 
 
 def frunze_riga():
     touring.frunze_riga()
     displaying_values()
-    save_to_file()
 
 
 def riga_frunze():
     touring.riga_frunze()
     displaying_values()
-    save_to_file()
 
 
 def tasks_na_kievskoy():
+    hero = fun.selection_hero()
+    if hero:
+        Hero.app_days_count_wildman(Activ.hero_activ)
+        # print(Hero.get_days_count_wildman(Activ.hero_activ))
+    else:
+        print('герой не опознан')
+        return
+    touring.tasks_na_kievskoy()
+    fun.work_8_hour()
+    # Hero.a
+    displaying_values()
+
+def wild_kiki():
+    start_time = time()
+    hero = fun.selection_hero()
+    if hero:
+        Hero.app_days_count_wildman(Activ.hero_activ)
+        # print(Hero.get_days_count_wildman(Activ.hero_activ))
+    else:
+        print('герой не опознан')
+        return
     touring.tasks_na_kievskoy()
     displaying_values()
-    save_to_file()
+    touring.za_kikimorami()
+    fun.work_8_hour()
+    displaying_values()
+    finish_time = float(time() - start_time)  # общее количество секунд
+    minutes = int(finish_time // 60)  # количество минут
+    seconds = round((finish_time % minutes), 2)
+    print('Потрачено время', minutes, 'минут', seconds, 'сек.')
 
 
 def collecting_gifts_at_stations():
@@ -376,33 +239,18 @@ def collecting_gifts_at_stations():
     # получение маршрута для определенного героя
     if hero:
         bypass_hero = Hero.get_bypass(Activ.hero_activ)
-    else:
-        print('герой не опознан')
-        return
-    # движение по маршруту
-    touring.sbor_podarkov(bypass_hero)
-    # получение количества станций на маршруте
-    q_st = fun.get_len_bypass(bypass_hero)
-    # получение количества собранных подарков
-    if hero:
+        # движение по маршруту
+        touring.sbor_podarkov(bypass_hero)
+        # получение количества станций на маршруте
+        q_st = fun.get_len_bypass(bypass_hero)
+        # получение количества собранных подарков
         q_gifts = Hero.get_qty_gift(Activ.hero_activ)
-    # if hero == 'Велес':
-    #     q_gifts = her.veles.gifts
-    # elif hero == 'Mara':
-    #     q_gifts = her.mara.gifts
-    # elif hero == 'Gady':
-    #     q_gifts = her.gady.gifts
-    # elif hero == 'Gavr':
-    #     q_gifts = her.gavr.gifts
     else:
         print('герой не опознан')
         return
-
     # вывод информации
     print(f'На {q_st} станциях собрано {q_gifts} подарков')
-
     displaying_values()
-    save_to_file()
 
 
 def change_gady():
@@ -466,173 +314,120 @@ gavr_wild = IntVar()
 gady_wild = IntVar()
 mara_wild = IntVar()
 veles_wild = IntVar()
-
-read_from_file()
-
-height_line = 30  # высота линии
-line0 = 0
-line1 = height_line * 1
-line2 = height_line * 2
-line3 = height_line * 3
-line4 = height_line * 4
-line5 = height_line * 5
-line6 = height_line * 6
-line7 = height_line * 7
-line8 = height_line * 8
-line9 = height_line * 9
-line10 = height_line * 10
-line11 = height_line * 11
-line12 = height_line * 12
-line13 = height_line * 13
-line14 = height_line * 14
-line15 = height_line * 15
-line16 = height_line * 16
-line17 = height_line * 17
-line18 = height_line * 18
-line19 = height_line * 19
-
-label_shift = 3  # смещение строки для Label
-label_line0 = line0 + label_shift
-label_line1 = line1 + label_shift
-label_line2 = line2 + label_shift
-label_line3 = line3 + label_shift
-label_line4 = line4 + label_shift
-label_line5 = line5 + label_shift
-label_line6 = line6 + label_shift
-label_line7 = line7 + label_shift
-label_line8 = line8 + label_shift
-label_line9 = line9 + label_shift
-label_line10 = line10 + label_shift
-
+# -------------------------------------------------------------
+start_prog()
+# -------------------------------------------------------------
 # блок командных кнопок
-ttk.Button(text="КВ", width=8, command=kv_and_raid.kv).place(x=114, y=line5)
-ttk.Button(text=" Start ", width=14, command=fun.start_p_m).place(x=200, y=line5)
-ttk.Button(text="за дикарями", width=10, command=tasks_na_kievskoy).place(x=114, y=line6)
-ttk.Button(text="на Киев", width=7, command=frunze_kiev).place(x=215, y=line6)
-ttk.Button(text="домой ", width=7, command=kiev_frunze).place(x=291, y=line6)
-ttk.Button(text="Паук+Ящер", width=10, command=arachne_and_raptor).place(x=267, y=line7)
-ttk.Button(text="обход всех станций", width=16, command=collecting_gifts_at_stations).place(x=114, y=line7)
-ttk.Button(text='Save', width=12, command=save_to_file).place(x=125, y=line8)
-ttk.Button(text='рапорт', width=12, command=report).place(x=250, y=line8)
-ttk.Button(text="frunze_riga", width=12, command=frunze_riga).place(x=0, y=line9)
-ttk.Button(text="riga_frunze", width=12, command=riga_frunze).place(x=125, y=line9)
-ttk.Button(text="test гардероб", width=12, command=person.pereodevanie).place(x=250, y=line9)
-ttk.Button(text="frunze_bulvar", width=12, command=frunze_bulvar).place(x=0, y=line10)
-ttk.Button(text="bulvar_frunze", width=12, command=bulvar_frunze).place(x=125, y=line10)
-ttk.Button(text="тест tour", width=12, command=dvizh_test).place(x=250, y=line10)
+ttk.Button(text="КВ", width=8, command=kv_and_raid.kv).place(x=114, y=b_d.line5)
+ttk.Button(text=" Start ", width=14, command=fun.start_p_m).place(x=200, y=b_d.line5)
+ttk.Button(text="wild+kiki", width=10, command=wild_kiki).place(x=114, y=b_d.line6)
+ttk.Button(text="на Киев", width=7, command=frunze_kiev).place(x=215, y=b_d.line6)
+ttk.Button(text="домой ", width=7, command=kiev_frunze).place(x=291, y=b_d.line6)
+ttk.Button(text="Паук+Ящер", width=10, command=arachne_and_raptor).place(x=267, y=b_d.line7)
+ttk.Button(text="обход всех станций", width=16, command=collecting_gifts_at_stations).place(x=114, y=b_d.line7)
+ttk.Button(text='Save', width=12, command=displaying_values).place(x=125, y=b_d.line8)
+ttk.Button(text='рапорт', width=12, command=report).place(x=250, y=b_d.line8)
+ttk.Button(text="frunze_riga", width=12, command=frunze_riga).place(x=0, y=b_d.line9)
+ttk.Button(text="riga_frunze", width=12, command=riga_frunze).place(x=125, y=b_d.line9)
+ttk.Button(text="test гардероб", width=12, command=person.pereodevanie).place(x=250, y=b_d.line9)
+ttk.Button(text="frunze_bulvar", width=12, command=frunze_bulvar).place(x=0, y=b_d.line10)
+ttk.Button(text="bulvar_frunze", width=12, command=bulvar_frunze).place(x=125, y=b_d.line10)
+ttk.Button(text="тест tour", width=12, command=dvizh_test).place(x=250, y=b_d.line10)
+ttk.Button(text="фото противника", width=14, command=create_img_arena_object).place(x=0, y=b_d.line11)
+ttk.Button(text="атака противника", width=14, command=kill).place(x=232, y=b_d.line11)
 
-ttk.Button(text="фото противника", width=17, command=create_img_arena_object).place(x=0, y=line11)
-ttk.Button(text="атака противника", width=17, command=kill).place(x=205, y=line11)
+ttk.Button(text="Gady", width=5, command=change_gady).place(x=0, y=b_d.gady_y)
+ttk.Button(text="Gavr", width=5, command=change_gavr).place(x=0, y=b_d.gavr_y)
+ttk.Button(text="Велес", width=5, command=change_veles).place(x=0, y=b_d.veles_y)
+ttk.Button(text="Мара", width=5, command=change_mara).place(x=0, y=b_d.mara_y)
+
+ttk.Button(text="VIP", width=4, command=tent_inspection).place(x=b_d.vip_x - b_d.s, y=b_d.label_line0 - 3)
+ttk.Button(text="kiki", width=4, command=kiki).place(x=b_d.kiki_x - b_d.s, y=b_d.label_line0 - 3)
+ttk.Button(text="wild", width=4, command=tasks_na_kievskoy).place(x=b_d.wild_x - (b_d.s + 3), y=b_d.label_line0 - 3)
+
 # блок инфо строк
-gady_y = label_line1
-gavr_y = label_line2
-veles_y = label_line3
-mara_y = label_line4
+ttk.Label(textvariable=gady_vip).place(x=b_d.vip_x, y=b_d.gady_y)
+ttk.Label(textvariable=gavr_vip).place(x=b_d.vip_x, y=b_d.gavr_y)
+ttk.Label(textvariable=veles_vip).place(x=b_d.vip_x, y=b_d.veles_y)
+ttk.Label(textvariable=mara_vip).place(x=b_d.vip_x, y=b_d.mara_y)
+ttk.Label(text='|').place(x=b_d.separator_1, y=b_d.gady_y)
+ttk.Label(text='|').place(x=b_d.separator_1, y=b_d.gavr_y)
+ttk.Label(text='|').place(x=b_d.separator_1, y=b_d.veles_y)
+ttk.Label(text='|').place(x=b_d.separator_1, y=b_d.mara_y)
 
-step = 47
-s = 14
-g_st0 = 0
-vip_x = step + s
-kiki_x = step * 2 + s
-arah_x = step * 3 + s
-rapt_x = step * 4 + s
-rat_x = step * 5 + s
-gift_x = step * 6 + s
-wild_x = step * 7 + s
+ttk.Label(textvariable=gavr_kiki).place(x=b_d.kiki_x, y=b_d.gavr_y)
+ttk.Label(textvariable=gady_kiki).place(x=b_d.kiki_x, y=b_d.gady_y)
+ttk.Label(textvariable=veles_kiki).place(x=b_d.kiki_x, y=b_d.veles_y)
+ttk.Label(textvariable=mara_kiki).place(x=b_d.kiki_x, y=b_d.mara_y)
 
-separator_1 = kiki_x - 18
-separator_2 = arah_x - 18
-separator_3 = rapt_x - 18
-separator_4 = rat_x - 18
-separator_5 = gift_x - 18
-separator_6 = wild_x - 18
+ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.gady_y)
+ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.gavr_y)
+ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.veles_y)
+ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.mara_y)
 
-ttk.Button(text="Gady", width=5, command=change_gady).place(x=0, y=gady_y)
-ttk.Button(text="Gavr", width=5, command=change_gavr).place(x=0, y=gavr_y)
-ttk.Button(text="Велес", width=5, command=change_veles).place(x=0, y=veles_y)
-ttk.Button(text="Мара", width=5, command=change_mara).place(x=0, y=mara_y)
+ttk.Label(text="arah", width=4, background='#858585', foreground='#050505').place(x=b_d.arah_x - b_d.s,
+                                                                                  y=b_d.label_line0)
+ttk.Label(textvariable=gavr_arachne).place(x=b_d.arah_x, y=b_d.gavr_y)
+ttk.Label(textvariable=gady_arachne).place(x=b_d.arah_x, y=b_d.gady_y)
+ttk.Label(textvariable=veles_arachne).place(x=b_d.arah_x, y=b_d.veles_y)
+ttk.Label(textvariable=mara_arachne).place(x=b_d.arah_x, y=b_d.mara_y)
 
-# ttk.Button(text=" обход VIP ", width=10, command=tent_inspection).place(x=114, y=line10)
-ttk.Button(text="VIP", width=4, command=tent_inspection).place(x=vip_x - s, y=label_line0 - 3)
-ttk.Label(textvariable=gady_vip).place(x=vip_x, y=gady_y)
-ttk.Label(textvariable=gavr_vip).place(x=vip_x, y=gavr_y)
-ttk.Label(textvariable=veles_vip).place(x=vip_x, y=veles_y)
-ttk.Label(textvariable=mara_vip).place(x=vip_x, y=mara_y)
-ttk.Label(text='|').place(x=separator_1, y=gady_y)
-ttk.Label(text='|').place(x=separator_1, y=gavr_y)
-ttk.Label(text='|').place(x=separator_1, y=veles_y)
-ttk.Label(text='|').place(x=separator_1, y=mara_y)
+ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.gady_y)
+ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.gavr_y)
+ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.veles_y)
+ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.mara_y)
 
-# ttk.Button(text="кикиморы", width=10, command=kiki).place(x=114, y=line11)
-ttk.Button(text="kiki", width=4, command=kiki).place(x=kiki_x - s, y=label_line0 - 3)
-ttk.Label(textvariable=gavr_kiki).place(x=kiki_x, y=gavr_y)
-ttk.Label(textvariable=gady_kiki).place(x=kiki_x, y=gady_y)
-ttk.Label(textvariable=veles_kiki).place(x=kiki_x, y=veles_y)
-ttk.Label(textvariable=mara_kiki).place(x=kiki_x, y=mara_y)
-ttk.Label(text='|').place(x=separator_2, y=gady_y)
-ttk.Label(text='|').place(x=separator_2, y=gavr_y)
-ttk.Label(text='|').place(x=separator_2, y=veles_y)
-ttk.Label(text='|').place(x=separator_2, y=mara_y)
+ttk.Label(text="rapt", width=4, background='#858585', foreground='#050505').place(x=b_d.rapt_x - b_d.s,
+                                                                                  y=b_d.label_line0)
+ttk.Label(textvariable=gavr_raptor).place(x=b_d.rapt_x, y=b_d.gavr_y)
+ttk.Label(textvariable=gady_raptor).place(x=b_d.rapt_x, y=b_d.gady_y)
+ttk.Label(textvariable=veles_raptor).place(x=b_d.rapt_x, y=b_d.veles_y)
+ttk.Label(textvariable=mara_raptor).place(x=b_d.rapt_x, y=b_d.mara_y)
 
-ttk.Label(text="arah", width=4, background='#858585', foreground='#050505').place(x=arah_x - s, y=label_line0)
-ttk.Label(textvariable=gavr_arachne).place(x=arah_x, y=gavr_y)
-ttk.Label(textvariable=gady_arachne).place(x=arah_x, y=gady_y)
-ttk.Label(textvariable=veles_arachne).place(x=arah_x, y=veles_y)
-ttk.Label(textvariable=mara_arachne).place(x=arah_x, y=mara_y)
-ttk.Label(text='|').place(x=separator_3, y=gady_y)
-ttk.Label(text='|').place(x=separator_3, y=gavr_y)
-ttk.Label(text='|').place(x=separator_3, y=veles_y)
-ttk.Label(text='|').place(x=separator_3, y=mara_y)
+ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.gady_y)
+ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.gavr_y)
+ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.veles_y)
+ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.mara_y)
 
-ttk.Label(text="rapt", width=4, background='#858585', foreground='#050505').place(x=rapt_x - s, y=label_line0)
-ttk.Label(textvariable=gavr_raptor).place(x=rapt_x, y=gavr_y)
-ttk.Label(textvariable=gady_raptor).place(x=rapt_x, y=gady_y)
-ttk.Label(textvariable=veles_raptor).place(x=rapt_x, y=veles_y)
-ttk.Label(textvariable=mara_raptor).place(x=rapt_x, y=mara_y)
-ttk.Label(text='|').place(x=separator_4, y=gady_y)
-ttk.Label(text='|').place(x=separator_4, y=gavr_y)
-ttk.Label(text='|').place(x=separator_4, y=veles_y)
-ttk.Label(text='|').place(x=separator_4, y=mara_y)
+ttk.Label(text="rat", width=4, background='#858585', foreground='#050505').place(x=b_d.rat_x - b_d.s,
+                                                                                 y=b_d.label_line0)
+ttk.Label(textvariable=gavr_rat).place(x=b_d.rat_x, y=b_d.gavr_y)
+ttk.Label(textvariable=gady_rat).place(x=b_d.rat_x, y=b_d.gady_y)
+ttk.Label(textvariable=veles_rat).place(x=b_d.rat_x, y=b_d.veles_y)
+ttk.Label(textvariable=mara_rat).place(x=b_d.rat_x, y=b_d.mara_y)
 
-ttk.Label(text="rat", width=4, background='#858585', foreground='#050505').place(x=rat_x - s, y=label_line0)
-ttk.Label(textvariable=gavr_rat).place(x=rat_x, y=gavr_y)
-ttk.Label(textvariable=gady_rat).place(x=rat_x, y=gady_y)
-ttk.Label(textvariable=veles_rat).place(x=rat_x, y=veles_y)
-ttk.Label(textvariable=mara_rat).place(x=rat_x, y=mara_y)
-ttk.Label(text='|').place(x=separator_5, y=gady_y)
-ttk.Label(text='|').place(x=separator_5, y=gavr_y)
-ttk.Label(text='|').place(x=separator_5, y=veles_y)
-ttk.Label(text='|').place(x=separator_5, y=mara_y)
+ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.gady_y)
+ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.gavr_y)
+ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.veles_y)
+ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.mara_y)
 
-ttk.Label(text="gift", width=4, background='#858585', foreground='#050505').place(x=gift_x - s, y=label_line0)
-ttk.Label(textvariable=gavr_gift).place(x=gift_x, y=gavr_y)
-ttk.Label(textvariable=gady_gift).place(x=gift_x, y=gady_y)
-ttk.Label(textvariable=veles_gift).place(x=gift_x, y=veles_y)
-ttk.Label(textvariable=mara_gift).place(x=gift_x, y=mara_y)
-ttk.Label(text='|').place(x=separator_6, y=gady_y)
-ttk.Label(text='|').place(x=separator_6, y=gavr_y)
-ttk.Label(text='|').place(x=separator_6, y=veles_y)
-ttk.Label(text='|').place(x=separator_6, y=mara_y)
+ttk.Label(text="gift", width=4, background='#858585', foreground='#050505').place(x=b_d.gift_x - b_d.s,
+                                                                                  y=b_d.label_line0)
+ttk.Label(textvariable=gavr_gift).place(x=b_d.gift_x, y=b_d.gavr_y)
+ttk.Label(textvariable=gady_gift).place(x=b_d.gift_x, y=b_d.gady_y)
+ttk.Label(textvariable=veles_gift).place(x=b_d.gift_x, y=b_d.veles_y)
+ttk.Label(textvariable=mara_gift).place(x=b_d.gift_x, y=b_d.mara_y)
 
-ttk.Button(text="wild", width=4, command=tasks_na_kievskoy).place(x=wild_x - (s + 3), y=label_line0 - 3)
-ttk.Label(textvariable=gavr_wild).place(x=wild_x, y=gavr_y)
-ttk.Label(textvariable=gady_wild).place(x=wild_x, y=gady_y)
-ttk.Label(textvariable=veles_wild).place(x=wild_x, y=veles_y)
-ttk.Label(textvariable=mara_wild).place(x=wild_x, y=mara_y)
+ttk.Label(text='|').place(x=b_d.separator_6, y=b_d.gady_y)
+ttk.Label(text='|').place(x=b_d.separator_6, y=b_d.gavr_y)
+ttk.Label(text='|').place(x=b_d.separator_6, y=b_d.veles_y)
+ttk.Label(text='|').place(x=b_d.separator_6, y=b_d.mara_y)
+
+ttk.Label(textvariable=gavr_wild).place(x=b_d.wild_x, y=b_d.gavr_y)
+ttk.Label(textvariable=gady_wild).place(x=b_d.wild_x, y=b_d.gady_y)
+ttk.Label(textvariable=veles_wild).place(x=b_d.wild_x, y=b_d.veles_y)
+ttk.Label(textvariable=mara_wild).place(x=b_d.wild_x, y=b_d.mara_y)
 
 # блок выбора заданий
 difference_str_img = 11
-line_img = line5 + 1
+line_img = b_d.line5 + 1
 imagePul = ImageTk.PhotoImage(file="img/overall/pulya.png")
 ttk.Button(root, image=imagePul, command=puli).place(x=56, y=line_img + 15)
 img_e1 = ImageTk.PhotoImage(file="img/overall/en1v3.png")
 ttk.Button(root, image=img_e1, command=en_1).place(x=0, y=line_img)
 img_e2 = ImageTk.PhotoImage(file="img/overall/en2v3.png")
-ttk.Button(root, image=img_e2, command=en_2).place(x=0, y=line_img + height_line + difference_str_img)
+ttk.Button(root, image=img_e2, command=en_2).place(x=0, y=line_img + b_d.height_line + difference_str_img)
 img_e3 = ImageTk.PhotoImage(file="img/overall/en3v3.png")
-ttk.Button(root, image=img_e3, command=en_3).place(x=0, y=line_img + height_line * 2 + difference_str_img * 2)
+ttk.Button(root, image=img_e3, command=en_3).place(x=0, y=line_img + b_d.height_line * 2 + difference_str_img * 2)
 #
 root.mainloop()
-
-# ttk.Button(text="most_riga", width=11, command=most_riga).place(x=109, y=277)  # x=133
-# ttk.Button(text="riga_most", width=11, command=riga_most).place(x=109, y=308)
