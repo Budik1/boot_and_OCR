@@ -3,6 +3,8 @@ from tkinter import ttk
 from PIL import ImageTk
 from time import time
 
+from numpy.random import geometric
+
 import fun
 import station_master
 import kv_and_raid
@@ -14,7 +16,7 @@ import solid_memory
 import heroes as her
 from heroes import Hero, Activ
 from event_arena import create_img_arena_object, kill
-from my_color_text import tc_red, tc_green
+from my_color_text import tc_red
 
 fun.my_print_to_file('')
 fun.my_print_to_file('*******                      *******')
@@ -41,7 +43,7 @@ def start_prog():
         displaying_values()
 
 
-def displaying_values():
+def displaying_values(info=True):
     gady_rat.set(her.gady.grey_rat)
     gavr_rat.set(her.gavr.grey_rat)
     veles_rat.set(her.veles.grey_rat)
@@ -75,7 +77,10 @@ def displaying_values():
     gady_wild.set(her.gady.wildman)
     gavr_wild.set(her.gavr.wildman)
 
-    solid_memory.save_to_file()
+    if info:
+        solid_memory.save_to_file(info=True)
+    else:
+        solid_memory.save_to_file(info=False)
 
 
 def bonus():
@@ -255,18 +260,22 @@ def collecting_gifts_at_stations():
 
 def change_gady():
     person.change_acc(hero_name_in_file='gady')
+    displaying_values(info=False)
 
 
 def change_gavr():
     person.change_acc(hero_name_in_file='gavr')
+    displaying_values(info=False)
 
 
 def change_veles():
     person.change_acc(hero_name_in_file='veles')
+    displaying_values(info=False)
 
 
 def change_mara():
     person.change_acc(hero_name_in_file='mara')
+    displaying_values(info=False)
 
 
 def report():
@@ -274,10 +283,18 @@ def report():
     print(f'Gavr {Hero.get_report_wildman(her.gavr)}')
 
 
-root = Tk()
+def zero_param():
+    her.veles.energy_all_count = 0
+    her.mara.energy_all_count = 0
+    her.veles.task_count = 0
+    her.mara.task_count = 0
+    displaying_values()
 
+
+root = Tk()
 root.title(' помощник "Метро 2033"')
-root.geometry("370x362+1200+50")  # Ширина x Высота + координата X + координата Y
+# root.geometry("370x362+1200+50")  # Ширина x Высота + координата X + координата Y
+root.geometry(f'370x{b_d.line11 + b_d.height_line + 2}+1200+50')  # Ширина x Высота + координата X + координата Y
 root.resizable(False, False)
 
 gavr_vip = StringVar()
@@ -335,6 +352,7 @@ ttk.Button(text="bulvar_frunze", width=12, command=bulvar_frunze).place(x=125, y
 ttk.Button(text="тест tour", width=12, command=dvizh_test).place(x=250, y=b_d.line10)
 ttk.Button(text="фото противника", width=14, command=create_img_arena_object).place(x=0, y=b_d.line11)
 ttk.Button(text="атака противника", width=14, command=kill).place(x=232, y=b_d.line11)
+ttk.Button(text='обнулить Маро и Велес', width=20, command=zero_param).place(x=0, y=b_d.line12)
 
 ttk.Button(text="Gady", width=5, command=change_gady).place(x=0, y=b_d.gady_y)
 ttk.Button(text="Gavr", width=5, command=change_gavr).place(x=0, y=b_d.gavr_y)

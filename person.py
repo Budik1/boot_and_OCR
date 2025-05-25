@@ -74,7 +74,7 @@ def change_gloves():
 def change_dress():
     inventory = fun.locCenterImg(item_person['инвентарь'], confidence=0.9)
     # цикл в ожидании появления инвентаря
-    fun.move_to_click(inventory, 0.3)
+    fun.mouse_move_to_click(pos_click=inventory, z_p_k=0.3)
     print('готов к переодеванию')
     change_jacket_raid()
     change_trousers()
@@ -85,16 +85,17 @@ def change_dress():
 def pereodevanie():
     hero = fun.locCenterImg(item_person['фото героя'], confidence=0.9)
     if hero is not None:
-        fun.move_to_click(hero, 0.3)
+        fun.mouse_move_to_click(pos_click=hero, z_p_k=0.3)
         sleep(0.5)
         change_dress()
     else:
         change_dress()
     exit_ = fun.locCenterImg(item_person['выход'], confidence=0.9)
-    fun.move_to_click(exit_, 0.3)
+    fun.mouse_move_to_click(pos_click=exit_, z_p_k=0.3)
 
 
 def change_acc(*, hero_name_in_file):
+    move_time = 0.3
     vid = fun.selection_hero()
     while not vid:
         fun.push_close_all_()
@@ -116,9 +117,9 @@ def change_acc(*, hero_name_in_file):
         x, y = pos_my
         x -= 50
         y -= 50
-        fun.move_to_click(pos_click=(x, y), z_p_k=0.5)
+        fun.mouse_move_to_click(pos_click=(x, y), move_time=move_time, z_p_k=0.2)
     img_button_expand = fun.locCenterImg('img/overall/button_expand.png')
-    fun.move_to_click(pos_click=img_button_expand)
+    fun.mouse_move_to_click(pos_click=img_button_expand, move_time=move_time, z_p_k=0.2)
     # вычисление позиции смены аккаунта
     pos_my = fun.locCenterImg('img/overall/my_game2.png', 0.8)
     x, y = pos_my
@@ -128,14 +129,13 @@ def change_acc(*, hero_name_in_file):
     # открыть меню
     open_menu_chenge_acc = fun.locCenterImg('img/person/change_hero/add_acc.png')
     if not open_menu_chenge_acc:
-        fun.move_to_click(pos_click=pos_menu_chenge_acc, z_p_k=0.2)
+        fun.mouse_move_to_click(pos_click=pos_menu_chenge_acc, move_time=move_time, z_p_k=0.2)
     # нажать нужного героя
     cange_hero = fun.locCenterImg(f'img/person/change_hero/change_hero_{hero_name_in_file}.png')
-    # print(cange_hero)
-    fun.move_to_click(pos_click=cange_hero, z_p_k=0.2)
+    fun.mouse_move_to_click(pos_click=cange_hero, move_time=move_time, z_p_k=0.2)
     #
     img_button_collapse = fun.locCenterImg('img/overall/button_collapse.png')
-    fun.move_to_click(pos_click=img_button_collapse, z_p_k=0.2)
+    fun.mouse_move_to_click(pos_click=img_button_collapse, move_time=move_time, z_p_k=0.2)
     #
     pos = fun.locCenterImg('img/overall/event_entry/pos_t.png')
     while not pos:
@@ -144,11 +144,11 @@ def change_acc(*, hero_name_in_file):
         if hero_name_in_file in hero_name_in_file_list:
             continue_heroes = fun.locCenterImg(f'img/overall/event_entry/continue_{hero_name_in_file}.png')
             if continue_heroes:
-                fun.move_to_click(pos_click=continue_heroes)
+                fun.mouse_move_to_click(pos_click=continue_heroes, move_time=move_time, z_p_k=0.2)
 
     slider = fun.locCenterImg('img/overall/slider_v.png', 0.7)
     if slider:
         x, y = slider
-        pyautogui.moveTo(x, y, duration=1)
+        pyautogui.moveTo(x, y, duration=move_time)
         pyautogui.dragTo(x, y + 45, duration=1)
     print('смена героя проведена')

@@ -4,7 +4,9 @@ import datetime
 from playsound3 import playsound
 
 import my_color_text as myCt
+import find_img as find
 import heroes as her
+from find_img import find_her_gavr
 from heroes import Activ
 
 par_conf = 0.79
@@ -17,6 +19,34 @@ def locCenterImg(name_img, confidence=0.9, region: tuple[int, int, int, int] | N
                                              confidence=confidence,
                                              region=region)
     return pos_img
+
+
+def mouse_left_click(*, pos):
+    pyautogui.hotkey('Ctrl')
+    playsound('sound/mouse-click.wav')
+    pyautogui.click(pos)
+
+
+def mouse_move_to_click(*, pos_click: tuple, move_time=0.75, z_p_k=0.05):
+    """
+    Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
+    :param pos_click: Point
+    :param move_time: время перемещения из точки отправления в точку назначения
+    :param z_p_k: задержка перед кликом(float)
+    :return: None
+    """
+    my_print_to_file('fun.mouse_move_to_click')
+    # print('mouse_move_to_click', pos_click)
+    sleep(0.3)
+    pyautogui.moveTo(pos_click, duration=move_time)
+    # print('должен быть клик')
+    sleep(z_p_k)
+    mouse_left_click(pos=pos_click)
+    sleep(0.18)
+
+
+def mouse_move(*, pos: tuple, speed=0.2):
+    pyautogui.moveTo(pos, duration=speed)
 
 
 def my_print_to_file(text):
@@ -65,16 +95,6 @@ def date_and_time_in_name_file():
     return date_time_now_f
 
 
-def close_popup_window():
-    my_print_to_file('fun.close_popup_window')
-    knob = locCenterImg('img/overall/knob.png', 0.9)
-    cancel = locCenterImg('img/overall/cancel.png', 0.9)
-    if knob:
-        move_to_click(knob, 1)
-    if cancel:
-        move_to_click(cancel, 1)
-
-
 def test_time(funk):
     def wrapper(*args, **kwargs):
         start_time = time()
@@ -112,15 +132,32 @@ def station_gifts():
         open_ = locCenterImg('img/b_gift_open.png', 0.9)
 
 
+def push_close_all_():
+    my_print_to_file('fun.push_close_all_')
+    pos_close = find.find_close()
+    while pos_close:
+        close_popup_window()
+        push_close()
+        sleep(1)
+        pos_close = find.find_close()
+        # print("цикл close")
+
+
+def close_popup_window():
+    my_print_to_file('fun.close_popup_window')
+    knob = find.find_knob()
+    cancel = find.find_cancel()
+    if knob:
+        mouse_move_to_click(pos_click=knob, z_p_k=1)
+    if cancel:
+        mouse_move_to_click(pos_click=cancel, z_p_k=1)
+
+
 def push_close():
     my_print_to_file('fun.push_close')
-    kv_close = locCenterImg('img/kv/kv_close.png', par_conf)
-    close = locCenterImg('img/overall/close.png', 0.9)
-    if kv_close:
-        move_to_click(kv_close, 0.1)
-        close_flag = True
-    elif close:
-        move_to_click(close, 0.1)
+    pos_close = find.find_close()
+    if pos_close:
+        mouse_move_to_click(pos_click=pos_close, z_p_k=0.1)
         close_flag = True
     else:
         close_flag = False
@@ -130,30 +167,17 @@ def push_close():
 def exit_to_zero_screen():
     my_print_to_file('fun.exit_to_zero_screen')
     push_close_all_()
-    b_exit = locCenterImg('img/b_exit.png', 0.9)
+    b_exit = find.find_b_exit()
     print(b_exit, 'b_exit')
     if b_exit:
-        move_to_click(b_exit, 0.1)
-
-
-def push_close_all_():
-    my_print_to_file('fun.push_close_all_')
-    close = locCenterImg('img/overall/close.png', 0.9)
-    kv_close = locCenterImg('img/kv/kv_close.png', par_conf)
-    while close or kv_close:
-        close_popup_window()
-        push_close()
-        sleep(1)
-        kv_close = locCenterImg('img/kv/kv_close.png', par_conf)
-        close = locCenterImg('img/overall/close.png', 0.9)
-        # print("цикл close")
+        mouse_move_to_click(pos_click=b_exit, z_p_k=0.1)
 
 
 def bonus():
     my_print_to_file('fun.bonus')
     # кнопка добавить
     add_bonus = locCenterImg('img/add.png', 0.8)
-    pyautogui.moveTo(add_bonus, duration=1)
+    mouse_move(pos=add_bonus, speed=1)
     sleep(1)
     mouse_left_click(pos=add_bonus)
     sleep(2)
@@ -206,15 +230,6 @@ def start_p_m():
         elif pos_my_game1:
             pyautogui.moveTo(pos_my_game1, duration=1)
             mouse_left_click(pos=pos_my_game1)
-            # print('pos_my_game1' + str(pos_my_game1))
-        # else:
-        #     print('Не найдено кнопки "My game"')
-        #     im1 = pyautogui.screenshot('img/screen1.png')
-        #     im1.save('img/screen1.png')
-        #     sleep(2)
-        # pos_autor = locCenterImg('img/overall/authorization_button.png', 0.8)
-        # if pos_autor:
-        #     authorization()
 
     def click_icon_game():
         p_i = 0
@@ -298,30 +313,12 @@ def move_friends_list_to_top():
     sleep(1)
 
 
-def mouse_left_click(*, pos):
-    pyautogui.hotkey('Ctrl')
-    playsound('sound/mouse-click.wav')
-    pyautogui.click(pos)
-
-
-def move_to_click(pos_click: tuple, z_p_k=0.05):
-    """
-    Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
-    :param pos_click: Point
-    :param z_p_k: задержка перед кликом(float)
-    :return: None
-    """
-    my_print_to_file('fun.move_to_click')
-    # print('move_to_click', pos_click)
-    sleep(0.3)
-    pyautogui.moveTo(pos_click, duration=1)
-    # print('должен быть клик')
-    sleep(z_p_k)
-    mouse_left_click(pos=pos_click)
-    sleep(0.18)
-
-
 def foto(path_name, _region):
+    """
+        Создает снимок нужного участка экрана
+        :param path_name: имя файла
+        :param _region: регион (X, Y, ширина, высота)
+    """
     my_print_to_file('fun.foto')
     im1 = pyautogui.screenshot(region=_region)
     im1.save(path_name)
@@ -333,16 +330,15 @@ def find_link_hall_of_glory():
     :return: Point 'Зал славы'
     """
     my_print_to_file('fun.find_link_hall_of_glory')
-    close = locCenterImg('img/overall/close.png', 0.9)
+    close = find.find_close()
     while close:
         push_close_all_()
-        close = locCenterImg('img/overall/close.png', 0.9)
+        close = find.find_close()
     # получение координат привязки
-    point_hall_of_glory = locCenterImg('img/arena/hall_of_glory_icon.png', 0.9)
+    point_hall_of_glory = find.find_hall_of_glory_icon()
     while not point_hall_of_glory:
         sleep(0.2)
-        point_hall_of_glory = locCenterImg('img/arena/hall_of_glory_icon.png', 0.9)
-
+        point_hall_of_glory = find.find_hall_of_glory_icon()
     sleep(0.5)
 
     return point_hall_of_glory
@@ -350,18 +346,19 @@ def find_link_hall_of_glory():
 
 def find_link_station_master():
     my_print_to_file('fun.find_link_station_master')
-    station_master = locCenterImg('img/station_master.png', 0.9)
-    pos_klan = locCenterImg('img/overall/klan.png', 0.9)
+    station_master = find.find_station_master()
+    pos_klan = find.find_klan()
     if station_master or pos_klan:
         if pos_klan:
             pyautogui.moveTo(pos_klan)
+            mouse_move(pos=pos_klan)
             # получение координат привязки
             sleep(0.5)
             point = pos_klan
 
             vizit_to_station_master()
         else:
-            pyautogui.moveTo(station_master)
+            mouse_move(pos=station_master)
             x_or, y_or = station_master
             x_or -= 29
             y_or -= 29
@@ -369,8 +366,8 @@ def find_link_station_master():
     else:
         # Закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
         push_close_all_()
-        pos_klan = locCenterImg('img/overall/klan.png', 0.9)
-        pyautogui.moveTo(pos_klan)
+        pos_klan = find.find_klan()
+        mouse_move(pos=pos_klan)
         # получение координат привязки
         sleep(0.5)
         point = pos_klan
@@ -473,10 +470,10 @@ def get_areas_task_big(width=77, height=42):
 
 def find_link_klan():
     my_print_to_file('fun.find_link_klan')
-    pos_klan = locCenterImg('img/overall/klan.png', 0.85)
+    pos_klan = find.find_klan()
     while not pos_klan:
         sleep(0.1)
-        pos_klan = locCenterImg('img/overall/klan.png', 0.85)
+        pos_klan = find.find_klan()
 
     return pos_klan
 
@@ -484,9 +481,9 @@ def find_link_klan():
 def vizit_to_station_master():
     """заходит в палатку к нач.станции"""
     my_print_to_file('fun.vizit_to_station_master')
-    station_master = locCenterImg('img/station_master.png', 0.9)
+    station_master = find.find_station_master()
     if station_master:
-        pyautogui.moveTo(station_master, duration=1)
+        mouse_move(pos=station_master, speed=0.4)
         # print(" уже у начальника ")
         sleep(1 / 3)
     else:
@@ -495,11 +492,11 @@ def vizit_to_station_master():
         x1, y1 = pos_klan
         x1, y1 = x1 - 60, y1 + 300
         master = x1, y1
-        move_to_click(master, 0.2)
+        mouse_move_to_click(pos_click=master, move_time=0.4, z_p_k=0.2)
         # print('зашел к начальнику')
-        sleep(1)
-        station_master = locCenterImg('img/station_master.png', par_conf)
-        pyautogui.moveTo(station_master, duration=1)
+        sleep(0.5)
+        station_master = find.find_station_master()
+        mouse_move(pos=station_master, speed=0.4)
     return station_master
 
 
@@ -509,20 +506,18 @@ def find_lvl():
 
 
 def await_arena(region):
-    attack_arena_object = locCenterImg('img/arena/attack.png', confidence=0.9,
-                                                         region=region)
+    attack_arena_object = find.find_attack(region=region)
     while attack_arena_object is None:
-        attack_arena_object = locCenterImg('img/arena/attack.png', confidence=0.9,
-                                                             region=region)
-    pyautogui.moveTo(attack_arena_object)
+        attack_arena_object = find.find_attack(region=region)
+    mouse_move(pos=attack_arena_object)
 
 
 def selection_hero():
     # print('fun.selection_hero')
-    hero_gadya = locCenterImg('img/person/her_gadya.png')
-    hero_gavr = locCenterImg('img/person/her_gavr.png')
-    hero_veles = locCenterImg('img/person/her_veles.png')
-    hero_mara = locCenterImg('img/person/her_mara.png')
+    hero_gadya = find.find_her_gadya()
+    hero_gavr = find_her_gavr()
+    hero_veles = find.find_her_veles()
+    hero_mara = find.find_her_mara()
 
     if hero_gadya:
         print(myCt.tc_yellow('Гадя'))
@@ -560,7 +555,15 @@ def get_len_bypass(bypass_hero):
     return len(arr2)
 
 
-def transform_days(qty_days: int):
+def work_8_hour():
+    vizit_to_station_master()
+    pos_work = find.find_work()
+    mouse_move_to_click(pos_click= pos_work)
+    work_8hour = find.find_work_8_hour()
+    mouse_move_to_click(pos_click= work_8hour)
+
+
+def transform_days(*, qty_days: int):
     days_des = qty_days % 10
     days_col = qty_days // 10
 
@@ -574,13 +577,15 @@ def transform_days(qty_days: int):
         return 'дней'
 
 
-def move_mause(*, pos:tuple, speed=0.2):
-    pyautogui.moveTo(pos, duration=speed)
+def transform_wilds(*, qty_days: int):
+    days_des = qty_days % 10
+    days_col = qty_days // 10
 
-def work_8_hour():
-    vizit_to_station_master()
-    pos_work = locCenterImg('img/overall/work.png')
-    move_to_click(pos_work)
-    work_8_hour = locCenterImg(f'img/overall/work_8_hour.png')
-    move_to_click(work_8_hour)
-
+    if days_des == 1 and days_col != 1:
+        return 'дикарь'
+    elif days_des in [2, 3, 4] and days_col != 1:
+        return 'дикаря'
+    elif days_col == 1:
+        return 'дикарей'
+    elif days_des in [0, 5, 6, 7, 8, 9] and days_col != 1:
+        return 'дикарей'

@@ -1,5 +1,6 @@
 import pyautogui
 import fun
+import find_img as find
 from time import sleep
 
 # delay_before_shot = pyautogui.PAUSE
@@ -169,78 +170,95 @@ def work():
     x, y = pos
     x += 450
     y -= 5
-    # fun.move_mause(pos=(x, y), speed=1)
+    # fun.mouse_move(pos=(x, y), speed=1)
     x_demo, y_demo = x, y
     change_x = 90
     change_y = 30
     x_demo += change_x
     y_demo += change_y
-    # fun.move_mause(pos=(x_demo, y_demo))
+    # fun.mouse_move(pos=(x_demo, y_demo))
     fun.foto(f'img/overall/work.png', (x, y, change_x, change_y))
     pos_work = fun.locCenterImg(f'img/overall/work.png')
-    fun.move_mause(pos=pos_work)
+    fun.mouse_move(pos=pos_work)
 
 
 def work_8_hour():
     fun.vizit_to_station_master()
     pos_work = fun.locCenterImg('img/overall/work.png')
-    fun.move_mause(pos=pos_work)
+    fun.mouse_move(pos=pos_work)
     x, y = pos_work
     x -= 224
     y += 430
-    # fun.move_mause(pos=(x, y), speed=1)
+    # fun.mouse_move(pos=(x, y), speed=1)
     x_demo, y_demo = x, y
     change_x = 200
     change_y = 50
     x_demo += change_x
     y_demo += change_y
-    # fun.move_mause(pos=(x_demo, y_demo))
+    # fun.mouse_move(pos=(x_demo, y_demo))
     fun.foto(f'img/overall/work_8_hour.png', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'img/overall/work_8_hour.png')
-    fun.move_mause(pos=pos)
+    fun.mouse_move(pos=pos)
+
+def station_exit():
+    pos_close = find.find_close()
+    fun.mouse_move(pos=pos_close, speed=1)
+    x, y =pos_close
+    x -= 600 - 6
+    y -= 640 - 4
+    fun.mouse_move(pos=(x, y), speed=1)
+    x_demo, y_demo = x, y
+    change_x = 290 - 6 - 2
+    change_y = 50 - 4
+    x_demo += change_x
+    y_demo += change_y
+    fun.mouse_move(pos=(x_demo, y_demo))
+    fun.foto(f'img/tonelli/station_exit.png', (x, y, change_x, change_y))
+    pos = fun.locCenterImg(f'img/tonelli/station_exit.png')
+    fun.mouse_move(pos=pos)
 
 
 def button_expand():
     pos_my = fun.locCenterImg('img/overall/my_game2.png', 0.8)
-    # fun.move_mause(pos=pos_my)
+    # fun.mouse_move(pos=pos_my)
     x, y = pos_my
     x += 280
     y -= 55
-    # fun.move_mause(pos=(x, y), speed=1)
+    # fun.mouse_move(pos=(x, y), speed=1)
     x_demo, y_demo = x, y
     change_x = 25
     change_y = 25
     x_demo += change_x
     y_demo += change_y
-    fun.move_mause(pos=(x_demo, y_demo))
+    fun.mouse_move(pos=(x_demo, y_demo))
     fun.foto(f'img/overall/button_expand.png', (x, y, change_x, change_y))
     img_button_expand = fun.locCenterImg('img/overall/button_expand.png')
-    fun.move_mause(pos=img_button_expand, speed=1)
+    fun.mouse_move(pos=img_button_expand, speed=1)
 
 
 def img_change_hero():
     # развернуть на весь экран
     img_button_expand = fun.locCenterImg('img/overall/button_expand.png')
-    fun.move_to_click(img_button_expand)
+    fun.mouse_move_to_click(pos_click=img_button_expand)
     #
     sleep(0.2)
     pos_my = fun.locCenterImg('img/overall/my_game2.png', 0.8)
     x, y = pos_my
     x += 500 - 10
     y -= 20
-    # fun.move_mause(pos=(x, y), speed=1)
+    # fun.mouse_move(pos=(x, y), speed=1)
     x_demo, y_demo = x, y
     change_x = 32
     change_y = 32
     x_demo += change_x
     y_demo += change_y
-    # fun.move_mause(pos=(x_demo, y_demo))
+    # fun.mouse_move(pos=(x_demo, y_demo))
     # fun.foto(f'img/person/change_hero_gavr.png', (x, y, change_x, change_y))
     change_hero = pyautogui.screenshot(region=(x, y, change_x, change_y))
     pos_menu_chenge_acc = fun.locCenterImg(change_hero)
     open_menu_chenge_acc = fun.locCenterImg('img/person/add_acc.png')
     if not open_menu_chenge_acc:
-        fun.move_to_click(pos_menu_chenge_acc)
+        fun.mouse_move_to_click(pos_click=pos_menu_chenge_acc)
     img(pos_menu_chenge_acc)
 
 
@@ -248,13 +266,13 @@ def img(pos_clic):
     x, y = pos_clic
     x -= 125
     y += 97
-    # fun.move_mause(pos=(x, y), speed=1)
+    # fun.mouse_move(pos=(x, y), speed=1)
     x_demo, y_demo = x, y
     change_x = 180
     change_y = 32
     x_demo += change_x
     y_demo += change_y
-    # fun.move_mause(pos=(x_demo, y_demo))
+    # fun.mouse_move(pos=(x_demo, y_demo))
     # создание
     fun.foto('img/person/change_hero/change_hero_mara.png', (x, y, change_x, change_y))
     # проверка
@@ -265,19 +283,19 @@ def img(pos_clic):
     her_veles = fun.locCenterImg('img/person/change_hero_veles.png')
     if her_veles:
         print('her Veles')
-        fun.move_mause(pos=her_veles, speed=1)
+        fun.mouse_move(pos=her_veles, speed=1)
         sleep(2)
     if her_gady:
         print('her Gady')
-        fun.move_mause(pos=her_gady, speed=1)
+        fun.mouse_move(pos=her_gady, speed=1)
         sleep(2)
     if her_gavr:
         print('her Gavr')
-        fun.move_mause(pos=her_gavr, speed=1)
+        fun.mouse_move(pos=her_gavr, speed=1)
         sleep(2)
     if her_mara:
         print('her Mara')
-        fun.move_mause(pos=her_mara, speed=1)
+        fun.mouse_move(pos=her_mara, speed=1)
         sleep(2)
 
 
@@ -287,13 +305,13 @@ def img2(pos_clic):
     x, y = pos_clic
     x -= 95
     y += 97 + 130 + 35
-    fun.move_mause(pos=(x, y), speed=1)
+    fun.mouse_move(pos=(x, y), speed=1)
     x_demo, y_demo = x, y
     change_x = 180
     change_y = 32
     x_demo += change_x
     y_demo += change_y
-    fun.move_mause(pos=(x_demo, y_demo))
+    fun.mouse_move(pos=(x_demo, y_demo))
     fun.foto(f'img/person/change_hero/add_acc.png', (x, y, change_x, change_y))
 
 
@@ -301,23 +319,23 @@ def button_collapse():
     #
     # развернуть на весь экран
     img_button_expand = fun.locCenterImg('img/overall/button_expand.png')
-    fun.move_to_click(img_button_expand)
+    fun.mouse_move_to_click(pos_click=img_button_expand)
     #
     pos_my = fun.locCenterImg('img/overall/my_game2.png', 0.8)
 
     x, y = pos_my
     x += 700 - 17
     y -= 57
-    # fun.move_mause(pos=(x, y), speed=1)
+    # fun.mouse_move(pos=(x, y), speed=1)
     x_demo, y_demo = x, y
     change_x = 25
     change_y = 25
     x_demo += change_x
     y_demo += change_y
-    # fun.move_mause(pos=(x_demo, y_demo))
+    # fun.mouse_move(pos=(x_demo, y_demo))
     fun.foto(f'img/overall/button_collapse.png', (x, y, change_x, change_y))
     img_button_collapse = fun.locCenterImg('img/overall/button_collapse.png')
-    fun.move_mause(pos=img_button_collapse, speed=1)
+    fun.mouse_move(pos=img_button_collapse, speed=1)
 
 
 def mob_foto(name):
@@ -340,19 +358,19 @@ def mob_foto(name):
 def mob_name(name):
     skip_battle = fun.locCenterImg('img/skip_battle.png', confidence=0.79)
     if skip_battle:
-        # fun.move_mause(pos=skip_battle)
+        # fun.mouse_move(pos=skip_battle)
         # print(f'{skip_battle=}')
         x, y = skip_battle
         x += 80
         y -= 22
-        # fun.move_mause(pos=(x, y), speed=1)
+        # fun.mouse_move(pos=(x, y), speed=1)
         sleep(1)
         x_demo, y_demo = x, y
         change_x = 180
         change_y = 28
         x_demo += change_x
         y_demo += change_y
-        # fun.move_mause(pos=(x_demo, y_demo))
+        # fun.mouse_move(pos=(x_demo, y_demo))
         fun.foto(f'img/tonelli/mobi/name_{name}.png', (x, y, change_x, change_y))
         print(f'имя "name_{name}" сфотографировано')
 
@@ -393,8 +411,8 @@ def mob_id(name):
         print(f'{gray_rat=}')
         print(f'{name_gray_rat=}')
         if gray_rat and name_gray_rat:
-            fun.move_mause(pos=gray_rat, speed=0.5)
-            fun.move_mause(pos=name_gray_rat, speed=0.5)
+            fun.mouse_move(pos=gray_rat, speed=0.5)
+            fun.mouse_move(pos=name_gray_rat, speed=0.5)
             print('серая крыса поймана')
             return
         else:
@@ -407,8 +425,8 @@ def mob_id(name):
         print(f'{white_rat=}')
         print(f'{name_white_rat=}')
         if white_rat and name_white_rat:
-            fun.move_mause(pos=white_rat, speed=0.5)
-            fun.move_mause(pos=name_white_rat, speed=0.5)
+            fun.mouse_move(pos=white_rat, speed=0.5)
+            fun.mouse_move(pos=name_white_rat, speed=0.5)
             print('белая крыса поймана')
             return
         else:
@@ -421,8 +439,8 @@ def mob_id(name):
         print(f'{black_rat=}')
         print(f'{name_black_rat=}')
         if black_rat and name_black_rat:
-            fun.move_mause(pos=black_rat, speed=0.5)
-            fun.move_mause(pos=name_black_rat, speed=0.5)
+            fun.mouse_move(pos=black_rat, speed=0.5)
+            fun.mouse_move(pos=name_black_rat, speed=0.5)
             print('черная крыса поймана')
             return
         if not black_rat:
@@ -432,8 +450,8 @@ def mob_id(name):
     # 2 шпион
     # if mobi_spy or name_spy:
     #     if mobi_spy and name_spy:
-    #         fun.move_mause(pos=mobi_spy, speed=0.5)
-    #         fun.move_mause(pos=name_spy, speed=0.5)
+    #         fun.mouse_move(pos=mobi_spy, speed=0.5)
+    #         fun.mouse_move(pos=name_spy, speed=0.5)
     #         print('шпион пойман')
     #         return
     #     if not mobi_spy:
@@ -443,8 +461,8 @@ def mob_id(name):
     # # 3 контрабандист
     # if mobi_smuggler or name_smuggler:
     #     if mobi_smuggler and name_smuggler:
-    #         fun.move_mause(pos=mobi_smuggler, speed=0.5)
-    #         fun.move_mause(pos=name_smuggler, speed=0.5)
+    #         fun.mouse_move(pos=mobi_smuggler, speed=0.5)
+    #         fun.mouse_move(pos=name_smuggler, speed=0.5)
     #         print('контрабандист пойман')
     #         return
     #     if not mobi_smuggler:
@@ -454,8 +472,8 @@ def mob_id(name):
     # 5 дикарь
     if mobi_wildman or name_wildman:
         if mobi_wildman and name_wildman:
-            fun.move_mause(pos=mobi_wildman, speed=0.5)
-            fun.move_mause(pos=name_wildman, speed=0.5)
+            fun.mouse_move(pos=mobi_wildman, speed=0.5)
+            fun.mouse_move(pos=name_wildman, speed=0.5)
             print('ящер пойман')
             return
         if not mobi_wildman:
@@ -465,8 +483,8 @@ def mob_id(name):
     # 7 ящер
     if mobi_raptor or name_raptor:
         if mobi_raptor and name_raptor:
-            fun.move_mause(pos=mobi_raptor, speed=0.5)
-            fun.move_mause(pos=name_raptor, speed=0.5)
+            fun.mouse_move(pos=mobi_raptor, speed=0.5)
+            fun.mouse_move(pos=name_raptor, speed=0.5)
             print('ящер пойман')
             return
         if not mobi_raptor:
@@ -504,7 +522,7 @@ def conti_hero():
 
 
 
-
+station_exit()
 # conti_hero()
 # aktiv_win_game()
 # # 1

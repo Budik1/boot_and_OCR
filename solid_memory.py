@@ -1,11 +1,12 @@
 import pickle
 import heroes as her
-from heroes import Hero, Activ
+from heroes import Activ
 from my_color_text import tc_green, tc_cyan, tc_blue, tc_red
 import fun
 
-def save_to_file():
-    print(tc_green("запись состояния"))
+def save_to_file(info=True):
+    if info:
+        print(tc_green("запись состояния"))
     data_to_save = {
         # дата
         'date': Activ.date_now,
@@ -84,8 +85,6 @@ def save_to_file():
     except Exception as e:
         # Обработка других неожиданных исключений
         print(tc_red(f"Произошла неожиданная ошибка: {e}"))
-    # except:
-    #     print(tc_red('Что-то пошло не так. Файл потерян'))
     finally:
         file1.close()
 
@@ -121,11 +120,9 @@ def read_from_file():
 
 
 def setting_updatable_values(loaded_data):
-    """Установка обновляемых значений при (пере)запуске программы"""
+    """Установка обновляемых(ежедневных) значений при (пере)запуске программы"""
     Activ.check_date_ = loaded_data['date']
     # если даты совпадают:- значения устанавливаются из файла
-    # print(f'{Activ.check_date_=}')
-    # print(f'{Activ.date_now=}')
     if Activ.check_date_ == Activ.date_now:
         print(tc_blue("даты совпадают"))
         # присваиваем значения
@@ -175,23 +172,10 @@ def setting_updatable_values(loaded_data):
         her.mara.wildman = loaded_data['mara_wild']
         her.veles.wildman = loaded_data['veles_wild']
 
-        # gady 5 дней, 11 дикарей
-        # print(
-        #     f"gady {her.gady.wildman_days_count} {fun.transform_days(her.gady.wildman_days_count)},"
-        #     f" {her.gady.wildman_count} дикарей")
-        # print(
-        #     f'gavr {her.gavr.wildman_days_count} {fun.transform_days(her.gavr.wildman_days_count)},'
-        #     f' {her.gavr.wildman_count} дикарей')
-
-        # отображаем значения
-    # иначе отображение и сохранение стартовых значений
     else:
+        # если даты не совпадают:- значения устанавливаются на "0"
         print(tc_cyan("даты не совпадают, смена суток"))
-        # gady 5 дней, 11 дикарей
-        # print(f"gady {her.gady.wildman_days_count} {fun.transform_days(her.gady.wildman_days_count)},"
-        #       f" {her.gady.wildman_count} дикарей")
-        # print(f'gavr {her.gavr.wildman_days_count} {fun.transform_days(her.gavr.wildman_days_count)},'
-        #       f' {her.gavr.wildman_count} дикарей')
+
 
 
 def setting_cumulative_values(loaded_data):
@@ -214,8 +198,8 @@ def setting_cumulative_values(loaded_data):
     her.mara.task_count = loaded_data['mara.task_count']
 
     print(
-        f"gady {her.gady.wildman_days_count} {fun.transform_days(her.gady.wildman_days_count)},"
-        f" {her.gady.wildman_count} дикарей")
+        f"gady {her.gady.wildman_days_count} {fun.transform_days(qty_days=her.gady.wildman_days_count)},"
+        f" {her.gady.wildman_count} {fun.transform_wilds(qty_days=her.gady.wildman_count)}")
     print(
-        f'gavr {her.gavr.wildman_days_count} {fun.transform_days(her.gavr.wildman_days_count)},'
-        f' {her.gavr.wildman_count} дикарей')
+        f'gavr {her.gavr.wildman_days_count} {fun.transform_days(qty_days=her.gavr.wildman_days_count)},'
+        f' {her.gavr.wildman_count} {fun.transform_wilds(qty_days=her.gavr.wildman_count)}')

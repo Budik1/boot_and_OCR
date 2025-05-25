@@ -1,6 +1,6 @@
 import pyautogui
 from time import sleep
-from fun import move_to_click, vizit_to_station_master
+from fun import mouse_move_to_click, vizit_to_station_master
 
 son = 0.9
 par_conf = 0.8
@@ -24,7 +24,7 @@ def skriny_zadaniy_u_na4stanc():
         # закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
         zakr = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.9)
         if zakr is not None:
-            move_to_click(zakr, 0.3)
+            mouse_move_to_click(zakr, 0.3)
         # получение координат привязки
         pos_orV = pyautogui.locateCenterOnScreen('img/klan.png', confidence=0.9)
         pyautogui.moveTo(pos_orV)

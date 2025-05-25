@@ -1,10 +1,9 @@
-import pyautogui
 from time import sleep, time
 
 import fun
 import station_master
 import baza_dannyx as b_d
-# import heroes as her
+import find_img as find
 from heroes import Hero, Activ
 
 
@@ -12,26 +11,26 @@ def event_gifts():
     """Поиск подарков на станции. Возвращает его позицию"""
     fun.my_print_to_file('touring.event_gifts')
     sleep(1)
-    pos_gift = fun.locCenterImg('img/tonelli/gift.png', confidence=0.75)
+    pos_gift = fun.locCenterImg(name_img='img/tonelli/gift.png', confidence=0.75)
     if not pos_gift:
-        pos_gift_komun = fun.locCenterImg('img/tonelli/gift2.png', confidence=0.75)
+        pos_gift_komun = fun.locCenterImg(name_img='img/tonelli/gift2.png', confidence=0.75)
         pos_gift = pos_gift_komun
     fun.my_print_to_file(f'pos_gift = {pos_gift}')
     if pos_gift:
         x, y = pos_gift
-        pyautogui.moveTo(pos_gift, duration=0.5)
+        fun.mouse_move(pos= pos_gift, speed=0.5)
         fun.mouse_left_click(pos=pos_gift)
         sleep(1 * 2)
-        close = fun.locCenterImg('img/overall/close.png', confidence=0.9)
+        close = fun.locCenterImg(name_img='img/overall/close.png', confidence=0.9)
         # если тормозит отрисовка, ожидает появление кнопки "закрыть"
         it = 0
         while not close:
             it += 1
             sleep(1)
-            close = fun.locCenterImg('img/overall/close.png', confidence=0.9)
+            close = fun.locCenterImg(name_img='img/overall/close.png', confidence=0.9)
             print(it, 'поиск закрыть в подарках')
         # print(close)
-        pyautogui.moveTo(close, duration=1)
+        fun.mouse_move(pos= close, speed=1)
         fun.mouse_left_click(pos=close)
         sleep(1)
 
@@ -42,27 +41,27 @@ def to_map():
     """Из окна станции открывает карту. На Тургеневской выход смещен"""
     fun.my_print_to_file('touring.to_map')
     sleep(1)
-    turgenev_st = fun.locCenterImg(b_d.st_turgenev[2], confidence=0.85)
+    turgenev_st = fun.locCenterImg(name_img=b_d.st_turgenev[2], confidence=0.85)
     fun.my_print_to_file(f'turgenev_st = {turgenev_st}')
     if turgenev_st:
         pos_or1 = fun.find_link_klan()
         x1, y1 = pos_or1
         x1, y1 = x1 + 205, y1 + 205
         pos_or1 = x1, y1
-        pyautogui.moveTo(pos_or1, duration=0.2)
+        fun.mouse_move(pos=pos_or1)
     else:
         pos_or1 = fun.find_link_klan()
         x1, y1 = pos_or1
         x1, y1 = x1 + 270, y1 + 180
         #
         pos_or1 = x1, y1
-        pyautogui.moveTo(pos_or1, duration=0.2)
+        fun.mouse_move(pos= pos_or1)
     sleep(1)
     fun.mouse_left_click(pos=pos_or1)
     sleep(1)
     # Убрать курсор с поля карты, чтобы ничего не перекрыл
-    station_exit = fun.locCenterImg('img/tonelli/station_exit.png', confidence=0.8)
-    pyautogui.moveTo(station_exit, duration=0.2)
+    station_exit = find.find_station_exit()
+    fun.mouse_move(pos=station_exit)
 
 
 def events_tunnel(st0, st2):
@@ -76,37 +75,37 @@ def events_tunnel(st0, st2):
     hero = fun.selection_hero()
 
     sleep(1)
-    id_st = fun.locCenterImg(st2, confidence=0.85)
+    id_st = fun.locCenterImg(name_img=st2, confidence=0.85)
     fun.my_print_to_file(f'id_st = {id_st}')
-    info = fun.locCenterImg('img/overall/info.png', confidence=0.8)
+    info = fun.locCenterImg(name_img='img/overall/info.png', confidence=0.8)
     fun.my_print_to_file(f'info = {info}')
     while not id_st:
         x, y = info
         y += 350
-        pyautogui.moveTo(x, y)
-        post = fun.locCenterImg('img/tonelli/post.png', confidence=0.8)
-        skip_battle = fun.locCenterImg('img/skip_battle.png', confidence=0.79)
+        fun.mouse_move(pos=(x, y))
+        post = fun.locCenterImg(name_img='img/tonelli/post.png', confidence=0.8)
+        skip_battle = fun.locCenterImg(name_img='img/skip_battle.png', confidence=0.79)
         fun.my_print_to_file(f'skip_battle = {skip_battle}')
         if skip_battle:
             station_master.enemy_battle(1, add_up=True)  # вызов обработки события
         if post:
             fun.my_print_to_file(f'post = {post}')
-            pyautogui.moveTo(post, duration=0.2)
-            attack = fun.locCenterImg('img/tonelli/attack.png', confidence=0.85)
-            entry = fun.locCenterImg('img/tonelli/entry_station.png', confidence=0.8)
+            fun.mouse_move(pos= post, speed=0.2)
+            attack = fun.locCenterImg(name_img='img/tonelli/attack.png', confidence=0.85)
+            entry = fun.locCenterImg(name_img='img/tonelli/entry_station.png', confidence=0.8)
             if entry:
                 fun.my_print_to_file(f'entry = {entry}')
-                fun.move_to_click(entry, 0.3)
+                fun.mouse_move_to_click(pos_click=entry, z_p_k=0.3)
                 sleep(1)
             elif attack:
                 fun.my_print_to_file(f'attack = {attack}')
-                fun.move_to_click(attack, 0.3)
+                fun.mouse_move_to_click(pos_click=attack, z_p_k=0.3)
                 sleep(1)
         id_st = fun.locCenterImg(st2, confidence=0.85)
         fun.my_print_to_file(f'id_st = {id_st}')
     print(st0)  # название станции
     fun.my_print_to_file(st0)
-    pyautogui.moveTo(id_st, duration=1)
+    fun.mouse_move(pos=id_st, speed=1)
     # вызов функции "event_gifts()" и подсчет количества найденных
     pos_gift = event_gifts()
     fun.my_print_to_file(f'pos_gift = {pos_gift}')
@@ -119,11 +118,11 @@ def events_tunnel(st0, st2):
 def poisk(search_object, param_confidence=0.99):
     fun.my_print_to_file('touring.poisk')
     sleep(1)
-    pos_search = fun.locCenterImg(search_object, confidence=param_confidence)
+    pos_search = fun.locCenterImg(name_img=search_object, confidence=param_confidence)
     while pos_search is None:
         param_confidence -= 0.01
         # print('в поиске станции confidence=', param_confidence)
-        pos_search = fun.locCenterImg(search_object, confidence=param_confidence)
+        pos_search = fun.locCenterImg(name_img=search_object, confidence=param_confidence)
         # print(pos_search)
     return pos_search, param_confidence
 
@@ -136,21 +135,21 @@ def traffic_on_the_map(stan):
     sleep(1 * 2)
     ev_map = stan[3]
     fun.my_print_to_file(f'ev_map = {ev_map}')
-    pos_stan = fun.locCenterImg(stan[1], confidence=0.84)
+    pos_stan = fun.locCenterImg(name_img=stan[1], confidence=0.84)
     fun.my_print_to_file(f'pos_stan = {pos_stan}, stan[1] = {stan[1]}')
     if ev_map == 'стрелка север' and pos_stan is None:
-        pos_click = fun.locCenterImg('img/tonelli/mark_sever.png', confidence=0.85)
+        pos_click = fun.locCenterImg(name_img='img/tonelli/mark_sever.png', confidence=0.85)
         fun.my_print_to_file(f'pos_click = {pos_click}, нажал на стрелку "север"')
-        fun.move_to_click(pos_click, 0.3)
+        fun.mouse_move_to_click(pos_click=pos_click, z_p_k=0.3)
         sleep(1)
     elif ev_map == 'стрелка юг' and pos_stan is None:
-        pos_click = fun.locCenterImg('img/tonelli/mark_yug.png', confidence=0.85)
+        pos_click = fun.locCenterImg(name_img='img/tonelli/mark_yug.png', confidence=0.85)
         fun.my_print_to_file(f'pos_click = {pos_click}, нажал на стрелку "юг"')
-        fun.move_to_click(pos_click, 0.3)
+        fun.mouse_move_to_click(pos_click=pos_click, z_p_k=0.3)
         sleep(1)
     point_poisk, confidence_poisk = poisk(stan[1])
     fun.my_print_to_file(f'point_poisk = {point_poisk}, confidence_poisk = {confidence_poisk}')
-    fun.move_to_click(point_poisk, 0.3)
+    fun.mouse_move_to_click(pos_click=point_poisk, z_p_k=0.3)
     events_tunnel(stan[0], stan[2])
 
 

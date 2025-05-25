@@ -1,14 +1,15 @@
 # имя станции = [имя для Print, поиск на карте, ID станции, если её не видно на карте,[задания]]
-energy_capacity =('en1.png', 'en2.png', 'en3.png', 'en4.png', 'en5.png', 'en6.png', 'en7.png')
+energy_capacity = ('en1.png', 'en2.png', 'en3.png', 'en4.png', 'en5.png', 'en6.png', 'en7.png')
 st_alexs = ['ст. Алексеевская', 'img/tonelli/map_item/k_Alexs.png', 'img/tonelli/id_stations/s_Alexs.png', 0, []]
 st_biblioteka = ['ст. Библиотека им. Ленина', 'img/tonelli/map_item/k_Biblioteka.png',
-                 'img/tonelli/id_stations/s_Biblioteka.png', 0, []]
+                 'img/tonelli/id_stations/s_Biblioteka.png', 0,
+                 ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
 st_borov = ['ст. Боровицкая', 'img/tonelli/map_item/k_Borov.png', 'img/tonelli/id_stations/s_Borov.png', 'стрелка юг',
             ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
 st_bulvar = ['ст. Цветной бульвар', 'img/tonelli/map_item/k_Cvetnoy.png', 'img/tonelli/id_stations/s_Cvetnoy.png', 0,
              ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
 st_vdnx = ['ст. ВДНХ', 'img/tonelli/map_item/k_VDNX.png', 'img/tonelli/id_stations/s_VDNX.png', 0, []]
-st_kiev_a = ['ст. Киевская A', 'img/tonelli/map_item/k_Kiev_a.png', 'img/tonelli/id_stations/s_Kiev_a.png', 0, [0]]
+st_kiev_a = ['ст. Киевская_A', 'img/tonelli/map_item/k_Kiev_a.png', 'img/tonelli/id_stations/s_Kiev_a.png', 0, [0]]
 st_kitay = ['ст. Китай-город', 'img/tonelli/map_item/k_Kitay.png', 'img/tonelli/id_stations/s_Kitay.png',
             'стрелка север', []]
 st_kropot = ['ст. Кропоткинская', 'img/tonelli/map_item/k_Kropotkin.png', 'img/tonelli/id_stations/s_Kropotkin.png', 0,
@@ -56,6 +57,18 @@ st_frunze = ['ст. Фрунзенская', 'img/tonelli/map_item/k_Frunze.png'
 st_most = ['ст. Кузнецкий мост', 'img/tonelli/map_item/k_Kuzneckiy.png', 'img/tonelli/id_stations/s_Kuzneckiy.png', 0,
            ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
 
+grand_road = [st_vernadskogo_, st_univer, st_communist, st_frunze, st_park_kr, st_kropot, st_biblioteka, st_borov,
+              st_chekhov, st_tver, st_teatr, st_novok, st_tretya, st_kitay, st_turgenev, st_suxarev, st_prospekt,
+              st_riga, st_alexs, st_vdnx]
+
+park_kiev_a = [st_park_kr, st_park_g, st_kiev, st_kiev_a]
+borov_polyanka = [st_borov, st_polyanka]
+chekhov_bulvar = [st_chekhov, st_bulvar]
+tver_most = [st_tver, st_pushkin, st_most]
+novok_pavelec = [st_novok, st_pavelec, st_pavelec_g]
+
+road_list = (grand_road, park_kiev_a, borov_polyanka, chekhov_bulvar, tver_most, novok_pavelec)
+
 list_of_stations = [st_alexs, st_biblioteka, st_borov, st_bulvar, st_vdnx, st_kiev, st_kiev_a, st_kitay, st_kropot,
                     st_most, st_novok, st_pavelec,
                     st_pavelec_g, st_park_g, st_park_kr, st_polyanka, st_prospekt, st_pushkin, st_riga, st_suxarev,
@@ -90,12 +103,16 @@ bypass2 = [st_pushkin, st_tver, st_teatr, st_novok, st_pavelec, st_pavelec_g, st
            st_frunze, st_park_kr, st_park_g, st_kiev, st_kiev_a,
            st_kiev, st_park_g, st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_pushkin, st_most]
 
+beam_thread = st_vdnx, st_alexs, st_riga, st_prospekt, st_suxarev, st_turgenev, st_kitay, st_tretya, st_novok
+
 #  с фрунзе оббежать все станции в поисках подарков
 bypass = [
     st_park_kr, st_park_g, st_kiev, st_kiev_a, st_kiev, st_park_g,
     st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov,
     st_tver, st_teatr, st_novok, st_pavelec, st_pavelec_g, st_pavelec, st_novok, st_tretya, st_kitay,
+
     st_turgenev, st_suxarev, st_prospekt, st_riga, st_alexs, st_vdnx,
+
     st_alexs, st_riga, st_prospekt, st_suxarev, st_turgenev, st_kitay,
     st_tretya, st_novok, st_teatr, st_tver, st_pushkin, st_most, st_pushkin,
     st_chekhov, st_bulvar, st_chekhov,

@@ -2,7 +2,7 @@ import fun
 import my_color_text as myCt
 import baza_dannyx as b_d
 
-nam = 0 # для подсчета заданий
+nam = 0 # для подсчета чего?
 
 
 class Activ:
@@ -38,6 +38,7 @@ class Hero:
         self.energy_count_today = 0
         self.energy_all_count = 0
         self.value_energy = 0
+        self.arena_count = 0
 
         self.duel_all = 0
         self.duel_now = 0
@@ -106,19 +107,26 @@ class Hero:
         return self.task_count
 
     def get_report_wildman(self):
-        # 'За ''3'' дня ''4'' шт. В среднем ''1.333'' в день. Или 7 эн на 1го'
+        # 'За ''3'' дня ''4'' шт.
+        # В среднем 1.333 в день.
+        # Это 7 эн на 1го'
         if self.wildman_days_count != 0 and self.wildman_count != 0:
             text1 = myCt.tc_green('За ')  # 'За '
             d_all_c = myCt.tc_cyan(str(self.wildman_days_count))  # '3'
-            text2 = myCt.tc_green(f' {fun.transform_days(self.wildman_days_count)} ')  # ' дня '
+            text2 = myCt.tc_green(f' {fun.transform_days(qty_days=self.wildman_days_count)} ')  # ' дня '
             w_all_c = myCt.tc_cyan(str(self.wildman_count))  # '4'
-            text3 = myCt.tc_green(' шт. В среднем ')  # ' шт. В среднем '
+            text3 = myCt.tc_green(' шт.')  # ' шт.'
+            phrase1 = f'{text1}{d_all_c}{text2}{w_all_c}{text3}'
+            text4 = myCt.tc_green(' В среднем ') #  ' В среднем '
             average_value1 = myCt.tc_yellow(f'{round(self.wildman_count / self.wildman_days_count, 3)}')  # '1.333'
-            text4 = myCt.tc_green(' в день. Или ')  # ' в день. Или '
+            text5 = myCt.tc_green(' в день.')  # ' в день.'
+            phrase2 = f'{text4}{average_value1}{text5}'
             # количество энергии на одного
+            text6 = myCt.tc_green(' Это ')
             average_value2 = myCt.tc_blue(f'{round(self.energy_all_count / self.wildman_count, 4)}')  # '7'
-            text5 = myCt.tc_green(' эн на 1го')  # ' эн на 1го'
-            line1 = f'{text1}{d_all_c}{text2}{w_all_c}{text3}{average_value1}{text4}{average_value2}{text5}'
+            text7 = myCt.tc_green(' эн на 1го')  # ' эн на 1го'
+            phrase3 = f'{text6}{average_value2}{text7}'
+            line1 = f'{phrase1}{phrase3}\n{phrase2}'
             return line1
         else:
             return f'по дикарям нет данных'  # , {self.wildman_days_count =}, {self.wildman_count =}
@@ -188,19 +196,19 @@ class Hero:
 
 
 gady = Hero(name_ru_="Гадя", name_en_='Gady', name_file_='gady')
-gady.path_task = 'img/stationmaster/tasks_gady/'
+gady.path_task = 'img/station_master/tasks_gady/'
 gady.bypass = b_d.bypass
 
 gavr = Hero(name_ru_='Гавр', name_en_='Gavr', name_file_='gavr')
-gavr.path_task = 'img/stationmaster/tasks_gavr/'
+gavr.path_task = 'img/station_master/tasks_gavr/'
 gavr.bypass = b_d.bypass
 
 veles = Hero(name_ru_='Велес', name_en_='Велес', name_file_='veles')
-veles.path_task = 'img/stationmaster/tasks_veles/'
+veles.path_task = 'img/station_master/tasks_veles/'
 veles.bypass = b_d.bypass_veles
 
 mara = Hero(name_ru_='Мара', name_en_='Mara', name_file_='mara')
-mara.path_task = 'img/stationmaster/tasks_mara/'
+mara.path_task = 'img/station_master/tasks_mara/'
 mara.bypass = b_d.bypass_mara
 
 # Activ.hero_activ = gady # значение, которое выдает fun.select_hero(True)
