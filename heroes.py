@@ -2,7 +2,7 @@ import fun
 import my_color_text as myCt
 import baza_dannyx as b_d
 
-nam = 0 # для подсчета чего?
+nam = 0  # для подсчета чего?
 
 
 class Activ:
@@ -21,6 +21,7 @@ class Hero:
         self.name_ru = name_ru_
         self.name_file = name_file_
         self.path_task = ''
+        self.home_location = 'бомж'
         self.bypass = ()
 
         self.vip = 0  #
@@ -29,15 +30,18 @@ class Hero:
         self.grey_rat = 0  #
         self.arachne = 0  #
         self.raptor = 0  #
-        self.wildman = 0  #
+        self.wildman = 'x'
+        #
         self.wildman_count = 0
         self.wild_activ = False
-        self.completing_tasks = False
         self.wildman_days_count = 0
+
+        self.completing_tasks = False
         self.task_count = 0
         self.energy_count_today = 0
         self.energy_all_count = 0
         self.value_energy = 0
+
         self.arena_count = 0
 
         self.duel_all = 0
@@ -49,6 +53,9 @@ class Hero:
 
     def setting_value_energy(self, value):
         self.value_energy = value
+
+    def seting_home(self, location):
+        self.home_location = location
 
     # Uppers
 
@@ -84,6 +91,9 @@ class Hero:
         self.wildman += 1
         self.wildman_count += 1
 
+    def zero_wildman(self):
+        self.wildman = 0
+
     def app_rat(self):
         self.grey_rat += 1
 
@@ -97,6 +107,9 @@ class Hero:
         self.completing_tasks = True
 
     # Гетеры
+    def get_home_location(self):
+        return self.home_location
+
     def get_energy_count_all(self):
         return self.energy_all_count
 
@@ -108,24 +121,28 @@ class Hero:
 
     def get_report_wildman(self):
         # 'За ''3'' дня ''4'' шт.
-        # В среднем 1.333 в день.
         # Это 7 эн на 1го'
+        # На Х заданий потрачено ХХХ ед энергии
         if self.wildman_days_count != 0 and self.wildman_count != 0:
-            text1 = myCt.tc_green('За ')  # 'За '
-            d_all_c = myCt.tc_cyan(str(self.wildman_days_count))  # '3'
-            text2 = myCt.tc_green(f' {fun.transform_days(qty_days=self.wildman_days_count)} ')  # ' дня '
-            w_all_c = myCt.tc_cyan(str(self.wildman_count))  # '4'
-            text3 = myCt.tc_green(' шт.')  # ' шт.'
-            phrase1 = f'{text1}{d_all_c}{text2}{w_all_c}{text3}'
-            text4 = myCt.tc_green(' В среднем ') #  ' В среднем '
-            average_value1 = myCt.tc_yellow(f'{round(self.wildman_count / self.wildman_days_count, 3)}')  # '1.333'
-            text5 = myCt.tc_green(' в день.')  # ' в день.'
-            phrase2 = f'{text4}{average_value1}{text5}'
+            text_11 = myCt.tc_green('За ')  # 'За '
+            days_all_count = myCt.tc_cyan(str(self.wildman_days_count))  # '3'
+            text_12 = myCt.tc_green(f' {fun.transform_days(qty_days=self.wildman_days_count)} ')  # ' дня '
+            wildman_all_count = myCt.tc_cyan(str(self.wildman_count))  # '4'
+            text_13 = myCt.tc_green(' шт.')  # ' шт.'
+            phrase1 = f'{text_11}{days_all_count}{text_12}{wildman_all_count}{text_13}'
+
+            text_21 = myCt.tc_green('На ')  # 'На '
+            all_task_count = myCt.tc_yellow(f'{self.task_count}')  # '10'
+            text_22 = myCt.tc_green(' заданий потрачено ')  # ' заданий потрачено '
+            all_energy_count = myCt.tc_yellow(f'{self.energy_all_count}')  # 'XXX'
+            text_23 = myCt.tc_green(' единиц энергии')
+            phrase2 = f'{text_21}{all_task_count}{text_22}{all_energy_count}{text_23}'
+
             # количество энергии на одного
-            text6 = myCt.tc_green(' Это ')
-            average_value2 = myCt.tc_blue(f'{round(self.energy_all_count / self.wildman_count, 4)}')  # '7'
-            text7 = myCt.tc_green(' эн на 1го')  # ' эн на 1го'
-            phrase3 = f'{text6}{average_value2}{text7}'
+            text_31 = myCt.tc_green(' Это ')
+            average_value_3 = myCt.tc_blue(f'{round(self.energy_all_count / self.wildman_count, 4)}')  # '7'
+            text_32 = myCt.tc_green(' эн на 1го')  # ' эн на 1го'
+            phrase3 = f'{text_31}{average_value_3}{text_32}'
             line1 = f'{phrase1}{phrase3}\n{phrase2}'
             return line1
         else:

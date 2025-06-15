@@ -15,7 +15,7 @@ def station_exit():
     x_demo += change_x
     y_demo += change_y
     fun.mouse_move(pos=(x_demo, y_demo))
-    fun.foto(f'img/tonelli/station_exit.png', (x, y, change_x, change_y))
+    fun.foto(f'../img/tonelli/station_exit.png', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'img/tonelli/station_exit.png')
     fun.mouse_move(pos=pos)
 
@@ -33,7 +33,7 @@ def k_Communist():
     x_demo += change_x
     y_demo += change_y
     # fun.mouse_move(pos=(x_demo, y_demo), speed=1)
-    fun.foto(f'img/tonelli/map_item/k_Communist.png', (x, y, change_x, change_y))
+    fun.foto(f'../img/tonelli/map_item/k_Communist.png', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'img/tonelli/map_item/k_Communist.png')
     fun.mouse_move(pos=pos)
 

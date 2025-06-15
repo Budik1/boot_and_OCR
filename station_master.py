@@ -239,7 +239,7 @@ def press_en(*, task_number, pos, value_energy):
         value_energy_today = Hero.get_energy_count_today(Activ.hero_activ)
         value_energy_all = Hero.get_energy_count_all(Activ.hero_activ)
         # Выполняю 3 задание, conf_=0.94. Сейчас 3, сегодня 20, всего 120
-        print(f'Выполняю {task_number} задание, {vers_in_print}.'
+        print(f'Выполняю {task_number} задание{vers_in_print}.'
               f' Сейчас {value_energy}, сегодня {value_energy_today}, всего {value_energy_all}')
         solid_memory.save_to_file(info=False)
         wait_skip_battle_button()
@@ -249,9 +249,12 @@ def press_en(*, task_number, pos, value_energy):
     else:
         energy_availability = 0
         print(' Энергия закончилась!!')
-        if Hero.get_report_wildman(Activ.hero_activ):
-            print(Hero.get_report_wildman_now(Activ.hero_activ))
-            print(Hero.get_report_wildman(Activ.hero_activ))
+
+        if Hero.get_qty_wildman(Activ.hero_activ) == 'x':
+            Hero.zero_wildman(Activ.hero_activ)
+        
+        print(Hero.get_report_wildman_now(Activ.hero_activ))
+        print(Hero.get_report_wildman(Activ.hero_activ))
         sleep(1)
         close = fun.locCenterImg(name_img='img/overall/close.png')
         fun.mouse_move_to_click(pos_click=close, z_p_k=0.5)
@@ -272,11 +275,11 @@ def task_analysis(img1, img2, region):
     # v3 = pyautogui.locateCenterOnScreen(img2, minSearchTime=1.0, region=region, confidence=conf_)
     variant2 = fun.locCenterImg(name_img=img2, confidence=conf_, region=region)
     if variant1:
-        price_task = int(''.join(c if c.isdigit() else ' ' for c in img1))
+        price_task = fun.extraction_digit(item=img1)
         return variant1, price_task
     elif variant2:
         variable = variant2
-        price_task = int(''.join(c if c.isdigit() else ' ' for c in img2))
+        price_task = fun.extraction_digit(item=img2)
         return variant2, price_task
     else:
         return None, None
@@ -318,13 +321,13 @@ def choosing_task_money():
     # print('герой определён station_master.стр 168')
     if hero:
         path = Hero.get_path_task(Activ.hero_activ)
-        # print(path, "station_master.choosing_task_money стр 297")
     else:
         return
     region_1, region_2, region_3 = fun.get_areas_task_big()
     while energy_availability == 1 and number_tasks > 0:
         # task_analysis(F'{path}{task[0]}', F'{path}{task[1]}', region_1)
         # print(f'{path}{task[0]}', f"{path}{task[1]}")
+
         variant1, price_task1 = task_analysis(F'{path}{task[0]}', F'{path}{task[1]}', region_1)
         # print(f'{variant1=}, {price_task1=}')
         move(variant1)
@@ -343,7 +346,7 @@ def choosing_task_money():
         if variant1:
             price_task = price_task1
             press_en(task_number=1, pos=region_1, value_energy=price_task)
-        if variant2:
+        elif variant2:
             price_task = price_task2
             press_en(task_number=2, pos=region_2, value_energy=price_task)
         if variant3:
@@ -354,6 +357,7 @@ def choosing_task_money():
             print(F'confidence={conf_}')
             conf_ -= 0.005
             conf_ = round(conf_, 3)
+
         if conf_ <= 0.92:
             print(myCt.tc_cyan('задания не найдены, результаты "D:\\bot in br\\testOCR\\img\\test\\test_tasks" '))
             create_and_analiz_img.get_screenshot_task()

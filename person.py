@@ -111,6 +111,7 @@ def change_acc(*, hero_name_in_file):
     img_button_expand = fun.locCenterImg('img/overall/button_expand.png')
     # print(f"{img_button_expand=}")
     if not img_button_expand:
+        # activate win
         pos_my = fun.locCenterImg('img/overall/my_game2.png', 0.8)
         while not pos_my:
             pos_my = fun.locCenterImg('img/overall/my_game2.png', 0.8)
@@ -120,15 +121,15 @@ def change_acc(*, hero_name_in_file):
         fun.mouse_move_to_click(pos_click=(x, y), move_time=move_time, z_p_k=0.2)
     img_button_expand = fun.locCenterImg('img/overall/button_expand.png')
     fun.mouse_move_to_click(pos_click=img_button_expand, move_time=move_time, z_p_k=0.2)
-    # вычисление позиции смены аккаунта
+    # вычисление позиции меню смены аккаунта
     pos_my = fun.locCenterImg('img/overall/my_game2.png', 0.8)
     x, y = pos_my
     x += 506
     y -= 5
     pos_menu_chenge_acc = x, y
     # открыть меню
-    open_menu_chenge_acc = fun.locCenterImg('img/person/change_hero/add_acc.png')
-    if not open_menu_chenge_acc:
+    menu_change_acc_open = fun.locCenterImg('img/person/change_hero/add_acc.png')
+    if not menu_change_acc_open:
         fun.mouse_move_to_click(pos_click=pos_menu_chenge_acc, move_time=move_time, z_p_k=0.2)
     # нажать нужного героя
     cange_hero = fun.locCenterImg(f'img/person/change_hero/change_hero_{hero_name_in_file}.png')

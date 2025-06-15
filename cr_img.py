@@ -3,11 +3,9 @@ import fun
 import find_img as find
 from time import sleep
 
-# delay_before_shot = pyautogui.PAUSE
 
-
-def cri_event_img(*,x_reg,y_reg,name):
-    pos =fun.locCenterImg(name)
+def cri_event_img(*, x_reg, y_reg, name):
+    pos = fun.locCenterImg(name)
     if pos:
         x, y = pos
         x -= x_reg / 2
@@ -71,7 +69,7 @@ def victory_battle_in_kv():
         # y += 65
         # region = x, y
         # pyautogui.moveTo(region, duration=1)
-        fun.foto('img/kv/victory_battle_in_kv.png', _region=(x, y, 140, 65))
+        fun.foto('img/kv/victory_battle_in_kv.png', region=(x, y, 140, 65))
 
 
 def defeat_battle_in_kv():
@@ -87,7 +85,7 @@ def defeat_battle_in_kv():
         # y += 65
         region = x, y
         pyautogui.moveTo(region, duration=1)
-        fun.foto('img/kv/defeat_battle_in_kv.png', _region=(x, y, 140, 65))
+        fun.foto('img/kv/defeat_battle_in_kv.png', region=(x, y, 140, 65))
 
 
 def detecting():
@@ -115,7 +113,7 @@ def victory_in_arena():
         # y += 65
         region = x, y
         pyautogui.moveTo(region, duration=1)
-        fun.foto('img/arena/victory_in_arena.png', _region=(x, y, 140, 65))
+        fun.foto('img/arena/victory_in_arena.png', region=(x, y, 140, 65))
     print('отработал')
 
 
@@ -132,7 +130,7 @@ def defeat_in_arena():
         # y += 65
         region = x, y
         pyautogui.moveTo(region, duration=1)
-        fun.foto('img/arena/defeat_in_arena.png', _region=(x, y, 180, 65))
+        fun.foto('img/arena/defeat_in_arena.png', region=(x, y, 180, 65))
     print('отработал')
 
 
@@ -200,10 +198,11 @@ def work_8_hour():
     pos = fun.locCenterImg(f'img/overall/work_8_hour.png')
     fun.mouse_move(pos=pos)
 
+
 def station_exit():
     pos_close = find.find_close()
     fun.mouse_move(pos=pos_close, speed=1)
-    x, y =pos_close
+    x, y = pos_close
     x -= 600 - 6
     y -= 640 - 4
     fun.mouse_move(pos=(x, y), speed=1)
@@ -393,12 +392,6 @@ def mob_id(name):
     # белая *
     white_rat = fun.locCenterImg('img/tonelli/mobi/mobi1_white_rat.png', confidence=con)
     name_white_rat = fun.locCenterImg('img/tonelli/mobi/name1_white_rat.png', confidence=con)
-    # # 2 шпион *
-    # name_spy = fun.locCenterImg('img/tonelli/mobi/name2_spy.png', confidence=con)
-    # mobi_spy = fun.locCenterImg('img/tonelli/mobi/mobi2_spy.png', confidence=con)
-    # # 3 контрабандист *
-    # name_smuggler = fun.locCenterImg('img/tonelli/mobi/name3_smuggler.png', confidence=con)
-    # mobi_smuggler = fun.locCenterImg('img/tonelli/mobi/mobi3_smuggler.png', confidence=con)
 
     # 5 дикарь *
     name_wildman = fun.locCenterImg('img/tonelli/mobi/name5_wildman.png', confidence=con)
@@ -447,29 +440,7 @@ def mob_id(name):
             mob_foto(name)
         if not name_black_rat:
             mob_name(name)
-    # 2 шпион
-    # if mobi_spy or name_spy:
-    #     if mobi_spy and name_spy:
-    #         fun.mouse_move(pos=mobi_spy, speed=0.5)
-    #         fun.mouse_move(pos=name_spy, speed=0.5)
-    #         print('шпион пойман')
-    #         return
-    #     if not mobi_spy:
-    #         mob_foto(name)
-    #     if not name_spy:
-    #         mob_name(name)
-    # # 3 контрабандист
-    # if mobi_smuggler or name_smuggler:
-    #     if mobi_smuggler and name_smuggler:
-    #         fun.mouse_move(pos=mobi_smuggler, speed=0.5)
-    #         fun.mouse_move(pos=name_smuggler, speed=0.5)
-    #         print('контрабандист пойман')
-    #         return
-    #     if not mobi_smuggler:
-    #         mob_foto(name)
-    #     if name_smuggler:
-    #         mob_name(name)
-    # 5 дикарь
+
     if mobi_wildman or name_wildman:
         if mobi_wildman and name_wildman:
             fun.mouse_move(pos=mobi_wildman, speed=0.5)
@@ -510,7 +481,7 @@ def aktiv_win_game():
         fun.foto('img/overall/avtoriz/aktiv_win_game.png', (x, y, 34, 98))
 
 
-def conti_hero():
+def continue_hero():
     pos = fun.locCenterImg('img/overall/event_entry/continue_mara.png')
     if pos:
         print('ok')
@@ -519,10 +490,27 @@ def conti_hero():
         x -= 270 / 2
         y -= 60 / 2
         fun.foto('img/overall/event_entry/continue_mara.png', (x, y, 270, 60))
+    return
 
 
+def info_img():
+    pos = tuple(fun.locCenterImg(name_img='img/overall/info.png', confidence=0.8))
+    print(type(pos))
+    if pos:
+        print('ok')
+        # 33x41
+        x, y = pos
+        pos_change = 33, 41
+        x -= (pos_change[0] / 2) - 2
+        y -= (pos_change[1] / 2) - 2
+        fun.foto('img/overall/info1.png', (x, y, pos_change[0], pos_change[1]))
+    new_pos = fun.locCenterImg(name_img='img/overall/info1.png')
+    fun.mouse_move(pos=new_pos)
+    return
 
-station_exit()
+
+info_img()
+# station_exit()
 # conti_hero()
 # aktiv_win_game()
 # # 1

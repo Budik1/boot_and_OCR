@@ -101,7 +101,7 @@ def kv():
     fun.mouse_move_to_click(pos_click=kv_reload, z_p_k=1)
 
     q_attack = 0
-    kv_wait_attack = find.find_kv_wait_attack()
+    kv_wait_attack = find.find_kv_attack_for_money()
     # fun.my_print_to_file(f'kv_wait_attack {kv_wait_attack}')
     kv_attak = find.find_kv_attak()
     # fun.my_print_to_file(f'kv_attak {kv_attak}')
@@ -122,7 +122,7 @@ def kv():
             q_attack += 1
             fun.mouse_move_to_click(pos_click=kv_attak, z_p_k=0)
             battle(q_attack)
-        kv_wait_attack = find.find_kv_wait_attack()
+        kv_wait_attack = find.find_kv_attack_for_money()
         kv_attak = find.find_kv_attak()
 
 

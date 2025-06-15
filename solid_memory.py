@@ -4,12 +4,19 @@ from heroes import Activ
 from my_color_text import tc_green, tc_cyan, tc_blue, tc_red
 import fun
 
+
 def save_to_file(info=True):
     if info:
         print(tc_green("запись состояния"))
     data_to_save = {
         # дата
         'date': Activ.date_now,
+        # прописка
+        'gady.home_location': her.gady.home_location,
+        'gavr.home_location': her.gavr.home_location,
+        'mara.home_location': her.mara.home_location,
+        'veles.home_location': her.veles.home_location,
+
         # состояние
         'gavr_vip': her.gavr.vip,
         'gady_vip': her.gady.vip,
@@ -89,14 +96,14 @@ def save_to_file(info=True):
         file1.close()
 
 
-def read_from_file():
+def reading_file():
     print(tc_green("чтение состояния"))
     file_name = 'config.bin'
     try:
         file1 = open(file_name, 'rb')
         data_to_load = pickle.load(file1)
         file1.close()
-        result =  True, data_to_load
+        result = True, data_to_load
     except FileNotFoundError:
         # Если файл не найден, выводим сообщение об ошибке
         print(f"Файл '{file_name}' не найден!")
@@ -121,6 +128,7 @@ def read_from_file():
 
 def setting_updatable_values(loaded_data):
     """Установка обновляемых(ежедневных) значений при (пере)запуске программы"""
+    # Activ.check_date_ = 1
     Activ.check_date_ = loaded_data['date']
     # если даты совпадают:- значения устанавливаются из файла
     if Activ.check_date_ == Activ.date_now:
@@ -177,9 +185,14 @@ def setting_updatable_values(loaded_data):
         print(tc_cyan("даты не совпадают, смена суток"))
 
 
-
 def setting_cumulative_values(loaded_data):
     """Установка накопительных значений при (пере)запуске программы"""
+    #
+    her.gady.home_location = loaded_data['gady.home_location']
+    her.gavr.home_location = loaded_data['gavr.home_location']
+    her.veles.home_location = loaded_data['veles.home_location']
+    her.mara.home_location = loaded_data['mara.home_location']
+
     # кол-во потраченной энергии за время учета
     her.gady.energy_all_count = loaded_data['gady.energy_count_all']
     her.gavr.energy_all_count = loaded_data['gavr.energy_count_all']

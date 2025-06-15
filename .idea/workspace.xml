@@ -5,59 +5,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="изменил сохранение и отображение счетчиков">
-      <change afterPath="$PROJECT_DIR$/cr_img_map_name_station.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/find_img.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate_route.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_gui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fun_down.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/baza_dannyx.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza_dannyx.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cr_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cr_img_points.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_arena.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_frend.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_frend.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cr_img_map_name_station.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/cr_img_map_name_station.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/find_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/find_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/gifts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generate_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_route.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/arena/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/arena_object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/arena/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/exit_kv.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/skip_battle.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/skip_battle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/energy_indicator/en1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/energy_indicator/en2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/energy_indicator/en3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/energy_indicator/en7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/energy_indicator/sample.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_gady/t1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_gady/t2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_gady/t3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_gady/t4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_gady/t5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_gady/t6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_gady/t7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_gavr/t2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_gavr/t3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_gavr/t4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_gavr/t5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_gavr/t7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_mara/t1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_mara/t2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_mara/t3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_veles/t1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_veles/t2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/stationmaster/tasks_veles/t3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Communist.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Communist.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/station_exit.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/station_exit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/item_pos.py" beforeDir="false" afterPath="$PROJECT_DIR$/item_pos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/kv_wait_attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/overall/info.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/info.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Alexs.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Alexs.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Biblioteka.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Biblioteka.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Borov.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Borov.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Chekhov.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Chekhov.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Communist.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Communist.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Cvetnoy.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Cvetnoy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Frunze.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Frunze.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kiev.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kiev.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kiev_a.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kiev_a.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kitay.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kitay.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kropotkin.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kropotkin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kuzneckiy.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kuzneckiy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Novokuznec.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Novokuznec.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Park_ganza.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Park_ganza.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Park_kr.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Park_kr.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Pavelec.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Pavelec.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Pavelec_g.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Pavelec_g.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Polyanka.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Polyanka.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Pr-kt_Vernadskogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Pr-kt_Vernadskogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Prospekt.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Prospekt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Pushkin.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Pushkin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Rizgskaya.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Rizgskaya.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Suxarev.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Suxarev.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Teatr.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Teatr.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Tretyakov.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Tretyakov.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Turgenev.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Turgenev.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Tver.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Tver.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Univer.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Univer.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_VDNX.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_VDNX.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_stat_kv.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/img_stat_kv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/item_pos.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/pos_value_energy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map_tour.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mess.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/mess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/my_gui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/person.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/revision_tents.py" beforeDir="false" afterPath="$PROJECT_DIR$/revision_tents.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solid_memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/solid_memory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/t_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/t_item.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/создание скриншотов.py" beforeDir="false" afterPath="$PROJECT_DIR$/создание скриншотов.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +91,9 @@
     &quot;accountId&quot;: &quot;d365717e-7a9b-46f5-87cb-61d4847e8ba3&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
@@ -107,6 +110,8 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
     &quot;Python.cr_img.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_img_id_name_station (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_img_id_name_station.executor&quot;: &quot;Run&quot;,
     &quot;Python.cr_img_map_name_station.executor&quot;: &quot;Run&quot;,
     &quot;Python.cr_img_points.executor&quot;: &quot;Run&quot;,
     &quot;Python.create_and_analiz_img (1).executor&quot;: &quot;Run&quot;,
@@ -119,6 +124,7 @@
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.map_tour.executor&quot;: &quot;Run&quot;,
     &quot;Python.mess.executor&quot;: &quot;Run&quot;,
+    &quot;Python.t_item (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.t_item.executor&quot;: &quot;Run&quot;,
     &quot;Python.tasks_analiz.executor&quot;: &quot;Run&quot;,
     &quot;Python.test.executor&quot;: &quot;Run&quot;,
@@ -130,18 +136,19 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
+    &quot;ToolWindow.Python Console.ShowToolbar&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/bot in br/testOCR&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.intentionPowerPack&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\bot in br\testOCR" />
+      <recent name="D:\bot in br\testOCR\service" />
       <recent name="D:\bot in br\testOCR\img\not_used" />
       <recent name="D:\bot in br\testOCR\img\tonelli\mobi" />
       <recent name="D:\bot in br\testOCR\img\tonelli\id_stations" />
-      <recent name="D:\bot in br\testOCR\img\tonelli\map_item" />
-      <recent name="D:\bot in br\testOCR\img\overall" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -149,7 +156,7 @@
       <command value="zadaniya" />
     </option>
   </component>
-  <component name="RunManager" selected="Python.generate_route">
+  <component name="RunManager" selected="Python.main">
     <configuration name="cr_img" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
@@ -172,7 +179,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="cr_img_map_name_station" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="event_frend" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -185,29 +192,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cr_img_map_name_station.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="generate_route" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testOCR" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_route.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/event_frend.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -238,7 +223,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="t_item" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="t_item (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -260,20 +245,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="t_item" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testOCR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/service" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="D:\bot in br\testOCR\t_item.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.generate_route" />
-        <item itemvalue="Python.t_item" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.cr_img_map_name_station" />
+        <item itemvalue="Python.event_frend" />
         <item itemvalue="Python.cr_img" />
+        <item itemvalue="Python.t_item (1)" />
+        <item itemvalue="Python.t_item" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-4f4e415b4190-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.26053.29" />
+        <option value="bundled-python-sdk-dfff61a61320-9cdd278e9d02-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.25410.159" />
       </set>
     </attachedChunks>
   </component>
@@ -343,38 +350,38 @@
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cr_img.py</url>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cr_img.py</url>
-          <line>409</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>155</line>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>241</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>386</line>
+          <line>390</line>
           <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>208</line>
-          <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/event_arena.py</url>
           <line>105</line>
           <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/touring.py</url>
+          <line>230</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/cr_img.py</url>
+          <line>219</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/person.py</url>
+          <line>110</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fun.py</url>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fun.py</url>
+          <line>98</line>
+          <option name="timeStamp" value="89" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

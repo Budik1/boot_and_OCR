@@ -6,7 +6,7 @@ from playsound3 import playsound
 import my_color_text as myCt
 import find_img as find
 import heroes as her
-from find_img import find_her_gavr
+import fun_down
 from heroes import Activ
 
 par_conf = 0.79
@@ -15,38 +15,39 @@ log = 1
 
 
 def locCenterImg(name_img, confidence=0.9, region: tuple[int, int, int, int] | None = None):
-    pos_img = pyautogui.locateCenterOnScreen(name_img,
+    pos_img = fun_down.locateCenterImg(name_img=name_img,
                                              confidence=confidence,
                                              region=region)
     return pos_img
 
 
 def mouse_left_click(*, pos):
-    pyautogui.hotkey('Ctrl')
     playsound('sound/mouse-click.wav')
     pyautogui.click(pos)
+    pyautogui.hotkey('Ctrl')
 
 
 def mouse_move_to_click(*, pos_click: tuple, move_time=0.75, z_p_k=0.05):
     """
     Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
     :param pos_click: Point
-    :param move_time: время перемещения из точки отправления в точку назначения
+    :param move_time: время перемещения указателя мыши в секундах
     :param z_p_k: задержка перед кликом(float)
     :return: None
     """
     my_print_to_file('fun.mouse_move_to_click')
     # print('mouse_move_to_click', pos_click)
     sleep(0.3)
-    pyautogui.moveTo(pos_click, duration=move_time)
+    mouse_move( pos=pos_click, speed=move_time)
     # print('должен быть клик')
     sleep(z_p_k)
     mouse_left_click(pos=pos_click)
     sleep(0.18)
 
 
-def mouse_move(*, pos: tuple, speed=0.2):
-    pyautogui.moveTo(pos, duration=speed)
+def mouse_move(*, pos: tuple, speed=0.2, show=True):
+    if show:
+        pyautogui.moveTo(pos, duration=speed)
 
 
 def my_print_to_file(text):
@@ -313,14 +314,14 @@ def move_friends_list_to_top():
     sleep(1)
 
 
-def foto(path_name, _region):
+def foto(path_name, region: tuple[int, int, int, int] | None = None):
     """
         Создает снимок нужного участка экрана
         :param path_name: имя файла
-        :param _region: регион (X, Y, ширина, высота)
+        :param region: регион (X, Y, ширина, высота). None - весь экран
     """
     my_print_to_file('fun.foto')
-    im1 = pyautogui.screenshot(region=_region)
+    im1 = pyautogui.screenshot(region=region)
     im1.save(path_name)
 
 
@@ -512,30 +513,34 @@ def await_arena(region):
     mouse_move(pos=attack_arena_object)
 
 
-def selection_hero():
+def selection_hero(*, show_name=True):
     # print('fun.selection_hero')
     hero_gadya = find.find_her_gadya()
-    hero_gavr = find_her_gavr()
+    hero_gavr = find.find_her_gavr()
     hero_veles = find.find_her_veles()
     hero_mara = find.find_her_mara()
 
     if hero_gadya:
-        print(myCt.tc_yellow('Гадя'))
+        if show_name:
+            print(myCt.tc_yellow('Гадя'))
         hero = 'Gady'
         Activ.hero_activ_name = 'Gady'
         Activ.hero_activ = her.gady
     elif hero_gavr:
-        print(myCt.tc_yellow('Гавр'))
+        if show_name:
+            print(myCt.tc_yellow('Гавр'))
         hero = 'Gavr'
         Activ.hero_activ_name = 'Gavr'
         Activ.hero_activ = her.gavr
     elif hero_veles:
-        print(myCt.tc_yellow('Велес'))
+        if show_name:
+            print(myCt.tc_yellow('Велес'))
         hero = 'Велес'
         Activ.hero_activ_name = 'Велес'
         Activ.hero_activ = her.veles
     elif hero_mara:
-        print(myCt.tc_yellow('Мар`яна'))
+        if show_name:
+            print(myCt.tc_yellow('Мар`яна'))
         hero = 'Mara'
         Activ.hero_activ_name = 'Mara'
         Activ.hero_activ = her.mara
@@ -558,9 +563,9 @@ def get_len_bypass(bypass_hero):
 def work_8_hour():
     vizit_to_station_master()
     pos_work = find.find_work()
-    mouse_move_to_click(pos_click= pos_work)
+    mouse_move_to_click(pos_click=pos_work)
     work_8hour = find.find_work_8_hour()
-    mouse_move_to_click(pos_click= work_8hour)
+    mouse_move_to_click(pos_click=work_8hour)
 
 
 def transform_days(*, qty_days: int):
@@ -589,3 +594,18 @@ def transform_wilds(*, qty_days: int):
         return 'дикарей'
     elif days_des in [0, 5, 6, 7, 8, 9] and days_col != 1:
         return 'дикарей'
+
+
+def verifi_img():
+    path_img = input('Введи полное имя искомой картинки бес кавычек: ')
+    pos = locCenterImg(name_img=path_img)
+    if pos:
+        mouse_move(pos=pos)
+        print(myCt.tc_yellow(f'{path_img} - Найден )) все хорошо'))
+    else:
+        print(myCt.tc_red(f'{path_img} - Ненайден  !!'))
+
+
+def extraction_digit(*, item):
+    dig = int(''.join(c if c.isdigit() else ' ' for c in item))
+    return dig

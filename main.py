@@ -1,9 +1,8 @@
 from tkinter import *
 from tkinter import ttk
+from tkinter import messagebox
 from PIL import ImageTk
 from time import time
-
-from numpy.random import geometric
 
 import fun
 import station_master
@@ -28,7 +27,7 @@ Activ.date_now = fun.date_utc_now()
 
 
 def start_prog():
-    state_file, data_to_load = solid_memory.read_from_file()
+    state_file, data_to_load = solid_memory.reading_file()
     if state_file:
         # print(tc_green('установка значений из файла'))
         try:
@@ -41,6 +40,13 @@ def start_prog():
         displaying_values()
     else:
         displaying_values()
+    print()
+    print('main.start_prog')
+    print(f'{her.gady.wildman=}')
+    print(f'{her.gavr.wildman=}')
+    print(f'{her.veles.wildman=}')
+    print(f'{her.mara.wildman=}')
+    print()
 
 
 def displaying_values(info=True):
@@ -76,6 +82,8 @@ def displaying_values(info=True):
 
     gady_wild.set(her.gady.wildman)
     gavr_wild.set(her.gavr.wildman)
+    veles_wild.set(her.veles.wildman)
+    mara_wild.set(her.mara.wildman)
 
     if info:
         solid_memory.save_to_file(info=True)
@@ -107,19 +115,9 @@ def puli():
     displaying_values()
 
 
-def dvizh_test():
-    touring.test_run()
-    displaying_values()
-
-
 def kiki():
     touring.za_kikimorami()
     fun.work_8_hour()
-    displaying_values()
-
-
-def arachne_and_raptor():
-    touring.pauk_yascher()
     displaying_values()
 
 
@@ -159,51 +157,6 @@ def tent_inspection():
     displaying_values()
 
 
-def frunze_kiev():
-    touring.frunze_kiev()
-    displaying_values()
-
-
-def kiev_frunze():
-    touring.kiev_frunze()
-    displaying_values()
-
-
-def most_frunze():
-    touring.most_frunze()
-    displaying_values()
-
-
-def bulvar_frunze():
-    touring.bulvar_frunze()
-    displaying_values()
-
-
-def frunze_bulvar():
-    touring.frunze_bulvar()
-    displaying_values()
-
-
-def most_riga():
-    touring.most_riga()
-    displaying_values()
-
-
-def riga_most():
-    touring.riga_most()
-    displaying_values()
-
-
-def frunze_riga():
-    touring.frunze_riga()
-    displaying_values()
-
-
-def riga_frunze():
-    touring.riga_frunze()
-    displaying_values()
-
-
 def tasks_na_kievskoy():
     hero = fun.selection_hero()
     if hero:
@@ -216,6 +169,7 @@ def tasks_na_kievskoy():
     fun.work_8_hour()
     # Hero.a
     displaying_values()
+
 
 def wild_kiki():
     start_time = time()
@@ -283,18 +237,33 @@ def report():
     print(f'Gavr {Hero.get_report_wildman(her.gavr)}')
 
 
-def zero_param():
-    her.veles.energy_all_count = 0
-    her.mara.energy_all_count = 0
-    her.veles.task_count = 0
-    her.mara.task_count = 0
+def save_home_point():
+    fun.selection_hero(show_name=False)
+    adres = Hero.get_home_location(Activ.hero_activ)
+    mes = F'Твой адрес - {adres} .\n Сохранить новый адрес ?'
+    ansver = messagebox.askyesno(title='Паспортист ))', message=mes)
+    if ansver:
+        fun.selection_hero()
+        location = touring.loc_now()[0]
+        Hero.seting_home(Activ.hero_activ, location)
+    displaying_values()
+    print(f'{her.gady.home_location=}')
+    print(f'{her.gavr.home_location=}')
+    print(f'{her.veles.home_location=}')
+    print(f'{her.mara.home_location=}')
+
+
+def get_target(event):
+    selection = combobox.get()
+    # print(f'Прокладываю маршрут к {selection}')
+    touring.move_target(target_point=selection)
     displaying_values()
 
 
 root = Tk()
 root.title(' помощник "Метро 2033"')
 # root.geometry("370x362+1200+50")  # Ширина x Высота + координата X + координата Y
-root.geometry(f'370x{b_d.line11 + b_d.height_line + 2}+1200+50')  # Ширина x Высота + координата X + координата Y
+root.geometry(f'371x{b_d.line10 + b_d.height_line + 2}+1200+50')  # Ширина x Высота + координата X + координата Y
 root.resizable(False, False)
 
 gavr_vip = StringVar()
@@ -327,32 +296,39 @@ gady_gift = StringVar()
 mara_gift = IntVar()
 veles_gift = IntVar()
 
-gavr_wild = IntVar()
-gady_wild = IntVar()
-mara_wild = IntVar()
-veles_wild = IntVar()
+gavr_wild = StringVar()
+gady_wild = StringVar()
+mara_wild = StringVar()
+veles_wild = StringVar()
+
+boxlist = touring.list_names_station
+boxlist.insert(0, 'домой')
+lang_var = StringVar(value=boxlist[0])
 # -------------------------------------------------------------
 start_prog()
 # -------------------------------------------------------------
 # блок командных кнопок
-ttk.Button(text="КВ", width=8, command=kv_and_raid.kv).place(x=114, y=b_d.line5)
-ttk.Button(text=" Start ", width=14, command=fun.start_p_m).place(x=200, y=b_d.line5)
-ttk.Button(text="wild+kiki", width=10, command=wild_kiki).place(x=114, y=b_d.line6)
-ttk.Button(text="на Киев", width=7, command=frunze_kiev).place(x=215, y=b_d.line6)
-ttk.Button(text="домой ", width=7, command=kiev_frunze).place(x=291, y=b_d.line6)
-ttk.Button(text="Паук+Ящер", width=10, command=arachne_and_raptor).place(x=267, y=b_d.line7)
-ttk.Button(text="обход всех станций", width=16, command=collecting_gifts_at_stations).place(x=114, y=b_d.line7)
-ttk.Button(text='Save', width=12, command=displaying_values).place(x=125, y=b_d.line8)
-ttk.Button(text='рапорт', width=12, command=report).place(x=250, y=b_d.line8)
-ttk.Button(text="frunze_riga", width=12, command=frunze_riga).place(x=0, y=b_d.line9)
-ttk.Button(text="riga_frunze", width=12, command=riga_frunze).place(x=125, y=b_d.line9)
-ttk.Button(text="test гардероб", width=12, command=person.pereodevanie).place(x=250, y=b_d.line9)
-ttk.Button(text="frunze_bulvar", width=12, command=frunze_bulvar).place(x=0, y=b_d.line10)
-ttk.Button(text="bulvar_frunze", width=12, command=bulvar_frunze).place(x=125, y=b_d.line10)
-ttk.Button(text="тест tour", width=12, command=dvizh_test).place(x=250, y=b_d.line10)
-ttk.Button(text="фото противника", width=14, command=create_img_arena_object).place(x=0, y=b_d.line11)
-ttk.Button(text="атака противника", width=14, command=kill).place(x=232, y=b_d.line11)
-ttk.Button(text='обнулить Маро и Велес', width=20, command=zero_param).place(x=0, y=b_d.line12)
+ttk.Button(text="КВ", width=13, command=kv_and_raid.kv).place(x=115, y=b_d.line5)
+ttk.Button(text=" Start ", width=13, command=fun.start_p_m).place(x=241, y=b_d.line5)
+
+ttk.Button(text="wild+kiki", width=9, command=wild_kiki).place(x=115, y=b_d.line6)
+ttk.Button(text="обход всех станций", width=17, command=collecting_gifts_at_stations).place(x=205, y=b_d.line6)
+
+ttk.Button(text='Save', width=13, command=displaying_values).place(x=115, y=b_d.line7)
+ttk.Button(text='рапорт', width=13, command=report).place(x=241, y=b_d.line7)
+
+ttk.Label(text='            куда пойдем ?', width=21, background='#858585', foreground='#050505').place(x=144,
+                                                                                                        y=b_d.line8)
+
+combobox = ttk.Combobox(textvariable=lang_var, values=boxlist, state="readonly", width=25)
+combobox.place(x=117, y=b_d.line9)
+combobox.bind("<<ComboboxSelected>>", get_target)
+ttk.Button(text='S_H', width=4, command=save_home_point).place(x=63, y=b_d.line9 - 2)
+
+ttk.Button(text="фото противника", width=15, command=create_img_arena_object).place(x=0, y=b_d.line10)
+ttk.Button(text="атака противника", width=15, command=kill).place(x=225, y=b_d.line10)
+# ttk.Button(text='Проверка', width=8, command=fun.verifi_img).place(x=144, y=b_d.line10)
+ttk.Button(text='Где я ?', width=8, command=touring.loc_now).place(x=144, y=b_d.line10)
 
 ttk.Button(text="Gady", width=5, command=change_gady).place(x=0, y=b_d.gady_y)
 ttk.Button(text="Gavr", width=5, command=change_gavr).place(x=0, y=b_d.gavr_y)
@@ -438,7 +414,7 @@ ttk.Label(textvariable=mara_wild).place(x=b_d.wild_x, y=b_d.mara_y)
 
 # блок выбора заданий
 difference_str_img = 11
-line_img = b_d.line5 + 1
+line_img = b_d.line5 + 15
 imagePul = ImageTk.PhotoImage(file="img/overall/pulya.png")
 ttk.Button(root, image=imagePul, command=puli).place(x=56, y=line_img + 15)
 img_e1 = ImageTk.PhotoImage(file="img/overall/en1v3.png")

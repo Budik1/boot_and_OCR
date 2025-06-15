@@ -13,4 +13,4 @@ if kv_reload:
     x_sh += 225
     y_sh += 270
     pg.moveTo(x_sh, y_sh, duration=1)
-    fun.foto('img/kv/tests/kv_.png', _region=(x, y, 225, 270))
+    fun.foto('../img/kv/tests/kv_.png', region=(x, y, 225, 270))

@@ -1,5 +1,5 @@
 import pyautogui
-from torch.nn.init import normal
+import fun_down
 
 norm = 0.9
 par_conf = 0.79
@@ -13,7 +13,7 @@ def locCenterImg(*, name_img, confidence=0.9, region: tuple[int, int, int, int] 
 
 
 def find_knob():
-    knob = locCenterImg(name_img='img/overall/knob.png')
+    knob = fun_down.locateCenterImg(name_img='img/overall/knob.png')
     return knob
 
 
@@ -153,9 +153,9 @@ def find_kv_reload():
     return kv_reload
 
 
-def find_kv_wait_attack():
-    kv_wait_attack = locCenterImg(name_img='img/kv/kv_wait_attack.png')
-    return kv_wait_attack
+def find_kv_attack_for_money():
+    attack_for_money = locCenterImg(name_img='img/kv/kv_attack for money.png')
+    return attack_for_money
 
 
 def find_kv_attak():
@@ -186,3 +186,15 @@ def find_setting():
 def find_station_exit():
     station_exit = locCenterImg(name_img='img/tonelli/station_exit.png', confidence=0.9)
     return station_exit
+
+def find_tonelli_attack():
+    attack = locCenterImg(name_img='img/tonelli/attack.png')
+    return attack
+
+def find_info():
+    info = locCenterImg(name_img='img/overall/info.png') # img/overall/info.png
+    return info
+
+def name():
+    pos = fun_down.locateCenterImg('')
+    return pos
