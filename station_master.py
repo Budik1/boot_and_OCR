@@ -121,6 +121,8 @@ def enemy_battle(prolong_=2, dog_activ=True, add_up=True, count_task=False, aren
                 if name5_wildman and cycle:
                     cycle = False
                     fun.mouse_move(pos=name5_wildman, speed=0.4)
+                    if Hero.get_qty_wildman(Activ.hero_activ) == 'x':
+                        Hero.zero_wildman(Activ.hero_activ)
                     Hero.app_wildman(Activ.hero_activ)
                     if count_task:
                         print(f'{Hero.get_report_wildman_now(Activ.hero_activ)}. {count_task_now}')

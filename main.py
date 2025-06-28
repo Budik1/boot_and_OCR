@@ -40,13 +40,6 @@ def start_prog():
         displaying_values()
     else:
         displaying_values()
-    print()
-    print('main.start_prog')
-    print(f'{her.gady.wildman=}')
-    print(f'{her.gavr.wildman=}')
-    print(f'{her.veles.wildman=}')
-    print(f'{her.mara.wildman=}')
-    print()
 
 
 def displaying_values(info=True):
@@ -246,6 +239,10 @@ def save_home_point():
         fun.selection_hero()
         location = touring.loc_now()[0]
         Hero.seting_home(Activ.hero_activ, location)
+    # if her.Hero.get_qty_wildman(Activ.hero_activ) == 'x':
+    #     her.Hero.zero_wildman(Activ.hero_activ)
+    # her.Hero.app_wildman(Activ.hero_activ)
+
     displaying_values()
     print(f'{her.gady.home_location=}')
     print(f'{her.gavr.home_location=}')
@@ -304,9 +301,11 @@ veles_wild = StringVar()
 boxlist = touring.list_names_station
 boxlist.insert(0, 'домой')
 lang_var = StringVar(value=boxlist[0])
+
 # -------------------------------------------------------------
 start_prog()
 # -------------------------------------------------------------
+
 # блок командных кнопок
 ttk.Button(text="КВ", width=13, command=kv_and_raid.kv).place(x=115, y=b_d.line5)
 ttk.Button(text=" Start ", width=13, command=fun.start_p_m).place(x=241, y=b_d.line5)

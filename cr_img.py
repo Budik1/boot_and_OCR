@@ -482,14 +482,14 @@ def aktiv_win_game():
 
 
 def continue_hero():
-    pos = fun.locCenterImg('img/overall/event_entry/continue_mara.png')
+    pos = fun.locCenterImg('img/overall/event_entry/continue_gavr.png')
     if pos:
         print('ok')
         # 34x98
         x, y = pos
         x -= 270 / 2
         y -= 60 / 2
-        fun.foto('img/overall/event_entry/continue_mara.png', (x, y, 270, 60))
+        fun.foto('img/overall/event_entry/continue_gavr.png', (x, y, 270, 60))
     return
 
 
@@ -509,9 +509,9 @@ def info_img():
     return
 
 
-info_img()
+# info_img()
 # station_exit()
-# conti_hero()
+continue_hero()
 # aktiv_win_game()
 # # 1
 # mob_id('white_rat')   # белая

@@ -39,7 +39,7 @@ class Hero:
         self.completing_tasks = False
         self.task_count = 0
         self.energy_count_today = 0
-        self.energy_all_count = 0
+        self.energy_count_all = 0
         self.value_energy = 0
 
         self.arena_count = 0
@@ -61,7 +61,7 @@ class Hero:
 
     def app_energy_count_today(self, value):
         self.energy_count_today += value
-        self.energy_all_count += value
+        self.energy_count_all += value
 
     def app_task_count(self):
         self.task_count += 1
@@ -111,7 +111,7 @@ class Hero:
         return self.home_location
 
     def get_energy_count_all(self):
-        return self.energy_all_count
+        return self.energy_count_all
 
     def get_energy_count_today(self):
         return self.energy_count_today
@@ -134,13 +134,13 @@ class Hero:
             text_21 = myCt.tc_green('На ')  # 'На '
             all_task_count = myCt.tc_yellow(f'{self.task_count}')  # '10'
             text_22 = myCt.tc_green(' заданий потрачено ')  # ' заданий потрачено '
-            all_energy_count = myCt.tc_yellow(f'{self.energy_all_count}')  # 'XXX'
+            all_energy_count = myCt.tc_yellow(f'{self.energy_count_all}')  # 'XXX'
             text_23 = myCt.tc_green(' единиц энергии')
             phrase2 = f'{text_21}{all_task_count}{text_22}{all_energy_count}{text_23}'
 
             # количество энергии на одного
             text_31 = myCt.tc_green(' Это ')
-            average_value_3 = myCt.tc_blue(f'{round(self.energy_all_count / self.wildman_count, 4)}')  # '7'
+            average_value_3 = myCt.tc_blue(f'{round(self.energy_count_all / self.wildman_count, 4)}')  # '7'
             text_32 = myCt.tc_green(' эн на 1го')  # ' эн на 1го'
             phrase3 = f'{text_31}{average_value_3}{text_32}'
             line1 = f'{phrase1}{phrase3}\n{phrase2}'

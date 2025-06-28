@@ -63,10 +63,10 @@ def save_to_file(info=True):
         'veles.energy_count_now': her.veles.energy_count_today,
         'mara.energy_count_now': her.mara.energy_count_today,
         #
-        'gady.energy_count_all': her.gady.energy_all_count,
-        'gavr.energy_count_all': her.gavr.energy_all_count,
-        'veles.energy_count_all': her.veles.energy_all_count,
-        'mara.energy_count_all': her.mara.energy_all_count,
+        'gady.energy_count_all': her.gady.energy_count_all,
+        'gavr.energy_count_all': her.gavr.energy_count_all,
+        'veles.energy_count_all': her.veles.energy_count_all,
+        'mara.energy_count_all': her.mara.energy_count_all,
         #
         'gady.wildman_all': her.gady.wildman_count,
         'gavr.wildman_all': her.gavr.wildman_count,
@@ -194,10 +194,10 @@ def setting_cumulative_values(loaded_data):
     her.mara.home_location = loaded_data['mara.home_location']
 
     # кол-во потраченной энергии за время учета
-    her.gady.energy_all_count = loaded_data['gady.energy_count_all']
-    her.gavr.energy_all_count = loaded_data['gavr.energy_count_all']
-    her.veles.energy_all_count = loaded_data['veles.energy_count_all']
-    her.mara.energy_all_count = loaded_data['mara.energy_count_all']
+    her.gady.energy_count_all = loaded_data['gady.energy_count_all']
+    her.gavr.energy_count_all = loaded_data['gavr.energy_count_all']
+    her.veles.energy_count_all = loaded_data['veles.energy_count_all']
+    her.mara.energy_count_all = loaded_data['mara.energy_count_all']
     # кол-во дикарей
     her.gady.wildman_count = loaded_data['gady.wildman_all']
     her.gavr.wildman_count = loaded_data['gavr.wildman_all']
