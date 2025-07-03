@@ -233,7 +233,7 @@ def press_en(*, task_number, pos, value_energy):
     # print('тут должен быть клик')         # для отладки раскомментировать
     fun.mouse_move_to_click(pos_click=pos_clik, move_time=0.4, z_p_k=1.5)  # для отладки закомментировать
     sleep(0.5)
-    low_energy = fun.locCenterImg(name_img='img/low_energy.png', confidence=0.8)
+    low_energy = find.find_low_energy_label()
     if not low_energy:
         vers_in_print = "" if conf_ == 0.95 else f', conf_={conf_}'
         Hero.app_task_count(Activ.hero_activ)

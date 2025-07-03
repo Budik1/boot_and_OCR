@@ -7,16 +7,28 @@
     <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="изменил сохранение и отображение счетчиков">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cr_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/arena/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/arena_object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/arena/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/overall/event_entry/continue_gavr.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/event_entry/continue_gavr.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_mara/t1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_mara/t1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_mara/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_mara/t2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_mara/t3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_mara/t3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/find_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/find_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/low_energy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/overall/work.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/overall/work_8_hour.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/dress/gloves.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/dress/gloves_point.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/dress/jacket_b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/dress/jacket_r.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/her_gadya.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/her_gavr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/her_mara.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/her_veles.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/hero1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/slot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/smol_slot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/trousers_b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/trousers_bourbon.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solid_memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/solid_memory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/person.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,16 +110,16 @@
     &quot;ToolWindow.Python Console.ShowToolbar&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/bot in br/testOCR&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\bot in br\testOCR\img\person\dress\slots" />
       <recent name="D:\bot in br\testOCR" />
       <recent name="D:\bot in br\testOCR\service" />
       <recent name="D:\bot in br\testOCR\img\not_used" />
       <recent name="D:\bot in br\testOCR\img\tonelli\mobi" />
-      <recent name="D:\bot in br\testOCR\img\tonelli\id_stations" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -320,7 +332,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>230</line>
+          <line>231</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -329,18 +341,14 @@
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/person.py</url>
-          <line>110</line>
-          <option name="timeStamp" value="87" />
+          <url>file://$PROJECT_DIR$/event_arena.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/fun.py</url>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/fun.py</url>
-          <line>98</line>
-          <option name="timeStamp" value="89" />
+          <url>file://$PROJECT_DIR$/station_master.py</url>
+          <line>133</line>
+          <option name="timeStamp" value="92" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

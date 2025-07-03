@@ -4,7 +4,7 @@ import datetime
 from playsound3 import playsound
 
 import my_color_text as myCt
-import find_img as find
+import find_img
 import heroes as her
 import fun_down
 from heroes import Activ
@@ -16,8 +16,8 @@ log = 1
 
 def locCenterImg(name_img, confidence=0.9, region: tuple[int, int, int, int] | None = None):
     pos_img = fun_down.locateCenterImg(name_img=name_img,
-                                             confidence=confidence,
-                                             region=region)
+                                       confidence=confidence,
+                                       region=region)
     return pos_img
 
 
@@ -38,7 +38,7 @@ def mouse_move_to_click(*, pos_click: tuple, move_time=0.75, z_p_k=0.05):
     my_print_to_file('fun.mouse_move_to_click')
     # print('mouse_move_to_click', pos_click)
     sleep(0.3)
-    mouse_move( pos=pos_click, speed=move_time)
+    mouse_move(pos=pos_click, speed=move_time)
     # print('должен быть клик')
     sleep(z_p_k)
     mouse_left_click(pos=pos_click)
@@ -48,6 +48,67 @@ def mouse_move_to_click(*, pos_click: tuple, move_time=0.75, z_p_k=0.05):
 def mouse_move(*, pos: tuple, speed=0.2, show=True):
     if show:
         pyautogui.moveTo(pos, duration=speed)
+
+class Mouse:
+
+    @staticmethod
+    def position_print():
+        # print('getInfo()')
+        # print()
+        # print(pyautogui.getInfo())
+        print()
+        print('position()')
+        print(pyautogui.position())
+        # pyautogui.position()
+
+    @staticmethod
+    def move(*, pos: tuple, speed=0.2, show=True):
+        if show:
+            pyautogui.moveTo(pos, duration=speed)
+        return
+
+    @staticmethod
+    def left_click(*, pos):
+        playsound('sound/mouse-click.wav')
+        pyautogui.click(pos)
+        pyautogui.hotkey('Ctrl')
+        return
+
+    @staticmethod
+    def take_drag_drop_y(*, pos_take, dist, speed=0.2):
+        pyautogui.mouseDown(pos_take)
+        x, y = pos_take
+        y += dist
+        new_pos = x, y
+        Mouse.move(pos=new_pos, speed=speed)
+        pyautogui.mouseUp()
+        return
+
+    @staticmethod
+    def take_drag_drop(*, pos_take, pos_drop, speed=0.2):
+        pyautogui.mouseDown(pos_take)
+        Mouse.move(pos=pos_drop, speed=speed)
+        pyautogui.mouseUp()
+        return
+
+    @staticmethod
+    def move_to_click(*, pos_click: tuple, move_time=0.75, z_p_k=0.05):
+        """
+        Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
+        :param pos_click: Point
+        :param move_time: время перемещения указателя мыши в секундах
+        :param z_p_k: задержка перед кликом(float)
+        :return: None
+        """
+        my_print_to_file('fun.mouse_move_to_click')
+        # print('mouse_move_to_click', pos_click)
+        sleep(0.3)
+        Mouse.move(pos=pos_click, speed=move_time)
+        # print('должен быть клик')
+        sleep(z_p_k)
+        mouse_left_click(pos=pos_click)
+        sleep(0.18)
+        return
 
 
 def my_print_to_file(text):
@@ -135,19 +196,19 @@ def station_gifts():
 
 def push_close_all_():
     my_print_to_file('fun.push_close_all_')
-    pos_close = find.find_close()
+    pos_close = find_img.find_close()
     while pos_close:
         close_popup_window()
         push_close()
         sleep(1)
-        pos_close = find.find_close()
+        pos_close = find_img.find_close()
         # print("цикл close")
 
 
 def close_popup_window():
     my_print_to_file('fun.close_popup_window')
-    knob = find.find_knob()
-    cancel = find.find_cancel()
+    knob = find_img.find_knob()
+    cancel = find_img.find_cancel()
     if knob:
         mouse_move_to_click(pos_click=knob, z_p_k=1)
     if cancel:
@@ -156,7 +217,7 @@ def close_popup_window():
 
 def push_close():
     my_print_to_file('fun.push_close')
-    pos_close = find.find_close()
+    pos_close = find_img.find_close()
     if pos_close:
         mouse_move_to_click(pos_click=pos_close, z_p_k=0.1)
         close_flag = True
@@ -168,7 +229,7 @@ def push_close():
 def exit_to_zero_screen():
     my_print_to_file('fun.exit_to_zero_screen')
     push_close_all_()
-    b_exit = find.find_b_exit()
+    b_exit = find_img.find_b_exit()
     print(b_exit, 'b_exit')
     if b_exit:
         mouse_move_to_click(pos_click=b_exit, z_p_k=0.1)
@@ -327,19 +388,19 @@ def foto(path_name, region: tuple[int, int, int, int] | None = None):
 
 def find_link_hall_of_glory():
     """
-    Закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
+    Закрыть если открыто, Tак как за чем-то может быть не видна позиция привязки
     :return: Point 'Зал славы'
     """
     my_print_to_file('fun.find_link_hall_of_glory')
-    close = find.find_close()
+    close = find_img.find_close()
     while close:
         push_close_all_()
-        close = find.find_close()
+        close = find_img.find_close()
     # получение координат привязки
-    point_hall_of_glory = find.find_hall_of_glory_icon()
+    point_hall_of_glory = find_img.find_hall_of_glory_icon()
     while not point_hall_of_glory:
         sleep(0.2)
-        point_hall_of_glory = find.find_hall_of_glory_icon()
+        point_hall_of_glory = find_img.find_hall_of_glory_icon()
     sleep(0.5)
 
     return point_hall_of_glory
@@ -347,8 +408,8 @@ def find_link_hall_of_glory():
 
 def find_link_station_master():
     my_print_to_file('fun.find_link_station_master')
-    station_master = find.find_station_master()
-    pos_klan = find.find_klan()
+    station_master = find_img.find_station_master()
+    pos_klan = find_img.find_klan()
     if station_master or pos_klan:
         if pos_klan:
             pyautogui.moveTo(pos_klan)
@@ -365,9 +426,9 @@ def find_link_station_master():
             y_or -= 29
             point = x_or, y_or
     else:
-        # Закрыть если открыто, т.к. за чем-то может быть не видна позиция привязки
+        # Закрыть если открыто, так как за чем-то может быть не видна позиция привязки
         push_close_all_()
-        pos_klan = find.find_klan()
+        pos_klan = find_img.find_klan()
         mouse_move(pos=pos_klan)
         # получение координат привязки
         sleep(0.5)
@@ -471,10 +532,10 @@ def get_areas_task_big(width=77, height=42):
 
 def find_link_klan():
     my_print_to_file('fun.find_link_klan')
-    pos_klan = find.find_klan()
+    pos_klan = find_img.find_klan()
     while not pos_klan:
         sleep(0.1)
-        pos_klan = find.find_klan()
+        pos_klan = find_img.find_klan()
 
     return pos_klan
 
@@ -482,7 +543,7 @@ def find_link_klan():
 def vizit_to_station_master():
     """заходит в палатку к нач.станции"""
     my_print_to_file('fun.vizit_to_station_master')
-    station_master = find.find_station_master()
+    station_master = find_img.find_station_master()
     if station_master:
         mouse_move(pos=station_master, speed=0.4)
         # print(" уже у начальника ")
@@ -496,7 +557,7 @@ def vizit_to_station_master():
         mouse_move_to_click(pos_click=master, move_time=0.4, z_p_k=0.2)
         # print('зашел к начальнику')
         sleep(0.5)
-        station_master = find.find_station_master()
+        station_master = find_img.find_station_master()
         mouse_move(pos=station_master, speed=0.4)
     return station_master
 
@@ -507,18 +568,18 @@ def find_lvl():
 
 
 def await_arena(region):
-    attack_arena_object = find.find_attack(region=region)
+    attack_arena_object = find_img.find_attack(region=region)
     while attack_arena_object is None:
-        attack_arena_object = find.find_attack(region=region)
+        attack_arena_object = find_img.find_attack(region=region)
     mouse_move(pos=attack_arena_object)
 
 
 def selection_hero(*, show_name=True):
     # print('fun.selection_hero')
-    hero_gadya = find.find_her_gadya()
-    hero_gavr = find.find_her_gavr()
-    hero_veles = find.find_her_veles()
-    hero_mara = find.find_her_mara()
+    hero_gadya = find_img.find_her_gadya()
+    hero_gavr = find_img.find_her_gavr()
+    hero_veles = find_img.find_her_veles()
+    hero_mara = find_img.find_her_mara()
 
     if hero_gadya:
         if show_name:
@@ -562,9 +623,9 @@ def get_len_bypass(bypass_hero):
 
 def work_8_hour():
     vizit_to_station_master()
-    pos_work = find.find_work()
+    pos_work = find_img.find_work()
     mouse_move_to_click(pos_click=pos_work)
-    work_8hour = find.find_work_8_hour()
+    work_8hour = find_img.find_work_8_hour()
     mouse_move_to_click(pos_click=work_8hour)
 
 
@@ -580,6 +641,7 @@ def transform_days(*, qty_days: int):
         return 'дней'
     elif days_des in [0, 5, 6, 7, 8, 9] and days_col != 1:
         return 'дней'
+    return 'дни'
 
 
 def transform_wilds(*, qty_days: int):
@@ -594,6 +656,7 @@ def transform_wilds(*, qty_days: int):
         return 'дикарей'
     elif days_des in [0, 5, 6, 7, 8, 9] and days_col != 1:
         return 'дикарей'
+    return 'дикари))'
 
 
 def verifi_img():
@@ -603,9 +666,19 @@ def verifi_img():
         mouse_move(pos=pos)
         print(myCt.tc_yellow(f'{path_img} - Найден )) все хорошо'))
     else:
-        print(myCt.tc_red(f'{path_img} - Ненайден  !!'))
+        print(myCt.tc_red(f'{path_img} - Не найден  !!'))
 
 
 def extraction_digit(*, item):
     dig = int(''.join(c if c.isdigit() else ' ' for c in item))
     return dig
+
+def ac():
+    pos_my = find_img.find_my_game2()
+    while not pos_my:
+        pos_my = find_img.find_my_game2()
+    x, y = pos_my
+    x -= 50
+    y -= 50
+    mouse_move_to_click(pos_click=(x, y), move_time=0.3, z_p_k=0.2)
+

@@ -173,12 +173,14 @@ def travel(track: list):
     return
 
 
-def move_target(*, target_point):
-
+def move_to_target(*, target_point):
+    """
+    :param target_point: имя станции, например - 'ст. Чеховская'
+    """
     # определяю героя
     her = fun.selection_hero()
     if not her:
-        print(my_color_text.tc_yellow('Никуда не пойдем)))'))
+        print(my_color_text.tc_yellow('Этот НИКТО никуда не пойдет)))'))
         return
     # получаю локацию старта
     start_point = loc_now()[0]
@@ -220,7 +222,6 @@ def name_in_list(*, value: list):
         list_name.append(extraction_name(variable=name))
         # Перебирая полученный список пишет названия станций.
         # print(extraction_name(variable=name))
-
     return list_name
 
 
@@ -248,7 +249,6 @@ def loc_now():
 
 def create_route_list(*, start: str, stop: str):
     """
-
     :param start: Имя станции
     :param stop: Имя станции
     :return: список, который содержит маршрут
@@ -362,14 +362,17 @@ def tasks_na_kievskoy():
     """
     fun.my_print_to_file('touring.tasks_na_kievskoy')
     fun.push_close_all_()
-    frunze_kiev()
+    # frunze_kiev()
+    move_to_target(target_point='ст. Киевская')
     station_master.choosing_task_money()
     print('задания на Киевской выполнены')
-    kiev_univer()
+    # kiev_univer()
+    # за черными крысами на Универ
+    move_to_target(target_point='ст. Университет')
     station_master.task_pos_item(1)
     print('энергия исчерпана')
-    univer_frunze()
-
+    # univer_frunze()
+    move_to_target(target_point='домой')
 
 def frunze_kiev():
     """Маршрут Фрунзенская - Киевская"""

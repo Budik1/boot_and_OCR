@@ -206,22 +206,22 @@ def collecting_gifts_at_stations():
 
 
 def change_gady():
-    person.change_acc(hero_name_in_file='gady')
+    person.change_acc(change_hero_name='gady')
     displaying_values(info=False)
 
 
 def change_gavr():
-    person.change_acc(hero_name_in_file='gavr')
+    person.change_acc(change_hero_name='gavr')
     displaying_values(info=False)
 
 
 def change_veles():
-    person.change_acc(hero_name_in_file='veles')
+    person.change_acc(change_hero_name='veles')
     displaying_values(info=False)
 
 
 def change_mara():
-    person.change_acc(hero_name_in_file='mara')
+    person.change_acc(change_hero_name='mara')
     displaying_values(info=False)
 
 
@@ -252,8 +252,8 @@ def save_home_point():
 
 def get_target(event):
     selection = combobox.get()
-    # print(f'Прокладываю маршрут к {selection}')
-    touring.move_target(target_point=selection)
+    print(f'Прокладываю маршрут к {selection}')
+    touring.move_to_target(target_point=selection)
     displaying_values()
 
 

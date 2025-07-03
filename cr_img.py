@@ -494,6 +494,9 @@ def continue_hero():
 
 
 def info_img():
+    """
+    создание более качественной картинки своими средствами
+    """
     pos = tuple(fun.locCenterImg(name_img='img/overall/info.png', confidence=0.8))
     print(type(pos))
     if pos:
@@ -509,39 +512,83 @@ def info_img():
     return
 
 
-# info_img()
-# station_exit()
-continue_hero()
-# aktiv_win_game()
-# # 1
-# mob_id('white_rat')   # белая
-# mob_id('black_rat')   # черная
-# mob_id('sand_rat')    # песчаная
-# mob_id('grey_rat')    # серая
-# # 2
-# mob_id('spy')           # шпион
-# # 3
-# mob_id('smuggler')    # контрабандист
-# # 4
-# mob_id('arachne') # пауки
-# # 5
-# mob_id('wildman')     # дикарь
-# # 6
-# mob_id('kikimora')
-# # 7
-# mob_id('raptor')
+def my_game():
+    pos_img = find.find_my_game2()
+    if pos_img:
+        fun.mouse_move(pos=pos_img)
+        print('ok my_game')
+    else:
+        print('no my_game')
 
-# mob_name()
-# mob_foto('a')
-# button_collapse()
-# img_change_hero()
-# button_expand()
-# work()
-# work_8_hour()
-# gift_img()
-# defeat_in_arena()
-# victory_in_arena()
-# detecting()
-# defeat_battle_in_kv()
-# victory_battle_in_kv()
-# hero_img()
+
+def dress():
+    """
+    образец для подражания ))
+    """
+    name_create_img = 'img/person/dress/slots/jacket_point.png'
+    show_move = False
+    pos_start = find.find_exit_person()
+    # показать привязку
+    fun.mouse_move(pos=pos_start, speed=1)
+    # найдем верхний угол
+    x, y = pos_start
+    # x += 251, y -= 486 верхний правый слот
+    # x += 371, y -= 341 слот перчаток
+    # x += 713, y -= 341 слот жакета
+    # x += 175, y -= 232 слот брюки
+    # x += 713, y += 125 слот обувь
+    x += 713
+    y -= 341
+    fun.mouse_move(pos=(x, y), speed=1, show=show_move)
+    # найдем нижний угол
+    x_demo, y_demo = x, y
+    change_x = 89
+    change_y = 89
+    x_demo += change_x
+    y_demo += change_y
+    fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
+
+    fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
+    pos = fun.locCenterImg(f'{name_create_img}')
+    fun.mouse_move(pos=pos)
+    print('ok')
+
+
+def dress_region():
+    """
+    образец для подражания ))
+    """
+    name_create_img = 'img/person/dress/region shoes.png'
+    show_move = True
+    pos_start = find.find_exit_person()
+    # показать привязку
+    fun.mouse_move(pos=pos_start, speed=1)
+    # найдем верхний угол
+    x, y = pos_start
+    # x += 251, y -= 486 верхний правый слот
+    # x += 371, y -= 341 слот перчаток
+    # x += 713, y -= 232 слот брюки
+    # x += 713, y -= 341 слот жакета
+    # x += 713, y -= 125 слот обувь
+    x += 713 - 30
+    y -= 125 + 30
+    top_pos = x, y
+    print('слот обувь')
+    fun.mouse_move(pos=top_pos, speed=1, show=show_move)
+    # найдем нижний угол
+    x_demo, y_demo = x, y
+    change_x = 90 + 60
+    change_y = 90 + 60
+    print(f'регион ({top_pos[0] - pos_start[0]}, {top_pos[1] - pos_start[1]}, {change_x}, {change_y})')
+    x_demo += change_x
+    y_demo += change_y
+    fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
+    #
+    fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
+    pos = fun.locCenterImg(f'{name_create_img}')
+    fun.mouse_move(pos=pos)
+    print('ok')
+
+
+dress_region()
+# dress()
