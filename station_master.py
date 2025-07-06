@@ -8,6 +8,7 @@ import solid_memory
 import my_color_text as myCt
 from heroes import Hero, Activ
 import heroes as her
+import info_messages as i_mess
 
 conf_ = 0.95
 par_conf = 0.799
@@ -126,10 +127,10 @@ def enemy_battle(prolong_=2, dog_activ=True, add_up=True, count_task=False, aren
                     Hero.app_wildman(Activ.hero_activ)
                     if count_task:
                         print(f'{Hero.get_report_wildman_now(Activ.hero_activ)}. {count_task_now}')
-                        print(Hero.get_report_wildman(Activ.hero_activ))
+                        print(i_mess.report_wildman(hero=Activ.hero_activ))
                     else:
                         print(f'{Hero.get_report_wildman_now(Activ.hero_activ)}')
-                        print(Hero.get_report_wildman(Activ.hero_activ))
+                        print(i_mess.report_wildman(hero=Activ.hero_activ))
                     mob_identified = "wildman"
                 if name6_kikimora and cycle:
                     cycle = False
@@ -256,7 +257,10 @@ def press_en(*, task_number, pos, value_energy):
             Hero.zero_wildman(Activ.hero_activ)
         
         print(Hero.get_report_wildman_now(Activ.hero_activ))
-        print(Hero.get_report_wildman(Activ.hero_activ))
+        if Hero.get_wildman_count(Activ.hero_activ) != 0:
+            print(i_mess.report_wildman(hero=Activ.hero_activ))
+        else:
+            print()
         sleep(1)
         close = fun.locCenterImg(name_img='img/overall/close.png')
         fun.mouse_move_to_click(pos_click=close, z_p_k=0.5)

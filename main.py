@@ -13,9 +13,11 @@ import revision_tents
 import baza_dannyx as b_d
 import solid_memory
 import heroes as her
+import info_messages as i_mess
 from heroes import Hero, Activ
 from event_arena import create_img_arena_object, kill
 from my_color_text import tc_red
+
 
 fun.my_print_to_file('')
 fun.my_print_to_file('*******                      *******')
@@ -37,7 +39,7 @@ def start_prog():
             print(tc_red('KeyError'))
         except Exception as cod:
             print(tc_red(f'Не понятно что произошло)). Код ошибки {cod}'))
-        displaying_values()
+        displaying_values(info=False)
     else:
         displaying_values()
 
@@ -109,7 +111,7 @@ def puli():
 
 
 def kiki():
-    touring.za_kikimorami()
+    touring.for_kiki()
     fun.work_8_hour()
     displaying_values()
 
@@ -158,7 +160,7 @@ def tasks_na_kievskoy():
     else:
         print('герой не опознан')
         return
-    touring.tasks_na_kievskoy()
+    touring.for_wilds()
     fun.work_8_hour()
     # Hero.a
     displaying_values()
@@ -173,9 +175,9 @@ def wild_kiki():
     else:
         print('герой не опознан')
         return
-    touring.tasks_na_kievskoy()
+    touring.for_wilds()
     displaying_values()
-    touring.za_kikimorami()
+    touring.for_kiki()
     fun.work_8_hour()
     displaying_values()
     finish_time = float(time() - start_time)  # общее количество секунд
@@ -226,22 +228,19 @@ def change_mara():
 
 
 def report():
-    print(f'Gady {Hero.get_report_wildman(her.gady)}')
-    print(f'Gavr {Hero.get_report_wildman(her.gavr)}')
+    print(f'Gady {i_mess.report_wildman(hero=her.gady)}')
+    print(f'Gavr {i_mess.report_wildman(hero=her.gavr)}')
 
 
 def save_home_point():
     fun.selection_hero(show_name=False)
     adres = Hero.get_home_location(Activ.hero_activ)
-    mes = F'Твой адрес - {adres} .\n Сохранить новый адрес ?'
+    location = touring.loc_now()[0]
+    mes = F'Твой адрес - {adres} .\nНовый адрес {location}. Сохранить?'
     ansver = messagebox.askyesno(title='Паспортист ))', message=mes)
     if ansver:
         fun.selection_hero()
-        location = touring.loc_now()[0]
         Hero.seting_home(Activ.hero_activ, location)
-    # if her.Hero.get_qty_wildman(Activ.hero_activ) == 'x':
-    #     her.Hero.zero_wildman(Activ.hero_activ)
-    # her.Hero.app_wildman(Activ.hero_activ)
 
     displaying_values()
     print(f'{her.gady.home_location=}')

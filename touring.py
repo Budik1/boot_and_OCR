@@ -1,6 +1,7 @@
 from time import sleep, time
 
 import fun
+import heroes
 import my_color_text
 import station_master
 import baza_dannyx as b_d
@@ -173,7 +174,7 @@ def travel(track: list):
     return
 
 
-def move_to_target(*, target_point):
+def move_to_target(*, target_point, raport=True):
     """
     :param target_point: имя станции, например - 'ст. Чеховская'
     """
@@ -196,8 +197,8 @@ def move_to_target(*, target_point):
 
     # движение по маршруту
     travel(track=route_list)
-
-    print(f'Пришел на {target_point}')
+    if raport:
+        print(f'Пришел на {target_point}')
     return
 
 
@@ -354,13 +355,13 @@ list_road_names = create_new_list_only_name(massive=b_d.road_list)
 list_names_station = name_in_list(value=b_d.list_of_stations)
 
 
-def tasks_na_kievskoy():
-    """ С Фрунзенской на Киевскую,
+def for_wilds():
+    """ С домашней станции на Киевскую,
      задания на пули, потом на Университет,
      на черных крыс потратить остаток,
      и домой на Фрунзенскую.
     """
-    fun.my_print_to_file('touring.tasks_na_kievskoy')
+    fun.my_print_to_file('touring.for_wilds')
     fun.push_close_all_()
     # frunze_kiev()
     move_to_target(target_point='ст. Киевская')
@@ -374,39 +375,23 @@ def tasks_na_kievskoy():
     # univer_frunze()
     move_to_target(target_point='домой')
 
-def frunze_kiev():
-    """Маршрут Фрунзенская - Киевская"""
-    fun.my_print_to_file('touring.frunze_kiev')
-    fun.push_close_all_()
-    travel(b_d.frunze_kiev)
-    print("пришел на Киевскую")
 
 
-def univer_frunze():
-    fun.my_print_to_file('touring.univer_frunze')
 
-    fun.push_close_all_()
-    travel(b_d.univer_frunze)
-    print("пришел на Фрунзе")
-
-
-def kiev_univer():
-    fun.my_print_to_file('touring.kiev_univer')
-
-    fun.push_close_all_()
-    travel(b_d.kiev_univer)
-    print("пришел на Универ")
-
-
-def za_kikimorami():
+def for_kiki():
     """При смене станции прописки список содержащий маршрут надо переписывать вручную."""
-    fun.my_print_to_file('touring.za_kikimorami')
+    fun.my_print_to_file('touring.for_kiki')
 
     start_time = time()
     fun.push_close_all_()
 
-    travel(b_d.frunze_kikimory)
-
+    # travel(b_d.frunze_kikimory)
+    move_to_target(target_point='ст. Рижская')
+    move_to_target(target_point='ст. Тургеневская')
+    while heroes.Hero.get_qty_kiki(Activ.hero_activ) < 30:
+        move_to_target(target_point='ст. Рижская')
+        move_to_target(target_point='ст. Тургеневская')
+    move_to_target(target_point='домой')
     print('на сегодня кикиморы выбиты')
     finish_time = float(time() - start_time)  # общее количество секунд
     minutes = int(finish_time // 60)  # количество минут

@@ -41,7 +41,7 @@
 #
 #         ttk.Button(self, text="VIP", width=4, command=tent_inspection).place(x=b_d.vip_x - b_d.s, y=b_d.label_line0 - 3)
 #         ttk.Button(self, text="kiki", width=4, command=kiki).place(x=b_d.kiki_x - b_d.s, y=b_d.label_line0 - 3)
-#         ttk.Button(self, text="wild", width=4, command=tasks_na_kievskoy).place(x=b_d.wild_x - (b_d.s + 3),
+#         ttk.Button(self, text="wild", width=4, command=for_wilds).place(x=b_d.wild_x - (b_d.s + 3),
 #                                                                           y=b_d.label_line0 - 3)
 #
 #     def frunze_kiev(self):

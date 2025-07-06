@@ -2,7 +2,6 @@ import pickle
 import heroes as her
 from heroes import Activ
 from my_color_text import tc_green, tc_cyan, tc_blue, tc_red
-import fun
 
 
 def save_to_file(info=True):
@@ -83,6 +82,7 @@ def save_to_file(info=True):
     try:
         file1 = open('config.bin', 'wb')
         pickle.dump(data_to_save, file1)
+        file1.close()
     except FileNotFoundError:
         # Если файл не найден, выводим сообщение об ошибке
         print(tc_red(f"Файл  не найден!"))
@@ -92,12 +92,13 @@ def save_to_file(info=True):
     except Exception as e:
         # Обработка других неожиданных исключений
         print(tc_red(f"Произошла неожиданная ошибка: {e}"))
-    finally:
-        file1.close()
 
 
-def reading_file():
-    print(tc_green("чтение состояния"))
+
+
+def reading_file(*, info=True):
+    if info:
+        print(tc_green("чтение состояния"))
     file_name = 'config.bin'
     try:
         file1 = open(file_name, 'rb')
@@ -121,8 +122,8 @@ def reading_file():
         result = False, False
         save_to_file()
     finally:
-        print('???')
-        save_to_file()
+        # print('???')
+        save_to_file(info=False)
     return result
 
 
@@ -210,9 +211,9 @@ def setting_cumulative_values(loaded_data):
     her.veles.task_count = loaded_data['veles.task_count']
     her.mara.task_count = loaded_data['mara.task_count']
 
-    print(
-        f"gady {her.gady.wildman_days_count} {fun.transform_days(qty_days=her.gady.wildman_days_count)},"
-        f" {her.gady.wildman_count} {fun.transform_wilds(qty_days=her.gady.wildman_count)}")
-    print(
-        f'gavr {her.gavr.wildman_days_count} {fun.transform_days(qty_days=her.gavr.wildman_days_count)},'
-        f' {her.gavr.wildman_count} {fun.transform_wilds(qty_days=her.gavr.wildman_count)}')
+    # print(
+    #     f"gady {her.gady.wildman_days_count} {fun.transform_days(qty_days=her.gady.wildman_days_count)},"
+    #     f" {her.gady.wildman_count} {fun.transform_wilds(qty_days=her.gady.wildman_count)}")
+    # print(
+    #     f'gavr {her.gavr.wildman_days_count} {fun.transform_days(qty_days=her.gavr.wildman_days_count)},'
+    #     f' {her.gavr.wildman_count} {fun.transform_wilds(qty_days=her.gavr.wildman_count)}')
