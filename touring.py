@@ -211,23 +211,24 @@ def create_new_list_only_name(*, massive):
     new_list_road_name = []
     for i in range(len(massive)):
         # получаю списки содержащие дороги из списка дорог
-        new_list_road_name.append(name_in_list(value=massive[i]))
+        new_list_road_name.append(extraction_name_in_list(value=massive[i]))
     return new_list_road_name
 
 
-def name_in_list(*, value: list):
+def extraction_name_in_list(*, value: list):
     """ Получает список содержащий дорогу. Извлекает имена станций и помещает их в новый список. Возвращает список
     содержащий имена станций """
+
+    def extraction_name(*, variable):
+        return variable[0]
+
     list_name = []
     for name in value:
-        list_name.append(extraction_name(variable=name))
+        # list_name.append(extraction_name(variable=name))
+        list_name.append(name[0])
         # Перебирая полученный список пишет названия станций.
         # print(extraction_name(variable=name))
     return list_name
-
-
-def extraction_name(*, variable):
-    return variable[0]
 
 
 def loc_now():
@@ -252,8 +253,22 @@ def create_route_list(*, start: str, stop: str):
     """
     :param start: Имя станции
     :param stop: Имя станции
-    :return: список, который содержит маршрут
+    :return: готовый список содержащий полный маршрут
     """
+
+    def create_new_list_route(*, route_names: list):
+        """
+        Преобразование листа из имен для нахождения маршрута в готовый лист маршрута
+        :param route_names: лист маршрута из имен
+        :return: Готовый list маршрута
+        """
+        new_list_route = []
+        for name in route_names:
+            for i in range(len(b_d.list_of_stations)):
+                if name in b_d.list_of_stations[i]:
+                    new_list_route.append(b_d.list_of_stations[i])
+        return new_list_route
+    
     grand_road = list_road_names[0]
     road_start_point = name_belonging_to_the_list(item=start)
     road_stop_point = name_belonging_to_the_list(item=stop)
@@ -322,20 +337,6 @@ def create_route_list(*, start: str, stop: str):
     return create_new_list_route(route_names=full_route_names)
 
 
-def create_new_list_route(*, route_names: list):
-    """
-    Преобразование листа из имен для нахождения маршрута в готовый лист маршрута
-    :param route_names: лист маршрута из имен
-    :return: Готовый list маршрута
-    """
-    new_list_route = []
-    for name in route_names:
-        for i in range(len(b_d.list_of_stations)):
-            if name in b_d.list_of_stations[i]:
-                new_list_route.append(b_d.list_of_stations[i])
-    return new_list_route
-
-
 def name_belonging_to_the_list(*, item: str):
     """
     Определяет принадлежность имени к списку
@@ -352,7 +353,7 @@ def name_belonging_to_the_list(*, item: str):
 
 
 list_road_names = create_new_list_only_name(massive=b_d.road_list)
-list_names_station = name_in_list(value=b_d.list_of_stations)
+list_names_station = extraction_name_in_list(value=b_d.list_of_stations)
 
 
 def for_wilds():
@@ -374,8 +375,6 @@ def for_wilds():
     print('энергия исчерпана')
     # univer_frunze()
     move_to_target(target_point='домой')
-
-
 
 
 def for_kiki():

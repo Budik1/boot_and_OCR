@@ -7,15 +7,12 @@ import heroes
 
 
 def display_info_energy_all():
-    q_all_en_gady = heroes.gady.energy_count_all
-    q_all_en_gavr = heroes.gavr.energy_count_all
-    q_all_en_veles = heroes.veles.energy_count_all
-    q_all_en_mara = heroes.mara.energy_count_all
+    print()
     print('Всего израсходовано энергии')
-    print(f'Gady - {q_all_en_gady}')
-    print(f'Gavr - {q_all_en_gavr}')
-    print(f'Veles - {q_all_en_veles}')
-    print(f'Mara - {q_all_en_mara}')
+    print(f'    Gady - {heroes.gady.energy_count_all}')
+    print(f'    Gavr - {heroes.gavr.energy_count_all}')
+    print(f'    Veles - {heroes.veles.energy_count_all}')
+    print(f'    Mara - {heroes.mara.energy_count_all}')
     return
 
 

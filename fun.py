@@ -1,12 +1,12 @@
 import pyautogui
-from time import sleep, time
 import datetime
-from playsound3 import playsound
+from time import sleep, time
 
-import my_color_text as myCt
 import find_img
-import heroes as her
 import fun_down
+import heroes as her
+import sounds
+import my_color_text as myCt
 from heroes import Activ
 
 par_conf = 0.79
@@ -22,7 +22,7 @@ def locCenterImg(name_img, confidence=0.9, region: tuple[int, int, int, int] | N
 
 
 def mouse_left_click(*, pos):
-    playsound('sound/mouse-click.wav')
+    sounds.click_mouse()
     pyautogui.click(pos)
     pyautogui.hotkey('Ctrl')
 
@@ -49,17 +49,14 @@ def mouse_move(*, pos: tuple, speed=0.2, show=True):
     if show:
         pyautogui.moveTo(pos, duration=speed)
 
+
 class Mouse:
 
     @staticmethod
     def position_print():
-        # print('getInfo()')
-        # print()
-        # print(pyautogui.getInfo())
         print()
         print('position()')
         print(pyautogui.position())
-        # pyautogui.position()
 
     @staticmethod
     def move(*, pos: tuple, speed=0.2, show=True):
@@ -69,7 +66,7 @@ class Mouse:
 
     @staticmethod
     def left_click(*, pos):
-        playsound('sound/mouse-click.wav')
+        sounds.click_mouse()
         pyautogui.click(pos)
         pyautogui.hotkey('Ctrl')
         return
@@ -253,84 +250,6 @@ def bonus():
         print('Бонус не найден')
     # кнопка закрыть
     push_close_all_()
-
-
-def start_p_m():
-    my_print_to_file('fun.start_p_m')
-
-    def spec_proposal():
-        sz = 0
-        proposal = locCenterImg('img/spec_proposal.png', 0.96)
-        if proposal is not None:
-            s_p_close = locCenterImg('img/overall/s_p_close.png', 0.96)
-            while s_p_close is not None and sz <= 5:
-                sleep(2)
-                s_p_close = locCenterImg('img/overall/s_p_close.png', 0.96)
-                sz += 1
-            mouse_left_click(pos=s_p_close)
-
-    def authorization():  # авторизация при необходимости
-        sleep(2)
-        pos_authorization = locCenterImg('img/overall/authorization_button.png', 0.8)
-        if pos_authorization:
-            pyautogui.moveTo(pos_authorization, duration=1)
-            mouse_left_click(pos=pos_authorization)
-            sleep(2)
-
-    def click_my_game():
-        pos_my_game = locCenterImg('img/overall/my_game1.png', 0.8)
-        pos_my_game1 = locCenterImg('img/overall/my_game2.png', 0.8)
-        while pos_my_game is None and pos_my_game1 is None:
-            sleep(0.5)
-            pos_my_game = locCenterImg('img/overall/my_game1.png', 0.8)
-            pos_my_game1 = locCenterImg('img/overall/my_game2.png', 0.8)
-            print(pos_my_game, pos_my_game1, ' в ожидании появления кнопки "my_game"')
-        if pos_my_game:
-            pyautogui.moveTo(pos_my_game, duration=1)
-            mouse_left_click(pos=pos_my_game)
-            # print('pos_my_game ' + str(pos_my_game))
-        elif pos_my_game1:
-            pyautogui.moveTo(pos_my_game1, duration=1)
-            mouse_left_click(pos=pos_my_game1)
-
-    def click_icon_game():
-        p_i = 0
-        # sleep(2)
-        pos_icon_game = locCenterImg('img/overall/icon_game.png', 0.8)
-        while pos_icon_game is None and p_i <= 100:
-            p_i += 1
-            sleep(1)
-            pos_icon_game = locCenterImg('img/overall/icon_game.png', 0.8)
-        mouse_left_click(pos=pos_icon_game)
-        sleep(1)
-
-    def geography():
-        # уменьшение масштаба
-        pyautogui.hotkey('Ctrl', '-')
-        pyautogui.hotkey('Ctrl', '-')
-        # растягивание вверх
-        pyautogui.moveTo(670, 86, duration=1)
-        pyautogui.dragTo(670, 1, duration=1)
-        sleep(1)
-        # растягивание вниз
-        pyautogui.moveTo(670, 763, duration=1)
-        pyautogui.dragTo(670, 848, duration=1)
-
-        # смещение окна в лево на 382
-        pyautogui.moveTo(682, 11, duration=1)
-        pyautogui.dragTo(300, 11, duration=1)
-        # смещение ползунка на 45
-        slider = locCenterImg('img/overall/slider_v.png', 0.7)
-        if slider:
-            x, y = slider
-            pyautogui.moveTo(x, y, duration=1)
-            pyautogui.dragTo(x, y + 45, duration=1)
-
-    # authorization()
-    click_my_game()
-    click_icon_game()
-    geography()
-    spec_proposal()
 
 
 def move_friends_list_left():
@@ -609,7 +528,7 @@ def selection_hero(*, show_name=True):
         print(myCt.tc_red("Невозможно опознать героя (("))
         hero = None
         Activ.hero_activ = None
-
+    # bac_color()
     return hero
 
 
@@ -673,6 +592,7 @@ def extraction_digit(*, item):
     dig = int(''.join(c if c.isdigit() else ' ' for c in item))
     return dig
 
+
 def ac():
     pos_my = find_img.find_my_game2()
     while not pos_my:
@@ -682,3 +602,8 @@ def ac():
     y -= 50
     mouse_move_to_click(pos_click=(x, y), move_time=0.3, z_p_k=0.2)
 
+# def bac_color():
+#     her.gady.get_bac_color()
+#     her.gavr.get_bac_color()
+#     her.veles.get_bac_color()
+#     her.mara.get_bac_color()

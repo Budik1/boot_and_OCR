@@ -1,5 +1,7 @@
 import pyautogui
+
 import fun
+import sounds
 import find_img as find
 from time import sleep
 
@@ -555,9 +557,6 @@ def dress():
 
 
 def dress_region():
-    """
-    образец для подражания ))
-    """
     name_create_img = 'img/person/dress/region shoes.png'
     show_move = True
     pos_start = find.find_exit_person()
@@ -587,8 +586,37 @@ def dress_region():
     fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'{name_create_img}')
     fun.mouse_move(pos=pos)
+
     print('ok')
 
+def no_energy():
+    name_create_img = 'img/station_master/energy_indicator/no_energy.png'
+    show_move = True
+    pos_start = find.find_station_master()
+    # показать привязку
+    fun.mouse_move(pos=pos_start, speed=1)
+    # найдем верхний угол
+    x, y = pos_start
+    x += 270
+    y += 455 + 7
+    top_pos = x, y
+    print('место')
+    fun.mouse_move(pos=top_pos, speed=1, show=show_move)
+    # # найдем нижний угол
+    x_demo, y_demo = x, y
+    change_x = 59
+    change_y = 41
+    # # print(f'регион ({top_pos[0] - pos_start[0]}, {top_pos[1] - pos_start[1]}, {change_x}, {change_y})')
+    x_demo += change_x
+    y_demo += change_y
+    fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
 
-dress_region()
+    fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
+    pos = fun.locCenterImg(f'{name_create_img}')
+    fun.mouse_move(pos=pos)
+
+    print(f'файл {name_create_img} создан')
+
+# no_energy()
+# dress_region()
 # dress()

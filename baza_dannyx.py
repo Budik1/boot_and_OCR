@@ -24,7 +24,7 @@ st_pavelec_g = ['ст. Павелецкая(Г)', 'img/tonelli/map_item/k_Pavele
 st_park_g = ['ст. Парк культуры(Г)', 'img/tonelli/map_item/k_Park_ganza.png',
              'img/tonelli/id_stations/s_Park_ganza.png', 0, [0]]
 st_park_kr = ['ст. Парк культуры(КР)', 'img/tonelli/map_item/k_Park_kr.png', 'img/tonelli/id_stations/s_Park_kr.png', 0,
-              []]
+              ['t1.png', 't2.png', 't2.png', 't3.png', 't3.png', 't4.png']]
 st_polyanka = ['ст. Полянка', 'img/tonelli/map_item/k_Polyanka.png', 'img/tonelli/id_stations/s_Polyanka.png', 0, []]
 st_prospekt = ['ст. Проспект мира', 'img/tonelli/map_item/k_Prospekt.png', 'img/tonelli/id_stations/s_Prospekt.png', 0,
                []]

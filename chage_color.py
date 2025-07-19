@@ -1,15 +1,16 @@
 from tkinter import *
 
-index = 0
+import fun
+
 
 
 def changeColor():
-    global index
-    if index % 2 == 0:
+    her = fun.selection_hero()
+
+    if her == 'Gady':
         label.configure(bg="purple")
     else:
         label.configure(bg="blue")
-    index += 1
 
 
 root = Tk()

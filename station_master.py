@@ -8,7 +8,7 @@ import solid_memory
 import my_color_text as myCt
 from heroes import Hero, Activ
 import heroes as her
-import info_messages as i_mess
+import complex_phrases as i_mess
 
 conf_ = 0.95
 par_conf = 0.799
@@ -24,7 +24,42 @@ def wait_skip_battle_button():
         skip_battle = find.find_skip_battle()
 
 
-def enemy_battle(prolong_=2, dog_activ=True, add_up=True, count_task=False, arena=False):
+def mob_mob_identified():
+    grey_rat = ['name1_grey_rat', 'grey rat']
+    white_rat = ['name1_white_rat', 'white_rat']
+    black_rat = ['name1_black_rat', 'black_rat']
+    sand_rat = ['name1_sand_rat', 'sand_rat']
+    spy = ['name2_spy', 'spy']
+    smuggler = ['name3_smuggler', 'smuggler']
+    arachne = ['name4_arachne', 'arachne']
+    wildman = ['name5_wildman', 'wildman']
+    kikimora = ['name6_kikimora', 'kikimora']
+    raptor = ['name7_raptor', 'raptor']
+    list_mob = [grey_rat, white_rat, black_rat, sand_rat, spy,
+                smuggler, arachne, wildman, kikimora, raptor]
+    mob, name = False, False
+    for mob, name in list_mob:
+        mob_png = f'img/tonelli/mobi/{mob}.png'
+        mob_id = fun.locCenterImg(mob_png)
+        if mob_id:
+            break
+    return  mob, name
+
+
+def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, count_task=False, arena=False):
+    """
+    s
+
+    Args:
+        prolong_ (float, optional): коэффициент задержки для задержки нажатия "пропустить бой" . Defaults to 2.0.
+        dog_activ (bool, optional): активация питомца. Defaults to True.
+        add_up (bool, optional): _description_. Defaults to True.
+        count_task (bool, optional): _description_. Defaults to False.
+        arena (bool, optional): _description_. Defaults to False.
+
+    Returns:
+        _type_: _description_
+    """
     fun.my_print_to_file('station_master.enemy_battle()')
     fun.my_print_to_file(' поиск battle_end, skip_battle, dog')
 
@@ -52,6 +87,7 @@ def enemy_battle(prolong_=2, dog_activ=True, add_up=True, count_task=False, aren
     count_mob_identified = 0
     cycle = True
     result = None
+    count_task_now = 0
     if not arena:
         count_task_now = Hero.get_task_count(Activ.hero_activ)
 
@@ -255,7 +291,7 @@ def press_en(*, task_number, pos, value_energy):
 
         if Hero.get_qty_wildman(Activ.hero_activ) == 'x':
             Hero.zero_wildman(Activ.hero_activ)
-        
+
         print(Hero.get_report_wildman_now(Activ.hero_activ))
         if Hero.get_wildman_count(Activ.hero_activ) != 0:
             print(i_mess.report_wildman(hero=Activ.hero_activ))

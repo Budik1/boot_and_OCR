@@ -218,3 +218,7 @@ def find_exit_person():
 def find_low_energy_label():
     pos = fund.locateCenterImg(name_img='img/station_master/energy_indicator/low_energy_label.png', confidence=0.8)
     return pos
+
+def find_no_energy():
+    pos = fund.locateCenterImg(name_img='img/station_master/energy_indicator/no_energy.png')
+    return pos

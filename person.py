@@ -201,5 +201,10 @@ def change_acc(*, change_hero_name):
         x, y = slider
         fun.Mouse.move(pos=slider, speed=move_time)
         # pyautogui.dragTo(x, y + 45, duration=1)
-        fun.Mouse.take_drag_drop_y(pos_take=slider, dist=45, speed=1)
-    print('смена героя проведена')
+        fun.Mouse.take_drag_drop_y(pos_take=slider, dist=44, speed=1)
+    pos_info = find_img.find_info()
+    while not pos_info:
+        pos_info = find_img.find_info()
+    hero_name = fun.selection_hero(show_name=False)
+    print(f'{hero_name} активен')
+    return hero_name

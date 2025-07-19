@@ -216,48 +216,51 @@ def collecting_gifts_at_stations():
     displaying_values()
 
 
-def changeColor(*, her_active):
-    if her_active == 'Gady':
-        label_1.configure(background="yellow")
-    else:
-        label_1.configure(background='white')
-    if her_active == 'Gavr':
-        label_2.configure(background="yellow")
-    else:
-        label_2.configure(background='white')
-    if her_active == 'Велес':
-        label_3.configure(background="yellow")
-    else:
-        label_3.configure(background='white')
-    if her_active == 'Mara':
-        label_4.configure(background="yellow")
-    else:
-        label_4.configure(background='white')
+def changeColor():
+    pass
+     # if her == 'Gady':
+     #        label_1.configure(bg="purple")
+     #        it1_stat.set(her)
+     #    else:
+     #        label_1.configure(bg="white")
+     #        it1_stat.set('')
+     #    if her == 'Gavr':
+     #        label_2.configure(bg="purple")
+     #        it2_stat.set(her)
+     #    else:
+     #        label_2.configure(bg="white")
+     #        it2_stat.set('')
+     #    if her == 'Велес':
+     #        label_3.configure(bg="purple")
+     #        it3_stat.set(her)
+     #    else:
+     #        label_3.configure(bg="white")
+     #        it3_stat.set('')
+     #    if her == 'Mara':
+     #        label_4.configure(bg="purple")
+     #        it4_stat.set(her)
+     #    else:
+     #        label_4.configure(bg="white")
+     #        it4_stat.set('')
 
 def change_gady():
     person.change_acc(change_hero_name='gady')
     displaying_values(info=False)
-    changeColor(her_active=fun.selection_hero(show_name=False))
 
 
 def change_gavr():
     person.change_acc(change_hero_name='gavr')
     displaying_values(info=False)
-    changeColor(her_active=fun.selection_hero(show_name=False))
 
 
 def change_veles():
     person.change_acc(change_hero_name='veles')
     displaying_values(info=False)
-    changeColor(her_active=fun.selection_hero(show_name=False))
-
 
 
 def change_mara():
     person.change_acc(change_hero_name='mara')
     displaying_values(info=False)
-    changeColor(her_active=fun.selection_hero(show_name=False))
-
 
 
 def report_w():
@@ -372,23 +375,16 @@ ttk.Button(text="Мара", width=5, command=change_mara).place(x=0, y=b_d.mara_
 ttk.Button(text="VIP", width=4, command=tent_inspection).place(x=b_d.vip_x - b_d.s, y=b_d.label_line0 - 3)
 ttk.Button(text="kiki", width=4, command=kiki).place(x=b_d.kiki_x - b_d.s, y=b_d.label_line0 - 3)
 ttk.Button(text="wild", width=4, command=tasks_na_kievskoy).place(x=b_d.wild_x - (b_d.s + 3), y=b_d.label_line0 - 3)
-w_l = 3
+
 # блок инфо строк
-label_1 = ttk.Label()
-label_1.configure(textvariable=gady_vip, width=w_l)
-label_1.place(x=b_d.vip_x, y=b_d.gady_y)
 
-label_2 = ttk.Label()
-label_2.configure(textvariable=gavr_vip, width=w_l)
-label_2.place(x=b_d.vip_x, y=b_d.gavr_y)
+ttk.Label(textvariable=gady_vip, background=her.gady.bac_color).place(x=b_d.vip_x, y=b_d.gady_y)
 
-label_3 =ttk.Label()
-label_3.configure(textvariable=veles_vip, width=w_l)
-label_3.place(x=b_d.vip_x, y=b_d.veles_y)
+ttk.Label(textvariable=gavr_vip, background=her.gavr.bac_color).place(x=b_d.vip_x, y=b_d.gavr_y)
 
-label_4 = ttk.Label()
-label_4.configure(textvariable=mara_vip, width=w_l)
-label_4.place(x=b_d.vip_x, y=b_d.mara_y)
+ttk.Label(textvariable=veles_vip, background=her.veles.bac_color).place(x=b_d.vip_x, y=b_d.veles_y)
+
+ttk.Label(textvariable=mara_vip, background=her.mara.bac_color).place(x=b_d.vip_x, y=b_d.mara_y)
 
 ttk.Label(text='|').place(x=b_d.separator_1, y=b_d.gady_y)
 ttk.Label(text='|').place(x=b_d.separator_1, y=b_d.gavr_y)
