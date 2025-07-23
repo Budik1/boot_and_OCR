@@ -120,8 +120,6 @@ class Hero:
     def get_task_count(self):
         return self.task_count
 
-
-
     def get_report_wildman_now(self):
         if self.wildman:
             return f'{myCt.tc_yellow(str(self.wildman))} {myCt.tc_green("за сегодня")}'
@@ -172,16 +170,6 @@ class Hero:
 
     def get_hero_name_in_file(self):
         return self.name_file
-
-    # def get_bac_color(self):
-    #     # print(f'{self.name_en}')
-    #     # print(f'{Hero.get_name_en(Activ.hero_activ)}')
-    #     if Hero.get_name_en(Activ.hero_activ) == self.name_en:
-    #         self.bac_color = '#87CEFA'
-    #         # print(f'{self.name_en} color hange')
-    #     else:
-    #         self.bac_color = '#FFFFFF'
-    #     return self.bac_color
 
     #
     def duel_kv(self):

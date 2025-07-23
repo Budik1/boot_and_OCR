@@ -8,11 +8,11 @@ import heroes
 
 def display_info_energy_all():
     print()
-    print('Всего израсходовано энергии')
-    print(f'    Gady - {heroes.gady.energy_count_all}')
-    print(f'    Gavr - {heroes.gavr.energy_count_all}')
-    print(f'    Veles - {heroes.veles.energy_count_all}')
-    print(f'    Mara - {heroes.mara.energy_count_all}')
+    print('Расход энергии')
+    print(f'    Gady:   сегодня-{heroes.gady.energy_count_today},    всего-{heroes.gady.energy_count_all}')
+    print(f'    Gavr:   сегодня-{heroes.gavr.energy_count_today},    всего-{heroes.gavr.energy_count_all}')
+    print(f'    Veles:  сегодня-{heroes.veles.energy_count_today},    всего-{heroes.veles.energy_count_all}')
+    print(f'    Mara:   сегодня-{heroes.mara.energy_count_today},    всего-{heroes.mara.energy_count_all}')
     return
 
 
@@ -22,10 +22,34 @@ def display_home_location_hero(*, her):
     return home_location
 
 
+def display_report_wildman():
+    print()
+    print(f'Gady: {report_wildman(hero=heroes.gady)}')
+    print(f'Gavr: {report_wildman(hero=heroes.gavr)}')
+    print(f'Велес:  {report_wildman(hero=heroes.veles)}')
+    return
+
+def smol_report_wildman():
+    print(
+        f"gady {heroes.gady.wildman_days_count} {fun.transform_days(qty_days=heroes.gady.wildman_days_count)},"
+        f" {heroes.gady.wildman_count} {fun.transform_wilds(qty_days=heroes.gady.wildman_count)}")
+
+    print(
+        f'gavr {heroes.gavr.wildman_days_count} {fun.transform_days(qty_days=heroes.gavr.wildman_days_count)},'
+        f' {heroes.gavr.wildman_count} {fun.transform_wilds(qty_days=heroes.gavr.wildman_count)}')
+
+    print(
+        f'veles {heroes.veles.wildman_days_count} {fun.transform_days(qty_days=heroes.veles.wildman_days_count)},'
+        f' {heroes.veles.wildman_count} {fun.transform_wilds(qty_days=heroes.veles.wildman_count)}')
+
+    print(
+        f'mara {heroes.mara.wildman_days_count} {fun.transform_days(qty_days=heroes.mara.wildman_days_count)},'
+        f' {heroes.mara.wildman_count} {fun.transform_wilds(qty_days=heroes.mara.wildman_count)}')
+
+
 def report_wildman(*, hero):
     # 'За ''3'' дня ''4'' шт.
-    # Это 7 эн на 1го'
-    # На Х заданий потрачено ХХХ ед энергии
+    # Всего потрачено ХХХ единиц энергии
     text_11 = myCt.tc_green('За ')  # 'За '
     days_all_count = myCt.tc_cyan(str(heroes.Hero.get_days_count_wildman(hero)))  # '3'
     text_12 = myCt.tc_green(f' {fun.transform_days(qty_days=heroes.Hero.get_days_count_wildman(hero))} ')  # ' дня '
@@ -33,12 +57,11 @@ def report_wildman(*, hero):
     text_13 = myCt.tc_green(' шт.')  # ' шт.'
     phrase1 = f'{text_11}{days_all_count}{text_12}{wildman_all_count}{text_13}'
 
-    text_21 = myCt.tc_green('На ')  # 'На '
-    all_task_count = myCt.tc_yellow(f'{heroes.Hero.get_task_count(hero)}')  # '10'
-    text_22 = myCt.tc_green(' заданий потрачено ')  # ' заданий потрачено '
+
+    text_22 = myCt.tc_green('Всего потрачено ')  # 'Потрачено '
     all_energy_count = myCt.tc_yellow(f'{heroes.Hero.get_energy_count_all(hero)}')  # 'XXX'
     text_23 = myCt.tc_green(' единиц энергии')
-    phrase2 = f'{text_21}{all_task_count}{text_22}{all_energy_count}{text_23}'
+    phrase2 = f'{text_22}{all_energy_count}{text_23}'
 
     # количество энергии на одного
     text_31 = myCt.tc_green(' Это ')

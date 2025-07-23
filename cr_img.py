@@ -1,5 +1,6 @@
 import pyautogui
 
+import find_img
 import fun
 import sounds
 import find_img as find
@@ -351,9 +352,9 @@ def mob_foto(name):
         cor_y = 130 - 16
         x_cor = x_f + cor_x
         y_cor = y_f + cor_y
-        # pyautogui.moveTo(x_cor, y_cor, duration=1)
-        # fun.foto(f'img/tonelli/mobi/mobi_{name}.png', (x_f, y_f, cor_x, cor_y))
-        # print(f'foto mobi_{name} сделан')
+        pyautogui.moveTo(x_cor, y_cor, duration=1)
+        fun.foto(f'img/tonelli/mobi/mobi_{name}.png', (x_f, y_f, cor_x, cor_y))
+        print(f'foto mobi_{name} сделан')
 
 
 def mob_name(name):
@@ -398,6 +399,10 @@ def mob_id(name):
     # 5 дикарь *
     name_wildman = fun.locCenterImg('img/tonelli/mobi/name5_wildman.png', confidence=con)
     mobi_wildman = fun.locCenterImg('img/tonelli/mobi/mobi5_wildman.png', confidence=con)
+    # 6 кикимора *
+    name_kiki = find_img.find_name_kikimora()
+    mobi_kiki = fun.locCenterImg('img/tonelli/mobi/mobi_kikimora.png', confidence=con)
+
     # 7 ящер *
     name_raptor = fun.locCenterImg('img/tonelli/mobi/name7_raptor.png', confidence=con)
     mobi_raptor = fun.locCenterImg('img/tonelli/mobi/mobi7_raptor.png', confidence=con)
@@ -442,7 +447,7 @@ def mob_id(name):
             mob_foto(name)
         if not name_black_rat:
             mob_name(name)
-
+    # 5 дикарь *
     if mobi_wildman or name_wildman:
         if mobi_wildman and name_wildman:
             fun.mouse_move(pos=mobi_wildman, speed=0.5)
@@ -452,6 +457,17 @@ def mob_id(name):
         if not mobi_wildman:
             mob_foto(name)
         if not name_wildman:
+            mob_name(name)
+    # 6 кикимора *
+    if mobi_kiki or name_kiki:
+        if mobi_kiki and name_kiki:
+            fun.mouse_move(pos=mobi_wildman, speed=0.5)
+            fun.mouse_move(pos=name_wildman, speed=0.5)
+            print('кикимора пойман')
+            return
+        if not mobi_kiki:
+            mob_foto(name)
+        if not name_kiki:
             mob_name(name)
     # 7 ящер
     if mobi_raptor or name_raptor:
@@ -525,7 +541,7 @@ def my_game():
 
 def dress():
     """
-    образец для подражания ))
+    образец
     """
     name_create_img = 'img/person/dress/slots/jacket_point.png'
     show_move = False
@@ -553,7 +569,9 @@ def dress():
     fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'{name_create_img}')
     fun.mouse_move(pos=pos)
+    sounds.sound_vic()
     print('ok')
+    return
 
 
 def dress_region():
@@ -614,8 +632,9 @@ def no_energy():
     fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'{name_create_img}')
     fun.mouse_move(pos=pos)
-
+    sounds.sound_vic()
     print(f'файл {name_create_img} создан')
+
 
 # no_energy()
 # dress_region()

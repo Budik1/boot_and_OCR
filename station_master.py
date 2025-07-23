@@ -2,7 +2,7 @@
 import baza_dannyx as b_d
 from time import sleep
 import fun
-import find_img as find
+import find_img
 import create_and_analiz_img
 import solid_memory
 import my_color_text as myCt
@@ -17,11 +17,16 @@ energy_availability = 1
 number_tasks = 1
 variable = None
 
+find = {
+    'name': 'def',
+    'name_kikimora': find_img.find_name_kikimora(),
+}
+
 
 def wait_skip_battle_button():
-    skip_battle = find.find_skip_battle()
+    skip_battle = find_img.find_skip_battle()
     while not skip_battle:
-        skip_battle = find.find_skip_battle()
+        skip_battle = find_img.find_skip_battle()
 
 
 def mob_mob_identified():
@@ -77,7 +82,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, count_task=False, ar
     name3_smuggler = fun.locCenterImg(name_img='img/tonelli/mobi/name3_smuggler.png', confidence=conf_mobs)
     name4_arachne = fun.locCenterImg(name_img='img/tonelli/mobi/name4_arachne.png', confidence=conf_mobs)
     name5_wildman = fun.locCenterImg(name_img='img/tonelli/mobi/name5_wildman.png', confidence=conf_mobs)
-    name6_kikimora = fun.locCenterImg(name_img='img/tonelli/mobi/name6_kikimora.png', confidence=conf_mobs)
+    name6_kikimora = find_img.find_name_kikimora()
     name7_raptor = fun.locCenterImg(name_img='img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
 
     duration_fight = 0
@@ -197,7 +202,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, count_task=False, ar
                 name3_smuggler = fun.locCenterImg(name_img='img/tonelli/mobi/name3_smuggler.png', confidence=conf_mobs)
                 name4_arachne = fun.locCenterImg(name_img='img/tonelli/mobi/name4_arachne.png', confidence=conf_mobs)
                 name5_wildman = fun.locCenterImg(name_img='img/tonelli/mobi/name5_wildman.png', confidence=conf_mobs)
-                name6_kikimora = fun.locCenterImg(name_img='img/tonelli/mobi/name6_kikimora.png', confidence=conf_mobs)
+                name6_kikimora = find_img.find_name_kikimora()
                 name7_raptor = fun.locCenterImg(name_img='img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
         if dog_activ:
             if dog and dog_count:
@@ -229,7 +234,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, count_task=False, ar
         name3_smuggler = fun.locCenterImg(name_img='img/tonelli/mobi/name3_smuggler.png', confidence=conf_mobs)
         name4_arachne = fun.locCenterImg(name_img='img/tonelli/mobi/name4_arachne.png', confidence=conf_mobs)
         name5_wildman = fun.locCenterImg(name_img='img/tonelli/mobi/name5_wildman.png', confidence=conf_mobs)
-        name6_kikimora = fun.locCenterImg(name_img='img/tonelli/mobi/name6_kikimora.png', confidence=conf_mobs)
+        name6_kikimora = find_img.find_name_kikimora()
         name7_raptor = fun.locCenterImg(name_img='img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
 
         dog = fun.locCenterImg('img/dog.png', confidence=par_conf)
@@ -270,7 +275,7 @@ def press_en(*, task_number, pos, value_energy):
     # print('тут должен быть клик')         # для отладки раскомментировать
     fun.mouse_move_to_click(pos_click=pos_clik, move_time=0.4, z_p_k=1.5)  # для отладки закомментировать
     sleep(0.5)
-    low_energy = find.find_low_energy_label()
+    low_energy = find_img.find_low_energy_label()
     if not low_energy:
         vers_in_print = "" if conf_ == 0.95 else f', conf_={conf_}'
         Hero.app_task_count(Activ.hero_activ)

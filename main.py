@@ -5,6 +5,7 @@ from PIL import ImageTk
 from time import time
 
 import fun
+import heroes
 import station_master
 import kv_and_raid
 import touring
@@ -14,7 +15,7 @@ import baza_dannyx as b_d
 import solid_memory
 import different_events
 import heroes as her
-import complex_phrases as i_mess
+import complex_phrases
 from heroes import Hero, Activ
 from event_arena import create_img_arena_object, kill
 from my_color_text import tc_red
@@ -34,8 +35,8 @@ def start_prog():
     if state_file:
         # print(tc_green('установка значений из файла'))
         try:
-            solid_memory.setting_cumulative_values(data_to_load)
             solid_memory.setting_updatable_values(data_to_load)
+            solid_memory.setting_cumulative_values(data_to_load)
         except KeyError:
             print(tc_red('KeyError'))
         except Exception as cod:
@@ -43,6 +44,9 @@ def start_prog():
         displaying_values(info=False)
     else:
         displaying_values()
+    complex_phrases.smol_report_wildman()
+    complex_phrases.display_info_energy_all()
+    return 
 
 
 def displaying_values(info=True):
@@ -261,10 +265,8 @@ def change_mara():
 
 
 def report_w():
-    print()
-    print(f'Gady {i_mess.report_wildman(hero=her.gady)}')
-    print(f'Gavr {i_mess.report_wildman(hero=her.gavr)}')
-
+    complex_phrases.display_report_wildman()
+#
 
 def save_home_point():
     fun.selection_hero(show_name=False)
@@ -331,10 +333,9 @@ gady_wild = StringVar()
 mara_wild = StringVar()
 veles_wild = StringVar()
 
-
-boxlist = touring.list_names_station
-boxlist.insert(0, 'домой')
-lang_var = StringVar(value=boxlist[0])
+box_paths = touring.list_names_station
+box_paths.insert(0, 'домой')
+lang_var = StringVar(value=box_paths[0])
 
 # -------------------------------------------------------------
 start_prog()
@@ -348,21 +349,19 @@ ttk.Button(text="wild+kiki", width=9, command=wild_kiki).place(x=115, y=b_d.line
 ttk.Button(text="обход всех станций", width=17, command=collecting_gifts_at_stations).place(x=205, y=b_d.line6)
 
 ttk.Button(text='Save', width=8, command=displaying_values).place(x=115, y=b_d.line7)
-ttk.Button(text='рапорт E', width=8, command=i_mess.display_info_energy_all).place(x=200, y=b_d.line7)
-ttk.Button(text='рапорт W', width=8, command=report_w).place(x=285, y=b_d.line7)
+ttk.Button(text='рапорт E', width=8, command=complex_phrases.display_info_energy_all).place(x=200, y=b_d.line7)
+ttk.Button(text='рапорт W', width=8, command=complex_phrases.display_report_wildman).place(x=285, y=b_d.line7)
 
-ttk.Label(text='            куда пойдем ?', width=21, background='#858585', foreground='#050505').place(x=144,
+ttk.Label(text='            куда пойдем ?', width=21, background='#858585', foreground='#050505').place(x=156,
                                                                                                         y=b_d.line8)
 
-combobox = ttk.Combobox(textvariable=lang_var, values=boxlist, state="readonly", width=25)
-combobox.place(x=117, y=b_d.line9)
+combobox = ttk.Combobox(textvariable=lang_var, values=box_paths, state="readonly", width=23)
+combobox.place(x=138, y=b_d.line9)
 combobox.bind("<<ComboboxSelected>>", get_target)
-ttk.Button(text='S_H', width=4, command=save_home_point).place(x=63, y=b_d.line9 - 2)
+ttk.Button(text='Паспортист', width=14, command=save_home_point).place(x=0, y=b_d.line9 - 2)
 
 ttk.Button(text="фото противника", width=15, command=create_img_arena_object).place(x=0, y=b_d.line10)
 ttk.Button(text="атака противника", width=15, command=kill).place(x=225, y=b_d.line10)
-# ttk.Button(text='Проверка', width=8, command=fun.verifi_img).place(x=144, y=b_d.line10)
-ttk.Button(text='Где я ?', width=8, command=touring.loc_now).place(x=144, y=b_d.line10)
 
 ttk.Button(text="Gady", width=5, command=change_gady).place(x=0, y=b_d.gady_y)
 ttk.Button(text="Gavr", width=5, command=change_gavr).place(x=0, y=b_d.gavr_y)
@@ -459,8 +458,8 @@ ttk.Label(textvariable=veles_wild).place(x=b_d.wild_x, y=b_d.veles_y)
 ttk.Label(textvariable=mara_wild).place(x=b_d.wild_x, y=b_d.mara_y)
 
 # блок выбора заданий
-difference_str_img = 11
-line_img = b_d.line5 + 15
+difference_str_img = 8
+line_img = b_d.line5 + 5
 imagePul = ImageTk.PhotoImage(file="img/overall/pulya.png")
 ttk.Button(root, image=imagePul, command=puli).place(x=56, y=line_img + 15)
 img_e1 = ImageTk.PhotoImage(file="img/overall/en1v3.png")

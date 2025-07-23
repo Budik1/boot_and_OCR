@@ -21,15 +21,16 @@ def get_screenshot_task():
     tune_y = 1  #
     tune_s = 21  # 21 с увеличением регион уменьшается
     tune_v = 1  #
-    region1_pul, region2_pul, region3_pul, region1_xp, region2_xp, region3_xp = fun.get_areas_task_small()
+    # скрины маленькие
+    # region1_pul, region2_pul, region3_pul, region1_xp, region2_xp, region3_xp = fun.get_areas_task_small()
+    # foto_pos(region1_pul, tune_x, tune_y, tune_s, tune_v, 'img/test/test_tasks/1_pul.png')
+    # foto_pos(region2_pul, tune_x, tune_y, tune_s, tune_v, 'img/test/test_tasks/2_pul.png')
+    # foto_pos(region3_pul, tune_x, tune_y, tune_s, tune_v, 'img/test/test_tasks/3_pul.png')
+    # foto_pos(region1_xp, tune_x, tune_y, tune_s, tune_v, "img/test/test_tasks/1_xp.png")
+    # foto_pos(region2_xp, tune_x, tune_y, tune_s, tune_v, 'img/test/test_tasks/2_xp.png')
+    # foto_pos(region3_xp, tune_x, tune_y, tune_s, tune_v, 'img/test/test_tasks/3_xp.png')
+    # скрины большие
     region1_big, region2_big, region3_big = fun.get_areas_task_big()
-    foto_pos(region1_pul, tune_x, tune_y, tune_s, tune_v, 'img/test/test_tasks/1_pul.png')
-    foto_pos(region2_pul, tune_x, tune_y, tune_s, tune_v, 'img/test/test_tasks/2_pul.png')
-    foto_pos(region3_pul, tune_x, tune_y, tune_s, tune_v, 'img/test/test_tasks/3_pul.png')
-    foto_pos(region1_xp, tune_x, tune_y, tune_s, tune_v, "img/test/test_tasks/1_xp.png")
-    foto_pos(region2_xp, tune_x, tune_y, tune_s, tune_v, 'img/test/test_tasks/2_xp.png')
-    foto_pos(region3_xp, tune_x, tune_y, tune_s, tune_v, 'img/test/test_tasks/3_xp.png')
-    # скрины
     foto_pos(region1_big, tune_x, tune_y, tune_s, tune_v, "img/test/test_tasks/big_1.png")
     foto_pos(region2_big, tune_x, tune_y, tune_s, tune_v, "img/test/test_tasks/big_2.png")
     foto_pos(region3_big, tune_x, tune_y, tune_s, tune_v, "img/test/test_tasks/big_3.png")

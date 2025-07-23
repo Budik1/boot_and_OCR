@@ -1,4 +1,7 @@
 import pickle
+
+import fun
+import complex_phrases
 import heroes as her
 from heroes import Activ
 from my_color_text import tc_green, tc_cyan, tc_blue, tc_red
@@ -69,15 +72,23 @@ def save_to_file(info=True):
         #
         'gady.wildman_all': her.gady.wildman_count,
         'gavr.wildman_all': her.gavr.wildman_count,
+        'veles.wildman_all': her.veles.wildman_count,
+        'mara.wildman_all': her.mara.wildman_count,
         #
         'gady.days_counting': her.gady.wildman_days_count,
         'gavr.days_counting': her.gavr.wildman_days_count,
+        'veles.days_counting': her.veles.wildman_days_count,
+        'mara.days_counting': her.mara.wildman_days_count,
         #
         'gady.completing_tasks': her.gady.completing_tasks,
         'gavr.completing_tasks': her.gavr.completing_tasks,
+        'veles.completing_tasks': her.veles.completing_tasks,
+        'mara.completing_tasks': her.mara.completing_tasks,
         #
         'gady.wild_activ': her.gady.wild_activ,
         'gavr.wild_activ': her.gavr.wild_activ,
+        'veles.wild_activ': her.veles.wild_activ,
+        'mara.wild_activ': her.mara.wild_activ,
     }
     try:
         file1 = open('config.bin', 'wb')
@@ -142,9 +153,13 @@ def setting_updatable_values(loaded_data):
 
         her.gady.wild_activ = loaded_data['gady.wild_activ']
         her.gavr.wild_activ = loaded_data['gavr.wild_activ']
+        her.veles.wild_activ = loaded_data['veles.wild_activ']
+        her.mara.wild_activ = loaded_data['mara.wild_activ']
 
         her.gavr.completing_tasks = loaded_data['gavr.completing_tasks']
         her.gady.completing_tasks = loaded_data['gady.completing_tasks']
+        her.veles.completing_tasks = loaded_data['veles.completing_tasks']
+        her.mara.completing_tasks = loaded_data['mara.completing_tasks']
 
         her.gavr.vip = loaded_data['gavr_vip']
         her.gady.vip = loaded_data['gady_vip']
@@ -202,18 +217,17 @@ def setting_cumulative_values(loaded_data):
     # кол-во дикарей
     her.gady.wildman_count = loaded_data['gady.wildman_all']
     her.gavr.wildman_count = loaded_data['gavr.wildman_all']
+    her.veles.wildman_count = loaded_data['veles.wildman_all']
+    her.mara.wildman_count = loaded_data['mara.wildman_all']
     # кол-во дней учета дикарей
     her.gady.wildman_days_count = loaded_data['gady.days_counting']
     her.gavr.wildman_days_count = loaded_data['gavr.days_counting']
+    her.veles.wildman_days_count = loaded_data['veles.days_counting']
+    her.mara.wildman_days_count = loaded_data['mara.days_counting']
     # кол-во выполненных заданий
     her.gady.task_count = loaded_data['gady.task_count']
     her.gavr.task_count = loaded_data['gavr.task_count']
     her.veles.task_count = loaded_data['veles.task_count']
     her.mara.task_count = loaded_data['mara.task_count']
 
-    # print(
-    #     f"gady {her.gady.wildman_days_count} {fun.transform_days(qty_days=her.gady.wildman_days_count)},"
-    #     f" {her.gady.wildman_count} {fun.transform_wilds(qty_days=her.gady.wildman_count)}")
-    # print(
-    #     f'gavr {her.gavr.wildman_days_count} {fun.transform_days(qty_days=her.gavr.wildman_days_count)},'
-    #     f' {her.gavr.wildman_count} {fun.transform_wilds(qty_days=her.gavr.wildman_count)}')
+

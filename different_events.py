@@ -69,12 +69,12 @@ def start_p_m():
         # смещение окна в лево на 382
         pyautogui.moveTo(682, 11, duration=1)
         pyautogui.dragTo(300, 11, duration=1)
-        # смещение ползунка на 45
+        # смещение ползунка на 44
         slider = fun.locCenterImg('img/overall/slider_v.png', 0.7)
         if slider:
             x, y = slider
             pyautogui.moveTo(x, y, duration=1)
-            pyautogui.dragTo(x, y + 45, duration=1)
+            pyautogui.dragTo(x, y + 44, duration=1)
 
     # authorization()
     click_my_game()
@@ -83,3 +83,4 @@ def start_p_m():
     spec_proposal()
     fun.selection_hero()
     # solid_memory.save_to_file(info=False)
+    return

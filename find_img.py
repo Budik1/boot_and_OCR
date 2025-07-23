@@ -222,3 +222,8 @@ def find_low_energy_label():
 def find_no_energy():
     pos = fund.locateCenterImg(name_img='img/station_master/energy_indicator/no_energy.png')
     return pos
+
+def find_name_kikimora():
+    pos = fund.locateCenterImg(name_img='img/tonelli/mobi/name_kikimora.png')
+    return pos
+

@@ -357,24 +357,39 @@ list_names_station = extraction_name_in_list(value=b_d.list_of_stations)
 
 
 def for_wilds():
-    """ С домашней станции на Киевскую,
+    """
+    Для Велеса:
+        С домашней станции на Киевскую,
+     задания на пули, потом домой, на крыс потратить остаток.
+    Для всех остальных:
+        С домашней станции на Киевскую,
      задания на пули, потом на Университет,
      на черных крыс потратить остаток,
      и домой на Фрунзенскую.
     """
     fun.my_print_to_file('touring.for_wilds')
     fun.push_close_all_()
-    # frunze_kiev()
-    move_to_target(target_point='ст. Киевская')
-    station_master.choosing_task_money()
-    print('задания на Киевской выполнены')
-    # kiev_univer()
-    # за черными крысами на Универ
-    move_to_target(target_point='ст. Университет')
-    station_master.task_pos_item(1)
-    print('энергия исчерпана')
-    # univer_frunze()
-    move_to_target(target_point='домой')
+    # kiev()
+    hero = fun.selection_hero()
+    if hero == 'Велес':
+        move_to_target(target_point='ст. Киевская')
+        station_master.choosing_task_money()
+        print('задания на Киевской выполнены')
+        move_to_target(target_point='домой')
+        station_master.task_pos_item(1)
+        print('энергия исчерпана')
+    else:
+        move_to_target(target_point='ст. Киевская')
+        station_master.choosing_task_money()
+        print('задания на Киевской выполнены')
+        # univer()
+        # за черными крысами на Универ
+        move_to_target(target_point='ст. Университет')
+        station_master.task_pos_item(1)
+        print('энергия исчерпана')
+        # univer_frunze()
+        move_to_target(target_point='домой')
+        return
 
 
 def for_kiki():

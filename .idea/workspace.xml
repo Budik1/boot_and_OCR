@@ -5,21 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="изменил сохранение и отображение счетчиков">
-      <change afterPath="$PROJECT_DIR$/different_events.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_gui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servis_ev.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sounds.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cr_img_dva.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baza_dannyx.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza_dannyx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/complex_phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/complex_phrases.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cr_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_and_analiz_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_and_analiz_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/different_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/different_events.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/find_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/find_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info_messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/complex_phrases.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_veles/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_veles/t2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_veles/t3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_veles/t3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_veles/t4.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_veles/t4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_veles/t5.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_veles/t5.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/person.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/mess.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/mess.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/my_gui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/chage_color.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/chage_color.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solid_memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/solid_memory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
     </list>
@@ -69,53 +70,54 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Python.chage_color (1).executor": "Run",
-    "Python.chage_color.executor": "Run",
-    "Python.cr_img.executor": "Run",
-    "Python.cr_img_id_name_station (1).executor": "Run",
-    "Python.cr_img_id_name_station.executor": "Run",
-    "Python.cr_img_map_name_station.executor": "Run",
-    "Python.cr_img_points.executor": "Run",
-    "Python.create_and_analiz_img (1).executor": "Run",
-    "Python.create_img.executor": "Run",
-    "Python.display_info.executor": "Run",
-    "Python.event_frend.executor": "Run",
-    "Python.generate_route.executor": "Run",
-    "Python.heroes.executor": "Run",
-    "Python.img_stat_kv.executor": "Run",
-    "Python.info_messages.executor": "Run",
-    "Python.information_messages (1).executor": "Run",
-    "Python.item_pos.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.map_tour.executor": "Run",
-    "Python.mess.executor": "Run",
-    "Python.my_gui (1).executor": "Run",
-    "Python.my_gui.executor": "Run",
-    "Python.servis_cla.executor": "Run",
-    "Python.servis_ev.executor": "Run",
-    "Python.station_master.executor": "Run",
-    "Python.t_item (1).executor": "Run",
-    "Python.t_item.executor": "Run",
-    "Python.tasks_analiz.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.www.executor": "Run",
-    "Python.www1.executor": "Run",
-    "Python.www2.executor": "Run",
-    "Python.создание скриншотов.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "ShowUsagesActions.previewPropertyKey": "true",
-    "ToolWindow.Python Console.ShowToolbar": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/bot in br/testOCR",
-    "settings.editor.selected.configurable": "editing.templates"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Python.chage_color (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.chage_color.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_img.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_img_dva.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_img_id_name_station (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_img_id_name_station.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_img_map_name_station.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_img_points.executor&quot;: &quot;Run&quot;,
+    &quot;Python.create_and_analiz_img (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.create_img.executor&quot;: &quot;Run&quot;,
+    &quot;Python.display_info.executor&quot;: &quot;Run&quot;,
+    &quot;Python.event_frend.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_route.executor&quot;: &quot;Run&quot;,
+    &quot;Python.heroes.executor&quot;: &quot;Run&quot;,
+    &quot;Python.img_stat_kv.executor&quot;: &quot;Run&quot;,
+    &quot;Python.info_messages.executor&quot;: &quot;Run&quot;,
+    &quot;Python.information_messages (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.item_pos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.map_tour.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mess.executor&quot;: &quot;Run&quot;,
+    &quot;Python.my_gui (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.my_gui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.servis_cla.executor&quot;: &quot;Run&quot;,
+    &quot;Python.servis_ev.executor&quot;: &quot;Run&quot;,
+    &quot;Python.station_master.executor&quot;: &quot;Run&quot;,
+    &quot;Python.t_item (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.t_item.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tasks_analiz.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.www.executor&quot;: &quot;Run&quot;,
+    &quot;Python.www1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.www2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.создание скриншотов.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
+    &quot;ToolWindow.Python Console.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/bot in br/testOCR&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\bot in br\testOCR" />
@@ -131,28 +133,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="chage_color (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testOCR" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/chage_color.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="chage_color" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
@@ -175,6 +155,50 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="cr_img" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testOCR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cr_img.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cr_img_dva" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testOCR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cr_img_dva.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
@@ -189,28 +213,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="servis_cla" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testOCR" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/servis_cla.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -244,10 +246,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.servis_ev" />
-        <item itemvalue="Python.chage_color (1)" />
+        <item itemvalue="Python.cr_img_dva" />
         <item itemvalue="Python.chage_color" />
-        <item itemvalue="Python.servis_cla" />
+        <item itemvalue="Python.cr_img" />
+        <item itemvalue="Python.servis_ev" />
       </list>
     </recent_temporary>
   </component>
@@ -325,7 +327,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>432</line>
+          <line>437</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -340,7 +342,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>97</line>
+          <line>102</line>
           <option name="timeStamp" value="94" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
