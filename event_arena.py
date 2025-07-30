@@ -1,10 +1,11 @@
-import pyautogui
 from time import sleep
 
 import fun
 import find_img as find
+import heroes
+import solid_memory
 import station_master
-import my_color_text as myCt
+import color_text as myCt
 
 
 def foto_pos(name_img: str, region: tuple, tune_x=0, tune_y=0, tune_s=0, tune_v=0):
@@ -47,9 +48,14 @@ def create_img_arena_object():
 
 
 def kill():
-    boy_in_arena = 0
-    vict_in_arena = 0
+    fun.selection_hero(show_name=True)
+
+    boy_in_arena = heroes.Hero.get_arena_count(heroes.Activ.hero_activ)
+    vict_in_arena = heroes.Hero.get_arena_victory_count(heroes.Activ.hero_activ)
+
+    print(f"боёв {heroes.Hero.get_arena_count(heroes.Activ.hero_activ)}, побед {vict_in_arena}, следующий..")
     while boy_in_arena < 101:
+        fun.selection_hero(show_name=True)
         pos_or_v = fun.find_link_hall_of_glory()  # ориентир на зал славы
         # print(pos_or_v)
         fun.mouse_move_to_click(pos_click=pos_or_v, z_p_k=0.3)  # открыть зал славы
@@ -88,11 +94,11 @@ def kill():
                 fun.mouse_move_to_click(pos_click=scroll_down)
                 fun.await_arena(region)
                 arena_object = find.find_arena_object(region=region)  # 0.85
-        boy_in_arena += 1
-        name_file = str("img/test/arena_obl_поиска" + str(boy_in_arena) + ".png")
+
+        # name_file = str("img/test/arena_obl_поиска" + str(boy_in_arena) + ".png")
         # print(boy_in_arena)
         # print(name_file)
-        fun.foto(name_file, region)
+        # fun.foto(name_file, region)
         attack_arena_object = find.find_attack(region=region)
         fun.mouse_move(pos=attack_arena_object)
         fun.mouse_move_to_click(pos_click=attack_arena_object, z_p_k=0.5)
@@ -101,16 +107,22 @@ def kill():
             sleep(0.1)
             hero_vs_opponent_img = find.find_hero_vs_opponent()
         fun.mouse_move_to_click(pos_click=hero_vs_opponent_img, z_p_k=0.1)
+
+        heroes.Hero.app_arena_count(heroes.Activ.hero_activ)
+        solid_memory.save_to_file(info=False)
         sleep(2)
         # print('переход в enemy_battle')
         res = station_master.enemy_battle(0.5, arena=True, add_up=False, dog_activ=False)
         # print('выход из enemy_battle')
         if res == "победа":
             vict_in_arena += 1
-            result = myCt.tc_yellow(F"победа,{vict_in_arena}")
+            heroes.Hero.app_arena_victory_count(heroes.Activ.hero_activ)
+            result_text = myCt.tc_yellow(F"победа,{vict_in_arena}")
+            solid_memory.save_to_file(info=False)
         else:
-            result = myCt.tc_red("поражение")
-        print(f"боёв {boy_in_arena}, {result}, следующий..")
+            result_text = myCt.tc_red("поражение")
+        boy_in_arena = heroes.Hero.get_arena_count(heroes.Activ.hero_activ)
+        print(f"боёв {heroes.Hero.get_arena_count(heroes.Activ.hero_activ)}, {result_text}, следующий..")
         fun.find_link_hall_of_glory()
 
 # create_img_arena_object()  # создание метки объекта атаки

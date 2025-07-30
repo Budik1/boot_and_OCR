@@ -1,6 +1,6 @@
 import fun
 from time import sleep
-import my_color_text as myCt
+import color_text as myCt
 import find_img as find
 from heroes import Hero, Activ
 

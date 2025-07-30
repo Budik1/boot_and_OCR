@@ -1,6 +1,6 @@
 import fun
 import find_img as find
-import my_color_text as mct
+import color_text as mct
 
 
 def name_id_station():

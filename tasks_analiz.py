@@ -1,5 +1,5 @@
 import fun
-from sketches_of_the_future import my_OCR
+# from sketches_of_the_future import my_OCR
 
 # Параметр смещения от позиции 'Начстанции'
 pul = 444

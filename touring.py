@@ -2,7 +2,7 @@ from time import sleep, time
 
 import fun
 import heroes
-import my_color_text
+import color_text
 import station_master
 import baza_dannyx as b_d
 import find_img as find

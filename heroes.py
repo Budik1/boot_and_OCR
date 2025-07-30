@@ -1,5 +1,5 @@
 # import fun
-import my_color_text as myCt
+import color_text as myCt
 import baza_dannyx as b_d
 
 nam = 0  # для подсчета чего?
@@ -12,6 +12,7 @@ class Activ:
     check_date_ = ''
     date_now = ''
     value_energy = 0
+    name_file_ = None
 
 
 class Hero:
@@ -23,7 +24,7 @@ class Hero:
         self.path_task = ''
         self.home_location = 'бомж'
         self.bypass = ()
-        self.bac_color = '#FFFFFF'
+        # self.bac_color = '#FFFFFF'
 
         self.vip = 0  #
         self.gifts = 0  #
@@ -31,8 +32,8 @@ class Hero:
         self.grey_rat = 0  #
         self.arachne = 0  #
         self.raptor = 0  #
-        self.wildman = 'x'
         #
+        self.wildman = 'x'
         self.wildman_count = 0
         self.wild_activ = False
         self.wildman_days_count = 0
@@ -43,7 +44,8 @@ class Hero:
         self.energy_count_all = 0
         self.value_energy = 0
 
-        self.arena_count = 0
+        self.arena_count = 0  # счет арены
+        self.arena_victory_count = 0
 
         self.duel_all = 0
         self.duel_now = 0
@@ -59,6 +61,11 @@ class Hero:
         self.home_location = location
 
     # Uppers
+    def app_arena_count(self):
+        self.arena_count += 1
+
+    def app_arena_victory_count(self):
+        self.arena_victory_count += 1
 
     def app_energy_count_today(self, value):
         self.energy_count_today += value
@@ -108,6 +115,15 @@ class Hero:
         self.completing_tasks = True
 
     # Гетеры
+    def get_vip_all(self):
+        return self.vip
+
+    def get_arena_count(self):
+        return self.arena_count
+
+    def get_arena_victory_count(self):
+        return self.arena_victory_count
+
     def get_home_location(self):
         return self.home_location
 

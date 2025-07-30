@@ -6,20 +6,20 @@ from time import time
 
 import fun
 import heroes
-import station_master
-import kv_and_raid
-import touring
 import person
-import revision_tents
-import baza_dannyx as b_d
+import touring
+import color_text
+import kv_and_raid
 import solid_memory
+import station_master
+import revision_tents
+import complex_phrases
 import different_events
 import heroes as her
-import complex_phrases
+import baza_dannyx as b_d
+
 from heroes import Hero, Activ
 from event_arena import create_img_arena_object, kill
-from my_color_text import tc_red
-
 
 fun.my_print_to_file('')
 fun.my_print_to_file('*******                      *******')
@@ -32,21 +32,22 @@ Activ.date_now = fun.date_utc_now()
 
 def start_prog():
     state_file, data_to_load = solid_memory.reading_file()
+    solid_memory.reading_wild_file()
     if state_file:
         # print(tc_green('установка значений из файла'))
         try:
             solid_memory.setting_updatable_values(data_to_load)
             solid_memory.setting_cumulative_values(data_to_load)
         except KeyError:
-            print(tc_red('KeyError'))
+            print(color_text.tc_red('KeyError'))
         except Exception as cod:
-            print(tc_red(f'Не понятно что произошло)). Код ошибки {cod}'))
+            print(color_text.tc_red(f'Не понятно что произошло)). Код ошибки {cod}'))
         displaying_values(info=False)
     else:
         displaying_values()
     complex_phrases.smol_report_wildman()
     complex_phrases.display_info_energy_all()
-    return 
+    return
 
 
 def displaying_values(info=True):
@@ -91,8 +92,11 @@ def displaying_values(info=True):
 
     if info:
         solid_memory.save_to_file(info=True)
+        solid_memory.save_wild_state(info=True)
     else:
         solid_memory.save_to_file(info=False)
+        solid_memory.save_wild_state(info=False)
+
 
 def start_pm():
     different_events.start_p_m()
@@ -131,42 +135,48 @@ def kiki():
 
 def tent_inspection():
     hero = fun.selection_hero()
-    vip_case_all = 0
-    it_revision = 0
-    fun.move_friends_list_to_top()
+    ins = heroes.Hero.get_vip_all(Activ.hero_activ)
+    if ins == 10:
+        print(complex_phrases.display_set_inspect_report())
+        return
+    else:
+        vip_case_all = 0
+        it_revision = 0
+        fun.move_friends_list_to_top()
 
-    while vip_case_all < 10:
-        if hero == 'Gady':
-            vip_case_all += revision_tents.tent_raid()
-            her.gady.vip = vip_case_all
-        if hero == 'Gavr':
-            vip_case_all += revision_tents.tent_raid()
-            her.gavr.vip = vip_case_all
-        if hero == 'Mara':
-            vip_case_all += revision_tents.tent_raid()
-            her.mara.vip = vip_case_all
-        if hero == 'Велес':
-            vip_case_all += revision_tents.tent_raid()
-            her.veles.vip = vip_case_all
-        it_revision += 1
-        print(f'{vip_case_all} из {it_revision} осмотренных')
-        fun.move_friends_list_left()
-        if it_revision == 13:
-            vip_case_all = 10
+        while vip_case_all < 10:
             if hero == 'Gady':
+                vip_case_all += revision_tents.tent_raid()
                 her.gady.vip = vip_case_all
             if hero == 'Gavr':
+                vip_case_all += revision_tents.tent_raid()
                 her.gavr.vip = vip_case_all
             if hero == 'Mara':
+                vip_case_all += revision_tents.tent_raid()
                 her.mara.vip = vip_case_all
             if hero == 'Велес':
+                vip_case_all += revision_tents.tent_raid()
                 her.veles.vip = vip_case_all
-    revision_tents.end_raid()
-    displaying_values()
+            it_revision += 1
+            print(f'{vip_case_all} из {it_revision} осмотренных')
+            fun.move_friends_list_left()
+            if it_revision == 13:
+                vip_case_all = 10
+                if hero == 'Gady':
+                    her.gady.vip = vip_case_all
+                if hero == 'Gavr':
+                    her.gavr.vip = vip_case_all
+                if hero == 'Mara':
+                    her.mara.vip = vip_case_all
+                if hero == 'Велес':
+                    her.veles.vip = vip_case_all
+        revision_tents.end_raid()
+        displaying_values(info=False)
+        return
 
 
 def tasks_na_kievskoy():
-    hero = fun.selection_hero()
+    hero = fun.selection_hero(show_name=False)
     if hero:
         Hero.app_days_count_wildman(Activ.hero_activ)
         # print(Hero.get_days_count_wildman(Activ.hero_activ))
@@ -238,6 +248,7 @@ def changeColor(*, her_active):
     else:
         label_4.configure(background='white')
 
+
 def change_gady():
     person.change_acc(change_hero_name='gady')
     displaying_values(info=False)
@@ -256,17 +267,15 @@ def change_veles():
     changeColor(her_active=fun.selection_hero(show_name=False))
 
 
-
 def change_mara():
     person.change_acc(change_hero_name='mara')
     displaying_values(info=False)
     changeColor(her_active=fun.selection_hero(show_name=False))
 
 
-
 def report_w():
     complex_phrases.display_report_wildman()
-#
+
 
 def save_home_point():
     fun.selection_hero(show_name=False)
@@ -289,7 +298,7 @@ def get_target(event):
     selection = combobox.get()
     print(f'Прокладываю маршрут к {selection}')
     touring.move_to_target(target_point=selection)
-    displaying_values()
+    displaying_values(info=False)
 
 
 root = Tk()
@@ -381,7 +390,7 @@ label_2 = ttk.Label()
 label_2.configure(textvariable=gavr_vip, width=w_l)
 label_2.place(x=b_d.vip_x, y=b_d.gavr_y)
 
-label_3 =ttk.Label()
+label_3 = ttk.Label()
 label_3.configure(textvariable=veles_vip, width=w_l)
 label_3.place(x=b_d.vip_x, y=b_d.veles_y)
 

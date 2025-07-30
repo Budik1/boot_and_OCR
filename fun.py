@@ -6,7 +6,7 @@ import find_img
 import fun_down
 import heroes as her
 import sounds
-import my_color_text as myCt
+import color_text as myCt
 from heroes import Activ
 
 par_conf = 0.79
@@ -292,6 +292,7 @@ def move_friends_list_to_top():
         print('клик в начало ' + str(begin))
     # pyautogui.moveTo(50, 600, duration=1)
     sleep(1)
+    return
 
 
 def foto(path_name, region: tuple[int, int, int, int] | None = None):
@@ -303,6 +304,7 @@ def foto(path_name, region: tuple[int, int, int, int] | None = None):
     my_print_to_file('fun.foto')
     im1 = pyautogui.screenshot(region=region)
     im1.save(path_name)
+    return
 
 
 def find_link_hall_of_glory():
@@ -321,7 +323,6 @@ def find_link_hall_of_glory():
         sleep(0.2)
         point_hall_of_glory = find_img.find_hall_of_glory_icon()
     sleep(0.5)
-
     return point_hall_of_glory
 
 
@@ -353,7 +354,6 @@ def find_link_station_master():
         sleep(0.5)
         point = pos_klan
         vizit_to_station_master()
-
     return point
 
 
@@ -505,30 +505,33 @@ def selection_hero(*, show_name=True):
             print(myCt.tc_yellow('Гадя'))
         hero = 'Gady'
         Activ.hero_activ_name = 'Gady'
+        Activ.name_file_ = 'gady'
         Activ.hero_activ = her.gady
     elif hero_gavr:
         if show_name:
             print(myCt.tc_yellow('Гавр'))
         hero = 'Gavr'
         Activ.hero_activ_name = 'Gavr'
+        Activ.name_file_ = 'gavr'
         Activ.hero_activ = her.gavr
     elif hero_veles:
         if show_name:
             print(myCt.tc_yellow('Велес'))
         hero = 'Велес'
         Activ.hero_activ_name = 'Велес'
+        Activ.name_file_ = 'veles'
         Activ.hero_activ = her.veles
     elif hero_mara:
         if show_name:
             print(myCt.tc_yellow('Мар`яна'))
         hero = 'Mara'
         Activ.hero_activ_name = 'Mara'
+        Activ.name_file_ = 'mara'
         Activ.hero_activ = her.mara
     else:
         print(myCt.tc_red("Невозможно опознать героя (("))
         hero = None
         Activ.hero_activ = None
-    # bac_color()
     return hero
 
 
@@ -546,6 +549,7 @@ def work_8_hour():
     mouse_move_to_click(pos_click=pos_work)
     work_8hour = find_img.find_work_8_hour()
     mouse_move_to_click(pos_click=work_8hour)
+    return
 
 
 def transform_days(*, qty_days: int):
@@ -586,6 +590,7 @@ def verifi_img():
         print(myCt.tc_yellow(f'{path_img} - Найден )) все хорошо'))
     else:
         print(myCt.tc_red(f'{path_img} - Не найден  !!'))
+    return
 
 
 def extraction_digit(*, item):
@@ -602,8 +607,96 @@ def ac():
     y -= 50
     mouse_move_to_click(pos_click=(x, y), move_time=0.3, z_p_k=0.2)
 
-# def bac_color():
-#     her.gady.get_bac_color()
-#     her.gavr.get_bac_color()
-#     her.veles.get_bac_color()
-#     her.mara.get_bac_color()
+
+def get_areas_energy_1():
+    x_or, y_or = find_link_station_master()
+    # регион поиска 1 (позиция анализа)
+    x = x_or + 548
+    y = y_or + 182
+    # # найдем нижний угол
+    x_demo, y_demo = x, y
+    change_x = 17
+    change_y = 23
+    x_demo += change_x
+    y_demo += change_y
+    return x, y, change_x, change_y
+
+
+def get_areas_energy_2():
+    x_or, y_or = find_link_station_master()
+    # регион поиска 1 (позиция анализа)
+    x = x_or + 548
+    y = y_or + 285
+    # # найдем нижний угол
+    x_demo, y_demo = x, y
+    change_x = 17
+    change_y = 23
+    x_demo += change_x
+    y_demo += change_y
+    return x, y, change_x, change_y
+
+
+def get_areas_energy_3():
+    x_or, y_or = find_link_station_master()
+    # регион поиска 1 (позиция анализа)
+    x = x_or + 548
+    y = y_or + 388
+    # # найдем нижний угол
+    x_demo, y_demo = x, y
+    change_x = 17
+    change_y = 23
+    x_demo += change_x
+    y_demo += change_y
+    return x, y, change_x, change_y
+
+
+def get_full_areal_tasks():
+    """
+    Получение региона заданий
+    """
+    pos_start = find_link_station_master()
+    # найдем верхний угол
+    x, y = pos_start
+    x += 300
+    y += 160
+    # # найдем нижний угол
+    x_demo, y_demo = x, y
+    change_x = 310
+    change_y = 320
+    x_demo += change_x
+    y_demo += change_y
+    return x, y, change_x, change_y
+
+
+def get_region_lines_task():
+    """
+        Получение региона с заданием для трех строк
+    """
+    pos_start = find_link_station_master()
+    change_x = 310
+    change_y = 103
+    # найдем верхний угол
+    x, y = pos_start
+    x += 300
+    y += 160
+    x_demo, y_demo = x, y
+    x_demo += change_x
+    y_demo += change_y
+    region_task_line1 = x, y, change_x, change_y
+    #
+    x, y = pos_start
+    x += 300
+    y += 160 + 103
+    x_demo, y_demo = x, y
+    x_demo += change_x
+    y_demo += change_y
+    region_task_line2 = x, y, change_x, change_y
+    #
+    x, y = pos_start
+    x += 300
+    y += 160 + 103 + 103
+    x_demo, y_demo = x, y
+    x_demo += change_x
+    y_demo += change_y
+    region_task_line3 = x, y, change_x, change_y
+    return region_task_line1, region_task_line2, region_task_line3

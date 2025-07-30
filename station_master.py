@@ -1,14 +1,16 @@
 """ Точки для отладки в press_en()"""
-import baza_dannyx as b_d
 from time import sleep
+
 import fun
 import find_img
-import create_and_analiz_img
 import solid_memory
-import my_color_text as myCt
-from heroes import Hero, Activ
+import complex_phrases
+import create_and_analiz_img
+
 import heroes as her
-import complex_phrases as i_mess
+import baza_dannyx as b_d
+import color_text as myCt
+from heroes import Hero, Activ
 
 conf_ = 0.95
 par_conf = 0.799
@@ -30,16 +32,16 @@ def wait_skip_battle_button():
 
 
 def mob_mob_identified():
-    grey_rat = ['name1_grey_rat', 'grey rat']
-    white_rat = ['name1_white_rat', 'white_rat']
-    black_rat = ['name1_black_rat', 'black_rat']
-    sand_rat = ['name1_sand_rat', 'sand_rat']
-    spy = ['name2_spy', 'spy']
-    smuggler = ['name3_smuggler', 'smuggler']
-    arachne = ['name4_arachne', 'arachne']
-    wildman = ['name5_wildman', 'wildman']
-    kikimora = ['name6_kikimora', 'kikimora']
-    raptor = ['name7_raptor', 'raptor']
+    grey_rat = ['name1_grey_rat', 'серая крыса']
+    white_rat = ['name1_white_rat', 'белая крыса']
+    black_rat = ['name1_black_rat', 'черная крыса']
+    sand_rat = ['name1_sand_rat', 'песчаная крыса']
+    spy = ['name2_spy', 'шпион']
+    smuggler = ['name3_smuggler', 'контрабандист']
+    arachne = ['name4_arachne', 'араха']
+    wildman = ['name5_wildman', 'дикарь']
+    kikimora = ['name6_kikimora', 'кикимора']
+    raptor = ['name7_raptor', 'ящер']
     list_mob = [grey_rat, white_rat, black_rat, sand_rat, spy,
                 smuggler, arachne, wildman, kikimora, raptor]
     mob, name = False, False
@@ -51,15 +53,13 @@ def mob_mob_identified():
     return  mob, name
 
 
-def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, count_task=False, arena=False):
+def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False):
     """
     s
-
     Args:
         prolong_ (float, optional): коэффициент задержки для задержки нажатия "пропустить бой" . Defaults to 2.0.
         dog_activ (bool, optional): активация питомца. Defaults to True.
         add_up (bool, optional): _description_. Defaults to True.
-        count_task (bool, optional): _description_. Defaults to False.
         arena (bool, optional): _description_. Defaults to False.
 
     Returns:
@@ -92,10 +92,6 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, count_task=False, ar
     count_mob_identified = 0
     cycle = True
     result = None
-    count_task_now = 0
-    if not arena:
-        count_task_now = Hero.get_task_count(Activ.hero_activ)
-
     while not battle_end:
         if add_up:
             while not mob_identified and count_mob_identified <= 3:
@@ -104,92 +100,64 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, count_task=False, ar
                     cycle = False
                     fun.mouse_move(pos=name1_grey_rat, speed=0.4)
                     Hero.app_rat(Activ.hero_activ)
-                    if count_task:
-                        print(myCt.tc_magenta(
-                            f'detekt {Hero.get_qty_grey_rat(Activ.hero_activ)} grey rat. {count_task_now}'))
-                    else:
-                        print(myCt.tc_magenta(f'detekt {Hero.get_qty_grey_rat(Activ.hero_activ)} grey rat'))
+                    print(myCt.tc_magenta(f'{Hero.get_qty_grey_rat(Activ.hero_activ)} серая крыса'))
                     mob_identified = 'grey_rat'
                 if name1_black_rat and cycle:
                     cycle = False
                     fun.mouse_move(pos=name1_black_rat, speed=0.4)
                     mob_identified = 'black_rat'
-                    if count_task:
-                        print(myCt.tc_magenta(f'черная крыса. {count_task_now}'))
-                    else:
-                        print(myCt.tc_magenta('черная крыса'))
+                    print(myCt.tc_magenta('черная крыса'))
                 if name1_white_rat and cycle:
                     cycle = False
                     fun.mouse_move(pos=name1_white_rat, speed=0.4)
                     mob_identified = 'white_rat'
-                    if count_task:
-                        print(myCt.tc_magenta(f'белая крыса. {count_task_now}'))
-                    else:
-                        print(myCt.tc_magenta('белая крыса'))
+                    print(myCt.tc_magenta('белая крыса'))
                 if name1_sand_rat and cycle:
                     cycle = False
                     fun.mouse_move(pos=name1_sand_rat, speed=0.4)
                     mob_identified = 'sand_rat'
-                    if count_task:
-                        print(myCt.tc_magenta(f'песчаная крыса. {count_task_now}'))
-                    else:
-                        print(myCt.tc_magenta('песчаная крыса'))
+                    print(myCt.tc_magenta('песчаная крыса'))
                 if name2_spy and cycle:
                     cycle = False
                     fun.mouse_move(pos=name2_spy, speed=0.4)
                     mob_identified = 'spy'
-                    if count_task:
-                        print(myCt.tc_magenta(f'шпион пойман. {count_task_now}'))
-                    else:
-                        print(myCt.tc_magenta('шпион пойман'))
+                    print(myCt.tc_magenta('шпион пойман'))
                 if name3_smuggler and cycle:
                     cycle = False
                     fun.mouse_move(pos=name3_smuggler, speed=0.4)
                     mob_identified = 'smuggler'
-                    if count_task:
-                        print(myCt.tc_magenta(f'контрабандист пойман. {count_task_now}'))
-                    else:
-                        print(myCt.tc_magenta('контрабандист пойман'))
+                    print(myCt.tc_magenta('контрабандист пойман'))
+
                 if name4_arachne and cycle:
                     cycle = False
                     fun.my_print_to_file(f'{name4_arachne=}')
                     # cr_img.mob_id('arachne')
                     Hero.app_arachne(Activ.hero_activ)
-                    if count_task:
-                        print(f'detekt {Hero.get_qty_arachne(Activ.hero_activ)} arachne. {count_task_now}')
-                    else:
-                        print(f'detekt {Hero.get_qty_arachne(Activ.hero_activ)} arachne')
+                    print(myCt.tc_magenta(f'{Hero.get_qty_arachne(Activ.hero_activ)} арахна'))
                     mob_identified = 'arachne'
+
                 if name5_wildman and cycle:
                     cycle = False
                     fun.mouse_move(pos=name5_wildman, speed=0.4)
                     if Hero.get_qty_wildman(Activ.hero_activ) == 'x':
                         Hero.zero_wildman(Activ.hero_activ)
                     Hero.app_wildman(Activ.hero_activ)
-                    if count_task:
-                        print(f'{Hero.get_report_wildman_now(Activ.hero_activ)}. {count_task_now}')
-                        print(i_mess.report_wildman(hero=Activ.hero_activ))
-                    else:
-                        print(f'{Hero.get_report_wildman_now(Activ.hero_activ)}')
-                        print(i_mess.report_wildman(hero=Activ.hero_activ))
+                    print(f'{Hero.get_report_wildman_now(Activ.hero_activ)}')
+                    print(complex_phrases.report_wildman(hero=Activ.hero_activ))
                     mob_identified = "wildman"
+
                 if name6_kikimora and cycle:
                     cycle = False
                     fun.my_print_to_file(f'{name6_kikimora=}')
                     Hero.app_kiki(Activ.hero_activ)
-                    if count_task:
-                        print(f' Detekt {Hero.get_qty_kiki(Activ.hero_activ)} kikimora. {count_task_now}')
-                    else:
-                        print(f' Detekt {Hero.get_qty_kiki(Activ.hero_activ)} kikimora')
+                    print(myCt.tc_magenta(f'{Hero.get_qty_kiki(Activ.hero_activ)} кикимора'))
                     mob_identified = 'kikimora'
+
                 if name7_raptor and cycle:
                     cycle = False
                     fun.mouse_move(pos=name7_raptor, speed=0.4)
                     Hero.app_raptor(Activ.hero_activ)
-                    if count_task:
-                        print(f'Detekt {Hero.get_qty_raptor(Activ.hero_activ)} raptor. {count_task_now}')
-                    else:
-                        print(f'Detekt {Hero.get_qty_raptor(Activ.hero_activ)} raptor')
+                    print(myCt.tc_magenta(f'{Hero.get_qty_raptor(Activ.hero_activ)} ящер'))
                     mob_identified = 'raptor'
 
                 name1_grey_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_grey_rat.png', confidence=conf_mobs)
@@ -261,6 +229,8 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, count_task=False, ar
 
     if not arena:
         solid_memory.save_to_file(info=False)
+        solid_memory.save_wild_state(info=False)
+        # print('из боя')
     fun.my_print_to_file("выход из 'enemy_battle")
     return result
 
@@ -287,7 +257,7 @@ def press_en(*, task_number, pos, value_energy):
               f' Сейчас {value_energy}, сегодня {value_energy_today}, всего {value_energy_all}')
         solid_memory.save_to_file(info=False)
         wait_skip_battle_button()
-        enemy_battle(count_task=True)
+        enemy_battle()
         energy_availability = 1  # для выполнения всех заданий
         # energy_availability = 0 # для выполнения одного задания
     else:
@@ -299,7 +269,7 @@ def press_en(*, task_number, pos, value_energy):
 
         print(Hero.get_report_wildman_now(Activ.hero_activ))
         if Hero.get_wildman_count(Activ.hero_activ) != 0:
-            print(i_mess.report_wildman(hero=Activ.hero_activ))
+            print(complex_phrases.report_wildman(hero=Activ.hero_activ))
         else:
             print()
         sleep(1)
@@ -365,9 +335,10 @@ def choosing_task_money():
     fun.push_close_all_()
     task = station_task_list()
     hero = fun.selection_hero()
-    # print('герой определён station_master.стр 168')
+    # print('герой определён station_master.стр 338')
     if hero:
         path = Hero.get_path_task(Activ.hero_activ)
+        print(f'{path=}')
     else:
         return
     region_1, region_2, region_3 = fun.get_areas_task_big()
@@ -407,7 +378,7 @@ def choosing_task_money():
 
         if conf_ <= 0.92:
             print(myCt.tc_cyan('задания не найдены, результаты "D:\\bot in br\\testOCR\\img\\test\\test_tasks" '))
-            create_and_analiz_img.get_screenshot_task()
+            create_and_analiz_img.get_screenshot_task_big()
             number_tasks = 1
             energy_availability = 0
             return

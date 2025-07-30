@@ -151,7 +151,7 @@ def change_acc(*, change_hero_name):
         fun.push_close_all_()
         vid = fun.selection_hero()
     activ_hero = Hero.get_hero_name_in_file(Activ.hero_activ)
-    # print(f'{hero_name_in_file=}, {activ_hero=}')
+    # print(f'{activ_hero=}, {activ_hero=}')
     if change_hero_name == activ_hero:
         print('этот герой уже активен')
         return
@@ -188,6 +188,7 @@ def change_acc(*, change_hero_name):
     fun.mouse_move_to_click(pos_click=img_button_collapse, move_time=move_time, z_p_k=0.2)
     #
     pos = fun.locCenterImg('img/overall/event_entry/pos_t.png')
+    # print(f'{pos=}')
     while not pos:
         pos = fun.locCenterImg('img/overall/event_entry/pos_t.png')
         hero_name_in_file_list = ['gavr', 'gady', 'veles', 'mara']

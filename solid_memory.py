@@ -4,12 +4,14 @@ import fun
 import complex_phrases
 import heroes as her
 from heroes import Activ
-from my_color_text import tc_green, tc_cyan, tc_blue, tc_red
+from color_text import tc_green, tc_cyan, tc_blue, tc_red
 
 
 def save_to_file(info=True):
+    file_name = 'config.bin'
     if info:
-        print(tc_green("запись состояния"))
+        text = tc_green('запись состояния')
+        print(f"{file_name} {text}")
     data_to_save = {
         # дата
         'date': Activ.date_now,
@@ -59,6 +61,9 @@ def save_to_file(info=True):
         'gavr.task_count': her.gavr.task_count,
         'veles.task_count': her.veles.task_count,
         'mara.task_count': her.mara.task_count,
+        # по арене
+        'gady.arena_count': her.gady.arena_count,
+        'gady.arena_victory_count': her.gady.arena_victory_count,
         #
         'gady.energy_count_now': her.gady.energy_count_today,
         'gavr.energy_count_now': her.gavr.energy_count_today,
@@ -90,27 +95,107 @@ def save_to_file(info=True):
         'veles.wild_activ': her.veles.wild_activ,
         'mara.wild_activ': her.mara.wild_activ,
     }
+    # heroes123 = [
+    #      {
+    #         "id": "gady",
+    #         'home_location': "",
+    #         'vip': "",
+    #         'grey_rat': "",
+    #         'kiki': "",
+    #         'arachne': "",
+    #         'raptor': "",
+    #     },{
+    #         "id": "gavr",
+    #         'home_location': "",
+    #         'vip': "",
+    #         'grey_rat': "",
+    #         'kiki': "",
+    #         'arachne': "",
+    #         'raptor': "",
+    #     },
+    # ]
+    #
+    # heroes_to_save = []
+    # for heroTemplate in heroes123:
+    #     hero = heroes.Hero(name_ru_=heroTemplate.name_ru_, name_en_=heroTemplate.id, name_file_=heroTemplate.file)
+    #     heroes_to_save.append(hero)
+    #
+    # for hero in heroes_to_save:
+    #     data_to_save = hero.get_data_to_save()
+
     try:
-        file1 = open('config.bin', 'wb')
+        file1 = open(file_name, 'wb')
         pickle.dump(data_to_save, file1)
         file1.close()
     except FileNotFoundError:
         # Если файл не найден, выводим сообщение об ошибке
-        print(tc_red(f"Файл  не найден!"))
+        text = tc_red('Файл  не найден!')
+        print(f"{file_name} {text}")
     except IOError:
         # Если возникает ошибка ввода-вывода, выводим сообщение об ошибке
-        print(tc_red("Произошла ошибка ввода-вывода при чтении файла!"))
+        text = tc_red('Произошла ошибка ввода-вывода при чтении файла!')
+        print(f"{file_name} {text}")
     except Exception as e:
         # Обработка других неожиданных исключений
-        print(tc_red(f"Произошла неожиданная ошибка: {e}"))
+        text = tc_red(f'Произошла неожиданная ошибка: {e}')
+        print(f"{file_name} {text}")
+    return
 
 
+def save_wild_state(info=True):
+    file_name = 'config_wild.bin'
+    if info:
+        text = tc_green('запись состояния')
+        print(f"{file_name} {text}")
+    data_wild = {
+        'gavr_wild': her.gavr.wildman,
+        'gady_wild': her.gady.wildman,
+        'mara_wild': her.mara.wildman,
+        'veles_wild': her.veles.wildman,
+        #
+        'gady.energy_count_all': her.gady.energy_count_all,
+        'gavr.energy_count_all': her.gavr.energy_count_all,
+        'veles.energy_count_all': her.veles.energy_count_all,
+        'mara.energy_count_all': her.mara.energy_count_all,
+        #
+        'gady.wildman_all': her.gady.wildman_count,
+        'gavr.wildman_all': her.gavr.wildman_count,
+        'veles.wildman_all': her.veles.wildman_count,
+        'mara.wildman_all': her.mara.wildman_count,
+        #
+        'gady.days_counting': her.gady.wildman_days_count,
+        'gavr.days_counting': her.gavr.wildman_days_count,
+        'veles.days_counting': her.veles.wildman_days_count,
+        'mara.days_counting': her.mara.wildman_days_count,
+        #
+        'gady.wild_activ': her.gady.wild_activ,
+        'gavr.wild_activ': her.gavr.wild_activ,
+        'veles.wild_activ': her.veles.wild_activ,
+        'mara.wild_activ': her.mara.wild_activ,
+    }
+    try:
+        file1 = open(file_name, 'wb')
+        pickle.dump(data_wild, file1)
+        file1.close()
+    except FileNotFoundError:
+        # Если файл не найден, выводим сообщение об ошибке
+        text = tc_red('Файл  не найден!')
+        print(f"{file_name} {text}")
+    except IOError:
+        # Если возникает ошибка ввода-вывода, выводим сообщение об ошибке
+        text = tc_red('Произошла ошибка ввода-вывода при чтении файла!')
+        print(f"{file_name} {text}")
+    except Exception as e:
+        # Обработка других неожиданных исключений
+        text = tc_red(f'Произошла неожиданная ошибка: {e}')
+        print(f"{file_name} {text}")
 
 
 def reading_file(*, info=True):
-    if info:
-        print(tc_green("чтение состояния"))
     file_name = 'config.bin'
+    if info:
+        text = tc_green("чтение состояния")
+        print(f'{file_name} {text}')
     try:
         file1 = open(file_name, 'rb')
         data_to_load = pickle.load(file1)
@@ -138,6 +223,37 @@ def reading_file(*, info=True):
     return result
 
 
+def reading_wild_file(*, info=True):
+    file_name = 'config_wild.bin'
+    if info:
+        text = tc_green("чтение состояния")
+        print(f'{file_name} {text}')
+    try:
+        file1 = open(file_name, 'rb')
+        data_to_load = pickle.load(file1)
+        file1.close()
+        result = True, data_to_load
+    except FileNotFoundError:
+        # Если файл не найден, выводим сообщение об ошибке
+        text = tc_red('не найден!')
+        print(f"'{file_name}' {text}")
+        result = False, False
+    except IOError:
+        # Если возникает ошибка ввода-вывода, выводим сообщение об ошибке
+        text = tc_red('Произошла ошибка ввода-вывода при чтении ')
+        print(f"'{file_name}' {text}")
+        result = False, False
+    except Exception as e:
+        # Обработка других неожиданных исключений
+        text = f"Произошла неожиданная ошибка: {e}"
+        print(f"'{file_name}' {text}")
+        result = False, False
+    finally:
+        # print('???')
+        pass
+    return result
+
+
 def setting_updatable_values(loaded_data):
     """Установка обновляемых(ежедневных) значений при (пере)запуске программы"""
     # Activ.check_date_ = 1
@@ -146,6 +262,8 @@ def setting_updatable_values(loaded_data):
     if Activ.check_date_ == Activ.date_now:
         print(tc_blue("даты совпадают"))
         # присваиваем значения
+        her.gady.arena_count = loaded_data['gady.arena_count']
+
         her.gady.energy_count_today = loaded_data['gady.energy_count_now']
         her.gavr.energy_count_today = loaded_data['gavr.energy_count_now']
         her.veles.energy_count_today = loaded_data['veles.energy_count_now']
@@ -229,5 +347,3 @@ def setting_cumulative_values(loaded_data):
     her.gavr.task_count = loaded_data['gavr.task_count']
     her.veles.task_count = loaded_data['veles.task_count']
     her.mara.task_count = loaded_data['mara.task_count']
-
-

@@ -2,8 +2,13 @@
 сложные сообщения
 """
 import fun
-import my_color_text as myCt
+import color_text
 import heroes
+
+
+def display_set_inspect_report():
+    fraze = ('Чего их еще раз шмонать? Сегодня всё уже найдено.')
+    return fraze
 
 
 def display_info_energy_all():
@@ -29,6 +34,7 @@ def display_report_wildman():
     print(f'Велес:  {report_wildman(hero=heroes.veles)}')
     return
 
+
 def smol_report_wildman():
     print(
         f"gady {heroes.gady.wildman_days_count} {fun.transform_days(qty_days=heroes.gady.wildman_days_count)},"
@@ -45,30 +51,29 @@ def smol_report_wildman():
     print(
         f'mara {heroes.mara.wildman_days_count} {fun.transform_days(qty_days=heroes.mara.wildman_days_count)},'
         f' {heroes.mara.wildman_count} {fun.transform_wilds(qty_days=heroes.mara.wildman_count)}')
+    return
 
 
 def report_wildman(*, hero):
     # 'За ''3'' дня ''4'' шт.
     # Всего потрачено ХХХ единиц энергии
-    text_11 = myCt.tc_green('За ')  # 'За '
-    days_all_count = myCt.tc_cyan(str(heroes.Hero.get_days_count_wildman(hero)))  # '3'
-    text_12 = myCt.tc_green(f' {fun.transform_days(qty_days=heroes.Hero.get_days_count_wildman(hero))} ')  # ' дня '
-    wildman_all_count = myCt.tc_cyan(str(heroes.Hero.get_wildman_count(hero)))  # '4'
-    text_13 = myCt.tc_green(' шт.')  # ' шт.'
+    text_11 = color_text.tc_green('За ')  # 'За '
+    days_all_count = color_text.tc_cyan(str(heroes.Hero.get_days_count_wildman(hero)))  # '3'
+    text_12 = color_text.tc_green(f' {fun.transform_days(qty_days=heroes.Hero.get_days_count_wildman(hero))} ')  # ' дня '
+    wildman_all_count = color_text.tc_cyan(str(heroes.Hero.get_wildman_count(hero)))  # '4'
+    text_13 = color_text.tc_green(' шт.')  # ' шт.'
     phrase1 = f'{text_11}{days_all_count}{text_12}{wildman_all_count}{text_13}'
 
-
-    text_22 = myCt.tc_green('Всего потрачено ')  # 'Потрачено '
-    all_energy_count = myCt.tc_yellow(f'{heroes.Hero.get_energy_count_all(hero)}')  # 'XXX'
-    text_23 = myCt.tc_green(' единиц энергии')
+    text_22 = color_text.tc_green('Всего потрачено ')  # 'Потрачено '
+    all_energy_count = color_text.tc_yellow(f'{heroes.Hero.get_energy_count_all(hero)}')  # 'XXX'
+    text_23 = color_text.tc_green(' единиц энергии')
     phrase2 = f'{text_22}{all_energy_count}{text_23}'
 
     # количество энергии на одного
-    text_31 = myCt.tc_green(' Это ')
-    average_value_3 = myCt.tc_blue(
+    text_31 = color_text.tc_green(' Это ')
+    average_value_3 = color_text.tc_blue(
         f'{round(heroes.Hero.get_energy_count_all(hero) / heroes.Hero.get_wildman_count(hero), 4)}')  # '7'
-    text_32 = myCt.tc_green(' эн на 1го')  # ' эн на 1го'
+    text_32 = color_text.tc_green(' эн на 1го')  # ' эн на 1го'
     phrase3 = f'{text_31}{average_value_3}{text_32}'
     report_wildman_hero = f'{phrase1}{phrase3}\n{phrase2}'
     return report_wildman_hero
-# display_home_location_hero(her=heroes.gady)

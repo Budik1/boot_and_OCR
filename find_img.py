@@ -227,3 +227,6 @@ def find_name_kikimora():
     pos = fund.locateCenterImg(name_img='img/tonelli/mobi/name_kikimora.png')
     return pos
 
+def find_name():
+    pos = fund.locateCenterImg(name_img='path_name')
+    return pos

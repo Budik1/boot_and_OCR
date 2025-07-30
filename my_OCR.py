@@ -10,6 +10,6 @@ def text_recognition(file_path):
 
 def recognized(file_path):
     # file_path = 'img/test/2_big.png'
-    texst = (text_recognition(file_path=file_path))
+    text = (text_recognition(file_path=file_path))
 
-    return texst
+    return text

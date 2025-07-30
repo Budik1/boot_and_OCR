@@ -1,10 +1,10 @@
 import pyautogui
+from time import sleep
 
-import find_img
 import fun
 import sounds
+import find_img
 import find_img as find
-from time import sleep
 
 
 def cri_event_img(*, x_reg, y_reg, name):
