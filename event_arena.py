@@ -48,7 +48,7 @@ def create_img_arena_object():
 
 
 def kill():
-    fun.selection_hero(show_name=True)
+    fun.selection_hero(show_name=False)
 
     boy_in_arena = heroes.Hero.get_arena_count(heroes.Activ.hero_activ)
     vict_in_arena = heroes.Hero.get_arena_victory_count(heroes.Activ.hero_activ)
@@ -124,6 +124,3 @@ def kill():
         boy_in_arena = heroes.Hero.get_arena_count(heroes.Activ.hero_activ)
         print(f"боёв {heroes.Hero.get_arena_count(heroes.Activ.hero_activ)}, {result_text}, следующий..")
         fun.find_link_hall_of_glory()
-
-# create_img_arena_object()  # создание метки объекта атаки
-# kill()  # цикл атаки объекта

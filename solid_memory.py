@@ -314,6 +314,12 @@ def setting_updatable_values(loaded_data):
         her.mara.wildman = loaded_data['mara_wild']
         her.veles.wildman = loaded_data['veles_wild']
 
+        print()
+        print('solid_memory.setting_updatable_values')
+        print(f'{her.gady.wild_activ=}')
+        print(f'{her.gavr.wild_activ=}')
+        print(f'{her.veles.wild_activ=}')
+        print(f'{her.mara.wild_activ=}')
     else:
         # если даты не совпадают:- значения устанавливаются на "0"
         print(tc_cyan("даты не совпадают, смена суток"))

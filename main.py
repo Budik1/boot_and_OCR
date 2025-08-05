@@ -14,8 +14,7 @@ import solid_memory
 import station_master
 import revision_tents
 import complex_phrases
-import different_events
-import heroes as her
+import fun_events
 import baza_dannyx as b_d
 
 from heroes import Hero, Activ
@@ -45,51 +44,12 @@ def start_prog():
         displaying_values(info=False)
     else:
         displaying_values()
-    complex_phrases.smol_report_wildman()
+    complex_phrases.display_smol_report_wildman()
     complex_phrases.display_info_energy_all()
     return
 
 
 def displaying_values(info=True):
-    gady_rat.set(her.gady.grey_rat)
-    gavr_rat.set(her.gavr.grey_rat)
-    veles_rat.set(her.veles.grey_rat)
-    mara_rat.set(her.mara.grey_rat)
-
-    gady_kiki.set(her.gady.kiki)
-    gavr_kiki.set(her.gavr.kiki)
-    veles_kiki.set(her.veles.kiki)
-    mara_kiki.set(her.mara.kiki)
-
-    gady_arachne.set(her.gady.arachne)
-    gavr_arachne.set(her.gavr.arachne)
-    veles_arachne.set(her.veles.arachne)
-    mara_arachne.set(her.mara.arachne)
-
-    gady_raptor.set(her.gady.raptor)
-    gavr_raptor.set(her.gavr.raptor)
-    veles_raptor.set(her.veles.raptor)
-    mara_raptor.set(her.mara.raptor)
-
-    gady_gift.set(her.gady.gifts)
-    gavr_gift.set(her.gavr.gifts)
-    veles_gift.set(her.veles.gifts)
-    mara_gift.set(her.mara.gifts)
-
-    gavr_vip.set(her.gavr.vip)
-    gady_vip.set(her.gady.vip)
-    veles_vip.set(her.veles.vip)
-    mara_vip.set(her.mara.vip)
-
-    gady_wild.set(her.gady.wildman)
-    gavr_wild.set(her.gavr.wildman)
-    veles_wild.set(her.veles.wildman)
-    mara_wild.set(her.mara.wildman)
-    # print(f'{her.gady.bac_color=}')
-    # print(f'{her.gavr.bac_color=}')
-    # print(f'{her.veles.bac_color=}')
-    # print(f'{her.mara.bac_color=}')
-
     if info:
         solid_memory.save_to_file(info=True)
         solid_memory.save_wild_state(info=True)
@@ -97,9 +57,50 @@ def displaying_values(info=True):
         solid_memory.save_to_file(info=False)
         solid_memory.save_wild_state(info=False)
 
+    gady_rat.set(heroes.gady.grey_rat)
+    gavr_rat.set(heroes.gavr.grey_rat)
+    veles_rat.set(heroes.veles.grey_rat)
+    mara_rat.set(heroes.mara.grey_rat)
+
+    gady_kiki.set(heroes.gady.kiki)
+    gavr_kiki.set(heroes.gavr.kiki)
+    veles_kiki.set(heroes.veles.kiki)
+    mara_kiki.set(heroes.mara.kiki)
+
+    gady_arachne.set(heroes.gady.arachne)
+    gavr_arachne.set(heroes.gavr.arachne)
+    veles_arachne.set(heroes.veles.arachne)
+    mara_arachne.set(heroes.mara.arachne)
+
+    gady_raptor.set(heroes.gady.raptor)
+    gavr_raptor.set(heroes.gavr.raptor)
+    veles_raptor.set(heroes.veles.raptor)
+    mara_raptor.set(heroes.mara.raptor)
+
+    gady_gift.set(heroes.gady.gifts)
+    gavr_gift.set(heroes.gavr.gifts)
+    veles_gift.set(heroes.veles.gifts)
+    mara_gift.set(heroes.mara.gifts)
+
+    gavr_vip.set(heroes.gavr.vip)
+    gady_vip.set(heroes.gady.vip)
+    veles_vip.set(heroes.veles.vip)
+    mara_vip.set(heroes.mara.vip)
+
+    gady_wild.set(heroes.gady.wildman)
+    gavr_wild.set(heroes.gavr.wildman)
+    veles_wild.set(heroes.veles.wildman)
+    mara_wild.set(heroes.mara.wildman)
+    # print(f'{her.gady.bac_color=}')
+    # print(f'{her.gavr.bac_color=}')
+    # print(f'{her.veles.bac_color=}')
+    # print(f'{her.mara.bac_color=}')
+
+
+
 
 def start_pm():
-    different_events.start_p_m()
+    fun_events.start_p_m()
     displaying_values()
 
 
@@ -137,7 +138,7 @@ def tent_inspection():
     hero = fun.selection_hero()
     ins = heroes.Hero.get_vip_all(Activ.hero_activ)
     if ins == 10:
-        print(complex_phrases.display_set_inspect_report())
+        print(complex_phrases.set_inspect_report())
         return
     else:
         vip_case_all = 0
@@ -147,29 +148,29 @@ def tent_inspection():
         while vip_case_all < 10:
             if hero == 'Gady':
                 vip_case_all += revision_tents.tent_raid()
-                her.gady.vip = vip_case_all
+                heroes.gady.vip = vip_case_all
             if hero == 'Gavr':
                 vip_case_all += revision_tents.tent_raid()
-                her.gavr.vip = vip_case_all
+                heroes.gavr.vip = vip_case_all
             if hero == 'Mara':
                 vip_case_all += revision_tents.tent_raid()
-                her.mara.vip = vip_case_all
+                heroes.mara.vip = vip_case_all
             if hero == 'Велес':
                 vip_case_all += revision_tents.tent_raid()
-                her.veles.vip = vip_case_all
+                heroes.veles.vip = vip_case_all
             it_revision += 1
             print(f'{vip_case_all} из {it_revision} осмотренных')
             fun.move_friends_list_left()
             if it_revision == 13:
                 vip_case_all = 10
                 if hero == 'Gady':
-                    her.gady.vip = vip_case_all
+                    heroes.gady.vip = vip_case_all
                 if hero == 'Gavr':
-                    her.gavr.vip = vip_case_all
+                    heroes.gavr.vip = vip_case_all
                 if hero == 'Mara':
-                    her.mara.vip = vip_case_all
+                    heroes.mara.vip = vip_case_all
                 if hero == 'Велес':
-                    her.veles.vip = vip_case_all
+                    heroes.veles.vip = vip_case_all
         revision_tents.end_raid()
         displaying_values(info=False)
         return
@@ -279,19 +280,19 @@ def report_w():
 
 def save_home_point():
     fun.selection_hero(show_name=False)
-    adres = Hero.get_home_location(Activ.hero_activ)
-    location = touring.loc_now()[0]
-    mes = F'Твой адрес - {adres} .\nНовый адрес {location}. Сохранить?'
-    ansver = messagebox.askyesno(title='Паспортист ))', message=mes)
-    if ansver:
+    address = Hero.get_home_location(Activ.hero_activ)
+    location = fun.loc_now()[0]
+    mes = F'Твой адрес - {address} .\nНовый адрес {location}. Сохранить?'
+    answer = messagebox.askyesno(title='Паспортист ))', message=mes)
+    if answer:
         fun.selection_hero()
-        Hero.seting_home(Activ.hero_activ, location)
+        Hero.setting_home(Activ.hero_activ, location)
 
     displaying_values()
-    print(f'{her.gady.home_location=}')
-    print(f'{her.gavr.home_location=}')
-    print(f'{her.veles.home_location=}')
-    print(f'{her.mara.home_location=}')
+    print(f'{heroes.gady.home_location=}')
+    print(f'{heroes.gavr.home_location=}')
+    print(f'{heroes.veles.home_location=}')
+    print(f'{heroes.mara.home_location=}')
 
 
 def get_target(event):
@@ -342,7 +343,7 @@ gady_wild = StringVar()
 mara_wild = StringVar()
 veles_wild = StringVar()
 
-box_paths = touring.list_names_station
+box_paths = touring.list_names_all_station
 box_paths.insert(0, 'домой')
 lang_var = StringVar(value=box_paths[0])
 
@@ -479,6 +480,3 @@ img_e3 = ImageTk.PhotoImage(file="img/overall/en3v3.png")
 ttk.Button(root, image=img_e3, command=en_3).place(x=0, y=line_img + b_d.height_line * 2 + difference_str_img * 2)
 #
 root.mainloop()
-
-# 87CEFA голубой
-# ffffff белый

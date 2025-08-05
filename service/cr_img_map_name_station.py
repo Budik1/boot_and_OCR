@@ -37,6 +37,7 @@ def k_Communist():
     pos = fun.locCenterImg(f'img/tonelli/map_item/k_Communist.png')
     fun.mouse_move(pos=pos)
 
+
 def k_Park_kr():
     pos_close = find.find_close()
     fun.mouse_move(pos=pos_close, speed=1)

@@ -2,12 +2,14 @@ import pyautogui
 import datetime
 from time import sleep, time
 
+import sounds
 import find_img
 import fun_down
-import heroes as her
-import sounds
+import baza_dannyx as b_d
 import color_text as myCt
-from heroes import Activ
+
+import heroes
+
 
 par_conf = 0.79
 oblast = (51, 707, 92, 111)
@@ -46,6 +48,13 @@ def mouse_move_to_click(*, pos_click: tuple, move_time=0.75, z_p_k=0.05):
 
 
 def mouse_move(*, pos: tuple, speed=0.2, show=True):
+    """
+
+    :param pos:
+    :param speed:
+    :param show:
+    :return:
+    """
     if show:
         pyautogui.moveTo(pos, duration=speed)
 
@@ -60,38 +69,65 @@ class Mouse:
 
     @staticmethod
     def move(*, pos: tuple, speed=0.2, show=True):
+        """
+
+        :param pos:
+        :param speed:
+        :param show:
+        :return:
+        """
         if show:
             pyautogui.moveTo(pos, duration=speed)
         return
 
     @staticmethod
     def left_click(*, pos):
+        """
+
+        :param pos:
+        :return:
+        """
         sounds.click_mouse()
-        pyautogui.click(pos)
         pyautogui.hotkey('Ctrl')
+        pyautogui.click(pos)
         return
 
     @staticmethod
-    def take_drag_drop_y(*, pos_take, dist, speed=0.2):
+    def take_drag_drop_y(*, pos_take, distance, speed=0.2):
+        """
+        
+        :param pos_take: 
+        :param distance: 
+        :param speed: 
+        :return: 
+        """
         pyautogui.mouseDown(pos_take)
         x, y = pos_take
-        y += dist
+        y += distance
         new_pos = x, y
         Mouse.move(pos=new_pos, speed=speed)
         pyautogui.mouseUp()
         return
 
     @staticmethod
-    def take_drag_drop(*, pos_take, pos_drop, speed=0.2):
+    def take_drag_drop(*, pos_take: tuple, pos_drop: tuple, speed: float = 0.2) -> None:
+        """
+
+        :param pos_take:
+        :param pos_drop: 
+        :param speed: 
+        :return: 
+        """
         pyautogui.mouseDown(pos_take)
         Mouse.move(pos=pos_drop, speed=speed)
         pyautogui.mouseUp()
         return
 
     @staticmethod
-    def move_to_click(*, pos_click: tuple, move_time=0.75, z_p_k=0.05):
+    def move_to_click(*, pos_click: tuple, move_time: float = 0.75, z_p_k: float = 0.05) -> None:
         """
         Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
+
         :param pos_click: Point
         :param move_time: время перемещения указателя мыши в секундах
         :param z_p_k: задержка перед кликом(float)
@@ -504,34 +540,34 @@ def selection_hero(*, show_name=True):
         if show_name:
             print(myCt.tc_yellow('Гадя'))
         hero = 'Gady'
-        Activ.hero_activ_name = 'Gady'
-        Activ.name_file_ = 'gady'
-        Activ.hero_activ = her.gady
+        heroes.hero_activ_name = 'Gady'
+        heroes.Activ.name_file_ = 'gady'
+        heroes.Activ.hero_activ = heroes.gady
     elif hero_gavr:
         if show_name:
             print(myCt.tc_yellow('Гавр'))
         hero = 'Gavr'
-        Activ.hero_activ_name = 'Gavr'
-        Activ.name_file_ = 'gavr'
-        Activ.hero_activ = her.gavr
+        heroes.Activ.hero_activ_name = 'Gavr'
+        heroes.Activ.name_file_ = 'gavr'
+        heroes.Activ.hero_activ = heroes.gavr
     elif hero_veles:
         if show_name:
             print(myCt.tc_yellow('Велес'))
         hero = 'Велес'
-        Activ.hero_activ_name = 'Велес'
-        Activ.name_file_ = 'veles'
-        Activ.hero_activ = her.veles
+        heroes.Activ.hero_activ_name = 'Велес'
+        heroes.Activ.name_file_ = 'veles'
+        heroes.Activ.hero_activ = heroes.veles
     elif hero_mara:
         if show_name:
             print(myCt.tc_yellow('Мар`яна'))
         hero = 'Mara'
-        Activ.hero_activ_name = 'Mara'
-        Activ.name_file_ = 'mara'
-        Activ.hero_activ = her.mara
+        heroes.Activ.hero_activ_name = 'Mara'
+        heroes.Activ.name_file_ = 'mara'
+        heroes.Activ.hero_activ = heroes.mara
     else:
         print(myCt.tc_red("Невозможно опознать героя (("))
         hero = None
-        Activ.hero_activ = None
+        heroes.Activ.hero_activ = None
     return hero
 
 
@@ -700,3 +736,21 @@ def get_region_lines_task():
     y_demo += change_y
     region_task_line3 = x, y, change_x, change_y
     return region_task_line1, region_task_line2, region_task_line3
+
+
+def loc_now():
+    """
+    Определяю имя станции нахождения
+    :return: list станции
+    """
+    list_location = ['станция не опознана']
+    for station in range(len(b_d.list_of_stations)):
+        img_station = b_d.list_of_stations[station][2]
+        pos = locCenterImg(name_img=img_station, confidence=0.99)
+        if pos:
+            list_location = b_d.list_of_stations[station]
+            mouse_move(pos=pos)
+            # print(f'{b_d.list_of_stations[station][2]}') # img/tonelli/id_stations/s_Chekhov.png
+            # print(f'имя станции старта - {list_location[0]}') # имя станции старта - ст. Чеховская
+            break
+    return list_location

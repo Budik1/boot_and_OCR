@@ -5,9 +5,23 @@ import fun
 import color_text
 import heroes
 
+def display_report_energy_now(*, task_number, vers_in_print, value_energy):
+    """
+    Пример сообщения:
+    "Выполняю {3} задание,{ conf_=0.94}. Сейчас {3}, сегодня {20}, всего {120}"
+    Args:
+        task_number (int): номер строки заданий
+        vers_in_print (str): пробел или значение {conf_=}
+        value_energy (int): количество энергии потраченной на задание
+    """
+    print(f'Выполняю {task_number} задание{vers_in_print}.'
+          f' Сейчас {value_energy}, '
+          f'сегодня {heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)}, '
+          f'всего {heroes.Hero.get_energy_count_all(heroes.Activ.hero_activ)}')
 
-def display_set_inspect_report():
-    fraze = ('Чего их еще раз шмонать? Сегодня всё уже найдено.')
+
+def set_inspect_report():
+    fraze = 'Чего их еще раз шмонать? Сегодня всё уже найдено.'
     return fraze
 
 
@@ -35,7 +49,8 @@ def display_report_wildman():
     return
 
 
-def smol_report_wildman():
+def display_smol_report_wildman():
+    print()
     print(
         f"gady {heroes.gady.wildman_days_count} {fun.transform_days(qty_days=heroes.gady.wildman_days_count)},"
         f" {heroes.gady.wildman_count} {fun.transform_wilds(qty_days=heroes.gady.wildman_count)}")
@@ -59,7 +74,8 @@ def report_wildman(*, hero):
     # Всего потрачено ХХХ единиц энергии
     text_11 = color_text.tc_green('За ')  # 'За '
     days_all_count = color_text.tc_cyan(str(heroes.Hero.get_days_count_wildman(hero)))  # '3'
-    text_12 = color_text.tc_green(f' {fun.transform_days(qty_days=heroes.Hero.get_days_count_wildman(hero))} ')  # ' дня '
+    text_12 = color_text.tc_green(
+        f' {fun.transform_days(qty_days=heroes.Hero.get_days_count_wildman(hero))} ')  # ' дня '
     wildman_all_count = color_text.tc_cyan(str(heroes.Hero.get_wildman_count(hero)))  # '4'
     text_13 = color_text.tc_green(' шт.')  # ' шт.'
     phrase1 = f'{text_11}{days_all_count}{text_12}{wildman_all_count}{text_13}'

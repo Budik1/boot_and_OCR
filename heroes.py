@@ -1,4 +1,3 @@
-# import fun
 import color_text as myCt
 import baza_dannyx as b_d
 
@@ -13,6 +12,8 @@ class Activ:
     date_now = ''
     value_energy = 0
     name_file_ = None
+    station_activ = ''
+    qty_vip = 0
 
 
 class Hero:
@@ -42,6 +43,7 @@ class Hero:
         self.task_count = 0
         self.energy_count_today = 0
         self.energy_count_all = 0
+        self.energy_kiev_count_all = 0
         self.value_energy = 0
 
         self.arena_count = 0  # счет арены
@@ -57,7 +59,7 @@ class Hero:
     def setting_value_energy(self, value):
         self.value_energy = value
 
-    def seting_home(self, location):
+    def setting_home(self, location):
         self.home_location = location
 
     # Uppers
@@ -71,6 +73,9 @@ class Hero:
         self.energy_count_today += value
         self.energy_count_all += value
 
+    def app_energy_kiev_count_all(self, value):
+        self.energy_kiev_count_all += value
+
     def app_task_count(self):
         self.task_count += 1
 
@@ -79,6 +84,12 @@ class Hero:
             self.wild_activ = True
             self.wildman_days_count += 1
             # print(f'{self.name_ru} {self.days_count_wildman}')
+
+    def set_wild_activ(self):
+        """
+        True надо заменить на дату сегодня
+        """
+        self.wild_activ = Activ.date_now
 
     def app_vip(self):
         self.vip += 1
@@ -140,7 +151,7 @@ class Hero:
         if self.wildman:
             return f'{myCt.tc_yellow(str(self.wildman))} {myCt.tc_green("за сегодня")}'
         else:
-            return f'по дикарям нет данных'  # , {self.wildman =}
+            return f'по дикарям нет данных'  #
 
     def get_days_count_wildman(self):
         return self.wildman_days_count

@@ -1,6 +1,8 @@
 import time
 import pyautogui
 
+import heroes
+
 import solid_memory
 import fun
 
@@ -84,3 +86,8 @@ def start_p_m():
     fun.selection_hero()
     # solid_memory.save_to_file(info=False)
     return
+
+
+def change_date():
+    if heroes.Activ.check_date_ == heroes.Activ.date_now:
+        pass

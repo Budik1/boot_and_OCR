@@ -200,7 +200,7 @@ def change_acc(*, change_hero_name):
     slider = fun.locCenterImg('img/overall/slider_v.png', 0.7)
     if slider:
         fun.Mouse.move(pos=slider, speed=move_time)
-        fun.Mouse.take_drag_drop_y(pos_take=slider, dist=43, speed=1)
+        fun.Mouse.take_drag_drop_y(pos_take=slider, distance=43, speed=1)
     pos_info = find_img.find_info()
     while not pos_info:
         pos_info = find_img.find_info()

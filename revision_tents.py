@@ -2,7 +2,7 @@ import pyautogui
 from time import sleep
 import find_img as find
 import fun
-
+import heroes
 
 speed_mouse = 1
 
@@ -93,3 +93,19 @@ def tent_raid():
     vip_result = visit_to_tent()
     #
     return vip_result
+
+def qty_vip():
+    sleep(1)
+    region = detect_region_search_vip()
+    # print(f'{region=}')
+    pos_vip = find.find_b_vip(region_search=region)
+    # print(f'{pos_vip=}')
+    while not pos_vip:
+        fun.move_friends_list_left()
+        region = detect_region_search_vip()
+        pos_vip = find.find_b_vip(region_search=region)
+    if pos_vip:
+        print('vip detect')
+        heroes.Activ.qty_vip += 1
+        print(f'{heroes.Activ.qty_vip}')
+        fun.move_friends_list_left()
