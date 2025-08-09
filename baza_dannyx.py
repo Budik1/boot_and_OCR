@@ -80,8 +80,6 @@ list_of_stations = [st_kiev, st_riga,
                     st_most, st_teatr, st_novok, st_pavelec, st_pavelec_g, st_tretya, st_kitay, st_turgenev,
                     st_suxarev, st_prospekt, st_alexs, st_vdnx, ]
 
-
-
 #  с фрунзе оббежать все станции в поисках подарков
 bypass = [
     st_park_kr, st_park_g, st_kiev, st_kiev_a, st_kiev, st_park_g,
@@ -100,8 +98,8 @@ bypass_mara = [
     st_most, st_pushkin, st_chekhov, st_bulvar, st_chekhov, st_tver, st_teatr, ]
 bypass_veles = [st_pavelec, st_novok, st_tretya, st_novok, st_teatr, st_tver, st_pushkin, st_most, st_pushkin,
                 st_chekhov, st_bulvar, st_chekhov, st_borov, st_polyanka, st_borov, st_biblioteka,
-                st_kropot, st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov,
-                st_tver, st_teatr, st_novok, st_pavelec, st_pavelec_g, ]
+                st_kropot, st_park_kr,  st_park_g, st_kiev, st_park_g, st_park_kr, st_kropot, st_biblioteka,
+                st_borov, st_chekhov, st_tver, st_teatr, st_novok, st_pavelec, st_pavelec_g, ]
 # за кикиморами в туннелях
 
 frunze_kikimory = [st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, st_tver, st_teatr, st_novok, st_tretya,
@@ -174,5 +172,3 @@ separator_3 = rapt_x - 18
 separator_4 = rat_x - 18
 separator_5 = gift_x - 18
 separator_6 = wild_x - 18
-
-

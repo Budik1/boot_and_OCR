@@ -10,7 +10,6 @@ import color_text as myCt
 
 import heroes
 
-
 par_conf = 0.79
 oblast = (51, 707, 92, 111)
 log = 1
@@ -20,6 +19,16 @@ def locCenterImg(name_img, confidence=0.9, region: tuple[int, int, int, int] | N
     pos_img = fun_down.locateCenterImg(name_img=name_img,
                                        confidence=confidence,
                                        region=region)
+    return pos_img
+
+
+def wait_static_pos(*,message=None ,img, region=None, confidence=0.99):
+    if message:
+        print(f'{message}')
+    pos = locCenterImg(name_img=img, region=region, confidence=confidence)
+    while not pos:
+        pos = locCenterImg(name_img=img, region=region, confidence=confidence)
+    pos_img = locCenterImg(name_img=img, region=region, confidence=confidence)
     return pos_img
 
 
@@ -209,20 +218,20 @@ def station_gifts():
     pass
     gifts = locCenterImg('img/b_gifts.png', 0.91)
     pyautogui.moveTo(gifts, duration=1)
-    mouse_left_click(pos=gifts)
+    Mouse.left_click(pos=gifts)
     open_ = locCenterImg('img/b_gift_open.png', 0.9)
     while open_:
         pyautogui.moveTo(open_, duration=1)
-        mouse_left_click(pos=open_)
+        Mouse.left_click(pos=open_)
         sleep(1)
         thanks = locCenterImg('img/b_thanks.png', 0.9)
         pyautogui.moveTo(thanks, duration=1)
-        mouse_left_click(pos=thanks)
+        Mouse.left_click(pos=thanks)
         sleep(1)
         give = locCenterImg('img/b_give.png', 0.85)
         print(give)
         pyautogui.moveTo(give, duration=1)
-        mouse_left_click(pos=give)
+        Mouse.left_click(pos=give)
 
         open_ = locCenterImg('img/b_gift_open.png', 0.9)
 
@@ -243,16 +252,16 @@ def close_popup_window():
     knob = find_img.find_knob()
     cancel = find_img.find_cancel()
     if knob:
-        mouse_move_to_click(pos_click=knob, z_p_k=1)
+        Mouse.move_to_click(pos_click=knob, z_p_k=1)
     if cancel:
-        mouse_move_to_click(pos_click=cancel, z_p_k=1)
+        Mouse.move_to_click(pos_click=cancel, z_p_k=1)
 
 
 def push_close():
     my_print_to_file('fun.push_close')
     pos_close = find_img.find_close()
     if pos_close:
-        mouse_move_to_click(pos_click=pos_close, z_p_k=0.1)
+        Mouse.move_to_click(pos_click=pos_close, z_p_k=0.1)
         close_flag = True
     else:
         close_flag = False
@@ -265,22 +274,22 @@ def exit_to_zero_screen():
     b_exit = find_img.find_b_exit()
     print(b_exit, 'b_exit')
     if b_exit:
-        mouse_move_to_click(pos_click=b_exit, z_p_k=0.1)
+        Mouse.move_to_click(pos_click=b_exit, z_p_k=0.1)
 
 
 def bonus():
     my_print_to_file('fun.bonus')
     # кнопка добавить
     add_bonus = locCenterImg('img/add.png', 0.8)
-    mouse_move(pos=add_bonus, speed=1)
+    Mouse.move(pos=add_bonus, speed=1)
     sleep(1)
-    mouse_left_click(pos=add_bonus)
+    Mouse.left_click(pos=add_bonus)
     sleep(2)
     # кнопка забрать
     take_bonus = locCenterImg('img/take.png', 0.9)
     if take_bonus:  # != None:
         pyautogui.moveTo(take_bonus, duration=1)
-        mouse_left_click(pos=take_bonus)
+        Mouse.left_click(pos=take_bonus)
         print('Бонус найден')
     else:
         print('Бонус не найден')
@@ -296,8 +305,8 @@ def move_friends_list_left():
     my_print_to_file('fun.move_friends_list_left')
     sleep(1)
     ar_right = locCenterImg('img/overall/b_arrow_right.png', 0.8)
-    pyautogui.moveTo(ar_right, duration=1)
-    mouse_left_click(pos=ar_right)
+    Mouse.move(pos=ar_right, speed=1)
+    Mouse.left_click(pos=ar_right)
     sleep(1)
     return 1
 
@@ -310,8 +319,9 @@ def move_friends_list_right():
     my_print_to_file('fun.move_friends_list_right')
     sleep(0.2)
     ar_right = locCenterImg('img/overall/b_arrow_left.png', 0.8)
-    pyautogui.moveTo(ar_right, duration=1)
-    mouse_left_click(pos=ar_right)
+
+    Mouse.move(pos=ar_right, speed=1)
+    Mouse.left_click(pos=ar_right)
     sleep(0.2)
     return 1
 
@@ -321,10 +331,11 @@ def move_friends_list_to_top():
     my_print_to_file('fun.move_friends_list_to_top')
     begin = locCenterImg('img/overall/b_begin.png', 0.96)
     if begin:  # если увидел
-        pyautogui.moveTo(begin, duration=1)
+        # pyautogui.moveTo(begin, duration=1)
+        Mouse.move(pos=begin, speed=1)
         print(' перемотка в начало ')
         sleep(1)
-        mouse_left_click(pos=begin)
+        Mouse.left_click(pos=begin)
         print('клик в начало ' + str(begin))
     # pyautogui.moveTo(50, 600, duration=1)
     sleep(1)
@@ -368,15 +379,13 @@ def find_link_station_master():
     pos_klan = find_img.find_klan()
     if station_master or pos_klan:
         if pos_klan:
-            pyautogui.moveTo(pos_klan)
-            mouse_move(pos=pos_klan)
+            Mouse.move(pos=pos_klan)
             # получение координат привязки
             sleep(0.5)
             point = pos_klan
-
             vizit_to_station_master()
         else:
-            mouse_move(pos=station_master)
+            Mouse.move(pos=station_master)
             x_or, y_or = station_master
             x_or -= 29
             y_or -= 29
@@ -385,7 +394,7 @@ def find_link_station_master():
         # Закрыть если открыто, так как за чем-то может быть не видна позиция привязки
         push_close_all_()
         pos_klan = find_img.find_klan()
-        mouse_move(pos=pos_klan)
+        Mouse.move(pos=pos_klan)
         # получение координат привязки
         sleep(0.5)
         point = pos_klan
@@ -500,7 +509,7 @@ def vizit_to_station_master():
     my_print_to_file('fun.vizit_to_station_master')
     station_master = find_img.find_station_master()
     if station_master:
-        mouse_move(pos=station_master, speed=0.4)
+        Mouse.move(pos=station_master, speed=0.4)
         # print(" уже у начальника ")
         sleep(1 / 3)
     else:
@@ -509,11 +518,11 @@ def vizit_to_station_master():
         x1, y1 = pos_klan
         x1, y1 = x1 - 60, y1 + 300
         master = x1, y1
-        mouse_move_to_click(pos_click=master, move_time=0.4, z_p_k=0.2)
+        Mouse.move_to_click(pos_click=master, move_time=0.4, z_p_k=0.2)
         # print('зашел к начальнику')
         sleep(0.5)
         station_master = find_img.find_station_master()
-        mouse_move(pos=station_master, speed=0.4)
+        Mouse.move(pos=station_master, speed=0.4)
     return station_master
 
 

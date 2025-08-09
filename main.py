@@ -17,7 +17,6 @@ import complex_phrases
 import fun_events
 import baza_dannyx as b_d
 
-from heroes import Hero, Activ
 from event_arena import create_img_arena_object, kill
 
 fun.my_print_to_file('')
@@ -26,7 +25,7 @@ fun.my_print_to_file("******* перезапуск программы *******")
 fun.my_print_to_file('*******                      *******')
 fun.my_print_to_file('')
 
-Activ.date_now = fun.date_utc_now()
+heroes.Activ.date_now = fun.date_utc_now()
 
 
 def start_prog():
@@ -136,7 +135,7 @@ def kiki():
 
 def tent_inspection():
     hero = fun.selection_hero()
-    ins = heroes.Hero.get_vip_all(Activ.hero_activ)
+    ins = heroes.Hero.get_vip_all(heroes.Activ.hero_activ)
     if ins == 10:
         print(complex_phrases.set_inspect_report())
         return
@@ -179,7 +178,7 @@ def tent_inspection():
 def tasks_na_kievskoy():
     hero = fun.selection_hero(show_name=False)
     if hero:
-        Hero.app_days_count_wildman(Activ.hero_activ)
+        heroes.Hero.app_days_count_wildman(heroes.Activ.hero_activ)
         # print(Hero.get_days_count_wildman(Activ.hero_activ))
     else:
         print('герой не опознан')
@@ -187,14 +186,14 @@ def tasks_na_kievskoy():
     touring.for_wilds()
     fun.work_8_hour()
     # Hero.a
-    displaying_values()
+    displaying_values(info=False)
 
 
 def wild_kiki():
     start_time = time()
     hero = fun.selection_hero()
     if hero:
-        Hero.app_days_count_wildman(Activ.hero_activ)
+        heroes.Hero.app_days_count_wildman(heroes.Activ.hero_activ)
         # print(Hero.get_days_count_wildman(Activ.hero_activ))
     else:
         print('герой не опознан')
@@ -216,13 +215,13 @@ def collecting_gifts_at_stations():
     hero = fun.selection_hero()
     # получение маршрута для определенного героя
     if hero:
-        bypass_hero = Hero.get_bypass(Activ.hero_activ)
+        bypass_hero = heroes.Hero.get_bypass(heroes.Activ.hero_activ)
         # движение по маршруту
         touring.sbor_podarkov(bypass_hero)
         # получение количества станций на маршруте
         q_st = fun.get_len_bypass(bypass_hero)
         # получение количества собранных подарков
-        q_gifts = Hero.get_qty_gift(Activ.hero_activ)
+        q_gifts = heroes.Hero.get_qty_gift(heroes.Activ.hero_activ)
     else:
         print('герой не опознан')
         return
@@ -280,13 +279,13 @@ def report_w():
 
 def save_home_point():
     fun.selection_hero(show_name=False)
-    address = Hero.get_home_location(Activ.hero_activ)
+    address = heroes.Hero.get_home_location(heroes.Activ.hero_activ)
     location = fun.loc_now()[0]
     mes = F'Твой адрес - {address} .\nНовый адрес {location}. Сохранить?'
     answer = messagebox.askyesno(title='Паспортист ))', message=mes)
     if answer:
         fun.selection_hero()
-        Hero.setting_home(Activ.hero_activ, location)
+        heroes.Hero.setting_home(heroes.Activ.hero_activ, location)
 
     displaying_values()
     print(f'{heroes.gady.home_location=}')

@@ -49,16 +49,18 @@ def to_map():
     fun.my_print_to_file(f'turgenev_st = {turgenev_st}')
     pos_slip = [0, 0]
     if turgenev_st:
+        print('turgenev_st')
         pos_or1 = fun.find_link_klan()
-        pos_slip[0] = pos_or1[0] + 205
+        pos_slip[0] = pos_or1[0] + 205 + 10
         pos_slip[1] = pos_or1[1] + 205
         fun.Mouse.move(pos=pos_slip)
     else:
+        print(' other station')
         pos_or1 = find.find_info()
-        pos_slip[0] = pos_or1[0] + 340
+        pos_slip[0] = pos_or1[0] + 340 + 10
         pos_slip[1] = pos_or1[1] + 180
         fun.Mouse.move(pos=pos_slip)
-    sleep(1)
+    # sleep(1)
     fun.Mouse.left_click(pos=pos_slip)
     sleep(1)
     # Убрать курсор с поля карты, чтобы ничего не перекрыл
@@ -105,15 +107,16 @@ def events_tunnel(st0, st2):
                 sleep(1)
         id_st = fun.locCenterImg(st2, confidence=0.85)
         fun.my_print_to_file(f'id_st = {id_st}')
-    print(st0)  # название станции
     fun.my_print_to_file(st0)
-    fun.Mouse.move(pos=id_st, speed=1)
     # вызов функции "event_gifts()" и подсчет количества найденных
     pos_gift = event_gifts()
+    fun.Mouse.move(pos=id_st, speed=0.2)
     fun.my_print_to_file(f'pos_gift = {pos_gift}')
     if pos_gift:
         Hero.app_gifts(Activ.hero_activ)
         print(st0, ' подарков ', Hero.get_qty_gift(Activ.hero_activ))
+    else:
+        print(st0)  # название станции
     return
 
 
