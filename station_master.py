@@ -62,6 +62,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     :param tour:
     :return:
     """
+    print('в бой')
     fun.my_print_to_file('station_master.enemy_battle()')
     fun.my_print_to_file(' поиск battle_end, skip_battle, dog')
 
@@ -95,39 +96,39 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                 count_mob_identified += 1
                 if name1_grey_rat and cycle:
                     cycle = False
-                    fun.mouse_move(pos=name1_grey_rat, speed=0.4)
+                    fun.mouse_move(pos=name1_grey_rat, speed=0.1)
                     Hero.app_rat(Activ.hero_activ)
                     print(myCt.tc_magenta(f'{Hero.get_qty_grey_rat(Activ.hero_activ)} серая крыса'))
                     mob_identified = 'grey_rat'
                 if name1_black_rat and cycle:
                     cycle = False
-                    fun.mouse_move(pos=name1_black_rat, speed=0.4)
+                    fun.mouse_move(pos=name1_black_rat, speed=0.1)
                     mob_identified = 'black_rat'
                     print(myCt.tc_magenta('черная крыса'))
                 if name1_white_rat and cycle:
                     cycle = False
-                    fun.mouse_move(pos=name1_white_rat, speed=0.4)
+                    fun.mouse_move(pos=name1_white_rat, speed=0.1)
                     mob_identified = 'white_rat'
                     print(myCt.tc_magenta('белая крыса'))
                 if name1_sand_rat and cycle:
                     cycle = False
-                    fun.mouse_move(pos=name1_sand_rat, speed=0.4)
+                    fun.mouse_move(pos=name1_sand_rat, speed=0.1)
                     mob_identified = 'sand_rat'
                     print(myCt.tc_magenta('песчаная крыса'))
                 if name2_spy and cycle:
                     cycle = False
-                    fun.mouse_move(pos=name2_spy, speed=0.4)
+                    fun.mouse_move(pos=name2_spy, speed=0.1)
                     mob_identified = 'spy'
                     print(myCt.tc_magenta('шпион пойман'))
                 if name3_smuggler and cycle:
                     cycle = False
-                    fun.mouse_move(pos=name3_smuggler, speed=0.4)
+                    fun.mouse_move(pos=name3_smuggler, speed=0.1)
                     mob_identified = 'smuggler'
                     print(myCt.tc_magenta('контрабандист пойман'))
 
                 if name4_arachne and cycle:
                     cycle = False
-                    fun.my_print_to_file(f'{name4_arachne=}')
+                    fun.mouse_move(pos=name4_arachne, speed=0.1)
                     if tour:
                         Hero.app_arachne(Activ.hero_activ)
                     print(myCt.tc_magenta(f'{Hero.get_qty_arachne(Activ.hero_activ)} арахна'))
@@ -135,14 +136,14 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
 
                 if name5_wildman and cycle:
                     cycle = False
-                    fun.mouse_move(pos=name5_wildman, speed=0.4)
+                    fun.mouse_move(pos=name5_wildman, speed=0.1)
                     print(f'{Hero.get_report_wildman_now(Activ.hero_activ)}')
                     print(complex_phrases.report_wildman(hero=Activ.hero_activ))
                     mob_identified = "wildman"
 
                 if name6_kikimora and cycle:
                     cycle = False
-                    fun.my_print_to_file(f'{name6_kikimora=}')
+                    fun.mouse_move(pos=name6_kikimora, speed=0.1)
                     if tour:
                         Hero.app_kiki(Activ.hero_activ)
                     print(myCt.tc_magenta(f'{Hero.get_qty_kiki(Activ.hero_activ)} кикимора'))
@@ -150,9 +151,9 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
 
                 if name7_raptor and cycle:
                     cycle = False
+                    fun.mouse_move(pos=name7_raptor, speed=0.1)
                     if tour:
                         Hero.app_raptor(Activ.hero_activ)
-                    fun.mouse_move(pos=name7_raptor, speed=0.4)
                     print(myCt.tc_magenta(f'{Hero.get_qty_raptor(Activ.hero_activ)} ящер'))
                     mob_identified = 'raptor'
 
@@ -176,7 +177,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                 # print(f'{dog=}')
                 fun.my_print_to_file("нажал на собаку")
                 # print('"нажал на собаку"')
-                fun.mouse_move_to_click(pos_click=dog, move_time=0.4, z_p_k=0.1)
+                fun.mouse_move_to_click(pos_click=dog, move_time=0.1, z_p_k=0.1)
         if skip_battle and skip_battle_count:
             # print(f'{skip_battle=}, {skip_battle_count=}, {duration_fight=}')
             duration_fight += 1
@@ -212,22 +213,23 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
             elif defeat:
                 result = "поражение"
             fun.my_print_to_file("нажать закрыть в конце боя")
-            fun.push_close_all_()
-            sleep(0)
+            fun.push_close_all_(speed_mouse=0.3)
+            # sleep(0)
 
     skip_battle1_end_ver = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
     fun.my_print_to_file(f'{skip_battle1_end_ver=}')
     while skip_battle1_end_ver:
         fun.push_close()
-        sleep(0.2)
+        # sleep(0.2)
         skip_battle1_end_ver = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
         fun.my_print_to_file(f'{skip_battle1_end_ver=}')
 
     if not arena:
         solid_memory.save_to_file(info=False)
         solid_memory.save_wild_state(info=False)
-        # print('из боя')
+
     fun.my_print_to_file("выход из 'enemy_battle")
+    print('из боя')
     return result
 
 

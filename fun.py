@@ -22,14 +22,27 @@ def locCenterImg(name_img, confidence=0.9, region: tuple[int, int, int, int] | N
     return pos_img
 
 
-def wait_static_pos(*,message=None ,img, region=None, confidence=0.99):
+def wait_static_pos(*, name_img, region=None, confidence=0.99, message=None):
     if message:
         print(f'{message}')
-    pos = locCenterImg(name_img=img, region=region, confidence=confidence)
+    pos = locCenterImg(name_img=name_img, region=region, confidence=confidence)
     while not pos:
-        pos = locCenterImg(name_img=img, region=region, confidence=confidence)
-    pos_img = locCenterImg(name_img=img, region=region, confidence=confidence)
+        pos = locCenterImg(name_img=name_img, region=region, confidence=confidence)
+    pos_img = locCenterImg(name_img=name_img, region=region, confidence=confidence)
     return pos_img
+
+
+def wait_and_stop_img(*, name_img, region: tuple[int, int, int, int] | None = None, confidence=0.9, message=''):
+    if message:
+        print(f'{message}')
+    img_1 = locCenterImg(name_img=name_img, confidence=confidence, region=region)
+    sleep(0.3)
+    img_2 = locCenterImg(name_img=name_img, confidence=confidence, region=region)
+    while not img_1 or img_1 != img_2:
+        img_1 = locCenterImg(name_img=name_img, confidence=confidence, region=region)
+        sleep(0.3)
+        img_2 = locCenterImg(name_img=name_img, confidence=confidence, region=region)
+    return img_1
 
 
 def mouse_left_click(*, pos):
@@ -236,32 +249,32 @@ def station_gifts():
         open_ = locCenterImg('img/b_gift_open.png', 0.9)
 
 
-def push_close_all_():
+def push_close_all_(speed_mouse=0.75):
     my_print_to_file('fun.push_close_all_')
     pos_close = find_img.find_close()
     while pos_close:
-        close_popup_window()
-        push_close()
-        sleep(1)
+        close_popup_window(speed_mouse)
+        push_close(speed_mouse)
+        # sleep(1)
         pos_close = find_img.find_close()
         # print("цикл close")
 
 
-def close_popup_window():
+def close_popup_window(speed_mouse=0.75):
     my_print_to_file('fun.close_popup_window')
     knob = find_img.find_knob()
     cancel = find_img.find_cancel()
     if knob:
-        Mouse.move_to_click(pos_click=knob, z_p_k=1)
+        Mouse.move_to_click(pos_click=knob, move_time=speed_mouse, z_p_k=1)
     if cancel:
-        Mouse.move_to_click(pos_click=cancel, z_p_k=1)
+        Mouse.move_to_click(pos_click=cancel, move_time=speed_mouse, z_p_k=1)
 
 
-def push_close():
+def push_close(speed_mouse=0.75):
     my_print_to_file('fun.push_close')
     pos_close = find_img.find_close()
     if pos_close:
-        Mouse.move_to_click(pos_click=pos_close, z_p_k=0.1)
+        Mouse.move_to_click(pos_click=pos_close, move_time=speed_mouse, z_p_k=0.1)
         close_flag = True
     else:
         close_flag = False
@@ -498,7 +511,7 @@ def find_link_klan():
     my_print_to_file('fun.find_link_klan')
     pos_klan = find_img.find_klan()
     while not pos_klan:
-        sleep(0.1)
+        # sleep(0.1)
         pos_klan = find_img.find_klan()
 
     return pos_klan
@@ -758,7 +771,7 @@ def loc_now():
         pos = locCenterImg(name_img=img_station, confidence=0.99)
         if pos:
             list_location = b_d.list_of_stations[station]
-            mouse_move(pos=pos)
+            mouse_move(pos=pos, speed=0.1)
             # print(f'{b_d.list_of_stations[station][2]}') # img/tonelli/id_stations/s_Chekhov.png
             # print(f'имя станции старта - {list_location[0]}') # имя станции старта - ст. Чеховская
             break

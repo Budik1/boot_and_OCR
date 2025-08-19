@@ -1,5 +1,7 @@
 from time import sleep, time
-from pprint import pprint
+from typing import Any
+
+from pyscreeze import Point
 
 import fun
 import heroes
@@ -12,16 +14,17 @@ from heroes import Hero, Activ
 
 def event_gifts():
     """
-    Поиск подарков на станции. Возвращает его позицию"""
+    Поиск подарков на станции. Возвращает его позицию
+    """
     fun.my_print_to_file('touring.event_gifts')
     sleep(1)
     pos_gift = fun.locCenterImg(name_img='img/tonelli/gift.png', confidence=0.75)
     if not pos_gift:
-        pos_gift_komun = fun.locCenterImg(name_img='img/tonelli/gift2.png', confidence=0.75)
-        pos_gift = pos_gift_komun
+        pos_gift_commune = fun.locCenterImg(name_img='img/tonelli/gift2.png', confidence=0.75)
+        pos_gift = pos_gift_commune
     fun.my_print_to_file(f'pos_gift = {pos_gift}')
     if pos_gift:
-        x, y = pos_gift
+        # x, y = pos_gift
         fun.Mouse.move(pos=pos_gift, speed=0.5)
         fun.Mouse.left_click(pos=pos_gift)
         sleep(1 * 2)
@@ -41,45 +44,40 @@ def event_gifts():
     return pos_gift
 
 
-def to_map():
+def open_map():
     """Из окна станции открывает карту. На Тургеневской выход смещен"""
-    fun.my_print_to_file('touring.to_map')
-    sleep(1)
-    turgenev_st = fun.locCenterImg(name_img=b_d.st_turgenev[2], confidence=0.85)
-    fun.my_print_to_file(f'turgenev_st = {turgenev_st}')
-    pos_slip = [0, 0]
-    if turgenev_st:
-        print('turgenev_st')
+    fun.my_print_to_file('touring.open_map')
+    location_station = fun.loc_now()
+    # print(color_text.tc_cyan(f'выход из {location_station[0]}'))
+    pos_run_out = [0, 0]
+    if location_station[0] == 'ст. Тургеневская':
         pos_or1 = fun.find_link_klan()
-        pos_slip[0] = pos_or1[0] + 205 + 10
-        pos_slip[1] = pos_or1[1] + 205
-        fun.Mouse.move(pos=pos_slip)
+        pos_run_out[0] = pos_or1[0] + 215
+        pos_run_out[1] = pos_or1[1] + 205
+        fun.Mouse.move(pos=pos_run_out, speed=0.1)
     else:
-        print(' other station')
         pos_or1 = find.find_info()
-        pos_slip[0] = pos_or1[0] + 340 + 10
-        pos_slip[1] = pos_or1[1] + 180
-        fun.Mouse.move(pos=pos_slip)
-    # sleep(1)
-    fun.Mouse.left_click(pos=pos_slip)
-    sleep(1)
+        pos_run_out[0] = pos_or1[0] + 350
+        pos_run_out[1] = pos_or1[1] + 180
+        fun.Mouse.move(pos=pos_run_out, speed=0.1)
+    fun.Mouse.left_click(pos=pos_run_out)
     # Убрать курсор с поля карты, чтобы ничего не перекрыл
-    station_exit = find.find_station_exit()
-    fun.Mouse.move(pos=station_exit)
+    station_exit = fun.wait_static_pos(name_img='img/tonelli/station_exit.png')
+    fun.Mouse.move(pos=station_exit, speed=0.1)
     return
 
 
-def events_tunnel(st0, st2):
+def events_tunnel(name_st, st_id_file):
     """
     События в туннеле
-    :param st0: название станции из списка
-    :param st2: имя файла ID станции
+    :param name_st: название станции из списка
+    :param st_id_file: имя файла ID станции
     """
     fun.my_print_to_file('touring.events_tunnel')
     fun.selection_hero(show_name=False)
 
-    sleep(1)
-    id_st = fun.locCenterImg(name_img=st2, confidence=0.85)
+    # sleep(1)
+    id_st = fun.locCenterImg(name_img=st_id_file)  # , confidence=0.85
     fun.my_print_to_file(f'id_st = {id_st}')
     info = fun.locCenterImg(name_img='img/overall/info.png', confidence=0.8)
     fun.my_print_to_file(f'info = {info}')
@@ -99,29 +97,36 @@ def events_tunnel(st0, st2):
             entry = fun.locCenterImg(name_img='img/tonelli/entry_station.png', confidence=0.8)
             if entry:
                 fun.my_print_to_file(f'entry = {entry}')
-                fun.Mouse.move_to_click(pos_click=entry, z_p_k=0.3)
-                sleep(1)
+                fun.Mouse.move_to_click(pos_click=entry, move_time=0.2, z_p_k=0.3)
+                # sleep(1)
             elif attack:
                 fun.my_print_to_file(f'attack = {attack}')
-                fun.Mouse.move_to_click(pos_click=attack, z_p_k=0.3)
-                sleep(1)
-        id_st = fun.locCenterImg(st2, confidence=0.85)
+                fun.Mouse.move_to_click(pos_click=attack, move_time=0.2, z_p_k=0.3)
+                # sleep(1)
+        id_st = fun.locCenterImg(name_img=st_id_file)  # , confidence=0.85
         fun.my_print_to_file(f'id_st = {id_st}')
-    fun.my_print_to_file(st0)
-    # вызов функции "event_gifts()" и подсчет количества найденных
+    fun.my_print_to_file(name_st)
+    # поиск и подсчет количества подарков
     pos_gift = event_gifts()
+    # указать на id станции
     fun.Mouse.move(pos=id_st, speed=0.2)
     fun.my_print_to_file(f'pos_gift = {pos_gift}')
     if pos_gift:
         Hero.app_gifts(Activ.hero_activ)
-        print(st0, ' подарков ', Hero.get_qty_gift(Activ.hero_activ))
+        print(name_st, ' подарков ', Hero.get_qty_gift(Activ.hero_activ))
     else:
-        print(st0)  # название станции
+        print(name_st)  # название станции
     return
 
 
 # принимает имя файла поиска, выдаёт Point(x, y), параметр confidence
-def poisk(search_object, param_confidence=0.99):
+def poisk(search_object: str, param_confidence: float = 0.99) -> tuple[Point, float | Any]:
+    """
+
+    :param search_object: имя файла
+    :param param_confidence:
+    :return:
+    """
     fun.my_print_to_file('touring.poisk')
     sleep(1)
     pos_search = fun.locCenterImg(name_img=search_object, confidence=param_confidence)
@@ -142,45 +147,51 @@ def traffic_on_the_map(stan: list) -> None:
     :return: None
     """
     fun.my_print_to_file('touring.traffic_on_the_map')
-    to_map()
-    sleep(1 * 2)
+    open_map()
+    # sleep(1 * 2)
     ev_map = stan[3]
     fun.my_print_to_file(f'ev_map = {ev_map}')
-    pos_stan = fun.locCenterImg(name_img=stan[1], confidence=0.84)
-    fun.my_print_to_file(f'pos_stan = {pos_stan}, stan[1] = {stan[1]}')
-    if ev_map == 'стрелка север' and pos_stan is None:
+    next_station = fun.locCenterImg(name_img=stan[1], confidence=0.84)
+    fun.my_print_to_file(f'pos_stan = {next_station}, stan[1] = {stan[1]}')
+    if ev_map == 'стрелка север' and next_station is None:
         pos_click = fun.locCenterImg(name_img='img/tonelli/mark_sever.png', confidence=0.85)
         fun.my_print_to_file(f'pos_click = {pos_click}, нажал на стрелку "север"')
         fun.Mouse.move_to_click(pos_click=pos_click, z_p_k=0.3)
-        sleep(1)
-    elif ev_map == 'стрелка юг' and pos_stan is None:
+        # sleep(1)
+    elif ev_map == 'стрелка юг' and next_station is None:
         pos_click = fun.locCenterImg(name_img='img/tonelli/mark_yug.png', confidence=0.85)
         fun.my_print_to_file(f'pos_click = {pos_click}, нажал на стрелку "юг"')
         fun.Mouse.move_to_click(pos_click=pos_click, z_p_k=0.3)
-        sleep(1)
-    point_poisk, confidence_poisk = poisk(stan[1])
-    fun.my_print_to_file(f'point_poisk = {point_poisk}, confidence_poisk = {confidence_poisk}')
-    fun.Mouse.move_to_click(pos_click=point_poisk, z_p_k=0.3)
+        # sleep(1)
+    next_station = fun.locCenterImg(name_img=stan[1])
+    confidence_poisk = 0.9
+    if next_station:
+        next_station = fun.wait_and_stop_img(name_img=stan[1])
+    else:
+        next_station, confidence_poisk = poisk(stan[1])
+    fun.my_print_to_file(f'point_poisk = {next_station}, confidence_poisk = {confidence_poisk}')
+    fun.Mouse.move_to_click(pos_click=next_station, z_p_k=0.3)
     events_tunnel(stan[0], stan[2])
     return
 
 
-def travel(track: list):
+def travel(path_list: list) -> None:
     """
-    Принимает список содержащий маршрут и осуществляет движение по нему
-    :param track: list
+    Осуществляет движение по маршруту.
+    :param path_list: (list): Список содержащий маршрут
+    :return:
     """
     fun.my_print_to_file('touring.travel')
-    for it in range(len(track)):
-        k = it % len(track)
-        # print(k, track[k])
+    for it in range(len(path_list)):
+        k = it % len(path_list)
 
-        traffic_on_the_map(track[k])
+        traffic_on_the_map(path_list[k])
     return
 
 
-def move_to_target(*, target_point, raport=True):
+def move_to_target(*, target_point, rapport=True):
     """
+    :param rapport: сообщение о прибытии
     :param target_point: имя станции, например - 'ст. Чеховская'
     """
     # определяю героя
@@ -190,26 +201,24 @@ def move_to_target(*, target_point, raport=True):
         return
     # получаю локацию старта
     start_point = fun.loc_now()[0]
-    # print(f'{start_point=}, {type(start_point)}') # start_point='ст. Чеховская', <class 'str'>
 
     # если указано 'домой'
     if target_point == 'домой':
         target_point = Hero.get_home_location(Activ.hero_activ)
 
     # получаю маршрут
-    # print(f'{target_point=}, {type(target_point)}')
     route_list = create_route_list(start=start_point, stop=target_point)
 
     # движение по маршруту
-    travel(track=route_list)
-    if raport:
+    travel(path_list=route_list)
+    if rapport:
         print(f'Пришел на {target_point}')
     return
 
 
 def create_new_list_only_name(*, massive):
     """
-    Из массива создаёт новый  содержащий только имена
+    Из массива создаёт новый массив содержащий только имена
     :param massive: массив данных
     :return: Новый список только имена
     """
@@ -346,7 +355,6 @@ list_road_names = create_new_list_only_name(massive=b_d.road_list)
 list_names_all_station: list = extraction_name_in_list(value=b_d.list_of_stations)
 
 
-
 def for_wilds():
     """
     Для Велеса:
@@ -360,7 +368,6 @@ def for_wilds():
     """
     fun.my_print_to_file('touring.for_wilds')
     fun.push_close_all_()
-    # kiev()
     hero = fun.selection_hero(show_name=False)
     if hero == 'Велес':
         move_to_target(target_point='ст. Киевская')

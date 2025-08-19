@@ -3,8 +3,10 @@ from colorama import Fore, Style
 
 init()
 
+
 # RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN
 def tc_cyan(text):
+    """голубой"""
     text_cyan_color = Fore.CYAN + text + Style.RESET_ALL
     return text_cyan_color
 

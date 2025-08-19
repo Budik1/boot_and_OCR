@@ -96,8 +96,6 @@ def displaying_values(info=True):
     # print(f'{her.mara.bac_color=}')
 
 
-
-
 def start_pm():
     fun_events.start_p_m()
     displaying_values()
@@ -299,6 +297,12 @@ def get_target(event):
     print(f'Прокладываю маршрут к {selection}')
     touring.move_to_target(target_point=selection)
     displaying_values(info=False)
+    return
+
+
+def loc_now():
+    pos = fun.loc_now()
+    print(color_text.tc_cyan(pos[0]))
 
 
 root = Tk()
@@ -371,6 +375,7 @@ ttk.Button(text='Паспортист', width=14, command=save_home_point).place
 
 ttk.Button(text="фото противника", width=15, command=create_img_arena_object).place(x=0, y=b_d.line10)
 ttk.Button(text="атака противника", width=15, command=kill).place(x=225, y=b_d.line10)
+ttk.Button(text="где я?", width=5, command=loc_now).place(x=150, y=b_d.line10)
 
 ttk.Button(text="Gady", width=5, command=change_gady).place(x=0, y=b_d.gady_y)
 ttk.Button(text="Gavr", width=5, command=change_gavr).place(x=0, y=b_d.gavr_y)
