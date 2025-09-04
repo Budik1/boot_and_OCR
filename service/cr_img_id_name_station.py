@@ -17,7 +17,7 @@ def name_id_station():
     y_demo += change_y
     fun.mouse_move(pos=(x_demo, y_demo), speed=1)
 
-    name_file = 'img/tonelli/id_stations/s_Pr-kt_Vernadskogo.png'
+    name_file = '../img/tonelli/id_stations/s_Pr-kt_Vernadskogo.png'
 
     fun.foto(name_file, (x, y, change_x, change_y))
     print()

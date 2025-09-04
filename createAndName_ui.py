@@ -45,6 +45,10 @@ def who_is_this():
 
 
 def form_path_name_file():
+    """
+    Создание пути сохранения файла по имени героя.
+    :return:
+    """
     if heroes.Activ.hero_activ_name:
         name_file = ''
         if name_file_line_1.get():
@@ -125,6 +129,6 @@ ttk.Entry(textvariable=name_file_line_3, width=3).place(x=tab_2, y=line_5)
 line_img = b_d.line5 + 5
 imagePul = ImageTk.PhotoImage(file="img/overall/pulya.png")
 ttk.Button(root, image=imagePul, command=create_and_analiz_img.analiz_task).place(x=tab_0, y=line_3)
-# ttk.Button(root, image=imagePul, command=station_master.choosing_task_money).place(x=tab_0, y=line_3)
+# ttk.Button(root, image=imagePul, command=station_master.option_task_money).place(x=tab_0, y=line_3)
 
 root.mainloop()

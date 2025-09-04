@@ -2,10 +2,12 @@ from time import sleep, time
 from typing import Any
 
 from pyscreeze import Point
+from sympy.physics.units import speed
 
 import fun
 import heroes
 import color_text
+import sounds
 import station_master
 import baza_dannyx as b_d
 import find_img as find
@@ -76,7 +78,7 @@ def events_tunnel(name_st, st_id_file):
     fun.my_print_to_file('touring.events_tunnel')
     fun.selection_hero(show_name=False)
 
-    # sleep(1)
+    dog_activ = True
     id_st = fun.locCenterImg(name_img=st_id_file)  # , confidence=0.85
     fun.my_print_to_file(f'id_st = {id_st}')
     info = fun.locCenterImg(name_img='img/overall/info.png', confidence=0.8)
@@ -89,7 +91,7 @@ def events_tunnel(name_st, st_id_file):
         skip_battle = find.find_skip_battle()
         fun.my_print_to_file(f'skip_battle = {skip_battle}')
         if skip_battle:
-            station_master.enemy_battle(1, add_up=True, tour=True)  # вызов обработки события
+            station_master.enemy_battle(1, add_up=True, tour=True, dog_activ=dog_activ)  # вызов обработки события
         if post:
             fun.my_print_to_file(f'post = {post}')
             fun.Mouse.move(pos=post, speed=0.2)
@@ -97,11 +99,12 @@ def events_tunnel(name_st, st_id_file):
             entry = fun.locCenterImg(name_img='img/tonelli/entry_station.png', confidence=0.8)
             if entry:
                 fun.my_print_to_file(f'entry = {entry}')
-                fun.Mouse.move_to_click(pos_click=entry, move_time=0.2, z_p_k=0.3)
+                fun.Mouse.move_to_click(pos_click=entry, move_time=0.2, z_p_k=0.1)
                 # sleep(1)
             elif attack:
+                dog_activ = False
                 fun.my_print_to_file(f'attack = {attack}')
-                fun.Mouse.move_to_click(pos_click=attack, move_time=0.2, z_p_k=0.3)
+                fun.Mouse.move_to_click(pos_click=attack, move_time=0.2, z_p_k=0.1)
                 # sleep(1)
         id_st = fun.locCenterImg(name_img=st_id_file)  # , confidence=0.85
         fun.my_print_to_file(f'id_st = {id_st}')
@@ -156,12 +159,12 @@ def traffic_on_the_map(stan: list) -> None:
     if ev_map == 'стрелка север' and next_station is None:
         pos_click = fun.locCenterImg(name_img='img/tonelli/mark_sever.png', confidence=0.85)
         fun.my_print_to_file(f'pos_click = {pos_click}, нажал на стрелку "север"')
-        fun.Mouse.move_to_click(pos_click=pos_click, z_p_k=0.3)
+        fun.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
         # sleep(1)
     elif ev_map == 'стрелка юг' and next_station is None:
         pos_click = fun.locCenterImg(name_img='img/tonelli/mark_yug.png', confidence=0.85)
         fun.my_print_to_file(f'pos_click = {pos_click}, нажал на стрелку "юг"')
-        fun.Mouse.move_to_click(pos_click=pos_click, z_p_k=0.3)
+        fun.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
         # sleep(1)
     next_station = fun.locCenterImg(name_img=stan[1])
     confidence_poisk = 0.9
@@ -170,7 +173,7 @@ def traffic_on_the_map(stan: list) -> None:
     else:
         next_station, confidence_poisk = poisk(stan[1])
     fun.my_print_to_file(f'point_poisk = {next_station}, confidence_poisk = {confidence_poisk}')
-    fun.Mouse.move_to_click(pos_click=next_station, z_p_k=0.3)
+    fun.Mouse.move_to_click(pos_click=next_station, move_time=0.2, z_p_k=0.3)
     events_tunnel(stan[0], stan[2])
     return
 
@@ -196,18 +199,32 @@ def move_to_target(*, target_point, rapport=True):
     """
     # определяю героя
     her = fun.selection_hero()
+    home_location = Hero.get_home_location(Activ.hero_activ)
+    if home_location == 'бомж':
+        print('Милок, не уходи со станции.. Память отшибет - заблудишься. Лучше документик сделай. '
+              'Тебе тогда хоть подскажут.. ')
+        return
     if not her:
         print(color_text.tc_yellow('Этот НИКТО никуда не пойдет)))'))
         return
     # получаю локацию старта
     start_point = fun.loc_now()[0]
+    # print(f'{start_point=}')
+    if start_point == 'станция не опознана':
+        fun.push_close()
+        start_point = fun.loc_now()[0]
 
     # если указано 'домой'
     if target_point == 'домой':
         target_point = Hero.get_home_location(Activ.hero_activ)
 
+
     # получаю маршрут
-    route_list = create_route_list(start=start_point, stop=target_point)
+    if start_point != 'станция не опознана':
+        route_list = create_route_list(start=start_point, stop=target_point)
+    else:
+        print(color_text.tc_red('no start_point'))
+        return
 
     # движение по маршруту
     travel(path_list=route_list)
@@ -359,7 +376,9 @@ def for_wilds():
     """
     Для Велеса:
         С домашней станции на Киевскую,
-     задания на пули, потом домой, на крыс потратить остаток.
+     задания на пули, потом на 'ст. Парк культуры(КР)' проверить есть ли доступное задание,
+     задания на пули, потом на 'ст. Библиотека им. Ленина' проверить есть ли доступное задание,
+     и домой, на крыс потратить остаток.
     Для всех остальных:
         С домашней станции на Киевскую,
      задания на пули, потом на Университет,
@@ -371,15 +390,24 @@ def for_wilds():
     hero = fun.selection_hero(show_name=False)
     if hero == 'Велес':
         move_to_target(target_point='ст. Киевская')
-        station_master.choosing_task_money()
-        print('задания на Киевской выполнены')
+        station_master.option_task_money(report_en=False)
+        print('нет доступных заданий')
+
+        move_to_target(target_point='ст. Парк культуры(КР)')
+        station_master.option_task_money(report_en=False)
+        print('нет доступных заданий')
+
+        move_to_target(target_point='ст. Библиотека им. Ленина')
+        station_master.option_task_money(report_en=False)
+        print('нет доступных заданий')
+
         move_to_target(target_point='домой')
         station_master.task_pos_item(1)
         print('энергия исчерпана')
     else:
         move_to_target(target_point='ст. Киевская')
-        station_master.choosing_task_money()
-        print('задания на Киевской выполнены')
+        station_master.option_task_money()
+        print('нет доступных заданий на Киевской')
         # univer()
         # за черными крысами на Универ
         move_to_target(target_point='ст. Университет')
@@ -387,6 +415,7 @@ def for_wilds():
         print('энергия исчерпана')
         # univer_frunze()
         move_to_target(target_point='домой')
+        sounds.say_txt('вернулся домой))')
         return
 
 

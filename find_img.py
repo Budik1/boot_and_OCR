@@ -1,15 +1,17 @@
-import pyautogui
+from PIL import Image
+
+
 import fun_down as fund
 
 norm = 0.9
 par_conf = 0.79
 
 
-def locCenterImg(*, name_img, confidence=0.9, region: tuple[int, int, int, int] | None = None):
-    pos_img = pyautogui.locateCenterOnScreen(name_img,
-                                             confidence=confidence,
-                                             region=region)
-    return pos_img
+# def locCenterImg(*, name_img, confidence=0.9, region: tuple[int, int, int, int] | None = None):
+#     pos_img = pyautogui.locateCenterOnScreen(name_img,
+#                                              confidence=confidence,
+#                                              region=region)
+#     return pos_img
 
 
 def find_knob():
@@ -227,6 +229,11 @@ def find_name_kikimora():
     pos = fund.locateCenterImg(name_img='img/tonelli/mobi/name_kikimora.png')
     return pos
 
-def find_name():
-    pos = fund.locateCenterImg(name_img='path_name')
+def find_en_1():
+    pos = fund.locateCenterImg(name_img='img/station_master/energy_value/en_1.png')
+    return pos
+
+
+def find_klan_kv_label():
+    pos = fund.locateCenterImg(name_img='img/kv/tests/klan_kv_label.png')
     return pos

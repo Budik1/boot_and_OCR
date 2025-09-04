@@ -1,8 +1,15 @@
-import fun
+import time
 from time import sleep
-import color_text as myCt
+
+import fun
+import heroes
+import sounds
+import color_text
+import baza_paths as b_p
+import complex_phrases
 import find_img as find
-from heroes import Hero, Activ
+import color_text as myCt
+import solid_memory
 
 
 def foto_danger():
@@ -17,6 +24,43 @@ def foto_danger():
     name_foto = fun.date_and_time_in_name_file() + ".png"
     fun.foto(('img/Cr/' + name_foto), (x_s, y_s, x_r, y_r))
     print('foto')
+
+
+def foto_result_round(*, pos_v, pos_n, path=b_p.result_round, sound=False):
+    # сужение
+    # коррекция верхнего угла
+    pos_x, pos_y = pos_v
+    pos_x += 180
+    pos_y += 45
+    # коррекция нижнего угла
+    x2, y2 = pos_n
+    x_r = x2 - pos_x + 80
+    y_r = y2 - pos_y - 18
+    #
+    name_foto = fun.date_and_time_in_name_file() + ".png"
+    fun.foto((path + name_foto), (pos_x, pos_y, x_r, y_r))
+    if sound:
+        sounds.sound_victory()
+    return
+
+def foto_loot_kv(*, pos_v, pos_n):
+    path = b_p.loot_round
+    kor_x_v = 30 + 90
+    kor_y_v = 5 + 127
+    # коррекция верхнего угла
+    pos_x, pos_y = pos_v
+    pos_x += 150 + kor_x_v
+    pos_y += 40 + kor_y_v
+    # коррекция нижнего угла
+    x2, y2 = pos_n
+    x_r = x2 - pos_x + 80
+    y_r = y2 - pos_y - 18
+    #
+    name_foto = fun.date_and_time_in_name_file() + ".png"
+    fun.foto((path + name_foto), (pos_x, pos_y, x_r, y_r))
+    # if sound:
+    #     sounds.sound_victory()
+    return
 
 
 def selection_hero_in_kv():
@@ -35,7 +79,14 @@ def selection_hero_in_kv():
     return hero
 
 
-def battle(q_call):
+def distance(*, pos_vic: tuple, pos_cl: tuple) -> int:
+    x_vic, y_vic = pos_vic
+    x_cl, y_cl = pos_cl
+    dist = y_cl - y_vic
+    return dist
+
+
+def battle(target_call):
     # print(f'{q_call} бой')
     fun.my_print_to_file('battle')
     raid = False
@@ -61,40 +112,66 @@ def battle(q_call):
         kv_close = find.find_kv_close()
     if danger:
         print(" опасный")
-        Hero.app_danger(Activ.hero_activ)
+        heroes.Hero.app_qty_danger(heroes.Activ.hero_activ)
     kv_close = find.find_kv_close()
     if kv_close:
-        # print(kv_close, 'kv_close')
         victory = find.find_victory_battle_in_kv()
         defeat = find.find_defeat_battle_in_kv()
         if victory:
             result = "победа"
-            print(f'бой {q_call}, {myCt.tc_yellow(result)}')
+            print(f'бой {target_call}, {myCt.tc_yellow(result)}')
+
+            heroes.Hero.up_qty_kv_victory(heroes.Activ.hero_activ)
             # print(Hero.get_name_ru(Activ.hero_activ))
+            dist_report = distance(pos_vic=victory, pos_cl=kv_close)
+            foto_result_round(pos_v=victory, pos_n=kv_close)
+            if dist_report > 232:
+                heroes.Hero.up_count_shoulder_straps_all(heroes.Activ.hero_activ)
+                heroes.Hero.up_count_shoulder_straps_kv(heroes.Activ.hero_activ)
+                mes = color_text.tc_red('Погон?!!')
+                print(f'{mes} {dist_report=}')
+                foto_result_round(pos_v=victory, pos_n=kv_close,
+                                  path='img/kv/result_round/p/', sound=True)
+                foto_loot_kv(pos_v=victory, pos_n=kv_close)
 
             if danger:
                 # print('победа над опасным')
-                Hero.app_danger_v(Activ.hero_activ)
+                heroes.Hero.app_danger_v(heroes.Activ.hero_activ)
                 foto_danger()
         elif defeat:
             result = "поражение"
-            print(f'бой {q_call}, {myCt.tc_yellow(result)}')
-            # print(myCt.tc_red(result))
+            print(f'бой {target_call}, {myCt.tc_yellow(result)}')
         else:
-            result = ''
-            print(f'бой {q_call}, {myCt.tc_yellow(result)}')
+            result = heroes.Activ.duel_raid + 1
+            print(result, target_call)
+        solid_memory.save_kv_config(info=False)
 
-    qty_danger = Hero.get_qty_danger(Activ.hero_activ)
-    qty_danger_v = Hero.get_qty_danger_v(Activ.hero_activ)
-    print(f'встретил {qty_danger}, побед {qty_danger_v}')
+        # qty_victory_all = Hero.get_qty_all_victory(Activ.hero_activ)
+        # qty_shoulder_straps = Hero.get_count_shoulder_straps_all(Activ.hero_activ)
+        # if qty_shoulder_straps:
+        #     print(f'Из {qty_victory_all} побед выпало {qty_shoulder_straps} погон. '
+        #           f'Т.е. {qty_victory_all / qty_shoulder_straps} боёв на 1 погон')
+        # else:
+        #     print(f'Из {qty_victory_all} побед выпало {qty_shoulder_straps} погон')
+
+    # qty_danger = Hero.get_qty_danger(Activ.hero_activ)
+    # qty_danger_v = Hero.get_qty_danger_v(Activ.hero_activ)
+    # print(f'встретил {qty_danger}, побед {qty_danger_v}')
     fun.mouse_move_to_click(pos_click=kv_close, z_p_k=0.3)
-
-    # print("закрыть результат боя")
 
 
 def kv():
     fun.my_print_to_file('kv_and_raid.kv')
+
     selection_hero_in_kv()
+    stat, data_kv = solid_memory.reading_kv_config()
+    solid_memory.set_values_kv(data_kv)
+    phrase_eff = complex_phrases.report_kv_efficiency()
+    print(phrase_eff[0])
+    print(phrase_eff[1])
+    # print(complex_phrases.report_shoulder_straps())
+    print()
+    # print(color_text.tc_red('Время КВ установлено'))
     kv_reload = find.find_kv_reload()
     # fun.my_print_to_file(f'kv_reload {kv_reload}')
     fun.my_print_to_file("нажать 'обновить'")
@@ -103,9 +180,10 @@ def kv():
     q_attack = 0
     kv_wait_attack = find.find_kv_attack_for_money()
     # fun.my_print_to_file(f'kv_wait_attack {kv_wait_attack}')
-    kv_attak = find.find_kv_attak()
-    # fun.my_print_to_file(f'kv_attak {kv_attak}')
-    if not kv_attak and not kv_wait_attack:
+    attack = find.find_kv_attak()
+    klan_war = find.find_klan_kv_label()
+    # fun.my_print_to_file(f'attack {attack}')
+    if not attack and not kv_wait_attack:
         print('ждем начало кв')
     it_w_a = 0
     it_w_rel = 0
@@ -117,13 +195,28 @@ def kv():
                 # print("ждем возможность атаковать")
                 kv_reload = find.find_kv_reload()
                 fun.mouse_move_to_click(pos_click=kv_reload, z_p_k=1)
-        if kv_attak:
-            it_w_a = 0
-            q_attack += 1
-            fun.mouse_move_to_click(pos_click=kv_attak, z_p_k=0)
-            battle(q_attack)
+        if attack:
+            heroes.Hero.set_last_attack(heroes.Activ.hero_activ, value=time.time())
+            if klan_war:
+                it_w_a = 0
+                heroes.Hero.up_qty_kv_all(heroes.Activ.hero_activ)
+                fun.mouse_move_to_click(pos_click=attack, z_p_k=0)
+                heroes.Hero.up_qty_all(heroes.Activ.hero_activ)
+                q_attack = heroes.Hero.get_qty_kv_all(heroes.Activ.hero_activ)
+                battle(target_call=q_attack)
+                phrase_eff = complex_phrases.report_kv_efficiency()
+                print(phrase_eff[0])
+                print(phrase_eff[1])
+                # print(complex_phrases.report_shoulder_straps())
+                print()
+            else:
+                it_w_a = 0
+                q_attack = 'Raid'
+                fun.mouse_move_to_click(pos_click=attack, z_p_k=0)
+                battle(target_call=q_attack)
         kv_wait_attack = find.find_kv_attack_for_money()
-        kv_attak = find.find_kv_attak()
+        attack = find.find_kv_attak()
+        klan_war = find.find_klan_kv_label()
 
 
 def loot():
@@ -146,7 +239,3 @@ def loot():
 
     name_foto = fun.date_and_time_in_name_file() + ".png"
     fun.foto(('img/Cr/' + name_foto), (x_s, y_s, x_r, y_r))
-
-
-def go_in_clan():
-    pass

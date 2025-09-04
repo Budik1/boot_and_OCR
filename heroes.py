@@ -1,7 +1,12 @@
+import color_text
 import color_text as myCt
 import baza_dannyx as b_d
 
+# from fun import time_now
+
 nam = 0  # для подсчета чего?
+temp_min = None
+time_now_ = ""
 
 
 class Activ:
@@ -10,10 +15,12 @@ class Activ:
     result_duel = ""
     check_date_ = ''
     date_now = ''
+    hour_now = ''
     value_energy = 0
     name_file_ = None
     station_activ = ''
     qty_vip = 0
+    duel_raid = 0
 
 
 class Hero:
@@ -49,12 +56,103 @@ class Hero:
         self.arena_count = 0  # счет арены
         self.arena_victory_count = 0
 
-        self.duel_all = 0
-        self.duel_now = 0
-        self.duel_victory = 0
-        self.duel_defeat = 0
+        # кв и рейд
+        self.qty_all = 0  # к-во боёв всего
+        self.qty_all_victory = 0  # к-во побед всего
+
+        self.qty_kv_all = 0
+        self.qty_kv_victory = 0
+
         self.danger = 0
         self.danger_victory = 0
+
+        self.count_shoulder_straps_all = 0
+        self.count_shoulder_straps_kv = 0
+
+        self.time_start_kv = 0
+        self.last_attack = 0
+
+        self.timer = 0
+        self.time_entree = 0
+
+        self.duel_raid = 0
+
+    # kv
+    def get_last_attack(self):
+        return self.last_attack
+
+    def set_last_attack(self, value):
+        self.last_attack = value
+
+
+    def get_qty_all(self):
+        return self.qty_all
+
+    def up_qty_all(self):
+        self.qty_all += 1
+
+    def get_qty_all_victory(self):
+        return self.qty_all_victory
+
+    def up_qty_all_victory(self):
+        self.qty_all_victory += 1
+
+    def get_qty_kv_all(self):
+        return self.qty_kv_all
+
+    def up_qty_kv_all(self):
+        self.qty_all += 1
+        self.qty_kv_all += 1
+
+    def get_qty_kv_victory(self):
+        return self.qty_kv_victory
+
+    def up_qty_kv_victory(self):
+        self.qty_kv_victory += 1
+        self.qty_all_victory += 1
+
+    def get_qty_danger(self):
+        return self.danger
+
+    def app_qty_danger(self):
+        self.danger += 1
+
+    def get_qty_danger_v(self):
+        return self.danger_victory
+
+    def app_danger_v(self):
+        self.danger_victory += 1
+
+    def get_count_shoulder_straps_all(self):
+        return self.count_shoulder_straps_all
+
+    def up_count_shoulder_straps_all(self):
+        self.count_shoulder_straps_all += 1
+
+    def get_count_shoulder_straps_kv(self):
+        return self.count_shoulder_straps_kv
+
+    def up_count_shoulder_straps_kv(self):
+        self.count_shoulder_straps_kv += 1
+
+    def get_hour_start_kv(self):
+        return self.time_start_kv
+
+    def set_hour_start_kv(self, value):
+        self.time_start_kv = value
+
+    # timer
+    def set_time_entree(self, value):
+        self.time_entree = value
+
+    def get_time_entree(self):
+        return self.time_entree
+
+    def set_timer(self, value):
+        self.timer = value
+
+    def get_timer(self):
+        return self.timer
 
     def setting_value_energy(self, value):
         self.value_energy = value
@@ -72,9 +170,12 @@ class Hero:
     def app_energy_count_today(self, value):
         self.energy_count_today += value
         self.energy_count_all += value
+        if Activ.station_activ == 'ст. Киевская':
+            self.energy_kiev_count_all += value
+            # print(color_text.tc_yellow('set energy_kiev_count_all'))
 
-    def app_energy_kiev_count_all(self, value):
-        self.energy_kiev_count_all += value
+    def get_energy_kiev_count_all(self):
+        return self.energy_kiev_count_all
 
     def app_task_count(self):
         self.task_count += 1
@@ -115,12 +216,6 @@ class Hero:
 
     def app_rat(self):
         self.grey_rat += 1
-
-    def app_danger(self):
-        self.danger += 1
-
-    def app_danger_v(self):
-        self.danger_victory += 1
 
     def app_completing_tasks(self):
         self.completing_tasks = True
@@ -180,12 +275,6 @@ class Hero:
     def get_bypass(self):
         return self.bypass
 
-    def get_qty_danger(self):
-        return self.danger
-
-    def get_qty_danger_v(self):
-        return self.danger_victory
-
     def get_path_task(self):
         return f'{self.path_task}'
 
@@ -197,18 +286,6 @@ class Hero:
 
     def get_hero_name_in_file(self):
         return self.name_file
-
-    #
-    def duel_kv(self):
-        self.duel_now += 1
-        self.duel_all += 1
-
-    def duel_victory_app(self):
-        self.duel_victory += 1
-        self.duel_kv()
-
-    def her_message(self):
-        return f'обнаружен {self.name_ru}'
 
 
 gady = Hero(name_ru_="Гадя", name_en_='Gady', name_file_='gady')

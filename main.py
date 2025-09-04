@@ -8,6 +8,7 @@ import fun
 import heroes
 import person
 import touring
+import os_action
 import color_text
 import kv_and_raid
 import solid_memory
@@ -18,6 +19,9 @@ import fun_events
 import baza_dannyx as b_d
 
 from event_arena import create_img_arena_object, kill
+
+# удаление файлов старше 10 дней
+os_action.check_files(old_day=10)
 
 fun.my_print_to_file('')
 fun.my_print_to_file('*******                      *******')
@@ -121,7 +125,7 @@ def en_3():
 
 
 def puli():
-    station_master.choosing_task_money()
+    station_master.option_task_money()
     displaying_values()
 
 
@@ -271,10 +275,6 @@ def change_mara():
     changeColor(her_active=fun.selection_hero(show_name=False))
 
 
-def report_w():
-    complex_phrases.display_report_wildman()
-
-
 def save_home_point():
     fun.selection_hero(show_name=False)
     address = heroes.Hero.get_home_location(heroes.Activ.hero_activ)
@@ -300,15 +300,96 @@ def get_target(event):
     return
 
 
-def loc_now():
-    pos = fun.loc_now()
-    print(color_text.tc_cyan(pos[0]))
+def timer():
+    tim_gady = int(heroes.Hero.get_time_entree(heroes.gady) - time())
+    if tim_gady > 0:
+        hours = tim_gady // 3600
+        minutes = (tim_gady - hours * 3600) // 60
+        seconds = tim_gady % 60
+        tim_gady -= 1
+        timer_gady_label.config(text=f"{hours:02d}:{minutes:02d}:{seconds:02d}")
+    else:
+        timer_gady_label.config(text="00:00:00")
+
+    tim_gavr = int(heroes.Hero.get_time_entree(heroes.gavr) - time())
+    if tim_gavr > 0:
+        hours = tim_gavr // 3600
+        minutes = (tim_gavr - hours * 3600) // 60
+        seconds = tim_gavr % 60
+        tim_gavr -= 1
+        timer_gavr_label.config(text=f"{hours:02d}:{minutes:02d}:{seconds:02d}")
+    else:
+        timer_gavr_label.config(text="00:00:00")
+
+    tim_veles = int(heroes.Hero.get_time_entree(heroes.veles) - time())
+    if tim_veles > 0:
+        hours = tim_veles // 3600
+        minutes = (tim_veles - hours * 3600) // 60
+        seconds = tim_veles % 60
+        tim_veles -= 1
+        timer_veles_label.config(text=f"{hours:02d}:{minutes:02d}:{seconds:02d}")
+    else:
+        timer_veles_label.config(text="00:00:00")
+
+    tim_mara = int(heroes.Hero.get_time_entree(heroes.mara) - time())
+    if tim_mara > 0:
+        hours = tim_mara // 3600
+        minutes = (tim_mara - hours * 3600) // 60
+        seconds = tim_mara % 60
+        tim_mara -= 1
+        timer_mara_label.config(text=f"{hours:02d}:{minutes:02d}:{seconds:02d}")
+    else:
+        timer_mara_label.config(text="00:00:00")
+
+    tim = int(time())
+    # hours_now = tim // 3600
+    minutes_now = (tim - (tim // 3600) * 3600) // 60
+    if minutes_now != heroes.temp_min:
+        heroes.temp_min = minutes_now
+        # # if minutes_now % 3:
+        # #     print(color_text.tc_magenta(f'{minutes_now}'))
+        # # else:
+        # #     print(color_text.tc_green(f'{minutes_now}'))
+        heroes.time_now_ = fun.time_now()
+        # print(color_text.tc_green(f'{heroes.time_now_}'))
+    # count_print =
+
+    root.after(1000, timer)
+
+
+def set_timer24():
+    fun.selection_hero(show_name=False)
+    tim_entree = int(time() + b_d.timer24)  #
+    heroes.Hero.set_time_entree(heroes.Activ.hero_activ, tim_entree)
+    solid_memory.save_to_file(info=True)
+
+
+def set_timer8():
+    fun.selection_hero(show_name=False)
+    tim_entree = int(time() + b_d.timer8)  #
+    heroes.Hero.set_time_entree(heroes.Activ.hero_activ, tim_entree)
+    solid_memory.save_to_file(info=True)
+
+
+def set_timer1():
+    fun.selection_hero(show_name=False)
+    tim_entree = int(time() + b_d.timer1)  #
+    heroes.Hero.set_time_entree(heroes.Activ.hero_activ, tim_entree)
+    solid_memory.save_to_file(info=True)
 
 
 root = Tk()
-root.title(' помощник "Метро 2033"')
-# root.geometry("370x362+1200+50")  # Ширина x Высота + координата X + координата Y
-root.geometry(f'371x{b_d.line10 + b_d.height_line + 2}+1200+50')  # Ширина x Высота + координата X + координата Y
+root.title(f' помощник "Метро 2033"')
+
+width = b_d.timer_x + 73  # Ширина
+# width = 371# Ширина
+height = b_d.line10 + b_d.height_line + 2  # Высота
+h = width - 371
+position_x = 1200 - h
+position_y = 50
+# root.geometry("370x362+1200+50")  # Ширина x Высота + положение X + положение Y
+# root.geometry(f'371x{b_d.line11 + b_d.height_line + 2}+1200+50')  # Ширина x Высота + положение X + положение Y
+root.geometry(f'{width}x{height}+{position_x}+{position_y}')  # Ширина x Высота + положение X + положение Y
 root.resizable(False, False)
 
 gavr_vip = StringVar()
@@ -358,6 +439,10 @@ start_prog()
 ttk.Button(text="КВ", width=13, command=kv_and_raid.kv).place(x=115, y=b_d.line5)
 ttk.Button(text=" Start ", width=13, command=start_pm).place(x=241, y=b_d.line5)
 
+ttk.Button(text="set 24 h", width=7, command=set_timer24).place(x=b_d.timer_x, y=b_d.line5)
+ttk.Button(text="set 8 h ", width=7, command=set_timer8).place(x=b_d.timer_x, y=b_d.line6)
+ttk.Button(text="set 1 h ", width=7, command=set_timer1).place(x=b_d.timer_x, y=b_d.line7)
+
 ttk.Button(text="wild+kiki", width=9, command=wild_kiki).place(x=115, y=b_d.line6)
 ttk.Button(text="обход всех станций", width=17, command=collecting_gifts_at_stations).place(x=205, y=b_d.line6)
 
@@ -375,7 +460,23 @@ ttk.Button(text='Паспортист', width=14, command=save_home_point).place
 
 ttk.Button(text="фото противника", width=15, command=create_img_arena_object).place(x=0, y=b_d.line10)
 ttk.Button(text="атака противника", width=15, command=kill).place(x=225, y=b_d.line10)
-ttk.Button(text="где я?", width=5, command=loc_now).place(x=150, y=b_d.line10)
+# ttk.Button(text="set T?", width=5, command=set_timer24).place(x=150, y=b_d.line10)
+
+timer_gady_label = ttk.Label()
+timer_gady_label.config(text="00:00:00", font=("Helvetica", 12))  # , font=("Helvetica", 12)
+timer_gady_label.place(x=b_d.timer_x, y=b_d.gady_y)
+
+timer_gavr_label = ttk.Label()
+timer_gavr_label.config(text="00:00:00", font=("Helvetica", 12))  # , font=("Helvetica", 12)
+timer_gavr_label.place(x=b_d.timer_x, y=b_d.gavr_y)
+
+timer_veles_label = ttk.Label()
+timer_veles_label.config(text="00:00:00", font=("Helvetica", 12))  # , font=("Helvetica", 12)
+timer_veles_label.place(x=b_d.timer_x, y=b_d.veles_y)
+
+timer_mara_label = ttk.Label()
+timer_mara_label.config(text="00:00:00", font=("Helvetica", 12))  # , font=("Helvetica", 12)
+timer_mara_label.place(x=b_d.timer_x, y=b_d.mara_y)
 
 ttk.Button(text="Gady", width=5, command=change_gady).place(x=0, y=b_d.gady_y)
 ttk.Button(text="Gavr", width=5, command=change_gavr).place(x=0, y=b_d.gavr_y)
@@ -483,4 +584,5 @@ ttk.Button(root, image=img_e2, command=en_2).place(x=0, y=line_img + b_d.height_
 img_e3 = ImageTk.PhotoImage(file="img/overall/en3v3.png")
 ttk.Button(root, image=img_e3, command=en_3).place(x=0, y=line_img + b_d.height_line * 2 + difference_str_img * 2)
 #
+timer()
 root.mainloop()

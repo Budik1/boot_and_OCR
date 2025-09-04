@@ -165,6 +165,7 @@ rapt_x = step * 4 + s
 rat_x = step * 5 + s
 gift_x = step * 6 + s
 wild_x = step * 7 + s
+timer_x = step * 8 - 9
 
 separator_1 = kiki_x - 18
 separator_2 = arah_x - 18
@@ -172,3 +173,7 @@ separator_3 = rapt_x - 18
 separator_4 = rat_x - 18
 separator_5 = gift_x - 18
 separator_6 = wild_x - 18
+
+timer24 = 24 * 3600
+timer8 = 8 * 3600
+timer1 = 1 * 3600

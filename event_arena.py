@@ -83,24 +83,30 @@ def kill():
         while arena_object is None:
             region = const_region
             # Если не найден раньше ищем со смещением списка в начало
-            while scroll_up is not None and arena_object is None:
+            while scroll_up and arena_object is None:
                 fun.mouse_move_to_click(pos_click=scroll_up)
-                # pyautogui.moveTo(174, 260)
-                scroll_up = find.find_scroll_up()
-                fun.await_arena(region)
-                arena_object = find.find_arena_object(region=region)  # 0.85
+                batt_attack = fun.await_arena(region)
+                # fun.Mouse.move(pos=batt_attack)
+                fun.Mouse.move(pos=(batt_attack[0] - 70, batt_attack[1]))
+                find.find_hall_of_glory_tabl()
+                arena_object = find.find_arena_object(region=region)
+                scroll_up = find.find_scroll_up()# 0.85
             if arena_object is None:  # Если не найден раньше ищем со смещением списка в конец
                 scroll_down = find.find_scroll_down()
                 fun.mouse_move_to_click(pos_click=scroll_down)
                 fun.await_arena(region)
                 arena_object = find.find_arena_object(region=region)  # 0.85
 
-        # name_file = str("img/test/arena_obl_поиска" + str(boy_in_arena) + ".png")
-        # print(boy_in_arena)
-        # print(name_file)
-        # fun.foto(name_file, region)
         attack_arena_object = find.find_attack(region=region)
         fun.mouse_move(pos=attack_arena_object)
+
+        x, y, dl, v = region
+        x -= 50
+        dl += 50
+        region_test_file = x, y, dl, v
+        name_file = str("img/test/arena/arena_obl_поиска" + str(boy_in_arena) + ".png")
+        fun.foto(name_file, region_test_file)
+
         fun.mouse_move_to_click(pos_click=attack_arena_object, z_p_k=0.5)
         hero_vs_opponent_img = find.find_hero_vs_opponent()
         while hero_vs_opponent_img is None:
