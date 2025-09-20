@@ -9,4 +9,7 @@ task_hero = 'img/test/test_tasks/task/'
 result_round = 'img/kv/result_round/result_all_round/'
 loot_round = 'img/kv/result_round/result_round_loot/'
 # os_action
-chek_list_directory = ['log/', 'img/Cr/', 'img/not_used/','img/test/arena/', result_round]
+chek_list_directory = ['log/', 'img/Cr/', 'img/not_used/','img/test/arena/', 'img/kv/result_round/result_all_round/',
+                       ]
+
+arena_object = 'img/arena/'

@@ -1,6 +1,5 @@
-import color_text
-import color_text as myCt
 import baza_dannyx as b_d
+import color_text as myCt
 
 # from fun import time_now
 
@@ -25,10 +24,10 @@ class Activ:
 
 class Hero:
 
-    def __init__(self, name_ru_=None, name_en_=None, name_file_=None):
+    def __init__(self, name_ru_=None, name_en_=None, name_id=None):
         self.name_en = name_en_
         self.name_ru = name_ru_
-        self.name_file = name_file_
+        self.name_id = name_id
         self.path_task = ''
         self.home_location = 'бомж'
         self.bypass = ()
@@ -57,17 +56,18 @@ class Hero:
         self.arena_victory_count = 0
 
         # кв и рейд
-        self.qty_all = 0  # к-во боёв всего
-        self.qty_all_victory = 0  # к-во побед всего
+        self.qty_duel_all = 0  # к-во боёв всего
+        self.qty_duel_all_victory = 0  # к-во побед всего
 
-        self.qty_kv_all = 0
-        self.qty_kv_victory = 0
+        self.qty_duel_in_kv_all = 0
+        self.qty_duel_in_kv_victory = 0
 
         self.danger = 0
         self.danger_victory = 0
 
         self.count_shoulder_straps_all = 0
         self.count_shoulder_straps_kv = 0
+        self.__numbers_wins_to_loot = -1
 
         self.time_start_kv = 0
         self.last_attack = 0
@@ -78,38 +78,52 @@ class Hero:
         self.duel_raid = 0
 
     # kv
+    @property
+    def numbers_wins_to_loot(self):
+        return self.__numbers_wins_to_loot
+
+    @numbers_wins_to_loot.setter
+    def numbers_wins_to_loot(self, value):
+        self.__numbers_wins_to_loot = value
+
+
+    def get_time_start_kv(self):
+        return self.time_start_kv
+
+    def set_time_start_kv(self, value):
+        self.time_start_kv = value
+
     def get_last_attack(self):
         return self.last_attack
 
     def set_last_attack(self, value):
         self.last_attack = value
 
+    def get_qty_duel_all(self):
+        return self.qty_duel_all
 
-    def get_qty_all(self):
-        return self.qty_all
+    def up_qty_duel_all(self):
+        self.qty_duel_all += 1
 
-    def up_qty_all(self):
-        self.qty_all += 1
+    def get_qty_duel_all_victory(self):
+        return self.qty_duel_all_victory
 
-    def get_qty_all_victory(self):
-        return self.qty_all_victory
+    def up_qty_duel_all_victory(self):
+        self.qty_duel_all_victory += 1
 
-    def up_qty_all_victory(self):
-        self.qty_all_victory += 1
+    def get_qty_duel_in_kv_all(self):
+        return self.qty_duel_in_kv_all
 
-    def get_qty_kv_all(self):
-        return self.qty_kv_all
+    def up_qty_duel_in_kv_all(self):
+        self.qty_duel_all += 1
+        self.qty_duel_in_kv_all += 1
 
-    def up_qty_kv_all(self):
-        self.qty_all += 1
-        self.qty_kv_all += 1
+    def get_qty_duel_in_kv_victory(self):
+        return self.qty_duel_in_kv_victory
 
-    def get_qty_kv_victory(self):
-        return self.qty_kv_victory
-
-    def up_qty_kv_victory(self):
-        self.qty_kv_victory += 1
-        self.qty_all_victory += 1
+    def up_qty_duel_in_kv_victory(self):
+        self.qty_duel_in_kv_victory += 1
+        self.qty_duel_all_victory += 1
 
     def get_qty_danger(self):
         return self.danger
@@ -180,7 +194,7 @@ class Hero:
     def app_task_count(self):
         self.task_count += 1
 
-    def app_days_count_wildman(self):
+    def app_wildman_days_count(self):
         if not self.wild_activ:
             self.wild_activ = True
             self.wildman_days_count += 1
@@ -284,23 +298,23 @@ class Hero:
     def get_name_en(self):
         return self.name_en
 
-    def get_hero_name_in_file(self):
-        return self.name_file
+    def get_name_id(self):
+        return self.name_id
 
 
-gady = Hero(name_ru_="Гадя", name_en_='Gady', name_file_='gady')
+gady = Hero(name_ru_="Гадя", name_en_='Gady', name_id='gady')
 gady.path_task = 'img/station_master/tasks_gady/'
 gady.bypass = b_d.bypass
 
-gavr = Hero(name_ru_='Гавр', name_en_='Gavr', name_file_='gavr')
+gavr = Hero(name_ru_='Гавр', name_en_='Gavr', name_id='gavr')
 gavr.path_task = 'img/station_master/tasks_gavr/'
 gavr.bypass = b_d.bypass
 
-veles = Hero(name_ru_='Велес', name_en_='Велес', name_file_='veles')
+veles = Hero(name_ru_='Велес', name_en_='Велес', name_id='veles')
 veles.path_task = 'img/station_master/tasks_veles/'
 veles.bypass = b_d.bypass_veles
 
-mara = Hero(name_ru_='Мара', name_en_='Mara', name_file_='mara')
+mara = Hero(name_ru_='Мара', name_en_='Mara', name_id='mara')
 mara.path_task = 'img/station_master/tasks_mara/'
 mara.bypass = b_d.bypass_mara
 

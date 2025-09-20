@@ -607,6 +607,7 @@ def dress_region():
 
     print('ok')
 
+
 def no_energy():
     name_create_img = 'img/station_master/energy_indicator/no_energy.png'
     show_move = True
@@ -635,7 +636,7 @@ def no_energy():
     sounds.sound_vic()
     print(f'файл {name_create_img} создан')
 
-
 # no_energy()
 # dress_region()
 # dress()
+# hero_img()

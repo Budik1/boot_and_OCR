@@ -5,27 +5,174 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="изменил сохранение и отображение счетчиков">
-      <change afterPath="$PROJECT_DIR$/cr_nam_img.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/timer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baza_dannyx.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza_dannyx.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/baza_paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza_paths.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/color_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/color_text.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/complex_phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/complex_phrases.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_wild.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cr_img_dva.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img_dva.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cr_img_id_name_station.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/cr_img_id_name_station.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/createAndName_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/createAndName_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cr_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cr_nam_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_nam_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_and_analiz_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_and_analiz_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_arena.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/find_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/find_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/arena/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/arena_object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/arena/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_veles/t1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_veles/t1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/arena_object.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/defeat_in_arena.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/hall_of_glory_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/hall_of_glory_tabl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/hero_vs_opponent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/object.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/scroll_down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/scroll_up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/victory_in_arena.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-29 20-13-27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-30 07-18-57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-30 08-09-29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 18-56-21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 19-06-28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 19-11-31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 19-16-34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 19-21-37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 19-31-42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 19-36-59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 19-41-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 19-52-03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 19-57-04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 20-02-09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 20-07-13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 20-12-16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 20-17-18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 20-22-29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 20-27-31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 20-32-33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 20-37-38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 20-42-42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-08-31 20-47-55.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 08-06-04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 08-10-58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 08-16-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 08-21-05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 08-31-10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 08-36-13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 08-41-16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 08-46-19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 08-56-26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 09-01-30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 09-06-32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 09-16-39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 09-21-41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 09-26-41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 09-31-48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 09-36-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 09-41-53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 09-46-56.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 09-57-02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 20-08-20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 20-13-25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 20-18-27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 20-23-31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 20-28-34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 20-33-36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 20-38-41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 20-43-43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 20-58-54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 21-03-56.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-01 21-08-59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 07-55-03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 08-00-06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 08-05-10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 08-10-12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 08-15-15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 08-20-12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 08-25-21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 08-30-22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 08-35-26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 08-40-29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 08-45-30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 08-50-30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 08-55-37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 09-00-34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 09-05-42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 09-10-46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 09-15-49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 09-20-46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 09-25-52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 09-31-07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 09-36-09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 09-41-12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 09-46-13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 19-11-15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 19-16-19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 19-21-20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 19-26-24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 19-36-30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 19-46-36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 19-51-41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 20-01-48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 20-06-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 20-11-53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 20-16-56.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 20-32-05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 20-37-08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-02 20-42-10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 08-06-10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 08-11-13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 08-16-16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 08-21-20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 08-26-21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 08-31-46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 08-36-44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 08-41-30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 08-46-34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 08-51-37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 08-56-51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 09-01-44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 09-06-49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 09-11-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 09-16-53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 09-21-55.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 09-32-15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 09-37-05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 09-42-08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 09-47-12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 09-52-29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 19-14-54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 19-24-59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 19-30-15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 19-35-06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 19-45-11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 19-50-11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 19-55-19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 20-00-16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 20-05-28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 20-10-24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 20-15-30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 20-20-37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 20-25-39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 20-30-43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 20-40-58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 20-45-52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 20-50-57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 20-55-59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-09-03 21-01-02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/hero_id/her_gadya.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/hero_id/her_gavr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/hero_id/her_mara.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/hero_id/her_veles.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/station_master/numbers/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/numbers/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/station_master/numbers/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/numbers/8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_mara/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_mara/t2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_mara/t3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_mara/t3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kv_config.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/img_stat_kv.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_stat_kv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/os_action.py" beforeDir="false" afterPath="$PROJECT_DIR$/os_action.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/person.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/img_crop.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/img_crop.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solid_memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/solid_memory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds.py" beforeDir="false" afterPath="$PROJECT_DIR$/sounds.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
     </list>
@@ -96,6 +243,9 @@
     &quot;Python.event_frend.executor&quot;: &quot;Run&quot;,
     &quot;Python.generate_route.executor&quot;: &quot;Run&quot;,
     &quot;Python.heroes.executor&quot;: &quot;Run&quot;,
+    &quot;Python.img_crop (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.img_crop.executor&quot;: &quot;Run&quot;,
+    &quot;Python.img_crop1.executor&quot;: &quot;Run&quot;,
     &quot;Python.img_stat_kv.executor&quot;: &quot;Run&quot;,
     &quot;Python.info_messages.executor&quot;: &quot;Run&quot;,
     &quot;Python.information_messages (1).executor&quot;: &quot;Run&quot;,
@@ -107,12 +257,14 @@
     &quot;Python.mini_gui.executor&quot;: &quot;Run&quot;,
     &quot;Python.my_gui (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.my_gui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.os_action.executor&quot;: &quot;Run&quot;,
     &quot;Python.servis_cla.executor&quot;: &quot;Run&quot;,
     &quot;Python.servis_ev.executor&quot;: &quot;Run&quot;,
     &quot;Python.station_master.executor&quot;: &quot;Run&quot;,
     &quot;Python.t_item (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.t_item.executor&quot;: &quot;Run&quot;,
     &quot;Python.tasks_analiz.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tempo.executor&quot;: &quot;Run&quot;,
     &quot;Python.test.executor&quot;: &quot;Run&quot;,
     &quot;Python.timer.executor&quot;: &quot;Run&quot;,
     &quot;Python.www.executor&quot;: &quot;Run&quot;,
@@ -126,21 +278,23 @@
     &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
     &quot;ToolWindow.Python Console.ShowToolbar&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;mute__touring&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/bot in br/testOCR/img/station_master/numbers&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/bot in br/testOCR&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\bot in br\testOCR\img\station_master\numbers" />
+      <recent name="D:\bot in br\testOCR" />
+      <recent name="D:\bot in br\testOCR\img\arena" />
       <recent name="D:\bot in br\testOCR\service" />
+      <recent name="D:\bot in br\testOCR\img\station_master\numbers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\bot in br\testOCR" />
+      <recent name="D:\bot in br\testOCR\tools" />
       <recent name="D:\bot in br\testOCR\service" />
+      <recent name="D:\bot in br\testOCR" />
       <recent name="D:\bot in br\testOCR\img\kv\result_raund" />
       <recent name="D:\bot in br\testOCR\img\test\test_tasks" />
-      <recent name="D:\bot in br\testOCR\img\station_master" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -171,7 +325,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="createAndName_ui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="img_crop" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -180,11 +334,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/createAndName_ui.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/img_crop.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -193,7 +347,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="img_stat_kv" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="img_crop1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -206,7 +360,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/img_stat_kv.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/img_crop1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -237,7 +391,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="timer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="tempo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -246,11 +400,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/service" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/timer.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/service/tempo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -262,10 +416,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.img_stat_kv" />
+        <item itemvalue="Python.tempo" />
         <item itemvalue="Python.cr_nam_img" />
-        <item itemvalue="Python.createAndName_ui" />
-        <item itemvalue="Python.timer" />
+        <item itemvalue="Python.img_crop1" />
+        <item itemvalue="Python.img_crop" />
       </list>
     </recent_temporary>
   </component>
@@ -338,7 +492,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/event_arena.py</url>
-          <line>58</line>
+          <line>63</line>
           <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -358,17 +512,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/find_img.py</url>
-          <line>187</line>
+          <line>193</line>
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>93</line>
+          <line>94</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>172</line>
+          <line>173</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -377,24 +531,34 @@
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>114</line>
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/heroes.py</url>
-          <line>162</line>
+          <line>183</line>
           <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>148</line>
+          <line>151</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>278</line>
+          <line>277</line>
           <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/complex_phrases.py</url>
+          <line>138</line>
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
+          <line>112</line>
+          <option name="timeStamp" value="120" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

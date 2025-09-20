@@ -1,27 +1,24 @@
-from tkinter import *
-from tkinter import ttk
-from tkinter import messagebox
-from PIL import ImageTk
 from time import time
+from tkinter import *
+from tkinter import messagebox
+from tkinter import ttk
 
-import fun
-import heroes
-import person
-import touring
-import os_action
+from PIL import ImageTk
+
+import baza_dannyx as b_d
 import color_text
+import complex_phrases
+import fun
+import fun_events
+import heroes
 import kv_and_raid
+import os_action
+import person
+import revision_tents
 import solid_memory
 import station_master
-import revision_tents
-import complex_phrases
-import fun_events
-import baza_dannyx as b_d
-
+import touring
 from event_arena import create_img_arena_object, kill
-
-# удаление файлов старше 10 дней
-os_action.check_files(old_day=10)
 
 fun.my_print_to_file('')
 fun.my_print_to_file('*******                      *******')
@@ -47,8 +44,11 @@ def start_prog():
         displaying_values(info=False)
     else:
         displaying_values()
+    # вывод инфо состояния
     complex_phrases.display_smol_report_wildman()
     complex_phrases.display_info_energy_all()
+    # удаление файлов старше 10 дней
+    os_action.check_files(old_day=10)
     return
 
 
@@ -94,15 +94,11 @@ def displaying_values(info=True):
     gavr_wild.set(heroes.gavr.wildman)
     veles_wild.set(heroes.veles.wildman)
     mara_wild.set(heroes.mara.wildman)
-    # print(f'{her.gady.bac_color=}')
-    # print(f'{her.gavr.bac_color=}')
-    # print(f'{her.veles.bac_color=}')
-    # print(f'{her.mara.bac_color=}')
 
 
 def start_pm():
     fun_events.start_p_m()
-    displaying_values()
+    displaying_values(info=False)
 
 
 def bonus():
@@ -111,28 +107,28 @@ def bonus():
 
 def en_1():
     station_master.task_pos_item(1)
-    displaying_values()
+    displaying_values(info=False)
 
 
 def en_2():
     station_master.task_pos_item(2)
-    displaying_values()
+    displaying_values(info=False)
 
 
 def en_3():
     station_master.task_pos_item(3)
-    displaying_values()
+    displaying_values(info=False)
 
 
 def puli():
     station_master.option_task_money()
-    displaying_values()
+    displaying_values(info=False)
 
 
 def kiki():
     touring.for_kiki()
     fun.work_8_hour()
-    displaying_values()
+    displaying_values(info=False)
 
 
 def tent_inspection():
@@ -180,7 +176,7 @@ def tent_inspection():
 def tasks_na_kievskoy():
     hero = fun.selection_hero(show_name=False)
     if hero:
-        heroes.Hero.app_days_count_wildman(heroes.Activ.hero_activ)
+        heroes.Hero.app_wildman_days_count(heroes.Activ.hero_activ)
         # print(Hero.get_days_count_wildman(Activ.hero_activ))
     else:
         print('герой не опознан')
@@ -195,7 +191,7 @@ def wild_kiki():
     start_time = time()
     hero = fun.selection_hero()
     if hero:
-        heroes.Hero.app_days_count_wildman(heroes.Activ.hero_activ)
+        heroes.Hero.app_wildman_days_count(heroes.Activ.hero_activ)
         # print(Hero.get_days_count_wildman(Activ.hero_activ))
     else:
         print('герой не опознан')
@@ -204,7 +200,7 @@ def wild_kiki():
     displaying_values()
     touring.for_kiki()
     fun.work_8_hour()
-    displaying_values()
+    displaying_values(info=False)
     finish_time = float(time() - start_time)  # общее количество секунд
     minutes = int(finish_time // 60)  # количество минут
     seconds = round((finish_time % minutes), 2)
@@ -229,7 +225,7 @@ def collecting_gifts_at_stations():
         return
     # вывод информации
     print(f'На {q_st} станциях собрано {q_gifts} подарков')
-    displaying_values()
+    displaying_values(info=False)
 
 
 def changeColor(*, her_active):
@@ -285,7 +281,7 @@ def save_home_point():
         fun.selection_hero()
         heroes.Hero.setting_home(heroes.Activ.hero_activ, location)
 
-    displaying_values()
+    displaying_values(info=False)
     print(f'{heroes.gady.home_location=}')
     print(f'{heroes.gavr.home_location=}')
     print(f'{heroes.veles.home_location=}')
@@ -294,7 +290,6 @@ def save_home_point():
 
 def get_target(event):
     selection = combobox.get()
-    print(f'Прокладываю маршрут к {selection}')
     touring.move_to_target(target_point=selection)
     displaying_values(info=False)
     return
@@ -346,13 +341,7 @@ def timer():
     minutes_now = (tim - (tim // 3600) * 3600) // 60
     if minutes_now != heroes.temp_min:
         heroes.temp_min = minutes_now
-        # # if minutes_now % 3:
-        # #     print(color_text.tc_magenta(f'{minutes_now}'))
-        # # else:
-        # #     print(color_text.tc_green(f'{minutes_now}'))
         heroes.time_now_ = fun.time_now()
-        # print(color_text.tc_green(f'{heroes.time_now_}'))
-    # count_print =
 
     root.after(1000, timer)
 
@@ -361,21 +350,21 @@ def set_timer24():
     fun.selection_hero(show_name=False)
     tim_entree = int(time() + b_d.timer24)  #
     heroes.Hero.set_time_entree(heroes.Activ.hero_activ, tim_entree)
-    solid_memory.save_to_file(info=True)
+    solid_memory.save_to_file(info=False)
 
 
 def set_timer8():
     fun.selection_hero(show_name=False)
     tim_entree = int(time() + b_d.timer8)  #
     heroes.Hero.set_time_entree(heroes.Activ.hero_activ, tim_entree)
-    solid_memory.save_to_file(info=True)
+    solid_memory.save_to_file(info=False)
 
 
 def set_timer1():
     fun.selection_hero(show_name=False)
     tim_entree = int(time() + b_d.timer1)  #
     heroes.Hero.set_time_entree(heroes.Activ.hero_activ, tim_entree)
-    solid_memory.save_to_file(info=True)
+    solid_memory.save_to_file(info=False)
 
 
 root = Tk()
@@ -460,7 +449,7 @@ ttk.Button(text='Паспортист', width=14, command=save_home_point).place
 
 ttk.Button(text="фото противника", width=15, command=create_img_arena_object).place(x=0, y=b_d.line10)
 ttk.Button(text="атака противника", width=15, command=kill).place(x=225, y=b_d.line10)
-# ttk.Button(text="set T?", width=5, command=set_timer24).place(x=150, y=b_d.line10)
+# ttk.Button(text="kv rapport", width=6, command=kv_report).place(x=150, y=b_d.line10)
 
 timer_gady_label = ttk.Label()
 timer_gady_label.config(text="00:00:00", font=("Helvetica", 12))  # , font=("Helvetica", 12)

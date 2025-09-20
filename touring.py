@@ -217,6 +217,10 @@ def move_to_target(*, target_point, rapport=True):
     # если указано 'домой'
     if target_point == 'домой':
         target_point = Hero.get_home_location(Activ.hero_activ)
+        mess = color_text.tc_cyan('своей палатке')
+    else:
+        mess = color_text.tc_cyan(target_point)
+    print(f'Прокладываю маршрут к {mess}')
 
 
     # получаю маршрут
@@ -391,15 +395,20 @@ def for_wilds():
     if hero == 'Велес':
         move_to_target(target_point='ст. Киевская')
         station_master.option_task_money(report_en=False)
-        print('нет доступных заданий')
+        col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
+        print(f'нет доступных заданий. {col}')
 
         move_to_target(target_point='ст. Парк культуры(КР)')
         station_master.option_task_money(report_en=False)
-        print('нет доступных заданий')
+        col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
+
+        print(f'нет доступных заданий. {col}')
 
         move_to_target(target_point='ст. Библиотека им. Ленина')
         station_master.option_task_money(report_en=False)
-        print('нет доступных заданий')
+        col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
+
+        print(f'нет доступных заданий. {col}')
 
         move_to_target(target_point='домой')
         station_master.task_pos_item(1)

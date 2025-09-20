@@ -1,5 +1,6 @@
 from time import sleep
 
+import baza_paths
 import fun
 import find_img as find
 import heroes
@@ -30,6 +31,10 @@ def hall_is_open():
 
 def create_img_arena_object():
     """Создаёт скрин arena_object из зала славы. Объект должен быть вверху списка """
+    fun.selection_hero(show_name=False)
+    path_img =baza_paths.arena_object
+    hero_name = heroes.Activ.name_file_
+    path_hero_img = f'{path_img}{hero_name}/'
     pos_or_v = fun.find_link_hall_of_glory()  # ориентир на зал славы
     fun.mouse_move_to_click(pos_click=pos_or_v, z_p_k=0.3)  # открыть зал славы
     fun.mouse_move(pos=(pos_or_v[0] - 678, pos_or_v[1] + 144))
@@ -41,9 +46,9 @@ def create_img_arena_object():
     # смещение внутри региона правой нижней точки на параметр (с увеличением размер уменьшается)
     tune_s = 183
     tune_v = 20
-    fun.foto('img/arena/object.png', region)
+    fun.foto(f'{path_hero_img}object.png', region)
     # foto_pos('img/test/object1.png', region, tune_x - 60, tune_y, tune_s - 60, tune_v)
-    foto_pos('img/arena/arena_object.png', region, tune_x, tune_y, tune_s, tune_v)
+    foto_pos(f'{path_hero_img}arena_object.png', region, tune_x, tune_y, tune_s, tune_v)
     print('фото сделано')
 
 
@@ -68,7 +73,8 @@ def kill():
         const_region = region  # сохранение региона
         fun.mouse_move(pos=(174, 260))
         sleep(1)
-        arena_object = find.find_arena_object(region=region)
+        arena_object = find.find_arena_object(region=region,
+                                              hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))
         fun.mouse_move(pos=arena_object)
         scroll_up = find.find_scroll_up()
         if arena_object is None:
@@ -79,7 +85,8 @@ def kill():
                 y += 68
                 # print(_it, y)
                 region = (x, y, sh, v)
-                arena_object = find.find_arena_object(region=region)
+                arena_object = find.find_arena_object(region=region,
+                                                      hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))
         while arena_object is None:
             region = const_region
             # Если не найден раньше ищем со смещением списка в начало
@@ -89,23 +96,25 @@ def kill():
                 # fun.Mouse.move(pos=batt_attack)
                 fun.Mouse.move(pos=(batt_attack[0] - 70, batt_attack[1]))
                 find.find_hall_of_glory_tabl()
-                arena_object = find.find_arena_object(region=region)
+                arena_object = find.find_arena_object(region=region,
+                                                      hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))
                 scroll_up = find.find_scroll_up()# 0.85
             if arena_object is None:  # Если не найден раньше ищем со смещением списка в конец
                 scroll_down = find.find_scroll_down()
                 fun.mouse_move_to_click(pos_click=scroll_down)
                 fun.await_arena(region)
-                arena_object = find.find_arena_object(region=region)  # 0.85
+                arena_object = find.find_arena_object(region=region,
+                                                      hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))  # 0.85
 
         attack_arena_object = find.find_attack(region=region)
         fun.mouse_move(pos=attack_arena_object)
 
-        x, y, dl, v = region
-        x -= 50
-        dl += 50
-        region_test_file = x, y, dl, v
-        name_file = str("img/test/arena/arena_obl_поиска" + str(boy_in_arena) + ".png")
-        fun.foto(name_file, region_test_file)
+        # x, y, dl, v = region
+        # x -= 50
+        # dl += 50
+        # region_test_file = x, y, dl, v
+        # name_file = str("img/test/arena/arena_obl_поиска" + str(boy_in_arena) + ".png")
+        # fun.foto(name_file, region_test_file)
 
         fun.mouse_move_to_click(pos_click=attack_arena_object, z_p_k=0.5)
         hero_vs_opponent_img = find.find_hero_vs_opponent()

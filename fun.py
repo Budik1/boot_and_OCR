@@ -2,7 +2,6 @@ import pyautogui
 import datetime
 from time import sleep, time
 
-
 import sounds
 import find_img
 import fun_down
@@ -198,6 +197,7 @@ def time_now():
     # '%Y-%m-%d_%H:%M:%S' '%Y-%m-%d %H°%M\'\'%S\''
     time_now_ = (now.strftime('%H:%M:%S'))
     return time_now_
+
 
 def date_time_now():
     now = datetime.datetime.now()
@@ -639,46 +639,63 @@ def work_8_hour():
     return
 
 
+def transform_word_duel(*, qty_duel: int):
+    col_days_ed = qty_duel % 10
+    col_days_des = (qty_duel // 10) % 10
+    if col_days_ed == 0 and col_days_des == 0:
+        result = 'дуэлей'
+    elif col_days_ed == 1 and col_days_des != 1:
+        result = 'дуэли'
+    else:
+        result = 'дуэлях'
+    return result
+
+
+def transform_word_victory(*, qty_victory: int):
+    col_days_ed = qty_victory % 10
+    col_days_des = (qty_victory // 10) % 10
+    if col_days_ed == 1 and col_days_des != 1:
+        result = 'победа'
+    elif col_days_ed in [2, 3, 4] and col_days_des != 1:
+        result = 'победы'
+    else:
+        result = 'побед'
+    return result
+
+
 def transform_word_days(*, qty_days: int):
-    days_des = qty_days % 10
-    days_col = qty_days // 10
-    result = 'дни'
-    if days_des == 1 and days_col != 1:
+    col_days_ed = qty_days % 10
+    col_days_des = (qty_days // 10) % 10
+    if col_days_ed == 1 and col_days_des != 1:
         result = 'день'
-    elif days_des in [2, 3, 4] and days_col != 1:
+    elif col_days_ed in [2, 3, 4] and col_days_des != 1:
         result = 'дня'
-    elif days_col == 1:
-        result = 'дней'
-    elif days_des in [0, 5, 6, 7, 8, 9] and days_col != 1:
+    else:
         result = 'дней'
     return result
 
+
 def transform_word_file(*, qty_files: int):
-    days_des = qty_files % 10
-    days_col = qty_files // 10
-    results = 'файлы'
-    if days_des == 1 and days_col != 1:
+    col_days_ed = qty_files % 10
+    col_days_des = (qty_files // 10) % 10
+    if col_days_ed == 1 and col_days_des != 1:
         results = 'файл'
-    elif days_des in [2, 3, 4] and days_col != 1:
+    elif col_days_ed in [2, 3, 4] and col_days_des != 1:
         results = 'файла'
-    elif days_col == 1:
-        results = 'файлов'
-    elif days_des in [0, 5, 6, 7, 8, 9] and days_col != 1:
+    else:
         results = 'файлов'
     return results
 
 
 def transform_word_wilds(*, qty_wilds: int):
-    days_des = qty_wilds % 10
-    days_col = qty_wilds // 10
-    result = 'дикари))'
-    if days_des == 1 and days_col != 1:
+    col_days_ed = qty_wilds % 10
+    col_days_des = (qty_wilds // 10) % 10
+
+    if col_days_ed == 1 and col_days_des != 1:
         result = 'дикарь'
-    elif days_des in [2, 3, 4] and days_col != 1:
+    elif col_days_ed in [2, 3, 4] and col_days_des != 1:
         result = 'дикаря'
-    elif days_col == 1:
-        result = 'дикарей'
-    elif days_des in [0, 5, 6, 7, 8, 9] and days_col != 1:
+    else:
         result = 'дикарей'
     return result
 
@@ -772,7 +789,7 @@ def get_full_areal_tasks():
 
 def get_region_lines_task():
     """
-        Получение региона с заданием для трех строк
+        Получение региона для трех строк с заданием
     """
     pos_start = find_link_station_master()
     change_x = 310

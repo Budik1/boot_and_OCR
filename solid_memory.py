@@ -249,11 +249,12 @@ def save_kv_config(info=True):
         # дата
         'gady.hour_start_kv': heroes.gady.time_start_kv,
 
-        'gady.duel_all': heroes.gady.qty_all,
-        'gady.duel_victory_all': heroes.gady.qty_all_victory,
-        'gady.duel_now': heroes.gady.qty_kv_all,
-        'gady.duel_victory_now': heroes.gady.qty_kv_victory,
+        'gady.duel_all': heroes.gady.qty_duel_all,
+        'gady.duel_victory_all': heroes.gady.qty_duel_all_victory,
+        'gady.duel_now': heroes.gady.qty_duel_in_kv_all,
+        'gady.duel_victory_now': heroes.gady.qty_duel_in_kv_victory,
         'gady.count_shoulder_straps': heroes.gady.count_shoulder_straps_all,
+        'gady.count_shoulder_straps_kv': heroes.gady.count_shoulder_straps_kv,
 
     }
 
@@ -459,29 +460,31 @@ def set_values_kv(data_kv):
         print('Время старта КВ не изменилось')
         heroes.gady.time_start_kv = data_kv['gady.hour_start_kv']
 
-        heroes.gady.qty_all = data_kv['gady.duel_all']
-        heroes.gady.qty_all_victory = data_kv['gady.duel_victory_all']
-        heroes.gady.qty_kv_all = data_kv['gady.duel_now']
-        heroes.gady.qty_kv_victory = data_kv['gady.duel_victory_now']
-        # heroes.gady.count_shoulder_straps_all = 4
-        heroes.gady.count_shoulder_straps_all = data_kv['gady.count_shoulder_straps']
+        heroes.gady.qty_duel_in_kv_all = data_kv['gady.duel_now']
+        heroes.gady.qty_duel_in_kv_victory = data_kv['gady.duel_victory_now']
+        heroes.gady.count_shoulder_straps_kv = data_kv['gady.count_shoulder_straps_kv']
 
     else:
         print('Время старта КВ обновилось')
         heroes.gady.time_start_kv = time_now
 
-        heroes.gady.qty_all = data_kv['gady.duel_all']
-        heroes.gady.qty_all_victory = data_kv['gady.duel_victory_all']
-        heroes.gady.qty_kv_all = 0
-        heroes.gady.qty_kv_victory = 0
-        heroes.gady.count_shoulder_straps_all = data_kv['gady.count_shoulder_straps']
 
-    # print('установка данных кв')
+        heroes.gady.qty_duel_in_kv_all = 0
+        heroes.gady.qty_duel_in_kv_victory = 0
+        # heroes.gady.count_shoulder_straps_all = data_kv['gady.count_shoulder_straps']
 
-    # print(f'{heroes.gady.time_start_kv=}')
-    # print(f'{heroes.gady.qty_all=}')
-    # print(f'{heroes.gady.qty_all_victory=}')
-    # print(f'{heroes.gady.qty_kv_all=}')
-    # print(f'{heroes.gady.qty_kv_victory=}')
-    # print(f'{heroes.gady.count_shoulder_straps=}')
+    heroes.gady.qty_duel_all_victory = data_kv['gady.duel_victory_all']
+    heroes.gady.qty_duel_all = data_kv['gady.duel_all']
+    heroes.gady.count_shoulder_straps_all = data_kv['gady.count_shoulder_straps']
+
+
     save_kv_config(info=False)
+
+def set_values_kv_cumulative():
+    stat, data_kv = reading_kv_config()
+    if stat:
+        heroes.gady.qty_duel_all_victory = data_kv['gady.duel_victory_all']
+        heroes.gady.qty_duel_all = data_kv['gady.duel_all']
+        heroes.gady.count_shoulder_straps_all = data_kv['gady.count_shoulder_straps']
+    else:
+        print('no data_kv')

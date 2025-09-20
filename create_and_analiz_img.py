@@ -35,7 +35,7 @@ def get_screenshot_task_big():
     foto_pos(region3_big, tune_x, tune_y, tune_s, tune_v, f'{path}/big_3.png')
 
 
-def big_img_task(*, line, value_energy, hero):
+def create_big_img_task(*, line, value_energy, hero):
     """
     Создание big_img задания нужной строки
     """
@@ -129,7 +129,7 @@ def analiz_task():
     if best_line:
         value_energy = get_energy_value_in_line(line=best_line - 1)
         print(f'{heroes.Activ.name_file_=}')
-        img = big_img_task(line=best_line - 1, value_energy=value_energy, hero=heroes.Activ.name_file_)
+        img = create_big_img_task(line=best_line - 1, value_energy=value_energy, hero=heroes.Activ.name_file_)
         print(f'создан {img}')
     else:
         print('неудача')

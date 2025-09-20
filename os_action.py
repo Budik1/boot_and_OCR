@@ -47,3 +47,4 @@ def check_files(*, old_day):
             chek_and_del_file(check_file=file_path, old_day=old_day)
     word_file = fun.transform_word_file(qty_files=qty_filez)
     print(f'{qty_filez} {word_file} прошли проверку. {qty_del_files} удалено')
+    print()

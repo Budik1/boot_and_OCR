@@ -130,7 +130,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                 if name5_wildman and cycle:
                     cycle = False
                     print(f'{Hero.get_report_wildman_now(Activ.hero_activ)}')
-                    print(complex_phrases.report_wildman2(hero=Activ.hero_activ))
+                    print(complex_phrases.report_wildman(hero=Activ.hero_activ))
                     mob_identified = "wildman"
 
                 if name6_kikimora and cycle:
@@ -196,8 +196,8 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
         skip_battle = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
 
         if battle_end and close:  # нажать закрыть в конце боя
-            victory = fun.locCenterImg('img/arena/victory_in_arena.png', confidence=par_conf)
-            defeat = fun.locCenterImg('img/arena/defeat_in_arena.png', confidence=par_conf)
+            victory = fun.locCenterImg('img/arena/overall/victory_in_arena.png', confidence=par_conf)
+            defeat = fun.locCenterImg('img/arena/overall/defeat_in_arena.png', confidence=par_conf)
             if victory:
                 result = "победа"
             elif defeat:
@@ -265,8 +265,7 @@ def press_en(*, task_number, pos, value_energy): # , report_en=True
         # print(f'{Activ.station_activ=}')
 
         ## Выполняю {3} задание,{ conf_=0.94}. Сейчас {3}, сегодня 20, всего 120
-        complex_phrases.display_report_energy_now(task_number=task_number,
-                                                  vers_in_print=vers_in_print,
+        complex_phrases.display_report_energy_now( vers_in_print=vers_in_print,
                                                   value_energy=value_energy)
         solid_memory.save_to_file(info=False)
         wait_skip_battle_button()
@@ -283,7 +282,7 @@ def press_en(*, task_number, pos, value_energy): # , report_en=True
 
         print(Hero.get_report_wildman_now(Activ.hero_activ))
         if Hero.get_wildman_count(Activ.hero_activ) != 0:
-            print(complex_phrases.report_wildman2(hero=Activ.hero_activ))
+            print(complex_phrases.report_wildman(hero=Activ.hero_activ))
         else:
             print()
         sleep(1)
@@ -388,8 +387,8 @@ def option_task_money(report_en=True):
             conf_ -= 0.005
             conf_ = round(conf_, 3)
 
-        if conf_ <= 0.92:
-            print(myCt.tc_cyan('задания не найдены, результаты "D:\\bot in br\\testOCR\\img\\test\\test_tasks" '))
+        if conf_ <= 0.93:
+            print(myCt.tc_cyan('задания не найдены, результаты "D:\\bot in br\\testOCR\\img\\test\\test_tasks\\test big tasks" '))
             create_and_analiz_img.get_screenshot_task_big()
             number_tasks = 1
             energy_availability = 0
