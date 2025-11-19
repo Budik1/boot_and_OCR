@@ -13,3 +13,7 @@ git branch -D имя ветки - удалить без проверки
 
 git checkout имя ветки - переключится на ветку "имя ветки"
 git checkout -b имя ветки - создать и переключится
+
+
+git checkout -b mute_touring (создал ветку и переключился локально)
+git push origin mute_touring (создал ветку на Гит)

@@ -243,16 +243,4 @@ def region_task_line():
     fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
     fun.foto(f'{path_img}{name_img3}', (x, y, change_x, change_y))
 
-# get_region_lines_task()
-# arial_task()
-# get_price_energy()
 
-# get_energy_line_1_img()
-# get_energy_line_2_img()
-# get_energy_line_3_img()
-def find_best_offer():
-    for i in range(3):
-        print(i + 1)
-    return
-
-find_best_offer()

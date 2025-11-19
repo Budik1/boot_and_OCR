@@ -1,15 +1,17 @@
-import pyautogui
+from PIL import Image
+
+
 import fun_down as fund
 
 norm = 0.9
 par_conf = 0.79
 
 
-def locCenterImg(*, name_img, confidence=0.9, region: tuple[int, int, int, int] | None = None):
-    pos_img = pyautogui.locateCenterOnScreen(name_img,
-                                             confidence=confidence,
-                                             region=region)
-    return pos_img
+# def locCenterImg(*, name_img, confidence=0.9, region: tuple[int, int, int, int] | None = None):
+#     pos_img = pyautogui.locateCenterOnScreen(name_img,
+#                                              confidence=confidence,
+#                                              region=region)
+#     return pos_img
 
 
 def find_knob():
@@ -34,12 +36,12 @@ def find_close():
 
 
 def find_hall_of_glory_tabl():
-    hall = fund.locateCenterImg(name_img='img/arena/hall_of_glory_tabl.png')
+    hall = fund.locateCenterImg(name_img='img/arena/overall/hall_of_glory_tabl.png')
     return hall
 
 
 def find_hall_of_glory_icon():
-    point_hall_of_glory = fund.locateCenterImg(name_img='img/arena/hall_of_glory_icon.png')
+    point_hall_of_glory = fund.locateCenterImg(name_img='img/arena/overall/hall_of_glory_icon.png')
     return point_hall_of_glory
 
 
@@ -54,7 +56,7 @@ def find_klan():
 
 
 def find_attack(*, region: tuple[int, int, int, int] | None = None):
-    attack = fund.locateCenterImg(name_img='img/arena/attack.png', region=region)
+    attack = fund.locateCenterImg(name_img='img/arena/overall/attack.png', region=region)
     return attack
 
 
@@ -63,43 +65,49 @@ def find_b_exit():
     return b_exit
 
 
-def find_arena_object(*, region):
-    arena_object = fund.locateCenterImg(name_img="img/arena/arena_object.png", region=region)  # 0.89
+def find_arena_object(*, region, hero):
+    arena_object = fund.locateCenterImg(name_img=f"img/arena/{hero}/arena_object.png", region=region)  # 0.89
     return arena_object
 
 
 def find_scroll_up():
-    scroll_up = fund.locateCenterImg(name_img='img/arena/scroll_up.png')
+    scroll_up = fund.locateCenterImg(name_img='img/arena/overall/scroll_up.png')
     return scroll_up
 
 
 def find_scroll_down():
-    scroll_down = fund.locateCenterImg(name_img='img/arena/scroll_down.png')
+    scroll_down = fund.locateCenterImg(name_img='img/arena/overall/scroll_down.png')
     return scroll_down
 
 
 def find_hero_vs_opponent():
-    hero_vs_opponent = fund.locateCenterImg(name_img='img/arena/hero_vs_opponent.png')
+    hero_vs_opponent = fund.locateCenterImg(name_img='img/arena/overall/hero_vs_opponent.png')
     return hero_vs_opponent
 
 
 def find_her_gadya():
-    hero_gadya = fund.locateCenterImg(name_img='img/person/hero_id/her_gadya.png')
+    hero_gadya = fund.locateCenterImg(name_img='img/person/hero_id/gady/her_gadya.png')
     return hero_gadya
 
 
 def find_her_gavr():
-    her_gavr = fund.locateCenterImg(name_img='img/person/hero_id/her_gavr.png')
-    return her_gavr
+    list_link = ['img/person/hero_id/gavr/gavr_armor.png', 'img/person/hero_id/gavr/her_gavr.png']
+    img_link = None
+    for link in list_link:
+        her_gavr = fund.locateCenterImg(name_img=link)
+        if her_gavr:
+            img_link = her_gavr
+            break
+    return img_link
 
 
 def find_her_veles():
-    her_veles = fund.locateCenterImg(name_img='img/person/hero_id/her_veles.png')
+    her_veles = fund.locateCenterImg(name_img='img/person/hero_id/veles/her_veles.png')
     return her_veles
 
 
 def find_her_mara():
-    her_mara = fund.locateCenterImg(name_img='img/person/hero_id/her_mara.png')
+    her_mara = fund.locateCenterImg(name_img='img/person/hero_id/mara/her_mara.png')
     return her_mara
 
 
@@ -227,6 +235,11 @@ def find_name_kikimora():
     pos = fund.locateCenterImg(name_img='img/tonelli/mobi/name_kikimora.png')
     return pos
 
-def find_name():
-    pos = fund.locateCenterImg(name_img='path_name')
+def find_en_1():
+    pos = fund.locateCenterImg(name_img='img/station_master/energy_value/en_1.png')
+    return pos
+
+
+def find_klan_kv_label():
+    pos = fund.locateCenterImg(name_img='img/kv/tests/klan_kv_label.png')
     return pos

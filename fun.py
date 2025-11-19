@@ -22,14 +22,27 @@ def locCenterImg(name_img, confidence=0.9, region: tuple[int, int, int, int] | N
     return pos_img
 
 
-def wait_static_pos(*,message=None ,img, region=None, confidence=0.99):
+def wait_static_pos(*, name_img, region=None, confidence=0.99, message=None):
     if message:
         print(f'{message}')
-    pos = locCenterImg(name_img=img, region=region, confidence=confidence)
+    pos = locCenterImg(name_img=name_img, region=region, confidence=confidence)
     while not pos:
-        pos = locCenterImg(name_img=img, region=region, confidence=confidence)
-    pos_img = locCenterImg(name_img=img, region=region, confidence=confidence)
+        pos = locCenterImg(name_img=name_img, region=region, confidence=confidence)
+    pos_img = locCenterImg(name_img=name_img, region=region, confidence=confidence)
     return pos_img
+
+
+def wait_and_stop_img(*, name_img, region: tuple[int, int, int, int] | None = None, confidence=0.9, message=''):
+    if message:
+        print(f'{message}')
+    img_1 = locCenterImg(name_img=name_img, confidence=confidence, region=region)
+    sleep(0.3)
+    img_2 = locCenterImg(name_img=name_img, confidence=confidence, region=region)
+    while not img_1 or img_1 != img_2:
+        img_1 = locCenterImg(name_img=name_img, confidence=confidence, region=region)
+        sleep(0.3)
+        img_2 = locCenterImg(name_img=name_img, confidence=confidence, region=region)
+    return img_1
 
 
 def mouse_left_click(*, pos):
@@ -155,7 +168,7 @@ class Mouse:
 
 def my_print_to_file(text):
     if log == 1:
-        date_time, date = time_now()
+        date_time, date = date_time_now()
         file_name = date + ".txt"
         file_1 = open('log/' + str(file_name), 'a+', encoding='utf-8')
         try:
@@ -182,9 +195,16 @@ def date_utc_now():
 def time_now():
     now = datetime.datetime.now()
     # '%Y-%m-%d_%H:%M:%S' '%Y-%m-%d %H°%M\'\'%S\''
-    date_time_now = (now.strftime('%Y-%m-%d %H:%M:%S'))
+    time_now_ = (now.strftime('%H:%M:%S'))
+    return time_now_
+
+
+def date_time_now():
+    now = datetime.datetime.now()
+    # '%Y-%m-%d_%H:%M:%S' '%Y-%m-%d %H°%M\'\'%S\''
+    date_time_now_ = (now.strftime('%Y-%m-%d %H:%M:%S'))
     date = (now.strftime('%Y-%m-%d'))
-    return date_time_now, date
+    return date_time_now_, date
 
 
 def minutes_now():
@@ -236,32 +256,32 @@ def station_gifts():
         open_ = locCenterImg('img/b_gift_open.png', 0.9)
 
 
-def push_close_all_():
+def push_close_all_(speed_mouse=0.75):
     my_print_to_file('fun.push_close_all_')
     pos_close = find_img.find_close()
     while pos_close:
-        close_popup_window()
-        push_close()
-        sleep(1)
+        close_popup_window(speed_mouse)
+        push_close(speed_mouse)
+        # sleep(1)
         pos_close = find_img.find_close()
         # print("цикл close")
 
 
-def close_popup_window():
+def close_popup_window(speed_mouse=0.75):
     my_print_to_file('fun.close_popup_window')
     knob = find_img.find_knob()
     cancel = find_img.find_cancel()
     if knob:
-        Mouse.move_to_click(pos_click=knob, z_p_k=1)
+        Mouse.move_to_click(pos_click=knob, move_time=speed_mouse, z_p_k=1)
     if cancel:
-        Mouse.move_to_click(pos_click=cancel, z_p_k=1)
+        Mouse.move_to_click(pos_click=cancel, move_time=speed_mouse, z_p_k=1)
 
 
-def push_close():
+def push_close(speed_mouse=0.75):
     my_print_to_file('fun.push_close')
     pos_close = find_img.find_close()
     if pos_close:
-        Mouse.move_to_click(pos_click=pos_close, z_p_k=0.1)
+        Mouse.move_to_click(pos_click=pos_close, move_time=speed_mouse, z_p_k=0.1)
         close_flag = True
     else:
         close_flag = False
@@ -379,13 +399,13 @@ def find_link_station_master():
     pos_klan = find_img.find_klan()
     if station_master or pos_klan:
         if pos_klan:
-            Mouse.move(pos=pos_klan)
             # получение координат привязки
-            sleep(0.5)
+            # Mouse.move(pos=pos_klan)
+            # sleep(0.5)
             point = pos_klan
             vizit_to_station_master()
         else:
-            Mouse.move(pos=station_master)
+            Mouse.move(pos=station_master, speed=0.1)
             x_or, y_or = station_master
             x_or -= 29
             y_or -= 29
@@ -394,7 +414,7 @@ def find_link_station_master():
         # Закрыть если открыто, так как за чем-то может быть не видна позиция привязки
         push_close_all_()
         pos_klan = find_img.find_klan()
-        Mouse.move(pos=pos_klan)
+        # Mouse.move(pos=pos_klan)
         # получение координат привязки
         sleep(0.5)
         point = pos_klan
@@ -466,6 +486,23 @@ def get_areas_task_big_2(width=77, height=42):
     return region_big_2
 
 
+def get_areas_task_big_3(width=77, height=42):
+    my_print_to_file('fun.get_areas_task_big_2')
+    # width, height = 77, 42
+    pul = 444
+    pos_3 = 423
+    big = 77  # 100
+
+    x_or, y_or = find_link_station_master()
+
+    x_an_pul = x_or + pul  # начальная точка
+    width += big  #
+    # регион поиска 2 (позиция анализа)
+    y_3an = int(y_or + pos_3)
+    region_big_3 = [x_an_pul, y_3an, width, height]
+    return region_big_3
+
+
 def get_areas_task_big(width=77, height=42):
     """Получение значений "region=" для поиска заданий в больших регионах
         :return: кортеж из трех списков значений"""
@@ -498,7 +535,7 @@ def find_link_klan():
     my_print_to_file('fun.find_link_klan')
     pos_klan = find_img.find_klan()
     while not pos_klan:
-        sleep(0.1)
+        # sleep(0.1)
         pos_klan = find_img.find_klan()
 
     return pos_klan
@@ -514,6 +551,10 @@ def vizit_to_station_master():
         sleep(1 / 3)
     else:
         pos_klan = find_link_klan()
+        if not pos_klan:
+            push_close_all_()
+        pos_klan = find_link_klan()
+
         # print('клан = ', pos_klan)
         x1, y1 = pos_klan
         x1, y1 = x1 - 60, y1 + 300
@@ -535,7 +576,8 @@ def await_arena(region):
     attack_arena_object = find_img.find_attack(region=region)
     while attack_arena_object is None:
         attack_arena_object = find_img.find_attack(region=region)
-    mouse_move(pos=attack_arena_object)
+    # mouse_move(pos=attack_arena_object)
+    return attack_arena_object
 
 
 def selection_hero(*, show_name=True):
@@ -597,34 +639,65 @@ def work_8_hour():
     return
 
 
-def transform_days(*, qty_days: int):
-    days_des = qty_days % 10
-    days_col = qty_days // 10
-
-    if days_des == 1 and days_col != 1:
-        return 'день'
-    elif days_des in [2, 3, 4] and days_col != 1:
-        return 'дня'
-    elif days_col == 1:
-        return 'дней'
-    elif days_des in [0, 5, 6, 7, 8, 9] and days_col != 1:
-        return 'дней'
-    return 'дни'
+def transform_word_duel(*, qty_duel: int):
+    col_days_ed = qty_duel % 10
+    col_days_des = (qty_duel // 10) % 10
+    if col_days_ed == 0 and col_days_des == 0:
+        result = 'дуэлей'
+    elif col_days_ed == 1 and col_days_des != 1:
+        result = 'дуэли'
+    else:
+        result = 'дуэлях'
+    return result
 
 
-def transform_wilds(*, qty_days: int):
-    days_des = qty_days % 10
-    days_col = qty_days // 10
+def transform_word_victory(*, qty_victory: int):
+    col_days_ed = qty_victory % 10
+    col_days_des = (qty_victory // 10) % 10
+    if col_days_ed == 1 and col_days_des != 1:
+        result = 'победа'
+    elif col_days_ed in [2, 3, 4] and col_days_des != 1:
+        result = 'победы'
+    else:
+        result = 'побед'
+    return result
 
-    if days_des == 1 and days_col != 1:
-        return 'дикарь'
-    elif days_des in [2, 3, 4] and days_col != 1:
-        return 'дикаря'
-    elif days_col == 1:
-        return 'дикарей'
-    elif days_des in [0, 5, 6, 7, 8, 9] and days_col != 1:
-        return 'дикарей'
-    return 'дикари))'
+
+def transform_word_days(*, qty_days: int):
+    col_days_ed = qty_days % 10
+    col_days_des = (qty_days // 10) % 10
+    if col_days_ed == 1 and col_days_des != 1:
+        result = 'день'
+    elif col_days_ed in [2, 3, 4] and col_days_des != 1:
+        result = 'дня'
+    else:
+        result = 'дней'
+    return result
+
+
+def transform_word_file(*, qty_files: int):
+    col_days_ed = qty_files % 10
+    col_days_des = (qty_files // 10) % 10
+    if col_days_ed == 1 and col_days_des != 1:
+        results = 'файл'
+    elif col_days_ed in [2, 3, 4] and col_days_des != 1:
+        results = 'файла'
+    else:
+        results = 'файлов'
+    return results
+
+
+def transform_word_wilds(*, qty_wilds: int):
+    col_days_ed = qty_wilds % 10
+    col_days_des = (qty_wilds // 10) % 10
+
+    if col_days_ed == 1 and col_days_des != 1:
+        result = 'дикарь'
+    elif col_days_ed in [2, 3, 4] and col_days_des != 1:
+        result = 'дикаря'
+    else:
+        result = 'дикарей'
+    return result
 
 
 def verifi_img():
@@ -639,6 +712,7 @@ def verifi_img():
 
 
 def extraction_digit(*, item):
+    """Извлекаю цифру из названия файла"""
     dig = int(''.join(c if c.isdigit() else ' ' for c in item))
     return dig
 
@@ -715,7 +789,7 @@ def get_full_areal_tasks():
 
 def get_region_lines_task():
     """
-        Получение региона с заданием для трех строк
+        Получение региона для трех строк с заданием
     """
     pos_start = find_link_station_master()
     change_x = 310
@@ -758,7 +832,7 @@ def loc_now():
         pos = locCenterImg(name_img=img_station, confidence=0.99)
         if pos:
             list_location = b_d.list_of_stations[station]
-            mouse_move(pos=pos)
+            mouse_move(pos=pos, speed=0.1)
             # print(f'{b_d.list_of_stations[station][2]}') # img/tonelli/id_stations/s_Chekhov.png
             # print(f'имя станции старта - {list_location[0]}') # имя станции старта - ст. Чеховская
             break

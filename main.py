@@ -1,22 +1,23 @@
-from tkinter import *
-from tkinter import ttk
-from tkinter import messagebox
-from PIL import ImageTk
 from time import time
+from tkinter import *
+from tkinter import messagebox
+from tkinter import ttk
 
-import fun
-import heroes
-import person
-import touring
+from PIL import ImageTk
+
+import baza_dannyx as b_d
 import color_text
+import complex_phrases
+import fun
+import fun_events
+import heroes
 import kv_and_raid
+import os_action
+import person
+import revision_tents
 import solid_memory
 import station_master
-import revision_tents
-import complex_phrases
-import fun_events
-import baza_dannyx as b_d
-
+import touring
 from event_arena import create_img_arena_object, kill
 
 fun.my_print_to_file('')
@@ -43,8 +44,11 @@ def start_prog():
         displaying_values(info=False)
     else:
         displaying_values()
+    # вывод инфо состояния
     complex_phrases.display_smol_report_wildman()
     complex_phrases.display_info_energy_all()
+    # удаление файлов старше 10 дней
+    os_action.check_files(old_day=10)
     return
 
 
@@ -90,17 +94,11 @@ def displaying_values(info=True):
     gavr_wild.set(heroes.gavr.wildman)
     veles_wild.set(heroes.veles.wildman)
     mara_wild.set(heroes.mara.wildman)
-    # print(f'{her.gady.bac_color=}')
-    # print(f'{her.gavr.bac_color=}')
-    # print(f'{her.veles.bac_color=}')
-    # print(f'{her.mara.bac_color=}')
-
-
 
 
 def start_pm():
     fun_events.start_p_m()
-    displaying_values()
+    displaying_values(info=False)
 
 
 def bonus():
@@ -109,28 +107,28 @@ def bonus():
 
 def en_1():
     station_master.task_pos_item(1)
-    displaying_values()
+    displaying_values(info=False)
 
 
 def en_2():
     station_master.task_pos_item(2)
-    displaying_values()
+    displaying_values(info=False)
 
 
 def en_3():
     station_master.task_pos_item(3)
-    displaying_values()
+    displaying_values(info=False)
 
 
 def puli():
-    station_master.choosing_task_money()
-    displaying_values()
+    station_master.option_task_money()
+    displaying_values(info=False)
 
 
 def kiki():
     touring.for_kiki()
     fun.work_8_hour()
-    displaying_values()
+    displaying_values(info=False)
 
 
 def tent_inspection():
@@ -178,7 +176,7 @@ def tent_inspection():
 def tasks_na_kievskoy():
     hero = fun.selection_hero(show_name=False)
     if hero:
-        heroes.Hero.app_days_count_wildman(heroes.Activ.hero_activ)
+        heroes.Hero.app_wildman_days_count(heroes.Activ.hero_activ)
         # print(Hero.get_days_count_wildman(Activ.hero_activ))
     else:
         print('герой не опознан')
@@ -193,7 +191,7 @@ def wild_kiki():
     start_time = time()
     hero = fun.selection_hero()
     if hero:
-        heroes.Hero.app_days_count_wildman(heroes.Activ.hero_activ)
+        heroes.Hero.app_wildman_days_count(heroes.Activ.hero_activ)
         # print(Hero.get_days_count_wildman(Activ.hero_activ))
     else:
         print('герой не опознан')
@@ -202,7 +200,7 @@ def wild_kiki():
     displaying_values()
     touring.for_kiki()
     fun.work_8_hour()
-    displaying_values()
+    displaying_values(info=False)
     finish_time = float(time() - start_time)  # общее количество секунд
     minutes = int(finish_time // 60)  # количество минут
     seconds = round((finish_time % minutes), 2)
@@ -227,7 +225,7 @@ def collecting_gifts_at_stations():
         return
     # вывод информации
     print(f'На {q_st} станциях собрано {q_gifts} подарков')
-    displaying_values()
+    displaying_values(info=False)
 
 
 def changeColor(*, her_active):
@@ -273,10 +271,6 @@ def change_mara():
     changeColor(her_active=fun.selection_hero(show_name=False))
 
 
-def report_w():
-    complex_phrases.display_report_wildman()
-
-
 def save_home_point():
     fun.selection_hero(show_name=False)
     address = heroes.Hero.get_home_location(heroes.Activ.hero_activ)
@@ -287,7 +281,7 @@ def save_home_point():
         fun.selection_hero()
         heroes.Hero.setting_home(heroes.Activ.hero_activ, location)
 
-    displaying_values()
+    displaying_values(info=False)
     print(f'{heroes.gady.home_location=}')
     print(f'{heroes.gavr.home_location=}')
     print(f'{heroes.veles.home_location=}')
@@ -296,15 +290,95 @@ def save_home_point():
 
 def get_target(event):
     selection = combobox.get()
-    print(f'Прокладываю маршрут к {selection}')
     touring.move_to_target(target_point=selection)
     displaying_values(info=False)
+    return
+
+
+def timer():
+    tim_gady = int(heroes.Hero.get_time_entree(heroes.gady) - time())
+    if tim_gady > 0:
+        hours = tim_gady // 3600
+        minutes = (tim_gady - hours * 3600) // 60
+        seconds = tim_gady % 60
+        tim_gady -= 1
+        timer_gady_label.config(text=f"{hours:02d}:{minutes:02d}:{seconds:02d}")
+    else:
+        timer_gady_label.config(text="00:00:00")
+
+    tim_gavr = int(heroes.Hero.get_time_entree(heroes.gavr) - time())
+    if tim_gavr > 0:
+        hours = tim_gavr // 3600
+        minutes = (tim_gavr - hours * 3600) // 60
+        seconds = tim_gavr % 60
+        tim_gavr -= 1
+        timer_gavr_label.config(text=f"{hours:02d}:{minutes:02d}:{seconds:02d}")
+    else:
+        timer_gavr_label.config(text="00:00:00")
+
+    tim_veles = int(heroes.Hero.get_time_entree(heroes.veles) - time())
+    if tim_veles > 0:
+        hours = tim_veles // 3600
+        minutes = (tim_veles - hours * 3600) // 60
+        seconds = tim_veles % 60
+        tim_veles -= 1
+        timer_veles_label.config(text=f"{hours:02d}:{minutes:02d}:{seconds:02d}")
+    else:
+        timer_veles_label.config(text="00:00:00")
+
+    tim_mara = int(heroes.Hero.get_time_entree(heroes.mara) - time())
+    if tim_mara > 0:
+        hours = tim_mara // 3600
+        minutes = (tim_mara - hours * 3600) // 60
+        seconds = tim_mara % 60
+        tim_mara -= 1
+        timer_mara_label.config(text=f"{hours:02d}:{minutes:02d}:{seconds:02d}")
+    else:
+        timer_mara_label.config(text="00:00:00")
+
+    tim = int(time())
+    # hours_now = tim // 3600
+    minutes_now = (tim - (tim // 3600) * 3600) // 60
+    if minutes_now != heroes.temp_min:
+        heroes.temp_min = minutes_now
+        heroes.time_now_ = fun.time_now()
+
+    root.after(1000, timer)
+
+
+def set_timer24():
+    fun.selection_hero(show_name=False)
+    tim_entree = int(time() + b_d.timer24)  #
+    heroes.Hero.set_time_entree(heroes.Activ.hero_activ, tim_entree)
+    solid_memory.save_to_file(info=False)
+
+
+def set_timer8():
+    fun.selection_hero(show_name=False)
+    tim_entree = int(time() + b_d.timer8)  #
+    heroes.Hero.set_time_entree(heroes.Activ.hero_activ, tim_entree)
+    solid_memory.save_to_file(info=False)
+
+
+def set_timer1():
+    fun.selection_hero(show_name=False)
+    tim_entree = int(time() + b_d.timer1)  #
+    heroes.Hero.set_time_entree(heroes.Activ.hero_activ, tim_entree)
+    solid_memory.save_to_file(info=False)
 
 
 root = Tk()
-root.title(' помощник "Метро 2033"')
-# root.geometry("370x362+1200+50")  # Ширина x Высота + координата X + координата Y
-root.geometry(f'371x{b_d.line10 + b_d.height_line + 2}+1200+50')  # Ширина x Высота + координата X + координата Y
+root.title(f' помощник "Метро 2033"')
+
+width = b_d.timer_x + 73  # Ширина
+# width = 371# Ширина
+height = b_d.line10 + b_d.height_line + 2  # Высота
+h = width - 371
+position_x = 1200 - h
+position_y = 50
+# root.geometry("370x362+1200+50")  # Ширина x Высота + положение X + положение Y
+# root.geometry(f'371x{b_d.line11 + b_d.height_line + 2}+1200+50')  # Ширина x Высота + положение X + положение Y
+root.geometry(f'{width}x{height}+{position_x}+{position_y}')  # Ширина x Высота + положение X + положение Y
 root.resizable(False, False)
 
 gavr_vip = StringVar()
@@ -354,6 +428,10 @@ start_prog()
 ttk.Button(text="КВ", width=13, command=kv_and_raid.kv).place(x=115, y=b_d.line5)
 ttk.Button(text=" Start ", width=13, command=start_pm).place(x=241, y=b_d.line5)
 
+ttk.Button(text="set 24 h", width=7, command=set_timer24).place(x=b_d.timer_x, y=b_d.line5)
+ttk.Button(text="set 8 h ", width=7, command=set_timer8).place(x=b_d.timer_x, y=b_d.line6)
+ttk.Button(text="set 1 h ", width=7, command=set_timer1).place(x=b_d.timer_x, y=b_d.line7)
+
 ttk.Button(text="wild+kiki", width=9, command=wild_kiki).place(x=115, y=b_d.line6)
 ttk.Button(text="обход всех станций", width=17, command=collecting_gifts_at_stations).place(x=205, y=b_d.line6)
 
@@ -371,6 +449,23 @@ ttk.Button(text='Паспортист', width=14, command=save_home_point).place
 
 ttk.Button(text="фото противника", width=15, command=create_img_arena_object).place(x=0, y=b_d.line10)
 ttk.Button(text="атака противника", width=15, command=kill).place(x=225, y=b_d.line10)
+# ttk.Button(text="kv rapport", width=6, command=kv_report).place(x=150, y=b_d.line10)
+
+timer_gady_label = ttk.Label()
+timer_gady_label.config(text="00:00:00", font=("Helvetica", 12))  # , font=("Helvetica", 12)
+timer_gady_label.place(x=b_d.timer_x, y=b_d.gady_y)
+
+timer_gavr_label = ttk.Label()
+timer_gavr_label.config(text="00:00:00", font=("Helvetica", 12))  # , font=("Helvetica", 12)
+timer_gavr_label.place(x=b_d.timer_x, y=b_d.gavr_y)
+
+timer_veles_label = ttk.Label()
+timer_veles_label.config(text="00:00:00", font=("Helvetica", 12))  # , font=("Helvetica", 12)
+timer_veles_label.place(x=b_d.timer_x, y=b_d.veles_y)
+
+timer_mara_label = ttk.Label()
+timer_mara_label.config(text="00:00:00", font=("Helvetica", 12))  # , font=("Helvetica", 12)
+timer_mara_label.place(x=b_d.timer_x, y=b_d.mara_y)
 
 ttk.Button(text="Gady", width=5, command=change_gady).place(x=0, y=b_d.gady_y)
 ttk.Button(text="Gavr", width=5, command=change_gavr).place(x=0, y=b_d.gavr_y)
@@ -478,4 +573,5 @@ ttk.Button(root, image=img_e2, command=en_2).place(x=0, y=line_img + b_d.height_
 img_e3 = ImageTk.PhotoImage(file="img/overall/en3v3.png")
 ttk.Button(root, image=img_e3, command=en_3).place(x=0, y=line_img + b_d.height_line * 2 + difference_str_img * 2)
 #
+timer()
 root.mainloop()

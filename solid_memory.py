@@ -1,7 +1,9 @@
+import time
 import pickle
 
-import fun
-import complex_phrases
+# import fun
+# import complex_phrases
+import heroes
 import heroes as her
 from heroes import Activ
 from color_text import tc_green, tc_cyan, tc_blue, tc_red
@@ -94,6 +96,16 @@ def save_to_file(info=True):
         'gavr.wild_activ': her.gavr.wild_activ,
         'veles.wild_activ': her.veles.wild_activ,
         'mara.wild_activ': her.mara.wild_activ,
+
+        'gady.time_entree': her.gady.time_entree,
+        'gavr.time_entree': her.gavr.time_entree,
+        'veles.time_entree': her.veles.time_entree,
+        'mara.time_entree': her.mara.time_entree,
+
+        'gady.energy_kiev_count_all': her.gady.energy_kiev_count_all,
+        'gavr.energy_kiev_count_all': her.gavr.energy_kiev_count_all,
+        'veles.energy_kiev_count_all': her.veles.energy_kiev_count_all,
+        'mara.energy_kiev_count_all': her.mara.energy_kiev_count_all,
     }
     # heroes123 = [
     #      {
@@ -172,6 +184,11 @@ def save_wild_state(info=True):
         'gavr.wild_activ': her.gavr.wild_activ,
         'veles.wild_activ': her.veles.wild_activ,
         'mara.wild_activ': her.mara.wild_activ,
+
+        'gady.energy_kiev_count_all': her.gady.energy_kiev_count_all,
+        'gavr.energy_kiev_count_all': her.gavr.energy_kiev_count_all,
+        'veles.energy_kiev_count_all': her.veles.energy_kiev_count_all,
+        'mara.energy_kiev_count_all': her.mara.energy_kiev_count_all,
     }
     try:
         file1 = open(file_name, 'wb')
@@ -220,6 +237,75 @@ def reading_file(*, info=True):
     finally:
         # print('???')
         save_to_file(info=False)
+    return result
+
+
+def save_kv_config(info=True):
+    file_name = 'kv_config.bin'
+    if info:
+        text = tc_green(f'запись состояния')
+        print(f"{file_name} {text}")
+    data_to_save = {
+        # дата
+        'gady.hour_start_kv': heroes.gady.time_start_kv,
+
+        'gady.duel_all': heroes.gady.qty_duel_all,
+        'gady.duel_victory_all': heroes.gady.qty_duel_all_victory,
+        'gady.duel_now': heroes.gady.qty_duel_in_kv_all,
+        'gady.duel_victory_now': heroes.gady.qty_duel_in_kv_victory,
+        'gady.count_shoulder_straps': heroes.gady.count_shoulder_straps_all,
+        'gady.count_shoulder_straps_kv': heroes.gady.count_shoulder_straps_kv,
+
+    }
+
+    try:
+        file1 = open(file_name, 'wb')
+        pickle.dump(data_to_save, file1)
+        file1.close()
+    except FileNotFoundError:
+        # Если файл не найден, выводим сообщение об ошибке
+        text = tc_red('Файл  не найден!')
+        print(f"{file_name} {text}")
+    except IOError:
+        # Если возникает ошибка ввода-вывода, выводим сообщение об ошибке
+        text = tc_red('Произошла ошибка ввода-вывода при чтении файла!')
+        print(f"{file_name} {text}")
+    except Exception as e:
+        # Обработка других неожиданных исключений
+        text = tc_red(f'Произошла неожиданная ошибка: {e}')
+        print(f"{file_name} {text}")
+    return
+
+
+def reading_kv_config(*, info=True):
+    file_name = 'kv_config.bin'
+    if info:
+        text = tc_green(f"чтение состояния")
+        print(f'{file_name} {text}')
+    try:
+        file1 = open(file_name, 'rb')
+        data_to_load = pickle.load(file1)
+        file1.close()
+        result = True, data_to_load
+    except FileNotFoundError:
+        # Если файл не найден, выводим сообщение об ошибке
+        print(f"Файл '{file_name}' не найден!")
+        result = False, False
+        save_kv_config()
+    except IOError:
+        # Если возникает ошибка ввода-вывода, выводим сообщение об ошибке
+        print(f"Произошла ошибка ввода-вывода при чтении '{file_name}' файла!")
+        result = False, False
+        save_kv_config()
+    except Exception as e:
+        # Обработка других неожиданных исключений
+        print(f"Файл '{file_name}'")
+        print(f"Произошла неожиданная ошибка: {e}")
+        result = False, False
+        save_kv_config()
+    finally:
+        # print('???')
+        save_kv_config(info=False)
     return result
 
 
@@ -314,12 +400,13 @@ def setting_updatable_values(loaded_data):
         her.mara.wildman = loaded_data['mara_wild']
         her.veles.wildman = loaded_data['veles_wild']
 
-        print()
-        print('solid_memory.setting_updatable_values')
-        print(f'{her.gady.wild_activ=}')
-        print(f'{her.gavr.wild_activ=}')
-        print(f'{her.veles.wild_activ=}')
-        print(f'{her.mara.wild_activ=}')
+
+        # print()
+        # print('solid_memory.setting_updatable_values')
+        # print(f'{her.gady.wild_activ=}')
+        # print(f'{her.gavr.wild_activ=}')
+        # print(f'{her.veles.wild_activ=}')
+        # print(f'{her.mara.wild_activ=}')
     else:
         # если даты не совпадают:- значения устанавливаются на "0"
         print(tc_cyan("даты не совпадают, смена суток"))
@@ -353,3 +440,51 @@ def setting_cumulative_values(loaded_data):
     her.gavr.task_count = loaded_data['gavr.task_count']
     her.veles.task_count = loaded_data['veles.task_count']
     her.mara.task_count = loaded_data['mara.task_count']
+
+    her.gady.time_entree = loaded_data['gady.time_entree']
+    her.gavr.time_entree = loaded_data['gavr.time_entree']
+    her.veles.time_entree = loaded_data['veles.time_entree']
+    her.mara.time_entree = loaded_data['mara.time_entree']
+
+    her.gady.energy_kiev_count_all = loaded_data['gady.energy_kiev_count_all']
+    her.gavr.energy_kiev_count_all = loaded_data['gavr.energy_kiev_count_all']
+    her.veles.energy_kiev_count_all = loaded_data['veles.energy_kiev_count_all']
+    her.mara.energy_kiev_count_all = loaded_data['mara.energy_kiev_count_all']
+
+
+def set_values_kv(data_kv):
+    # print(data_kv)
+    time_now = time.time()
+    time_save= data_kv['gady.hour_start_kv']
+    if (time_now - time_save) < 3 * 3600:
+        print('Время старта КВ не изменилось')
+        heroes.gady.time_start_kv = data_kv['gady.hour_start_kv']
+
+        heroes.gady.qty_duel_in_kv_all = data_kv['gady.duel_now']
+        heroes.gady.qty_duel_in_kv_victory = data_kv['gady.duel_victory_now']
+        heroes.gady.count_shoulder_straps_kv = data_kv['gady.count_shoulder_straps_kv']
+
+    else:
+        print('Время старта КВ обновилось')
+        heroes.gady.time_start_kv = time_now
+
+
+        heroes.gady.qty_duel_in_kv_all = 0
+        heroes.gady.qty_duel_in_kv_victory = 0
+        # heroes.gady.count_shoulder_straps_all = data_kv['gady.count_shoulder_straps']
+
+    heroes.gady.qty_duel_all_victory = data_kv['gady.duel_victory_all']
+    heroes.gady.qty_duel_all = data_kv['gady.duel_all']
+    heroes.gady.count_shoulder_straps_all = data_kv['gady.count_shoulder_straps']
+
+
+    save_kv_config(info=False)
+
+def set_values_kv_cumulative():
+    stat, data_kv = reading_kv_config()
+    if stat:
+        heroes.gady.qty_duel_all_victory = data_kv['gady.duel_victory_all']
+        heroes.gady.qty_duel_all = data_kv['gady.duel_all']
+        heroes.gady.count_shoulder_straps_all = data_kv['gady.count_shoulder_straps']
+    else:
+        print('no data_kv')

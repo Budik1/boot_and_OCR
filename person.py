@@ -150,7 +150,7 @@ def change_acc(*, change_hero_name):
     while not vid:
         fun.push_close_all_()
         vid = fun.selection_hero()
-    activ_hero = Hero.get_hero_name_in_file(Activ.hero_activ)
+    activ_hero = Hero.get_name_id(Activ.hero_activ)
     # print(f'{activ_hero=}, {activ_hero=}')
     if change_hero_name == activ_hero:
         print('этот герой уже активен')
