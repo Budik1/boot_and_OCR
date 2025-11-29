@@ -2,6 +2,7 @@ import pyautogui
 import datetime
 from time import sleep, time
 
+import fun
 import sounds
 import find_img
 import fun_down
@@ -15,10 +16,11 @@ oblast = (51, 707, 92, 111)
 log = 1
 
 
-def locCenterImg(name_img, confidence=0.9, region: tuple[int, int, int, int] | None = None):
+def locCenterImg(name_img, confidence=0.9, region: tuple[int, int, int, int] | None = None, grayscale=None):
     pos_img = fun_down.locateCenterImg(name_img=name_img,
                                        confidence=confidence,
-                                       region=region)
+                                       region=region,
+                                       grayscale=grayscale)
     return pos_img
 
 
@@ -399,26 +401,40 @@ def find_link_station_master():
     pos_klan = find_img.find_klan()
     if station_master or pos_klan:
         if pos_klan:
-            # получение координат привязки
-            # Mouse.move(pos=pos_klan)
-            # sleep(0.5)
             point = pos_klan
             vizit_to_station_master()
         else:
-            Mouse.move(pos=station_master, speed=0.1)
             x_or, y_or = station_master
-            x_or -= 29
-            y_or -= 29
+            x_or -= 23
+            y_or -= 27
             point = x_or, y_or
     else:
         # Закрыть если открыто, так как за чем-то может быть не видна позиция привязки
         push_close_all_()
         pos_klan = find_img.find_klan()
-        # Mouse.move(pos=pos_klan)
-        # получение координат привязки
         sleep(0.5)
         point = pos_klan
         vizit_to_station_master()
+    return point
+
+
+def find_link_station_master_alt():
+    my_print_to_file('')
+    my_print_to_file('fun.find_link_station_master_alt')
+    station_master = find_img.find_station_master()
+    pos_klan = find_img.find_klan()
+    # Если нет ни того ни другого всё закрыть
+    if not pos_klan and not station_master:
+        my_print_to_file(f'ничего не видно')
+        push_close_all_()
+        pos_klan = fun.wait_static_pos(name_img='img/overall/klan.png')
+    if pos_klan:
+        point = vizit_to_station_master()
+        my_print_to_file(f'{point=} если видно клан')
+    else:
+        point = find_img.find_station_master()
+    my_print_to_file(f'{point=}')
+    my_print_to_file('выход из fun.find_link_station_master_alt')
     return point
 
 
@@ -426,28 +442,28 @@ def get_areas_task_small(width=77, height=42):
     """Получение значений "region=" для поиска значений в малых регионах пуль и опыта
         :return: кортеж из шести списков значений"""
     my_print_to_file('fun.get_areas_task_small')
-    pul, xp_ = 444, 518
-    pos_1, pos_2, pos_3 = 217, 320, 423
+    pul, xp_ = 404 - 34 - 10 + 1, 518 - 40 - 34 - 10 - 10 + 2
+    line_1, line_2, line_3 = 160, 250, 340
 
-    x_or, y_or = find_link_station_master()
+    x_or, y_or = find_link_station_master_alt()
 
     x_an_xp = x_or + xp_
     x_an_pul = x_or + pul
 
     # регион поиска 1 (позиция анализа)
-    y_1an = y_or + pos_1
-    region1_xp = [x_an_xp, y_1an, width, height]
+    y_1an = y_or + line_1
     region1_pul = [x_an_pul, y_1an, width, height]
+    region1_xp = [x_an_xp, y_1an, width, height]
 
     # регион поиска 2 (позиция анализа)
-    y_2an = y_or + pos_2
-    region2_xp = [x_an_xp, y_2an, width, height]
+    y_2an = y_or + line_2
     region2_pul = [x_an_pul, y_2an, width, height]
+    region2_xp = [x_an_xp, y_2an, width, height]
 
     # регион поиска 3 (позиция анализа)
-    y_3an = y_or + pos_3
-    region3_xp = [x_an_xp, y_3an, width, height]
+    y_3an = y_or + line_3
     region3_pul = [x_an_pul, y_3an, width, height]
+    region3_xp = [x_an_xp, y_3an, width, height]
 
     return region1_pul, region2_pul, region3_pul, region1_xp, region2_xp, region3_xp
 
@@ -455,11 +471,11 @@ def get_areas_task_small(width=77, height=42):
 def get_areas_task_big_1(width=77, height=42):
     my_print_to_file('fun.get_areas_task_big_1')
     # width, height = 77, 42
-    pul = 444
-    pos_1 = 217
-    big = 77  # 100
+    pul = 404
+    pos_1 = 190
+    big = 50  # 100
 
-    x_or, y_or = find_link_station_master()
+    x_or, y_or = find_link_station_master_alt()
 
     x_an_pul = x_or + pul
     width += big
@@ -472,11 +488,11 @@ def get_areas_task_big_1(width=77, height=42):
 def get_areas_task_big_2(width=77, height=42):
     my_print_to_file('fun.get_areas_task_big_2')
     # width, height = 77, 42
-    pul = 444
-    pos_2 = 320
-    big = 77  # 100
+    pul = 404
+    pos_2 = 280
+    big = 50  # 100
 
-    x_or, y_or = find_link_station_master()
+    x_or, y_or = find_link_station_master_alt()
 
     x_an_pul = x_or + pul  # начальная точка
     width += big  #
@@ -489,11 +505,11 @@ def get_areas_task_big_2(width=77, height=42):
 def get_areas_task_big_3(width=77, height=42):
     my_print_to_file('fun.get_areas_task_big_2')
     # width, height = 77, 42
-    pul = 444
-    pos_3 = 423
-    big = 77  # 100
+    pul = 404
+    pos_3 = 370
+    big = 50  # 100
 
-    x_or, y_or = find_link_station_master()
+    x_or, y_or = find_link_station_master_alt()
 
     x_an_pul = x_or + pul  # начальная точка
     width += big  #
@@ -503,47 +519,80 @@ def get_areas_task_big_3(width=77, height=42):
     return region_big_3
 
 
-def get_areas_task_big(width=77, height=42):
+def get_areas_task_big(width=77, height=42, refactor=None):
     """Получение значений "region=" для поиска заданий в больших регионах
         :return: кортеж из трех списков значений"""
-    my_print_to_file('fun.get_areas_task_big')
-    pul = 444
-    pos_1, pos_2, pos_3 = 217, 320, 423
-    big = 77  # 100
+    # my_print_to_file('fun.get_areas_task_big')
+    # print('')
+    pul = 370
+    # pos_1, pos_2, pos_3 = 217, 320, 423
+    pos_1, pos_2, pos_3 = 160, 250, 340
+    big = 56  # 56
 
-    x_or, y_or = find_link_station_master()
-
+    x_or, y_or = find_link_station_master_alt()
     x_an_pul = x_or + pul
     width += big
+    if refactor:
+        # print(f'{x_or=}, {y_or=}')
+        fun.Mouse.move(pos=(x_or, y_or))
+        # print(f'{x_or=}, {y_or=}, {x_an_pul=}, {width}')
 
     # регион поиска 1 (позиция анализа)
     y_1an = int(y_or + pos_1)
     region1_big = [x_an_pul, y_1an, width, height]
+    if refactor:
+        # fun.Mouse.move(pos=(x_an_pul, y_1an))
+        # print(f'fun.get_areas_task_big {region1_big=}')
+        # print()
+        name_create_img = 'img/test/areas_task1.png'
+        fun.foto(f'{name_create_img}', (x_an_pul, y_1an, width, height))
 
     # регион поиска 2 (позиция анализа)
     y_2an = int(y_or + pos_2)
     region2_big = [x_an_pul, y_2an, width, height]
+    if refactor:
+        name_create_img = 'img/test/areas_task2.png'
+        fun.foto(f'{name_create_img}', (x_an_pul, y_2an, width, height))
 
     # регион поиска 3 (позиция анализа)
     y_3an = int(y_or + pos_3)
     region3_big = [x_an_pul, y_3an, width, height]
+    if refactor:
+        name_create_img = 'img/test/areas_task3.png'
+        fun.foto(f'{name_create_img}', (x_an_pul, y_3an, width, height))
 
     return region1_big, region2_big, region3_big
 
 
-def find_link_klan():
+def find_link_klan(show=True):
     my_print_to_file('fun.find_link_klan')
     pos_klan = find_img.find_klan()
     while not pos_klan:
-        # sleep(0.1)
+        print('no')
         pos_klan = find_img.find_klan()
+        if pos_klan:
+            Mouse.move(pos=pos_klan, show=show)
 
     return pos_klan
 
 
+def is_open_station():
+    """
+
+    :return: Point station_master
+    """
+    open_station1 = find_img.find_link_money_token()
+    while not open_station1:
+        open_station1 = find_img.find_link_money_token()
+
+
 def vizit_to_station_master():
-    """заходит в палатку к нач.станции"""
+    """заходит в палатку к нач.станции
+    :return: Point 'station_master'
+    """
     my_print_to_file('fun.vizit_to_station_master')
+    # print('fun.vizit_to_station_master')
+    is_open_station()
     station_master = find_img.find_station_master()
     if station_master:
         Mouse.move(pos=station_master, speed=0.4)
@@ -616,7 +665,8 @@ def selection_hero(*, show_name=True):
         heroes.Activ.name_file_ = 'mara'
         heroes.Activ.hero_activ = heroes.mara
     else:
-        print(myCt.tc_red("Невозможно опознать героя (("))
+        print(myCt.tc_red("Невозможно опознать героя!! (("))
+        print()
         hero = None
         heroes.Activ.hero_activ = None
     return hero
@@ -791,29 +841,35 @@ def get_region_lines_task():
     """
         Получение региона для трех строк с заданием
     """
+    print('get_region_lines_task')
     pos_start = find_link_station_master()
-    change_x = 310
-    change_y = 103
+    change_x = 280
+    change_y = 90
     # найдем верхний угол
     x, y = pos_start
-    x += 300
-    y += 160
+    x += 270
+    y += 150
+
     x_demo, y_demo = x, y
+
     x_demo += change_x
     y_demo += change_y
+
     region_task_line1 = x, y, change_x, change_y
     #
     x, y = pos_start
-    x += 300
-    y += 160 + 103
+    x += 270
+    y += 150 + 90
+
     x_demo, y_demo = x, y
     x_demo += change_x
     y_demo += change_y
+
     region_task_line2 = x, y, change_x, change_y
     #
     x, y = pos_start
-    x += 300
-    y += 160 + 103 + 103
+    x += 270
+    y += 150 + 90 + 90
     x_demo, y_demo = x, y
     x_demo += change_x
     y_demo += change_y
@@ -836,4 +892,19 @@ def loc_now():
             # print(f'{b_d.list_of_stations[station][2]}') # img/tonelli/id_stations/s_Chekhov.png
             # print(f'имя станции старта - {list_location[0]}') # имя станции старта - ст. Чеховская
             break
+        else:
+            pass
+            # print(list_location)
     return list_location
+
+def dif_days(*, date_old, date_today=date_utc_now()):
+    list_date_old = date_old.split(sep='-')
+    list_date_today = date_today.split(sep='-')
+    par_year = 0
+    par_month = 1
+    par_day = 2
+    d_old = datetime.date(int(list_date_old[par_year]), int(list_date_old[par_month]), int(list_date_old[par_day]))
+    d_today = datetime.date(int(list_date_today[par_year]), int(list_date_today[par_month]), int(list_date_today[par_day]))
+    dif = d_today - d_old
+    # print('fun.dif_days ', dif.days)
+    return dif.days

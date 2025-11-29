@@ -114,13 +114,13 @@ label_4 = ttk.Label()
 label_4.configure(text='mara', borderwidth=2, relief="ridge", padding=5, width=w_l)
 label_4.place(x=tab_3, y=line_0)
 
-ttk.Button(text='Кто?', width=4, command=who_is_this).place(x=tab_0, y=line_2)
+ttk.Button(text='Кто?', width=5, command=who_is_this).place(x=tab_0, y=line_2)
 ttk.Label(text='строка и имя файла', width=21, background='#858585', foreground='#050505').place(x=tab_1, y=line_2)
 
-ttk.Button(text='строка 1', width=7, command=form_path_name_file).place(x=tab_1, y=line_3)
-ttk.Button(text='строка 2', width=7, command=form_path_name_file).place(x=tab_1, y=line_4)
-ttk.Button(text='строка 3', width=7, command=form_path_name_file).place(x=tab_1, y=line_5)
-ttk.Button(text='состояние', width=7, command=info_name_file).place(x=tab_1, y=line_6)
+ttk.Button(text='строка 1', width=8, command=form_path_name_file).place(x=tab_1, y=line_3)
+ttk.Button(text='строка 2', width=8, command=form_path_name_file).place(x=tab_1, y=line_4)
+ttk.Button(text='строка 3', width=8, command=form_path_name_file).place(x=tab_1, y=line_5)
+ttk.Button(text='состояние', width=8, command=info_name_file).place(x=tab_1, y=line_6)
 
 ttk.Entry(textvariable=name_file_line_1, width=3).place(x=tab_2, y=line_3)
 ttk.Entry(textvariable=name_file_line_2, width=3).place(x=tab_2, y=line_4)

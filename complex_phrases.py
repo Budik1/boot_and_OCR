@@ -1,9 +1,11 @@
 """
-сложные сообщения
+Сложные сообщения
 """
-import color_text
 import fun
 import heroes
+import color_text
+
+
 
 
 def display_report_energy_now(*, vers_in_print, value_energy):
@@ -18,7 +20,8 @@ def display_report_energy_now(*, vers_in_print, value_energy):
           f'Сейчас {value_energy}, '
           f'сегодня {heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)}, '
           f'всего/на Киевской: {heroes.Hero.get_energy_count_all(heroes.Activ.hero_activ)}/'
-          f'{heroes.Hero.get_energy_kiev_count_all(heroes.Activ.hero_activ)}')
+          f'{heroes.Hero.get_energy_kiev_count_all(heroes.Activ.hero_activ)}'
+          )
 
 
 def set_inspect_report():
@@ -30,15 +33,13 @@ def display_info_energy_all():
     print()
     print('Расход энергии')
 
-    hero_dict = {'Gady:': heroes.gady, 'Gavr:': heroes.gavr, 'Veles:': heroes.veles, 'Mara:': heroes.mara}
-
-    for key in hero_dict:
+    for key in heroes.hero_dict:
         name = key.rjust(8, " ")
-        energy_count_today = str(heroes.Hero.get_energy_count_today(hero_dict[key])).rjust(3, " ")
-        energy_count_all = str(heroes.Hero.get_energy_count_all(hero_dict[key])).rjust(6, " ")
+        energy_count_today = str(heroes.Hero.get_energy_count_today(heroes.hero_dict[key])).rjust(3, " ")
+        energy_count_all = str(heroes.Hero.get_energy_count_all(heroes.hero_dict[key])).rjust(6, " ")
         now = "сегодня-".rjust(10, " ")
         all_ = 'всего:'.rjust(8, ' ')
-        en_kiev = str(heroes.Hero.get_energy_kiev_count_all(hero_dict[key])).ljust(5, ' ')
+        en_kiev = str(heroes.Hero.get_energy_kiev_count_all(heroes.hero_dict[key])).ljust(5, ' ')
         dif = str(int(energy_count_all) - int(en_kiev)).rjust(5, ' ')
         print(
             f'{name}{now}{energy_count_today}{all_}'
@@ -57,12 +58,11 @@ def display_home_location_hero(*, her):
 def display_report_wildman():
     print()
     print('Дикари')
-    hero_dict = {'Gady:': heroes.gady, 'Gavr:': heroes.gavr, 'Veles:': heroes.veles, 'Mara:': heroes.mara}
-    for key in hero_dict:
-        name = heroes.Hero.get_name_ru(hero_dict[key]).rjust(7, ' ')
 
-        print(f'{name}:{report_wildman(hero=hero_dict[key])}')
+    for key in heroes.hero_dict:
+        name = heroes.Hero.get_name_ru(heroes.hero_dict[key]).rjust(7, ' ')
 
+        print(f'{name}:{report_wildman(hero=heroes.hero_dict[key])}')
     return
 
 
@@ -72,13 +72,12 @@ def display_smol_report_wildman():
     :return:
     """
     print()
-    hero_dict = {'Gady:': heroes.gady, 'Gavr:': heroes.gavr, 'Veles:': heroes.veles, 'Mara:': heroes.mara}
-    for key in hero_dict:
+    for key in heroes.hero_dict:
         name = key.rjust(8, ' ')
-        q_days = str(heroes.Hero.get_days_count_wildman(hero_dict[key])).rjust(3, ' ')
-        days = (fun.transform_word_days(qty_days=(heroes.Hero.get_days_count_wildman(hero_dict[key])))).rjust(5, ' ')
-        q_wild = str(heroes.Hero.get_wildman_count(hero_dict[key])).rjust(4)
-        wild = fun.transform_word_wilds(qty_wilds=heroes.Hero.get_wildman_count(hero_dict[key])).rjust(8)
+        q_days = str(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])).rjust(3, ' ')
+        days = (fun.transform_word_days(qty_days=(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])))).rjust(5, ' ')
+        q_wild = str(heroes.Hero.get_wildman_count(heroes.hero_dict[key])).rjust(4)
+        wild = fun.transform_word_wilds(qty_wilds=heroes.Hero.get_wildman_count(heroes.hero_dict[key])).rjust(8)
         print(f'{name}{q_days}{days}{q_wild}{wild}')
 
     return

@@ -63,6 +63,7 @@ def foto_loot_kv(*, pos_v, pos_n):
     return
 
 
+
 def selection_hero_in_kv():
     hero = fun.selection_hero()
     if not hero:
@@ -83,6 +84,7 @@ def distance(*, pos_vic: tuple, pos_cl: tuple) -> int:
     x_vic, y_vic = pos_vic
     x_cl, y_cl = pos_cl
     dist = y_cl - y_vic
+    # print(f'{dist=}')
     return dist
 
 
@@ -123,7 +125,7 @@ def battle(target_call):
             # print(Hero.get_name_ru(Activ.hero_activ))
             dist_report = distance(pos_vic=victory, pos_cl=kv_close)
             foto_result_round(pos_v=victory, pos_n=kv_close)
-            if dist_report > 232:
+            if dist_report > 211:
                 heroes.Hero.up_count_shoulder_straps_all(heroes.Activ.hero_activ)
                 heroes.Hero.up_count_shoulder_straps_kv(heroes.Activ.hero_activ)
                 mes = color_text.tc_red('Погон!!')

@@ -10,7 +10,7 @@ import color_text
 import sounds
 import station_master
 import baza_dannyx as b_d
-import find_img as find
+import find_img
 from heroes import Hero, Activ
 
 
@@ -51,17 +51,19 @@ def open_map():
     fun.my_print_to_file('touring.open_map')
     location_station = fun.loc_now()
     # print(color_text.tc_cyan(f'выход из {location_station[0]}'))
+    # получение координат
     pos_run_out = [0, 0]
     if location_station[0] == 'ст. Тургеневская':
         pos_or1 = fun.find_link_klan()
-        pos_run_out[0] = pos_or1[0] + 215
+        pos_run_out[0] = pos_or1[0] + 180
         pos_run_out[1] = pos_or1[1] + 205
         fun.Mouse.move(pos=pos_run_out, speed=0.1)
     else:
-        pos_or1 = find.find_info()
-        pos_run_out[0] = pos_or1[0] + 350
+        pos_or1 = find_img.find_info()
+        pos_run_out[0] = pos_or1[0] + 300
         pos_run_out[1] = pos_or1[1] + 180
         fun.Mouse.move(pos=pos_run_out, speed=0.1)
+    # открыть карту
     fun.Mouse.left_click(pos=pos_run_out)
     # Убрать курсор с поля карты, чтобы ничего не перекрыл
     station_exit = fun.wait_static_pos(name_img='img/tonelli/station_exit.png')
@@ -88,14 +90,14 @@ def events_tunnel(name_st, st_id_file):
         y += 350
         fun.Mouse.move(pos=(x, y))
         post = fun.locCenterImg(name_img='img/tonelli/post.png', confidence=0.8)
-        skip_battle = find.find_skip_battle()
+        skip_battle = find_img.find_skip_battle()
         fun.my_print_to_file(f'skip_battle = {skip_battle}')
         if skip_battle:
             station_master.enemy_battle(1, add_up=True, tour=True, dog_activ=dog_activ)  # вызов обработки события
         if post:
             fun.my_print_to_file(f'post = {post}')
             fun.Mouse.move(pos=post, speed=0.2)
-            attack = find.find_tonelli_attack()
+            attack = find_img.find_tonelli_attack()
             entry = fun.locCenterImg(name_img='img/tonelli/entry_station.png', confidence=0.8)
             if entry:
                 fun.my_print_to_file(f'entry = {entry}')
@@ -160,8 +162,14 @@ def traffic_on_the_map(stan: list) -> None:
         pos_click = fun.locCenterImg(name_img='img/tonelli/mark_sever.png', confidence=0.85)
         fun.my_print_to_file(f'pos_click = {pos_click}, нажал на стрелку "север"')
         fun.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
+        pos_click = fun.locCenterImg(name_img='img/tonelli/mark_sever.png', confidence=0.85)
+        fun.my_print_to_file(f'pos_click = {pos_click}, нажал на стрелку "север"')
+        fun.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
         # sleep(1)
     elif ev_map == 'стрелка юг' and next_station is None:
+        pos_click = fun.locCenterImg(name_img='img/tonelli/mark_yug.png', confidence=0.85)
+        fun.my_print_to_file(f'pos_click = {pos_click}, нажал на стрелку "юг"')
+        fun.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
         pos_click = fun.locCenterImg(name_img='img/tonelli/mark_yug.png', confidence=0.85)
         fun.my_print_to_file(f'pos_click = {pos_click}, нажал на стрелку "юг"')
         fun.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
@@ -198,15 +206,21 @@ def move_to_target(*, target_point, rapport=True):
     :param target_point: имя станции, например - 'ст. Чеховская'
     """
     # определяю героя
-    her = fun.selection_hero()
+    her = fun.selection_hero() #
+    # while not her:
+    #     close = find_img.find_close()
+    #     fun.Mouse.move_to_click(pos_click=close)
+    #     her = fun.selection_hero()
+    if not her:
+        print(color_text.tc_yellow('Этот НИКТО никуда не пойдет)))'))
+        return
     home_location = Hero.get_home_location(Activ.hero_activ)
+    # print(home_location)
     if home_location == 'бомж':
         print('Милок, не уходи со станции.. Память отшибет - заблудишься. Лучше документик сделай. '
               'Тебе тогда хоть подскажут.. ')
         return
-    if not her:
-        print(color_text.tc_yellow('Этот НИКТО никуда не пойдет)))'))
-        return
+
     # получаю локацию старта
     start_point = fun.loc_now()[0]
     # print(f'{start_point=}')
@@ -385,8 +399,8 @@ def for_wilds():
      и домой, на крыс потратить остаток.
     Для всех остальных:
         С домашней станции на Киевскую,
-     задания на пули, потом на Университет,
-     на черных крыс потратить остаток,
+     задания на пули, потом на ст. Пушкинская,
+     на белых крыс потратить остаток,
      и домой на Фрунзенскую.
     """
     fun.my_print_to_file('touring.for_wilds')
@@ -419,7 +433,7 @@ def for_wilds():
         print('нет доступных заданий на Киевской')
         # univer()
         # за черными крысами на Универ
-        move_to_target(target_point='ст. Университет')
+        move_to_target(target_point='ст. Пушкинская')
         station_master.task_pos_item(1)
         print('энергия исчерпана')
         # univer_frunze()

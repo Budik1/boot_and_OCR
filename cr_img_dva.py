@@ -6,71 +6,6 @@ import find_img as find
 import baza_paths as b_p
 
 
-def dress():
-    """
-    образец
-    """
-    name_create_img = 'img/person/dress/slots/jacket_point.png'
-    show_move = False
-    pos_start = find.find_exit_person()
-    # показать привязку
-    fun.mouse_move(pos=pos_start, speed=1)
-    # найдем верхний угол
-    x, y = pos_start
-    # x += 251, y -= 486 верхний правый слот
-    # x += 371, y -= 341 слот перчаток
-    # x += 713, y -= 341 слот жакета
-    # x += 175, y -= 232 слот брюки
-    # x += 713, y += 125 слот обувь
-    x += 713
-    y -= 341
-    fun.mouse_move(pos=(x, y), speed=1, show=show_move)
-    # # найдем нижний угол
-    x_demo, y_demo = x, y
-    change_x = 89
-    change_y = 89
-    x_demo += change_x
-    y_demo += change_y
-    fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
-    # # собственно создание снимка
-    fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
-    pos = fun.locCenterImg(f'{name_create_img}')
-    fun.mouse_move(pos=pos)
-    sounds.sound_vic()
-    print('ok')
-    return
-
-
-def link_money_token():
-    """
-    образец
-    """
-    name_create_img = 'img/overall/link_money_token.png'
-    show_move = True
-    pos_start = find.find_my_game2()
-    # показать привязку
-    fun.mouse_move(pos=pos_start, speed=1)
-    # найдем верхний угол
-    x, y = pos_start
-    x -= 20
-    y += 25 + 6
-    fun.mouse_move(pos=(x, y), speed=1, show=show_move)
-    # # найдем нижний угол
-    # x_demo, y_demo = x, y
-    # change_x = 39
-    # change_y = 51
-    # x_demo += change_x
-    # y_demo += change_y
-    # fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
-    # # собственно создание снимка
-    # fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
-    pos = fun.locCenterImg(f'{name_create_img}')
-    fun.mouse_move(pos=pos)
-    sounds.sound_vic()
-    print('ok')
-    return
-
-
 def get_energy_line_1_img():
     path_img = b_p.energy_task_value
     name_img = 'en_1.png'
@@ -166,22 +101,22 @@ def arial_task():
     # fun.mouse_move(pos=pos_start, speed=1)
     # найдем верхний угол
     x, y = pos_start
-    x += 300
-    y += 160
-    fun.mouse_move(pos=(x, y), speed=1, show=show_move)
+    x += 270
+    y += 152
+    # fun.mouse_move(pos=(x, y), speed=1, show=show_move)
     # # найдем нижний угол
     x_demo, y_demo = x, y
-    change_x = 310
-    change_y = 320
+    change_x = 268
+    change_y = 260
     x_demo += change_x
     y_demo += change_y
-    fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
+    # fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
     # # собственно создание снимка
-    # fun.foto(f'{path_img}{name_img}', (x, y, change_x, change_y))
-    # pos = fun.locCenterImg(f'{path_img}{name_img}')
+    fun.foto(f'{path_img}{name_img}', (x, y, change_x, change_y))
+    pos = fun.locCenterImg(f'{path_img}{name_img}')
     # fun.mouse_move(pos=pos)
-    # sounds.sound_vic()
-    # print('ok')
+    sounds.sound_vic()
+    print('ok')
     # print(x, y, change_x, change_y)
     return x, y, change_x, change_y
 
@@ -203,17 +138,18 @@ def region_task_line():
     path_img = b_p.task_big
     name_img1 = 'arial_task_line_1.png'
     show_move = True
-    change_x = 310
-    change_y = 103
+    change_x = 270
+    # change_y = 103
+    change_y = 80
     # шаг 103
     pos_start = fun.find_link_station_master()
     # показать привязку
     # fun.mouse_move(pos=pos_start, speed=1)
     # найдем верхний угол
     x, y = pos_start
-    x += 300
-    y += 160
-    fun.mouse_move(pos=(x, y), speed=1, show=show_move)
+    x += 268
+    y += 152
+    # fun.mouse_move(pos=(x, y), speed=1, show=show_move)
     x_demo, y_demo = x, y
 
     x_demo += change_x
@@ -223,24 +159,25 @@ def region_task_line():
     #
     name_img2 = 'arial_task_line_2.png'
     x, y = pos_start
-    x += 300
-    y += 160 + 103
-    fun.mouse_move(pos=(x, y), speed=1, show=show_move)
+    x += 268
+    y += 152 + 90
+    # fun.mouse_move(pos=(x, y), speed=1, show=show_move)
     x_demo, y_demo = x, y
     x_demo += change_x
     y_demo += change_y
-    fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
+    # fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
     fun.foto(f'{path_img}{name_img2}', (x, y, change_x, change_y))
     #
     name_img3 = 'arial_task_line_3.png'
     x, y = pos_start
-    x += 300
-    y += 160 + 103 + 103
-    fun.mouse_move(pos=(x, y), speed=1, show=show_move)
+    x += 268
+    y += 152 + 90 + 90
+    # fun.mouse_move(pos=(x, y), speed=1, show=show_move)
     x_demo, y_demo = x, y
     x_demo += change_x
     y_demo += change_y
-    fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
+    # fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
     fun.foto(f'{path_img}{name_img3}', (x, y, change_x, change_y))
 
 
+arial_task()

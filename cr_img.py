@@ -48,59 +48,71 @@ def get_screenshot_task():
     # foto_pos(region3_xp, tune_x, tune_y, tune_s, tune_v, 'img/test/3_xp.png')
 
 
-def hero_img():
-    pos = fun.find_link_klan()
-    x, y = pos
-    x -= 179
-    y -= 65
-    x_v = x
-    y_v = y
-    fun.foto('img/test/her1.png', (x_v, y_v, 84, 84))
-    print("сделано")
+def fashion():
+    """
+        образец
+        """
+    name_create_img = 'img/overall/link_money_token.png'
+    show_move = True
+    pos_start = find.find_my_game2()
+    # показать привязку
+    fun.mouse_move(pos=pos_start, speed=1)
+    # найдем верхний угол
+    x, y = pos_start
+    x -= 20
+    y += 25 + 6
+    fun.mouse_move(pos=(x, y), speed=1, show=show_move)
+    # # найдем нижний угол
+    # x_demo, y_demo = x, y
+    # change_x = 39
+    # change_y = 51
+    # x_demo += change_x
+    # y_demo += change_y
+    # fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
+    # # собственно создание снимка
+    # fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
+    pos = fun.locCenterImg(f'{name_create_img}')
+    fun.mouse_move(pos=pos)
+    sounds.sound_vic()
+    print('ok')
+    return
 
 
 def victory_battle_in_kv():
     kv_close = fun.locCenterImg('img/kv/kv_close.png', confidence=0.9)
     if kv_close:
-        print(kv_close, 'kv_close')
+        # print(kv_close, 'kv_close')
         x, y = kv_close
-        x -= 390
-        y -= 264
+        x -= 335
+        y -= 230
         pos_foto = x, y
-        pyautogui.moveTo(pos_foto, duration=1)
+        # pyautogui.moveTo(pos_foto, duration=1)
         # x += 140
         # y += 65
         # region = x, y
         # pyautogui.moveTo(region, duration=1)
-        fun.foto('img/kv/victory_battle_in_kv.png', region=(x, y, 140, 65))
+        fun.foto('img/kv/victory_battle_in_kv.png', region=(x, y, 110, 41))
 
+
+# victory_battle_in_kv()
 
 def defeat_battle_in_kv():
     kv_close = fun.locCenterImg('img/kv/kv_close.png', confidence=0.9)
     if kv_close:
-        print(kv_close, 'kv_close')
+        # print(kv_close, 'kv_close')
         x, y = kv_close
-        x -= 390
-        y -= 264
+        x -= 340
+        y -= 230
         pos_foto = x, y
-        pyautogui.moveTo(pos_foto, duration=1)
+        # pyautogui.moveTo(pos_foto, duration=1)
         # x += 140
         # y += 65
         region = x, y
-        pyautogui.moveTo(region, duration=1)
-        fun.foto('img/kv/defeat_battle_in_kv.png', region=(x, y, 140, 65))
+        # pyautogui.moveTo(region, duration=1)
+        fun.foto('img/kv/defeat_battle_in_kv.png', region=(x, y, 140, 45))
 
 
-def detecting():
-    victory = fun.locCenterImg('img/kv/victory_battle_in_kv.png', confidence=0.95)
-    defeat = fun.locCenterImg('img/kv/defeat_battle_in_kv.png', confidence=0.95)
-    if victory:
-        result = "победа"
-        print(result)
-
-    elif defeat:
-        result = "поражение"
-        print(result)
+# defeat_battle_in_kv()
 
 
 def victory_in_arena():
@@ -340,155 +352,6 @@ def button_collapse():
     fun.mouse_move(pos=img_button_collapse, speed=1)
 
 
-def mob_foto(name):
-    skip_battle = fun.locCenterImg('img/skip_battle.png', confidence=0.79)
-    if skip_battle:
-        x, y = skip_battle
-        x_f = x + 300 + 14
-        y_f = y - 35 + 13
-        # pyautogui.moveTo((x_f, y_f), duration=1)
-        sleep(1)
-        cor_x = 130 - 16
-        cor_y = 130 - 16
-        x_cor = x_f + cor_x
-        y_cor = y_f + cor_y
-        pyautogui.moveTo(x_cor, y_cor, duration=1)
-        fun.foto(f'img/tonelli/mobi/mobi_{name}.png', (x_f, y_f, cor_x, cor_y))
-        print(f'foto mobi_{name} сделан')
-
-
-def mob_name(name):
-    skip_battle = fun.locCenterImg('img/skip_battle.png', confidence=0.79)
-    if skip_battle:
-        # fun.mouse_move(pos=skip_battle)
-        # print(f'{skip_battle=}')
-        x, y = skip_battle
-        x += 80
-        y -= 22
-        # fun.mouse_move(pos=(x, y), speed=1)
-        sleep(1)
-        x_demo, y_demo = x, y
-        change_x = 180
-        change_y = 28
-        x_demo += change_x
-        y_demo += change_y
-        # fun.mouse_move(pos=(x_demo, y_demo))
-        fun.foto(f'img/tonelli/mobi/name_{name}.png', (x, y, change_x, change_y))
-        print(f'имя "name_{name}" сфотографировано')
-
-
-def mob_id(name):
-    con = 0.99
-    print(f'поиск {name}')
-    skip_battle = fun.locCenterImg('img/overall/skip_battle.png', confidence=con)
-    while not skip_battle:
-        skip_battle = fun.locCenterImg('img/overall/skip_battle.png', confidence=con)
-
-    sleep(2)
-    # 1
-    # серая *
-    gray_rat = fun.locCenterImg('img/tonelli/mobi/mobi1_grey_rat.png', confidence=con)
-    name_gray_rat = fun.locCenterImg('img/tonelli/mobi/name1_grey_rat.png', confidence=con)
-    # черная *
-    black_rat = fun.locCenterImg('img/tonelli/mobi/mobi1_black_rat.png', confidence=con)
-    name_black_rat = fun.locCenterImg('img/tonelli/mobi/name1_black_rat.png', confidence=con)
-    # белая *
-    white_rat = fun.locCenterImg('img/tonelli/mobi/mobi1_white_rat.png', confidence=con)
-    name_white_rat = fun.locCenterImg('img/tonelli/mobi/name1_white_rat.png', confidence=con)
-
-    # 5 дикарь *
-    name_wildman = fun.locCenterImg('img/tonelli/mobi/name5_wildman.png', confidence=con)
-    mobi_wildman = fun.locCenterImg('img/tonelli/mobi/mobi5_wildman.png', confidence=con)
-    # 6 кикимора *
-    name_kiki = find_img.find_name_kikimora()
-    mobi_kiki = fun.locCenterImg('img/tonelli/mobi/mobi_kikimora.png', confidence=con)
-
-    # 7 ящер *
-    name_raptor = fun.locCenterImg('img/tonelli/mobi/name7_raptor.png', confidence=con)
-    mobi_raptor = fun.locCenterImg('img/tonelli/mobi/mobi7_raptor.png', confidence=con)
-    # 1 серая
-    if gray_rat or name_gray_rat:
-        print(f'{gray_rat=}')
-        print(f'{name_gray_rat=}')
-        if gray_rat and name_gray_rat:
-            fun.mouse_move(pos=gray_rat, speed=0.5)
-            fun.mouse_move(pos=name_gray_rat, speed=0.5)
-            print('серая крыса поймана')
-            return
-        else:
-            if not gray_rat:
-                mob_foto(name)
-            if not name_gray_rat:
-                mob_name(name)
-    # 1 белая
-    if white_rat or name_white_rat:
-        print(f'{white_rat=}')
-        print(f'{name_white_rat=}')
-        if white_rat and name_white_rat:
-            fun.mouse_move(pos=white_rat, speed=0.5)
-            fun.mouse_move(pos=name_white_rat, speed=0.5)
-            print('белая крыса поймана')
-            return
-        else:
-            if not white_rat:
-                mob_foto(name)
-            if not name_white_rat:
-                mob_name(name)
-    # 1 черная
-    if black_rat or name_black_rat:
-        print(f'{black_rat=}')
-        print(f'{name_black_rat=}')
-        if black_rat and name_black_rat:
-            fun.mouse_move(pos=black_rat, speed=0.5)
-            fun.mouse_move(pos=name_black_rat, speed=0.5)
-            print('черная крыса поймана')
-            return
-        if not black_rat:
-            mob_foto(name)
-        if not name_black_rat:
-            mob_name(name)
-    # 5 дикарь *
-    if mobi_wildman or name_wildman:
-        if mobi_wildman and name_wildman:
-            fun.mouse_move(pos=mobi_wildman, speed=0.5)
-            fun.mouse_move(pos=name_wildman, speed=0.5)
-            print('ящер пойман')
-            return
-        if not mobi_wildman:
-            mob_foto(name)
-        if not name_wildman:
-            mob_name(name)
-    # 6 кикимора *
-    if mobi_kiki or name_kiki:
-        if mobi_kiki and name_kiki:
-            fun.mouse_move(pos=mobi_wildman, speed=0.5)
-            fun.mouse_move(pos=name_wildman, speed=0.5)
-            print('кикимора пойман')
-            return
-        if not mobi_kiki:
-            mob_foto(name)
-        if not name_kiki:
-            mob_name(name)
-    # 7 ящер
-    if mobi_raptor or name_raptor:
-        if mobi_raptor and name_raptor:
-            fun.mouse_move(pos=mobi_raptor, speed=0.5)
-            fun.mouse_move(pos=name_raptor, speed=0.5)
-            print('ящер пойман')
-            return
-        if not mobi_raptor:
-            mob_foto(name)
-        if not name_raptor:
-            mob_name(name)
-    # создание картинки
-    else:
-        print('моб не опознан')
-        mob_name(name)
-        mob_foto(name)
-        print('результат "img/tonelli/mobi/"')
-        return
-
-
 def aktiv_win_game():
     pos = fun.locCenterImg('img/overall/avtoriz/aktiv_win_game.png')
     if pos:
@@ -500,14 +363,14 @@ def aktiv_win_game():
 
 
 def continue_hero():
-    pos = fun.locCenterImg('img/overall/event_entry/continue_gavr.png')
+    pos = fun.locCenterImg('img/overall/event_entry/transmitted data.png')
     if pos:
         print('ok')
         # 34x98
         x, y = pos
         x -= 270 / 2
         y -= 60 / 2
-        fun.foto('img/overall/event_entry/continue_gavr.png', (x, y, 270, 60))
+        # fun.foto('img/overall/event_entry/continue_gavr.png', (x, y, 270, 60))
     return
 
 
@@ -516,7 +379,7 @@ def info_img():
     создание более качественной картинки своими средствами
     """
     pos = tuple(fun.locCenterImg(name_img='img/overall/info.png', confidence=0.8))
-    print(type(pos))
+    # print(type(pos))
     if pos:
         print('ok')
         # 33x41
@@ -524,19 +387,10 @@ def info_img():
         pos_change = 33, 41
         x -= (pos_change[0] / 2) - 2
         y -= (pos_change[1] / 2) - 2
-        fun.foto('img/overall/info1.png', (x, y, pos_change[0], pos_change[1]))
-    new_pos = fun.locCenterImg(name_img='img/overall/info1.png')
+        fun.foto('img/overall/info.png', (x, y, pos_change[0], pos_change[1]))
+    new_pos = fun.locCenterImg(name_img='img/overall/info.png')
     fun.mouse_move(pos=new_pos)
     return
-
-
-def my_game():
-    pos_img = find.find_my_game2()
-    if pos_img:
-        fun.mouse_move(pos=pos_img)
-        print('ok my_game')
-    else:
-        print('no my_game')
 
 
 def dress():
@@ -636,7 +490,5 @@ def no_energy():
     sounds.sound_vic()
     print(f'файл {name_create_img} создан')
 
-# no_energy()
-# dress_region()
-# dress()
-# hero_img()
+# info_img()
+# energy_img()

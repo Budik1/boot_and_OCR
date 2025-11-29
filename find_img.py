@@ -46,7 +46,7 @@ def find_hall_of_glory_icon():
 
 
 def find_station_master():
-    station_master = fund.locateCenterImg(name_img='img/station_master/station_master.png')
+    station_master = fund.locateCenterImg(name_img='img/station_master/station_master.png', confidence=0.91)
     return station_master
 
 
@@ -135,6 +135,11 @@ def find_kv_skip_battle():
     kv_skip_battle = fund.locateCenterImg(name_img='img/kv/kv_skip_battle.png', confidence=0.85)
     return kv_skip_battle
 
+def find_kv_skip_battle_test():
+    kv_skip_battle = fund.locateCenterImg(name_img='img/kv/kv_skip_battle_test.png', confidence=0.85)
+    # while not kv_skip_battle:
+    #     kv_skip_battle = fund.locateCenterImg(name_img='img/kv/kv_skip_battle_test.png', confidence=0.85)
+    return kv_skip_battle
 
 def find_skip_battle():
     skip_battle = fund.locateCenterImg(name_img='img/skip_battle.png', confidence=par_conf)
@@ -207,6 +212,7 @@ def find_my_game2():
     pos = fund.locateCenterImg(name_img='img/overall/my_game2.png')
     return pos
 
+
 def find_button_expand():
     pos = fund.locateCenterImg(name_img='img/overall/button_expand.png')
     return pos
@@ -232,7 +238,7 @@ def find_no_energy():
     return pos
 
 def find_name_kikimora():
-    pos = fund.locateCenterImg(name_img='img/tonelli/mobi/name_kikimora.png')
+    pos = fund.locateCenterImg(name_img='img/tonelli/mobi/name6_kikimora.png')
     return pos
 
 def find_en_1():
@@ -242,4 +248,16 @@ def find_en_1():
 
 def find_klan_kv_label():
     pos = fund.locateCenterImg(name_img='img/kv/tests/klan_kv_label.png')
+    return pos
+
+def find_g():
+    pos_g = fund.locateCenterImg(name_img='img/overall/metro.png')
+    return pos_g
+
+def find_link_money_token():
+    pos = fund.locateCenterImg(name_img='img/overall/link_money_token.png')
+    return pos
+
+def find_b_battle_end(confidence_param=None):
+    pos = fund.locateCenterImg(name_img='img/b_battle_end.png', confidence=confidence_param)
     return pos

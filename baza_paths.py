@@ -5,7 +5,7 @@ num_path = 'img/station_master/numbers/'
 
 energy_task_value = 'img/station_master/energy_value/'
 
-task_hero = 'img/test/test_tasks/task/'
+task_hero = 'img/station_master/tasks_'
 result_round = 'img/kv/result_round/result_all_round/'
 loot_round = 'img/kv/result_round/result_round_loot/'
 # os_action

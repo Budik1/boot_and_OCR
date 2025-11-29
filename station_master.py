@@ -1,6 +1,7 @@
 """ Точки для отладки в press_en()"""
 from time import sleep
 
+import color_text
 import fun
 import find_img
 import solid_memory
@@ -25,12 +26,13 @@ find = {
 
 
 def wait_skip_battle_button():
+    # print('station_master.wait_skip_battle_button()')
     skip_battle = find_img.find_skip_battle()
     while not skip_battle:
         skip_battle = find_img.find_skip_battle()
 
 
-def mob_mob_identified():
+def mob_indicator():
     grey_rat = ['name1_grey_rat', 'серая крыса']
     white_rat = ['name1_white_rat', 'белая крыса']
     black_rat = ['name1_black_rat', 'черная крыса']
@@ -62,13 +64,14 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     :param tour:
     :return:
     """
-    # print('в бой')
+    # print(color_text.tc_green('в бой'))
     fun.my_print_to_file('station_master.enemy_battle()')
     fun.my_print_to_file(' поиск battle_end, skip_battle, dog')
+    # print('station_master.enemy_battle()')
 
     heroes.nam += 1
 
-    battle_end = fun.locCenterImg(name_img='img/b_battle_end.png', confidence=par_conf)
+    battle_end = find_img.find_b_battle_end(confidence_param=par_conf)
     skip_battle = fun.locCenterImg(name_img='img/skip_battle.png', confidence=par_conf)
     dog = fun.locCenterImg(name_img='img/dog_2.png', confidence=par_conf)
 
@@ -91,6 +94,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     cycle = True
     result = None
     while not battle_end:
+        # print(f'{battle_end=}')
         if add_up:
             while not mob_identified and count_mob_identified <= 3:
                 count_mob_identified += 1
@@ -178,8 +182,10 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
             fun.mouse_move_to_click(pos_click=skip_battle, move_time=0.4, z_p_k=0.5)
         sleep(1 * prolong_)  # для задержки нажатия "пропустить бой"
         fun.my_print_to_file('ожидание battle_end, close, dog, skip_battle')
-        battle_end = fun.locCenterImg(name_img='img/b_battle_end.png', confidence=par_conf)
-        close = fun.locCenterImg(name_img='img/overall/close.png', confidence=par_conf)
+        battle_end = find_img.find_b_battle_end(confidence_param=par_conf)
+        if battle_end:
+            fun.Mouse.move(pos=battle_end, speed=1)
+        close = find_img.find_close()
 
         name1_grey_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_grey_rat.png', confidence=conf_mobs)
         name1_white_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_white_rat.png', confidence=conf_mobs)
@@ -207,6 +213,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
             # sleep(0)
 
     skip_battle1_end_ver = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
+    # print(f'{skip_battle1_end_ver=}')
     fun.my_print_to_file(f'{skip_battle1_end_ver=}')
     while skip_battle1_end_ver:
         fun.push_close()
@@ -215,11 +222,11 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
         fun.my_print_to_file(f'{skip_battle1_end_ver=}')
 
     if not arena:
-        solid_memory.save_to_file(info=False)
-        solid_memory.save_wild_state(info=False)
+        solid_memory.save_all_state_config(info=False)
+
 
     fun.my_print_to_file("выход из 'enemy_battle")
-    # print('из боя')
+    # print(color_text.tc_green('из боя'))
     return result
 
 
@@ -239,14 +246,14 @@ def press_en(*, task_number, pos, value_energy): # , report_en=True
     x = pos[0] - 100
     y = pos[1] - 20
     pos_clik = x, y
-    fun.Mouse.move(pos=pos_clik)  # для отладки раскомментировать
+    fun.Mouse.move(pos=pos_clik)
     # print('тут должен быть клик')                                        # для отладки раскомментировать
     fun.mouse_move_to_click(pos_click=pos_clik, move_time=0.4, z_p_k=1.5)  # для отладки закомментировать
     sleep(0.5)
     low_energy = find_img.find_low_energy_label()
     if not low_energy:
         vers_in_print = "" if conf_ == 0.95 else f', conf_={conf_}. '
-        Hero.app_task_count(Activ.hero_activ)
+        # Hero.app_task_count(Activ.hero_activ)
         Hero.app_energy_count_today(Activ.hero_activ, value_energy)
         if Activ.station_activ == 'ст. Киевская':
             pass
@@ -267,8 +274,10 @@ def press_en(*, task_number, pos, value_energy): # , report_en=True
         ## Выполняю {3} задание,{ conf_=0.94}. Сейчас {3}, сегодня 20, всего 120
         complex_phrases.display_report_energy_now( vers_in_print=vers_in_print,
                                                   value_energy=value_energy)
-        solid_memory.save_to_file(info=False)
+        solid_memory.save_all_state_config(info=False)
+        # Жду появления кнопки "пропустить бой"
         wait_skip_battle_button()
+        #
         enemy_battle()
         energy_availability = 1  # для выполнения всех заданий
         # energy_availability = 0 # для выполнения одного задания
@@ -286,8 +295,12 @@ def press_en(*, task_number, pos, value_energy): # , report_en=True
         else:
             print()
         sleep(1)
-        close = fun.locCenterImg(name_img='img/overall/close.png')
-        fun.mouse_move_to_click(pos_click=close, z_p_k=0.5)
+        close = find_img.find_close()
+        while close:
+            close = find_img.find_close()
+            if close:
+                # print(f'station_master.press_en {close=}')
+                fun.mouse_move_to_click(pos_click=close, z_p_k=0.5)
 
 
 def task_analysis(img1, img2, region):
@@ -335,7 +348,7 @@ def option_task_money(report_en=True):
     fun.my_print_to_file("station_master.option_task_money()")
     # print('station_master.option_task_money')
     global energy_availability, number_tasks  # , conf_
-    price_task = None
+    # price_task = None
     conf_ = 0.95
 
     # определяю локацию
@@ -347,6 +360,8 @@ def option_task_money(report_en=True):
     heroes.Activ.station_activ = list_location[0]
 
     if heroes.Activ.station_activ == 'ст. Киевская':
+        if Activ.hero_activ == '':
+            fun.selection_hero()
         heroes.Hero.set_wild_activ(Activ.hero_activ)
     hero = fun.selection_hero()
     # print('герой определён station_master.стр 338')
@@ -358,8 +373,7 @@ def option_task_money(report_en=True):
         return
     while energy_availability == 1 and number_tasks > 0:
         region_1, region_2, region_3 = fun.get_areas_task_big()
-        # task_analysis(F'{path}{task[0]}', F'{path}{task[1]}', region_1)
-        # print(f'{path}{task[0]}', f"{path}{task[1]}")
+
         variant1, price_task1 = task_analysis(F'{path}{task[0]}', F'{path}{task[1]}', region_1)
         # print(f'{variant1=}, {price_task1=}')
         move(variant1)
@@ -387,19 +401,24 @@ def option_task_money(report_en=True):
             conf_ -= 0.005
             conf_ = round(conf_, 3)
 
-        if conf_ <= 0.93:
-            print(myCt.tc_cyan('задания не найдены, результаты "D:\\bot in br\\testOCR\\img\\test\\test_tasks\\test big tasks" '))
+        if conf_ <= 0.92:
+            print(myCt.tc_cyan(
+                'задания не найдены, результаты "D:\\bot in br\\testOCR\\img\\test\\test_tasks\\test big tasks" '))
             create_and_analiz_img.get_screenshot_task_big()
             number_tasks = 1
             energy_availability = 0
             return
+            # [create_and_analiz_img.analiz_task(target='auto')
+            # number_tasks = 1
+            # energy_availability = 1
+            # return]
 
     number_tasks = 1
     energy_availability = 1
-    close = fun.locCenterImg(name_img='img/overall/close.png', confidence=0.9)
+    close = find_img.find_close()
     while close:
         fun.mouse_move_to_click(pos_click=close, z_p_k=0.3)
-        close = fun.locCenterImg(name_img='img/overall/close.png', confidence=0.9)
+        close = find_img.find_close()
 
 
 def task_pos_item(task_num):
@@ -424,6 +443,8 @@ def task_pos_item(task_num):
     number_tasks = 1
     energy_availability = 1
     close = fun.locCenterImg(name_img='img/overall/close.png', confidence=0.9)
+    # print(f'station_master.task_pos_item {close=}')
     while close:
+        print(f'station_master.task_pos_item {close=}')
         fun.mouse_move_to_click(pos_click=close, z_p_k=0.3)
         close = fun.locCenterImg(name_img='img/overall/close.png', confidence=0.9)

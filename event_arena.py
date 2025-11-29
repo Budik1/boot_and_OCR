@@ -124,7 +124,7 @@ def kill():
         fun.mouse_move_to_click(pos_click=hero_vs_opponent_img, z_p_k=0.1)
 
         heroes.Hero.app_arena_count(heroes.Activ.hero_activ)
-        solid_memory.save_to_file(info=False)
+        solid_memory.save_all_state_config(info=False)
         sleep(2)
         # print('переход в enemy_battle')
         res = station_master.enemy_battle(0.5, arena=True, add_up=False, dog_activ=False)
@@ -133,7 +133,7 @@ def kill():
             vict_in_arena += 1
             heroes.Hero.app_arena_victory_count(heroes.Activ.hero_activ)
             result_text = myCt.tc_yellow(F"победа,{vict_in_arena}")
-            solid_memory.save_to_file(info=False)
+            solid_memory.save_all_state_config(info=False)
         else:
             result_text = myCt.tc_red("поражение")
         boy_in_arena = heroes.Hero.get_arena_count(heroes.Activ.hero_activ)

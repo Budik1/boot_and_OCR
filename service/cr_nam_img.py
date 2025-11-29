@@ -1,7 +1,5 @@
 import time
 
-from scipy.fftpack import shift
-
 import fun
 import sounds
 
@@ -225,7 +223,7 @@ def line_pos_name_link(*, line, pos, name, link):
         fun.Mouse.move(pos=(x, y), show=show_move)
         # найти правый нижний угол и показать
         # change_x = mask * pos + 2 # значения региона фото
-        change_x = mask # значения региона фото
+        change_x = mask  # значения региона фото
         change_y = 22 - 3
         fun.Mouse.move(pos=(x + change_x, y + change_y), show=show_move)
         fun.foto(f'{path_img}{name_img}', (x, y, change_x, change_y))
@@ -237,10 +235,8 @@ def line_pos_name_link(*, line, pos, name, link):
         print('no link')
 
 
-
-
 # find_img(name=9)
-# cr_patron_img()
+cr_patron_img()
 # nam_pos_line1(pos=1, name=8)
 # cr_xp_img()
-line_pos_name_link(line=1, pos=1, name='2a', link=2)
+# line_pos_name_link(line=1, pos=1, name='2a', link=2)
