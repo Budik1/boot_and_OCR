@@ -364,7 +364,6 @@ def option_task_money(report_en=True):
             fun.selection_hero()
         heroes.Hero.set_wild_activ(Activ.hero_activ)
     hero = fun.selection_hero()
-    # print('герой определён station_master.стр 338')
     # получаю путь заданий героя
     if hero:
         path = Hero.get_path_task(Activ.hero_activ)

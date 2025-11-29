@@ -31,9 +31,6 @@ heroes.Activ.date_now = fun.date_utc_now()
 
 def start_prog():
     state_file = solid_memory.reading_all_state_config()
-    # print('main.start_prog')
-    # print(f'{heroes.list_all_state=}')
-    # print()
     if state_file:
         # print(tc_green('установка значений из файла'))
         try:
@@ -56,10 +53,10 @@ def start_prog():
     else:
         displaying_values()
     # вывод инфо состояния
-    # complex_phrases.display_smol_report_wildman()
-    # complex_phrases.display_info_energy_all()
+    complex_phrases.display_smol_report_wildman()
+    complex_phrases.display_info_energy_all()
     # удаление файлов старше 10 дней
-    # os_action.check_files(old_day=10)
+    os_action.check_files(old_day=10)
     return
 
 

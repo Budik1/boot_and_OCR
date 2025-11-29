@@ -4,169 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="изменил сохранение и отображение счетчиков">
-      <change afterPath="$PROJECT_DIR$/картинки_маяки_для_браузера.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/testOCR.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/testOCR.iml" afterDir="false" />
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="смена машины">
+      <change afterPath="$PROJECT_DIR$/config.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baza_dannyx.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza_dannyx.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baza_paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza_paths.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/complex_phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/complex_phrases.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cr_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cr_img_dva.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img_dva.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cr_nam_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/cr_nam_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/createAndName_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/createAndName_ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_and_analiz_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_and_analiz_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_OCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_OCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_arena.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/find_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/find_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fun_down.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun_down.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/b_battle_end.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/b_battle_end.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/defeat_battle_in_kv.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/kv/defeat_battle_in_kv.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/exit_kv.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/kv/exit_kv.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/kv_attack for money.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/kv/kv_attack for money.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/kv_attak.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/kv/kv_attak.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/kv_close.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/kv/kv_close.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/kv_reload.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/kv/kv_reload.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/kv_skip_battle.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/kv/kv_skip_battle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/tests/klan_kv_label.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/kv/tests/klan_kv_label.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/victory_battle_in_kv.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/kv/victory_battle_in_kv.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/Скриншот 19-05-2024 205759.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/Скриншот 19-05-2024 205842.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/Скриншот 19-05-2024 205905.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/overall/b1_begin.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/b1_begin.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/overall/close.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/close.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/overall/event_entry/continue_mara.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/event_entry/continue_mara.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/overall/info.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/info.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/overall/info1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/overall/klan.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/klan.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/overall/link_money_token.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/link_money_token.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/overall/my_game1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/my_game1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/overall/my_game2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/my_game2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/overall/skip_battle.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/skip_battle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/person/hero_id/gady/her_gadya.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/hero_id/gady/her_gadya.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/person/hero_id/gavr/gavr_armor.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/hero_id/gavr/gavr_armor.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/person/hero_id/gavr/her_gavr.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/hero_id/gavr/her_gavr.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/person/hero_id/mara/her_mara.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/hero_id/mara/her_mara.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/skip_battle.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/skip_battle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/energy_indicator/low_energy_label.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/energy_indicator/low_energy_label.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/energy_value/en_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/energy_value/en_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/energy_value/en_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/energy_value/en_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/energy_value/en_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/energy_value/en_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/energy_value/en_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/energy_value/en_4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/energy_value/en_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/energy_value/en_5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/energy_value/en_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/energy_value/en_7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/station_master.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/station_master.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_gady/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_gady/t2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_gady/t3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_gady/t3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_gady/t4.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_gady/t4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_gady/t5.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_gady/t5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_gavr/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_gavr/t2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_gavr/t3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_gavr/t3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_gavr/t4.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_gavr/t4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_gavr/t5.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_gavr/t5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_mara/t1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_mara/t1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_mara/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_mara/t2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_mara/t3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_mara/t3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/attack.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/attack.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/entry_station.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/entry_station.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Alexs.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Alexs.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Biblioteka.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Biblioteka.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Borov.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Borov.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Chekhov.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Chekhov.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Communist.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Communist.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Cvetnoy.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Cvetnoy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Frunze.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Frunze.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kiev.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kiev.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kiev_a.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kiev_a.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kitay.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kitay.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kropotkin.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kropotkin.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kuzneckiy.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Kuzneckiy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Novokuznec.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Novokuznec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Park_ganza.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Park_ganza.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Park_kr.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Park_kr.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Pavelec.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Pavelec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Pavelec_g.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Pavelec_g.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Polyanka.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Polyanka.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Pr-kt_Vernadskogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Pr-kt_Vernadskogo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Prospekt.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Prospekt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Pushkin.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Pushkin.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Rizgskaya.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Rizgskaya.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Suxarev.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Suxarev.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Teatr.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Teatr.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Tretyakov.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Tretyakov.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Turgenev.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Turgenev.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Tver.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Tver.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_Univer.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_Univer.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/id_stations/s_VDNX.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/id_stations/s_VDNX.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Alexs.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Alexs.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Biblioteka.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Biblioteka.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Borov.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Borov.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Chekhov.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Chekhov.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Communist.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Communist.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Communist_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Cvetnoy.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Cvetnoy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Frunze.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Frunze.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Kiev.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Kiev.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Kiev_a.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Kiev_a.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Kitay.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Kitay.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Kropotkin.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Kropotkin.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Kuzneckiy.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Kuzneckiy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Novokuznec.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Novokuznec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Park_ganza.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Park_ganza.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Park_kr.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Park_kr.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Park_kr_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Polyanka.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Polyanka.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Pr-kt_Vernadskogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Pr-kt_Vernadskogo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Prospekt.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Prospekt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Pushkin.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Pushkin.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Rizgskaya.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Rizgskaya.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Suxarev.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Suxarev.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Teatr.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Teatr.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Tretyakov.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Tretyakov.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Turgenev.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Turgenev.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Tver.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Tver.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_Univer.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_Univer.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/map_item/k_VDNX.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/map_item/k_VDNX.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mark_sever.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/mark_sever.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mark_yug.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/mark_yug.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/arachne.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/kikimora.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/mobi1_black_rat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/mobi1_grey_rat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/mobi1_white_rat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/mobi2_spy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/mobi3_smuggler.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/mobi5_wildman.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/mobi6_kikimora.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/mobi7_raptor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/mobi_arachne.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/mobi_kikimora.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/name1_grey_rat.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/mobi/name1_grey_rat.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/name1_white_rat.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/mobi/name1_white_rat.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/name2_spy.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/mobi/name2_spy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/name3_smuggler.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/mobi/name3_smuggler.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/name4_arachne.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/mobi/name4_arachne.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/name5_wildman.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/mobi/name5_wildman.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/name6_kikimora.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/mobi/name6_kikimora.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/name7_raptor.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/mobi/name7_raptor.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/name_arachne.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/mobi/name_kikimora.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/post.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/post.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/station_exit.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tonelli/station_exit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/cr_img_id_name_station.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/cr_img_map_name_station.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img_map_name_station.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/pos_value_energy.py" beforeDir="false" afterPath="$PROJECT_DIR$/pos_value_energy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/tempo.py" beforeDir="false" afterPath="$PROJECT_DIR$/tempo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solid_memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/solid_memory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/os_action.py" beforeDir="false" afterPath="$PROJECT_DIR$/os_action.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/заметки.txt" beforeDir="false" afterPath="$PROJECT_DIR$/заметки.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,12 +39,12 @@
     &quot;assignee&quot;: &quot;Budik1&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Budik1/boot_and_OCR.git&quot;,
-    &quot;accountId&quot;: &quot;d365717e-7a9b-46f5-87cb-61d4847e8ba3&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Budik1/boot_and_OCR.git",
+    "accountId": "4da32438-f606-4368-a8f1-aef0eb95ca1b"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -469,7 +314,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735447354110</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="смена машины">
+      <option name="closed" value="true" />
+      <created>1764426524073</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1764426524073</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -486,7 +339,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="удалил test-файлы" />
     <MESSAGE value="поменял местами кнопки на/с бульвара" />
-    <option name="LAST_COMMIT_MESSAGE" value="поменял местами кнопки на/с бульвара" />
+    <MESSAGE value="смена машины" />
+    <option name="LAST_COMMIT_MESSAGE" value="смена машины" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -13,24 +13,28 @@ qty_del_files = 0
 
 def chek_and_del_file(*, check_file, old_day):
     global qty_del_files
-    creation_time = get_data_creation_file(check_file=check_file)
+    creation_time = get_data_creation_file(check_file=check_file, info=False)
     time_now = time.time()
     if int((time_now - creation_time) // day) >= old_day:
         qty_del_files += 1
         os.remove(check_file)
 
 
-def get_data_creation_file(*, check_file):
+def get_data_creation_file(*, check_file, info=False):
     """
     Дата создания файла доступна через функцию os.path.getctime(). Она возвращает время создания файла в секундах
     с эпохи (1 января 1970 года). Если нужно вывести дату в читаемом для человека формате, можно использовать
     функцию ctime() из модуля time
     :param check_file:
+    :param info: В состоянии True выводит в консоль дату создания
     :return:
     """
     file_stats = os.stat(check_file)
     creation_time = file_stats.st_ctime
-    # print("The file was created on:", time.ctime(creation_time))
+    if info:
+        days = time.ctime(creation_time)
+        # print(type(days))
+        print("The file was created on:", days)
     # (https://www.slingacademy.com/article/python-getting-creation-date-file-directory/)
     return creation_time
 
