@@ -179,20 +179,10 @@ def set_values_kv(data_kv):
 
         heroes.gady.qty_duel_in_kv_all = 0
         heroes.gady.qty_duel_in_kv_victory = 0
-        # heroes.gady.count_shoulder_straps_all = data_kv['gady.count_shoulder_straps']
 
+    # values_kv_cumulative
     heroes.gady.qty_duel_all_victory = data_kv['gady.duel_victory_all']
     heroes.gady.qty_duel_all = data_kv['gady.duel_all']
     heroes.gady.count_shoulder_straps_all = data_kv['gady.count_shoulder_straps']
 
     save_kv_config(info=False)
-
-
-def set_values_kv_cumulative():
-    stat, data_kv = reading_kv_config()
-    if stat:
-        heroes.gady.qty_duel_all_victory = data_kv['gady.duel_victory_all']
-        heroes.gady.qty_duel_all = data_kv['gady.duel_all']
-        heroes.gady.count_shoulder_straps_all = data_kv['gady.count_shoulder_straps']
-    else:
-        print('no data_kv')

@@ -373,9 +373,11 @@ def name_id_station():
 
 def event_entry_img():
     name_create_img = 'img/overall/event_entry/continue_mara.png'
+    # name_create_img = 'img/overall/event_entry/continue_gady.png'
 
     img_dict = {
          'img/overall/event_entry/continue_mara.png': (-152, 37, 304, 35, (), fun.locCenterImg(name_img='img/overall/event_entry/transmitted data.png')),
+         'img/overall/event_entry/continue_gady.png': (-152, 37, 304, 35, (), fun.locCenterImg(name_img='img/overall/event_entry/transmitted data.png')),
 
     }
     # name_create_img = 'img/test/token.png'
