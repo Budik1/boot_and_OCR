@@ -89,19 +89,19 @@ def distance(*, pos_vic: tuple, pos_cl: tuple) -> int:
 
 
 def battle(target_call):
-    fun.my_print_to_file('battle')
+    fun.my_log_file('kv_and_raid.battle')
     kv_skip_battle = find.find_kv_skip_battle()
-    fun.my_print_to_file(f'{kv_skip_battle} kv_skip_battle')
+    fun.my_log_file(f'{kv_skip_battle} kv_skip_battle')
     danger = find.find_kv_danger()
-    fun.my_print_to_file(f'{danger} danger')
+    fun.my_log_file(f'{danger} danger')
     kv_close = find.find_kv_close()
-    fun.my_print_to_file(f"{kv_close}, kv_close")
+    fun.my_log_file(f"{kv_close}, kv_close")
     mes = ''
     dang = ''
     while not kv_skip_battle:
         sleep(1)
         kv_skip_battle = find.find_kv_skip_battle()
-        fun.my_print_to_file(f'{kv_skip_battle} kv_skip_battle цикл ожидания')
+        fun.my_log_file(f'{kv_skip_battle} kv_skip_battle цикл ожидания')
     it_kv = 0
     while not kv_close:
         it_kv += 1
@@ -148,7 +148,7 @@ def battle(target_call):
 
 
 def kv():
-    fun.my_print_to_file('kv_and_raid.kv')
+    fun.my_log_file('kv_and_raid.kv')
     selection_hero_in_kv()
     stat, data_kv = solid_memory.reading_kv_config()
     solid_memory.set_values_kv(data_kv)
@@ -159,7 +159,7 @@ def kv():
     # print(color_text.tc_red('Время КВ установлено'))
     kv_reload = find.find_kv_reload()
     # fun.my_print_to_file(f'kv_reload {kv_reload}')
-    fun.my_print_to_file("нажать 'обновить'")
+    fun.my_log_file("нажать 'обновить'")
     fun.mouse_move_to_click(pos_click=kv_reload, z_p_k=1)
 
     kv_wait_attack = find.find_kv_attack_for_money()

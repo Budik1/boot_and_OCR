@@ -8,7 +8,7 @@ import fun
 
 
 def start_p_m():
-    fun.my_print_to_file('fun.start_p_m')
+    fun.my_log_file('fun.start_p_m')
 
     def spec_proposal():
         sz = 0

@@ -61,7 +61,7 @@ def mouse_move_to_click(*, pos_click: tuple, move_time=0.75, z_p_k=0.05):
     :param z_p_k: задержка перед кликом(float)
     :return: None
     """
-    my_print_to_file('fun.mouse_move_to_click')
+    my_log_file('fun.mouse_move_to_click')
     # print('mouse_move_to_click', pos_click)
     sleep(0.3)
     mouse_move(pos=pos_click, speed=move_time)
@@ -157,7 +157,7 @@ class Mouse:
         :param z_p_k: задержка перед кликом(float)
         :return: None
         """
-        my_print_to_file('fun.mouse_move_to_click')
+        my_log_file('fun.mouse_move_to_click')
         # print('mouse_move_to_click', pos_click)
         sleep(0.3)
         Mouse.move(pos=pos_click, speed=move_time)
@@ -168,7 +168,7 @@ class Mouse:
         return
 
 
-def my_print_to_file(text):
+def my_log_file(text):
     if log == 1:
         date_time, date = date_time_now()
         file_name = date + ".txt"
@@ -236,7 +236,7 @@ def test_time(funk):
 
 def station_gifts():
     """Обмен ежедневными подарками"""
-    my_print_to_file('fun.station_gifts')
+    my_log_file('fun.station_gifts')
     pass
     gifts = locCenterImg('img/b_gifts.png', 0.91)
     pyautogui.moveTo(gifts, duration=1)
@@ -259,7 +259,7 @@ def station_gifts():
 
 
 def push_close_all_(speed_mouse=0.75):
-    my_print_to_file('fun.push_close_all_')
+    my_log_file('fun.push_close_all_')
     pos_close = find_img.find_close()
     while pos_close:
         close_popup_window(speed_mouse)
@@ -270,7 +270,7 @@ def push_close_all_(speed_mouse=0.75):
 
 
 def close_popup_window(speed_mouse=0.75):
-    my_print_to_file('fun.close_popup_window')
+    my_log_file('fun.close_popup_window')
     knob = find_img.find_knob()
     cancel = find_img.find_cancel()
     if knob:
@@ -280,7 +280,7 @@ def close_popup_window(speed_mouse=0.75):
 
 
 def push_close(speed_mouse=0.75):
-    my_print_to_file('fun.push_close')
+    my_log_file('fun.push_close')
     pos_close = find_img.find_close()
     if pos_close:
         Mouse.move_to_click(pos_click=pos_close, move_time=speed_mouse, z_p_k=0.1)
@@ -291,7 +291,7 @@ def push_close(speed_mouse=0.75):
 
 
 def exit_to_zero_screen():
-    my_print_to_file('fun.exit_to_zero_screen')
+    my_log_file('fun.exit_to_zero_screen')
     push_close_all_()
     b_exit = find_img.find_b_exit()
     print(b_exit, 'b_exit')
@@ -300,7 +300,7 @@ def exit_to_zero_screen():
 
 
 def bonus():
-    my_print_to_file('fun.bonus')
+    my_log_file('fun.bonus')
     # кнопка добавить
     add_bonus = locCenterImg('img/add.png', 0.8)
     Mouse.move(pos=add_bonus, speed=1)
@@ -324,7 +324,7 @@ def move_friends_list_left():
     Смещает список друзей в лево на одну позицию
     :return: 1
     """
-    my_print_to_file('fun.move_friends_list_left')
+    my_log_file('fun.move_friends_list_left')
     sleep(1)
     ar_right = locCenterImg('img/overall/b_arrow_right.png', 0.8)
     Mouse.move(pos=ar_right, speed=1)
@@ -338,7 +338,7 @@ def move_friends_list_right():
     Смещает список друзей в право на одну позицию
     :return: 1
     """
-    my_print_to_file('fun.move_friends_list_right')
+    my_log_file('fun.move_friends_list_right')
     sleep(0.2)
     ar_right = locCenterImg('img/overall/b_arrow_left.png', 0.8)
 
@@ -350,7 +350,7 @@ def move_friends_list_right():
 
 def move_friends_list_to_top():
     """Смещает список друзей в лево в начало"""
-    my_print_to_file('fun.move_friends_list_to_top')
+    my_log_file('fun.move_friends_list_to_top')
     begin = locCenterImg('img/overall/b_begin.png', 0.96)
     if begin:  # если увидел
         # pyautogui.moveTo(begin, duration=1)
@@ -370,7 +370,7 @@ def foto(path_name, region: tuple[int, int, int, int] | None = None):
         :param path_name: имя файла
         :param region: регион (X, Y, ширина, высота). None - весь экран
     """
-    my_print_to_file('fun.foto')
+    my_log_file('fun.foto')
     im1 = pyautogui.screenshot(region=region)
     im1.save(path_name)
     return
@@ -381,7 +381,7 @@ def find_link_hall_of_glory():
     Закрыть если открыто, Tак как за чем-то может быть не видна позиция привязки
     :return: Point 'Зал славы'
     """
-    my_print_to_file('fun.find_link_hall_of_glory')
+    my_log_file('fun.find_link_hall_of_glory')
     close = find_img.find_close()
     while close:
         push_close_all_()
@@ -396,7 +396,7 @@ def find_link_hall_of_glory():
 
 
 def find_link_station_master():
-    my_print_to_file('fun.find_link_station_master')
+    my_log_file('fun.find_link_station_master')
     station_master = find_img.find_station_master()
     pos_klan = find_img.find_klan()
     if station_master or pos_klan:
@@ -419,29 +419,29 @@ def find_link_station_master():
 
 
 def find_link_station_master_alt():
-    my_print_to_file('')
-    my_print_to_file('fun.find_link_station_master_alt')
+    my_log_file('')
+    my_log_file('fun.find_link_station_master_alt')
     station_master = find_img.find_station_master()
     pos_klan = find_img.find_klan()
     # Если нет ни того ни другого всё закрыть
     if not pos_klan and not station_master:
-        my_print_to_file(f'ничего не видно')
+        my_log_file(f'ничего не видно')
         push_close_all_()
         pos_klan = fun.wait_static_pos(name_img='img/overall/klan.png')
     if pos_klan:
         point = vizit_to_station_master()
-        my_print_to_file(f'{point=} если видно клан')
+        my_log_file(f'{point=} если видно клан')
     else:
         point = find_img.find_station_master()
-    my_print_to_file(f'{point=}')
-    my_print_to_file('выход из fun.find_link_station_master_alt')
+    my_log_file(f'{point=}')
+    my_log_file('выход из fun.find_link_station_master_alt')
     return point
 
 
 def get_areas_task_small(width=77, height=42):
     """Получение значений "region=" для поиска значений в малых регионах пуль и опыта
         :return: кортеж из шести списков значений"""
-    my_print_to_file('fun.get_areas_task_small')
+    my_log_file('fun.get_areas_task_small')
     pul, xp_ = 404 - 34 - 10 + 1, 518 - 40 - 34 - 10 - 10 + 2
     line_1, line_2, line_3 = 160, 250, 340
 
@@ -469,7 +469,7 @@ def get_areas_task_small(width=77, height=42):
 
 
 def get_areas_task_big_1(width=77, height=42):
-    my_print_to_file('fun.get_areas_task_big_1')
+    my_log_file('fun.get_areas_task_big_1')
     # width, height = 77, 42
     pul = 404
     pos_1 = 190
@@ -486,7 +486,7 @@ def get_areas_task_big_1(width=77, height=42):
 
 
 def get_areas_task_big_2(width=77, height=42):
-    my_print_to_file('fun.get_areas_task_big_2')
+    my_log_file('fun.get_areas_task_big_2')
     # width, height = 77, 42
     pul = 404
     pos_2 = 280
@@ -503,7 +503,7 @@ def get_areas_task_big_2(width=77, height=42):
 
 
 def get_areas_task_big_3(width=77, height=42):
-    my_print_to_file('fun.get_areas_task_big_2')
+    my_log_file('fun.get_areas_task_big_2')
     # width, height = 77, 42
     pul = 404
     pos_3 = 370
@@ -565,7 +565,7 @@ def get_areas_task_big(width=77, height=42, refactor=None):
 
 
 def find_link_klan(show=True):
-    my_print_to_file('fun.find_link_klan')
+    my_log_file('fun.find_link_klan')
     pos_klan = find_img.find_klan()
     while not pos_klan:
         print('no')
@@ -590,7 +590,7 @@ def vizit_to_station_master():
     """заходит в палатку к нач.станции
     :return: Point 'station_master'
     """
-    my_print_to_file('fun.vizit_to_station_master')
+    my_log_file('fun.vizit_to_station_master')
     # print('fun.vizit_to_station_master')
     is_open_station()
     station_master = find_img.find_station_master()
@@ -617,7 +617,7 @@ def vizit_to_station_master():
 
 
 def find_lvl():
-    my_print_to_file('fun.find_lvl')
+    my_log_file('fun.find_lvl')
     pass
 
 

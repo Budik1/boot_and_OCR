@@ -65,8 +65,8 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     :return:
     """
     # print(color_text.tc_green('в бой'))
-    fun.my_print_to_file('station_master.enemy_battle()')
-    fun.my_print_to_file(' поиск battle_end, skip_battle, dog')
+    fun.my_log_file('station_master.enemy_battle()')
+    fun.my_log_file(' поиск battle_end, skip_battle, dog')
     # print('station_master.enemy_battle()')
 
     heroes.nam += 1
@@ -167,9 +167,9 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
             if dog and dog_count:
                 # нажать "на собаку"
                 dog_count = False
-                fun.my_print_to_file(f'{dog=}')
+                fun.my_log_file(f'{dog=}')
                 # print(f'{dog=}')
-                fun.my_print_to_file("нажал на собаку")
+                fun.my_log_file("нажал на собаку")
                 # print('"нажал на собаку"')
                 fun.mouse_move_to_click(pos_click=dog, move_time=0.1, z_p_k=0.1)
         if skip_battle and skip_battle_count:
@@ -177,11 +177,11 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
             duration_fight += 1
         if skip_battle and skip_battle_count and duration_fight == 4:  # нажать "пропустить бой"
             skip_battle_count = False
-            fun.my_print_to_file(f'{skip_battle=}')
+            fun.my_log_file(f'{skip_battle=}')
             # print('нажать "пропустить бой"')
             fun.mouse_move_to_click(pos_click=skip_battle, move_time=0.4, z_p_k=0.5)
         sleep(1 * prolong_)  # для задержки нажатия "пропустить бой"
-        fun.my_print_to_file('ожидание battle_end, close, dog, skip_battle')
+        fun.my_log_file('ожидание battle_end, close, dog, skip_battle')
         battle_end = find_img.find_b_battle_end(confidence_param=par_conf)
         if battle_end:
             fun.Mouse.move(pos=battle_end, speed=1)
@@ -208,24 +208,24 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                 result = "победа"
             elif defeat:
                 result = "поражение"
-            fun.my_print_to_file("нажать закрыть в конце боя")
+            fun.my_log_file("нажать закрыть в конце боя")
             fun.push_close_all_(speed_mouse=0.3)
             # sleep(0)
 
     skip_battle1_end_ver = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
     # print(f'{skip_battle1_end_ver=}')
-    fun.my_print_to_file(f'{skip_battle1_end_ver=}')
+    fun.my_log_file(f'{skip_battle1_end_ver=}')
     while skip_battle1_end_ver:
         fun.push_close()
         # sleep(0.2)
         skip_battle1_end_ver = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
-        fun.my_print_to_file(f'{skip_battle1_end_ver=}')
+        fun.my_log_file(f'{skip_battle1_end_ver=}')
 
     if not arena:
         solid_memory.save_all_state_config(info=False)
 
 
-    fun.my_print_to_file("выход из 'enemy_battle")
+    fun.my_log_file("выход из 'enemy_battle")
     # print(color_text.tc_green('из боя'))
     return result
 
@@ -241,7 +241,7 @@ def press_en(*, task_number, pos, value_energy): # , report_en=True
         :param value_energy: 
         # :param report_en:
     """
-    fun.my_print_to_file("station_master.press_en()")
+    fun.my_log_file("station_master.press_en()")
     global energy_availability, conf_
     x = pos[0] - 100
     y = pos[1] - 20
@@ -311,7 +311,7 @@ def task_analysis(img1, img2, region):
     :param region: tuple[Point, int] | tuple[None, None]
     :return: Point, int | None
     """
-    fun.my_print_to_file('station_master.task_analysis()')
+    fun.my_log_file('station_master.task_analysis()')
     global variable
     # fun.push_close_all_()
     fun.vizit_to_station_master()
@@ -330,14 +330,14 @@ def task_analysis(img1, img2, region):
 
 
 def move(pos):
-    fun.my_print_to_file('station_master.move()')
+    fun.my_log_file('station_master.move()')
     if pos:
         fun.mouse_move(pos=pos, speed=0.5)
         sleep(1)
 
 
 def station_task_list():
-    fun.my_print_to_file("station_master.station_task_list()")
+    fun.my_log_file("station_master.station_task_list()")
     """ Получение списка заданий """
     station = fun.loc_now()
     task_list = (station[4])
@@ -345,7 +345,7 @@ def station_task_list():
 
 
 def option_task_money(report_en=True):
-    fun.my_print_to_file("station_master.option_task_money()")
+    fun.my_log_file("station_master.option_task_money()")
     # print('station_master.option_task_money')
     global energy_availability, number_tasks  # , conf_
     # price_task = None

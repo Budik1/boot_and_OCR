@@ -112,7 +112,7 @@ class Hero:
         list_kv_state[hero_id] = data_to_save
         return
 
-    def set_values_kv(self):
+    def set_state_kv(self):
         hero_id = Hero.get_id(self)
 
         data_kv = list_kv_state[hero_id]
@@ -131,6 +131,10 @@ class Hero:
 
             self.qty_duel_in_kv_all = 0
             self.qty_duel_in_kv_victory = 0
+
+        self.qty_duel_all_victory = data_kv.get('gady.duel_victory_all', 0)
+        self.qty_duel_all = data_kv.get('gady.duel_all', 0)
+        self.count_shoulder_straps_all = data_kv.get('gady.count_shoulder_straps', 0)
 
     def get_state_all(self):
         data_to_save = {

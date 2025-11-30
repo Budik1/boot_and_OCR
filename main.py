@@ -20,11 +20,11 @@ import station_master
 import touring
 from event_arena import create_img_arena_object, kill
 
-fun.my_print_to_file('')
-fun.my_print_to_file('*******                      *******')
-fun.my_print_to_file("******* перезапуск программы *******")
-fun.my_print_to_file('*******                      *******')
-fun.my_print_to_file('')
+fun.my_log_file('')
+fun.my_log_file('*******                      *******')
+fun.my_log_file("******* перезапуск программы *******")
+fun.my_log_file('*******                      *******')
+fun.my_log_file('')
 
 heroes.Activ.date_now = fun.date_utc_now()
 
