@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="Чистка ненужных комментариев.">
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="переименовал функцию создания лога">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_serial_scrin_for_pm.py" beforeDir="false" afterPath="$PROJECT_DIR$/a_serial_scrin_for_pm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/config.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/overall/event_entry/continue_gavr.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/event_entry/continue_gavr.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,7 +151,7 @@
       <command value="zadaniya" />
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.a_serial_scrin_for_pm (1)">
     <configuration name="a_serial_scrin_for_pm (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
@@ -264,8 +264,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.a_serial_scrin_for_pm (1)" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.tempo" />
         <item itemvalue="Python.cr_img" />
         <item itemvalue="Python.createAndName_ui" />
@@ -336,7 +336,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764484808977</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="переименовал функцию создания лога">
+      <option name="closed" value="true" />
+      <created>1764518015462</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1764518015462</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -356,7 +364,8 @@
     <MESSAGE value="смена машины" />
     <MESSAGE value="Включил вывод информации. В os_action.get_data_creation_file добавил параметр info и его логику." />
     <MESSAGE value="Чистка ненужных комментариев." />
-    <option name="LAST_COMMIT_MESSAGE" value="Чистка ненужных комментариев." />
+    <MESSAGE value="переименовал функцию создания лога" />
+    <option name="LAST_COMMIT_MESSAGE" value="переименовал функцию создания лога" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

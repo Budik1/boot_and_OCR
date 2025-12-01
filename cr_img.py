@@ -94,8 +94,6 @@ def victory_battle_in_kv():
         fun.foto('img/kv/victory_battle_in_kv.png', region=(x, y, 110, 41))
 
 
-# victory_battle_in_kv()
-
 def defeat_battle_in_kv():
     kv_close = fun.locCenterImg('img/kv/kv_close.png', confidence=0.9)
     if kv_close:
@@ -110,9 +108,6 @@ def defeat_battle_in_kv():
         region = x, y
         # pyautogui.moveTo(region, duration=1)
         fun.foto('img/kv/defeat_battle_in_kv.png', region=(x, y, 140, 45))
-
-
-# defeat_battle_in_kv()
 
 
 def victory_in_arena():

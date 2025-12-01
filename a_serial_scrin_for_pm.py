@@ -372,17 +372,19 @@ def name_id_station():
     return
 
 def event_entry_img():
-    name_create_img = 'img/overall/event_entry/continue_mara.png'
+    name_create_img = 'img/overall/event_entry/continue_gavr.png'
+    # name_create_img = 'img/overall/event_entry/continue_mara.png'
     # name_create_img = 'img/overall/event_entry/continue_gady.png'
 
     img_dict = {
          'img/overall/event_entry/continue_mara.png': (-152, 37, 304, 35, (), fun.locCenterImg(name_img='img/overall/event_entry/transmitted data.png')),
          'img/overall/event_entry/continue_gady.png': (-152, 37, 304, 35, (), fun.locCenterImg(name_img='img/overall/event_entry/transmitted data.png')),
+         'img/overall/event_entry/continue_gavr.png': (-152, 37, 304, 35, (), fun.locCenterImg(name_img='img/overall/event_entry/transmitted data.png')),
 
     }
     # name_create_img = 'img/test/token.png'
 
-    key = 'img/overall/event_entry/continue_mara.png'
+    key = 'img/overall/event_entry/continue_gavr.png'
     pos_start = img_dict[key][5]
 
     # # собственно создание снимка
