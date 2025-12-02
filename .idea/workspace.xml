@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="чистка cr_img.py, обновлён continue_gavr.png">
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="branch start">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/config.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kv_config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_serial_scrin_for_pm.py" beforeDir="false" afterPath="$PROJECT_DIR$/a_serial_scrin_for_pm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/person.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tempo.py" beforeDir="false" afterPath="$PROJECT_DIR$/tempo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ref_2" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,79 +56,79 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Python.a_serial_scrin_for_pm (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.chage_color (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.chage_color.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_dva.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_id_name_station (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_id_name_station.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_map_name_station.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_mob.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_points.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_nam_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_name_mob_img (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_name_mob_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.createAndName_ui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.create_and_analiz_img (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.create_and_analiz_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.create_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.display_info.executor&quot;: &quot;Run&quot;,
-    &quot;Python.event_frend.executor&quot;: &quot;Run&quot;,
-    &quot;Python.fun.executor&quot;: &quot;Run&quot;,
-    &quot;Python.generate_route.executor&quot;: &quot;Run&quot;,
-    &quot;Python.heroes.executor&quot;: &quot;Run&quot;,
-    &quot;Python.img_crop (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.img_crop.executor&quot;: &quot;Run&quot;,
-    &quot;Python.img_crop1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.img_stat_kv.executor&quot;: &quot;Run&quot;,
-    &quot;Python.info.executor&quot;: &quot;Run&quot;,
-    &quot;Python.info_messages.executor&quot;: &quot;Run&quot;,
-    &quot;Python.information_messages (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.item_pos.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.map_tour.executor&quot;: &quot;Run&quot;,
-    &quot;Python.mess (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.mess.executor&quot;: &quot;Run&quot;,
-    &quot;Python.mini_gui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.my_gui (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.my_gui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.os_action.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pos_value_energy.executor&quot;: &quot;Run&quot;,
-    &quot;Python.servis_cla.executor&quot;: &quot;Run&quot;,
-    &quot;Python.servis_ev.executor&quot;: &quot;Run&quot;,
-    &quot;Python.station_master.executor&quot;: &quot;Run&quot;,
-    &quot;Python.t_item (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.t_item.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tasks_analiz.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tempo (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.tempo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.timer.executor&quot;: &quot;Run&quot;,
-    &quot;Python.www.executor&quot;: &quot;Run&quot;,
-    &quot;Python.www1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.www2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.картинки_маяки.executor&quot;: &quot;Run&quot;,
-    &quot;Python.картинки_маяки_для_браузера.executor&quot;: &quot;Run&quot;,
-    &quot;Python.маяки_для PlayMachine.executor&quot;: &quot;Run&quot;,
-    &quot;Python.скрины для ПМ.executor&quot;: &quot;Run&quot;,
-    &quot;Python.создание скриншотов.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
-    &quot;ToolWindow.Python Console.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/python/bot_ocr1/img/test/test_tasks/test big tasks&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Python.a_serial_scrin_for_pm (1).executor": "Run",
+    "Python.chage_color (1).executor": "Run",
+    "Python.chage_color.executor": "Run",
+    "Python.cr_img.executor": "Run",
+    "Python.cr_img_dva.executor": "Run",
+    "Python.cr_img_id_name_station (1).executor": "Run",
+    "Python.cr_img_id_name_station.executor": "Run",
+    "Python.cr_img_map_name_station.executor": "Run",
+    "Python.cr_img_mob.executor": "Run",
+    "Python.cr_img_points.executor": "Run",
+    "Python.cr_nam_img.executor": "Run",
+    "Python.cr_name_mob_img (1).executor": "Run",
+    "Python.cr_name_mob_img.executor": "Run",
+    "Python.createAndName_ui.executor": "Run",
+    "Python.create_and_analiz_img (1).executor": "Run",
+    "Python.create_and_analiz_img.executor": "Run",
+    "Python.create_img.executor": "Run",
+    "Python.display_info.executor": "Run",
+    "Python.event_frend.executor": "Run",
+    "Python.fun.executor": "Run",
+    "Python.generate_route.executor": "Run",
+    "Python.heroes.executor": "Run",
+    "Python.img_crop (1).executor": "Run",
+    "Python.img_crop.executor": "Run",
+    "Python.img_crop1.executor": "Run",
+    "Python.img_stat_kv.executor": "Run",
+    "Python.info.executor": "Run",
+    "Python.info_messages.executor": "Run",
+    "Python.information_messages (1).executor": "Run",
+    "Python.item_pos.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.map_tour.executor": "Run",
+    "Python.mess (1).executor": "Run",
+    "Python.mess.executor": "Run",
+    "Python.mini_gui.executor": "Run",
+    "Python.my_gui (1).executor": "Run",
+    "Python.my_gui.executor": "Run",
+    "Python.os_action.executor": "Run",
+    "Python.pos_value_energy.executor": "Run",
+    "Python.servis_cla.executor": "Run",
+    "Python.servis_ev.executor": "Run",
+    "Python.station_master.executor": "Run",
+    "Python.t_item (1).executor": "Run",
+    "Python.t_item.executor": "Run",
+    "Python.tasks_analiz.executor": "Run",
+    "Python.tempo (1).executor": "Run",
+    "Python.tempo.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.timer.executor": "Run",
+    "Python.www.executor": "Run",
+    "Python.www1.executor": "Run",
+    "Python.www2.executor": "Run",
+    "Python.картинки_маяки.executor": "Run",
+    "Python.картинки_маяки_для_браузера.executor": "Run",
+    "Python.маяки_для PlayMachine.executor": "Run",
+    "Python.скрины для ПМ.executor": "Run",
+    "Python.создание скриншотов.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "ShowUsagesActions.previewPropertyKey": "true",
+    "ToolWindow.Python Console.ShowToolbar": "false",
+    "git-widget-placeholder": "update-change-acc",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/python/bot_ocr1/img/test/test_tasks/test big tasks",
+    "settings.editor.selected.configurable": "editing.templates"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\python\bot_ocr1\img\test\test_tasks\test big tasks" />
@@ -149,7 +150,7 @@
       <command value="zadaniya" />
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.tempo">
     <configuration name="a_serial_scrin_for_pm (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
@@ -262,9 +263,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.a_serial_scrin_for_pm (1)" />
         <item itemvalue="Python.tempo" />
+        <item itemvalue="Python.a_serial_scrin_for_pm (1)" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.cr_img" />
         <item itemvalue="Python.createAndName_ui" />
       </list>
@@ -350,7 +351,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764608945320</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="branch start">
+      <option name="closed" value="true" />
+      <created>1764694054125</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1764694054125</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -372,7 +381,8 @@
     <MESSAGE value="Чистка ненужных комментариев." />
     <MESSAGE value="переименовал функцию создания лога" />
     <MESSAGE value="чистка cr_img.py, обновлён continue_gavr.png" />
-    <option name="LAST_COMMIT_MESSAGE" value="чистка cr_img.py, обновлён continue_gavr.png" />
+    <MESSAGE value="branch start" />
+    <option name="LAST_COMMIT_MESSAGE" value="branch start" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

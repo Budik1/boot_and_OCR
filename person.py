@@ -46,20 +46,21 @@ slots = {
 
     'маленький слот': 'img/person/slots/smol_slot.png',
     'регион маленький слот': (0, 0, 150, 150),
-    '': '',}
+    '': '', }
 dress = {
     'верх_бурбон': 'img/person/dress/jacket_bourbon.png',
     'низ_бурбон': 'img/person/dress/trousers_bourbon.png',
     '': '',
 }
 
+
 def verification_dress(*, item, region_item):
     pass
 
 
-
 def change_jacket_green():
     pass
+
 
 def change_item(*, what, where):
     """
@@ -79,12 +80,11 @@ def change_item(*, what, where):
     fun.Mouse.move(pos=pos_finish, speed=speed)
 
 
-
 def change_jacket_raid():
     jacket_r = fun.locCenterImg(item_person["куртка рейдовая"], confidence=0.9)
     jacket_b = fun.locCenterImg(item_person['куртка броня Гаврил'], confidence=0.9)
     fun.Mouse.move(pos=jacket_r, speed=speed)
-    fun.Mouse.take_drag_drop(pos_take=jacket_r ,pos_drop=jacket_b, speed=d_drag)
+    fun.Mouse.take_drag_drop(pos_take=jacket_r, pos_drop=jacket_b, speed=d_drag)
     # отводим указатель
     p_slot = fun.locCenterImg(item_person['маленький слот'], confidence=0.9)
     fun.Mouse.move(pos=p_slot, speed=speed)
@@ -94,7 +94,7 @@ def change_jacket_raid():
 def change_trousers():
     trousers_burbon = fun.locCenterImg(item_person['брюки Бурбон'], confidence=0.9)
     trousers_b = fun.locCenterImg(item_person['брюки броня'], confidence=0.9)
-    fun.Mouse.move(pos= trousers_burbon, speed=speed)
+    fun.Mouse.move(pos=trousers_burbon, speed=speed)
     pyautogui.dragTo(trousers_b, duration=d_drag)
     # отводим указатель
     p_slot = fun.locCenterImg(item_person['маленький слот'], confidence=0.9)
@@ -107,7 +107,7 @@ def change_gloves():
     # если перчатки не надеты одеваем
     if gloves_point is not None:
         gloves = fun.locCenterImg(item_person['перчатки'], confidence=0.9)
-        fun.Mouse.move(pos= gloves, speed=speed)
+        fun.Mouse.move(pos=gloves, speed=speed)
         pyautogui.dragTo(gloves_point, duration=d_drag)
     # иначе снимаем
     else:
@@ -144,6 +144,37 @@ def pereodevanie():
     fun.mouse_move_to_click(pos_click=exit_, z_p_k=0.3)
 
 
+def is_activate_win(*, show=False):
+    """
+    Проверка видно ли всё окно
+    :param show: если True показать позицию кнопки "развернуть"
+    :return: позиция кнопки "развернуть"
+    """
+    #
+    pos_expand = find_img.find_button_expand()
+    while not pos_expand:
+        pos1 = fun.locCenterImg(name_img='img/overall/my_game1.png')
+        x, y = pos1
+        y -= 40
+        pos1_1 = x, y
+        fun.Mouse.move_to_click(pos_click=pos1_1)
+        # найти кнопку "развернуть"
+        pos_expand = find_img.find_button_expand()
+    if show:
+        # показать кнопку "развернуть"
+        fun.Mouse.move(pos=pos_expand)
+    return pos_expand
+
+
+def activated_change_menu():
+    is_activate_win()
+    list_img_menu = ['img/person/hero_id/gady/acc_her_gadya.png']
+    for img in list_img_menu:
+        pos_menu = fun.locCenterImg(name_img=img)
+        if pos_menu:
+            fun.Mouse.move_to_click(pos_click=pos_menu)
+
+
 def change_acc(*, change_hero_name):
     move_time = 0.3
     vid = fun.selection_hero()
@@ -157,7 +188,7 @@ def change_acc(*, change_hero_name):
         return
 
     # print(f'img/person/change_hero_{hero_name_in_file}.png')
-    # развернуть на весь экран
+    # развернуть на весь экран если не виден
     img_button_expand = find_img.find_button_expand()
     if not img_button_expand:
         # activate win
