@@ -376,6 +376,8 @@ def name_id_station():
 def event_entry_img():
     # name_create_img = 'img/overall/event_entry/continue_gavr.png'
     name_create_img = 'img/person/hero_id/gady/acc_her_gadya.png'
+    name_create_img = 'img/person/hero_id/gavr/acc_her_gavr.png'
+    name_create_img = 'img/person/hero_id/mara/acc_her_mara.png'
     # name_create_img = 'img/overall/event_entry/continue_mara.png'
     # name_create_img = 'img/overall/event_entry/continue_gady.png'
 
@@ -387,11 +389,13 @@ def event_entry_img():
         'img/overall/event_entry/continue_gavr.png': (
             -152, 37, 304, 35, (), fun.locCenterImg(name_img='img/overall/event_entry/transmitted data.png')),
         'img/person/hero_id/gady/acc_her_gadya.png': (-48, 25, 30, 30, (), person.is_activate_win()),
+        'img/person/hero_id/gavr/acc_her_gavr.png': (-48, 25, 30, 30, (), person.is_activate_win()),
+        'img/person/hero_id/mara/acc_her_mara.png': (-48, 25, 30, 30, (), person.is_activate_win()),
 
     }
     # name_create_img = 'img/test/token.png'
 
-    key = 'img/person/hero_id/gady/acc_her_gadya.png'
+    key = 'img/person/hero_id/mara/acc_her_mara.png'
     pos_start = img_dict[key][5]
 
     # # собственно создание снимка
@@ -402,7 +406,7 @@ def event_entry_img():
         x, y = pos_start
         x += img_dict[key][0]
         y += img_dict[key][1]
-        fun.mouse_move(pos=(x, y), speed=1)
+        # fun.mouse_move(pos=(x, y), speed=1)
         # # найдем нижний угол
         x_demo, y_demo = x, y
         change_x = img_dict[key][2]
@@ -438,7 +442,7 @@ def event_entry_img():
 
 
 
-# event_entry_img()
+event_entry_img()
 # hero_img()
 # name_id_station()
 # cr_other_img()

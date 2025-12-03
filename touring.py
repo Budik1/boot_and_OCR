@@ -430,14 +430,17 @@ def for_wilds():
     else:
         move_to_target(target_point='ст. Киевская')
         station_master.option_task_money()
-        print('нет доступных заданий на Киевской')
-        # univer()
-        # за черными крысами на Универ
-        move_to_target(target_point='ст. Пушкинская')
-        station_master.task_pos_item(1)
-        print('энергия исчерпана')
-        # univer_frunze()
-        move_to_target(target_point='домой')
+        col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
+        if col in [30, 50]:
+            print('энергия исчерпана')
+            move_to_target(target_point='домой')
+        else:
+            # за белыми крысами на Пушкинской
+            print(f'нет доступных заданий на Киевской, {col}')
+            move_to_target(target_point='ст. Пушкинская')
+            station_master.task_pos_item(1)
+            print('энергия исчерпана')
+            move_to_target(target_point='домой')
         sounds.say_txt('вернулся домой))')
         return
 
