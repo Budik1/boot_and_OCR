@@ -206,7 +206,7 @@ def move_to_target(*, target_point, rapport=True):
     :param target_point: имя станции, например - 'ст. Чеховская'
     """
     # определяю героя
-    her = fun.selection_hero() #
+    her = fun.selection_hero()  #
     # while not her:
     #     close = find_img.find_close()
     #     fun.Mouse.move_to_click(pos_click=close)
@@ -235,7 +235,6 @@ def move_to_target(*, target_point, rapport=True):
     else:
         mess = color_text.tc_cyan(target_point)
     print(f'Прокладываю маршрут к {mess}')
-
 
     # получаю маршрут
     if start_point != 'станция не опознана':
@@ -303,7 +302,7 @@ def create_route_list(*, start: str, stop: str) -> list:
                     new_list_route.append(b_d.list_of_stations[i])
         return new_list_route
 
-    grand_road = list_road_names[0]
+    grand_road = create_new_list_only_name(massive=b_d.road_list)[0]
     road_start_point = name_belonging_to_the_list(item=start)
     road_stop_point = name_belonging_to_the_list(item=stop)
 
@@ -378,16 +377,14 @@ def name_belonging_to_the_list(*, item: str):
     :return: список
     """
     # print(type(item))
+    list_road_names = create_new_list_only_name(massive=b_d.road_list)
+
     path_list = ['путь неопознан']
     for i in range(len(list_road_names)):
         if item in list_road_names[i]:
             path_list = list_road_names[i]
             break
     return path_list
-
-
-list_road_names = create_new_list_only_name(massive=b_d.road_list)
-list_names_all_station: list = extraction_name_in_list(value=b_d.list_of_stations)
 
 
 def for_wilds():
@@ -411,19 +408,14 @@ def for_wilds():
         station_master.option_task_money(report_en=False)
         col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
         print(f'нет доступных заданий. {col}')
-
         move_to_target(target_point='ст. Парк культуры(КР)')
         station_master.option_task_money(report_en=False)
         col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
-
         print(f'нет доступных заданий. {col}')
-
         move_to_target(target_point='ст. Библиотека им. Ленина')
         station_master.option_task_money(report_en=False)
         col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
-
         print(f'нет доступных заданий. {col}')
-
         move_to_target(target_point='домой')
         station_master.task_pos_item(1)
         print('энергия исчерпана')
@@ -446,15 +438,10 @@ def for_wilds():
 
 
 def for_kiki():
-    """При смене станции прописки список содержащий маршрут надо переписывать вручную."""
+    """Маршрут определяется автоматически"""
     fun.my_log_file('touring.for_kiki')
-
     start_time = time()
     fun.push_close_all_()
-
-    # travel(b_d.frunze_kikimory)
-    move_to_target(target_point='ст. Рижская')
-    move_to_target(target_point='ст. Тургеневская')
     while heroes.Hero.get_qty_kiki(Activ.hero_activ) < 30:
         move_to_target(target_point='ст. Рижская')
         move_to_target(target_point='ст. Тургеневская')

@@ -40,6 +40,7 @@ class Hero:
         self.vip = 0  #
         self.holiday_gift = 0  #
         self.grey_rat = 0  #
+        self.white_rat = 0
         self.kiki = 0  #
         self.arachne = 0  #
         self.raptor = 0  #
@@ -72,6 +73,7 @@ class Hero:
 
         self.danger = 0
         self.danger_victory = 0
+        self.list_loot = []
 
         self.count_shoulder_straps_all = 0
         self.count_shoulder_straps_kv = 0
@@ -107,6 +109,7 @@ class Hero:
             'qty_duel_in_kv_victory': self.qty_duel_in_kv_victory,
             'count_shoulder_straps_all': self.count_shoulder_straps_all,
             'count_shoulder_straps_kv': self.count_shoulder_straps_kv,
+            'list_loot': self.list_loot,
         }
         hero_id = Hero.get_id(self)
         list_kv_state[hero_id] = data_to_save
@@ -125,6 +128,7 @@ class Hero:
             self.qty_duel_in_kv_all = data_kv.get('qty_duel_in_kv_all', 0)
             self.qty_duel_in_kv_victory = data_kv.get('qty_duel_in_kv_victory', 0)
             self.count_shoulder_straps_kv = data_kv.get('count_shoulder_straps_kv', 0)
+            self.list_loot = data_kv.get('list_loot', [])
         else:
             print('Время старта КВ обновилось')
             self.time_start_kv = time_now
@@ -142,6 +146,7 @@ class Hero:
             # updatable
             # мобы
             'grey_rat_k': self.grey_rat,
+            'white_rat_k': self.white_rat,
             'arachne_k': self.arachne,
             'wildman_k': self.wildman,
             'kiki_k': self.kiki,
@@ -187,6 +192,7 @@ class Hero:
 
             # мобы
             self.grey_rat = loaded_data.get('grey_rat_k', 0)
+            self.white_rat = loaded_data.get('white_rat_k', 0)
             self.arachne = loaded_data.get('arachne_k', 0)
             self.wildman = loaded_data.get('wildman_k', 0)
             self.kiki = loaded_data.get('kiki_k', 0)
@@ -227,6 +233,11 @@ class Hero:
         # print()
         # конец отладки
 
+    def get_list_loot(self):
+        return self.list_loot
+
+    def set_list_loot(self, value):
+        self.list_loot = value
 
     def get_id(self):
         return self.id_
@@ -378,6 +389,9 @@ class Hero:
     def app_rat(self):
         self.grey_rat += 1
 
+    def app_white_rat(self):
+        self.white_rat += 1
+
     # Гетеры
     def get_vip_all(self):
         return self.vip
@@ -417,6 +431,9 @@ class Hero:
 
     def get_qty_grey_rat(self):
         return self.grey_rat
+
+    def get_qty_white_rat(self):
+        return self.white_rat
 
     def get_qty_wildman(self):
         return self.wildman

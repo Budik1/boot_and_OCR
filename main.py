@@ -66,10 +66,10 @@ def displaying_values(info=True):
     else:
         solid_memory.save_all_state_config(info=False)
 
-    gady_rat.set(heroes.gady.grey_rat)
-    gavr_rat.set(heroes.gavr.grey_rat)
+    gady_rat.set(heroes.gady.white_rat)
+    gavr_rat.set(heroes.gavr.white_rat)
     # veles_rat.set(heroes.veles.grey_rat)
-    mara_rat.set(heroes.mara.grey_rat)
+    mara_rat.set(heroes.mara.white_rat)
 
     gady_kiki.set(heroes.gady.kiki)
     gavr_kiki.set(heroes.gavr.kiki)
@@ -455,7 +455,7 @@ gady_wild = StringVar()
 mara_wild = StringVar()
 veles_wild = StringVar()
 
-box_paths = touring.list_names_all_station
+box_paths = touring.extraction_name_in_list(value=b_d.list_of_stations)
 box_paths.insert(0, 'домой')
 lang_var = StringVar(value=box_paths[0])
 
@@ -511,9 +511,9 @@ ttk.Button(text="Gavr", width=5, command=change_gavr).place(x=0, y=b_d.gavr_y)
 # ttk.Button(text="Велес", width=5, command=change_veles).place(x=0, y=b_d.veles_y)
 ttk.Button(text="Мара", width=5, command=change_mara).place(x=0, y=b_d.mara_y)
 
-ttk.Button(text="VIP", width=4, command=tent_inspection).place(x=b_d.vip_x - b_d.s, y=b_d.label_line0 - 3)
-ttk.Button(text="kiki", width=4, command=kiki).place(x=b_d.kiki_x - b_d.s, y=b_d.label_line0 - 3)
-ttk.Button(text="wild", width=4, command=tasks_na_kievskoy).place(x=b_d.wild_x - (b_d.s + 3), y=b_d.label_line0 - 3)
+ttk.Button(text="VIP", width=5, command=tent_inspection).place(x=b_d.vip_x - b_d.s, y=b_d.label_line0 - 3)
+ttk.Button(text="kiki", width=5, command=kiki).place(x=b_d.kiki_x - b_d.s, y=b_d.label_line0 - 3)
+ttk.Button(text="wild", width=5, command=tasks_na_kievskoy).place(x=b_d.wild_x - (b_d.s + 3), y=b_d.label_line0 - 3)
 ttk.Button(text="up", width=4, command=save_date_up).place(x=0, y=b_d.label_line0 - 3)
 w_l = 3
 # блок инфо строк
@@ -548,7 +548,7 @@ ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.gavr_y)
 # ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.veles_y)
 ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.mara_y)
 
-ttk.Label(text="arah", width=4, background='#858585', foreground='#050505').place(x=b_d.arah_x - b_d.s,
+ttk.Label(text="arah", width=5, background='#858585', foreground='#050505').place(x=b_d.arah_x - b_d.s,
                                                                                   y=b_d.label_line0)
 ttk.Label(textvariable=gavr_arachne).place(x=b_d.arah_x, y=b_d.gavr_y)
 ttk.Label(textvariable=gady_arachne).place(x=b_d.arah_x, y=b_d.gady_y)
@@ -560,7 +560,7 @@ ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.gavr_y)
 # ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.veles_y)
 ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.mara_y)
 
-ttk.Label(text="rapt", width=4, background='#858585', foreground='#050505').place(x=b_d.rapt_x - b_d.s,
+ttk.Label(text="rapt", width=5, background='#858585', foreground='#050505').place(x=b_d.rapt_x - b_d.s,
                                                                                   y=b_d.label_line0)
 ttk.Label(textvariable=gavr_raptor).place(x=b_d.rapt_x, y=b_d.gavr_y)
 ttk.Label(textvariable=gady_raptor).place(x=b_d.rapt_x, y=b_d.gady_y)
@@ -572,7 +572,7 @@ ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.gavr_y)
 # ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.veles_y)
 ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.mara_y)
 
-ttk.Label(text="rat", width=4, background='#858585', foreground='#050505').place(x=b_d.rat_x - b_d.s,
+ttk.Label(text="w_rat", width=5, background='#858585', foreground='#050505').place(x=b_d.rat_x - b_d.s,
                                                                                  y=b_d.label_line0)
 ttk.Label(textvariable=gavr_rat).place(x=b_d.rat_x, y=b_d.gavr_y)
 ttk.Label(textvariable=gady_rat).place(x=b_d.rat_x, y=b_d.gady_y)
@@ -584,7 +584,7 @@ ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.gavr_y)
 # ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.veles_y)
 ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.mara_y)
 
-ttk.Label(text="gift", width=4, background='#858585', foreground='#050505').place(x=b_d.gift_x - b_d.s,
+ttk.Label(text="gift", width=5, background='#858585', foreground='#050505').place(x=b_d.gift_x - b_d.s,
                                                                                   y=b_d.label_line0)
 ttk.Label(textvariable=gavr_gift).place(x=b_d.gift_x, y=b_d.gavr_y)
 ttk.Label(textvariable=gady_gift).place(x=b_d.gift_x, y=b_d.gady_y)

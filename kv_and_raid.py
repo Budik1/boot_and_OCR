@@ -29,13 +29,14 @@ def foto_danger():
 def foto_result_round(*, pos_v, pos_n, path=b_p.result_round, sound=False):
     # сужение
     # коррекция верхнего угла
+    'img/ kv/ result_round/ result_all_round/'
     pos_x, pos_y = pos_v
     pos_x += 180
     pos_y += 45
     # коррекция нижнего угла
     x2, y2 = pos_n
-    x_r = x2 - pos_x + 80
-    y_r = y2 - pos_y - 18
+    x_r = x2 - pos_x + 80 - 13
+    y_r = y2 - pos_y - 20
     #
     name_foto = fun.date_and_time_in_name_file() + ".png"
     fun.foto((path + name_foto), (pos_x, pos_y, x_r, y_r))
@@ -43,18 +44,25 @@ def foto_result_round(*, pos_v, pos_n, path=b_p.result_round, sound=False):
         sounds.sound_victory()
     return
 
-def foto_loot_kv(*, pos_v, pos_n):
+def foto_loot_kv(*, point_v, point_n):
+    """
+    
+    :param point_v: 
+    :param point_n: 
+    :return: 
+    """
     path = b_p.loot_round
-    kor_x_v = 30 + 90
-    kor_y_v = 5 + 127
+    'img/ kv/ result_round/ result_round_loot/'
+    kor_x_v = 30 + 90 - 35
+    kor_y_v = 5 + 127 - 17
     # коррекция верхнего угла
-    pos_x, pos_y = pos_v
+    pos_x, pos_y = point_v
     pos_x += 150 + kor_x_v
     pos_y += 40 + kor_y_v
     # коррекция нижнего угла
-    x2, y2 = pos_n
-    x_r = x2 - pos_x + 80
-    y_r = y2 - pos_y - 18
+    x2, y2 = point_n
+    x_r = x2 - pos_x + 80 - 13
+    y_r = y2 - pos_y - 20
     #
     name_foto = fun.date_and_time_in_name_file() + ".png"
     fun.foto((path + name_foto), (pos_x, pos_y, x_r, y_r))
@@ -62,6 +70,14 @@ def foto_loot_kv(*, pos_v, pos_n):
     #     sounds.sound_victory()
     return
 
+def get_name_loot():
+    dict_name_loot = {'генерал': 'img/kv/result_round/loot/p5.png'}
+    result = 'неопознан'
+    for name in dict_name_loot:
+        result = fun.locCenterImg(name_img=dict_name_loot[name])
+        if result:
+            break
+    return result
 
 
 def selection_hero_in_kv():
@@ -131,7 +147,14 @@ def battle(target_call):
                 mes = color_text.tc_red('Погон!!')
                 foto_result_round(pos_v=victory, pos_n=kv_close,
                                   path='img/kv/result_round/p/', sound=True)
-                foto_loot_kv(pos_v=victory, pos_n=kv_close)
+                # foto_loot_kv(point_v=victory, point_n=kv_close)
+                # опознать погон
+                name_loot = get_name_loot()
+                # записать в лист
+                list_loot = heroes.Hero.get_list_loot(heroes.Activ.hero_activ)
+                list_loot.append(name_loot)
+
+                heroes.Hero.set_list_loot(heroes.Activ.hero_activ, list_loot)
 
             if danger:
                 heroes.Hero.app_danger_v(heroes.Activ.hero_activ)
@@ -192,6 +215,8 @@ def kv():
                 phrase_eff = complex_phrases.report_kv_efficiency()
                 print(phrase_eff[0])
                 print(phrase_eff[1])
+                if phrase_eff[2]:
+                    print(phrase_eff[2])
                 # print(complex_phrases.report_shoulder_straps())
                 print()
             else:

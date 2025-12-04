@@ -109,6 +109,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     print(myCt.tc_magenta('черная крыса'))
                 if name1_white_rat and cycle:
                     cycle = False
+                    Hero.app_white_rat(Activ.hero_activ)
                     mob_identified = 'white_rat'
                     print(myCt.tc_magenta('белая крыса'))
                 if name1_sand_rat and cycle:
