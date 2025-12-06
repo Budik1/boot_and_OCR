@@ -124,7 +124,7 @@ def cr_other_img():
     
     :return: 
     """
-    name_create_img = 'img/kv/kv_skip_battle.png'
+    name_create_img = 'img/overall/event_entry/pos_t.png'
     # name_create_img = 'img/overall/klan.png'
     # name_create_img = 'img/kv/kv_attak.png'
 
@@ -136,11 +136,12 @@ def cr_other_img():
         'img/overall/link_money_token.png': (389, -55, 32, 32, (), find_img.find_info()),
         'img/overall/klan.png': (33, -13, 37, 32, (), find_img.find_info()),
         'img/kv/kv_skip_battle.png': (-48, -21, 96, 37, (), find_img.find_kv_skip_battle_test()),
+        'img/overall/event_entry/pos_t.png': (246, -85, 32, 62, (), find_img.find_info()),
 
     }
     # name_create_img = 'img/test/token.png'
 
-    key = 'img/kv/kv_skip_battle.png'
+    key = 'img/overall/event_entry/pos_t.png'
     pos_start = img_dict[key][5]
 
     # # собственно создание снимка
@@ -151,7 +152,7 @@ def cr_other_img():
         x, y = pos_start
         x += img_dict[key][0]
         y += img_dict[key][1]
-        fun.mouse_move(pos=(x, y), speed=1)
+        # fun.mouse_move(pos=(x, y), speed=1)
         # # найдем нижний угол
         x_demo, y_demo = x, y
         change_x = img_dict[key][2]
@@ -375,9 +376,13 @@ def name_id_station():
 
 def event_entry_img():
     # name_create_img = 'img/overall/event_entry/continue_gavr.png'
-    name_create_img = 'img/person/hero_id/gady/acc_her_gadya.png'
-    name_create_img = 'img/person/hero_id/gavr/acc_her_gavr.png'
-    name_create_img = 'img/person/hero_id/mara/acc_her_mara.png'
+    # name_create_img = 'img/person/hero_id/gady/menu_acc_her_gadya.png'
+    # name_create_img = 'img/person/hero_id/gavr/menu_acc_her_gavr.png'
+    # name_create_img = 'img/person/hero_id/mara/menu_acc_her_mara.png'
+    # name_create_img = 'img/person/change_hero/change_hero_gady.png'
+    # name_create_img = 'img/person/change_hero/change_hero_mara.png'
+    # name_create_img = 'img/person/change_hero/change_hero_gavr.png'
+    # name_create_img = 'img/person/change_hero/add_acc.png'
     # name_create_img = 'img/overall/event_entry/continue_mara.png'
     # name_create_img = 'img/overall/event_entry/continue_gady.png'
 
@@ -388,14 +393,19 @@ def event_entry_img():
             -152, 37, 304, 35, (), fun.locCenterImg(name_img='img/overall/event_entry/transmitted data.png')),
         'img/overall/event_entry/continue_gavr.png': (
             -152, 37, 304, 35, (), fun.locCenterImg(name_img='img/overall/event_entry/transmitted data.png')),
-        'img/person/hero_id/gady/acc_her_gadya.png': (-48, 25, 30, 30, (), person.is_activate_win()),
-        'img/person/hero_id/gavr/acc_her_gavr.png': (-48, 25, 30, 30, (), person.is_activate_win()),
-        'img/person/hero_id/mara/acc_her_mara.png': (-48, 25, 30, 30, (), person.is_activate_win()),
+        'img/person/hero_id/gady/menu_acc_her_gadya.png': (-48, 25, 90, 30, (), person.is_activate_win()),
+        'img/person/hero_id/gavr/menu_acc_her_gavr.png': (-48, 25, 90, 30, (), person.is_activate_win()),
+        'img/person/hero_id/mara/menu_acc_her_mara.png': (-48, 25, 90, 30, (), person.is_activate_win()),
+        # 'img/person/change_hero/change_hero_gady.png': (-108, 31 + 50, 170, 30, (), person.activated_change_menu()),
+        # 'img/person/change_hero/change_hero_mara.png': (-108, 31 + 50, 170, 30, (), person.activated_change_menu()),
+        # 'img/person/change_hero/change_hero_gavr.png': (-108, 31 + 50, 170, 30, (), person.activated_change_menu()),
+        # 'img/person/change_hero/add_acc.png': (-88 , 31 + 148, 170, 30, (), person.activated_change_menu()),
 
     }
-    # name_create_img = 'img/test/token.png'
+    name_create_img = 'img/test/token.png'
 
-    key = 'img/person/hero_id/mara/acc_her_mara.png'
+    key = 'img/person/hero_id/gady/menu_acc_her_gadya.png'
+    # key = 'img/person/change_hero/change_hero_mara.png'
     pos_start = img_dict[key][5]
 
     # # собственно создание снимка
@@ -442,10 +452,10 @@ def event_entry_img():
 
 
 
-event_entry_img()
+# event_entry_img()
 # hero_img()
 # name_id_station()
-# cr_other_img()
+cr_other_img()
 # task_img()
 # mob_id(name='name6_kikimora')
 # mob_id(name='name3_smuggler') #

@@ -665,8 +665,9 @@ def selection_hero(*, show_name=True):
         heroes.Activ.name_file_ = 'mara'
         heroes.Activ.hero_activ = heroes.mara
     else:
-        print(myCt.tc_red("Невозможно опознать героя!! (("))
-        print()
+        if show_name:
+            print(myCt.tc_red("Невозможно опознать героя!! (("))
+            print()
         hero = None
         heroes.Activ.hero_activ = None
     return hero

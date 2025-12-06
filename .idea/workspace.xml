@@ -4,13 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="2 функции для активации меню">
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="в station_master.py и main.py добавил учёт белых крыс и отображение. В kv_and_raid.py complex_phrases.py сохранение, обработка и вывод loot. В touring.py логика оставшейся энергии. В main.py поменял вывод инфо серых на белых крыс. В heroes.py добавил счетчик белых крыс и list_loot.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a_serial_scrin_for_pm.py" beforeDir="false" afterPath="$PROJECT_DIR$/a_serial_scrin_for_pm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/config.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/del_polzun.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_round_loot/2025-09-04 08-35-24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_round_loot/2025-09-13 09-48-24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_round_loot/2025-09-19 19-35-59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_round_loot/p5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_round_loot/result_round_loot2025-08-31 20-22-33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/overall/event_entry/pos_t.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/event_entry/pos_t.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/change_hero/add_acc.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/change_hero/add_acc.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/change_hero/change_hero_gady.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/change_hero/change_hero_gady.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/change_hero/change_hero_gavr.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/change_hero/change_hero_gavr.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/person/change_hero/change_hero_mara.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/change_hero/change_hero_mara.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/person.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tempo.py" beforeDir="false" afterPath="$PROJECT_DIR$/tempo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/img_crop.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/img_crop.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,11 +156,11 @@
       <recent name="D:\bot in br\testOCR\img\station_master\numbers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\python\bot_ocr1\img\kv\result_round\loot" />
       <recent name="C:\python\bot_ocr1" />
       <recent name="C:\python\bot_ocr1\service" />
       <recent name="D:\bot in br\testOCR\tools" />
       <recent name="D:\bot in br\testOCR\service" />
-      <recent name="D:\bot in br\testOCR" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -197,7 +213,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="createAndName_ui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="img_crop" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -206,11 +222,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/createAndName_ui.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/img_crop.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -266,10 +282,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.a_serial_scrin_for_pm (1)" />
         <item itemvalue="Python.tempo" />
+        <item itemvalue="Python.a_serial_scrin_for_pm (1)" />
+        <item itemvalue="Python.img_crop" />
         <item itemvalue="Python.cr_img" />
-        <item itemvalue="Python.createAndName_ui" />
       </list>
     </recent_temporary>
   </component>
@@ -369,7 +385,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764699164182</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Добавил проверку наличия энергии для решения о необходимости идти на Пушкиинскую">
+      <option name="closed" value="true" />
+      <created>1764766495582</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1764766495582</updated>
+    </task>
+    <task id="LOCAL-00012" summary="в station_master.py и main.py добавил учёт белых крыс и отображение. В kv_and_raid.py complex_phrases.py сохранение, обработка и вывод loot. В touring.py логика оставшейся энергии. В main.py поменял вывод инфо серых на белых крыс. В heroes.py добавил счетчик белых крыс и list_loot.">
+      <option name="closed" value="true" />
+      <created>1764863950187</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1764863950187</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -393,7 +425,9 @@
     <MESSAGE value="чистка cr_img.py, обновлён continue_gavr.png" />
     <MESSAGE value="branch start" />
     <MESSAGE value="2 функции для активации меню" />
-    <option name="LAST_COMMIT_MESSAGE" value="2 функции для активации меню" />
+    <MESSAGE value="Добавил проверку наличия энергии для решения о необходимости идти на Пушкиинскую" />
+    <MESSAGE value="в station_master.py и main.py добавил учёт белых крыс и отображение. В kv_and_raid.py complex_phrases.py сохранение, обработка и вывод loot. В touring.py логика оставшейся энергии. В main.py поменял вывод инфо серых на белых крыс. В heroes.py добавил счетчик белых крыс и list_loot." />
+    <option name="LAST_COMMIT_MESSAGE" value="в station_master.py и main.py добавил учёт белых крыс и отображение. В kv_and_raid.py complex_phrases.py сохранение, обработка и вывод loot. В touring.py логика оставшейся энергии. В main.py поменял вывод инфо серых на белых крыс. В heroes.py добавил счетчик белых крыс и list_loot." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -430,22 +464,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>182</line>
+          <line>183</line>
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>153</line>
+          <line>198</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>286</line>
+          <line>287</line>
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>45</line>
+          <line>47</line>
           <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -455,12 +489,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>114</line>
+          <line>150</line>
           <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>354</line>
+          <line>355</line>
           <option name="timeStamp" value="122" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

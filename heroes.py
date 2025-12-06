@@ -12,28 +12,30 @@ time_now_ = ""
 
 
 class Activ:
-    hero_activ_name = ''  # значение переменной
     hero_activ = ''
-    result_duel = ""
+    hero_activ_name = ''  # значение переменной
     check_date_ = ''
     date_now = ''
-    hour_now = ''
-    value_energy = 0
     name_file_ = None
     station_activ = ''
     qty_vip = 0
     duel_raid = 0
     result_load = ''
+    #
+    #
+    hour_now = ''
+    result_duel = ""
+    value_energy = 0
 
 
 class Hero:
 
-    def __init__(self, name_ru_, name_en_, name_id, id):
+    def __init__(self, name_ru_, name_en_, name_id, _id):
         # статичные
         self.name_en = name_en_
         self.name_ru = name_ru_
         self.name_id = name_id
-        self.id_ = id
+        self.id_ = _id
         self.bypass = ()
 
         # обновляемые ежедневно
@@ -61,8 +63,8 @@ class Hero:
         #
         self.energy_count_all = 0
         self.energy_kiev_count_all = 0
+        # self.energy_spent_searching_for_white_rats = 0
         self.value_energy = 0
-
 
         # кв и рейд
         self.qty_duel_all = 0  # к-во боёв всего
@@ -74,6 +76,7 @@ class Hero:
         self.danger = 0
         self.danger_victory = 0
         self.list_loot = []
+        self.set_dist = {}
 
         self.count_shoulder_straps_all = 0
         self.count_shoulder_straps_kv = 0
@@ -86,6 +89,12 @@ class Hero:
         self.time_entree = 0
 
         self.duel_raid = 0
+
+    def get_set_dist(self):
+        return self.set_dist
+
+    def set_set_dist(self, value):
+        self.set_dist = value
 
     def get_up_date(self):
         return self.lvl_up_date
@@ -110,6 +119,7 @@ class Hero:
             'count_shoulder_straps_all': self.count_shoulder_straps_all,
             'count_shoulder_straps_kv': self.count_shoulder_straps_kv,
             'list_loot': self.list_loot,
+            'set_dist': self.set_dist,
         }
         hero_id = Hero.get_id(self)
         list_kv_state[hero_id] = data_to_save
@@ -129,6 +139,7 @@ class Hero:
             self.qty_duel_in_kv_victory = data_kv.get('qty_duel_in_kv_victory', 0)
             self.count_shoulder_straps_kv = data_kv.get('count_shoulder_straps_kv', 0)
             self.list_loot = data_kv.get('list_loot', [])
+            self.set_dist = data_kv.get('set_dist', {})
         else:
             print('Время старта КВ обновилось')
             self.time_start_kv = time_now
@@ -460,11 +471,11 @@ class Hero:
         return self.name_id
 
 
-gady = Hero(name_ru_="Гадя", name_en_='Gady', name_id='gady', id=0)
+gady = Hero(name_ru_="Гадя", name_en_='Gady', name_id='gady', _id=0)
 gady.path_task = 'img/station_master/tasks_gady/'
 gady.bypass = b_d.bypass
 
-gavr = Hero(name_ru_='Гавр', name_en_='Gavr', name_id='gavr', id=1)
+gavr = Hero(name_ru_='Гавр', name_en_='Gavr', name_id='gavr', _id=1)
 gavr.path_task = 'img/station_master/tasks_gavr/'
 gavr.bypass = b_d.bypass
 
@@ -472,13 +483,13 @@ gavr.bypass = b_d.bypass
 # veles.path_task = 'img/station_master/tasks_veles/'
 # veles.bypass = b_d.bypass_veles
 
-mara = Hero(name_ru_='Мара', name_en_='Mara', name_id='mara', id=2)
+mara = Hero(name_ru_='Мара', name_en_='Mara', name_id='mara', _id=2)
 mara.path_task = 'img/station_master/tasks_mara/'
 mara.bypass = b_d.bypass_mara
 
-list_all_state = [{}, {}, {}] #
+list_all_state = [{}, {}, {}]  #
 list_kv_state = [{}, {}, {}]
-hero_dict = {'Gady': gady, 'Gavr': gavr, 'Mara': mara} #
+hero_dict = {'Gady': gady, 'Gavr': gavr, 'Mara': mara}  #
 # Activ.hero_activ = gady # значение, которое выдает fun.select_hero(True)
 # Hero.duel_kv(Activ.hero_activ)  # формат обращения к методу
 #

@@ -4,6 +4,7 @@ import find_img
 import fun
 from time import sleep
 
+import heroes
 from heroes import Hero, Activ
 
 # duration=d_drag и duration=d с предметом и в свободном состоянии
@@ -151,11 +152,12 @@ def is_activate_win(*, show=False):
     :return: позиция кнопки "развернуть"
     """
     #
+    value_correct_for_activate_win = 40
     pos_expand = find_img.find_button_expand()
     while not pos_expand:
         pos1 = fun.locCenterImg(name_img='img/overall/my_game1.png')
         x, y = pos1
-        y -= 40
+        y -= value_correct_for_activate_win
         pos1_1 = x, y
         fun.Mouse.move_to_click(pos_click=pos1_1)
         # найти кнопку "развернуть"
@@ -167,71 +169,65 @@ def is_activate_win(*, show=False):
 
 
 def activated_change_menu():
+    value_correct_for_activate_menu = 23
     is_activate_win()
-    list_img_menu = ['img/person/hero_id/gady/acc_her_gadya.png']
+    # проверка открытого меню
+    pos_add = fun.locCenterImg(name_img='img/person/change_hero/add_acc.png')
+    pos_menu = None
+    # позиция кнопки меню
+    list_img_menu = ['img/person/hero_id/gady/menu_acc_her_gadya.png',
+                     'img/person/hero_id/gavr/menu_acc_her_gavr.png',
+                     'img/person/hero_id/mara/menu_acc_her_mara.png']
     for img in list_img_menu:
         pos_menu = fun.locCenterImg(name_img=img)
         if pos_menu:
-            fun.Mouse.move_to_click(pos_click=pos_menu)
+            break
+    # если меню не открыто
+    if not pos_add:
+        x, y = pos_menu
+        x -= value_correct_for_activate_menu
+        pos_click = x, y
+        fun.Mouse.move_to_click(pos_click=pos_click)
+
+    return pos_menu
 
 
 def change_acc(*, change_hero_name):
     move_time = 0.3
+    #
     vid = fun.selection_hero()
     while not vid:
         fun.push_close_all_()
         vid = fun.selection_hero()
     activ_hero = Hero.get_name_id(Activ.hero_activ)
-    # print(f'{activ_hero=}, {activ_hero=}')
+    #
     if change_hero_name == activ_hero:
         print('этот герой уже активен')
         return
-
-    # print(f'img/person/change_hero_{hero_name_in_file}.png')
-    # развернуть на весь экран если не виден
-    img_button_expand = find_img.find_button_expand()
-    if not img_button_expand:
-        # activate win
-        pos_my = find_img.find_my_game2()
-        while not pos_my:
-            pos_my = find_img.find_my_game2()
-        x, y = pos_my
-        x -= 50
-        y -= 50
-        fun.Mouse.move_to_click(pos_click=(x, y), move_time=move_time, z_p_k=0.2)
-    img_button_expand = find_img.find_button_expand()
-    fun.mouse_move_to_click(pos_click=img_button_expand, move_time=move_time, z_p_k=0.2)
-    # вычисление позиции меню смены аккаунта
-    pos_my = fun.locCenterImg('img/overall/my_game2.png', 0.8)
-    x, y = pos_my
-    x += 506
-    y -= 5
-    pos_menu_chenge_acc = x, y
-    # открыть меню
-    menu_change_acc_open = fun.locCenterImg('img/person/change_hero/add_acc.png')
-    if not menu_change_acc_open:
-        fun.mouse_move_to_click(pos_click=pos_menu_chenge_acc, move_time=move_time, z_p_k=0.2)
+    activated_change_menu()
     # нажать нужного героя
-    cange_hero = fun.locCenterImg(f'img/person/change_hero/change_hero_{change_hero_name}.png')
-    fun.mouse_move_to_click(pos_click=cange_hero, move_time=move_time, z_p_k=0.2)
-    #
-    img_button_collapse = fun.locCenterImg('img/overall/button_collapse.png')
-    fun.mouse_move_to_click(pos_click=img_button_collapse, move_time=move_time, z_p_k=0.2)
-    #
-    pos = fun.locCenterImg('img/overall/event_entry/pos_t.png')
-    # print(f'{pos=}')
-    while not pos:
-        pos = fun.locCenterImg('img/overall/event_entry/pos_t.png')
-        hero_name_in_file_list = ['gavr', 'gady', 'veles', 'mara']
-        if change_hero_name in hero_name_in_file_list:
-            continue_heroes = fun.locCenterImg(f'img/overall/event_entry/continue_{change_hero_name}.png')
-            if continue_heroes:
-                fun.mouse_move_to_click(pos_click=continue_heroes, move_time=move_time, z_p_k=0.2)
+    change_hero = fun.locCenterImg(f'img/person/change_hero/change_hero_{change_hero_name}.png')
+    fun.mouse_move_to_click(pos_click=change_hero, move_time=move_time, z_p_k=0.2)
+    # проверка начала процесса смены
+    print('ожидание начала процесса смены')
+    scrin_change = fun.selection_hero(show_name=False)
+    print(f'{scrin_change=}')
+    print(f'{bool(scrin_change)=}')
+    while scrin_change:
+        scrin_change = fun.selection_hero(show_name=False)
+        print(f'{bool(scrin_change)=}')
 
-    slider = fun.locCenterImg('img/overall/slider_v.png', 0.7)
-    if slider:
-        fun.Mouse.move(pos=slider, speed=move_time)
-        fun.Mouse.take_drag_drop_y(pos_take=slider, distance=43, speed=1)
+    print(' начало процесса смены')
+    #
+    pos = find_img.find_info()
+    print(f'{pos=}')
+    fun.Mouse.move(pos=pos, speed=0.05)
+    while not pos:
+        pos = find_img.find_info()
+        continue_heroes = fun.locCenterImg(f'img/overall/event_entry/continue_{change_hero_name}.png')
+        print('Поиск "продолжить как.."')
+        if continue_heroes:
+            fun.mouse_move_to_click(pos_click=continue_heroes, move_time=move_time, z_p_k=0.2)
     pos_info = find_img.find_info()
     while not pos_info:
         pos_info = find_img.find_info()

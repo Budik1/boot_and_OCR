@@ -44,6 +44,7 @@ def foto_result_round(*, pos_v, pos_n, path=b_p.result_round, sound=False):
         sounds.sound_victory()
     return
 
+
 def foto_loot_kv(*, point_v, point_n):
     """
     
@@ -70,12 +71,18 @@ def foto_loot_kv(*, point_v, point_n):
     #     sounds.sound_victory()
     return
 
+
 def get_name_loot():
-    dict_name_loot = {'генерал': 'img/kv/result_round/loot/p5.png'}
+    dict_name_loot = {'сержант': 'img/kv/result_round/loot/p1.png',
+                      'лейтенант': 'img/kv/result_round/loot/p2.png',
+                      'капитан': 'img/kv/result_round/loot/p3.png',
+                      'полковник': 'img/kv/result_round/loot/p4.png',
+                      'генерал': 'img/kv/result_round/loot/p5.png'}
     result = 'неопознан'
     for name in dict_name_loot:
-        result = fun.locCenterImg(name_img=dict_name_loot[name])
-        if result:
+        name_loot = fun.locCenterImg(name_img=dict_name_loot[name])
+        if name_loot:
+            result = name_loot
             break
     return result
 
@@ -96,11 +103,24 @@ def selection_hero_in_kv():
     return hero
 
 
+def update_set_dist(*, value_dist):
+    temp_set_dist = heroes.Hero.get_set_dist(heroes.Activ.hero_activ)
+    temp_list = list(temp_set_dist)
+    temp_list.append(value_dist)
+    set_dist = set(temp_list)
+    heroes.Hero.set_set_dist(heroes.Activ.hero_activ, set_dist)
+    # отладка
+    min_dist = min(set_dist)
+    max_dist = max(set_dist)
+    print(f'{set_dist=}, {min_dist=}, {max_dist=}')
+    return
+
+
 def distance(*, pos_vic: tuple, pos_cl: tuple) -> int:
     x_vic, y_vic = pos_vic
     x_cl, y_cl = pos_cl
     dist = y_cl - y_vic
-    # print(f'{dist=}')
+
     return dist
 
 
@@ -140,8 +160,10 @@ def battle(target_call):
             heroes.Hero.up_qty_duel_in_kv_victory(heroes.Activ.hero_activ)
             # print(Hero.get_name_ru(Activ.hero_activ))
             dist_report = distance(pos_vic=victory, pos_cl=kv_close)
+            update_set_dist(value_dist=dist_report)
+            min_dist = min(heroes.Hero.get_set_dist(heroes.Activ.hero_activ))
             foto_result_round(pos_v=victory, pos_n=kv_close)
-            if dist_report > 211:
+            if dist_report > (min_dist/10 + min_dist):
                 heroes.Hero.up_count_shoulder_straps_all(heroes.Activ.hero_activ)
                 heroes.Hero.up_count_shoulder_straps_kv(heroes.Activ.hero_activ)
                 mes = color_text.tc_red('Погон!!')
