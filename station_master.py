@@ -61,7 +61,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     :param dog_activ:
     :param add_up:
     :param arena:
-    :param tour:
+    :param tour: Для учета мобов в тоннелях используется True
     :return:
     """
     # print(color_text.tc_green('в бой'))
@@ -109,9 +109,11 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     print(myCt.tc_magenta('черная крыса'))
                 if name1_white_rat and cycle:
                     cycle = False
+                    # увеличение счетчика
                     Hero.app_white_rat(Activ.hero_activ)
                     mob_identified = 'white_rat'
-                    print(myCt.tc_magenta('белая крыса'))
+                    print(myCt.tc_magenta(f'{Hero.get_qty_white_rat(Activ.hero_activ)} белая крыса'))
+                    print(complex_phrases.report_white_rat(hero=Activ.hero_activ))
                 if name1_sand_rat and cycle:
                     cycle = False
                     mob_identified = 'sand_rat'
@@ -151,7 +153,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                         Hero.app_raptor(Activ.hero_activ)
                     print(myCt.tc_magenta(f'{Hero.get_qty_raptor(Activ.hero_activ)} ящер'))
                     mob_identified = 'raptor'
-
+                # нужен ли тут этот блок?
                 name1_grey_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_grey_rat.png', confidence=conf_mobs)
                 name1_white_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_white_rat.png',
                                                    confidence=conf_mobs)
@@ -164,6 +166,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                 name5_wildman = fun.locCenterImg(name_img='img/tonelli/mobi/name5_wildman.png', confidence=conf_mobs)
                 name6_kikimora = find_img.find_name_kikimora()
                 name7_raptor = fun.locCenterImg(name_img='img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
+
         if dog_activ:
             if dog and dog_count:
                 # нажать "на собаку"
@@ -254,11 +257,8 @@ def press_en(*, task_number, pos, value_energy): # , report_en=True
     low_energy = find_img.find_low_energy_label()
     if not low_energy:
         vers_in_print = "" if conf_ == 0.95 else f', conf_={conf_}. '
-        # Hero.app_task_count(Activ.hero_activ)
+        # увеличение счетчиков
         Hero.app_energy_count_today(Activ.hero_activ, value_energy)
-        if Activ.station_activ == 'ст. Киевская':
-            pass
-
         if value_energy == 4:
             Hero.app_arachne(Activ.hero_activ)
         if value_energy == 5:

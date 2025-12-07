@@ -6,8 +6,6 @@ import heroes
 import color_text
 
 
-
-
 def display_report_energy_now(*, vers_in_print, value_energy):
     """
     Пример сообщения:
@@ -65,6 +63,15 @@ def display_report_wildman():
         print(f'{name}:{report_wildman(hero=heroes.hero_dict[key])}')
     return
 
+def display_report_w_rat():
+    print()
+    print('white rat')
+    for key in heroes.hero_dict:
+        name = heroes.Hero.get_name_ru(heroes.hero_dict[key]).rjust(7, ' ')
+
+        print(f'{name}:{report_white_rat(hero=heroes.hero_dict[key])}')
+    return
+
 
 def display_smol_report_wildman():
     """
@@ -75,12 +82,36 @@ def display_smol_report_wildman():
     for key in heroes.hero_dict:
         name = key.rjust(8, ' ')
         q_days = str(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])).rjust(3, ' ')
-        days = (fun.transform_word_days(qty_days=(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])))).rjust(5, ' ')
+        days = (fun.transform_word_days(qty_days=(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])))).rjust(5,
+                                                                                                                     ' ')
         q_wild = str(heroes.Hero.get_wildman_count(heroes.hero_dict[key])).rjust(4)
         wild = fun.transform_word_wilds(qty_wilds=heroes.Hero.get_wildman_count(heroes.hero_dict[key])).rjust(8)
         print(f'{name}{q_days}{days}{q_wild}{wild}')
 
     return
+
+
+def report_white_rat(*, hero):
+    #  Потрачено {} ед.эн.
+    # {} эн на 1го.
+
+    text_22 = color_text.tc_green(' Потрачено ')  # 'Потрачено '
+    energy_w_rat_count_all = color_text.tc_yellow(f'{heroes.Hero.get_white_rat_energy(hero)}')  # 'XXX'
+    text_23 = color_text.tc_green(' ед.эн.')
+    phrase2 = f'{text_22}{energy_w_rat_count_all}{text_23}'
+
+    # количество энергии на одного
+    if heroes.Hero.get_white_rat_count_all(hero):
+        # text_31 = color_text.tc_green(' Это ')
+        average_value_3 = color_text.tc_blue(
+            f'{round(heroes.Hero.get_white_rat_energy(hero) / heroes.Hero.get_white_rat_count_all(hero), 4)}')  # '7'
+        text_32 = color_text.tc_green(' эн на 1ну крысу.')  # ' эн на 1го'
+        phrase1 = f'{average_value_3.rjust(17)}{text_32}'
+        report_w_rat_hero = f'{phrase1}{phrase2}'
+    else:
+        phrase1 = 'Нет данных.'.rjust(19)
+        report_w_rat_hero = f'{phrase1}{phrase2}'
+    return report_w_rat_hero
 
 
 def report_wildman(*, hero):

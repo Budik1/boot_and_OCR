@@ -66,10 +66,10 @@ def displaying_values(info=True):
     else:
         solid_memory.save_all_state_config(info=False)
 
-    gady_rat.set(heroes.gady.white_rat)
-    gavr_rat.set(heroes.gavr.white_rat)
+    gady_rat.set(heroes.gady.white_rat_now)
+    gavr_rat.set(heroes.gavr.white_rat_now)
     # veles_rat.set(heroes.veles.grey_rat)
-    mara_rat.set(heroes.mara.white_rat)
+    mara_rat.set(heroes.mara.white_rat_now)
 
     gady_kiki.set(heroes.gady.kiki)
     gavr_kiki.set(heroes.gavr.kiki)
@@ -405,6 +405,12 @@ def set_timer1():
     heroes.Hero.set_time_entree(heroes.Activ.hero_activ, tim_entree)
     solid_memory.save_all_state_config(info=False)
 
+def set_param():
+    heroes.gady.white_rat_count_all = 1
+    heroes.gavr.white_rat_count_all = 1
+    heroes.mara.white_rat_count_all = 3
+    displaying_values(info=True)
+
 
 root = Tk()
 root.title(f' помощник "Метро 2033"')
@@ -464,31 +470,32 @@ start_prog()
 # -------------------------------------------------------------
 
 # блок командных кнопок
-ttk.Button(text="КВ", width=13, command=kv_and_raid.kv).place(x=115, y=b_d.line5)
-ttk.Button(text=" Start ", width=13, command=start_pm).place(x=241, y=b_d.line5)
+ttk.Button(text="КВ", width=10, command=kv_and_raid.kv).place(x=115, y=b_d.line4)
+ttk.Button(text=" Start ", width=10, command=start_pm).place(x=190, y=b_d.line4)
+ttk.Button(text='Save', width=12, command=displaying_values).place(x=260, y=b_d.line4)
 
-ttk.Button(text="set 24 h", width=8, command=set_timer24).place(x=b_d.timer_x, y=b_d.line5)
-ttk.Button(text="set 8 h ", width=8, command=set_timer8).place(x=b_d.timer_x, y=b_d.line6)
-ttk.Button(text="set 1 h ", width=8, command=set_timer1).place(x=b_d.timer_x, y=b_d.line7)
+ttk.Button(text="set 24 h", width=8, command=set_timer24).place(x=b_d.timer_x, y=b_d.line4)
+ttk.Button(text="set 8 h ", width=8, command=set_timer8).place(x=b_d.timer_x, y=b_d.line5)
+ttk.Button(text="set 1 h ", width=8, command=set_timer1).place(x=b_d.timer_x, y=b_d.line6)
 
-ttk.Button(text="wild+kiki", width=9, command=wild_kiki).place(x=115, y=b_d.line6)
-ttk.Button(text="обход всех станций", width=17, command=collecting_gifts_at_stations).place(x=205, y=b_d.line6)
+ttk.Button(text="wild+kiki", width=9, command=wild_kiki).place(x=115, y=b_d.line5)
+ttk.Button(text="обход всех станций", width=18, command=collecting_gifts_at_stations).place(x=205, y=b_d.line5)
 
-ttk.Button(text='Save', width=12, command=displaying_values).place(x=115, y=b_d.line7)
-ttk.Button(text='рапорт E', width=12, command=complex_phrases.display_info_energy_all).place(x=200, y=b_d.line7)
-ttk.Button(text='рапорт W', width=12, command=complex_phrases.display_report_wildman).place(x=285, y=b_d.line7)
+ttk.Button(text='рапорт E', width=12, command=complex_phrases.display_info_energy_all).place(x=200, y=b_d.line6)
+ttk.Button(text='рапорт W', width=12, command=complex_phrases.display_report_wildman).place(x=285, y=b_d.line6)
+ttk.Button(text='рапорт W_R', width=12, command=complex_phrases.display_report_w_rat).place(x=115, y=b_d.line6)
 
 ttk.Label(text='            куда пойдем ?', width=21, background='#858585', foreground='#050505').place(x=156,
-                                                                                                        y=b_d.line8)
+                                                                                                        y=b_d.line7)
 
 combobox = ttk.Combobox(textvariable=lang_var, values=box_paths, state="readonly", width=23)
-combobox.place(x=138, y=b_d.line9)
+combobox.place(x=138, y=b_d.line8)
 combobox.bind("<<ComboboxSelected>>", get_target)
-ttk.Button(text='Паспортист', width=14, command=save_home_point).place(x=0, y=b_d.line9 - 2)
+ttk.Button(text='Паспортист', width=14, command=save_home_point).place(x=0, y=b_d.line8 - 2)
 
-ttk.Button(text="фото противника", width=15, command=create_img_arena_object).place(x=0, y=b_d.line10)
-ttk.Button(text="атака противника", width=15, command=kill).place(x=225, y=b_d.line10)
-# ttk.Button(text="kv rapport", width=6, command=kv_report).place(x=150, y=b_d.line10)
+ttk.Button(text="фото противника", width=16, command=create_img_arena_object).place(x=0, y=b_d.line9)
+ttk.Button(text="атака противника", width=16, command=kill).place(x=225, y=b_d.line9)
+ttk.Button(text="set_param", width=10, command=set_param).place(x=150, y=b_d.line10)
 
 timer_gady_label = ttk.Label()
 timer_gady_label.config(text="", font=("Helvetica", 12))  # , font=("Helvetica", 12)
@@ -603,7 +610,7 @@ ttk.Label(textvariable=mara_wild).place(x=b_d.wild_x, y=b_d.mara_y)
 
 # блок выбора заданий
 difference_str_img = 8
-line_img = b_d.line5 + 5
+line_img = b_d.line4 + 5
 imagePul = ImageTk.PhotoImage(file="img/overall/pulya.png")
 ttk.Button(root, image=imagePul, command=puli).place(x=56, y=line_img + 15)
 img_e1 = ImageTk.PhotoImage(file="img/overall/en1v3.png")

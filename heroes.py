@@ -42,7 +42,8 @@ class Hero:
         self.vip = 0  #
         self.holiday_gift = 0  #
         self.grey_rat = 0  #
-        self.white_rat = 0
+        self.white_rat_now = 0
+        self.white_rat_count_all = 0
         self.kiki = 0  #
         self.arachne = 0  #
         self.raptor = 0  #
@@ -63,7 +64,7 @@ class Hero:
         #
         self.energy_count_all = 0
         self.energy_kiev_count_all = 0
-        # self.energy_spent_searching_for_white_rats = 0
+        self.energy_spent_searching_for_white_rats = 0
         self.value_energy = 0
 
         # кв и рейд
@@ -76,7 +77,7 @@ class Hero:
         self.danger = 0
         self.danger_victory = 0
         self.list_loot = []
-        self.set_dist = {}
+        self.set_dist = set
 
         self.count_shoulder_straps_all = 0
         self.count_shoulder_straps_kv = 0
@@ -89,6 +90,11 @@ class Hero:
         self.time_entree = 0
 
         self.duel_raid = 0
+
+    def get_white_rat_count_all(self):
+        return self.white_rat_count_all
+
+
 
     def get_set_dist(self):
         return self.set_dist
@@ -121,6 +127,8 @@ class Hero:
             'list_loot': self.list_loot,
             'set_dist': self.set_dist,
         }
+        # if Hero.get_name_en(self) == 'Gady':
+        #     print(f'{self.set_dist=} get_state_kv')
         hero_id = Hero.get_id(self)
         list_kv_state[hero_id] = data_to_save
         return
@@ -139,7 +147,7 @@ class Hero:
             self.qty_duel_in_kv_victory = data_kv.get('qty_duel_in_kv_victory', 0)
             self.count_shoulder_straps_kv = data_kv.get('count_shoulder_straps_kv', 0)
             self.list_loot = data_kv.get('list_loot', [])
-            self.set_dist = data_kv.get('set_dist', {})
+
         else:
             print('Время старта КВ обновилось')
             self.time_start_kv = time_now
@@ -147,9 +155,13 @@ class Hero:
             self.qty_duel_in_kv_all = 0
             self.qty_duel_in_kv_victory = 0
 
+        self.set_dist = data_kv.get('set_dist', {})
         self.qty_duel_all_victory = data_kv.get('gady.duel_victory_all', 0)
         self.qty_duel_all = data_kv.get('gady.duel_all', 0)
         self.count_shoulder_straps_all = data_kv.get('gady.count_shoulder_straps', 0)
+        if self == Activ.hero_activ:
+            print(f'{self.set_dist=} set_state_kv')
+
 
     def get_state_all(self):
         data_to_save = {
@@ -157,7 +169,7 @@ class Hero:
             # updatable
             # мобы
             'grey_rat_k': self.grey_rat,
-            'white_rat_k': self.white_rat,
+            'white_rat_k': self.white_rat_now,
             'arachne_k': self.arachne,
             'wildman_k': self.wildman,
             'kiki_k': self.kiki,
@@ -179,6 +191,8 @@ class Hero:
             'time_entree_k': self.time_entree,
             'energy_kiev_count_all_k': self.energy_kiev_count_all,
             'lvl_up_date_k': self.lvl_up_date,
+            'white_rat_count_all': self.white_rat_count_all,
+            'energy_spent_searching_for_white_rats': self.energy_spent_searching_for_white_rats,
         }
         hero_id = Hero.get_id(self)
         list_all_state[hero_id] = data_to_save
@@ -203,7 +217,7 @@ class Hero:
 
             # мобы
             self.grey_rat = loaded_data.get('grey_rat_k', 0)
-            self.white_rat = loaded_data.get('white_rat_k', 0)
+            self.white_rat_now = loaded_data.get('white_rat_k', 0)
             self.arachne = loaded_data.get('arachne_k', 0)
             self.wildman = loaded_data.get('wildman_k', 0)
             self.kiki = loaded_data.get('kiki_k', 0)
@@ -238,6 +252,9 @@ class Hero:
         self.time_entree = loaded_data.get('time_entree_k', 0)
         self.energy_kiev_count_all = loaded_data.get('energy_kiev_count_all_k', 0)
         self.lvl_up_date = loaded_data.get('lvl_up_date_k', '')
+        self.white_rat_count_all = loaded_data.get('white_rat_count_all', 0)
+        self.energy_spent_searching_for_white_rats = loaded_data.get('energy_spent_searching_for_white_rats', 0)
+
         # отладка
 
         # print(f'set_cumulative_values {self.name_ru}, {self.lvl_up_date}') #
@@ -361,7 +378,11 @@ class Hero:
         self.energy_count_all += value
         if Activ.station_activ == 'ст. Киевская':
             self.energy_kiev_count_all += value
-            # print(color_text.tc_yellow('set energy_kiev_count_all'))
+        if Activ.station_activ in ['ст. Пушкинская', 'ст. Театральная',]:
+            self.energy_spent_searching_for_white_rats += value
+
+    def get_white_rat_energy(self):
+        return self.energy_spent_searching_for_white_rats
 
     def get_energy_kiev_count_all(self):
         return self.energy_kiev_count_all
@@ -401,7 +422,10 @@ class Hero:
         self.grey_rat += 1
 
     def app_white_rat(self):
-        self.white_rat += 1
+        self.white_rat_count_all += 1
+        self.white_rat_now += 1
+
+
 
     # Гетеры
     def get_vip_all(self):
@@ -444,7 +468,7 @@ class Hero:
         return self.grey_rat
 
     def get_qty_white_rat(self):
-        return self.white_rat
+        return self.white_rat_now
 
     def get_qty_wildman(self):
         return self.wildman
@@ -489,7 +513,11 @@ mara.bypass = b_d.bypass_mara
 
 list_all_state = [{}, {}, {}]  #
 list_kv_state = [{}, {}, {}]
-hero_dict = {'Gady': gady, 'Gavr': gavr, 'Mara': mara}  #
+hero_dict = {'Gady': gady, 'Gavr': gavr, 'Mara': mara, }  # 'Veles': veles
+#
+dict_all_state = {}
+dict_kv_state = {}
+
 # Activ.hero_activ = gady # значение, которое выдает fun.select_hero(True)
 # Hero.duel_kv(Activ.hero_activ)  # формат обращения к методу
 #

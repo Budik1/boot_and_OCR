@@ -105,7 +105,10 @@ def selection_hero_in_kv():
 
 def update_set_dist(*, value_dist):
     temp_set_dist = heroes.Hero.get_set_dist(heroes.Activ.hero_activ)
-    temp_list = list(temp_set_dist)
+    if temp_set_dist:
+        temp_list = list(temp_set_dist)
+    else:
+        temp_list = []
     temp_list.append(value_dist)
     set_dist = set(temp_list)
     heroes.Hero.set_set_dist(heroes.Activ.hero_activ, set_dist)

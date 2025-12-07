@@ -4,29 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="в station_master.py и main.py добавил учёт белых крыс и отображение. В kv_and_raid.py complex_phrases.py сохранение, обработка и вывод loot. В touring.py логика оставшейся энергии. В main.py поменял вывод инфо серых на белых крыс. В heroes.py добавил счетчик белых крыс и list_loot.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="дебаг смены героев, изменена логика анализа получения и отображения информации о погонах">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a_serial_scrin_for_pm.py" beforeDir="false" afterPath="$PROJECT_DIR$/a_serial_scrin_for_pm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/complex_phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/complex_phrases.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/config.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/del_polzun.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_round_loot/2025-09-04 08-35-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_round_loot/2025-09-13 09-48-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_round_loot/2025-09-19 19-35-59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_round_loot/p5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_round_loot/result_round_loot2025-08-31 20-22-33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/overall/event_entry/pos_t.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/event_entry/pos_t.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/person/change_hero/add_acc.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/change_hero/add_acc.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/person/change_hero/change_hero_gady.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/change_hero/change_hero_gady.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/person/change_hero/change_hero_gavr.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/change_hero/change_hero_gavr.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/person/change_hero/change_hero_mara.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/person/change_hero/change_hero_mara.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/person.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solid_memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/solid_memory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tempo.py" beforeDir="false" afterPath="$PROJECT_DIR$/tempo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/img_crop.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/img_crop.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -401,7 +389,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764863950187</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="дебаг смены героев, изменена логика анализа получения и отображения информации о погонах">
+      <option name="closed" value="true" />
+      <created>1765021802177</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1765021802177</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -427,7 +423,8 @@
     <MESSAGE value="2 функции для активации меню" />
     <MESSAGE value="Добавил проверку наличия энергии для решения о необходимости идти на Пушкиинскую" />
     <MESSAGE value="в station_master.py и main.py добавил учёт белых крыс и отображение. В kv_and_raid.py complex_phrases.py сохранение, обработка и вывод loot. В touring.py логика оставшейся энергии. В main.py поменял вывод инфо серых на белых крыс. В heroes.py добавил счетчик белых крыс и list_loot." />
-    <option name="LAST_COMMIT_MESSAGE" value="в station_master.py и main.py добавил учёт белых крыс и отображение. В kv_and_raid.py complex_phrases.py сохранение, обработка и вывод loot. В touring.py логика оставшейся энергии. В main.py поменял вывод инфо серых на белых крыс. В heroes.py добавил счетчик белых крыс и list_loot." />
+    <MESSAGE value="дебаг смены героев, изменена логика анализа получения и отображения информации о погонах" />
+    <option name="LAST_COMMIT_MESSAGE" value="дебаг смены героев, изменена логика анализа получения и отображения информации о погонах" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -464,12 +461,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>183</line>
+          <line>186</line>
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>198</line>
+          <line>201</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -484,12 +481,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/complex_phrases.py</url>
-          <line>137</line>
+          <line>168</line>
           <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>150</line>
+          <line>153</line>
           <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -539,13 +536,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/solid_memory.py</url>
-          <line>118</line>
+          <line>149</line>
           <option name="timeStamp" value="146" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/solid_memory.py</url>
-          <line>77</line>
+          <line>106</line>
           <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/heroes.py</url>
+          <line>423</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/station_master.py</url>
+          <line>131</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/station_master.py</url>
+          <line>132</line>
+          <option name="timeStamp" value="153" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
