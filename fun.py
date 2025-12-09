@@ -261,12 +261,13 @@ def station_gifts():
 def push_close_all_(speed_mouse=0.75):
     my_log_file('fun.push_close_all_')
     pos_close = find_img.find_close()
+    print(f'fun.push_close_all_ {pos_close=}')
     while pos_close:
         close_popup_window(speed_mouse)
         push_close(speed_mouse)
         # sleep(1)
         pos_close = find_img.find_close()
-        # print("цикл close")
+        print(f"fun.push_close_all_  цикл close {pos_close=}")
 
 
 def close_popup_window(speed_mouse=0.75):
@@ -282,6 +283,7 @@ def close_popup_window(speed_mouse=0.75):
 def push_close(speed_mouse=0.75):
     my_log_file('fun.push_close')
     pos_close = find_img.find_close()
+    print(f'fun.push_close {pos_close=}')
     if pos_close:
         Mouse.move_to_click(pos_click=pos_close, move_time=speed_mouse, z_p_k=0.1)
         close_flag = True

@@ -472,7 +472,7 @@ start_prog()
 # блок командных кнопок
 ttk.Button(text="КВ", width=10, command=kv_and_raid.kv).place(x=115, y=b_d.line4)
 ttk.Button(text=" Start ", width=10, command=start_pm).place(x=190, y=b_d.line4)
-ttk.Button(text='Save', width=12, command=displaying_values).place(x=260, y=b_d.line4)
+ttk.Button(text='Save', width=12, command=displaying_values).place(x=265, y=b_d.line4)
 
 ttk.Button(text="set 24 h", width=8, command=set_timer24).place(x=b_d.timer_x, y=b_d.line4)
 ttk.Button(text="set 8 h ", width=8, command=set_timer8).place(x=b_d.timer_x, y=b_d.line5)
@@ -481,9 +481,9 @@ ttk.Button(text="set 1 h ", width=8, command=set_timer1).place(x=b_d.timer_x, y=
 ttk.Button(text="wild+kiki", width=9, command=wild_kiki).place(x=115, y=b_d.line5)
 ttk.Button(text="обход всех станций", width=18, command=collecting_gifts_at_stations).place(x=205, y=b_d.line5)
 
-ttk.Button(text='рапорт E', width=12, command=complex_phrases.display_info_energy_all).place(x=200, y=b_d.line6)
-ttk.Button(text='рапорт W', width=12, command=complex_phrases.display_report_wildman).place(x=285, y=b_d.line6)
 ttk.Button(text='рапорт W_R', width=12, command=complex_phrases.display_report_w_rat).place(x=115, y=b_d.line6)
+ttk.Button(text='рапорт W', width=12, command=complex_phrases.display_report_wildman).place(x=200, y=b_d.line6)
+ttk.Button(text='рапорт E', width=12, command=complex_phrases.display_info_energy_all).place(x=285, y=b_d.line6)
 
 ttk.Label(text='            куда пойдем ?', width=21, background='#858585', foreground='#050505').place(x=156,
                                                                                                         y=b_d.line7)

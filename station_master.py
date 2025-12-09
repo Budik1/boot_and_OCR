@@ -64,7 +64,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     :param tour: Для учета мобов в тоннелях используется True
     :return:
     """
-    # print(color_text.tc_green('в бой'))
+    print(color_text.tc_green('в бой'))
     fun.my_log_file('station_master.enemy_battle()')
     fun.my_log_file(' поиск battle_end, skip_battle, dog')
     # print('station_master.enemy_battle()')
@@ -230,7 +230,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
 
 
     fun.my_log_file("выход из 'enemy_battle")
-    # print(color_text.tc_green('из боя'))
+    print(color_text.tc_green(f'выход из "enemy_battle" {result}'))
     return result
 
 

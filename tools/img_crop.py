@@ -4,8 +4,8 @@ from PIL import Image
 
 # D:\bot in br\testOCR\img\kv\result_round\result_round_loot\2025-09-06 08-01-27.png
 def crop_shoulder_straps():
-    name_to_save = 'c:/python/bot_ocr1/img/kv/result_round/result_round_loot/p5.png'
-    name_open = 'C:/python/bot_ocr1/img/kv/result_round/p/2025-12-04 20-08-26.png'
+    name_to_save = 'C:/python/bot_ocr1/img/kv/result_round/loot/p2.png'
+    name_open = 'C:/python/bot_ocr1/img/kv/result_round/p/2025-12-03 19-56-28.png'
     img = Image.open(name_open)
     # img.show()
     #  box=(left, upper, right, lower)

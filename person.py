@@ -209,23 +209,23 @@ def change_acc(*, change_hero_name):
     change_hero = fun.locCenterImg(f'img/person/change_hero/change_hero_{change_hero_name}.png')
     fun.mouse_move_to_click(pos_click=change_hero, move_time=move_time, z_p_k=0.2)
     # проверка начала процесса смены
-    print('ожидание начала процесса смены')
+    # print('ожидание начала процесса смены')
     scrin_change = fun.selection_hero(show_name=False)
-    print(f'{scrin_change=}')
-    print(f'{bool(scrin_change)=}')
+    # print(f'{scrin_change=}')
+    # print(f'{bool(scrin_change)=}')
     while scrin_change:
         scrin_change = fun.selection_hero(show_name=False)
-        print(f'{bool(scrin_change)=}')
+        # print(f'{bool(scrin_change)=}')
 
-    print(' начало процесса смены')
+    # print(' начало процесса смены')
     #
     pos = find_img.find_info()
-    print(f'{pos=}')
+    # print(f'{pos=}')
     fun.Mouse.move(pos=pos, speed=0.05)
     while not pos:
         pos = find_img.find_info()
         continue_heroes = fun.locCenterImg(f'img/overall/event_entry/continue_{change_hero_name}.png')
-        print('Поиск "продолжить как.."')
+        # print('Поиск "продолжить как.."')
         if continue_heroes:
             fun.mouse_move_to_click(pos_click=continue_heroes, move_time=move_time, z_p_k=0.2)
     pos_info = find_img.find_info()
