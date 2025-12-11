@@ -4,7 +4,6 @@ import find_img
 import fun
 from time import sleep
 
-import heroes
 from heroes import Hero, Activ
 
 # duration=d_drag и duration=d с предметом и в свободном состоянии
@@ -125,7 +124,7 @@ def change_gloves():
 def change_dress():
     inventory = fun.locCenterImg(item_person['инвентарь'], confidence=0.9)
     # цикл в ожидании появления инвентаря
-    fun.mouse_move_to_click(pos_click=inventory, z_p_k=0.3)
+    fun.Mouse.move_to_click(pos_click=inventory, z_p_k=0.3)
     print('готов к переодеванию')
     change_jacket_raid()
     change_trousers()
@@ -136,13 +135,13 @@ def change_dress():
 def pereodevanie():
     hero = fun.locCenterImg(item_person['фото героя'], confidence=0.9)
     if hero is not None:
-        fun.mouse_move_to_click(pos_click=hero, z_p_k=0.3)
+        fun.Mouse.move_to_click(pos_click=hero, z_p_k=0.3)
         sleep(0.5)
         change_dress()
     else:
         change_dress()
     exit_ = fun.locCenterImg(item_person['выход'], confidence=0.9)
-    fun.mouse_move_to_click(pos_click=exit_, z_p_k=0.3)
+    fun.Mouse.move_to_click(pos_click=exit_, z_p_k=0.3)
 
 
 def is_activate_win(*, show=False):
@@ -207,7 +206,7 @@ def change_acc(*, change_hero_name):
     activated_change_menu()
     # нажать нужного героя
     change_hero = fun.locCenterImg(f'img/person/change_hero/change_hero_{change_hero_name}.png')
-    fun.mouse_move_to_click(pos_click=change_hero, move_time=move_time, z_p_k=0.2)
+    fun.Mouse.move_to_click(pos_click=change_hero, move_time=move_time, z_p_k=0.2)
     # проверка начала процесса смены
     # print('ожидание начала процесса смены')
     scrin_change = fun.selection_hero(show_name=False)
@@ -227,7 +226,7 @@ def change_acc(*, change_hero_name):
         continue_heroes = fun.locCenterImg(f'img/overall/event_entry/continue_{change_hero_name}.png')
         # print('Поиск "продолжить как.."')
         if continue_heroes:
-            fun.mouse_move_to_click(pos_click=continue_heroes, move_time=move_time, z_p_k=0.2)
+            fun.Mouse.move_to_click(pos_click=continue_heroes, move_time=move_time, z_p_k=0.2)
     pos_info = find_img.find_info()
     while not pos_info:
         pos_info = find_img.find_info()

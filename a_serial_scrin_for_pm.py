@@ -5,7 +5,7 @@ import sounds
 import person
 # import create_and_analiz_img
 
-import a_servis
+# import a_servis
 
 
 # Создание картинок значения энергии.
@@ -249,22 +249,22 @@ def mob_id(name):
 
     # 1 серая
     if name_gray_rat:
-        fun.mouse_move(pos=name_gray_rat, speed=0.5)
+        fun.Mouse.move(pos=name_gray_rat, speed=0.5)
         print('серая крыса поймана')
         return
     # 1 белая
     elif name_white_rat:
-        fun.mouse_move(pos=name_white_rat, speed=0.5)
+        fun.Mouse.move(pos=name_white_rat, speed=0.5)
         print('белая крыса поймана')
         return
     # 1 черная
     elif name_black_rat:
-        fun.mouse_move(pos=name_black_rat, speed=0.5)
+        fun.Mouse.move(pos=name_black_rat, speed=0.5)
         print('черная крыса поймана')
         return
     # 1 песчаная
     elif name_sand_rat:
-        fun.mouse_move(pos=name_sand_rat, speed=0.5)
+        fun.Mouse.move(pos=name_sand_rat, speed=0.5)
         print('песчаная крыса поймана')
         return
     # 2 шпион
@@ -366,7 +366,7 @@ def name_id_station():
         if q == 'y':
             fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
             pos = fun.locCenterImg(f'{name_create_img}')
-            fun.mouse_move(pos=pos)
+            fun.Mouse.move(pos=pos)
             print('сделано')
         else:
             pass

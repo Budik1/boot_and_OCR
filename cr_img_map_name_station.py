@@ -91,14 +91,14 @@ def fashion():
         x, y = pos_start
         x += map_dict[key][0]
         y += map_dict[key][1]
-        # fun.mouse_move(pos=(x, y), speed=1, show=show_move)
+        # fun.Mouse.move(pos=(x, y), speed=1, show=show_move)
         # # найдем нижний угол
         x_demo, y_demo = x, y
         change_x = map_dict[key][2]
         change_y = map_dict[key][3]
         x_demo += change_x
         y_demo += change_y
-        # fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
+        # fun.Mouse.move(pos=(x_demo, y_demo), show=show_move)
         fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
         print(f'{name_create_img} сделано')
     else:
@@ -118,7 +118,7 @@ def fashion():
         else:
             pass
     pos = fun.locCenterImg(f'{name_create_img}')
-    # fun.mouse_move(pos=pos)
+    # fun.Mouse.move(pos=pos)
     sounds.sound_vic()
     # print(f'{name_create_img} сделано')
     # check_img(name=name_create_img)
@@ -146,7 +146,7 @@ def entry_img():
         'img/tonelli/attack.png': (-116, 425, 106, 32),
     }
     pos_start = fun.locCenterImg('img/tonelli/post.png')
-    # fun.mouse_move(pos=pos_start, speed=1)
+    # fun.Mouse.move(pos=pos_start, speed=1)
 
     # # собственно создание снимка
     if name_create_img == 'img/test/token.png':
@@ -156,14 +156,14 @@ def entry_img():
         x, y = pos_start
         x += map_dict[key][0]
         y += map_dict[key][1]
-        # fun.mouse_move(pos=(x, y), speed=1)
+        # fun.Mouse.move(pos=(x, y), speed=1)
         # # найдем нижний угол
         x_demo, y_demo = x, y
         change_x = map_dict[key][2]
         change_y = map_dict[key][3]
         x_demo += change_x
         y_demo += change_y
-        # fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
+        # fun.Mouse.move(pos=(x_demo, y_demo), show=show_move)
         fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
         print(f'{name_create_img} сделано')
     else:

@@ -27,9 +27,18 @@ def foto_danger():
 
 
 def foto_result_round(*, pos_v, pos_n, path=b_p.result_round, sound=False):
+    """
+
+    :param pos_v:
+    :param pos_n:
+    :param path: 'img/ kv/ result_round/ result_all_round/'
+    :param sound:
+    :return:
+    """
     # сужение
     # коррекция верхнего угла
-    'img/ kv/ result_round/ result_all_round/'
+
+    #
     pos_x, pos_y = pos_v
     pos_x += 180
     pos_y += 45
@@ -47,13 +56,13 @@ def foto_result_round(*, pos_v, pos_n, path=b_p.result_round, sound=False):
 
 def foto_loot_kv(*, point_v, point_n):
     """
-    
+
     :param point_v: 
     :param point_n: 
     :return: 
     """
-    path = b_p.loot_round
-    'img/ kv/ result_round/ result_round_loot/'
+    path = b_p.loot_round # 'img/ kv/ result_round/ result_round_loot/'
+    #
     kor_x_v = 30 + 90 - 35
     kor_y_v = 5 + 127 - 17
     # коррекция верхнего угла
@@ -67,8 +76,6 @@ def foto_loot_kv(*, point_v, point_n):
     #
     name_foto = fun.date_and_time_in_name_file() + ".png"
     fun.foto((path + name_foto), (pos_x, pos_y, x_r, y_r))
-    # if sound:
-    #     sounds.sound_victory()
     return
 
 
@@ -92,14 +99,14 @@ def selection_hero_in_kv():
     if not hero:
         exit_kv = find.find_exit_kv()
         if exit_kv:
-            fun.mouse_move_to_click(pos_click=exit_kv)
+            fun.Mouse.move_to_click(pos_click=exit_kv)
         hero = fun.selection_hero()
     klan = fun.find_link_klan()
     if klan:
         x, y = klan
         x += 100
         pos = x, y
-        fun.mouse_move_to_click(pos_click=pos)
+        fun.Mouse.move_to_click(pos_click=pos)
     return hero
 
 
@@ -145,7 +152,7 @@ def battle(target_call):
     while not kv_close:
         it_kv += 1
         if not danger and kv_skip_battle and it_kv >= 10:
-            fun.mouse_move_to_click(pos_click=kv_skip_battle, z_p_k=0.5)
+            fun.Mouse.move_to_click(pos_click=kv_skip_battle, z_p_k=0.5)
         sleep(1)
         kv_skip_battle = find.find_kv_skip_battle()
         danger = find.find_kv_danger()
@@ -192,7 +199,7 @@ def battle(target_call):
         rapport_battle = f'{target_call} {dang}{result}{mes}'
         print(rapport_battle)
         solid_memory.save_kv_config(info=False)
-    fun.mouse_move_to_click(pos_click=kv_close, z_p_k=0.3)
+    fun.Mouse.move_to_click(pos_click=kv_close, z_p_k=0.3)
 
 
 def kv():
@@ -208,7 +215,7 @@ def kv():
     kv_reload = find.find_kv_reload()
     # fun.my_print_to_file(f'kv_reload {kv_reload}')
     fun.my_log_file("нажать 'обновить'")
-    fun.mouse_move_to_click(pos_click=kv_reload, z_p_k=1)
+    fun.Mouse.move_to_click(pos_click=kv_reload, z_p_k=1)
 
     kv_wait_attack = find.find_kv_attack_for_money()
     attack = find.find_kv_attak()
@@ -222,13 +229,13 @@ def kv():
             if it_w_a == 1:
                 # print("ждем возможность атаковать")
                 kv_reload = find.find_kv_reload()
-                fun.mouse_move_to_click(pos_click=kv_reload, z_p_k=1)
+                fun.Mouse.move_to_click(pos_click=kv_reload, z_p_k=1)
         if attack:
             heroes.Hero.set_last_attack(heroes.Activ.hero_activ, value=time.time())
             if klan_war:
                 it_w_a = 0
                 heroes.Hero.up_qty_duel_in_kv_all(heroes.Activ.hero_activ)
-                fun.mouse_move_to_click(pos_click=attack, move_time=0.01, z_p_k=0)
+                fun.Mouse.move_to_click(pos_click=attack, move_time=0.01, z_p_k=0)
                 qty_duel = heroes.Hero.get_qty_duel_in_kv_all(heroes.Activ.hero_activ)
                 target_attack = f'дуэль {qty_duel}'
                 if qty_duel == 1:
@@ -247,7 +254,7 @@ def kv():
             else:
                 it_w_a = 0
                 target_attack = 'Raid'
-                fun.mouse_move_to_click(pos_click=attack, move_time=0.01, z_p_k=0)
+                fun.Mouse.move_to_click(pos_click=attack, move_time=0.01, z_p_k=0)
                 battle(target_call=target_attack)
         kv_wait_attack = find.find_kv_attack_for_money()
         attack = find.find_kv_attak()
@@ -256,7 +263,7 @@ def kv():
 
 def loot():
     backpack = fun.locCenterImg('img/kv/backpack.png', confidence=0.9)
-    fun.mouse_move(pos=backpack, speed=2)
+    fun.Mouse.move(pos=backpack, speed=2)
 
     x, y = backpack
     x -= 220
@@ -264,13 +271,13 @@ def loot():
     y -= 145
     y_s = y
     pos = x, y
-    fun.mouse_move(pos=pos, speed=2)
+    fun.Mouse.move(pos=pos, speed=2)
     x += 755
     x_r = x
     y += 615
     y_r = y
     pos = x, y
-    fun.mouse_move(pos=pos, speed=2)
+    fun.Mouse.move(pos=pos, speed=2)
 
     name_foto = fun.date_and_time_in_name_file() + ".png"
     fun.foto(('img/Cr/' + name_foto), (x_s, y_s, x_r, y_r))

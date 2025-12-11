@@ -19,14 +19,14 @@ def start_p_m():
                 time.sleep(2)
                 s_p_close = fun.locCenterImg('img/overall/s_p_close.png', 0.96)
                 sz += 1
-            fun.mouse_left_click(pos=s_p_close)
+            fun.Mouse.left_click(pos=s_p_close)
 
     def authorization():  # авторизация при необходимости
         time.sleep(2)
         pos_authorization = fun.locCenterImg('img/overall/authorization_button.png', 0.8)
         if pos_authorization:
             pyautogui.moveTo(pos_authorization, duration=1)
-            fun.mouse_left_click(pos=pos_authorization)
+            fun.Mouse.left_click(pos=pos_authorization)
             time.sleep(2)
 
     def click_my_game():
@@ -39,11 +39,11 @@ def start_p_m():
             print(pos_my_game, pos_my_game1, ' в ожидании появления кнопки "my_game"')
         if pos_my_game:
             pyautogui.moveTo(pos_my_game, duration=1)
-            fun.mouse_left_click(pos=pos_my_game)
+            fun.Mouse.left_click(pos=pos_my_game)
             # print('pos_my_game ' + str(pos_my_game))
         elif pos_my_game1:
             pyautogui.moveTo(pos_my_game1, duration=1)
-            fun.mouse_left_click(pos=pos_my_game1)
+            fun.Mouse.left_click(pos=pos_my_game1)
 
     def click_icon_game():
         p_i = 0
@@ -53,7 +53,7 @@ def start_p_m():
             p_i += 1
             time.sleep(1)
             pos_icon_game = fun.locCenterImg('img/overall/icon_game.png', 0.8)
-        fun.mouse_left_click(pos=pos_icon_game)
+        fun.Mouse.left_click(pos=pos_icon_game)
         time.sleep(1)
 
     def geography():

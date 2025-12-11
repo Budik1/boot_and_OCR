@@ -4,8 +4,8 @@ import pickle
 # import fun
 # import complex_phrases
 import heroes
-import heroes as her
-from heroes import Activ
+# import heroes as her
+# from heroes import Activ
 from color_text import tc_green, tc_cyan, tc_blue, tc_red
 
 
@@ -38,7 +38,7 @@ def save_all_state_config(info=True):
         rapport = "{file_name} {text}"
     finally:
         if rapport != '':
-            print(rapport)
+            print(f'{rapport=}')
     return
 
 

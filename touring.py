@@ -2,7 +2,6 @@ from time import sleep, time
 from typing import Any
 
 from pyscreeze import Point
-from sympy.physics.units import speed
 
 import fun
 import heroes
@@ -50,18 +49,20 @@ def open_map():
     """Из окна станции открывает карту. На Тургеневской выход смещен"""
     fun.my_log_file('touring.open_map')
     location_station = fun.loc_now()
+    fun.my_log_file(f'выход из {location_station[0]}')
     # print(color_text.tc_cyan(f'выход из {location_station[0]}'))
     # получение координат
-    pos_run_out = [0, 0]
     if location_station[0] == 'ст. Тургеневская':
         pos_or1 = fun.find_link_klan()
-        pos_run_out[0] = pos_or1[0] + 180
-        pos_run_out[1] = pos_or1[1] + 205
+        x = pos_or1[0] + 180
+        y = pos_or1[1] + 205
+        pos_run_out =x, y
         fun.Mouse.move(pos=pos_run_out, speed=0.1)
     else:
         pos_or1 = find_img.find_info()
-        pos_run_out[0] = pos_or1[0] + 300
-        pos_run_out[1] = pos_or1[1] + 180
+        x = pos_or1[0] + 300
+        y = pos_or1[1] + 180
+        pos_run_out =x, y
         fun.Mouse.move(pos=pos_run_out, speed=0.1)
     # открыть карту
     fun.Mouse.left_click(pos=pos_run_out)
@@ -99,14 +100,30 @@ def events_tunnel(name_st, st_id_file):
             fun.Mouse.move(pos=post, speed=0.2)
             attack = find_img.find_tonelli_attack()
             entry = fun.locCenterImg(name_img='img/tonelli/entry_station.png', confidence=0.8)
-            if entry:
+            # if entry:
+            #     fun.my_log_file(f'entry = {entry}')
+            #     fun.Mouse.move_to_click(pos_click=entry, move_time=0.2, z_p_k=0.1)
+            # elif attack:
+            #     dog_activ = False
+            #     fun.my_log_file(f'attack = {attack}')
+            #     fun.Mouse.move_to_click(pos_click=attack, move_time=0.2, z_p_k=0.1)        elif attack:
+
+            while entry:
+                entry = fun.locCenterImg(name_img='img/tonelli/entry_station.png', confidence=0.8)
+
                 fun.my_log_file(f'entry = {entry}')
                 fun.Mouse.move_to_click(pos_click=entry, move_time=0.2, z_p_k=0.1)
                 # sleep(1)
-            elif attack:
+                fun.Mouse.move(pos=(entry[0] - 60, entry[1]), speed=0.5, show=True)
+                entry = fun.locCenterImg(name_img='img/tonelli/entry_station.png', confidence=0.8)
+
+            while attack:
                 dog_activ = False
                 fun.my_log_file(f'attack = {attack}')
                 fun.Mouse.move_to_click(pos_click=attack, move_time=0.2, z_p_k=0.1)
+                fun.Mouse.move(pos=(attack[0] - 60, attack[1]), speed=0.5, show=True)
+                attack = find_img.find_tonelli_attack()
+
                 # sleep(1)
         id_st = fun.locCenterImg(name_img=st_id_file)  # , confidence=0.85
         fun.my_log_file(f'id_st = {id_st}')

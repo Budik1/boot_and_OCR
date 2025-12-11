@@ -65,8 +65,9 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     :return:
     """
     print(color_text.tc_green('в бой'))
+    fun.my_log_file(f'')
     fun.my_log_file('station_master.enemy_battle()')
-    fun.my_log_file(' поиск battle_end, skip_battle, dog')
+    # fun.my_log_file(' поиск battle_end, skip_battle, dog')
     # print('station_master.enemy_battle()')
 
     heroes.nam += 1
@@ -87,55 +88,61 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     name7_raptor = fun.locCenterImg(name_img='img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
 
     duration_fight = 0
-    dog_count = True
+    dog_flag = True
     skip_battle_count = True
     mob_identified = None
     count_mob_identified = 0
     cycle = True
     result = None
     while not battle_end:
-        # print(f'{battle_end=}')
         if add_up:
             while not mob_identified and count_mob_identified <= 3:
                 count_mob_identified += 1
                 if name1_grey_rat and cycle:
                     cycle = False
                     Hero.app_rat(Activ.hero_activ)
+
                     print(myCt.tc_magenta(f'{Hero.get_qty_grey_rat(Activ.hero_activ)} серая крыса'))
                     mob_identified = 'grey_rat'
                 if name1_black_rat and cycle:
                     cycle = False
                     mob_identified = 'black_rat'
+
                     print(myCt.tc_magenta('черная крыса'))
                 if name1_white_rat and cycle:
                     cycle = False
                     # увеличение счетчика
                     Hero.app_white_rat(Activ.hero_activ)
                     mob_identified = 'white_rat'
+
                     print(myCt.tc_magenta(f'{Hero.get_qty_white_rat(Activ.hero_activ)} белая крыса'))
                     print(complex_phrases.report_white_rat(hero=Activ.hero_activ))
                 if name1_sand_rat and cycle:
                     cycle = False
                     mob_identified = 'sand_rat'
+
                     print(myCt.tc_magenta('песчаная крыса'))
                 if name2_spy and cycle:
                     cycle = False
                     mob_identified = 'spy'
+
                     print(myCt.tc_magenta('шпион пойман'))
                 if name3_smuggler and cycle:
                     cycle = False
                     mob_identified = 'smuggler'
-                    print(myCt.tc_magenta('контрабандист пойман'))
 
+                    print(myCt.tc_magenta('контрабандист пойман'))
                 if name4_arachne and cycle:
                     cycle = False
                     if tour:
                         Hero.app_arachne(Activ.hero_activ)
+
                     print(myCt.tc_magenta(f'{Hero.get_qty_arachne(Activ.hero_activ)} арахна'))
                     mob_identified = 'arachne'
 
                 if name5_wildman and cycle:
                     cycle = False
+
                     print(f'{Hero.get_report_wildman_now(Activ.hero_activ)}')
                     print(complex_phrases.report_wildman(hero=Activ.hero_activ))
                     mob_identified = "wildman"
@@ -144,6 +151,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     cycle = False
                     if tour:
                         Hero.app_kiki(Activ.hero_activ)
+
                     print(myCt.tc_magenta(f'{Hero.get_qty_kiki(Activ.hero_activ)} кикимора'))
                     mob_identified = 'kikimora'
 
@@ -151,6 +159,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     cycle = False
                     if tour:
                         Hero.app_raptor(Activ.hero_activ)
+
                     print(myCt.tc_magenta(f'{Hero.get_qty_raptor(Activ.hero_activ)} ящер'))
                     mob_identified = 'raptor'
                 # нужен ли тут этот блок?
@@ -168,24 +177,28 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                 name7_raptor = fun.locCenterImg(name_img='img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
 
         if dog_activ:
-            if dog and dog_count:
+            if dog and dog_flag:
                 # нажать "на собаку"
-                dog_count = False
-                fun.my_log_file(f'{dog=}')
-                # print(f'{dog=}')
-                fun.my_log_file("нажал на собаку")
-                # print('"нажал на собаку"')
-                fun.mouse_move_to_click(pos_click=dog, move_time=0.1, z_p_k=0.1)
+                dog_flag = False
+                dog = fun.locCenterImg(name_img='img/dog_2.png', confidence=par_conf)
+                fun.Mouse.move_to_click(pos_click=dog, move_time=0.1, z_p_k=0.1,
+                                        message=True, message_l='нажал на собаку')
         if skip_battle and skip_battle_count:
-            # print(f'{skip_battle=}, {skip_battle_count=}, {duration_fight=}')
             duration_fight += 1
         if skip_battle and skip_battle_count and duration_fight == 4:  # нажать "пропустить бой"
             skip_battle_count = False
-            fun.my_log_file(f'{skip_battle=}')
             # print('нажать "пропустить бой"')
-            fun.mouse_move_to_click(pos_click=skip_battle, move_time=0.4, z_p_k=0.5)
+            skip_battle = fun.wait_static_pos(name_img='img/skip_battle.png', confidence=par_conf,
+                                              message=True ,message_l='пропустить бой')
+
+            fun.my_log_file(f'{skip_battle=}')
+            fun.Mouse.move_to_click(pos_click=skip_battle, move_time=0.4, z_p_k=0.5,
+                                    message=True, message_l='нажал пропустить бой')
+
         sleep(1 * prolong_)  # для задержки нажатия "пропустить бой"
         fun.my_log_file('ожидание battle_end, close, dog, skip_battle')
+        fun.my_log_file(f'')
+
         battle_end = find_img.find_b_battle_end(confidence_param=par_conf)
         if battle_end:
             fun.Mouse.move(pos=battle_end, speed=1)
@@ -217,34 +230,32 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
             # sleep(0)
 
     skip_battle1_end_ver = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
-    # print(f'{skip_battle1_end_ver=}')
     fun.my_log_file(f'{skip_battle1_end_ver=}')
     while skip_battle1_end_ver:
         fun.push_close()
-        # sleep(0.2)
         skip_battle1_end_ver = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
         fun.my_log_file(f'{skip_battle1_end_ver=}')
 
     if not arena:
         solid_memory.save_all_state_config(info=False)
 
-
     fun.my_log_file("выход из 'enemy_battle")
     print(color_text.tc_green(f'выход из "enemy_battle" {result}'))
     return result
 
 
-def press_en(*, task_number, pos, value_energy): # , report_en=True
+def press_en(*, task_number, pos, value_energy):  # , report_en=True
     """
     Args:
         task_number (int): номер строки заданий
         pos ( list[int]): регион его расположения
         value_energy (int): количество энергии нужной для задания
-        :param task_number: 
+        :param task_number:
         :param pos: 
         :param value_energy: 
         # :param report_en:
     """
+    fun.my_log_file(f'')
     fun.my_log_file("station_master.press_en()")
     global energy_availability, conf_
     x = pos[0] - 100
@@ -252,7 +263,7 @@ def press_en(*, task_number, pos, value_energy): # , report_en=True
     pos_clik = x, y
     fun.Mouse.move(pos=pos_clik)
     # print('тут должен быть клик')                                        # для отладки раскомментировать
-    fun.mouse_move_to_click(pos_click=pos_clik, move_time=0.4, z_p_k=1.5)  # для отладки закомментировать
+    fun.Mouse.move_to_click(pos_click=pos_clik, move_time=0.4, z_p_k=1.5, message=True, message_l='нажал задание')  # для отладки закомментировать
     sleep(0.5)
     low_energy = find_img.find_low_energy_label()
     if not low_energy:
@@ -273,7 +284,7 @@ def press_en(*, task_number, pos, value_energy): # , report_en=True
         # print(f'{Activ.station_activ=}')
 
         ## Выполняю {3} задание,{ conf_=0.94}. Сейчас {3}, сегодня 20, всего 120
-        complex_phrases.display_report_energy_now( vers_in_print=vers_in_print,
+        complex_phrases.display_report_energy_now(vers_in_print=vers_in_print,
                                                   value_energy=value_energy)
         solid_memory.save_all_state_config(info=False)
         # Жду появления кнопки "пропустить бой"
@@ -301,7 +312,7 @@ def press_en(*, task_number, pos, value_energy): # , report_en=True
             close = find_img.find_close()
             if close:
                 # print(f'station_master.press_en {close=}')
-                fun.mouse_move_to_click(pos_click=close, z_p_k=0.5)
+                fun.Mouse.move_to_click(pos_click=close, z_p_k=0.5, message=True, message_l='нажал закрыть')
 
 
 def task_analysis(img1, img2, region):
@@ -330,10 +341,12 @@ def task_analysis(img1, img2, region):
         return None, None
 
 
-def move(pos):
+def move(pos , message=True, message_l=None):
     fun.my_log_file('station_master.move()')
+    if message:
+        print(f'station_master.move() {pos=}')
     if pos:
-        fun.mouse_move(pos=pos, speed=0.5)
+        fun.Mouse.move(pos=pos, speed=0.5)
         sleep(1)
 
 
@@ -376,17 +389,17 @@ def option_task_money(report_en=True):
 
         variant1, price_task1 = task_analysis(F'{path}{task[0]}', F'{path}{task[1]}', region_1)
         # print(f'{variant1=}, {price_task1=}')
-        move(variant1)
+        fun.Mouse.move(pos=variant1)
         sleep(0.1)
 
         variant2, price_task2 = task_analysis(F'{path}{task[2]}', F'{path}{task[3]}', region_2)
         # print(f'{variant2}, {price_task2=}')
-        move(variant2)
+        fun.Mouse.move(pos=variant2)
         sleep(0.1)
 
         variant3, price_task3 = task_analysis(F'{path}{task[4]}', F'{path}{task[5]}', region_3)
         # print(f'{variant3}, {price_task3=}')
-        move(variant3)
+        fun.Mouse.move(pos=variant3)
         sleep(0.1)
 
         if variant1:
@@ -417,7 +430,7 @@ def option_task_money(report_en=True):
     energy_availability = 1
     close = find_img.find_close()
     while close:
-        fun.mouse_move_to_click(pos_click=close, z_p_k=0.3)
+        fun.Mouse.move_to_click(pos_click=close, z_p_k=0.3)
         close = find_img.find_close()
 
 
@@ -446,5 +459,5 @@ def task_pos_item(task_num):
     # print(f'station_master.task_pos_item {close=}')
     while close:
         print(f'station_master.task_pos_item {close=}')
-        fun.mouse_move_to_click(pos_click=close, z_p_k=0.3)
+        fun.Mouse.move_to_click(pos_click=close, z_p_k=0.3)
         close = fun.locCenterImg(name_img='img/overall/close.png', confidence=0.9)
