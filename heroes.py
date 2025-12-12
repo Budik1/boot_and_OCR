@@ -151,6 +151,7 @@ class Hero:
         else:
             print('Время старта КВ обновилось')
             self.time_start_kv = time_now
+            self.list_loot = []
 
             self.qty_duel_in_kv_all = 0
             self.qty_duel_in_kv_victory = 0

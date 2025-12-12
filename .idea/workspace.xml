@@ -4,52 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="в person.py убрал логирование в терминал. В main.py переставил кнопки. В fun.py и station_master.py добавил логирование в терминал">
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="11.12.25">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a_serial_scrin_for_pm.py" beforeDir="false" afterPath="$PROJECT_DIR$/a_serial_scrin_for_pm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/complex_phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/complex_phrases.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/config.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cr_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cr_img_dva.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img_dva.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cr_img_map_name_station.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img_map_name_station.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_arena.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fun_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun_events.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gifts.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 19-39-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 19-44-58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 19-50-00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 19-54-57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 19-59-56.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 20-05-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 20-10-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 20-15-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 20-20-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 20-25-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 20-30-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 20-35-51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 20-40-44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 20-47-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 20-52-00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 20-57-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 21-02-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 21-07-09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 21-12-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 21-17-15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 21-27-37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 21-32-39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/kv/result_round/result_all_round/2025-11-29 21-37-42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mess.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/person.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/revision_tents.py" beforeDir="false" afterPath="$PROJECT_DIR$/revision_tents.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solid_memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/solid_memory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kv_config2.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config2.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks_analiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks_analiz.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tempo.py" beforeDir="false" afterPath="$PROJECT_DIR$/tempo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/картинки_маяки_для_браузера.py" beforeDir="false" afterPath="$PROJECT_DIR$/картинки_маяки_для_браузера.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/создание скриншотов.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +162,7 @@
       <command value="zadaniya" />
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.tempo">
     <configuration name="a_serial_scrin_for_pm (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
@@ -452,7 +419,23 @@
       <option name="project" value="LOCAL" />
       <updated>1765292961007</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="11.12.25">
+      <option name="closed" value="true" />
+      <created>1765460802157</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1765460802157</updated>
+    </task>
+    <task id="LOCAL-00017" summary="11.12.25">
+      <option name="closed" value="true" />
+      <created>1765460867421</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1765460867421</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -481,7 +464,8 @@
     <MESSAGE value="дебаг смены героев, изменена логика анализа получения и отображения информации о погонах" />
     <MESSAGE value="Добавлена информация о белых крысах" />
     <MESSAGE value="в person.py убрал логирование в терминал. В main.py переставил кнопки. В fun.py и station_master.py добавил логирование в терминал" />
-    <option name="LAST_COMMIT_MESSAGE" value="в person.py убрал логирование в терминал. В main.py переставил кнопки. В fun.py и station_master.py добавил логирование в терминал" />
+    <MESSAGE value="11.12.25" />
+    <option name="LAST_COMMIT_MESSAGE" value="11.12.25" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -508,27 +492,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>97</line>
+          <line>99</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>198</line>
+          <line>200</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>197</line>
+          <line>196</line>
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>208</line>
+          <line>221</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>298</line>
+          <line>297</line>
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -538,12 +522,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>160</line>
+          <line>172</line>
           <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>368</line>
+          <line>367</line>
           <option name="timeStamp" value="122" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -553,7 +537,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>47</line>
+          <line>48</line>
           <option name="timeStamp" value="135" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -583,7 +567,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fun.py</url>
-          <line>566</line>
+          <line>536</line>
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -598,7 +582,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/heroes.py</url>
-          <line>423</line>
+          <line>424</line>
           <option name="timeStamp" value="149" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -613,7 +597,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>228</line>
+          <line>227</line>
           <option name="timeStamp" value="155" />
         </line-breakpoint>
       </breakpoints>

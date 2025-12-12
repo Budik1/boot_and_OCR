@@ -17,6 +17,7 @@ def event_gifts():
     """
     Поиск подарков на станции. Возвращает его позицию
     """
+    fun.my_log_file(f'')
     fun.my_log_file('touring.event_gifts')
     sleep(1)
     pos_gift = fun.locCenterImg(name_img='img/tonelli/gift.png', confidence=0.75)
@@ -26,8 +27,8 @@ def event_gifts():
     fun.my_log_file(f'pos_gift = {pos_gift}')
     if pos_gift:
         # x, y = pos_gift
-        fun.Mouse.move(pos=pos_gift, speed=0.5)
-        fun.Mouse.left_click(pos=pos_gift)
+        fun.Mouse.move(pos=pos_gift, speed=0.5, message=True, message_l='подарок найден')
+        fun.Mouse.left_click(pos=pos_gift, message=True, message_l=f'клик по подарку {pos_gift=}')
         sleep(1 * 2)
         close = fun.locCenterImg(name_img='img/overall/close.png', confidence=0.9)
         # если тормозит отрисовка, ожидает появление кнопки "закрыть"
@@ -47,6 +48,7 @@ def event_gifts():
 
 def open_map():
     """Из окна станции открывает карту. На Тургеневской выход смещен"""
+    fun.my_log_file(f'')
     fun.my_log_file('touring.open_map')
     location_station = fun.loc_now()
     fun.my_log_file(f'выход из {location_station[0]}')

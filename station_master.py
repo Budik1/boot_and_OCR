@@ -188,8 +188,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
         if skip_battle and skip_battle_count and duration_fight == 4:  # нажать "пропустить бой"
             skip_battle_count = False
             # print('нажать "пропустить бой"')
-            skip_battle = fun.wait_static_pos(name_img='img/skip_battle.png', confidence=par_conf,
-                                              message=True ,message_l='пропустить бой')
+            skip_battle = fun.locCenterImg(name_img='img/skip_battle.png', confidence=par_conf,)
 
             fun.my_log_file(f'{skip_battle=}')
             fun.Mouse.move_to_click(pos_click=skip_battle, move_time=0.4, z_p_k=0.5,

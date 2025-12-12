@@ -65,36 +65,6 @@ def mouse_left_click(*, pos, message=False):
     pyautogui.click(pos)
 
 
-# def mouse_move_to_click(*, pos_click: tuple, move_time=0.75, z_p_k=0.05):
-#     """
-#     Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
-#     :param pos_click: Point
-#     :param move_time: время перемещения указателя мыши в секундах
-#     :param z_p_k: задержка перед кликом(float)
-#     :return: None
-#     """
-#     my_log_file('fun.mouse_move_to_click')
-#     # print('mouse_move_to_click', pos_click)
-#     sleep(0.3)
-#     mouse_move(pos=pos_click, speed=move_time)
-#     # print('должен быть клик')
-#     sleep(z_p_k)
-#     mouse_left_click(pos=pos_click)
-#     sleep(0.18)
-#
-#
-# def mouse_move(*, pos: tuple, speed=0.2, show=True):
-#     """
-#
-#     :param pos:
-#     :param speed:
-#     :param show:
-#     :return:
-#     """
-#     if show:
-#         pyautogui.moveTo(pos, duration=speed)
-
-
 class Mouse:
 
     @staticmethod
@@ -179,7 +149,8 @@ class Mouse:
         return
 
     @staticmethod
-    def move_to_click(*, pos_click: tuple, move_time: float = 0.75, z_p_k: float = 0.05, message=False, message_l=None) -> None:
+    def move_to_click(*, pos_click: tuple, move_time: float = 0.75, z_p_k: float = 0.05, message=False,
+                      message_l=None) -> None:
         """
         Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
 
@@ -223,7 +194,6 @@ def my_log_file(text):
 
 
 def date_utc_now():
-
     now = datetime.datetime.now(datetime.timezone.utc)
     date_utc = (now.strftime('%Y-%m-%d'))  # год-месяц-день
     return date_utc
@@ -952,6 +922,7 @@ def loc_now():
             # print(list_location)
     return list_location
 
+
 def dif_days(*, date_old, date_today=date_utc_now()):
     list_date_old = date_old.split(sep='-')
     list_date_today = date_today.split(sep='-')
@@ -959,7 +930,8 @@ def dif_days(*, date_old, date_today=date_utc_now()):
     par_month = 1
     par_day = 2
     d_old = datetime.date(int(list_date_old[par_year]), int(list_date_old[par_month]), int(list_date_old[par_day]))
-    d_today = datetime.date(int(list_date_today[par_year]), int(list_date_today[par_month]), int(list_date_today[par_day]))
+    d_today = datetime.date(int(list_date_today[par_year]), int(list_date_today[par_month]),
+                            int(list_date_today[par_day]))
     dif = d_today - d_old
     # print('fun.dif_days ', dif.days)
     return dif.days

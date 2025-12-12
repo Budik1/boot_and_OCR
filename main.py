@@ -406,9 +406,7 @@ def set_timer1():
     solid_memory.save_all_state_config(info=False)
 
 def set_param():
-    heroes.gady.white_rat_count_all = 1
-    heroes.gavr.white_rat_count_all = 1
-    heroes.mara.white_rat_count_all = 3
+    heroes.gady.list_loot = []
     displaying_values(info=True)
 
 

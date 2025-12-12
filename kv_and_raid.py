@@ -61,6 +61,8 @@ def foto_loot_kv(*, point_v, point_n):
     :param point_n: 
     :return: 
     """
+    fun.my_log_file(f'')
+    fun.my_log_file(f'kv_and_raid.foto_loot_kv')
     path = b_p.loot_round # 'img/ kv/ result_round/ result_round_loot/'
     #
     kor_x_v = 30 + 90 - 35
@@ -80,6 +82,8 @@ def foto_loot_kv(*, point_v, point_n):
 
 
 def get_name_loot():
+    fun.my_log_file(f'')
+    fun.my_log_file(f'kv_and_raid.get_name_loot')
     dict_name_loot = {'сержант': 'img/kv/result_round/loot/p1.png',
                       'лейтенант': 'img/kv/result_round/loot/p2.png',
                       'капитан': 'img/kv/result_round/loot/p3.png',
@@ -89,12 +93,15 @@ def get_name_loot():
     for name in dict_name_loot:
         name_loot = fun.locCenterImg(name_img=dict_name_loot[name])
         if name_loot:
-            result = name_loot
+            result = name
             break
     return result
 
 
 def selection_hero_in_kv():
+    fun.my_log_file(f'')
+    fun.my_log_file(f'kv_and_raid.selection_hero_in_kv')
+
     hero = fun.selection_hero()
     if not hero:
         exit_kv = find.find_exit_kv()
@@ -111,6 +118,8 @@ def selection_hero_in_kv():
 
 
 def update_set_dist(*, value_dist):
+    fun.my_log_file(f'')
+    fun.my_log_file(f'kv_and_raid.update_set_dist')
     temp_set_dist = heroes.Hero.get_set_dist(heroes.Activ.hero_activ)
     if temp_set_dist:
         temp_list = list(temp_set_dist)
@@ -127,6 +136,8 @@ def update_set_dist(*, value_dist):
 
 
 def distance(*, pos_vic: tuple, pos_cl: tuple) -> int:
+    fun.my_log_file(f'')
+    fun.my_log_file(f'kv_and_raid.distance')
     x_vic, y_vic = pos_vic
     x_cl, y_cl = pos_cl
     dist = y_cl - y_vic
@@ -135,6 +146,7 @@ def distance(*, pos_vic: tuple, pos_cl: tuple) -> int:
 
 
 def battle(target_call):
+    fun.my_log_file(f'')
     fun.my_log_file('kv_and_raid.battle')
     kv_skip_battle = find.find_kv_skip_battle()
     fun.my_log_file(f'{kv_skip_battle} kv_skip_battle')
@@ -184,7 +196,7 @@ def battle(target_call):
                 name_loot = get_name_loot()
                 # записать в лист
                 list_loot = heroes.Hero.get_list_loot(heroes.Activ.hero_activ)
-                list_loot.append(name_loot)
+                list_loot.append(str(name_loot))
 
                 heroes.Hero.set_list_loot(heroes.Activ.hero_activ, list_loot)
 
@@ -203,10 +215,12 @@ def battle(target_call):
 
 
 def kv():
+    fun.my_log_file(f'')
     fun.my_log_file('kv_and_raid.kv')
     selection_hero_in_kv()
     stat, data_kv = solid_memory.reading_kv_config()
     solid_memory.set_values_kv(data_kv)
+    heroes.gady.list_loot = []
     phrase_eff = complex_phrases.report_kv_efficiency()
     print(phrase_eff[0])
     print(phrase_eff[1])
@@ -262,6 +276,8 @@ def kv():
 
 
 def loot():
+    fun.my_log_file(f'')
+    fun.my_log_file(f'kv_and_raid.loot')
     backpack = fun.locCenterImg('img/kv/backpack.png', confidence=0.9)
     fun.Mouse.move(pos=backpack, speed=2)
 
