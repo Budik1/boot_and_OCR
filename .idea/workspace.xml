@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="11.12.25">
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="12.12.25 заменил картинку &quot;setting.png&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/complex_phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/complex_phrases.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/config.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_config2.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config2.bin" afterDir="false" />
@@ -162,7 +161,7 @@
       <command value="zadaniya" />
     </option>
   </component>
-  <component name="RunManager" selected="Python.tempo">
+  <component name="RunManager" selected="Python.main">
     <configuration name="a_serial_scrin_for_pm (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
@@ -278,8 +277,8 @@
         <item itemvalue="Python.main" />
         <item itemvalue="Python.tempo" />
         <item itemvalue="Python.img_crop" />
-        <item itemvalue="Python.a_serial_scrin_for_pm (1)" />
         <item itemvalue="Python.cr_img" />
+        <item itemvalue="Python.a_serial_scrin_for_pm (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -492,17 +491,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>99</line>
+          <line>101</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>200</line>
+          <line>195</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>196</line>
+          <line>207</line>
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -512,7 +511,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>297</line>
+          <line>308</line>
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -527,7 +526,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>367</line>
+          <line>378</line>
           <option name="timeStamp" value="122" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -542,7 +541,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>75</line>
+          <line>76</line>
           <option name="timeStamp" value="136" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -567,7 +566,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fun.py</url>
-          <line>536</line>
+          <line>539</line>
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -587,17 +586,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>136</line>
+          <line>137</line>
           <option name="timeStamp" value="152" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>137</line>
+          <line>138</line>
           <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>227</line>
+          <line>238</line>
           <option name="timeStamp" value="155" />
         </line-breakpoint>
       </breakpoints>

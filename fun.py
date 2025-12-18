@@ -2,18 +2,18 @@ import pyautogui
 import datetime
 from time import sleep, time
 
+
 # import fun
 import sounds
 import find_img
 import fun_down
 import baza_dannyx as b_d
-import color_text as myCt
+import color_text
 
 import heroes
 
 par_conf = 0.79
 oblast = (51, 707, 92, 111)
-log = 1
 
 
 def locCenterImg(name_img, confidence=0.9, region: tuple[int, int, int, int] | None = None, grayscale=None):
@@ -74,20 +74,20 @@ class Mouse:
         print(pyautogui.position())
 
     @staticmethod
-    def move(*, pos: tuple, speed=0.2, show=True, message=False, message_l=None):
+    def move(*, pos: tuple, speed=0.2, show=True, log=False, message_l=None):
         """
 
         :param pos:
         :param speed:
         :param show:
-        :param message:
+        :param log:
         :param message_l:
         :return:
         """
         my_log_file('')
         my_log_file(f'fun.Mouse.move {message_l}')
         my_log_file(f'{pos=}')
-        if message:
+        if log:
             print(f'fun.Mouse.move {message_l=}')
         if show:
             pyautogui.moveTo(pos, duration=speed)
@@ -113,7 +113,7 @@ class Mouse:
         return
 
     @staticmethod
-    def take_drag_drop_y(*, pos_take, distance, speed=0.2, message=None, message_l=None):
+    def take_drag_drop_y(*, pos_take, distance, speed=0.2,): # message=None, message_l=None
         """
         
         :param pos_take: 
@@ -149,7 +149,7 @@ class Mouse:
         return
 
     @staticmethod
-    def move_to_click(*, pos_click: tuple, move_time: float = 0.75, z_p_k: float = 0.05, message=False,
+    def move_to_click(*, pos_click: tuple, move_time: float = 0.75, z_p_k: float = 0.05, log=False,
                       message_l=None) -> None:
         """
         Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
@@ -157,12 +157,12 @@ class Mouse:
         :param pos_click: Point
         :param move_time: время перемещения указателя мыши в секундах
         :param z_p_k: задержка перед кликом(float)
-        :param message: цель клика
+        :param log:
         :param message_l: цель клика
         :return: None
         """
         my_log_file(f'fun.Mouse.move_to_click {message_l=}, {pos_click=}')
-        if message:
+        if log:
             print(f'fun.Mouse.move_to_click {message_l=}, {pos_click=}')
         sleep(0.3)
         Mouse.move(pos=pos_click, speed=move_time)
@@ -174,23 +174,22 @@ class Mouse:
 
 
 def my_log_file(text):
-    if log == 1:
-        date_time, date = date_time_now()
-        file_name = date + ".txt"
-        file_1 = open('log/' + str(file_name), 'a+', encoding='utf-8')
-        try:
-            print(date_time, text, file=file_1)
-        except FileNotFoundError:
-            # Если файл не найден, выводим сообщение об ошибке
-            print(f"Файл '{file_1}' не найден!")
-        except IOError:
-            # Если возникает ошибка ввода-вывода, выводим сообщение об ошибке
-            print("Произошла ошибка ввода-вывода при чтении файла!")
-        except Exception as e:
-            # Обработка других неожиданных исключений
-            print(f"Произошла неожиданная ошибка: {e}")
-        finally:
-            file_1.close()
+    date_time, date = date_time_now()
+    file_name = date + ".txt"
+    file_1 = open('log/' + str(file_name), 'a+', encoding='utf-8')
+    try:
+        print(date_time, text, file=file_1)
+    except FileNotFoundError:
+        # Если файл не найден, выводим сообщение об ошибке
+        print(f"Файл '{file_1}' не найден!")
+    except IOError:
+        # Если возникает ошибка ввода-вывода, выводим сообщение об ошибке
+        print("Произошла ошибка ввода-вывода при чтении файла!")
+    except Exception as e:
+        # Обработка других неожиданных исключений
+        print(f"Произошла неожиданная ошибка: {e}")
+    finally:
+        file_1.close()
 
 
 def date_utc_now():
@@ -285,13 +284,17 @@ def close_popup_window(speed_mouse=0.75):
         Mouse.move_to_click(pos_click=cancel, move_time=speed_mouse, z_p_k=1)
 
 
-def push_close(speed_mouse=0.75):
+def push_close(speed_mouse=0.75, event=''):
+    my_log_file(f'')
     my_log_file('fun.push_close')
     pos_close = find_img.find_close()
     # print(f'fun.push_close {pos_close=}')
     if pos_close:
-        print(f'fun.push_close клик по {pos_close=}')
-        Mouse.move_to_click(pos_click=pos_close, move_time=speed_mouse, z_p_k=0.1)
+        event_mes = color_text.tc_cyan(f'{event}')
+        my_log_file(f'')
+        my_log_file(f'fun.push_close {event_mes} {pos_close=}')
+        print(f'fun.push_close {event_mes} {pos_close=}')
+        Mouse.move_to_click(pos_click=pos_close, move_time=speed_mouse, z_p_k=0.1, log=True, message_l=event)
         close_flag = True
     else:
         close_flag = False
@@ -656,14 +659,14 @@ def selection_hero(*, show_name=True):
     hero = None
     if hero_gadya:
         if show_name:
-            print(myCt.tc_yellow('Гадя'))
+            print(color_text.tc_yellow('Гадя'))
         hero = 'Gady'
         heroes.hero_activ_name = 'Gady'
         heroes.Activ.name_file_ = 'gady'
         heroes.Activ.hero_activ = heroes.gady
     elif hero_gavr:
         if show_name:
-            print(myCt.tc_yellow('Гавр'))
+            print(color_text.tc_yellow('Гавр'))
         hero = 'Gavr'
         heroes.Activ.hero_activ_name = 'Gavr'
         heroes.Activ.name_file_ = 'gavr'
@@ -678,14 +681,14 @@ def selection_hero(*, show_name=True):
         # heroes.Activ.hero_activ = heroes.veles
     elif hero_mara:
         if show_name:
-            print(myCt.tc_yellow('Мар`яна'))
+            print(color_text.tc_yellow('Мар`яна'))
         hero = 'Mara'
         heroes.Activ.hero_activ_name = 'Mara'
         heroes.Activ.name_file_ = 'mara'
         heroes.Activ.hero_activ = heroes.mara
     else:
         if show_name:
-            print(myCt.tc_red("Невозможно опознать героя!! (("))
+            print(color_text.tc_red("Невозможно опознать героя!! (("))
             print()
 
         heroes.Activ.hero_activ = None
@@ -780,9 +783,9 @@ def verifi_img():
     pos = locCenterImg(name_img=path_img)
     if pos:
         Mouse.move(pos=pos)
-        print(myCt.tc_yellow(f'{path_img} - Найден )) все хорошо'))
+        print(color_text.tc_yellow(f'{path_img} - Найден )) все хорошо'))
     else:
-        print(myCt.tc_red(f'{path_img} - Не найден  !!'))
+        print(color_text.tc_red(f'{path_img} - Не найден  !!'))
     return
 
 

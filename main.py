@@ -327,7 +327,7 @@ def timer():
         date_up = heroes.Hero.get_up_date(heroes.gady)
         if date_up != '':
             number_days = fun.dif_days(date_old=date_up)
-            msg = f'{number_days} day  ур'
+            msg = f'{number_days} day ур'
             # print(f'{msg=}')
             timer_gady_label.config(text=msg)
         else:
@@ -344,7 +344,7 @@ def timer():
         date_up = heroes.Hero.get_up_date(heroes.gavr)
         if date_up:
             number_days = fun.dif_days(date_old=date_up)
-            msg = f'{number_days} day  ур'
+            msg = f'{number_days} day ур'
             timer_gavr_label.config(text=msg)
         else:
             timer_gavr_label.config(text="00:00:00")
@@ -370,7 +370,7 @@ def timer():
         date_up = heroes.Hero.get_up_date(heroes.mara)
         if date_up:
             number_days = fun.dif_days(date_old=date_up)
-            msg = f'{number_days} day  ур'
+            msg = f'{number_days} day ур'
             timer_mara_label.config(text=msg)
         else:
             timer_mara_label.config(text="00:00:00")

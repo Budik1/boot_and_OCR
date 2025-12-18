@@ -27,7 +27,7 @@ def event_gifts():
     fun.my_log_file(f'pos_gift = {pos_gift}')
     if pos_gift:
         # x, y = pos_gift
-        fun.Mouse.move(pos=pos_gift, speed=0.5, message=True, message_l='подарок найден')
+        fun.Mouse.move(pos=pos_gift, speed=0.5, log=True, message_l='подарок найден')
         fun.Mouse.left_click(pos=pos_gift, message=True, message_l=f'клик по подарку {pos_gift=}')
         sleep(1 * 2)
         close = fun.locCenterImg(name_img='img/overall/close.png', confidence=0.9)
@@ -80,18 +80,20 @@ def events_tunnel(name_st, st_id_file):
     :param name_st: название станции из списка
     :param st_id_file: имя файла ID станции
     """
+    print()
+    print('touring.events_tunnel')
     fun.my_log_file('touring.events_tunnel')
     fun.selection_hero(show_name=False)
 
     dog_activ = True
     id_st = fun.locCenterImg(name_img=st_id_file)  # , confidence=0.85
-    fun.my_log_file(f'id_st = {id_st}')
     info = fun.locCenterImg(name_img='img/overall/info.png', confidence=0.8)
-    fun.my_log_file(f'info = {info}')
-    while not id_st:
+    fun.my_log_file(f'{info=}, {id_st=}')
+    if info:
         x, y = info
         y += 350
-        fun.Mouse.move(pos=(x, y))
+        fun.Mouse.move(pos=(x, y), log=True, message_l='убрать указатель с поля в ожидании событий')
+    while not id_st:
         post = fun.locCenterImg(name_img='img/tonelli/post.png', confidence=0.8)
         skip_battle = find_img.find_skip_battle()
         fun.my_log_file(f'skip_battle = {skip_battle}')
@@ -99,36 +101,27 @@ def events_tunnel(name_st, st_id_file):
             station_master.enemy_battle(1, add_up=True, tour=True, dog_activ=dog_activ)  # вызов обработки события
         if post:
             fun.my_log_file(f'post = {post}')
-            fun.Mouse.move(pos=post, speed=0.2)
+            fun.Mouse.move(pos=post, speed=0.2, log=True, message_l='Пост обнаружен')
             attack = find_img.find_tonelli_attack()
             entry = fun.locCenterImg(name_img='img/tonelli/entry_station.png', confidence=0.8)
-            # if entry:
-            #     fun.my_log_file(f'entry = {entry}')
-            #     fun.Mouse.move_to_click(pos_click=entry, move_time=0.2, z_p_k=0.1)
-            # elif attack:
-            #     dog_activ = False
-            #     fun.my_log_file(f'attack = {attack}')
-            #     fun.Mouse.move_to_click(pos_click=attack, move_time=0.2, z_p_k=0.1)        elif attack:
-
             while entry:
                 entry = fun.locCenterImg(name_img='img/tonelli/entry_station.png', confidence=0.8)
-
                 fun.my_log_file(f'entry = {entry}')
-                fun.Mouse.move_to_click(pos_click=entry, move_time=0.2, z_p_k=0.1)
+                fun.Mouse.move_to_click(pos_click=entry, move_time=0.2, z_p_k=0.1, log=True, message_l='войти на станцию')
                 # sleep(1)
-                fun.Mouse.move(pos=(entry[0] - 60, entry[1]), speed=0.5, show=True)
+                fun.Mouse.move(pos=(entry[0] - 60, entry[1]), speed=0.5, show=True,
+                               log=True, message_l='убрать указатель с поля, после входа на станцию')
                 entry = fun.locCenterImg(name_img='img/tonelli/entry_station.png', confidence=0.8)
-
             while attack:
                 dog_activ = False
                 fun.my_log_file(f'attack = {attack}')
-                fun.Mouse.move_to_click(pos_click=attack, move_time=0.2, z_p_k=0.1)
-                fun.Mouse.move(pos=(attack[0] - 60, attack[1]), speed=0.5, show=True)
+                fun.Mouse.move_to_click(pos_click=attack, move_time=0.2, z_p_k=0.1, log=True, message_l='атака поста')
+                fun.Mouse.move(pos=(attack[0] - 60, attack[1]), speed=0.5, show=True,
+                               log=True, message_l='убрать указатель с поля, после атаки поста')
                 attack = find_img.find_tonelli_attack()
-
-                # sleep(1)
         id_st = fun.locCenterImg(name_img=st_id_file)  # , confidence=0.85
         fun.my_log_file(f'id_st = {id_st}')
+
     fun.my_log_file(name_st)
     # поиск и подсчет количества подарков
     pos_gift = event_gifts()
@@ -140,6 +133,8 @@ def events_tunnel(name_st, st_id_file):
         print(name_st, ' подарков ', Hero.get_qty_gift(Activ.hero_activ))
     else:
         print(name_st)  # название станции
+    print()
+    print('touring.events_tunnel')
     return
 
 

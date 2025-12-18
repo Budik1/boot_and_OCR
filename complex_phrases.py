@@ -178,7 +178,7 @@ def report_kv_efficiency():
                                  f'({percent_vik_kv}%). Погоны {qty_duel_loot}')
 
     list_loot = heroes.Hero.get_list_loot(activ_her)
-    print(f'{list_loot=}')
+    # print(f'{list_loot=}')
     if list_loot:
         phrase3 = ', '.join(list_loot)
     else:

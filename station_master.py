@@ -65,6 +65,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     :return:
     """
     print(color_text.tc_green('в бой'))
+
     fun.my_log_file(f'')
     fun.my_log_file('station_master.enemy_battle()')
     # fun.my_log_file(' поиск battle_end, skip_battle, dog')
@@ -181,8 +182,18 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                 # нажать "на собаку"
                 dog_flag = False
                 dog = fun.locCenterImg(name_img='img/dog_2.png', confidence=par_conf)
-                fun.Mouse.move_to_click(pos_click=dog, move_time=0.1, z_p_k=0.1,
-                                        message=True, message_l='нажал на собаку')
+                if dog:
+                    par_conf_pet = par_conf
+                    while dog[0] > 800:
+                        par_conf_pet +=0.001
+                        dog = fun.locCenterImg(name_img='img/dog_2.png', confidence=par_conf_pet)
+                        print(f'обнаружение пета {dog=}, {par_conf_pet=}')
+                        if par_conf_pet > 0.999:
+                            dog = None
+                            break
+                if dog:
+                    fun.Mouse.move_to_click(pos_click=dog, move_time=0.1, z_p_k=0.1,
+                                        log=True, message_l=f'нажал на собаку {dog=}')
         if skip_battle and skip_battle_count:
             duration_fight += 1
         if skip_battle and skip_battle_count and duration_fight == 4:  # нажать "пропустить бой"
@@ -192,7 +203,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
 
             fun.my_log_file(f'{skip_battle=}')
             fun.Mouse.move_to_click(pos_click=skip_battle, move_time=0.4, z_p_k=0.5,
-                                    message=True, message_l='нажал пропустить бой')
+                                    log=True, message_l='нажал пропустить бой')
 
         sleep(1 * prolong_)  # для задержки нажатия "пропустить бой"
         fun.my_log_file('ожидание battle_end, close, dog, skip_battle')
@@ -262,7 +273,7 @@ def press_en(*, task_number, pos, value_energy):  # , report_en=True
     pos_clik = x, y
     fun.Mouse.move(pos=pos_clik)
     # print('тут должен быть клик')                                        # для отладки раскомментировать
-    fun.Mouse.move_to_click(pos_click=pos_clik, move_time=0.4, z_p_k=1.5, message=True, message_l='нажал задание')  # для отладки закомментировать
+    fun.Mouse.move_to_click(pos_click=pos_clik, move_time=0.4, z_p_k=1.5, log=True, message_l='нажал задание')  # для отладки закомментировать
     sleep(0.5)
     low_energy = find_img.find_low_energy_label()
     if not low_energy:
@@ -311,7 +322,7 @@ def press_en(*, task_number, pos, value_energy):  # , report_en=True
             close = find_img.find_close()
             if close:
                 # print(f'station_master.press_en {close=}')
-                fun.Mouse.move_to_click(pos_click=close, z_p_k=0.5, message=True, message_l='нажал закрыть')
+                fun.Mouse.move_to_click(pos_click=close, z_p_k=0.5, log=True, message_l='нажал закрыть')
 
 
 def task_analysis(img1, img2, region):

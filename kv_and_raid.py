@@ -129,9 +129,9 @@ def update_set_dist(*, value_dist):
     set_dist = set(temp_list)
     heroes.Hero.set_set_dist(heroes.Activ.hero_activ, set_dist)
     # отладка
-    min_dist = min(set_dist)
-    max_dist = max(set_dist)
-    print(f'{set_dist=}, {min_dist=}, {max_dist=}')
+    # min_dist = min(set_dist)
+    # max_dist = max(set_dist)
+    # print(f'{set_dist=}, {min_dist=}, {max_dist=}')
     return
 
 
