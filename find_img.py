@@ -46,7 +46,7 @@ def find_hall_of_glory_icon():
 
 
 def find_station_master():
-    station_master = fund.locateCenterImg(name_img='img/station_master/station_master.png', confidence=0.91)
+    station_master = fund.locateCenterImg(name_img='img/station_master/any/station_master.png', confidence=0.91)
     return station_master
 
 
@@ -112,13 +112,14 @@ def find_her_mara():
 
 
 def find_work():
-    pos_work = fund.locateCenterImg(name_img='img/station_master/work.png')
+    pos_work = fund.locateCenterImg(name_img='img/station_master/any/work_b.png')
     return pos_work
 
 
-def find_work_8_hour():
-    work_8hour = fund.locateCenterImg(name_img='img/station_master/work_8_hour.png')
-    return work_8hour
+def find_work_rest_hour(*, rest):
+    # name_img = f'img/station_master/work_hour/work_{rest}h.png'
+    pos_work = fund.locateCenterImg(name_img=f'img/station_master/work_hour/work_{rest}h.png')
+    return pos_work
 
 
 def find_exit_kv():

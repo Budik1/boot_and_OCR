@@ -83,7 +83,7 @@ def foto_loot_kv(*, point_v, point_n):
 
 def get_name_loot():
     fun.my_log_file(f'')
-    fun.my_log_file(f'kv_and_raid.get_name_loot')
+    fun.my_log_file(f'fun.get_name_loot')
     dict_name_loot = {'сержант': 'img/kv/result_round/loot/p1.png',
                       'лейтенант': 'img/kv/result_round/loot/p2.png',
                       'капитан': 'img/kv/result_round/loot/p3.png',

@@ -14,12 +14,11 @@ def display_report_energy_now(*, vers_in_print, value_energy):
         vers_in_print (str): пробел или значение {conf_=}
         value_energy (int): количество энергии потраченной на задание
     """
-    print(f'{vers_in_print}'  # {task_number} задание
+    print(color_text.tc_blue(f'{vers_in_print}'  # {task_number} задание
           f'Сейчас {value_energy}, '
           f'сегодня {heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)}, '
           f'всего/на Киевской: {heroes.Hero.get_energy_count_all(heroes.Activ.hero_activ)}/'
-          f'{heroes.Hero.get_energy_kiev_count_all(heroes.Activ.hero_activ)}'
-          )
+          f'{heroes.Hero.get_energy_kiev_count_all(heroes.Activ.hero_activ)}'))
 
 
 def set_inspect_report():
@@ -63,6 +62,7 @@ def display_report_wildman():
         print(f'{name}:{report_wildman(hero=heroes.hero_dict[key])}')
     return
 
+
 def display_report_w_rat():
     print()
     print('white rat')
@@ -102,12 +102,14 @@ def report_white_rat(*, hero):
 
     # количество энергии на одного
     if heroes.Hero.get_white_rat_count_all(hero):
-        # text_31 = color_text.tc_green(' Это ')
+        qty_wr = str(heroes.Hero.get_white_rat_count_all(hero))
+        val_all = color_text.tc_blue(qty_wr)
+        phrase3 = f' {val_all} шт.'
         average_value_3 = color_text.tc_blue(
             f'{round(heroes.Hero.get_white_rat_energy(hero) / heroes.Hero.get_white_rat_count_all(hero), 4)}')  # '7'
         text_32 = color_text.tc_green(' эн на 1ну крысу.')  # ' эн на 1го'
         phrase1 = f'{average_value_3.rjust(17)}{text_32}'
-        report_w_rat_hero = f'{phrase1}{phrase2}'
+        report_w_rat_hero = f'{phrase1}{phrase2}{phrase3}'
     else:
         phrase1 = 'Нет данных.'.rjust(19)
         report_w_rat_hero = f'{phrase1}{phrase2}'

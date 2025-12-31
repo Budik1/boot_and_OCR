@@ -2,7 +2,6 @@ import pyautogui
 import datetime
 from time import sleep, time
 
-
 # import fun
 import sounds
 import find_img
@@ -113,7 +112,7 @@ class Mouse:
         return
 
     @staticmethod
-    def take_drag_drop_y(*, pos_take, distance, speed=0.2,): # message=None, message_l=None
+    def take_drag_drop_y(*, pos_take, distance, speed=0.2, ):  # message=None, message_l=None
         """
         
         :param pos_take: 
@@ -168,7 +167,7 @@ class Mouse:
         Mouse.move(pos=pos_click, speed=move_time)
         # print('должен быть клик')
         sleep(z_p_k)
-        mouse_left_click(pos=pos_click)
+        Mouse.left_click(pos=pos_click)
         sleep(0.18)
         return
 
@@ -278,10 +277,14 @@ def close_popup_window(speed_mouse=0.75):
     my_log_file('fun.close_popup_window')
     knob = find_img.find_knob()
     cancel = find_img.find_cancel()
+    res = False
     if knob:
         Mouse.move_to_click(pos_click=knob, move_time=speed_mouse, z_p_k=1)
+        res = True
     if cancel:
         Mouse.move_to_click(pos_click=cancel, move_time=speed_mouse, z_p_k=1)
+        res = True
+    return res
 
 
 def push_close(speed_mouse=0.75, event=''):
@@ -705,15 +708,17 @@ def get_len_bypass(bypass_hero):
     return len(arr2)
 
 
-def work_8_hour():
+def work():
     my_log_file('')
-    my_log_file('fun.work_8_hour')
+    my_log_file('fun.work')
+
+    rest = get_rest_tim(h_max=22)
 
     vizit_to_station_master()
     pos_work = find_img.find_work()
     Mouse.move_to_click(pos_click=pos_work)
-    work_8hour = find_img.find_work_8_hour()
-    Mouse.move_to_click(pos_click=work_8hour)
+    work_rest_hour = find_img.find_work_rest_hour(rest=rest)
+    Mouse.move_to_click(pos_click=work_rest_hour)
     return
 
 
@@ -938,3 +943,52 @@ def dif_days(*, date_old, date_today=date_utc_now()):
     dif = d_today - d_old
     # print('fun.dif_days ', dif.days)
     return dif.days
+
+
+def rap_explore(*, text, ex=''):
+    if ex:
+        ex = 'выход'
+    else:
+        print()
+    print(color_text.tc_green(f'{text} {ex}'))
+    return
+
+
+def get_name_loot():
+    my_log_file(f'')
+    my_log_file(f'fun.get_name_loot')
+    dict_name_loot = {'сержант': 'img/kv/result_round/loot/p1.png',
+                      'лейтенант': 'img/kv/result_round/loot/p2.png',
+                      'капитан': 'img/kv/result_round/loot/p3.png',
+                      'полковник': 'img/kv/result_round/loot/p4.png',
+                      'генерал': 'img/kv/result_round/loot/p5.png'}
+    result = 'неопознан'
+    for name in dict_name_loot:
+        name_loot = locCenterImg(name_img=dict_name_loot[name])
+        if name_loot:
+            result = name
+            break
+    return result
+
+
+def get_rest_tim(*, h_max):
+    t_now = time_now()
+    h, m, s = t_now.split(':')
+    t_work = 8
+    rest_t = h_max - int(h)
+    if rest_t > 8:
+        t_work = 8
+    elif 8 >= rest_t > 5:
+        t_work = 5
+    elif 5 >= rest_t > 2:
+        t_work = 2
+    elif 2 >= rest_t > 1:
+        t_work = 1
+    return t_work
+
+def pos_parking():
+    m_g = find_img.find_my_game2()
+    x, y = m_g
+    y += 40
+    parking = x, y
+    return parking

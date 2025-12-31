@@ -2,9 +2,8 @@ import time
 
 import baza_dannyx as b_d
 import color_text
-import color_text as myCt
+import color_text
 
-# from fun import time_now
 
 nam = 0  # для подсчета чего?
 temp_min = None
@@ -180,6 +179,7 @@ class Hero:
             'arena_victory_count_k': self.arena_victory_count,
 
             'vip_k': self.vip,
+            # 'vip_k': self.holiday_gift,
             'energy_count_today_k': self.energy_count_today,
             'wild_activ_k': self.wild_activ,
             'holiday_gift_k': self.holiday_gift,
@@ -230,7 +230,7 @@ class Hero:
             self.vip = loaded_data.get('vip_k', 0)
             self.energy_count_today = loaded_data.get('energy_count_today_k', 0)
             self.wild_activ = loaded_data.get('wild_activ_k', 0)
-            self.holiday_gift = loaded_data.get('gifts_k', 0)
+            self.holiday_gift = loaded_data.get('holiday_gift_k', 0)
         else:
             Activ.result_load = color_text.tc_blue('даты не совпадают, смена суток')
         # print(Activ.result_load)
@@ -449,7 +449,7 @@ class Hero:
 
     def get_report_wildman_now(self):
         if self.wildman:
-            return f'{myCt.tc_yellow(str(self.wildman))} {myCt.tc_green("за сегодня")}'
+            return f'{color_text.tc_yellow(str(self.wildman))} {color_text.tc_green("за сегодня")}'
         else:
             return f'по дикарям нет данных'  #
 

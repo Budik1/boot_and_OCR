@@ -179,4 +179,4 @@ def region_task_line():
     fun.foto(f'{path_img}{name_img3}', (x, y, change_x, change_y))
 
 
-arial_task()
+# arial_task()

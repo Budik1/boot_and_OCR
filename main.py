@@ -133,7 +133,7 @@ def puli():
 
 def kiki():
     touring.for_kiki()
-    fun.work_8_hour()
+    fun.work()
     displaying_values(info=False)
 
 
@@ -179,7 +179,7 @@ def tent_inspection():
         return
 
 
-def tasks_na_kievskoy():
+def wild():
     hero = fun.selection_hero(show_name=False)
     if hero:
         heroes.Hero.app_wildman_days_count(heroes.Activ.hero_activ)
@@ -188,13 +188,14 @@ def tasks_na_kievskoy():
         print('герой не опознан')
         return
     touring.for_wilds()
-    fun.work_8_hour()
+    fun.work()
     # Hero.a
     displaying_values(info=False)
 
 
 def wild_kiki():
     start_time = time()
+
     hero = fun.selection_hero()
     if hero:
         heroes.Hero.app_wildman_days_count(heroes.Activ.hero_activ)
@@ -205,8 +206,10 @@ def wild_kiki():
     touring.for_wilds()
     displaying_values()
     touring.for_kiki()
-    fun.work_8_hour()
+    fun.work()
     displaying_values(info=False)
+
+
     finish_time = float(time() - start_time)  # общее количество секунд
     minutes = int(finish_time // 60)  # количество минут
     seconds = round((finish_time % minutes), 2)
@@ -214,6 +217,8 @@ def wild_kiki():
 
 
 def collecting_gifts_at_stations():
+    start_time = time()
+    
     fun.push_close_all_()
     # определение героя
     hero = fun.selection_hero()
@@ -232,6 +237,12 @@ def collecting_gifts_at_stations():
     # вывод информации
     print(f'На {q_st} станциях собрано {q_gifts} подарков')
     displaying_values(info=False)
+    fun.work()
+
+    finish_time = float(time() - start_time)  # общее количество секунд
+    minutes = int(finish_time // 60)  # количество минут
+    seconds = round((finish_time % minutes), 2)
+    print('Потрачено время', minutes, 'минут', seconds, 'сек.')
 
 
 def changeColor(*, her_active):
@@ -311,6 +322,8 @@ def save_date_up():
 def get_target(event):
     selection = combobox.get()
     touring.move_to_target(target_point=selection)
+    if selection == 'домой':
+        fun.work()
     displaying_values(info=False)
     return
 
@@ -518,7 +531,7 @@ ttk.Button(text="Мара", width=5, command=change_mara).place(x=0, y=b_d.mara_
 
 ttk.Button(text="VIP", width=5, command=tent_inspection).place(x=b_d.vip_x - b_d.s, y=b_d.label_line0 - 3)
 ttk.Button(text="kiki", width=5, command=kiki).place(x=b_d.kiki_x - b_d.s, y=b_d.label_line0 - 3)
-ttk.Button(text="wild", width=5, command=tasks_na_kievskoy).place(x=b_d.wild_x - (b_d.s + 3), y=b_d.label_line0 - 3)
+ttk.Button(text="wild", width=5, command=wild).place(x=b_d.wild_x - (b_d.s + 3), y=b_d.label_line0 - 3)
 ttk.Button(text="up", width=4, command=save_date_up).place(x=0, y=b_d.label_line0 - 3)
 w_l = 3
 # блок инфо строк

@@ -119,14 +119,35 @@ def task_img():
     pass
 
 
-def cr_other_img():
+def cr_other_img(name_create_img='img/test/token.png'):
     """
     
     :return: 
     """
-    name_create_img = 'img/overall/event_entry/pos_t.png'
+    # name_create_img = 'img/overall/event_entry/pos_t.png'
+    # name_create_img = 'img/tonelli/gift2.png'
+    # name_create_img = 'img/tonelli/gift.png'
+    # name_create_img = 'img/tonelli/loot_gift_box/feed3.png'
+    # name_create_img = 'img/tonelli/loot_gift_box/many.png'
+    # name_create_img = 'img/tonelli/loot_gift_box/p3.png'
+    # name_create_img = 'img/tonelli/loot_gift_box/p4.png'
+    # name_create_img = 'img/tonelli/loot_gift_box/big/720.png'
+
+    # name_create_img = 'img/tonelli/loot_gift_box/ng1.png'
+    # name_create_img = 'img/tonelli/loot_gift_box/ng2.png'
+    # name_create_img = 'img/tonelli/loot_gift_box/ng3.png'
+    # name_create_img = 'img/tonelli/loot_gift_box/ng4.png'
+    # name_create_img = 'img/tonelli/loot_gift_box/marc30.png'
+
+    # name_create_img = 'img/station_master/any/work_b.png'
+    # name_create_img = 'img/station_master/work_hour/work_30m.png'
+    # name_create_img = 'img/station_master/work_hour/work_1h.png'
+    # name_create_img = 'img/station_master/work_hour/work_2h.png'
+    # name_create_img = 'img/station_master/work_hour/work_5h.png'
+    # name_create_img = 'img/station_master/work_hour/work_8h.png'
     # name_create_img = 'img/overall/klan.png'
     # name_create_img = 'img/kv/kv_attak.png'
+    name_create_img = 'img/overall/knob.png'
 
     img_dict = {
         'img/b_battle_end.png': (-330, -404, 170, 30, (), find_img.find_close()),
@@ -137,11 +158,35 @@ def cr_other_img():
         'img/overall/klan.png': (33, -13, 37, 32, (), find_img.find_info()),
         'img/kv/kv_skip_battle.png': (-48, -21, 96, 37, (), find_img.find_kv_skip_battle_test()),
         'img/overall/event_entry/pos_t.png': (246, -85, 32, 62, (), find_img.find_info()),
+        'img/tonelli/gift2.png': (148, 313, 32, 19, (), find_img.find_info()),
+        'img/tonelli/gift.png': (160, 315, 20, 19, (), find_img.find_info()),
+        'img/tonelli/loot_gift_box/feed3.png': (-4, -90, 60, 59, (), find_img.find_close()),
+        'img/tonelli/loot_gift_box/many.png': (30, -134, 28, 27, (), find_img.find_close()),
+
+        'img/tonelli/loot_gift_box/big/720.png': (-54, -140, 119, 119, (), find_img.find_close()),
+
+        'img/tonelli/loot_gift_box/p3.png': (-4, -90, 60, 59, (), find_img.find_close()),
+        'img/tonelli/loot_gift_box/p4.png': (-4, -90, 60, 59, (), find_img.find_close()),
+
+        'img/tonelli/loot_gift_box/ng1.png': (-4, -90, 60, 59, (), find_img.find_close()),
+        'img/tonelli/loot_gift_box/ng2.png': (-4, -90, 60, 59, (), find_img.find_close()),
+        'img/tonelli/loot_gift_box/ng3.png': (-4, -90, 60, 59, (), find_img.find_close()),
+        'img/tonelli/loot_gift_box/ng4.png': (-4, -90, 60, 59, (), find_img.find_close()),
+
+        'img/tonelli/loot_gift_box/marc1.png': (-4, -90, 60, 59, (), find_img.find_close()),
+        'img/station_master/any/work_b.png': (405, -6, 65, 29, (), find_img.find_station_master()),
+        'img/station_master/work_hour/work_30m.png': (250, 137, 160, 27, (), find_img.find_station_master()),
+        'img/station_master/work_hour/work_1h.png': (250, 194, 160, 25, (), find_img.find_station_master()),
+        'img/station_master/work_hour/work_2h.png': (250, 260, 160, 25, (), find_img.find_station_master()),
+        'img/station_master/work_hour/work_5h.png': (250, 260+65, 160, 25, (), find_img.find_station_master()),
+        'img/station_master/work_hour/work_8h.png': (250, 260+65+65, 160, 25, (), find_img.find_station_master()),
+
+        'img/overall/knob.png': (-496, -463, 16, 16, (), find_img.find_close()),
 
     }
     # name_create_img = 'img/test/token.png'
 
-    key = 'img/overall/event_entry/pos_t.png'
+    key = 'img/overall/knob.png'
     pos_start = img_dict[key][5]
 
     # # собственно создание снимка
@@ -163,15 +208,26 @@ def cr_other_img():
         fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
         print(f'{name_create_img} сделан')
     else:
-        x, y = pos_start
-        x += img_dict[name_create_img][0]
-        y += img_dict[name_create_img][1]
-        # # найдем нижний угол
-        x_demo, y_demo = x, y
-        change_x = img_dict[name_create_img][2]
-        change_y = img_dict[name_create_img][3]
-        x_demo += change_x
-        y_demo += change_y
+        if key != name_create_img:
+            x, y = pos_start
+            x += img_dict[key][0]
+            y += img_dict[key][1]
+            # # найдем нижний угол
+            x_demo, y_demo = x, y
+            change_x = img_dict[key][2]
+            change_y = img_dict[key][3]
+            x_demo += change_x
+            y_demo += change_y
+        else:
+            x, y = pos_start
+            x += img_dict[name_create_img][0]
+            y += img_dict[name_create_img][1]
+            # # найдем нижний угол
+            x_demo, y_demo = x, y
+            change_x = img_dict[name_create_img][2]
+            change_y = img_dict[name_create_img][3]
+            x_demo += change_x
+            y_demo += change_y
         q = input(f"{name_create_img}  сохранить? (y/n): ")
         if q == 'y':
             fun.foto(f'{name_create_img}', (x, y, change_x, change_y))

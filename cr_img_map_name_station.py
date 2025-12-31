@@ -5,8 +5,7 @@ import sounds
 import baza_dannyx as b_d
 
 
-
-def fashion():
+def img_map_name():
     """
         образец
         """
@@ -35,14 +34,14 @@ def fashion():
     # name_create_img = 'img/tonelli/mark_yug.png'
     # name_create_img = 'img/tonelli/map_item/k_Kuzneckiy.png'
     # name_create_img = 'img/tonelli/map_item/k_Pavelec.png'
-    # name_create_img = 'img/tonelli/map_item/k_Pavelec_g.png'
+    name_create_img = 'img/tonelli/map_item/k_Pavelec_g.png'
     # name_create_img = 'img/tonelli/map_item/k_Kitay.png'
     # name_create_img = 'img/tonelli/map_item/k_Turgenev.png'
-    name_create_img = 'img/tonelli/map_item/k_Suxarev.png'
-    name_create_img = 'img/tonelli/map_item/k_Prospekt.png'
-    name_create_img = 'img/tonelli/map_item/k_Rizgskaya.png'
-    name_create_img = 'img/tonelli/map_item/k_Alexs.png'
-    name_create_img = 'img/tonelli/map_item/k_VDNX.png'
+    # name_create_img = 'img/tonelli/map_item/k_Suxarev.png'
+    # name_create_img = 'img/tonelli/map_item/k_Prospekt.png'
+    # name_create_img = 'img/tonelli/map_item/k_Rizgskaya.png'
+    # name_create_img = 'img/tonelli/map_item/k_Alexs.png'
+    # name_create_img = 'img/tonelli/map_item/k_VDNX.png'
 
     pos_start = find_img.find_station_exit()
 
@@ -86,7 +85,7 @@ def fashion():
     # # собственно создание снимка
     if name_create_img == 'img/test/token.png':
         # показать привязку
-        key = 'img/tonelli/map_item/k_VDNX.png'
+        key = 'img/tonelli/map_item/k_Pavelec_g.png'
         # найдем верхний угол
         x, y = pos_start
         x += map_dict[key][0]
@@ -186,8 +185,6 @@ def entry_img():
     return
 
 
-
-
 # check_img(name='img/tonelli/map_item/k_Park_kr.png')
-fashion()
+img_map_name()
 # entry_img()
