@@ -2,9 +2,8 @@ import time
 
 import baza_dannyx as b_d
 import color_text
-import color_text as myCt
+import color_text
 
-# from fun import time_now
 
 nam = 0  # для подсчета чего?
 temp_min = None
@@ -12,34 +11,38 @@ time_now_ = ""
 
 
 class Activ:
-    hero_activ_name = ''  # значение переменной
     hero_activ = ''
-    result_duel = ""
+    hero_activ_name = ''  # значение переменной
     check_date_ = ''
     date_now = ''
-    hour_now = ''
-    value_energy = 0
     name_file_ = None
     station_activ = ''
     qty_vip = 0
     duel_raid = 0
     result_load = ''
+    #
+    #
+    hour_now = ''
+    result_duel = ""
+    value_energy = 0
 
 
 class Hero:
 
-    def __init__(self, name_ru_, name_en_, name_id, id):
+    def __init__(self, name_ru_, name_en_, name_id, _id):
         # статичные
         self.name_en = name_en_
         self.name_ru = name_ru_
         self.name_id = name_id
-        self.id_ = id
+        self.id_ = _id
         self.bypass = ()
 
         # обновляемые ежедневно
         self.vip = 0  #
         self.holiday_gift = 0  #
         self.grey_rat = 0  #
+        self.white_rat_now = 0
+        self.white_rat_count_all = 0
         self.kiki = 0  #
         self.arachne = 0  #
         self.raptor = 0  #
@@ -60,8 +63,8 @@ class Hero:
         #
         self.energy_count_all = 0
         self.energy_kiev_count_all = 0
+        self.energy_spent_searching_for_white_rats = 0
         self.value_energy = 0
-
 
         # кв и рейд
         self.qty_duel_all = 0  # к-во боёв всего
@@ -72,6 +75,8 @@ class Hero:
 
         self.danger = 0
         self.danger_victory = 0
+        self.list_loot = []
+        self.set_dist = set
 
         self.count_shoulder_straps_all = 0
         self.count_shoulder_straps_kv = 0
@@ -84,6 +89,17 @@ class Hero:
         self.time_entree = 0
 
         self.duel_raid = 0
+
+    def get_white_rat_count_all(self):
+        return self.white_rat_count_all
+
+
+
+    def get_set_dist(self):
+        return self.set_dist
+
+    def set_set_dist(self, value):
+        self.set_dist = value
 
     def get_up_date(self):
         return self.lvl_up_date
@@ -107,7 +123,11 @@ class Hero:
             'qty_duel_in_kv_victory': self.qty_duel_in_kv_victory,
             'count_shoulder_straps_all': self.count_shoulder_straps_all,
             'count_shoulder_straps_kv': self.count_shoulder_straps_kv,
+            'list_loot': self.list_loot,
+            'set_dist': self.set_dist,
         }
+        # if Hero.get_name_en(self) == 'Gady':
+        #     print(f'{self.set_dist=} get_state_kv')
         hero_id = Hero.get_id(self)
         list_kv_state[hero_id] = data_to_save
         return
@@ -125,16 +145,23 @@ class Hero:
             self.qty_duel_in_kv_all = data_kv.get('qty_duel_in_kv_all', 0)
             self.qty_duel_in_kv_victory = data_kv.get('qty_duel_in_kv_victory', 0)
             self.count_shoulder_straps_kv = data_kv.get('count_shoulder_straps_kv', 0)
+            self.list_loot = data_kv.get('list_loot', [])
+
         else:
             print('Время старта КВ обновилось')
             self.time_start_kv = time_now
+            self.list_loot = []
 
             self.qty_duel_in_kv_all = 0
             self.qty_duel_in_kv_victory = 0
 
+        self.set_dist = data_kv.get('set_dist', {})
         self.qty_duel_all_victory = data_kv.get('gady.duel_victory_all', 0)
         self.qty_duel_all = data_kv.get('gady.duel_all', 0)
         self.count_shoulder_straps_all = data_kv.get('gady.count_shoulder_straps', 0)
+        if self == Activ.hero_activ:
+            print(f'{self.set_dist=} set_state_kv')
+
 
     def get_state_all(self):
         data_to_save = {
@@ -142,6 +169,7 @@ class Hero:
             # updatable
             # мобы
             'grey_rat_k': self.grey_rat,
+            'white_rat_k': self.white_rat_now,
             'arachne_k': self.arachne,
             'wildman_k': self.wildman,
             'kiki_k': self.kiki,
@@ -151,6 +179,7 @@ class Hero:
             'arena_victory_count_k': self.arena_victory_count,
 
             'vip_k': self.vip,
+            # 'vip_k': self.holiday_gift,
             'energy_count_today_k': self.energy_count_today,
             'wild_activ_k': self.wild_activ,
             'holiday_gift_k': self.holiday_gift,
@@ -163,6 +192,8 @@ class Hero:
             'time_entree_k': self.time_entree,
             'energy_kiev_count_all_k': self.energy_kiev_count_all,
             'lvl_up_date_k': self.lvl_up_date,
+            'white_rat_count_all': self.white_rat_count_all,
+            'energy_spent_searching_for_white_rats': self.energy_spent_searching_for_white_rats,
         }
         hero_id = Hero.get_id(self)
         list_all_state[hero_id] = data_to_save
@@ -187,6 +218,7 @@ class Hero:
 
             # мобы
             self.grey_rat = loaded_data.get('grey_rat_k', 0)
+            self.white_rat_now = loaded_data.get('white_rat_k', 0)
             self.arachne = loaded_data.get('arachne_k', 0)
             self.wildman = loaded_data.get('wildman_k', 0)
             self.kiki = loaded_data.get('kiki_k', 0)
@@ -198,7 +230,7 @@ class Hero:
             self.vip = loaded_data.get('vip_k', 0)
             self.energy_count_today = loaded_data.get('energy_count_today_k', 0)
             self.wild_activ = loaded_data.get('wild_activ_k', 0)
-            self.holiday_gift = loaded_data.get('gifts_k', 0)
+            self.holiday_gift = loaded_data.get('holiday_gift_k', 0)
         else:
             Activ.result_load = color_text.tc_blue('даты не совпадают, смена суток')
         # print(Activ.result_load)
@@ -221,12 +253,20 @@ class Hero:
         self.time_entree = loaded_data.get('time_entree_k', 0)
         self.energy_kiev_count_all = loaded_data.get('energy_kiev_count_all_k', 0)
         self.lvl_up_date = loaded_data.get('lvl_up_date_k', '')
+        self.white_rat_count_all = loaded_data.get('white_rat_count_all', 0)
+        self.energy_spent_searching_for_white_rats = loaded_data.get('energy_spent_searching_for_white_rats', 0)
+
         # отладка
 
         # print(f'set_cumulative_values {self.name_ru}, {self.lvl_up_date}') #
         # print()
         # конец отладки
 
+    def get_list_loot(self):
+        return self.list_loot
+
+    def set_list_loot(self, value):
+        self.list_loot = value
 
     def get_id(self):
         return self.id_
@@ -339,7 +379,11 @@ class Hero:
         self.energy_count_all += value
         if Activ.station_activ == 'ст. Киевская':
             self.energy_kiev_count_all += value
-            # print(color_text.tc_yellow('set energy_kiev_count_all'))
+        if Activ.station_activ in ['ст. Пушкинская', 'ст. Театральная',]:
+            self.energy_spent_searching_for_white_rats += value
+
+    def get_white_rat_energy(self):
+        return self.energy_spent_searching_for_white_rats
 
     def get_energy_kiev_count_all(self):
         return self.energy_kiev_count_all
@@ -378,6 +422,12 @@ class Hero:
     def app_rat(self):
         self.grey_rat += 1
 
+    def app_white_rat(self):
+        self.white_rat_count_all += 1
+        self.white_rat_now += 1
+
+
+
     # Гетеры
     def get_vip_all(self):
         return self.vip
@@ -399,7 +449,7 @@ class Hero:
 
     def get_report_wildman_now(self):
         if self.wildman:
-            return f'{myCt.tc_yellow(str(self.wildman))} {myCt.tc_green("за сегодня")}'
+            return f'{color_text.tc_yellow(str(self.wildman))} {color_text.tc_green("за сегодня")}'
         else:
             return f'по дикарям нет данных'  #
 
@@ -417,6 +467,9 @@ class Hero:
 
     def get_qty_grey_rat(self):
         return self.grey_rat
+
+    def get_qty_white_rat(self):
+        return self.white_rat_now
 
     def get_qty_wildman(self):
         return self.wildman
@@ -443,11 +496,11 @@ class Hero:
         return self.name_id
 
 
-gady = Hero(name_ru_="Гадя", name_en_='Gady', name_id='gady', id=0)
+gady = Hero(name_ru_="Гадя", name_en_='Gady', name_id='gady', _id=0)
 gady.path_task = 'img/station_master/tasks_gady/'
 gady.bypass = b_d.bypass
 
-gavr = Hero(name_ru_='Гавр', name_en_='Gavr', name_id='gavr', id=1)
+gavr = Hero(name_ru_='Гавр', name_en_='Gavr', name_id='gavr', _id=1)
 gavr.path_task = 'img/station_master/tasks_gavr/'
 gavr.bypass = b_d.bypass
 
@@ -455,13 +508,17 @@ gavr.bypass = b_d.bypass
 # veles.path_task = 'img/station_master/tasks_veles/'
 # veles.bypass = b_d.bypass_veles
 
-mara = Hero(name_ru_='Мара', name_en_='Mara', name_id='mara', id=2)
+mara = Hero(name_ru_='Мара', name_en_='Mara', name_id='mara', _id=2)
 mara.path_task = 'img/station_master/tasks_mara/'
 mara.bypass = b_d.bypass_mara
 
-list_all_state = [{}, {}, {}] #
+list_all_state = [{}, {}, {}]  #
 list_kv_state = [{}, {}, {}]
-hero_dict = {'Gady': gady, 'Gavr': gavr, 'Mara': mara} #
+hero_dict = {'Gady': gady, 'Gavr': gavr, 'Mara': mara, }  # 'Veles': veles
+#
+dict_all_state = {}
+dict_kv_state = {}
+
 # Activ.hero_activ = gady # значение, которое выдает fun.select_hero(True)
 # Hero.duel_kv(Activ.hero_activ)  # формат обращения к методу
 #

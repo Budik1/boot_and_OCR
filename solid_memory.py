@@ -4,8 +4,8 @@ import pickle
 # import fun
 # import complex_phrases
 import heroes
-import heroes as her
-from heroes import Activ
+# import heroes as her
+# from heroes import Activ
 from color_text import tc_green, tc_cyan, tc_blue, tc_red
 
 
@@ -38,7 +38,7 @@ def save_all_state_config(info=True):
         rapport = "{file_name} {text}"
     finally:
         if rapport != '':
-            print(rapport)
+            print(f'{rapport=}')
     return
 
 
@@ -74,6 +74,35 @@ def reading_all_state_config(*, info=True):
             print(rapport)
     return result
 
+def save_kv_config2(info=True):
+    file_name = 'kv_config2.bin'
+    rapport = ''
+    if info:
+        text = tc_green(f'запись состояния')
+        rapport = f"{file_name} {text}"
+    for key in heroes.hero_dict:
+       heroes.Hero.get_state_kv(heroes.hero_dict[key])
+
+    try:
+        file1 = open(file_name, 'wb')
+        pickle.dump(heroes.hero_dict, file1)
+        file1.close()
+    except FileNotFoundError:
+        # Если файл не найден, выводим сообщение об ошибке
+        text = tc_red('Файл  не найден!')
+        rapport = f"{file_name} {text}"
+    except IOError:
+        # Если возникает ошибка ввода-вывода, выводим сообщение об ошибке
+        text = tc_red('Произошла ошибка ввода-вывода при чтении файла!')
+        rapport = f"{file_name} {text}"
+    except Exception as e:
+        # Обработка других неожиданных исключений
+        text = tc_red(f'Произошла неожиданная ошибка: {e}')
+        rapport = f"{file_name} {text}"
+    finally:
+        if rapport != '':
+            print(rapport)
+    return
 
 def save_kv_config(info=True):
     file_name = 'kv_config.bin'
@@ -91,6 +120,7 @@ def save_kv_config(info=True):
         'gady.duel_victory_now': heroes.gady.qty_duel_in_kv_victory,
         'gady.count_shoulder_straps': heroes.gady.count_shoulder_straps_all,
         'gady.count_shoulder_straps_kv': heroes.gady.count_shoulder_straps_kv,
+        'heroes.gady.set_dist': heroes.gady.set_dist
 
     }
 
@@ -113,6 +143,7 @@ def save_kv_config(info=True):
     finally:
         if rapport != '':
             print(rapport)
+    save_kv_config2(info=False)
     return
 
 
@@ -181,6 +212,7 @@ def set_values_kv(data_kv):
         heroes.gady.qty_duel_in_kv_victory = 0
 
     # values_kv_cumulative
+    heroes.gady.set_dist = data_kv.get('heroes.gady.set_dist', set)
     heroes.gady.qty_duel_all_victory = data_kv['gady.duel_victory_all']
     heroes.gady.qty_duel_all = data_kv['gady.duel_all']
     heroes.gady.count_shoulder_straps_all = data_kv['gady.count_shoulder_straps']

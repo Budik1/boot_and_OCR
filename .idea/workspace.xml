@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="переименовал функцию создания лога">
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="31.12.25">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a_serial_scrin_for_pm.py" beforeDir="false" afterPath="$PROJECT_DIR$/a_serial_scrin_for_pm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/config.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/overall/event_entry/continue_gavr.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/overall/event_entry/continue_gavr.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_servis.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_servis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kv_config2.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config2.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ref_2" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,6 +48,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
@@ -57,79 +62,82 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Python.a_serial_scrin_for_pm (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.chage_color (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.chage_color.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_dva.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_id_name_station (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_id_name_station.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_map_name_station.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_mob.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_points.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_nam_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_name_mob_img (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_name_mob_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.createAndName_ui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.create_and_analiz_img (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.create_and_analiz_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.create_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.display_info.executor&quot;: &quot;Run&quot;,
-    &quot;Python.event_frend.executor&quot;: &quot;Run&quot;,
-    &quot;Python.fun.executor&quot;: &quot;Run&quot;,
-    &quot;Python.generate_route.executor&quot;: &quot;Run&quot;,
-    &quot;Python.heroes.executor&quot;: &quot;Run&quot;,
-    &quot;Python.img_crop (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.img_crop.executor&quot;: &quot;Run&quot;,
-    &quot;Python.img_crop1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.img_stat_kv.executor&quot;: &quot;Run&quot;,
-    &quot;Python.info.executor&quot;: &quot;Run&quot;,
-    &quot;Python.info_messages.executor&quot;: &quot;Run&quot;,
-    &quot;Python.information_messages (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.item_pos.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.map_tour.executor&quot;: &quot;Run&quot;,
-    &quot;Python.mess (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.mess.executor&quot;: &quot;Run&quot;,
-    &quot;Python.mini_gui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.my_gui (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.my_gui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.os_action.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pos_value_energy.executor&quot;: &quot;Run&quot;,
-    &quot;Python.servis_cla.executor&quot;: &quot;Run&quot;,
-    &quot;Python.servis_ev.executor&quot;: &quot;Run&quot;,
-    &quot;Python.station_master.executor&quot;: &quot;Run&quot;,
-    &quot;Python.t_item (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.t_item.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tasks_analiz.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tempo (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.tempo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.timer.executor&quot;: &quot;Run&quot;,
-    &quot;Python.www.executor&quot;: &quot;Run&quot;,
-    &quot;Python.www1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.www2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.картинки_маяки.executor&quot;: &quot;Run&quot;,
-    &quot;Python.картинки_маяки_для_браузера.executor&quot;: &quot;Run&quot;,
-    &quot;Python.маяки_для PlayMachine.executor&quot;: &quot;Run&quot;,
-    &quot;Python.скрины для ПМ.executor&quot;: &quot;Run&quot;,
-    &quot;Python.создание скриншотов.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
-    &quot;ToolWindow.Python Console.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/python/bot_ocr1/img/test/test_tasks/test big tasks&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Python.a_serial_scrin_for_pm (1).executor": "Run",
+    "Python.chage_color (1).executor": "Run",
+    "Python.chage_color.executor": "Run",
+    "Python.cr_img.executor": "Run",
+    "Python.cr_img_dva.executor": "Run",
+    "Python.cr_img_id_name_station (1).executor": "Run",
+    "Python.cr_img_id_name_station.executor": "Run",
+    "Python.cr_img_map_name_station.executor": "Run",
+    "Python.cr_img_mob.executor": "Run",
+    "Python.cr_img_points.executor": "Run",
+    "Python.cr_nam_img.executor": "Run",
+    "Python.cr_name_mob_img (1).executor": "Run",
+    "Python.cr_name_mob_img.executor": "Run",
+    "Python.createAndName_ui.executor": "Run",
+    "Python.create_and_analiz_img (1).executor": "Run",
+    "Python.create_and_analiz_img.executor": "Run",
+    "Python.create_img.executor": "Run",
+    "Python.display_info.executor": "Run",
+    "Python.event_frend.executor": "Run",
+    "Python.fun.executor": "Run",
+    "Python.generate_route.executor": "Run",
+    "Python.heroes.executor": "Run",
+    "Python.img_crop (1).executor": "Run",
+    "Python.img_crop.executor": "Run",
+    "Python.img_crop1.executor": "Run",
+    "Python.img_servis.executor": "Run",
+    "Python.img_stat_kv.executor": "Run",
+    "Python.info.executor": "Run",
+    "Python.info_messages.executor": "Run",
+    "Python.information_messages (1).executor": "Run",
+    "Python.item_pos.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.map_tour.executor": "Run",
+    "Python.mess (1).executor": "Run",
+    "Python.mess.executor": "Run",
+    "Python.mini_gui.executor": "Run",
+    "Python.my_gui (1).executor": "Run",
+    "Python.my_gui.executor": "Run",
+    "Python.os_action.executor": "Run",
+    "Python.pos_value_energy.executor": "Run",
+    "Python.servis_cla.executor": "Run",
+    "Python.servis_ev.executor": "Run",
+    "Python.station_master.executor": "Run",
+    "Python.t_item (1).executor": "Run",
+    "Python.t_item.executor": "Run",
+    "Python.tasks_analiz.executor": "Run",
+    "Python.tem1.executor": "Run",
+    "Python.tempo (1).executor": "Run",
+    "Python.tempo.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.timer.executor": "Run",
+    "Python.www.executor": "Run",
+    "Python.www1.executor": "Run",
+    "Python.www2.executor": "Run",
+    "Python.картинки_маяки.executor": "Run",
+    "Python.картинки_маяки_для_браузера.executor": "Run",
+    "Python.маяки_для PlayMachine.executor": "Run",
+    "Python.скрины для ПМ.executor": "Run",
+    "Python.создание скриншотов.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "ShowUsagesActions.previewPropertyKey": "true",
+    "ToolWindow.Python Console.ShowToolbar": "false",
+    "git-widget-placeholder": "update-change-acc",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/python/bot_ocr1/img/test/test_tasks/test big tasks",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "editing.templates"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\python\bot_ocr1\img\test\test_tasks\test big tasks" />
@@ -139,11 +147,11 @@
       <recent name="D:\bot in br\testOCR\img\station_master\numbers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\python\bot_ocr1\img\kv\result_round\loot" />
       <recent name="C:\python\bot_ocr1" />
       <recent name="C:\python\bot_ocr1\service" />
       <recent name="D:\bot in br\testOCR\tools" />
       <recent name="D:\bot in br\testOCR\service" />
-      <recent name="D:\bot in br\testOCR" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -151,7 +159,7 @@
       <command value="zadaniya" />
     </option>
   </component>
-  <component name="RunManager" selected="Python.a_serial_scrin_for_pm (1)">
+  <component name="RunManager" selected="Python.img_servis">
     <configuration name="a_serial_scrin_for_pm (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
@@ -174,7 +182,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="cr_img" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="img_crop1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -187,7 +195,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cr_img.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/img_crop1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -196,7 +204,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="createAndName_ui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="img_servis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -209,7 +217,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/createAndName_ui.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/img_servis.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -240,7 +248,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tempo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="tem1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -253,7 +261,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tempo.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tem1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -264,11 +272,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.a_serial_scrin_for_pm (1)" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.tempo" />
-        <item itemvalue="Python.cr_img" />
-        <item itemvalue="Python.createAndName_ui" />
+        <item itemvalue="Python.img_servis" />
+        <item itemvalue="Python.img_crop1" />
+        <item itemvalue="Python.tem1" />
+        <item itemvalue="Python.a_serial_scrin_for_pm (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -344,7 +352,95 @@
       <option name="project" value="LOCAL" />
       <updated>1764518015462</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="чистка cr_img.py, обновлён continue_gavr.png">
+      <option name="closed" value="true" />
+      <created>1764608945320</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1764608945320</updated>
+    </task>
+    <task id="LOCAL-00009" summary="branch start">
+      <option name="closed" value="true" />
+      <created>1764694054125</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1764694054125</updated>
+    </task>
+    <task id="LOCAL-00010" summary="2 функции для активации меню">
+      <option name="closed" value="true" />
+      <created>1764699164182</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1764699164182</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Добавил проверку наличия энергии для решения о необходимости идти на Пушкиинскую">
+      <option name="closed" value="true" />
+      <created>1764766495582</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1764766495582</updated>
+    </task>
+    <task id="LOCAL-00012" summary="в station_master.py и main.py добавил учёт белых крыс и отображение. В kv_and_raid.py complex_phrases.py сохранение, обработка и вывод loot. В touring.py логика оставшейся энергии. В main.py поменял вывод инфо серых на белых крыс. В heroes.py добавил счетчик белых крыс и list_loot.">
+      <option name="closed" value="true" />
+      <created>1764863950187</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1764863950187</updated>
+    </task>
+    <task id="LOCAL-00013" summary="дебаг смены героев, изменена логика анализа получения и отображения информации о погонах">
+      <option name="closed" value="true" />
+      <created>1765021802177</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1765021802177</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Добавлена информация о белых крысах">
+      <option name="closed" value="true" />
+      <created>1765116599456</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1765116599456</updated>
+    </task>
+    <task id="LOCAL-00015" summary="в person.py убрал логирование в терминал. В main.py переставил кнопки. В fun.py и station_master.py добавил логирование в терминал">
+      <option name="closed" value="true" />
+      <created>1765292961006</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1765292961007</updated>
+    </task>
+    <task id="LOCAL-00016" summary="11.12.25">
+      <option name="closed" value="true" />
+      <created>1765460802157</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1765460802157</updated>
+    </task>
+    <task id="LOCAL-00017" summary="11.12.25">
+      <option name="closed" value="true" />
+      <created>1765460867421</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1765460867421</updated>
+    </task>
+    <task id="LOCAL-00018" summary="31.12.25">
+      <option name="closed" value="true" />
+      <created>1767178661165</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1767178661165</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -365,7 +461,17 @@
     <MESSAGE value="Включил вывод информации. В os_action.get_data_creation_file добавил параметр info и его логику." />
     <MESSAGE value="Чистка ненужных комментариев." />
     <MESSAGE value="переименовал функцию создания лога" />
-    <option name="LAST_COMMIT_MESSAGE" value="переименовал функцию создания лога" />
+    <MESSAGE value="чистка cr_img.py, обновлён continue_gavr.png" />
+    <MESSAGE value="branch start" />
+    <MESSAGE value="2 функции для активации меню" />
+    <MESSAGE value="Добавил проверку наличия энергии для решения о необходимости идти на Пушкиинскую" />
+    <MESSAGE value="в station_master.py и main.py добавил учёт белых крыс и отображение. В kv_and_raid.py complex_phrases.py сохранение, обработка и вывод loot. В touring.py логика оставшейся энергии. В main.py поменял вывод инфо серых на белых крыс. В heroes.py добавил счетчик белых крыс и list_loot." />
+    <MESSAGE value="дебаг смены героев, изменена логика анализа получения и отображения информации о погонах" />
+    <MESSAGE value="Добавлена информация о белых крысах" />
+    <MESSAGE value="в person.py убрал логирование в терминал. В main.py переставил кнопки. В fun.py и station_master.py добавил логирование в терминал" />
+    <MESSAGE value="11.12.25" />
+    <MESSAGE value="31.12.25" />
+    <option name="LAST_COMMIT_MESSAGE" value="31.12.25" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -387,52 +493,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/find_img.py</url>
-          <line>198</line>
+          <line>199</line>
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>96</line>
+          <line>184</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>181</line>
+          <line>293</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>182</line>
-          <option name="timeStamp" value="109" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>153</line>
+          <line>221</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>286</line>
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>45</line>
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/complex_phrases.py</url>
-          <line>137</line>
+          <line>170</line>
           <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>114</line>
+          <line>172</line>
           <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>354</line>
+          <line>391</line>
           <option name="timeStamp" value="122" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -441,54 +532,39 @@
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>48</line>
-          <option name="timeStamp" value="135" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>74</line>
-          <option name="timeStamp" value="136" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cr_img.py</url>
-          <line>116</line>
-          <option name="timeStamp" value="139" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cr_img_map_name_station.py</url>
-          <line>103</line>
+          <line>102</line>
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/baza_dannyx.py</url>
-          <line>3</line>
-          <option name="timeStamp" value="141" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/baza_dannyx.py</url>
-          <line>6</line>
-          <option name="timeStamp" value="142" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/baza_dannyx.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="143" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fun.py</url>
-          <line>526</line>
+          <line>542</line>
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/solid_memory.py</url>
-          <line>118</line>
+          <line>149</line>
           <option name="timeStamp" value="146" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/solid_memory.py</url>
-          <line>77</line>
+          <line>106</line>
           <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/heroes.py</url>
+          <line>424</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/station_master.py</url>
+          <line>243</line>
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>104</line>
+          <option name="timeStamp" value="156" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

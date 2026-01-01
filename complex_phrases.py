@@ -6,8 +6,6 @@ import heroes
 import color_text
 
 
-
-
 def display_report_energy_now(*, vers_in_print, value_energy):
     """
     Пример сообщения:
@@ -16,12 +14,11 @@ def display_report_energy_now(*, vers_in_print, value_energy):
         vers_in_print (str): пробел или значение {conf_=}
         value_energy (int): количество энергии потраченной на задание
     """
-    print(f'{vers_in_print}'  # {task_number} задание
+    print(color_text.tc_blue(f'{vers_in_print}'  # {task_number} задание
           f'Сейчас {value_energy}, '
           f'сегодня {heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)}, '
           f'всего/на Киевской: {heroes.Hero.get_energy_count_all(heroes.Activ.hero_activ)}/'
-          f'{heroes.Hero.get_energy_kiev_count_all(heroes.Activ.hero_activ)}'
-          )
+          f'{heroes.Hero.get_energy_kiev_count_all(heroes.Activ.hero_activ)}'))
 
 
 def set_inspect_report():
@@ -66,6 +63,16 @@ def display_report_wildman():
     return
 
 
+def display_report_w_rat():
+    print()
+    print('white rat')
+    for key in heroes.hero_dict:
+        name = heroes.Hero.get_name_ru(heroes.hero_dict[key]).rjust(7, ' ')
+
+        print(f'{name}:{report_white_rat(hero=heroes.hero_dict[key])}')
+    return
+
+
 def display_smol_report_wildman():
     """
     gady 0 дней, 0 дикарей
@@ -75,12 +82,38 @@ def display_smol_report_wildman():
     for key in heroes.hero_dict:
         name = key.rjust(8, ' ')
         q_days = str(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])).rjust(3, ' ')
-        days = (fun.transform_word_days(qty_days=(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])))).rjust(5, ' ')
+        days = (fun.transform_word_days(qty_days=(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])))).rjust(5,
+                                                                                                                     ' ')
         q_wild = str(heroes.Hero.get_wildman_count(heroes.hero_dict[key])).rjust(4)
         wild = fun.transform_word_wilds(qty_wilds=heroes.Hero.get_wildman_count(heroes.hero_dict[key])).rjust(8)
         print(f'{name}{q_days}{days}{q_wild}{wild}')
 
     return
+
+
+def report_white_rat(*, hero):
+    #  Потрачено {} ед.эн.
+    # {} эн на 1го.
+
+    text_22 = color_text.tc_green(' Потрачено ')  # 'Потрачено '
+    energy_w_rat_count_all = color_text.tc_yellow(f'{heroes.Hero.get_white_rat_energy(hero)}')  # 'XXX'
+    text_23 = color_text.tc_green(' ед.эн.')
+    phrase2 = f'{text_22}{energy_w_rat_count_all}{text_23}'
+
+    # количество энергии на одного
+    if heroes.Hero.get_white_rat_count_all(hero):
+        qty_wr = str(heroes.Hero.get_white_rat_count_all(hero))
+        val_all = color_text.tc_blue(qty_wr)
+        phrase3 = f' {val_all} шт.'
+        average_value_3 = color_text.tc_blue(
+            f'{round(heroes.Hero.get_white_rat_energy(hero) / heroes.Hero.get_white_rat_count_all(hero), 4)}')  # '7'
+        text_32 = color_text.tc_green(' эн на 1ну крысу.')  # ' эн на 1го'
+        phrase1 = f'{average_value_3.rjust(17)}{text_32}'
+        report_w_rat_hero = f'{phrase1}{phrase2}{phrase3}'
+    else:
+        phrase1 = 'Нет данных.'.rjust(19)
+        report_w_rat_hero = f'{phrase1}{phrase2}'
+    return report_w_rat_hero
 
 
 def report_wildman(*, hero):
@@ -145,7 +178,14 @@ def report_kv_efficiency():
     phrase2 = color_text.tc_cyan(f'в кв {qty_duel_in_kv_victory} {word_vik_in_kv} в '
                                  f'{qty_duel_in_kv_all} {word_duel_in_kv}'
                                  f'({percent_vik_kv}%). Погоны {qty_duel_loot}')
-    return phrase1, phrase2
+
+    list_loot = heroes.Hero.get_list_loot(activ_her)
+    # print(f'{list_loot=}')
+    if list_loot:
+        phrase3 = ', '.join(list_loot)
+    else:
+        phrase3 = []
+    return phrase1, phrase2, phrase3
 
 
 def report_shoulder_straps():

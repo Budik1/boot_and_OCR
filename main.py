@@ -66,10 +66,10 @@ def displaying_values(info=True):
     else:
         solid_memory.save_all_state_config(info=False)
 
-    gady_rat.set(heroes.gady.grey_rat)
-    gavr_rat.set(heroes.gavr.grey_rat)
+    gady_rat.set(heroes.gady.white_rat_now)
+    gavr_rat.set(heroes.gavr.white_rat_now)
     # veles_rat.set(heroes.veles.grey_rat)
-    mara_rat.set(heroes.mara.grey_rat)
+    mara_rat.set(heroes.mara.white_rat_now)
 
     gady_kiki.set(heroes.gady.kiki)
     gavr_kiki.set(heroes.gavr.kiki)
@@ -133,7 +133,7 @@ def puli():
 
 def kiki():
     touring.for_kiki()
-    fun.work_8_hour()
+    fun.work()
     displaying_values(info=False)
 
 
@@ -179,7 +179,7 @@ def tent_inspection():
         return
 
 
-def tasks_na_kievskoy():
+def wild():
     hero = fun.selection_hero(show_name=False)
     if hero:
         heroes.Hero.app_wildman_days_count(heroes.Activ.hero_activ)
@@ -188,13 +188,14 @@ def tasks_na_kievskoy():
         print('герой не опознан')
         return
     touring.for_wilds()
-    fun.work_8_hour()
+    fun.work()
     # Hero.a
     displaying_values(info=False)
 
 
 def wild_kiki():
     start_time = time()
+
     hero = fun.selection_hero()
     if hero:
         heroes.Hero.app_wildman_days_count(heroes.Activ.hero_activ)
@@ -205,8 +206,10 @@ def wild_kiki():
     touring.for_wilds()
     displaying_values()
     touring.for_kiki()
-    fun.work_8_hour()
+    fun.work()
     displaying_values(info=False)
+
+
     finish_time = float(time() - start_time)  # общее количество секунд
     minutes = int(finish_time // 60)  # количество минут
     seconds = round((finish_time % minutes), 2)
@@ -214,6 +217,8 @@ def wild_kiki():
 
 
 def collecting_gifts_at_stations():
+    start_time = time()
+    
     fun.push_close_all_()
     # определение героя
     hero = fun.selection_hero()
@@ -232,6 +237,12 @@ def collecting_gifts_at_stations():
     # вывод информации
     print(f'На {q_st} станциях собрано {q_gifts} подарков')
     displaying_values(info=False)
+    fun.work()
+
+    finish_time = float(time() - start_time)  # общее количество секунд
+    minutes = int(finish_time // 60)  # количество минут
+    seconds = round((finish_time % minutes), 2)
+    print('Потрачено время', minutes, 'минут', seconds, 'сек.')
 
 
 def changeColor(*, her_active):
@@ -311,6 +322,8 @@ def save_date_up():
 def get_target(event):
     selection = combobox.get()
     touring.move_to_target(target_point=selection)
+    if selection == 'домой':
+        fun.work()
     displaying_values(info=False)
     return
 
@@ -327,7 +340,7 @@ def timer():
         date_up = heroes.Hero.get_up_date(heroes.gady)
         if date_up != '':
             number_days = fun.dif_days(date_old=date_up)
-            msg = f'{number_days} day  ур'
+            msg = f'{number_days} day ур'
             # print(f'{msg=}')
             timer_gady_label.config(text=msg)
         else:
@@ -344,7 +357,7 @@ def timer():
         date_up = heroes.Hero.get_up_date(heroes.gavr)
         if date_up:
             number_days = fun.dif_days(date_old=date_up)
-            msg = f'{number_days} day  ур'
+            msg = f'{number_days} day ур'
             timer_gavr_label.config(text=msg)
         else:
             timer_gavr_label.config(text="00:00:00")
@@ -370,7 +383,7 @@ def timer():
         date_up = heroes.Hero.get_up_date(heroes.mara)
         if date_up:
             number_days = fun.dif_days(date_old=date_up)
-            msg = f'{number_days} day  ур'
+            msg = f'{number_days} day ур'
             timer_mara_label.config(text=msg)
         else:
             timer_mara_label.config(text="00:00:00")
@@ -404,6 +417,10 @@ def set_timer1():
     tim_entree = int(time() + b_d.timer1)  #
     heroes.Hero.set_time_entree(heroes.Activ.hero_activ, tim_entree)
     solid_memory.save_all_state_config(info=False)
+
+def set_param():
+    heroes.gady.list_loot = []
+    displaying_values(info=True)
 
 
 root = Tk()
@@ -455,7 +472,7 @@ gady_wild = StringVar()
 mara_wild = StringVar()
 veles_wild = StringVar()
 
-box_paths = touring.list_names_all_station
+box_paths = touring.extraction_name_in_list(value=b_d.list_of_stations)
 box_paths.insert(0, 'домой')
 lang_var = StringVar(value=box_paths[0])
 
@@ -464,31 +481,32 @@ start_prog()
 # -------------------------------------------------------------
 
 # блок командных кнопок
-ttk.Button(text="КВ", width=13, command=kv_and_raid.kv).place(x=115, y=b_d.line5)
-ttk.Button(text=" Start ", width=13, command=start_pm).place(x=241, y=b_d.line5)
+ttk.Button(text="КВ", width=10, command=kv_and_raid.kv).place(x=115, y=b_d.line4)
+ttk.Button(text=" Start ", width=10, command=start_pm).place(x=190, y=b_d.line4)
+ttk.Button(text='Save', width=12, command=displaying_values).place(x=265, y=b_d.line4)
 
-ttk.Button(text="set 24 h", width=8, command=set_timer24).place(x=b_d.timer_x, y=b_d.line5)
-ttk.Button(text="set 8 h ", width=8, command=set_timer8).place(x=b_d.timer_x, y=b_d.line6)
-ttk.Button(text="set 1 h ", width=8, command=set_timer1).place(x=b_d.timer_x, y=b_d.line7)
+ttk.Button(text="set 24 h", width=8, command=set_timer24).place(x=b_d.timer_x, y=b_d.line4)
+ttk.Button(text="set 8 h ", width=8, command=set_timer8).place(x=b_d.timer_x, y=b_d.line5)
+ttk.Button(text="set 1 h ", width=8, command=set_timer1).place(x=b_d.timer_x, y=b_d.line6)
 
-ttk.Button(text="wild+kiki", width=9, command=wild_kiki).place(x=115, y=b_d.line6)
-ttk.Button(text="обход всех станций", width=17, command=collecting_gifts_at_stations).place(x=205, y=b_d.line6)
+ttk.Button(text="wild+kiki", width=9, command=wild_kiki).place(x=115, y=b_d.line5)
+ttk.Button(text="обход всех станций", width=18, command=collecting_gifts_at_stations).place(x=205, y=b_d.line5)
 
-ttk.Button(text='Save', width=12, command=displaying_values).place(x=115, y=b_d.line7)
-ttk.Button(text='рапорт E', width=12, command=complex_phrases.display_info_energy_all).place(x=200, y=b_d.line7)
-ttk.Button(text='рапорт W', width=12, command=complex_phrases.display_report_wildman).place(x=285, y=b_d.line7)
+ttk.Button(text='рапорт W_R', width=12, command=complex_phrases.display_report_w_rat).place(x=115, y=b_d.line6)
+ttk.Button(text='рапорт W', width=12, command=complex_phrases.display_report_wildman).place(x=200, y=b_d.line6)
+ttk.Button(text='рапорт E', width=12, command=complex_phrases.display_info_energy_all).place(x=285, y=b_d.line6)
 
 ttk.Label(text='            куда пойдем ?', width=21, background='#858585', foreground='#050505').place(x=156,
-                                                                                                        y=b_d.line8)
+                                                                                                        y=b_d.line7)
 
 combobox = ttk.Combobox(textvariable=lang_var, values=box_paths, state="readonly", width=23)
-combobox.place(x=138, y=b_d.line9)
+combobox.place(x=138, y=b_d.line8)
 combobox.bind("<<ComboboxSelected>>", get_target)
-ttk.Button(text='Паспортист', width=14, command=save_home_point).place(x=0, y=b_d.line9 - 2)
+ttk.Button(text='Паспортист', width=14, command=save_home_point).place(x=0, y=b_d.line8 - 2)
 
-ttk.Button(text="фото противника", width=15, command=create_img_arena_object).place(x=0, y=b_d.line10)
-ttk.Button(text="атака противника", width=15, command=kill).place(x=225, y=b_d.line10)
-# ttk.Button(text="kv rapport", width=6, command=kv_report).place(x=150, y=b_d.line10)
+ttk.Button(text="фото противника", width=16, command=create_img_arena_object).place(x=0, y=b_d.line9)
+ttk.Button(text="атака противника", width=16, command=kill).place(x=225, y=b_d.line9)
+ttk.Button(text="set_param", width=10, command=set_param).place(x=150, y=b_d.line10)
 
 timer_gady_label = ttk.Label()
 timer_gady_label.config(text="", font=("Helvetica", 12))  # , font=("Helvetica", 12)
@@ -511,9 +529,9 @@ ttk.Button(text="Gavr", width=5, command=change_gavr).place(x=0, y=b_d.gavr_y)
 # ttk.Button(text="Велес", width=5, command=change_veles).place(x=0, y=b_d.veles_y)
 ttk.Button(text="Мара", width=5, command=change_mara).place(x=0, y=b_d.mara_y)
 
-ttk.Button(text="VIP", width=4, command=tent_inspection).place(x=b_d.vip_x - b_d.s, y=b_d.label_line0 - 3)
-ttk.Button(text="kiki", width=4, command=kiki).place(x=b_d.kiki_x - b_d.s, y=b_d.label_line0 - 3)
-ttk.Button(text="wild", width=4, command=tasks_na_kievskoy).place(x=b_d.wild_x - (b_d.s + 3), y=b_d.label_line0 - 3)
+ttk.Button(text="VIP", width=5, command=tent_inspection).place(x=b_d.vip_x - b_d.s, y=b_d.label_line0 - 3)
+ttk.Button(text="kiki", width=5, command=kiki).place(x=b_d.kiki_x - b_d.s, y=b_d.label_line0 - 3)
+ttk.Button(text="wild", width=5, command=wild).place(x=b_d.wild_x - (b_d.s + 3), y=b_d.label_line0 - 3)
 ttk.Button(text="up", width=4, command=save_date_up).place(x=0, y=b_d.label_line0 - 3)
 w_l = 3
 # блок инфо строк
@@ -548,7 +566,7 @@ ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.gavr_y)
 # ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.veles_y)
 ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.mara_y)
 
-ttk.Label(text="arah", width=4, background='#858585', foreground='#050505').place(x=b_d.arah_x - b_d.s,
+ttk.Label(text="arah", width=5, background='#858585', foreground='#050505').place(x=b_d.arah_x - b_d.s,
                                                                                   y=b_d.label_line0)
 ttk.Label(textvariable=gavr_arachne).place(x=b_d.arah_x, y=b_d.gavr_y)
 ttk.Label(textvariable=gady_arachne).place(x=b_d.arah_x, y=b_d.gady_y)
@@ -560,7 +578,7 @@ ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.gavr_y)
 # ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.veles_y)
 ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.mara_y)
 
-ttk.Label(text="rapt", width=4, background='#858585', foreground='#050505').place(x=b_d.rapt_x - b_d.s,
+ttk.Label(text="rapt", width=5, background='#858585', foreground='#050505').place(x=b_d.rapt_x - b_d.s,
                                                                                   y=b_d.label_line0)
 ttk.Label(textvariable=gavr_raptor).place(x=b_d.rapt_x, y=b_d.gavr_y)
 ttk.Label(textvariable=gady_raptor).place(x=b_d.rapt_x, y=b_d.gady_y)
@@ -572,7 +590,7 @@ ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.gavr_y)
 # ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.veles_y)
 ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.mara_y)
 
-ttk.Label(text="rat", width=4, background='#858585', foreground='#050505').place(x=b_d.rat_x - b_d.s,
+ttk.Label(text="w_rat", width=5, background='#858585', foreground='#050505').place(x=b_d.rat_x - b_d.s,
                                                                                  y=b_d.label_line0)
 ttk.Label(textvariable=gavr_rat).place(x=b_d.rat_x, y=b_d.gavr_y)
 ttk.Label(textvariable=gady_rat).place(x=b_d.rat_x, y=b_d.gady_y)
@@ -584,7 +602,7 @@ ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.gavr_y)
 # ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.veles_y)
 ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.mara_y)
 
-ttk.Label(text="gift", width=4, background='#858585', foreground='#050505').place(x=b_d.gift_x - b_d.s,
+ttk.Label(text="gift", width=5, background='#858585', foreground='#050505').place(x=b_d.gift_x - b_d.s,
                                                                                   y=b_d.label_line0)
 ttk.Label(textvariable=gavr_gift).place(x=b_d.gift_x, y=b_d.gavr_y)
 ttk.Label(textvariable=gady_gift).place(x=b_d.gift_x, y=b_d.gady_y)
@@ -603,7 +621,7 @@ ttk.Label(textvariable=mara_wild).place(x=b_d.wild_x, y=b_d.mara_y)
 
 # блок выбора заданий
 difference_str_img = 8
-line_img = b_d.line5 + 5
+line_img = b_d.line4 + 5
 imagePul = ImageTk.PhotoImage(file="img/overall/pulya.png")
 ttk.Button(root, image=imagePul, command=puli).place(x=56, y=line_img + 15)
 img_e1 = ImageTk.PhotoImage(file="img/overall/en1v3.png")

@@ -2,18 +2,17 @@ import pyautogui
 import datetime
 from time import sleep, time
 
-import fun
+# import fun
 import sounds
 import find_img
 import fun_down
 import baza_dannyx as b_d
-import color_text as myCt
+import color_text
 
 import heroes
 
 par_conf = 0.79
 oblast = (51, 707, 92, 111)
-log = 1
 
 
 def locCenterImg(name_img, confidence=0.9, region: tuple[int, int, int, int] | None = None, grayscale=None):
@@ -24,9 +23,13 @@ def locCenterImg(name_img, confidence=0.9, region: tuple[int, int, int, int] | N
     return pos_img
 
 
-def wait_static_pos(*, name_img, region=None, confidence=0.99, message=None):
+def wait_static_pos(*, name_img, region=None, confidence=0.99,
+                    message=False, message_l=None):
+    my_log_file('')
+    my_log_file(f'fun.wait_static_pos {message_l}')
+    my_log_file(f'{name_img=}')
     if message:
-        print(f'{message}')
+        print(f'fun.wait_static_pos {message_l=}')
     pos = locCenterImg(name_img=name_img, region=region, confidence=confidence)
     while not pos:
         pos = locCenterImg(name_img=name_img, region=region, confidence=confidence)
@@ -34,9 +37,13 @@ def wait_static_pos(*, name_img, region=None, confidence=0.99, message=None):
     return pos_img
 
 
-def wait_and_stop_img(*, name_img, region: tuple[int, int, int, int] | None = None, confidence=0.9, message=''):
+def wait_and_stop_img(*, name_img, region: tuple[int, int, int, int] | None = None, confidence=0.9,
+                      message=False, message_l=None):
+    my_log_file('')
+    my_log_file(f'fun.wait_and_stop_img {message_l}')
+    my_log_file(f'{name_img=}')
     if message:
-        print(f'{message}')
+        print(f'fun.wait_and_stop_img {message_l}')
     img_1 = locCenterImg(name_img=name_img, confidence=confidence, region=region)
     sleep(0.3)
     img_2 = locCenterImg(name_img=name_img, confidence=confidence, region=region)
@@ -47,40 +54,14 @@ def wait_and_stop_img(*, name_img, region: tuple[int, int, int, int] | None = No
     return img_1
 
 
-def mouse_left_click(*, pos):
+def mouse_left_click(*, pos, message=False):
+    my_log_file('')
+    my_log_file(f'fun.mouse_left_click {pos=}')
+    if message:
+        print(f'fun.mouse_left_click {message=} {pos=}')
     sounds.click_mouse()
-    pyautogui.click(pos)
     pyautogui.hotkey('Ctrl')
-
-
-def mouse_move_to_click(*, pos_click: tuple, move_time=0.75, z_p_k=0.05):
-    """
-    Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
-    :param pos_click: Point
-    :param move_time: время перемещения указателя мыши в секундах
-    :param z_p_k: задержка перед кликом(float)
-    :return: None
-    """
-    my_log_file('fun.mouse_move_to_click')
-    # print('mouse_move_to_click', pos_click)
-    sleep(0.3)
-    mouse_move(pos=pos_click, speed=move_time)
-    # print('должен быть клик')
-    sleep(z_p_k)
-    mouse_left_click(pos=pos_click)
-    sleep(0.18)
-
-
-def mouse_move(*, pos: tuple, speed=0.2, show=True):
-    """
-
-    :param pos:
-    :param speed:
-    :param show:
-    :return:
-    """
-    if show:
-        pyautogui.moveTo(pos, duration=speed)
+    pyautogui.click(pos)
 
 
 class Mouse:
@@ -92,32 +73,46 @@ class Mouse:
         print(pyautogui.position())
 
     @staticmethod
-    def move(*, pos: tuple, speed=0.2, show=True):
+    def move(*, pos: tuple, speed=0.2, show=True, log=False, message_l=None):
         """
 
         :param pos:
         :param speed:
         :param show:
+        :param log:
+        :param message_l:
         :return:
         """
+        my_log_file('')
+        my_log_file(f'fun.Mouse.move {message_l}')
+        my_log_file(f'{pos=}')
+        if log:
+            print(f'fun.Mouse.move {message_l=}')
         if show:
             pyautogui.moveTo(pos, duration=speed)
         return
 
     @staticmethod
-    def left_click(*, pos):
+    def left_click(*, pos, message=False, message_l=None):
         """
 
         :param pos:
+        :param message:
+        :param message_l:
         :return:
         """
+        my_log_file('')
+        my_log_file(f'fun.Mouse.left_click {message_l}')
+        my_log_file(f' {pos=}')
+        if message:
+            print(f'fun.Mouse.left_click {message_l=}')
         sounds.click_mouse()
         pyautogui.hotkey('Ctrl')
         pyautogui.click(pos)
         return
 
     @staticmethod
-    def take_drag_drop_y(*, pos_take, distance, speed=0.2):
+    def take_drag_drop_y(*, pos_take, distance, speed=0.2, ):  # message=None, message_l=None
         """
         
         :param pos_take: 
@@ -134,58 +129,66 @@ class Mouse:
         return
 
     @staticmethod
-    def take_drag_drop(*, pos_take: tuple, pos_drop: tuple, speed: float = 0.2) -> None:
+    def take_drag_drop(*, pos_take: tuple, pos_drop: tuple, speed: float = 0.2, message=False, message_l=None) -> None:
         """
 
         :param pos_take:
         :param pos_drop: 
         :param speed: 
-        :return: 
+        :param message:
+        :param message_l:
+        :return:
         """
+        my_log_file(f'fun.Mouse.take_drag_drop {message_l}')
+        if message:
+            print(f'fun.Mouse.take_drag_drop {message_l=}')
         pyautogui.mouseDown(pos_take)
         Mouse.move(pos=pos_drop, speed=speed)
         pyautogui.mouseUp()
         return
 
     @staticmethod
-    def move_to_click(*, pos_click: tuple, move_time: float = 0.75, z_p_k: float = 0.05) -> None:
+    def move_to_click(*, pos_click: tuple, move_time: float = 0.75, z_p_k: float = 0.05, log=False,
+                      message_l=None) -> None:
         """
         Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
 
         :param pos_click: Point
         :param move_time: время перемещения указателя мыши в секундах
         :param z_p_k: задержка перед кликом(float)
+        :param log:
+        :param message_l: цель клика
         :return: None
         """
-        my_log_file('fun.mouse_move_to_click')
-        # print('mouse_move_to_click', pos_click)
+        my_log_file(f'fun.Mouse.move_to_click {message_l=}, {pos_click=}')
+        if log:
+            print(f'fun.Mouse.move_to_click {message_l=}, {pos_click=}')
         sleep(0.3)
         Mouse.move(pos=pos_click, speed=move_time)
         # print('должен быть клик')
         sleep(z_p_k)
-        mouse_left_click(pos=pos_click)
+        Mouse.left_click(pos=pos_click)
         sleep(0.18)
         return
 
 
 def my_log_file(text):
-    if log == 1:
-        date_time, date = date_time_now()
-        file_name = date + ".txt"
-        file_1 = open('log/' + str(file_name), 'a+', encoding='utf-8')
-        try:
-            print(date_time, text, file=file_1)
-        except FileNotFoundError:
-            # Если файл не найден, выводим сообщение об ошибке
-            print(f"Файл '{file_1}' не найден!")
-        except IOError:
-            # Если возникает ошибка ввода-вывода, выводим сообщение об ошибке
-            print("Произошла ошибка ввода-вывода при чтении файла!")
-        except Exception as e:
-            # Обработка других неожиданных исключений
-            print(f"Произошла неожиданная ошибка: {e}")
-        finally:
-            file_1.close()
+    date_time, date = date_time_now()
+    file_name = date + ".txt"
+    file_1 = open('log/' + str(file_name), 'a+', encoding='utf-8')
+    try:
+        print(date_time, text, file=file_1)
+    except FileNotFoundError:
+        # Если файл не найден, выводим сообщение об ошибке
+        print(f"Файл '{file_1}' не найден!")
+    except IOError:
+        # Если возникает ошибка ввода-вывода, выводим сообщение об ошибке
+        print("Произошла ошибка ввода-вывода при чтении файла!")
+    except Exception as e:
+        # Обработка других неожиданных исключений
+        print(f"Произошла неожиданная ошибка: {e}")
+    finally:
+        file_1.close()
 
 
 def date_utc_now():
@@ -261,29 +264,40 @@ def station_gifts():
 def push_close_all_(speed_mouse=0.75):
     my_log_file('fun.push_close_all_')
     pos_close = find_img.find_close()
+    print(f'fun.push_close_all_ {pos_close=}')
     while pos_close:
         close_popup_window(speed_mouse)
         push_close(speed_mouse)
         # sleep(1)
         pos_close = find_img.find_close()
-        # print("цикл close")
+        print(f"fun.push_close_all_  цикл close {pos_close=}")
 
 
 def close_popup_window(speed_mouse=0.75):
     my_log_file('fun.close_popup_window')
     knob = find_img.find_knob()
     cancel = find_img.find_cancel()
+    res = False
     if knob:
         Mouse.move_to_click(pos_click=knob, move_time=speed_mouse, z_p_k=1)
+        res = True
     if cancel:
         Mouse.move_to_click(pos_click=cancel, move_time=speed_mouse, z_p_k=1)
+        res = True
+    return res
 
 
-def push_close(speed_mouse=0.75):
+def push_close(speed_mouse=0.75, event=''):
+    my_log_file(f'')
     my_log_file('fun.push_close')
     pos_close = find_img.find_close()
+    # print(f'fun.push_close {pos_close=}')
     if pos_close:
-        Mouse.move_to_click(pos_click=pos_close, move_time=speed_mouse, z_p_k=0.1)
+        event_mes = color_text.tc_cyan(f'{event}')
+        my_log_file(f'')
+        my_log_file(f'fun.push_close {event_mes} {pos_close=}')
+        print(f'fun.push_close {event_mes} {pos_close=}')
+        Mouse.move_to_click(pos_click=pos_close, move_time=speed_mouse, z_p_k=0.1, log=True, message_l=event)
         close_flag = True
     else:
         close_flag = False
@@ -427,7 +441,7 @@ def find_link_station_master_alt():
     if not pos_klan and not station_master:
         my_log_file(f'ничего не видно')
         push_close_all_()
-        pos_klan = fun.wait_static_pos(name_img='img/overall/klan.png')
+        pos_klan = wait_static_pos(name_img='img/overall/klan.png')
     if pos_klan:
         point = vizit_to_station_master()
         my_log_file(f'{point=} если видно клан')
@@ -522,6 +536,8 @@ def get_areas_task_big_3(width=77, height=42):
 def get_areas_task_big(width=77, height=42, refactor=None):
     """Получение значений "region=" для поиска заданий в больших регионах
         :return: кортеж из трех списков значений"""
+    my_log_file('')
+    my_log_file('fun.get_areas_task_big')
     # my_print_to_file('fun.get_areas_task_big')
     # print('')
     pul = 370
@@ -534,7 +550,7 @@ def get_areas_task_big(width=77, height=42, refactor=None):
     width += big
     if refactor:
         # print(f'{x_or=}, {y_or=}')
-        fun.Mouse.move(pos=(x_or, y_or))
+        Mouse.move(pos=(x_or, y_or))
         # print(f'{x_or=}, {y_or=}, {x_an_pul=}, {width}')
 
     # регион поиска 1 (позиция анализа)
@@ -545,26 +561,27 @@ def get_areas_task_big(width=77, height=42, refactor=None):
         # print(f'fun.get_areas_task_big {region1_big=}')
         # print()
         name_create_img = 'img/test/areas_task1.png'
-        fun.foto(f'{name_create_img}', (x_an_pul, y_1an, width, height))
+        foto(f'{name_create_img}', (x_an_pul, y_1an, width, height))
 
     # регион поиска 2 (позиция анализа)
     y_2an = int(y_or + pos_2)
     region2_big = [x_an_pul, y_2an, width, height]
     if refactor:
         name_create_img = 'img/test/areas_task2.png'
-        fun.foto(f'{name_create_img}', (x_an_pul, y_2an, width, height))
+        foto(f'{name_create_img}', (x_an_pul, y_2an, width, height))
 
     # регион поиска 3 (позиция анализа)
     y_3an = int(y_or + pos_3)
     region3_big = [x_an_pul, y_3an, width, height]
     if refactor:
         name_create_img = 'img/test/areas_task3.png'
-        fun.foto(f'{name_create_img}', (x_an_pul, y_3an, width, height))
+        foto(f'{name_create_img}', (x_an_pul, y_3an, width, height))
 
     return region1_big, region2_big, region3_big
 
 
 def find_link_klan(show=True):
+    my_log_file('')
     my_log_file('fun.find_link_klan')
     pos_klan = find_img.find_klan()
     while not pos_klan:
@@ -581,6 +598,8 @@ def is_open_station():
 
     :return: Point station_master
     """
+    my_log_file('')
+    my_log_file('fun.is_open_station')
     open_station1 = find_img.find_link_money_token()
     while not open_station1:
         open_station1 = find_img.find_link_money_token()
@@ -590,6 +609,7 @@ def vizit_to_station_master():
     """заходит в палатку к нач.станции
     :return: Point 'station_master'
     """
+    my_log_file('')
     my_log_file('fun.vizit_to_station_master')
     # print('fun.vizit_to_station_master')
     is_open_station()
@@ -622,6 +642,8 @@ def find_lvl():
 
 
 def await_arena(region):
+    my_log_file('')
+    my_log_file('fun.await_arena')
     attack_arena_object = find_img.find_attack(region=region)
     while attack_arena_object is None:
         attack_arena_object = find_img.find_attack(region=region)
@@ -631,48 +653,54 @@ def await_arena(region):
 
 def selection_hero(*, show_name=True):
     # print('fun.selection_hero')
+    my_log_file('')
+    my_log_file('fun.selection_hero')
     hero_gadya = find_img.find_her_gadya()
     hero_gavr = find_img.find_her_gavr()
     hero_veles = find_img.find_her_veles()
     hero_mara = find_img.find_her_mara()
-
+    hero = None
     if hero_gadya:
         if show_name:
-            print(myCt.tc_yellow('Гадя'))
+            print(color_text.tc_yellow('Гадя'))
         hero = 'Gady'
         heroes.hero_activ_name = 'Gady'
         heroes.Activ.name_file_ = 'gady'
         heroes.Activ.hero_activ = heroes.gady
     elif hero_gavr:
         if show_name:
-            print(myCt.tc_yellow('Гавр'))
+            print(color_text.tc_yellow('Гавр'))
         hero = 'Gavr'
         heroes.Activ.hero_activ_name = 'Gavr'
         heroes.Activ.name_file_ = 'gavr'
         heroes.Activ.hero_activ = heroes.gavr
     elif hero_veles:
-        if show_name:
-            print(myCt.tc_yellow('Велес'))
-        hero = 'Велес'
-        heroes.Activ.hero_activ_name = 'Велес'
-        heroes.Activ.name_file_ = 'veles'
-        heroes.Activ.hero_activ = heroes.veles
+        pass
+        # if show_name:
+        #     print(myCt.tc_yellow('Велес'))
+        # hero = 'Велес'
+        # heroes.Activ.hero_activ_name = 'Велес'
+        # heroes.Activ.name_file_ = 'veles'
+        # heroes.Activ.hero_activ = heroes.veles
     elif hero_mara:
         if show_name:
-            print(myCt.tc_yellow('Мар`яна'))
+            print(color_text.tc_yellow('Мар`яна'))
         hero = 'Mara'
         heroes.Activ.hero_activ_name = 'Mara'
         heroes.Activ.name_file_ = 'mara'
         heroes.Activ.hero_activ = heroes.mara
     else:
-        print(myCt.tc_red("Невозможно опознать героя!! (("))
-        print()
-        hero = None
+        if show_name:
+            print(color_text.tc_red("Невозможно опознать героя!! (("))
+            print()
+
         heroes.Activ.hero_activ = None
     return hero
 
 
 def get_len_bypass(bypass_hero):
+    my_log_file('')
+    my_log_file('fun.get_len_bypass')
     arr2 = []
     for i in bypass_hero:
         if i not in arr2:
@@ -680,12 +708,17 @@ def get_len_bypass(bypass_hero):
     return len(arr2)
 
 
-def work_8_hour():
+def work():
+    my_log_file('')
+    my_log_file('fun.work')
+
+    rest = get_rest_tim(h_max=22)
+
     vizit_to_station_master()
     pos_work = find_img.find_work()
-    mouse_move_to_click(pos_click=pos_work)
-    work_8hour = find_img.find_work_8_hour()
-    mouse_move_to_click(pos_click=work_8hour)
+    Mouse.move_to_click(pos_click=pos_work)
+    work_rest_hour = find_img.find_work_rest_hour(rest=rest)
+    Mouse.move_to_click(pos_click=work_rest_hour)
     return
 
 
@@ -754,10 +787,10 @@ def verifi_img():
     path_img = input('Введи полное имя искомой картинки бес кавычек: ')
     pos = locCenterImg(name_img=path_img)
     if pos:
-        mouse_move(pos=pos)
-        print(myCt.tc_yellow(f'{path_img} - Найден )) все хорошо'))
+        Mouse.move(pos=pos)
+        print(color_text.tc_yellow(f'{path_img} - Найден )) все хорошо'))
     else:
-        print(myCt.tc_red(f'{path_img} - Не найден  !!'))
+        print(color_text.tc_red(f'{path_img} - Не найден  !!'))
     return
 
 
@@ -774,7 +807,7 @@ def ac():
     x, y = pos_my
     x -= 50
     y -= 50
-    mouse_move_to_click(pos_click=(x, y), move_time=0.3, z_p_k=0.2)
+    Mouse.move_to_click(pos_click=(x, y), move_time=0.3, z_p_k=0.2)
 
 
 def get_areas_energy_1():
@@ -888,7 +921,7 @@ def loc_now():
         pos = locCenterImg(name_img=img_station, confidence=0.99)
         if pos:
             list_location = b_d.list_of_stations[station]
-            mouse_move(pos=pos, speed=0.1)
+            Mouse.move(pos=pos, speed=0.1)
             # print(f'{b_d.list_of_stations[station][2]}') # img/tonelli/id_stations/s_Chekhov.png
             # print(f'имя станции старта - {list_location[0]}') # имя станции старта - ст. Чеховская
             break
@@ -897,6 +930,7 @@ def loc_now():
             # print(list_location)
     return list_location
 
+
 def dif_days(*, date_old, date_today=date_utc_now()):
     list_date_old = date_old.split(sep='-')
     list_date_today = date_today.split(sep='-')
@@ -904,7 +938,57 @@ def dif_days(*, date_old, date_today=date_utc_now()):
     par_month = 1
     par_day = 2
     d_old = datetime.date(int(list_date_old[par_year]), int(list_date_old[par_month]), int(list_date_old[par_day]))
-    d_today = datetime.date(int(list_date_today[par_year]), int(list_date_today[par_month]), int(list_date_today[par_day]))
+    d_today = datetime.date(int(list_date_today[par_year]), int(list_date_today[par_month]),
+                            int(list_date_today[par_day]))
     dif = d_today - d_old
     # print('fun.dif_days ', dif.days)
     return dif.days
+
+
+def rap_explore(*, text, ex=''):
+    if ex:
+        ex = 'выход'
+    else:
+        print()
+    print(color_text.tc_green(f'{text} {ex}'))
+    return
+
+
+def get_name_loot():
+    my_log_file(f'')
+    my_log_file(f'fun.get_name_loot')
+    dict_name_loot = {'сержант': 'img/kv/result_round/loot/p1.png',
+                      'лейтенант': 'img/kv/result_round/loot/p2.png',
+                      'капитан': 'img/kv/result_round/loot/p3.png',
+                      'полковник': 'img/kv/result_round/loot/p4.png',
+                      'генерал': 'img/kv/result_round/loot/p5.png'}
+    result = 'неопознан'
+    for name in dict_name_loot:
+        name_loot = locCenterImg(name_img=dict_name_loot[name])
+        if name_loot:
+            result = name
+            break
+    return result
+
+
+def get_rest_tim(*, h_max):
+    t_now = time_now()
+    h, m, s = t_now.split(':')
+    t_work = 8
+    rest_t = h_max - int(h)
+    if rest_t > 8:
+        t_work = 8
+    elif 8 >= rest_t > 5:
+        t_work = 5
+    elif 5 >= rest_t > 2:
+        t_work = 2
+    elif 2 >= rest_t > 1:
+        t_work = 1
+    return t_work
+
+def pos_parking():
+    m_g = find_img.find_my_game2()
+    x, y = m_g
+    y += 40
+    parking = x, y
+    return parking

@@ -40,8 +40,8 @@ def vip_click(region_search):
 def tent_detected(region_search):
     sleep(1)
     dom = find.find_b_tent(region_search=region_search)
-    fun.mouse_move(pos= dom, speed=1)
-    fun.mouse_left_click(pos=dom)
+    fun.Mouse.move(pos= dom, speed=1)
+    fun.Mouse.left_click(pos=dom)
     # print('клик по дом ' + str(dom))
     sleep(1)
 
@@ -50,8 +50,8 @@ def visit_to_tent():
     """Возвращает 1 если есть и 0 если пусто """
     visit = find.find_inspect_tent()
     if visit:
-        fun.mouse_move(pos=visit, speed=1)
-        fun.mouse_left_click(pos=visit)
+        fun.Mouse.move(pos=visit, speed=1)
+        fun.Mouse.left_click(pos=visit)
         cl = fun.push_close()
         if not cl:
             # print("клик обыск" + str(visit))
@@ -68,10 +68,10 @@ def end_raid():
     pyautogui.moveTo(200, 670)
     sleep(1)
     b_exit = find.find_b_exit()
-    fun.mouse_move(pos= b_exit, speed=1)
-    fun.mouse_left_click(pos=b_exit)
+    fun.Mouse.move(pos= b_exit, speed=1)
+    fun.Mouse.left_click(pos=b_exit)
     print('обход палаток окончен')
-    fun.mouse_move(pos=(200, 670), speed=2)
+    fun.Mouse.move(pos=(200, 670), speed=2)
 
 
 def tent_raid():

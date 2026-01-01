@@ -91,8 +91,8 @@ bypass = [
     st_frunze]
 # сбор подарков для Мар`яны
 bypass_mara = [
-    st_novok, st_pavelec, st_pavelec_g, st_pavelec, st_novok, st_tretya, st_novok, st_teatr, st_tver, st_pushkin,
-    st_k_most, st_pushkin, st_chekhov, st_cv_bulvar, st_chekhov, st_tver, st_teatr, ]
+    st_novok, st_pavelec, st_pavelec_g, st_pavelec, st_novok, st_tretya, st_novok, st_teatr, st_tver,
+    st_pushkin, st_k_most, st_pushkin, st_chekhov, st_cv_bulvar, st_chekhov, st_tver, st_teatr, ]
 bypass_veles = [st_pavelec, st_novok, st_tretya, st_novok, st_teatr, st_tver, st_pushkin, st_k_most, st_pushkin,
                 st_chekhov, st_cv_bulvar, st_chekhov, st_borov, st_polyanka, st_borov, st_biblioteka,
                 st_kropot, st_park_kr, st_park_g, st_kiev, st_park_g, st_park_kr, st_kropot, st_biblioteka,
