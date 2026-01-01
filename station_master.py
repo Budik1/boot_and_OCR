@@ -244,7 +244,9 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
             fun.push_close_all_(speed_mouse=0.3)
             # sleep(0)
         if close:
-            fun.close_popup_window()
+            popup = fun.close_popup_window()
+            if popup:
+                fun.push_close_all_()
 
     skip_battle1_end_ver = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
     fun.my_log_file(f'{skip_battle1_end_ver=}')

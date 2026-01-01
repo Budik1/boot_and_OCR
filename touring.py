@@ -8,6 +8,7 @@ import img_servis
 import fun
 import heroes
 import color_text
+import solid_memory
 import sounds
 import station_master
 # import a_serial_scrin_for_pm
@@ -36,6 +37,7 @@ def event_gifts():
 
             'sergeant': 'сержант',
             'lieutenant': 'лейтенант',
+            'captain': 'капитан',
             'colonel': 'полковник',
 
             'stamp_30_kopeck': 'марка 30 копеек',
@@ -81,6 +83,7 @@ def event_gifts():
     fun.my_log_file(f'pos_gift = {pos_gift}')
     if pos_gift:
         Hero.app_gifts(Activ.hero_activ)
+        solid_memory.save_all_state_config(info=False)
         # print(name_st, ' подарков ', Hero.get_qty_gift(Activ.hero_activ))
         # x, y = pos_gift
         fun.Mouse.move(pos=pos_gift, speed=0.5, log=True, message_l='подарок найден')

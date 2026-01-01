@@ -32,9 +32,9 @@ def cr_box_loot_img(*, name_create_img):
     return
 
 def tenderloin(*, name_fold, name_crop_img):
-    hero_dir = heroes.Hero.get_name_id(heroes.Activ.hero_activ)
-    down_obl = [50, 50, 59, 59, f'img/tonelli/loot_gift_box/big/{hero_dir}/{name_fold}_up.png']
-    up_obl = [25, 5, 88, 30, f'img/tonelli/loot_gift_box/big/{hero_dir}/{name_fold}_down.png']
+    # hero_dir = heroes.Hero.get_name_id(heroes.Activ.hero_activ)
+    down_obl = [50, 50, 59, 59, f'img/tonelli/loot_gift_box/big/{name_fold}/{name_crop_img}_up.png']
+    up_obl = [25, 5, 88, 30, f'img/tonelli/loot_gift_box/big/{name_fold}/{name_crop_img}_down.png']
     name_open = f'img/tonelli/loot_gift_box/big/{name_fold}/{name_crop_img}.png'
     img = Image.open(name_open)
     #  box=(left, upper, right, lower)
@@ -44,8 +44,8 @@ def tenderloin(*, name_fold, name_crop_img):
         right = i[2] + left
         lower = i[3] + upper
         img_crop = img.crop((left, upper, right, lower))
-        img_crop.save(i[5])
-    name_remove_img = f'img/tonelli/loot_gift_box/big/{hero_dir}/{name_crop_img}'
+        img_crop.save(i[4])
+    name_remove_img = f'img/tonelli/loot_gift_box/big/{name_fold}/{name_crop_img}'
     os.remove(name_open)
     return
 
