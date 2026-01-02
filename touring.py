@@ -39,38 +39,13 @@ def event_gifts():
             'lieutenant': 'лейтенант',
             'captain': 'капитан',
             'colonel': 'полковник',
+            'general': 'генерал',
 
             'stamp_30_kopeck': 'марка 30 копеек',
             'stamp_40_kopeck': 'марка 40 копеек',
             'stamp_50_kopeck': 'марка 50 копеек',
         }
         return dikt_en_ru.get(world, '')
-
-    def check_loot(*, name_hero):
-        """
-        Ищет совпадения из общей папки и папки героя.
-        Возвращает имя файла без расширения. Или 'None' в случае отсутствия совпадений.
-        :param name_hero:
-        :return:
-        """
-        name_img_ = None
-        directory_big_hero = f'img/tonelli/loot_gift_box/big/{name_hero}'
-        directory_big_all = 'img/tonelli/loot_gift_box/big/all'
-        list_dir_hero = os.listdir(directory_big_hero)
-        list_dir_all = os.listdir(directory_big_all)
-        list_dir_general = []
-        for item in list_dir_all:
-            list_dir_general.append(f'{directory_big_all}/{item}')
-        for item in list_dir_hero:
-            list_dir_general.append(f'{directory_big_hero}/{item}')
-        for img in list_dir_general:
-            pos_img = fun.locCenterImg(name_img=img, confidence=0.99)
-            if pos_img:
-                # отсечка img
-                name_img_list = (img.split('/')[-1]).split('.')
-                name_img_ = name_img_list[0]
-                break
-        return name_img_
 
     print(color_text.tc_green('touring.event_gifts'))
     fun.my_log_file(f'')
@@ -102,7 +77,7 @@ def event_gifts():
         name_her = Hero.get_name_id(Activ.hero_activ)
         name_img = f'img/tonelli/loot_gift_box/big/{name_her}/{nam}.png'
         # проверить наличие
-        name_loot = check_loot(name_hero=name_her)
+        name_loot = img_servis.check_loot(name_hero=name_her)
         if not name_loot:
             sounds.say_txt('содержимое не опознано')
             img_servis.cr_box_loot_img(name_create_img=name_img)

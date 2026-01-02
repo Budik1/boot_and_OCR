@@ -16,11 +16,12 @@ def tests_img_value_energy():
             print(value_energy)
             fun.Mouse.move(pos=pos_img, speed=1)
 
+
 def cr_box_loot_img(*, name_create_img):
     img_dict = {'img/tonelli/loot_gift_box/big/720.png': (-54, -140, 119, 119, (),), }
     key = 'img/tonelli/loot_gift_box/big/720.png'
     # от чего оттолкнуться
-    pos_start =  find_img.find_close()
+    pos_start = find_img.find_close()
     # # найдем верхний угол
     x, y = pos_start
     x += img_dict[key][0]
@@ -30,6 +31,7 @@ def cr_box_loot_img(*, name_create_img):
     change_y = img_dict[key][3]
     fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
     return
+
 
 def tenderloin(*, name_fold, name_crop_img):
     # hero_dir = heroes.Hero.get_name_id(heroes.Activ.hero_activ)
@@ -49,3 +51,29 @@ def tenderloin(*, name_fold, name_crop_img):
     os.remove(name_open)
     return
 
+
+def check_loot(*, name_hero):
+    """
+    Ищет совпадения из общей папки и папки героя.
+    Возвращает имя файла без расширения. Или 'None' в случае отсутствия совпадений.
+    :param name_hero:
+    :return:
+    """
+    name_img_ = None
+    directory_big_hero = f'img/tonelli/loot_gift_box/big/{name_hero}'
+    directory_big_all = 'img/tonelli/loot_gift_box/big/all'
+    list_dir_hero = os.listdir(directory_big_hero)
+    list_dir_all = os.listdir(directory_big_all)
+    list_dir_general = []
+    for item in list_dir_all:
+        list_dir_general.append(f'{directory_big_all}/{item}')
+    for item in list_dir_hero:
+        list_dir_general.append(f'{directory_big_hero}/{item}')
+    for img in list_dir_general:
+        pos_img = fun.locCenterImg(name_img=img, confidence=0.99)
+        if pos_img:
+            # отсечка img
+            name_img_list = (img.split('/')[-1]).split('.')
+            name_img_ = name_img_list[0]
+            break
+    return name_img_
