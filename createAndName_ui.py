@@ -8,7 +8,7 @@ import station_master
 import baza_dannyx as b_d
 import baza_paths as b_p
 import heroes
-import create_and_analiz_img
+import create_and_analiz_task_img
 
 
 def changeColor(*, her_active):
@@ -128,7 +128,7 @@ ttk.Entry(textvariable=name_file_line_3, width=3).place(x=tab_2, y=line_5)
 
 line_img = b_d.line5 + 5
 imagePul = ImageTk.PhotoImage(file="img/overall/pulya.png")
-ttk.Button(root, image=imagePul, command=create_and_analiz_img.analiz_task).place(x=tab_0, y=line_3)
+ttk.Button(root, image=imagePul, command=create_and_analiz_task_img.analiz_task).place(x=tab_0, y=line_3)
 # ttk.Button(root, image=imagePul, command=station_master.option_task_money).place(x=tab_0, y=line_3)
 
 root.mainloop()

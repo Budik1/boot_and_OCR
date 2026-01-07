@@ -5,9 +5,6 @@ import find_img
 import fun
 import sounds
 import person
-# import create_and_analiz_img
-
-import img_servis
 
 
 # Создание картинок значения энергии.
@@ -19,7 +16,7 @@ def energy_img():
     pos_mark = find_img.find_station_master()
     # name_create_img = 'img/test/token.png'
     # проверить видимость
-    list_en = os.listdir('img/station_master/energy_value')
+    list_en = os.listdir('../img/station_master/energy_value')
     print(color_text.tc_cyan('Проверка'))
     for img_ in list_en:
         name_img = f'img/station_master/energy_value/{img_}'

@@ -1,11 +1,11 @@
-from lib2to3.fixes.fix_asserts import NAMES
+
 from time import sleep, time
 from typing import Any
 import os
 
 from pyscreeze import Point
 
-import img_servis
+import gift_station_service
 import fun
 import heroes
 import color_text
@@ -100,11 +100,11 @@ def event_gifts():
         # name_img = f'img/tonelli/loot_gift_box/big/{name_her}/{date_time}.png'
         name_img = f'img/tonelli/loot_gift_box/big/buf/{date_time}.png'
         # проверить наличие
-        name_loot = img_servis.check_loot(name_hero_dir=name_her)
+        name_loot = gift_station_service.check_loot(name_hero_dir=name_her)
         if not name_loot:
             sounds.say_txt('содержимое не опознано')
-            img_servis.cr_box_loot_img(name_create_img=name_img)
-            img_servis.tenderloin(name_fold=name_her, name_crop_img=date_time)
+            gift_station_service.cr_box_loot_img(name_create_img=name_img)
+            gift_station_service.tenderloin(name_fold=name_her, name_crop_img=date_time)
         elif name_loot.count('-') >= 3:
             pass
         elif len(name_loot) > 3:

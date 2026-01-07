@@ -15,7 +15,7 @@ def img():
         x_sh += 225
         y_sh += 270
         fun.Mouse.move(pos=(x_sh, y_sh), speed=1)
-        fun.foto('img/kv/tests/klan_raid.png', region=(x, y, 225, 270))
+        fun.foto('../img/kv/tests/klan_raid.png', region=(x, y, 225, 270))
 
 
 def img_label_raid():
