@@ -68,6 +68,7 @@ borov_polyanka = [st_borov, st_polyanka]
 chekhov_bulvar = [st_chekhov, st_cv_bulvar]
 tver_most = [st_tver, st_pushkin, st_k_most]
 novok_pavelec = [st_novok, st_pavelec, st_pavelec_g]
+
 # все дороги в одном листе
 road_list = (grand_road, park_kiev_a, borov_polyanka, chekhov_bulvar, tver_most, novok_pavelec)
 # все станции

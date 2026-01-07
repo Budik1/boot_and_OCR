@@ -46,4 +46,3 @@ def info_en():
             print(img_)
 
 
-info_map()

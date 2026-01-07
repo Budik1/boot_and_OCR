@@ -1,3 +1,4 @@
+from lib2to3.fixes.fix_asserts import NAMES
 from time import sleep, time
 from typing import Any
 import os
@@ -17,36 +18,55 @@ import find_img
 from heroes import Hero, Activ
 
 
+def translate(world):
+    dikt_en_ru = {
+        'Christmas_tree_star': 'новогодняя звезда',
+        'Christmas_tree_garland': 'новогодняя гирлянда',
+        'Christmas_tree_cracker': 'новогодняя хлопушка',
+        'Christmas_tree_ball': 'новогодняя шар',
+        'Christmas_tree_branch': 'новогодняя ветка',
+
+        'jetton': 'жетон',
+        'bullets': 'пуль',
+        'feed': 'корм',
+
+        'sergeant': 'сержант',
+        'lieutenant': 'лейтенант',
+        'captain': 'капитан',
+        'colonel': 'полковник',
+        'general': 'генерал',
+
+        'stamp_10_kopeck': 'марка 10 копеек',
+        'stamp_30_kopeck': 'марка 30 копеек',
+        'stamp_40_kopeck': 'марка 40 копеек',
+        'stamp_50_kopeck': 'марка 50 копеек',
+    }
+    return dikt_en_ru.get(world, '')
+
+
+def bypass_len():
+    location_station = fun.loc_now()
+
+    bypass_set_temp = heroes.Hero.get_bypass_set(heroes.Activ.hero_activ)
+    # print(bypass_set_temp)
+    if bypass_set_temp:
+        bypass_temp = list(bypass_set_temp)
+        # print(bypass_temp)
+    else:
+        bypass_temp = []
+        # print(bypass_temp)
+
+    bypass_temp.append(location_station[0])
+    bypass = set(bypass_temp)
+    print(len(bypass))
+    heroes.Hero.set_bypass_set(heroes.Activ.hero_activ, value_set=bypass)
+
+
 def event_gifts():
     """
     Поиск подарков на станции. Возвращает его позицию
     """
-
-    # вынести в отдельный файл и разбить по функциям одного действия
-    def translate(world):
-        dikt_en_ru = {
-            'Christmas_tree_star': 'елочная звезда',
-            'Christmas_tree_garland': 'елочная гирлянда',
-            'Christmas_tree_cracker': 'елочная хлопушка',
-            'Christmas_tree_ball': 'елочный шар',
-            'Christmas_tree_branch': 'еловая ветка',
-
-            'jetton': 'жетон',
-            'bullets': 'пуль',
-            'feed': 'корм',
-
-            'sergeant': 'сержант',
-            'lieutenant': 'лейтенант',
-            'captain': 'капитан',
-            'colonel': 'полковник',
-            'general': 'генерал',
-
-            'stamp_30_kopeck': 'марка 30 копеек',
-            'stamp_40_kopeck': 'марка 40 копеек',
-            'stamp_50_kopeck': 'марка 50 копеек',
-        }
-        return dikt_en_ru.get(world, '')
-
+    bypass_len()
     print(color_text.tc_green('touring.event_gifts'))
     fun.my_log_file(f'')
     fun.my_log_file('touring.event_gifts')
@@ -59,7 +79,7 @@ def event_gifts():
     if pos_gift:
         Hero.app_gifts(Activ.hero_activ)
         solid_memory.save_all_state_config(info=False)
-        # print(name_st, ' подарков ', Hero.get_qty_gift(Activ.hero_activ))
+        # print(name_st, ' подарков ' , Hero.get_qty_gift(Activ.hero_activ))
         # x, y = pos_gift
         fun.Mouse.move(pos=pos_gift, speed=0.5, log=True, message_l='подарок найден')
         fun.Mouse.left_click(pos=pos_gift, message=True, message_l=f'открыть подарок {pos_gift=}')
@@ -73,22 +93,34 @@ def event_gifts():
             close = find_img.find_close()
             print(it, 'поиск закрыть в подарках')
         # print(close)
-        nam = Hero.get_qty_gift(Activ.hero_activ)
+        # Создание имени
+        date_time = fun.date_and_time_in_name_file()
+        # name_crop_img = fun.date_time_now()
         name_her = Hero.get_name_id(Activ.hero_activ)
-        name_img = f'img/tonelli/loot_gift_box/big/{name_her}/{nam}.png'
+        # name_img = f'img/tonelli/loot_gift_box/big/{name_her}/{date_time}.png'
+        name_img = f'img/tonelli/loot_gift_box/big/buf/{date_time}.png'
         # проверить наличие
-        name_loot = img_servis.check_loot(name_hero=name_her)
+        name_loot = img_servis.check_loot(name_hero_dir=name_her)
         if not name_loot:
             sounds.say_txt('содержимое не опознано')
             img_servis.cr_box_loot_img(name_create_img=name_img)
-            img_servis.tenderloin(name_fold=name_her, name_crop_img=nam)
-
+            img_servis.tenderloin(name_fold=name_her, name_crop_img=date_time)
+        elif name_loot.count('-') >= 3:
+            pass
         elif len(name_loot) > 3:
+            list_loot = heroes.Hero.get_loot_touring(heroes.Activ.hero_activ)
+            list_loot.append(name_loot)
+            heroes.Hero.set_loot_touring(heroes.Activ.hero_activ, value=list_loot)
+
             list_name = name_loot.split('_')
-            if len(list_name) == 2:
+            if list_name[0].isnumeric():
+
                 phrase = f'{list_name[0]} пуль'
+            elif list_name[0] == 'cp':
+                name_loot = list_name[2]
+                phrase = translate(world=name_loot)
             else:
-                phrase = translate(name_loot)
+                phrase = translate(world=name_loot)
             sounds.say_txt(str(phrase))
 
         # a_serial_scrin_for_pm.cr_other_img(name_create_img=name_img)
@@ -106,6 +138,20 @@ def open_map():
     fun.my_log_file(f'')
     fun.my_log_file('touring.open_map')
     location_station = fun.loc_now()
+
+    # bypass_set_temp = heroes.Hero.get_bypass_set(heroes.Activ.hero_activ)
+    # print(bypass_set_temp)
+    # if bypass_set_temp:
+    #     bypass_temp = list(bypass_set_temp)
+    #     print(bypass_temp)
+    # else:
+    #     bypass_temp = []
+    #     print(bypass_temp)
+    #
+    # bypass_temp.append(location_station[0])
+    # bypass = set(bypass_temp)
+    # heroes.Hero.set_bypass_set(heroes.Activ.hero_activ, value_set=bypass)
+
     fun.my_log_file(f'выход из {location_station[0]}')
     # print(color_text.tc_cyan(f'выход из {location_station[0]}'))
     # получение координат
@@ -582,7 +628,6 @@ def sbor_podarkov(bypass_hero: list) -> None:
         move_to_target(target_point='ст. Полянка')
         move_to_target(target_point='ст. Цветной бульвар')
         move_to_target(target_point='ст. Кузнецкий мост')
-        move_to_target(target_point='ст. Павелецкая(Г)')
         move_to_target(target_point='ст. Павелецкая(Г)')
         move_to_target(target_point='ст. ВДНХ')
         move_to_target(target_point='домой')

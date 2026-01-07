@@ -42,8 +42,6 @@ def img_label_raid():
 
 def img_label_kv():
     name_file = 'klan_kv_label'
-
-
     kv_reload = fun.locCenterImg('img/kv/kv_reload.png', confidence=0.9)
     if kv_reload:
         x, y = kv_reload
@@ -62,4 +60,4 @@ def img_label_kv():
 
 
 # img_label_raid()
-img_label_kv()
+# img_label_kv()

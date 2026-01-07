@@ -16,7 +16,7 @@ def click_mouse():
     return
 
 
-def sound_vic():
+def sound_vic(block: bool = True):
     playsound('sound/success.mp3')
     return
 

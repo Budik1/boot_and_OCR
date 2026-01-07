@@ -4,9 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="01.01.26">
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="02.01.26 Обновил словарь коллекции подарков на станциях. Перенёс 'check_loot' в 'img_servis.py'">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_serial_scrin_for_pm.py" beforeDir="false" afterPath="$PROJECT_DIR$/a_serial_scrin_for_pm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baza_dannyx.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza_dannyx.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/config.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cr_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cr_img_dva.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img_dva.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_and_analiz_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_and_analiz_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_mara/t1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_mara/t1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_mara/t2 test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_mara/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_mara/t2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_mara/t3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_mara/t3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/loot_gift_box/big/all/captain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/loot_gift_box/big/all/colonel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/loot_gift_box/big/all/general.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/loot_gift_box/big/all/lieutenant.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/loot_gift_box/big/all/sergeant.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/loot_gift_box/big/gady/11_down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/loot_gift_box/big/mara/130_bullets.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/loot_gift_box/big/mara/260_bullets.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tonelli/loot_gift_box/big/mara/390_bullets.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_servis.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_servis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_stat_kv.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_stat_kv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info.py" beforeDir="false" afterPath="$PROJECT_DIR$/info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kv_config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kv_config2.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config2.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/cr_nam_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/cr_nam_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds.py" beforeDir="false" afterPath="$PROJECT_DIR$/sounds.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/t_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/t_item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks_analiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks_analiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tempo.py" beforeDir="false" afterPath="$PROJECT_DIR$/tempo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,79 +89,82 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Python.a_serial_scrin_for_pm (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.chage_color (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.chage_color.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_dva.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_id_name_station (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_id_name_station.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_map_name_station.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_mob.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_img_points.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_nam_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_name_mob_img (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.cr_name_mob_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.createAndName_ui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.create_and_analiz_img (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.create_and_analiz_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.create_img.executor&quot;: &quot;Run&quot;,
-    &quot;Python.display_info.executor&quot;: &quot;Run&quot;,
-    &quot;Python.event_frend.executor&quot;: &quot;Run&quot;,
-    &quot;Python.fun.executor&quot;: &quot;Run&quot;,
-    &quot;Python.generate_route.executor&quot;: &quot;Run&quot;,
-    &quot;Python.heroes.executor&quot;: &quot;Run&quot;,
-    &quot;Python.img_crop (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.img_crop.executor&quot;: &quot;Run&quot;,
-    &quot;Python.img_crop1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.img_stat_kv.executor&quot;: &quot;Run&quot;,
-    &quot;Python.info.executor&quot;: &quot;Run&quot;,
-    &quot;Python.info_messages.executor&quot;: &quot;Run&quot;,
-    &quot;Python.information_messages (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.item_pos.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.map_tour.executor&quot;: &quot;Run&quot;,
-    &quot;Python.mess (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.mess.executor&quot;: &quot;Run&quot;,
-    &quot;Python.mini_gui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.my_gui (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.my_gui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.os_action.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pos_value_energy.executor&quot;: &quot;Run&quot;,
-    &quot;Python.servis_cla.executor&quot;: &quot;Run&quot;,
-    &quot;Python.servis_ev.executor&quot;: &quot;Run&quot;,
-    &quot;Python.station_master.executor&quot;: &quot;Run&quot;,
-    &quot;Python.t_item (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.t_item.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tasks_analiz.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tempo (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.tempo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.timer.executor&quot;: &quot;Run&quot;,
-    &quot;Python.www.executor&quot;: &quot;Run&quot;,
-    &quot;Python.www1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.www2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.картинки_маяки.executor&quot;: &quot;Run&quot;,
-    &quot;Python.картинки_маяки_для_браузера.executor&quot;: &quot;Run&quot;,
-    &quot;Python.маяки_для PlayMachine.executor&quot;: &quot;Run&quot;,
-    &quot;Python.скрины для ПМ.executor&quot;: &quot;Run&quot;,
-    &quot;Python.создание скриншотов.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
-    &quot;ToolWindow.Python Console.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/python/bot_ocr1&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Python.a_serial_scrin_for_pm (1).executor": "Run",
+    "Python.a_serial_scrin_for_pm.executor": "Run",
+    "Python.chage_color (1).executor": "Run",
+    "Python.chage_color.executor": "Run",
+    "Python.cr_img.executor": "Run",
+    "Python.cr_img_dva.executor": "Run",
+    "Python.cr_img_id_name_station (1).executor": "Run",
+    "Python.cr_img_id_name_station.executor": "Run",
+    "Python.cr_img_map_name_station.executor": "Run",
+    "Python.cr_img_mob.executor": "Run",
+    "Python.cr_img_points.executor": "Run",
+    "Python.cr_nam_img.executor": "Run",
+    "Python.cr_name_mob_img (1).executor": "Run",
+    "Python.cr_name_mob_img.executor": "Run",
+    "Python.createAndName_ui.executor": "Run",
+    "Python.create_and_analiz_img (1).executor": "Run",
+    "Python.create_and_analiz_img.executor": "Run",
+    "Python.create_img.executor": "Run",
+    "Python.display_info.executor": "Run",
+    "Python.event_frend.executor": "Run",
+    "Python.fun.executor": "Run",
+    "Python.generate_route.executor": "Run",
+    "Python.heroes.executor": "Run",
+    "Python.img_crop (1).executor": "Run",
+    "Python.img_crop.executor": "Run",
+    "Python.img_crop1.executor": "Run",
+    "Python.img_servis.executor": "Run",
+    "Python.img_stat_kv.executor": "Run",
+    "Python.info.executor": "Run",
+    "Python.info_messages.executor": "Run",
+    "Python.information_messages (1).executor": "Run",
+    "Python.item_pos.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.map_tour.executor": "Run",
+    "Python.mess (1).executor": "Run",
+    "Python.mess.executor": "Run",
+    "Python.mini_gui.executor": "Run",
+    "Python.my_gui (1).executor": "Run",
+    "Python.my_gui.executor": "Run",
+    "Python.os_action.executor": "Run",
+    "Python.pos_value_energy.executor": "Run",
+    "Python.servis_cla.executor": "Run",
+    "Python.servis_ev.executor": "Run",
+    "Python.station_master.executor": "Run",
+    "Python.t_item (1).executor": "Run",
+    "Python.t_item.executor": "Run",
+    "Python.tasks_analiz.executor": "Run",
+    "Python.tem1.executor": "Run",
+    "Python.tempo (1).executor": "Run",
+    "Python.tempo.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.timer.executor": "Run",
+    "Python.www.executor": "Run",
+    "Python.www1.executor": "Run",
+    "Python.www2.executor": "Run",
+    "Python.картинки_маяки.executor": "Run",
+    "Python.картинки_маяки_для_браузера.executor": "Run",
+    "Python.маяки_для PlayMachine.executor": "Run",
+    "Python.скрины для ПМ.executor": "Run",
+    "Python.создание скриншотов.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "ShowUsagesActions.previewPropertyKey": "true",
+    "ToolWindow.Python Console.ShowToolbar": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/python/bot_ocr1",
+    "settings.editor.selected.configurable": "editing.templates"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\python\bot_ocr1\img\test\test_tasks\test big tasks" />
@@ -146,10 +184,11 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="zadaniya" />
+      <command value="arial" />
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="a_serial_scrin_for_pm (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.cr_img_dva">
+    <configuration name="a_serial_scrin_for_pm" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -171,7 +210,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="cr_img" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="cr_img_dva" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -184,7 +223,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cr_img.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cr_img_dva.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -237,7 +276,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tempo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="tem1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -250,7 +289,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tempo.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tem1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -262,10 +301,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.tempo" />
+        <item itemvalue="Python.cr_img_dva" />
+        <item itemvalue="Python.tem1" />
         <item itemvalue="Python.createAndName_ui" />
-        <item itemvalue="Python.cr_img" />
-        <item itemvalue="Python.a_serial_scrin_for_pm (1)" />
+        <item itemvalue="Python.a_serial_scrin_for_pm" />
       </list>
     </recent_temporary>
   </component>
@@ -341,7 +380,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764518015462</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="02.01.26 Обновил словарь коллекции подарков на станциях. Перенёс 'check_loot' в 'img_servis.py'">
+      <option name="closed" value="true" />
+      <created>1767331156778</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1767331156778</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -362,7 +409,8 @@
     <MESSAGE value="Включил вывод информации. В os_action.get_data_creation_file добавил параметр info и его логику." />
     <MESSAGE value="Чистка ненужных комментариев." />
     <MESSAGE value="переименовал функцию создания лога" />
-    <option name="LAST_COMMIT_MESSAGE" value="переименовал функцию создания лога" />
+    <MESSAGE value="02.01.26 Обновил словарь коллекции подарков на станциях. Перенёс 'check_loot' в 'img_servis.py'" />
+    <option name="LAST_COMMIT_MESSAGE" value="02.01.26 Обновил словарь коллекции подарков на станциях. Перенёс 'check_loot' в 'img_servis.py'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -389,12 +437,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>96</line>
+          <line>91</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>181</line>
+          <line>202</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -438,18 +486,13 @@
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>48</line>
-          <option name="timeStamp" value="135" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
           <line>74</line>
           <option name="timeStamp" value="136" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cr_img.py</url>
-          <line>116</line>
+          <line>105</line>
           <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -474,7 +517,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fun.py</url>
-          <line>526</line>
+          <line>550</line>
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -486,6 +529,11 @@
           <url>file://$PROJECT_DIR$/solid_memory.py</url>
           <line>77</line>
           <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>307</line>
+          <option name="timeStamp" value="149" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

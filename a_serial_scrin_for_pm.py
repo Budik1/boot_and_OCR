@@ -1,3 +1,5 @@
+import os
+
 import color_text
 import find_img
 import fun
@@ -5,19 +7,19 @@ import sounds
 import person
 # import create_and_analiz_img
 
-# import a_servis
+import img_servis
 
 
 # Создание картинок значения энергии.
 def energy_img():
     """
     Создание картинок значения энергии.
-    a_servis.tests_img_value_energy() для проверки наличия
+    img_servis.tests_img_value_energy() для проверки наличия
     """
     pos_mark = find_img.find_station_master()
     # name_create_img = 'img/test/token.png'
     # проверить видимость
-    list_en = ['en_2.png', 'en_3.png', 'en_4.png', 'en_5.png', 'en_7.png']  # 'en_1.png',
+    list_en = os.listdir('img/station_master/energy_value')
     print(color_text.tc_cyan('Проверка'))
     for img_ in list_en:
         name_img = f'img/station_master/energy_value/{img_}'
@@ -70,7 +72,7 @@ def energy_img():
         x_demo += change_x
         y_demo += change_y
         # fun.Mouse.move(pos=(x_demo, y_demo), speed=0.5)
-        msg = color_text.tc_red(f'{name_create_img} создан.')
+        msg = color_text.tc_yellow(f'{name_create_img} создан.')
         print(msg)
         fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
 
@@ -112,11 +114,6 @@ def hero_img():
     sounds.sound_vic()
     print('ok')
     return
-
-
-def task_img():
-    # create_and_analiz_img.analiz_task()
-    pass
 
 
 def cr_other_img(name_create_img='img/test/token.png'):
@@ -431,6 +428,10 @@ def name_id_station():
 
 
 def event_entry_img():
+    """
+    Создание картинок необходимых при смене аккаунта.
+    :return:
+    """
     # name_create_img = 'img/overall/event_entry/continue_gavr.png'
     # name_create_img = 'img/person/hero_id/gady/menu_acc_her_gadya.png'
     # name_create_img = 'img/person/hero_id/gavr/menu_acc_her_gavr.png'
@@ -511,7 +512,7 @@ def event_entry_img():
 # event_entry_img()
 # hero_img()
 # name_id_station()
-cr_other_img()
+# cr_other_img()
 # task_img()
 # mob_id(name='name6_kikimora')
 # mob_id(name='name3_smuggler') #

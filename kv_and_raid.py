@@ -220,7 +220,7 @@ def kv():
     selection_hero_in_kv()
     stat, data_kv = solid_memory.reading_kv_config()
     solid_memory.set_values_kv(data_kv)
-    heroes.gady.list_loot = []
+    heroes.gady.list_loot_kv = []
     phrase_eff = complex_phrases.report_kv_efficiency()
     print(phrase_eff[0])
     print(phrase_eff[1])

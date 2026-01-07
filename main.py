@@ -228,14 +228,15 @@ def collecting_gifts_at_stations():
         # движение по маршруту
         touring.sbor_podarkov(bypass_hero)
         # получение количества станций на маршруте
-        q_st = fun.get_len_bypass(bypass_hero)
+        # len_bypass = fun.get_len_bypass(bypass_hero)
+        len_bypass = len(heroes.Hero.get_bypass_set(heroes.Activ.hero_activ))
         # получение количества собранных подарков
         q_gifts = heroes.Hero.get_qty_gift(heroes.Activ.hero_activ)
     else:
         print('герой не опознан')
         return
     # вывод информации
-    print(f'На {q_st} станциях собрано {q_gifts} подарков')
+    print(f'На {len_bypass} станциях собрано {q_gifts} подарков')
     displaying_values(info=False)
     fun.work()
 
@@ -243,6 +244,10 @@ def collecting_gifts_at_stations():
     minutes = int(finish_time // 60)  # количество минут
     seconds = round((finish_time % minutes), 2)
     print('Потрачено время', minutes, 'минут', seconds, 'сек.')
+
+    list_loot_gift = heroes.Hero.get_loot_touring(heroes.Activ.hero_activ)
+    for i in list_loot_gift:
+        print(i)
 
 
 def changeColor(*, her_active):
@@ -419,7 +424,7 @@ def set_timer1():
     solid_memory.save_all_state_config(info=False)
 
 def set_param():
-    heroes.gady.list_loot = []
+    heroes.gady.list_loot_kv = []
     displaying_values(info=True)
 
 

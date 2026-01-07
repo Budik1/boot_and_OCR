@@ -61,7 +61,7 @@ def cr_xp_img():
 def nam_pos_line1(*, pos, name, show_move=False):
     path_img = b_p.num_path
     name_img = f'{name}_.png'
-    region = fun.get_areas_task_big_1()
+    region = fun.get_areas_task_big_1_line()
     pos_patron = fun.locCenterImg(name_img=f'{b_p.num_path}patron.png', region=region)
     if pos_patron:
         # показать пос привязки
@@ -101,7 +101,7 @@ def nam_pos_line2(*, pos, name):
     path_img = b_p.num_path
     name_img = f'{name}.png'
     show_move = True
-    region = fun.get_areas_task_big_2()
+    region = fun.get_areas_task_big_2_line()
     pos_patron = fun.locCenterImg(name_img=f'{b_p.num_path}patron.png', region=region)
     if pos_patron:
         # показать пос привязки
@@ -137,7 +137,7 @@ def nam_pos_line3(*, pos, name):
     path_img = b_p.num_path
     name_img = f'{name}.png'
     show_move = True
-    region = fun.get_areas_task_big_3()
+    region = fun.get_areas_task_big_3_line()
     pos_patron = fun.locCenterImg(name_img=f'{b_p.num_path}patron.png', region=region)
     if pos_patron:
         # показать пос привязки
@@ -181,7 +181,7 @@ def find_img(*, name):
 
 def get_region_pos_1(*, line, link):
     list_link = ['', 'patron', 'xp']
-    dikt_line = {'1': fun.get_areas_task_big_1(), '2': fun.get_areas_task_big_2(), '3': fun.get_areas_task_big_3()}
+    dikt_line = {'1': fun.get_areas_task_big_1_line(), '2': fun.get_areas_task_big_2_line(), '3': fun.get_areas_task_big_3_line()}
     region_line = dikt_line[f'{line}']
     pos_link = fun.locCenterImg(name_img=f'{b_p.num_path}{list_link[link]}.png', region=region_line)
     mask = 8
@@ -193,7 +193,7 @@ def get_region_pos_1(*, line, link):
 
 
 def line_pos_name_link(*, line, pos, name, link):
-    dikt_line = {'1': fun.get_areas_task_big_1(), '2': fun.get_areas_task_big_2(), '3': fun.get_areas_task_big_3()}
+    dikt_line = {'1': fun.get_areas_task_big_1_line(), '2': fun.get_areas_task_big_2_line(), '3': fun.get_areas_task_big_3_line()}
     list_link = ['', 'patron', 'xp']
     path_img = b_p.num_path
     name_img = f'{name}.png'

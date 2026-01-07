@@ -1,7 +1,6 @@
 import os
 import fun
 import find_img
-import heroes
 from PIL import Image
 
 
@@ -18,26 +17,35 @@ def tests_img_value_energy():
 
 
 def cr_box_loot_img(*, name_create_img):
-    img_dict = {'img/tonelli/loot_gift_box/big/720.png': (-54, -140, 119, 119, (),), }
-    key = 'img/tonelli/loot_gift_box/big/720.png'
+    """
+    Создание большой картинки содержимого подарка на станции для дальнейшей обработки.
+    :param name_create_img: Имя картинки.
+    :return:
+    """
+    img_map = (-54, -140, 119, 119,)
     # от чего оттолкнуться
     pos_start = find_img.find_close()
     # # найдем верхний угол
     x, y = pos_start
-    x += img_dict[key][0]
-    y += img_dict[key][1]
+    x += img_map[0]
+    y += img_map[1]
     # # найдем нижний угол
-    change_x = img_dict[key][2]
-    change_y = img_dict[key][3]
+    change_x = img_map[2]
+    change_y = img_map[3]
     fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
     return
 
 
 def tenderloin(*, name_fold, name_crop_img):
-    # hero_dir = heroes.Hero.get_name_id(heroes.Activ.hero_activ)
-    down_obl = [50, 50, 59, 59, f'img/tonelli/loot_gift_box/big/{name_fold}/{name_crop_img}_up.png']
-    up_obl = [25, 5, 88, 30, f'img/tonelli/loot_gift_box/big/{name_fold}/{name_crop_img}_down.png']
-    name_open = f'img/tonelli/loot_gift_box/big/{name_fold}/{name_crop_img}.png'
+    """
+    Обрезка большой картинки содержимого подарка на станции на два фрагмента, где возможны изображения.
+    :param name_fold:
+    :param name_crop_img:
+    :return:
+    """
+    down_obl = [50, 50, 59, 59, f'img/tonelli/loot_gift_box/big/{name_fold}/{name_crop_img}_down.png']
+    up_obl = [25, 5, 88, 30, f'img/tonelli/loot_gift_box/big/{name_fold}/{name_crop_img}_up.png']
+    name_open = f'img/tonelli/loot_gift_box/big/buf/{name_crop_img}.png'
     img = Image.open(name_open)
     #  box=(left, upper, right, lower)
     for i in [down_obl, up_obl]:
@@ -47,20 +55,20 @@ def tenderloin(*, name_fold, name_crop_img):
         lower = i[3] + upper
         img_crop = img.crop((left, upper, right, lower))
         img_crop.save(i[4])
-    name_remove_img = f'img/tonelli/loot_gift_box/big/{name_fold}/{name_crop_img}'
-    os.remove(name_open)
+    # И удаление исходного файла
+    # os.remove(name_open)
     return
 
 
-def check_loot(*, name_hero):
+def check_loot(*, name_hero_dir):
     """
     Ищет совпадения из общей папки и папки героя.
     Возвращает имя файла без расширения. Или 'None' в случае отсутствия совпадений.
-    :param name_hero:
+    :param name_hero_dir:
     :return:
     """
     name_img_ = None
-    directory_big_hero = f'img/tonelli/loot_gift_box/big/{name_hero}'
+    directory_big_hero = f'img/tonelli/loot_gift_box/big/{name_hero_dir}'
     directory_big_all = 'img/tonelli/loot_gift_box/big/all'
     list_dir_hero = os.listdir(directory_big_hero)
     list_dir_all = os.listdir(directory_big_all)
@@ -77,3 +85,4 @@ def check_loot(*, name_hero):
             name_img_ = name_img_list[0]
             break
     return name_img_
+

@@ -90,6 +90,10 @@ def get_energy_line_3_img():
 
 
 def arial_task():
+    """
+    Создание полной картинки заданий
+    :return:
+    """
     # big_task: str = 'img/test/test_tasks/'
     path_img = b_p.task_big
     name_img = 'arial_task.png'
@@ -100,21 +104,23 @@ def arial_task():
     # fun.Mouse.move(pos=pos_start, speed=1)
     # найдем верхний угол
     x, y = pos_start
-    x += 270
-    y += 152
+    x += 270 - 6
+    y += 152 - 2
     # fun.Mouse.move(pos=(x, y), speed=1, show=show_move)
     # # найдем нижний угол
     x_demo, y_demo = x, y
-    change_x = 268
-    change_y = 260
+    change_x = 268# - 6
+    change_y = 260# - 2
     x_demo += change_x
     y_demo += change_y
     # fun.Mouse.move(pos=(x_demo, y_demo), show=show_move)
     # # собственно создание снимка
+    'img/ test/ test_tasks/arial_task.png'
     fun.foto(f'{path_img}{name_img}', (x, y, change_x, change_y))
-    pos = fun.locCenterImg(f'{path_img}{name_img}')
+    # pos = fun.locCenterImg(f'{path_img}{name_img}')
     # fun.Mouse.move(pos=pos)
-    sounds.sound_vic()
+    sounds.sound_vic(block=False)
+    print(f'{path_img}{name_img} создан')
     print('ok')
     # print(x, y, change_x, change_y)
     return x, y, change_x, change_y
@@ -133,6 +139,7 @@ def get_price_energy():
 
 
 def region_task_line():
+
     # big_task = 'img/test/test_tasks/'
     path_img = b_p.task_big
     name_img1 = 'arial_task_line_1.png'
@@ -179,4 +186,4 @@ def region_task_line():
     fun.foto(f'{path_img}{name_img3}', (x, y, change_x, change_y))
 
 
-# arial_task()
+

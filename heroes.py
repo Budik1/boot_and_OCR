@@ -37,6 +37,7 @@ class Hero:
         self.id_ = _id
         self.bypass = ()
 
+
         # обновляемые ежедневно
         self.vip = 0  #
         self.holiday_gift = 0  #
@@ -49,6 +50,8 @@ class Hero:
         self.wildman = 'x'
         self.wildman_count = 0
         self.wild_activ = False
+
+        self.loot_touring = []
 
         self.energy_count_today = 0
         self.arena_count = 0  # счет арены
@@ -75,8 +78,9 @@ class Hero:
 
         self.danger = 0
         self.danger_victory = 0
-        self.list_loot = []
-        self.set_dist = set
+        self.list_loot_kv = []
+        self.set_dist = set()
+        self.bypass_set = set()
 
         self.count_shoulder_straps_all = 0
         self.count_shoulder_straps_kv = 0
@@ -89,6 +93,18 @@ class Hero:
         self.time_entree = 0
 
         self.duel_raid = 0
+
+    def get_bypass_set(self):
+        return self.bypass_set
+
+    def set_bypass_set(self, value_set):
+        self.bypass_set = value_set
+
+    def get_loot_touring(self):
+        return self.loot_touring
+
+    def set_loot_touring(self, value):
+        self.loot_touring = value
 
     def get_white_rat_count_all(self):
         return self.white_rat_count_all
@@ -123,7 +139,7 @@ class Hero:
             'qty_duel_in_kv_victory': self.qty_duel_in_kv_victory,
             'count_shoulder_straps_all': self.count_shoulder_straps_all,
             'count_shoulder_straps_kv': self.count_shoulder_straps_kv,
-            'list_loot': self.list_loot,
+            'list_loot': self.list_loot_kv,
             'set_dist': self.set_dist,
         }
         # if Hero.get_name_en(self) == 'Gady':
@@ -145,12 +161,12 @@ class Hero:
             self.qty_duel_in_kv_all = data_kv.get('qty_duel_in_kv_all', 0)
             self.qty_duel_in_kv_victory = data_kv.get('qty_duel_in_kv_victory', 0)
             self.count_shoulder_straps_kv = data_kv.get('count_shoulder_straps_kv', 0)
-            self.list_loot = data_kv.get('list_loot', [])
+            self.list_loot_kv = data_kv.get('list_loot', [])
 
         else:
             print('Время старта КВ обновилось')
             self.time_start_kv = time_now
-            self.list_loot = []
+            self.list_loot_kv = []
 
             self.qty_duel_in_kv_all = 0
             self.qty_duel_in_kv_victory = 0
@@ -263,10 +279,10 @@ class Hero:
         # конец отладки
 
     def get_list_loot(self):
-        return self.list_loot
+        return self.list_loot_kv
 
     def set_list_loot(self, value):
-        self.list_loot = value
+        self.list_loot_kv = value
 
     def get_id(self):
         return self.id_

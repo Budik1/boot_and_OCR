@@ -1,5 +1,4 @@
 import fun
-# from sketches_of_the_future
 import my_OCR
 
 # Параметр смещения от позиции 'Начстанции'
@@ -17,9 +16,9 @@ width_smol = 77
 width_big = 154
 
 tune_x = 4  #
-tune_y = 1  #
+tune_y = 4  #
 tune_s = 21  # 21 с увеличением регион уменьшается
-tune_v = 1  #
+tune_v = 9  #
 
 
 def foto_pos(region, name_img):
@@ -36,7 +35,11 @@ def foto_pos(region, name_img):
 
 
 def get_areas_pul_line(number_line):
-    """ Получение региона pul по номеру линии"""
+    """
+    Получение региона pul по номеру линии
+    :param number_line:
+    :return:
+    """
     x_pos, y_pos = fun.find_link_station_master()
     x_an_pul = x_pos + pul
     y_an = y_pos + line_pos[number_line]
@@ -45,7 +48,11 @@ def get_areas_pul_line(number_line):
 
 
 def get_areas_xp_line(number_line):
-    """ Получение региона xp по number_line линии """
+    """
+    Получение региона xp по номеру линии
+    :param number_line: номер линии
+    :return:
+    """
     x_or, y_or = fun.find_link_station_master()
     x_an_xp = x_or + xp_
     y_an = y_or + line_pos[number_line]
@@ -126,7 +133,7 @@ def recognize_tasks(number_line):
 
 
 def task_selection():
-    result_search_task = None
+    result_search_task = False
     hero = fun.selection_hero()
     if hero == 'Gady':
         path = 'img/person/tasks_gady/'

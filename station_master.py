@@ -431,16 +431,35 @@ def option_task_money():
             press_en(task_number=2, pos=region_2, value_energy=price_task2)
         if variant3:
             press_en(task_number=3, pos=region_3, value_energy=price_task3)
+# ====================================================================================
+#         if variant1 == variant2 == variant3:
+#             print(F'confidence={conf_}')
+#             conf_ += 0.005
+#             conf_ = round(conf_, 3)
+#
+#             if conf_ >= 0.999:
+#                 print(myCt.tc_cyan(
+#                     'задания не найдены, результаты "D:\\bot in br\\testOCR\\img\\test\\test_tasks\\test big tasks" '))
+#                 # получение картинки
+#                 create_and_analiz_img.get_screenshot_task_big()
+#                 create_and_analiz_img.analiz_task()
+#                 number_tasks = 1
+#                 energy_availability = 0
+#                 return
 
+# ======================================================================================
         if variant1 == variant2 == variant3:
             print(F'confidence={conf_}')
             conf_ -= 0.005
             conf_ = round(conf_, 3)
 
         if conf_ <= 0.92:
-            print(myCt.tc_cyan(
-                'задания не найдены, результаты "D:\\bot in br\\testOCR\\img\\test\\test_tasks\\test big tasks" '))
-            create_and_analiz_img.get_screenshot_task_big()
+            # получение картинки
+            print('Попытка прочитать аппаратно')
+            analiz = create_and_analiz_img.analiz_task()
+            if not analiz:
+                create_and_analiz_img.get_screenshot_task_big()
+                print(myCt.tc_cyan('задания не найдены, результаты "D:\\bot in br\\testOCR\\img\\test\\test_tasks\\test big tasks" '))
             number_tasks = 1
             energy_availability = 0
             return

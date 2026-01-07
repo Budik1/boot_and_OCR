@@ -173,8 +173,10 @@ class Mouse:
 
 
 def my_log_file(text):
-    date_time, date = date_time_now()
-    file_name = date + ".txt"
+    date_ = date_now()
+    time_ = time_now()
+    date_time = f'{date_} {time_}'
+    file_name = date_ + ".txt"
     file_1 = open('log/' + str(file_name), 'a+', encoding='utf-8')
     try:
         print(date_time, text, file=file_1)
@@ -205,11 +207,22 @@ def time_now():
 
 
 def date_time_now():
+    """
+
+    :return:
+    """
     now = datetime.datetime.now()
     # '%Y-%m-%d_%H:%M:%S' '%Y-%m-%d %H°%M\'\'%S\''
     date_time_now_ = (now.strftime('%Y-%m-%d %H:%M:%S'))
     date = (now.strftime('%Y-%m-%d'))
     return date_time_now_, date
+
+def date_now():
+    now = datetime.datetime.now()
+    date = (now.strftime('%Y-%m-%d'))
+    return  date
+
+
 
 
 def minutes_now():
@@ -390,6 +403,17 @@ def foto(path_name, region: tuple[int, int, int, int] | None = None):
     return
 
 
+def foto_pos(region, tune_x, tune_y, tune_s, tune_v, name_img):
+    # получает регион и корректировки снимка внутри него
+    x_p_an, y_p_an, width_, height_ = region
+    x_s = x_p_an + tune_x  # внесение изменений в параметр координаты "х"
+    y_s = y_p_an + tune_y  # внесение изменений в параметр координаты "y"
+    width_s = width_ - tune_s  # внесение изменений в параметр ширина "width"
+    height_s = height_ - tune_v  # внесение изменений в параметр длинна "height"
+    # print(region, (x_s, y_s, width_s, height_s))
+    foto(name_img, (x_s, y_s, width_s, height_s))
+
+
 def find_link_hall_of_glory():
     """
     Закрыть если открыто, Tак как за чем-то может быть не видна позиция привязки
@@ -482,7 +506,7 @@ def get_areas_task_small(width=77, height=42):
     return region1_pul, region2_pul, region3_pul, region1_xp, region2_xp, region3_xp
 
 
-def get_areas_task_big_1(width=77, height=42):
+def get_areas_task_big_1_line(width=77, height=42):
     my_log_file('fun.get_areas_task_big_1')
     # width, height = 77, 42
     pul = 404
@@ -499,7 +523,7 @@ def get_areas_task_big_1(width=77, height=42):
     return region_big_1
 
 
-def get_areas_task_big_2(width=77, height=42):
+def get_areas_task_big_2_line(width=77, height=42):
     my_log_file('fun.get_areas_task_big_2')
     # width, height = 77, 42
     pul = 404
@@ -516,7 +540,7 @@ def get_areas_task_big_2(width=77, height=42):
     return region_big_2
 
 
-def get_areas_task_big_3(width=77, height=42):
+def get_areas_task_big_3_line(width=77, height=42):
     my_log_file('fun.get_areas_task_big_2')
     # width, height = 77, 42
     pul = 404
@@ -932,6 +956,12 @@ def loc_now():
 
 
 def dif_days(*, date_old, date_today=date_utc_now()):
+    """
+    Вычисляет разницу между двумя датами в днях
+    :param date_old: Прошедшая дата
+    :param date_today: Сегодняшняя дата
+    :return: Количество в днях
+    """
     list_date_old = date_old.split(sep='-')
     list_date_today = date_today.split(sep='-')
     par_year = 0

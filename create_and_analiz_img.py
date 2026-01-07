@@ -1,6 +1,5 @@
 """Файл показывает как перевести картинку в текст
  и создаёт картинку уровня"""
-import time
 
 import fun
 import event_OCR
@@ -9,18 +8,11 @@ import baza_paths as b_p
 import heroes
 
 
-def foto_pos(region, tune_x, tune_y, tune_s, tune_v, name_img):
-    # получает регион и корректировки снимка внутри него
-    x_p_an, y_p_an, width_, height_ = region
-    x_s = x_p_an + tune_x  # внесение изменений в параметр координаты "х"
-    y_s = y_p_an + tune_y  # внесение изменений в параметр координаты "y"
-    width_s = width_ - tune_s  # внесение изменений в параметр ширина "width"
-    height_s = height_ - tune_v  # внесение изменений в параметр длинна "height"
-    # print(region, (x_s, y_s, width_s, height_s))
-    fun.foto(name_img, (x_s, y_s, width_s, height_s))
-
-
 def get_screenshot_task_big():
+    """
+    Создание трех картинок по линиям
+    :return:
+    """
     # создание скринов заданий
     path = 'img/test/test_tasks/test big tasks'
     # смещение скриншота внутри региона
@@ -32,12 +24,12 @@ def get_screenshot_task_big():
     ''
     ''
     region1_big, region2_big, region3_big = fun.get_areas_task_big()
-    foto_pos(region1_big, tune_x, tune_y, tune_s, tune_v, f'{path}/big_1.png')
-    foto_pos(region2_big, tune_x, tune_y, tune_s, tune_v, f'{path}/big_2.png')
-    foto_pos(region3_big, tune_x, tune_y, tune_s, tune_v, f'{path}/big_3.png')
+    fun.foto_pos(region1_big, tune_x, tune_y, tune_s, tune_v, f'{path}/big_1.png')
+    fun.foto_pos(region2_big, tune_x, tune_y, tune_s, tune_v, f'{path}/big_2.png')
+    fun.foto_pos(region3_big, tune_x, tune_y, tune_s, tune_v, f'{path}/big_3.png')
 
 
-def create_big_img_task(*, line, value_energy, hero):
+def create_big_img_task_line(*, line, value_energy, hero):
     """
     Создание big_img задания нужной строки для OCR
     """
@@ -51,14 +43,39 @@ def create_big_img_task(*, line, value_energy, hero):
     tune_s = 21  # 21 с увеличением регион уменьшается
     tune_v = 9  #
     region = fun.get_areas_task_big()
-    name_img = f'{path_hero}/t{value_energy} test.png'
-    foto_pos(region[line], tune_x, tune_y, tune_s, tune_v, name_img=name_img)
+    name_img = f'{path_hero}/t{value_energy}.png'
+    fun.foto_pos(region[line], tune_x, tune_y, tune_s, tune_v, name_img=name_img)
     return name_img
+
+
+def get_screenshot_task_smol():
+    """
+    Создание шести маленьких картинок
+    :return:
+    """
+    # создание скринов заданий
+    little_tasks = 'img/test/test_tasks/test_little_tasks/'
+    path = b_p.tasks_little
+    # смещение скриншота внутри региона
+    tune_x = 4  # 4 смещение от верхнего угла региона
+    tune_y = 4  # 4
+    tune_s = 26  # 21 уменьшить длину картинки на:
+    tune_v = 11  # 9 уменьшить высоту картинки на:
+    # скрины маленькие
+    region1_pul, region2_pul, region3_pul, region1_xp, region2_xp, region3_xp = fun.get_areas_task_small()
+    fun.foto_pos(region1_pul, tune_x, tune_y, tune_s, tune_v, f'{path}1_pul.png')
+    fun.foto_pos(region2_pul, tune_x, tune_y, tune_s, tune_v, f'{path}2_pul.png')
+    fun.foto_pos(region3_pul, tune_x, tune_y, tune_s, tune_v, f'{path}3_pul.png')
+    fun.foto_pos(region1_xp, tune_x, tune_y, tune_s, tune_v, f'{path}1_xp.png')
+    fun.foto_pos(region2_xp, tune_x, tune_y, tune_s, tune_v, f'{path}2_xp.png')
+    fun.foto_pos(region3_xp, tune_x, tune_y, tune_s, tune_v, f'{path}3_xp.png')
+
+    return
 
 
 def get_energy_value_in_line(*, line):
     """
-    Возвращает значение количества энергии в линии
+    Получение значения количества энергии в линии
     """
     region_img = fun.get_region_lines_task()
     path_energy_task = b_p.energy_task_value
@@ -73,30 +90,8 @@ def get_energy_value_in_line(*, line):
     return value_energy
 
 
-def get_screenshot_task_smol():
-    # создание скринов заданий
-    little_tasks = 'img/test/test_tasks/test_little_tasks/'
-    path = b_p.tasks_little
-    # смещение скриншота внутри региона
-    tune_x = 4  #
-    tune_y = 2  #
-    tune_s = 21  # 21 с увеличением регион уменьшается
-    tune_v = 2  #
-    # скрины маленькие
-    region1_pul, region2_pul, region3_pul, region1_xp, region2_xp, region3_xp = fun.get_areas_task_small()
-    foto_pos(region1_pul, tune_x, tune_y, tune_s, tune_v, f'{path}1_pul.png')
-    foto_pos(region2_pul, tune_x, tune_y, tune_s, tune_v, f'{path}2_pul.png')
-    foto_pos(region3_pul, tune_x, tune_y, tune_s, tune_v, f'{path}3_pul.png')
-    foto_pos(region1_xp, tune_x, tune_y, tune_s, tune_v, f'{path}1_xp.png')
-    foto_pos(region2_xp, tune_x, tune_y, tune_s, tune_v, f'{path}2_xp.png')
-    foto_pos(region3_xp, tune_x, tune_y, tune_s, tune_v, f'{path}3_xp.png')
-
-    # foto_pos(region1_pul, 0, 0, 0, 0, f'{path}1_pul_test0.png')
-    # foto_pos(region1_xp, 0, 0, 0, 0, f'{path}1_xp_test0.png')
-    return
-
-
 def analiz_task(*, target=None):
+    result = False
     if target != 'auto':
         res = fun.selection_hero()
         while not res:
@@ -143,10 +138,12 @@ def analiz_task(*, target=None):
     if best_line:
         value_energy = get_energy_value_in_line(line=best_line - 1)
         print(f'{heroes.Activ.name_file_=}')
-        img = create_big_img_task(line=best_line - 1, value_energy=value_energy, hero=heroes.Activ.name_file_)
+        img = create_big_img_task_line(line=best_line - 1, value_energy=value_energy, hero=heroes.Activ.name_file_)
         print(f'создан {img}')
+        result = True
     else:
-        print('Строка с результатом "4|1" не найдена')
+        print('Строка с результатом "4x1" не найдена')
+    return result
 
 
 def select_best_offer():
