@@ -90,9 +90,14 @@ def get_energy_value_in_line(*, line):
     return value_energy
 
 
-def analiz_task(*, target=None):
-    result = False
-    if target != 'auto':
+def search_and_create_img_best_offer(*, person_identified=False):
+    """
+    Анализ заданий.
+    :param person_identified: Персонаж опознан. 'True' если опознан. Иначе 'False'
+    :return:
+    """
+    result_found = False
+    if person_identified:
         res = fun.selection_hero()
         while not res:
             fun.push_close()
@@ -105,17 +110,18 @@ def analiz_task(*, target=None):
     # получаю по две картинки на строку для анализа
     get_screenshot_task_smol()
     # анализ заданий
+
+    # анализ первой строки
     list_1_pul = my_OCR.recognized(f'{path_little_tasks}1_pul.png')
     print(f'{list_1_pul=}')
     list_1_xp = my_OCR.recognized(f'{path_little_tasks}1_xp.png')
     print(f'{list_1_xp=}')
-
-    # time.sleep(2)
+    # анализ второй строки
     list_2_pul = my_OCR.recognized(f'{path_little_tasks}2_pul.png')
     print(f'{list_2_pul=}')
     list_2_xp = my_OCR.recognized(f'{path_little_tasks}2_xp.png')
     print(f'{list_2_xp=}')
-    # time.sleep(2)
+    # анализ третьей строки
     list_3_pul = my_OCR.recognized(f'{path_little_tasks}3_pul.png')
     print(f'{list_3_pul=}')
     list_3_xp = my_OCR.recognized(f'{path_little_tasks}3_xp.png')
@@ -132,18 +138,16 @@ def analiz_task(*, target=None):
             best_line = bene.index(0) + 1
         print(f'line {best_line} надо сохранять')
 
-    # номер лучшей строки
-    # print(f'{best_line=}')
     # получение количества энергии в best_line и создание большого скрина задания
     if best_line:
         value_energy = get_energy_value_in_line(line=best_line - 1)
         print(f'{heroes.Activ.name_file_=}')
         img = create_big_img_task_line(line=best_line - 1, value_energy=value_energy, hero=heroes.Activ.name_file_)
         print(f'создан {img}')
-        result = True
+        result_found = True
     else:
         print('Строка с результатом "4x1" не найдена')
-    return result
+    return result_found
 
 
 def select_best_offer():

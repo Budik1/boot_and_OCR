@@ -976,10 +976,14 @@ def dif_days(*, date_old, date_today=date_utc_now()):
 
 
 def rap_explore(*, text, ex=''):
+    """
+    Рапорт использования.
+    :param text: Имя используемой функции.
+    :param ex:
+    :return:
+    """
     if ex:
         ex = 'выход'
-    else:
-        print()
     print(color_text.tc_green(f'{text} {ex}'))
     return
 

@@ -27,7 +27,7 @@ def find_tasks_benefit(value_1_pul, value_1_xp, value_2_pul, value_2_xp, value_3
     Результат с округлением до целых
 
     """
-    # нужна проверка на "0"
+    # нужна проверка на "0" ?
     if value_1_xp and value_1_pul:
         rez_1 = round(int(value_1_pul[0]) / int(value_1_xp[0]))
     else:

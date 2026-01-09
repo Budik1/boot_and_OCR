@@ -424,7 +424,7 @@ def set_timer1():
     solid_memory.save_all_state_config(info=False)
 
 def set_param():
-    heroes.gady.list_loot_kv = []
+
     displaying_values(info=True)
 
 
@@ -434,8 +434,8 @@ root.title(f' помощник "Метро 2033"')
 width = b_d.timer_x + 73  # Ширина
 # width = 371# Ширина
 height = b_d.line10 + b_d.height_line + 2  # Высота
-h = width - 371
-position_x = 1200 - h
+w = width - 371
+position_x = 1200 - w
 position_y = 50
 # root.geometry("370x362+1200+50")  # Ширина x Высота + положение X + положение Y
 # root.geometry(f'371x{b_d.line11 + b_d.height_line + 2}+1200+50')  # Ширина x Высота + положение X + положение Y

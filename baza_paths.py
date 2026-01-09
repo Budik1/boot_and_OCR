@@ -1,4 +1,5 @@
 task_big = 'img/test/test_tasks/'
+task_test = 'img/test/test_img/'
 tasks_little = 'img/test/test_tasks/test_little_tasks/'
 
 num_path = 'img/station_master/numbers/'

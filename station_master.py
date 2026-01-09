@@ -440,13 +440,15 @@ def option_task_money():
         if conf_ <= 0.92:
             # получение картинки
             print('Попытка прочитать аппаратно')
-            analiz = create_and_analiz_task_img.analiz_task()
+            analiz = create_and_analiz_task_img.search_and_create_img_best_offer(person_identified=True)
+            print(f'{analiz=}')
+            conf_ = 0.95
             if not analiz:
                 create_and_analiz_task_img.get_screenshot_task_big()
                 print(myCt.tc_cyan('задания не найдены, результаты "D:\\bot in br\\testOCR\\img\\test\\test_tasks\\test big tasks" '))
-            number_tasks = 1
-            energy_availability = 0
-            return
+                number_tasks = 1
+                energy_availability = 0
+                return
 
     number_tasks = 1
     energy_availability = 1

@@ -23,7 +23,7 @@ def translate(world):
         'Christmas_tree_star': 'новогодняя звезда',
         'Christmas_tree_garland': 'новогодняя гирлянда',
         'Christmas_tree_cracker': 'новогодняя хлопушка',
-        'Christmas_tree_ball': 'новогодняя шар',
+        'Christmas_tree_ball': 'новогодний шар',
         'Christmas_tree_branch': 'новогодняя ветка',
 
         'jetton': 'жетон',
@@ -559,22 +559,28 @@ def for_wilds():
     fun.my_log_file('touring.for_wilds')
     fun.push_close_all_()
     hero = fun.selection_hero(show_name=False)
-    if hero == 'Велес':
+    if hero == 'Mara':
         move_to_target(target_point='ст. Киевская')
         station_master.option_task_money()
         col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
         print(f'нет доступных заданий. {col}')
-        move_to_target(target_point='ст. Парк культуры(КР)')
-        station_master.option_task_money()
-        col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
-        print(f'нет доступных заданий. {col}')
-        move_to_target(target_point='ст. Библиотека им. Ленина')
-        station_master.option_task_money()
-        col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
-        print(f'нет доступных заданий. {col}')
+        if col in [30, 50]:
+            print(f'энергия исчерпана {col} потрачено сегодня')
+        else:
+            move_to_target(target_point='ст. Парк культуры(КР)')
+            station_master.option_task_money()
+            col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
+            print(f'нет доступных заданий. {col}')
+            if col in [30, 50]:
+                print(f'энергия исчерпана {col} потрачено сегодня')
+            else:
+                # за белыми крысами на Пушкинской
+                print(f'нет доступных заданий. {col}')
+                move_to_target(target_point='ст. Пушкинская')
+                station_master.task_pos_item(1)
+                col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
+                print(f'энергия исчерпана {col} потрачено сегодня')
         move_to_target(target_point='домой')
-        station_master.task_pos_item(1)
-        print('энергия исчерпана')
     else:
         move_to_target(target_point='ст. Киевская')
         station_master.option_task_money()
@@ -610,6 +616,7 @@ def for_kiki():
     minutes = int(finish_time // 60)  # количество минут
     seconds = round((finish_time % minutes), 2)
     print('Потрачено время', minutes, 'минут', seconds, 'сек.')
+    sounds.say_txt('вернулся домой))')
     fun.rap_explore(text=def_name, ex=1)
     return
 
@@ -632,13 +639,12 @@ def sbor_podarkov(bypass_hero: list) -> None:
         move_to_target(target_point='ст. ВДНХ')
         move_to_target(target_point='домой')
     if pers == 'Mara':
-        move_to_target(target_point='ст. Павелецкая(Г)')
-        move_to_target(target_point='ст. Третьяковская')
+        move_to_target(target_point='ст. Полянка')
         move_to_target(target_point='ст. Цветной бульвар')
         move_to_target(target_point='ст. Кузнецкий мост')
-        move_to_target(target_point='ст. Полянка')
-        move_to_target(target_point='ст. Парк культуры(КР)')
+        move_to_target(target_point='ст. Павелецкая(Г)')
+        move_to_target(target_point='ст. Третьяковская')
         move_to_target(target_point='домой')
-
+    sounds.say_txt('вернулся домой))')
     fun.rap_explore(text=def_name, ex=1)
     return
