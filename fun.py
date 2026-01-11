@@ -217,12 +217,11 @@ def date_time_now():
     date = (now.strftime('%Y-%m-%d'))
     return date_time_now_, date
 
+
 def date_now():
     now = datetime.datetime.now()
     date = (now.strftime('%Y-%m-%d'))
-    return  date
-
-
+    return date
 
 
 def minutes_now():
@@ -391,7 +390,7 @@ def move_friends_list_to_top():
     return
 
 
-def foto(path_name, region: tuple[int, int, int, int] | None = None):
+def foto(path_name, region: tuple[int, int, int, int] | object | None = None):
     """
         Создает снимок нужного участка экрана
         :param path_name: имя файла
@@ -403,15 +402,26 @@ def foto(path_name, region: tuple[int, int, int, int] | None = None):
     return
 
 
-def foto_pos(region, tune_x, tune_y, tune_s, tune_v, name_img):
+def foto_pos(name_img, region, tune_x=0, tune_y=0, tune_s=0, tune_v=0):
+    """
+    Получает имя файла, регион и корректирует (если надо) регион снимка.
+    Дубль в event_arena.py
+    :param region:
+    :param tune_x:
+    :param tune_y:
+    :param tune_s:
+    :param tune_v:
+    :param name_img:
+    :return:
+    """
     # получает регион и корректировки снимка внутри него
-    x_p_an, y_p_an, width_, height_ = region
-    x_s = x_p_an + tune_x  # внесение изменений в параметр координаты "х"
-    y_s = y_p_an + tune_y  # внесение изменений в параметр координаты "y"
-    width_s = width_ - tune_s  # внесение изменений в параметр ширина "width"
-    height_s = height_ - tune_v  # внесение изменений в параметр длинна "height"
-    # print(region, (x_s, y_s, width_s, height_s))
-    foto(name_img, (x_s, y_s, width_s, height_s))
+    x_, y_, width_, height_ = region
+    x_corrected = x_ + tune_x  # внесение изменений в параметр координаты "х"
+    y_corrected = y_ + tune_y  # внесение изменений в параметр координаты "y"
+    width_corrected = width_ - tune_s  # внесение изменений в параметр ширина "width"
+    height_corrected = height_ - tune_v  # внесение изменений в параметр длинна "height"
+    # print(region, (x_corrected, y_corrected, width_corrected, height_corrected))
+    foto(name_img, (x_corrected, y_corrected, width_corrected, height_corrected))
 
 
 def find_link_hall_of_glory():
@@ -424,6 +434,7 @@ def find_link_hall_of_glory():
     while close:
         push_close_all_()
         close = find_img.find_close()
+        print('поиск close')
     # получение координат привязки
     point_hall_of_glory = find_img.find_hall_of_glory_icon()
     while not point_hall_of_glory:
@@ -668,9 +679,9 @@ def find_lvl():
 def await_arena(region):
     my_log_file('')
     my_log_file('fun.await_arena')
-    attack_arena_object = find_img.find_attack(region=region)
+    attack_arena_object = find_img.find_choice_of_the_attacked(region=region)
     while attack_arena_object is None:
-        attack_arena_object = find_img.find_attack(region=region)
+        attack_arena_object = find_img.find_choice_of_the_attacked(region=region)
     # mouse_move(pos=attack_arena_object)
     return attack_arena_object
 
@@ -744,67 +755,6 @@ def work():
     work_rest_hour = find_img.find_work_rest_hour(rest=rest)
     Mouse.move_to_click(pos_click=work_rest_hour)
     return
-
-
-def transform_word_duel(*, qty_duel: int):
-    col_days_ed = qty_duel % 10
-    col_days_des = (qty_duel // 10) % 10
-    if col_days_ed == 0 and col_days_des == 0:
-        result = 'дуэлей'
-    elif col_days_ed == 1 and col_days_des != 1:
-        result = 'дуэли'
-    else:
-        result = 'дуэлях'
-    return result
-
-
-def transform_word_victory(*, qty_victory: int):
-    col_days_ed = qty_victory % 10
-    col_days_des = (qty_victory // 10) % 10
-    if col_days_ed == 1 and col_days_des != 1:
-        result = 'победа'
-    elif col_days_ed in [2, 3, 4] and col_days_des != 1:
-        result = 'победы'
-    else:
-        result = 'побед'
-    return result
-
-
-def transform_word_days(*, qty_days: int):
-    col_days_ed = qty_days % 10
-    col_days_des = (qty_days // 10) % 10
-    if col_days_ed == 1 and col_days_des != 1:
-        result = 'день'
-    elif col_days_ed in [2, 3, 4] and col_days_des != 1:
-        result = 'дня'
-    else:
-        result = 'дней'
-    return result
-
-
-def transform_word_file(*, qty_files: int):
-    col_days_ed = qty_files % 10
-    col_days_des = (qty_files // 10) % 10
-    if col_days_ed == 1 and col_days_des != 1:
-        results = 'файл'
-    elif col_days_ed in [2, 3, 4] and col_days_des != 1:
-        results = 'файла'
-    else:
-        results = 'файлов'
-    return results
-
-
-def transform_word_wilds(*, qty_wilds: int):
-    col_days_ed = qty_wilds % 10
-    col_days_des = (qty_wilds // 10) % 10
-
-    if col_days_ed == 1 and col_days_des != 1:
-        result = 'дикарь'
-    elif col_days_ed in [2, 3, 4] and col_days_des != 1:
-        result = 'дикаря'
-    else:
-        result = 'дикарей'
-    return result
 
 
 def verifi_img():
@@ -988,23 +938,6 @@ def rap_explore(*, text, ex=''):
     return
 
 
-def get_name_loot():
-    my_log_file(f'')
-    my_log_file(f'fun.get_name_loot')
-    dict_name_loot = {'сержант': 'img/kv/result_round/loot/p1.png',
-                      'лейтенант': 'img/kv/result_round/loot/p2.png',
-                      'капитан': 'img/kv/result_round/loot/p3.png',
-                      'полковник': 'img/kv/result_round/loot/p4.png',
-                      'генерал': 'img/kv/result_round/loot/p5.png'}
-    result = 'неопознан'
-    for name in dict_name_loot:
-        name_loot = locCenterImg(name_img=dict_name_loot[name])
-        if name_loot:
-            result = name
-            break
-    return result
-
-
 def get_rest_tim(*, h_max):
     t_now = time_now()
     h, m, s = t_now.split(':')
@@ -1020,9 +953,26 @@ def get_rest_tim(*, h_max):
         t_work = 1
     return t_work
 
+
 def pos_parking():
     m_g = find_img.find_my_game2()
     x, y = m_g
     y += 40
     parking = x, y
     return parking
+
+
+def distance(*, pos_upper: tuple, pos_lower: tuple) -> tuple[int, int]:
+    """
+    Возвращает расстояние между двумя точками по высоте и ширине
+    :param pos_upper: верхняя точка
+    :param pos_lower: нижняя точка
+    :return: ширина и высота (width and height)
+    """
+    my_log_file(f'')
+    my_log_file(f'kv_and_raid.distance')
+    x_upper, y_upper = pos_upper
+    x_lower, y_lower = pos_lower
+    dist_x = x_lower - x_upper
+    dist_y = y_lower - y_upper
+    return dist_x, dist_y

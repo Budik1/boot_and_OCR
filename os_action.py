@@ -2,7 +2,7 @@ import os
 import time
 
 import baza_paths as b_p
-import fun
+import mod_wold
 
 hour = 3600
 day = 24 * 3600
@@ -49,6 +49,6 @@ def check_files(*, old_day):
             qty_filez += 1
             file_path = directory + file
             chek_and_del_file(check_file=file_path, old_day=old_day)
-    word_file = fun.transform_word_file(qty_files=qty_filez)
+    word_file = mod_wold.transform_word_file(qty_files=qty_filez)
     print(f'{qty_filez} {word_file} прошли проверку. {qty_del_files} удалено')
     print()

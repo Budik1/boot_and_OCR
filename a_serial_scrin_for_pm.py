@@ -16,7 +16,7 @@ def energy_img():
     pos_mark = find_img.find_station_master()
     # name_create_img = 'img/test/token.png'
     # проверить видимость
-    list_en = os.listdir('../img/station_master/energy_value')
+    list_en = os.listdir('img/station_master/energy_value')
     print(color_text.tc_cyan('Проверка'))
     for img_ in list_en:
         name_img = f'img/station_master/energy_value/{img_}'
@@ -142,6 +142,8 @@ def cr_other_img(name_create_img='img/test/token.png'):
     # name_create_img = 'img/overall/klan.png'
     # name_create_img = 'img/kv/kv_attak.png'
     name_create_img = 'img/overall/knob.png'
+    name_create_img = 'img/arena/overall/hall_of_glory_icon.png'
+    name_create_img = 'img/arena/overall/hall_of_glory_tabl.png'
 
     img_dict = {
         'img/b_battle_end.png': (-330, -404, 170, 30, (), find_img.find_close()),
@@ -172,15 +174,17 @@ def cr_other_img(name_create_img='img/test/token.png'):
         'img/station_master/work_hour/work_30m.png': (250, 137, 160, 27, (), find_img.find_station_master()),
         'img/station_master/work_hour/work_1h.png': (250, 194, 160, 25, (), find_img.find_station_master()),
         'img/station_master/work_hour/work_2h.png': (250, 260, 160, 25, (), find_img.find_station_master()),
-        'img/station_master/work_hour/work_5h.png': (250, 260+65, 160, 25, (), find_img.find_station_master()),
-        'img/station_master/work_hour/work_8h.png': (250, 260+65+65, 160, 25, (), find_img.find_station_master()),
+        'img/station_master/work_hour/work_5h.png': (250, 260 + 65, 160, 25, (), find_img.find_station_master()),
+        'img/station_master/work_hour/work_8h.png': (250, 260 + 65 + 65, 160, 25, (), find_img.find_station_master()),
 
         'img/overall/knob.png': (-496, -463, 16, 16, (), find_img.find_close()),
+        'img/arena/overall/hall_of_glory_icon.png': (592, -58, 50, 47, (), find_img.find_info()),
+        'img/arena/overall/hall_of_glory_tabl.png': (-521, -534, 142, 31, (), find_img.find_close()),
 
     }
     # name_create_img = 'img/test/token.png'
 
-    key = 'img/overall/knob.png'
+    key = 'img/arena/overall/hall_of_glory_tabl.png'
     pos_start = img_dict[key][5]
 
     # # собственно создание снимка
@@ -191,7 +195,7 @@ def cr_other_img(name_create_img='img/test/token.png'):
         x, y = pos_start
         x += img_dict[key][0]
         y += img_dict[key][1]
-        # fun.mouse_move(pos=(x, y), speed=1)
+        # fun.Mouse.move(pos=(x, y), speed=1)
         # # найдем нижний угол
         x_demo, y_demo = x, y
         change_x = img_dict[key][2]
@@ -233,6 +237,58 @@ def cr_other_img(name_create_img='img/test/token.png'):
     sounds.sound_vic()
     # print(f'{name_create_img} сделано')
     # check_img(name=name_create_img)
+    return
+
+
+def cr_arena_img():
+    """
+
+    :return:
+    """
+    target_img = 'заглушка'
+    img_dict = {
+        'img/arena/overall/hall_of_glory_icon.png': (592, -58, 50, 47, (), find_img.find_info()),
+        'img/arena/overall/hall_of_glory_tabl.png': (-521, -534, 142, 31, (), find_img.find_close()),
+        'img/arena/overall/attack.png': (423, 96, 46, 46, (), find_img.find_hall_of_glory_tabl()),
+        'img/arena/overall/scroll_down.png': (477, 418, 24, 33, (), find_img.find_hall_of_glory_tabl()),
+        'img/arena/overall/scroll_up.png': (477, 87, 24, 33, (), find_img.find_hall_of_glory_tabl()),
+        'img/arena/overall/arena_tabl.png': (-436, -505, 84, 30, (), find_img.find_close()),
+        'img/arena/overall/hero_vs_opponent.png': (-432, -84, 262, 56, (), find_img.find_close()),
+        # 'img/arena/overall/victory_in_arena.png': (-44, -352, 100, 41, (), find_img.find_close()),
+        'img/arena/overall/victory_in_arena.png': (-96, -352, 153, 41, (), find_img.find_close()),
+        'img/arena/overall/defeat_in_arena.png': (-96, -252, 153, 41, (), find_img.find_close()),
+
+    }
+    # target_img = 'img/test/token.png'
+
+    key = 'img/arena/overall/victory_in_arena.png'
+    pos_start = img_dict[key][5]
+    # показать привязку
+    # fun.Mouse.move(pos=pos_start, speed=1)
+    # найдем верхний угол
+    x, y = pos_start
+    x += img_dict[key][0]
+    y += img_dict[key][1]
+    # fun.Mouse.move(pos=(x, y), speed=1)
+    # # найдем нижний угол
+    x_demo, y_demo = x, y
+    change_x = img_dict[key][2]
+    change_y = img_dict[key][3]
+    x_demo += change_x
+    y_demo += change_y
+    # fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
+    # # собственно создание снимка
+    if target_img == 'img/test/token.png':
+        fun.foto(f'{target_img}', (x, y, change_x, change_y))
+        print(f'{target_img} сделан')
+    else:
+        answer = input(f"{key}  сохранить? (y/n): ")
+        if answer == 'y':
+            fun.foto(f'{key}', (x, y, change_x, change_y))
+            print(f'{key} сделано')
+        else:
+            print("выход без создания снимка")
+    # sounds.sound_vic(block=False)
     return
 
 
@@ -504,12 +560,12 @@ def event_entry_img():
     return
 
 
-
-
 # event_entry_img()
 # hero_img()
 # name_id_station()
-# cr_other_img()
+
+cr_arena_img()
+
 # task_img()
 # mob_id(name='name6_kikimora')
 # mob_id(name='name3_smuggler') #

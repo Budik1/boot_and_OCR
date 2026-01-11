@@ -21,19 +21,6 @@ tune_s = 21  # 21 с увеличением регион уменьшается
 tune_v = 9  #
 
 
-def foto_pos(region, name_img):
-    """ Создание файла """
-    # получает регион и корректировки снимка внутри него
-    # значения для уменьшения img внутри региона поиска
-    x_p_an, y_p_an, width_, height_ = region
-    x_s = x_p_an + tune_x  # внесение изменений в параметр координаты "х"
-    y_s = y_p_an + tune_y  # внесение изменений в параметр координаты "y"
-    width_s = width_ - tune_s  # внесение изменений в параметр ширина "width"
-    height_s = height_ - tune_v  # внесение изменений в параметр длинна "height"
-    # print(region, (x_s, y_s, width_s, height_s))
-    fun.foto(name_img, (x_s, y_s, width_s, height_s))
-
-
 def get_areas_pul_line(number_line):
     """
     Получение региона pul по номеру линии
@@ -73,7 +60,8 @@ def create_img_task_pul_line(number_line):
     """ Получение pul img по номеру линии """
     region_pul = get_areas_pul_line(number_line)
     file_name = f'img/test/test_tasks/{number_line}_pul.png'
-    foto_pos(region_pul, file_name)
+    fun.foto_pos(name_img=file_name, region=region_pul,
+                 tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
     return file_name
 
 
@@ -81,13 +69,15 @@ def create_img_task_xp_line(number_line):
     """ Получение xp img по номеру линии """
     region_xp = get_areas_xp_line(number_line)
     file_name = f"img/test/test_tasks/{number_line}_xp.png"
-    foto_pos(region_xp, file_name)
+    fun.foto_pos(name_img=region_xp, region=file_name,
+                 tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
     return file_name
 
 
 def create_img_task_big(number_line):
     region_big = get_areas_task_big(number_line)
-    foto_pos(region_big, f"img/test/test_tasks/big_{number_line}.png")
+    fun.foto_pos(name_img=f"img/test/test_tasks/big_{number_line}.png", region=region_big,
+                 tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
 
 
 def analiz_img(file_name):
@@ -112,15 +102,8 @@ def recognize_tasks(number_line):
     img_xp = create_img_task_xp_line(number_line)
     # print(img_xp)
     list_pul = my_OCR.recognized(img_pul)
-    # if list_pul:
-    #     print(list_pul)
-    # else:
-    #     print("Нераспознан")
     list_xp = my_OCR.recognized(img_xp)
-    # if list_xp:
-    #     print(list_xp)
-    # else:
-    #     print("Нераспознан")
+    #
     if list_pul and list_xp:
         rezult = round(int(list_pul[0]) / int(list_xp[0]))
         pul_rez = int(list_pul[0])
@@ -191,12 +174,10 @@ def task_selection():
                 region = get_areas_task_big(1)
                 name_img = "img/test/test_tasks/big_1.png"
 
-        foto_pos(region, name_img)
+        fun.foto_pos(name_img=name_img, region=region,
+                     tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
         print(f"img создан с именем {name_img}")
-
 
 # task_selection()
 # опознание уровня
 # lvl_img()
-
-

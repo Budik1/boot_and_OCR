@@ -1,6 +1,3 @@
-"""Файл показывает как перевести картинку в текст
- и создаёт картинку уровня"""
-
 import fun
 import event_OCR
 import my_OCR
@@ -24,9 +21,12 @@ def get_screenshot_task_big():
     ''
     ''
     region1_big, region2_big, region3_big = fun.get_areas_task_big()
-    fun.foto_pos(region1_big, tune_x, tune_y, tune_s, tune_v, f'{path}/big_1.png')
-    fun.foto_pos(region2_big, tune_x, tune_y, tune_s, tune_v, f'{path}/big_2.png')
-    fun.foto_pos(region3_big, tune_x, tune_y, tune_s, tune_v, f'{path}/big_3.png')
+    fun.foto_pos(name_img=f'{path}/big_1.png', region=region1_big,
+                 tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
+    fun.foto_pos(name_img=f'{path}/big_2.png', region=region2_big,
+                 tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
+    fun.foto_pos(name_img=f'{path}/big_3.png', region=region3_big,
+                 tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
 
 
 def create_big_img_task_line(*, line, value_energy, hero):
@@ -44,7 +44,8 @@ def create_big_img_task_line(*, line, value_energy, hero):
     tune_v = 9  #
     region = fun.get_areas_task_big()
     name_img = f'{path_hero}/t{value_energy}.png'
-    fun.foto_pos(region[line], tune_x, tune_y, tune_s, tune_v, name_img=name_img)
+    fun.foto_pos(name_img=name_img, region=region[line],
+                 tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
     return name_img
 
 
@@ -55,7 +56,7 @@ def get_screenshot_task_smol():
     """
     # создание скринов заданий
     little_tasks = 'img/test/test_tasks/test_little_tasks/'
-    path = b_p.tasks_little
+    path = b_p.tasks_little_temp
     # смещение скриншота внутри региона
     tune_x = 4  # 4 смещение от верхнего угла региона
     tune_y = 4  # 4
@@ -63,13 +64,18 @@ def get_screenshot_task_smol():
     tune_v = 11  # 9 уменьшить высоту картинки на:
     # скрины маленькие
     region1_pul, region2_pul, region3_pul, region1_xp, region2_xp, region3_xp = fun.get_areas_task_small()
-    fun.foto_pos(region1_pul, tune_x, tune_y, tune_s, tune_v, f'{path}1_pul.png')
-    fun.foto_pos(region2_pul, tune_x, tune_y, tune_s, tune_v, f'{path}2_pul.png')
-    fun.foto_pos(region3_pul, tune_x, tune_y, tune_s, tune_v, f'{path}3_pul.png')
-    fun.foto_pos(region1_xp, tune_x, tune_y, tune_s, tune_v, f'{path}1_xp.png')
-    fun.foto_pos(region2_xp, tune_x, tune_y, tune_s, tune_v, f'{path}2_xp.png')
-    fun.foto_pos(region3_xp, tune_x, tune_y, tune_s, tune_v, f'{path}3_xp.png')
-
+    fun.foto_pos(name_img=f'{path}1_pul.png', region=region1_pul,
+                 tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
+    fun.foto_pos(name_img=f'{path}2_pul.png', region=region2_pul,
+                 tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
+    fun.foto_pos(name_img=f'{path}3_pul.png', region=region3_pul,
+                 tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
+    fun.foto_pos(name_img=f'{path}1_xp.png', region=region1_xp,
+                 tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
+    fun.foto_pos(name_img=f'{path}2_xp.png', region=region2_xp,
+                 tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
+    fun.foto_pos(name_img=f'{path}3_xp.png', region=region3_xp,
+                 tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
     return
 
 
@@ -106,11 +112,11 @@ def search_and_create_img_best_offer(*, person_identified=False):
         fun.vizit_to_station_master()
 
     little_tasks = 'img/test/test_tasks/test_little_tasks/'
-    path_little_tasks = b_p.tasks_little
+    path_little_tasks = b_p.tasks_little_temp
     # получаю по две картинки на строку для анализа
     get_screenshot_task_smol()
-    # анализ заданий
 
+    # анализ заданий
     # анализ первой строки
     list_1_pul = my_OCR.recognized(f'{path_little_tasks}1_pul.png')
     print(f'{list_1_pul=}')
@@ -159,7 +165,7 @@ def select_best_offer():
     """
 
     def rating_task(*, analiz_line_number):
-        path_little_tasks = b_p.tasks_little
+        path_little_tasks = b_p.tasks_little_temp
         pul = my_OCR.recognized(f'{path_little_tasks}{analiz_line_number}_pul.png')
         xp = my_OCR.recognized(f'{path_little_tasks}{analiz_line_number}_xp.png')
         bene = event_OCR.find_benefit(pul=pul, xp=xp)

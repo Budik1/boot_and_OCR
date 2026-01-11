@@ -18,12 +18,7 @@ import os
 import fun
 import sounds
 import baza_paths as b_p
-
-
-def modification_name(*, old_name, modifier):
-    l_name = old_name.split('.')
-    new_modified_name = f'{l_name[0]}{modifier}.{l_name[1]}'
-    return new_modified_name
+import mod_wold
 
 
 def conversion_to_gray(*, name_img):
@@ -38,7 +33,7 @@ def conversion_to_gray(*, name_img):
     # Конвертируйте в оттенки серого методом 'L'
     image = image.convert('L')
     # Создайте новое имя файла добавив символы изменения.
-    new_name_img = modification_name(old_name=name_img, modifier='_gray')
+    new_name_img = mod_wold.modification_name(old_path_name=name_img, modifier='_gray')
     # Сохраните изображение
     image.save(new_name_img)
     return new_name_img
@@ -63,7 +58,7 @@ def ramki(*, name_file):
     axs[1].axis('off')
     # Сохранение результата в файл
     result_image = Image.fromarray(edges)
-    mod_name_file = modification_name(old_name=name_file, modifier='_edges')
+    mod_name_file = mod_wold.modification_name(old_path_name=name_file, modifier='_edges')
     result_image.save(mod_name_file)
     # Отображение результата
     plt.show()
@@ -120,10 +115,11 @@ def crop_smol_task_img(*, name_open):
         lower = i[3] + upper
         #  box=(left, upper, right, lower)
         img_crop = img.crop((left, upper, right, lower))
-        new_name = modification_name(old_name=name_open, modifier=i[4])
+        new_name = mod_wold.modification_name(old_path_name=name_open, modifier=i[4])
         img_crop.save(new_name)
         lst_names.append(new_name)
     return lst_names
+
 
 def crop_big_task_img(*, name_open):
     lst_names = []
@@ -136,10 +132,11 @@ def crop_big_task_img(*, name_open):
         lower = i[3] + upper
         #  box=(left, upper, right, lower)
         img_crop = img.crop((left, upper, right, lower))
-        new_name = modification_name(old_name=name_open, modifier=i[4])
+        new_name = mod_wold.modification_name(old_path_name=name_open, modifier=i[4])
         img_crop.save(new_name)
         lst_names.append(new_name)
     return lst_names
+
 
 def new_big_task_img():
     name_hero = input('ВВеди имя героя: ')
@@ -191,9 +188,9 @@ def change_color(name_img):
     #     # print(set_color)
     #     print(color)
     tar_col = []
-    for i in range(202): # 202
+    for i in range(202):  # 202
         # print(i+20)
-        tar_col.append((i+20, i+20, i+20))
+        tar_col.append((i + 20, i + 20, i + 20))
     for x in range(width):
         for y in range(height):
             pixel_color = image_rgb.getpixel((x, y))
@@ -201,7 +198,7 @@ def change_color(name_img):
             if pixel_color in tar_col:
                 image_rgb.putpixel((x, y), replacement_color)
                 qty_point += 1
-    mod_name = modification_name(old_name=name_img, modifier='_gr')
+    mod_name = mod_wold.modification_name(old_path_name=name_img, modifier='_gr')
     image_rgb.save(mod_name)
     print(f'Количество измененных точек {qty_point}')
     image_gr = Image.open(mod_name)

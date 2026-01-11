@@ -35,10 +35,7 @@ def foto_result_round(*, pos_v, pos_n, path=b_p.result_round, sound=False):
     :param sound:
     :return:
     """
-    # сужение
     # коррекция верхнего угла
-
-    #
     pos_x, pos_y = pos_v
     pos_x += 180
     pos_y += 45
@@ -81,9 +78,9 @@ def foto_loot_kv(*, point_v, point_n):
     return
 
 
-def get_name_loot():
-    fun.my_log_file(f'')
-    fun.my_log_file(f'fun.get_name_loot')
+def get_name_loot_kv():
+    fun.my_log_file('')
+    fun.my_log_file('kv_and_raid.get_name_loot_kv')
     dict_name_loot = {'сержант': 'img/kv/result_round/loot/p1.png',
                       'лейтенант': 'img/kv/result_round/loot/p2.png',
                       'капитан': 'img/kv/result_round/loot/p3.png',
@@ -135,14 +132,7 @@ def update_set_dist(*, value_dist):
     return
 
 
-def distance(*, pos_vic: tuple, pos_cl: tuple) -> int:
-    fun.my_log_file(f'')
-    fun.my_log_file(f'kv_and_raid.distance')
-    x_vic, y_vic = pos_vic
-    x_cl, y_cl = pos_cl
-    dist = y_cl - y_vic
 
-    return dist
 
 
 def battle(target_call):
@@ -181,7 +171,7 @@ def battle(target_call):
 
             heroes.Hero.up_qty_duel_in_kv_victory(heroes.Activ.hero_activ)
             # print(Hero.get_name_ru(Activ.hero_activ))
-            dist_report = distance(pos_vic=victory, pos_cl=kv_close)
+            fig, dist_report = fun.distance(pos_upper=victory, pos_lower=kv_close)
             update_set_dist(value_dist=dist_report)
             min_dist = min(heroes.Hero.get_set_dist(heroes.Activ.hero_activ))
             foto_result_round(pos_v=victory, pos_n=kv_close)
@@ -193,7 +183,7 @@ def battle(target_call):
                                   path='img/kv/result_round/p/', sound=True)
                 # foto_loot_kv(point_v=victory, point_n=kv_close)
                 # опознать погон
-                name_loot = get_name_loot()
+                name_loot = get_name_loot_kv()
                 # записать в лист
                 list_loot = heroes.Hero.get_list_loot(heroes.Activ.hero_activ)
                 list_loot.append(str(name_loot))

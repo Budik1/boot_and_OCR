@@ -1,7 +1,7 @@
 task_big = 'img/test/test_tasks/'
 task_test = 'img/test/test_img/'
-tasks_little = 'img/test/test_tasks/test_little_tasks/'
-
+tasks_little_temp = 'img/temp/tasks'
+img_token = 'img/test/token.png'
 num_path = 'img/station_master/numbers/'
 
 energy_task_value = 'img/station_master/energy_value/'

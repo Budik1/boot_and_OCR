@@ -55,8 +55,8 @@ def find_klan():
     return pos_klan
 
 
-def find_attack(*, region: tuple[int, int, int, int] | None = None):
-    attack = fund.locateCenterImg(name_img='img/arena/overall/attack.png', region=region)
+def find_choice_of_the_attacked(*, region: tuple[int, int, int, int] | None = None):
+    attack = fund.locateCenterImg(name_img='img/arena/overall/choice_of_the_attacked.png', region=region)
     return attack
 
 
@@ -80,8 +80,8 @@ def find_scroll_down():
     return scroll_down
 
 
-def find_hero_vs_opponent():
-    hero_vs_opponent = fund.locateCenterImg(name_img='img/arena/overall/hero_vs_opponent.png')
+def find_attack_arena_opponent():
+    hero_vs_opponent = fund.locateCenterImg(name_img='img/arena/overall/attack_arena_opponent.png')
     return hero_vs_opponent
 
 

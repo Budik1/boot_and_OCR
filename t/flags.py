@@ -1,2 +1,0 @@
-class Flag:
-    log = False

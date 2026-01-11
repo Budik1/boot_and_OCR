@@ -4,25 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="07,01,26 чистка незанятых в проекте файлов">
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="09.01.26 touring.py дополнен словарь переводчика содержимого подарков на станциях. station_master.py Добавлен аппаратный анализ заданий. gift_station_service.py изменен адрес сохранения. create_and_analiz_task_img.py рефакторинг для лучшего чтения.">
+      <change afterPath="$PROJECT_DIR$/fun_areas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/arena/overall/arena_tabl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/arena/overall/attack_arena_opponent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/arena/overall/choice_of_the_attacked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mod_wold.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/a_test1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/baza_paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza_paths.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/complex_phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/complex_phrases.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/config.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/createAndName_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/createAndName_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cr_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create_and_analiz_task_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_and_analiz_task_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_OCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_OCR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_arena.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/find_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/find_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gift_station_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/gift_station_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_mara/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_mara/t2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_mara/t3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_mara/t3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tonelli/loot_gift_box/big/buf/jetton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/gady/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/gady/arena_object.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/gady/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/gady/object.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/overall/attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/overall/defeat_in_arena.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/overall/defeat_in_arena.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/overall/hall_of_glory_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/overall/hall_of_glory_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/overall/hall_of_glory_tabl.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/overall/hall_of_glory_tabl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/overall/hero_vs_opponent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/overall/scroll_down.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/overall/scroll_down.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/overall/scroll_up.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/overall/scroll_up.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/overall/victory_in_arena.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/overall/victory_in_arena.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_config2.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config2.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/t/info.py" beforeDir="false" afterPath="$PROJECT_DIR$/a_test1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/t/t_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/t/t_item.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/os_action.py" beforeDir="false" afterPath="$PROJECT_DIR$/os_action.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/a_serial_scrin_for_pm.py" beforeDir="false" afterPath="$PROJECT_DIR$/a_serial_scrin_for_pm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/t/flags.py" beforeDir="false" afterPath="$PROJECT_DIR$/flags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks_analiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/t/tasks_analiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timer.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +110,9 @@
     &quot;Python.create_and_analiz_img.executor&quot;: &quot;Run&quot;,
     &quot;Python.create_img.executor&quot;: &quot;Run&quot;,
     &quot;Python.display_info.executor&quot;: &quot;Run&quot;,
+    &quot;Python.event_arena.executor&quot;: &quot;Run&quot;,
     &quot;Python.event_frend.executor&quot;: &quot;Run&quot;,
+    &quot;Python.flags.executor&quot;: &quot;Run&quot;,
     &quot;Python.fun.executor&quot;: &quot;Run&quot;,
     &quot;Python.generate_route.executor&quot;: &quot;Run&quot;,
     &quot;Python.heroes.executor&quot;: &quot;Run&quot;,
@@ -171,7 +188,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="a_pil_image (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="a_serial_scrin_for_pm" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -184,7 +201,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/a_pil_image.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/a_serial_scrin_for_pm.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -193,7 +210,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="a_test1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="event_arena" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -206,7 +223,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/a_test1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/event_arena.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -215,7 +232,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="cr_img_dva" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="flags" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -228,7 +245,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cr_img_dva.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/flags.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -259,7 +276,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="t_item" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="timer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -268,11 +285,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/t" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/t/t_item.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/timer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -284,10 +301,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.a_test1" />
-        <item itemvalue="Python.a_pil_image (1)" />
-        <item itemvalue="Python.t_item" />
-        <item itemvalue="Python.cr_img_dva" />
+        <item itemvalue="Python.flags" />
+        <item itemvalue="Python.event_arena" />
+        <item itemvalue="Python.a_serial_scrin_for_pm" />
+        <item itemvalue="Python.timer" />
       </list>
     </recent_temporary>
   </component>
@@ -387,7 +404,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767787279369</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="09.01.26 touring.py дополнен словарь переводчика содержимого подарков на станциях. station_master.py Добавлен аппаратный анализ заданий. gift_station_service.py изменен адрес сохранения. create_and_analiz_task_img.py рефакторинг для лучшего чтения.">
+      <option name="closed" value="true" />
+      <created>1767954593774</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1767954593774</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -411,7 +436,8 @@
     <MESSAGE value="02.01.26 Обновил словарь коллекции подарков на станциях. Перенёс 'check_loot' в 'img_servis.py'" />
     <MESSAGE value="07,01,26" />
     <MESSAGE value="07,01,26 чистка незанятых в проекте файлов" />
-    <option name="LAST_COMMIT_MESSAGE" value="07,01,26 чистка незанятых в проекте файлов" />
+    <MESSAGE value="09.01.26 touring.py дополнен словарь переводчика содержимого подарков на станциях. station_master.py Добавлен аппаратный анализ заданий. gift_station_service.py изменен адрес сохранения. create_and_analiz_task_img.py рефакторинг для лучшего чтения." />
+    <option name="LAST_COMMIT_MESSAGE" value="09.01.26 touring.py дополнен словарь переводчика содержимого подарков на станциях. station_master.py Добавлен аппаратный анализ заданий. gift_station_service.py изменен адрес сохранения. create_and_analiz_task_img.py рефакторинг для лучшего чтения." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -420,11 +446,6 @@
           <url>file://$PROJECT_DIR$/event_friend.py</url>
           <line>25</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/event_arena.py</url>
-          <line>63</line>
-          <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/revision_tents.py</url>
@@ -453,7 +474,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>153</line>
+          <line>143</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -463,17 +484,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>45</line>
+          <line>42</line>
           <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/complex_phrases.py</url>
-          <line>137</line>
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>114</line>
+          <line>111</line>
           <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -493,7 +509,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cr_img.py</url>
-          <line>105</line>
+          <line>100</line>
           <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -518,7 +534,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fun.py</url>
-          <line>550</line>
+          <line>561</line>
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -535,6 +551,11 @@
           <url>file://$PROJECT_DIR$/main.py</url>
           <line>307</line>
           <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/flags.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="159" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
