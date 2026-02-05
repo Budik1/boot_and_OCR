@@ -16,7 +16,7 @@ def energy_img():
     pos_mark = find_img.find_station_master()
     # name_create_img = 'img/test/token.png'
     # проверить видимость
-    list_en = os.listdir('img/station_master/energy_value')
+    list_en = os.listdir('../img/station_master/energy_value')
     print(color_text.tc_cyan('Проверка'))
     for img_ in list_en:
         name_img = f'img/station_master/energy_value/{img_}'
@@ -250,8 +250,8 @@ def cr_arena_img():
         'img/arena/overall/hall_of_glory_icon.png': (592, -58, 50, 47, (), find_img.find_info()),
         'img/arena/overall/hall_of_glory_tabl.png': (-521, -534, 142, 31, (), find_img.find_close()),
         'img/arena/overall/attack.png': (423, 96, 46, 46, (), find_img.find_hall_of_glory_tabl()),
-        'img/arena/overall/scroll_down.png': (477, 418, 24, 33, (), find_img.find_hall_of_glory_tabl()),
-        'img/arena/overall/scroll_up.png': (477, 87, 24, 33, (), find_img.find_hall_of_glory_tabl()),
+        'img/arena/overall/scroll_down.png': (477, 421, 24, 33, (), find_img.find_hall_of_glory_tabl()),
+        'img/arena/overall/scroll_up.png': (477, 84, 24, 33, (), find_img.find_hall_of_glory_tabl()),
         'img/arena/overall/arena_tabl.png': (-436, -505, 84, 30, (), find_img.find_close()),
         'img/arena/overall/hero_vs_opponent.png': (-432, -84, 262, 56, (), find_img.find_close()),
         # 'img/arena/overall/victory_in_arena.png': (-44, -352, 100, 41, (), find_img.find_close()),
@@ -259,9 +259,9 @@ def cr_arena_img():
         'img/arena/overall/defeat_in_arena.png': (-96, -252, 153, 41, (), find_img.find_close()),
 
     }
-    # target_img = 'img/test/token.png'
+    target_img = 'img/test/token.png'
 
-    key = 'img/arena/overall/victory_in_arena.png'
+    key = 'img/arena/overall/scroll_down.png'
     pos_start = img_dict[key][5]
     # показать привязку
     # fun.Mouse.move(pos=pos_start, speed=1)

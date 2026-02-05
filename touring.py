@@ -1,11 +1,10 @@
 
 from time import sleep, time
 from typing import Any
-import os
 
 from pyscreeze import Point
 
-import gift_station_service
+from t import gift_station_service
 import fun
 import heroes
 import color_text

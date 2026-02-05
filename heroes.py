@@ -2,8 +2,6 @@ import time
 
 import baza_dannyx as b_d
 import color_text
-import color_text
-
 
 nam = 0  # для подсчета чего?
 temp_min = None
@@ -14,7 +12,7 @@ class Activ:
     hero_activ = ''
     hero_activ_name = ''  # значение переменной
     check_date_ = ''
-    date_now = ''
+    date_utc_now = ''
     name_file_ = None
     station_activ = ''
     qty_vip = 0
@@ -36,7 +34,6 @@ class Hero:
         self.name_id = name_id
         self.id_ = _id
         self.bypass = ()
-
 
         # обновляемые ежедневно
         self.vip = 0  #
@@ -109,8 +106,6 @@ class Hero:
     def get_white_rat_count_all(self):
         return self.white_rat_count_all
 
-
-
     def get_set_dist(self):
         return self.set_dist
 
@@ -120,8 +115,8 @@ class Hero:
     def get_up_date(self):
         return self.lvl_up_date
 
-    def set_up_date(self):
-        self.lvl_up_date = Activ.date_now
+    def set_up_date(self, value):
+        self.lvl_up_date = value
 
     def get_lvl_up_days(self):
         return self.lvl_up_days
@@ -129,8 +124,10 @@ class Hero:
     def set_lvl_up_days(self, value):
         self.lvl_up_days = value
 
+    #
     def get_state_kv(self):
         data_to_save = {
+            'name': self.name_id,
             'time_start_kv': self.time_start_kv,
 
             'qty_duel_all': self.qty_duel_all,
@@ -142,8 +139,9 @@ class Hero:
             'list_loot': self.list_loot_kv,
             'set_dist': self.set_dist,
         }
-        # if Hero.get_name_en(self) == 'Gady':
-        #     print(f'{self.set_dist=} get_state_kv')
+        # отладка
+        # print(f'вызов {__class__}')
+        # конец отладки
         hero_id = Hero.get_id(self)
         list_kv_state[hero_id] = data_to_save
         return
@@ -178,10 +176,11 @@ class Hero:
         if self == Activ.hero_activ:
             print(f'{self.set_dist=} set_state_kv')
 
-
+    #
     def get_state_all(self):
         data_to_save = {
-            'check_date_k': Activ.date_now,
+            'name': self.name_id,
+            'check_date_k': Activ.date_utc_now,
             # updatable
             # мобы
             'grey_rat_k': self.grey_rat,
@@ -229,7 +228,7 @@ class Hero:
         check_date_ = loaded_data.get('check_date_k', 0)
         # print(check_date_, Activ.date_now)
         # print(f'{hero_id=} {check_date_=}, {Activ.date_now=}')
-        if check_date_ == Activ.date_now:
+        if check_date_ == Activ.date_utc_now:
             Activ.result_load = (color_text.tc_blue('Даты совпадают'))
 
             # мобы
@@ -254,8 +253,6 @@ class Hero:
         # print(f'set_updatable_values {self.name_ru}')
         return
 
-    #
-
     def set_cumulative_values(self):
         # print(f'Вызов set_cumulative_values {self.name_ru}')
 
@@ -278,6 +275,7 @@ class Hero:
         # print()
         # конец отладки
 
+    #
     def get_list_loot(self):
         return self.list_loot_kv
 
@@ -395,7 +393,7 @@ class Hero:
         self.energy_count_all += value
         if Activ.station_activ == 'ст. Киевская':
             self.energy_kiev_count_all += value
-        if Activ.station_activ in ['ст. Пушкинская', 'ст. Театральная',]:
+        if Activ.station_activ in ['ст. Пушкинская', 'ст. Театральная', ]:
             self.energy_spent_searching_for_white_rats += value
 
     def get_white_rat_energy(self):
@@ -411,7 +409,7 @@ class Hero:
             # print(f'{self.name_ru} {self.days_count_wildman}')
 
     def set_wild_activ(self):
-        self.wild_activ = Activ.date_now
+        self.wild_activ = Activ.date_utc_now
 
     def app_vip(self):
         self.vip += 1
@@ -441,8 +439,6 @@ class Hero:
     def app_white_rat(self):
         self.white_rat_count_all += 1
         self.white_rat_now += 1
-
-
 
     # Гетеры
     def get_vip_all(self):
@@ -528,7 +524,8 @@ mara = Hero(name_ru_='Мара', name_en_='Mara', name_id='mara', _id=2)
 mara.path_task = 'img/station_master/tasks_mara/'
 mara.bypass = b_d.bypass_mara
 
-list_all_state = [{}, {}, {}]  #
+list_all_state = [{}, {}, {}]  #  #
+list_kv_state2 = [{}, {}, {}]  #  #
 list_kv_state = [{}, {}, {}]
 hero_dict = {'Gady': gady, 'Gavr': gavr, 'Mara': mara, }  # 'Veles': veles
 #

@@ -1,15 +1,41 @@
+import json
 import time
 import pickle
 
-# import fun
-# import complex_phrases
 import heroes
-# import heroes as her
-# from heroes import Activ
-from color_text import tc_green, tc_cyan, tc_blue, tc_red
+import tools
+import os_action
+from color_text import tc_green, tc_red
+
+
+def save_all_state_config_json():
+    date_n = tools.date_now()
+    time_n = tools.date_and_time_in_name_file()
+    path = f'temp_pack/{date_n}'
+    os_action.create_folder(path=path)
+    path_lst = ['config.json', f'temp_pack/{date_n}/config_{time_n}.json']
+    for key in heroes.hero_dict:
+        heroes.Hero.get_state_all(heroes.hero_dict[key])
+    json_data = json.dumps(heroes.list_all_state, ensure_ascii=False)
+    for file_name_json in path_lst:
+        with open(file_name_json, 'w', encoding='utf-8') as file_:
+            file_.write(json_data)
+
+
+def save_kv_state_config_json():
+    date_n = tools.date_now()
+    path_lst = ['config_kv.json', f'temp_pack/config_kv_{date_n}.json']
+    for key in heroes.hero_dict:
+        heroes.Hero.get_state_kv(heroes.hero_dict[key])
+    json_data = json.dumps(heroes.list_kv_state2, ensure_ascii=False)
+    for file_name_json in path_lst:
+        print(f'запись {file_name_json}')
+        with open(file_name_json, 'w', encoding='utf-8') as file_:
+            file_.write(json_data)
 
 
 def save_all_state_config(info=True):
+    save_all_state_config_json()
     file_name = 'config.bin'
     rapport = ''
     if info:
@@ -44,15 +70,20 @@ def save_all_state_config(info=True):
 
 def reading_all_state_config(*, info=True):
     file_name = 'config.bin'
+    file_name_json = 'temp_pack/config2026-02-04.json'
     rapport = ''
     if info:
         text = tc_green("чтение состояния")
         rapport = f'{file_name} {text}'
     try:
-        file1 = open(file_name, 'rb')
-        heroes.list_all_state = pickle.load(file1)
-        file1.close()
-        result = True
+        # file1 = open(file_name, 'rb')
+        # heroes.list_all_state = pickle.load(file1)
+        # file1.close()
+        # result = True
+        # ==================================================
+        with open(file_name_json, 'r', encoding='utf-8') as f:
+            heroes.list_all_state = json.load(f)
+            result = True
     except FileNotFoundError:
         # Если файл не найден, выводим сообщение об ошибке
         # print(f"Файл '{file_name}' не найден!")
@@ -74,6 +105,7 @@ def reading_all_state_config(*, info=True):
             print(rapport)
     return result
 
+
 def save_kv_config2(info=True):
     file_name = 'kv_config2.bin'
     rapport = ''
@@ -81,7 +113,7 @@ def save_kv_config2(info=True):
         text = tc_green(f'запись состояния')
         rapport = f"{file_name} {text}"
     for key in heroes.hero_dict:
-       heroes.Hero.get_state_kv(heroes.hero_dict[key])
+        heroes.Hero.get_state_kv(heroes.hero_dict[key])
 
     try:
         file1 = open(file_name, 'wb')
@@ -104,7 +136,9 @@ def save_kv_config2(info=True):
             print(rapport)
     return
 
+
 def save_kv_config(info=True):
+    save_kv_state_config_json()
     file_name = 'kv_config.bin'
     rapport = ''
     if info:
@@ -123,11 +157,15 @@ def save_kv_config(info=True):
         'heroes.gady.set_dist': heroes.gady.set_dist
 
     }
-
+    for key in heroes.hero_dict:
+        heroes.Hero.get_state_kv(heroes.hero_dict[key])
     try:
         file1 = open(file_name, 'wb')
         pickle.dump(data_to_save, file1)
         file1.close()
+        # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
     except FileNotFoundError:
         # Если файл не найден, выводим сообщение об ошибке
         text = tc_red('Файл  не найден!')
@@ -143,7 +181,7 @@ def save_kv_config(info=True):
     finally:
         if rapport != '':
             print(rapport)
-    save_kv_config2(info=False)
+    # save_kv_config2(info=False)
     return
 
 

@@ -18,4 +18,4 @@ def crop_shoulder_straps():
     return
 
 
-crop_shoulder_straps()
+# crop_shoulder_straps()

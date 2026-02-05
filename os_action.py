@@ -39,11 +39,16 @@ def get_data_creation_file(*, check_file, info=False):
     return creation_time
 
 
-def check_files(*, old_day):
+def check_files(*, old_day: int, check_list_directory):
+    """
+    Процедура проверки и удаления файлов.
+    :param check_list_directory:
+    :param old_day: Срок хранения.
+    :return:
+    """
     global qty_del_files
-    chek_list_directory = b_p.chek_list_directory
     qty_filez = 0
-    for directory in chek_list_directory:
+    for directory in check_list_directory:
         file_list = os.listdir(directory)
         for file in file_list:
             qty_filez += 1
@@ -52,3 +57,22 @@ def check_files(*, old_day):
     word_file = mod_wold.transform_word_file(qty_files=qty_filez)
     print(f'{qty_filez} {word_file} прошли проверку. {qty_del_files} удалено')
     print()
+
+
+def create_folder(path, info=False):
+    if not os.path.exists(path):
+        os.makedirs(path)
+    else:
+        if info:
+            print(f"Папка `{path}` уже существует, всё в порядке!")
+    return
+
+
+def check_folder(my_path):
+    """
+    :param my_path: Путь к папке или файлу.
+    :return: Bool
+    """
+    return os.path.exists(path=my_path)
+
+

@@ -1,11 +1,14 @@
+import os
 from time import time
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
 
 from PIL import ImageTk
+from torch.utils.hipify.hipify_python import value
 
 import baza_dannyx as b_d
+import baza_paths as b_p
 import color_text
 import complex_phrases
 import fun
@@ -18,6 +21,7 @@ import revision_tents
 import solid_memory
 import station_master
 import touring
+import tool_win
 from event_arena import create_img_arena_object, kill
 
 fun.my_log_file('')
@@ -26,7 +30,23 @@ fun.my_log_file("******* перезапуск программы *******")
 fun.my_log_file('*******                      *******')
 fun.my_log_file('')
 
-heroes.Activ.date_now = fun.date_utc_now()
+heroes.Activ.date_utc_now = fun.date_utc_now()
+
+
+screen_width, screen_height = fun.screen_size() # получение разрешения экрана
+right_indent = 50 # отступ от правого края экрана
+top_indent = 50 # отступ от верхнего края экрана
+
+width_root = b_d.lst_columns_root[-1] + 73  # Ширина окна Tk
+height_root = b_d.line9 + b_d.height_line + 2  # Высота окна Tk
+
+position_y_root = top_indent # отступ от верхнего края экрана для окна root
+position_x_root = screen_width - width_root - right_indent # отступ от правого края экрана для окна root
+
+width_tool = width_root
+height_tool = height_root
+position_y_tool = top_indent * 2 + height_root
+position_x_tool = position_x_root
 
 
 def start_prog():
@@ -56,7 +76,15 @@ def start_prog():
     complex_phrases.display_smol_report_wildman()
     complex_phrases.display_info_energy_all()
     # удаление файлов старше 10 дней
-    os_action.check_files(old_day=10)
+    check_list_directory1 = b_p.check_list_directory
+    check_list_directory2 = []
+    lst = os.listdir('temp_pack')
+    for i in lst:
+        if not '.' in  i:
+            check_list_directory2.append(f'temp_pack/{i}/')
+
+    os_action.check_files(old_day=10, check_list_directory=check_list_directory1)
+    os_action.check_files(old_day=10, check_list_directory=check_list_directory2)
     return
 
 
@@ -179,6 +207,25 @@ def tent_inspection():
         return
 
 
+def tent_inspection_marc():
+    hero = fun.selection_hero()
+    ins = heroes.Hero.get_vip_all(heroes.Activ.hero_activ)
+    if ins == 10:
+        print(complex_phrases.set_inspect_report())
+        return
+    else:
+        vip_case_all = 10
+        if hero == 'Gady':
+            heroes.gady.vip = vip_case_all
+        if hero == 'Gavr':
+            heroes.gavr.vip = vip_case_all
+        if hero == 'Mara':
+            heroes.mara.vip = vip_case_all
+    displaying_values(info=False)
+    changeColor(her_active=fun.selection_hero(show_name=False))
+    return
+
+
 def wild():
     hero = fun.selection_hero(show_name=False)
     if hero:
@@ -204,11 +251,9 @@ def wild_kiki():
         print('герой не опознан')
         return
     touring.for_wilds()
-    displaying_values()
     touring.for_kiki()
     fun.work()
     displaying_values(info=False)
-
 
     finish_time = float(time() - start_time)  # общее количество секунд
     minutes = int(finish_time // 60)  # количество минут
@@ -218,7 +263,7 @@ def wild_kiki():
 
 def collecting_gifts_at_stations():
     start_time = time()
-    
+
     fun.push_close_all_()
     # определение героя
     hero = fun.selection_hero()
@@ -307,20 +352,29 @@ def save_home_point():
 
 def save_date_up():
     fun.selection_hero(show_name=False)
-    date_temp = heroes.Hero.get_up_date(heroes.Activ.hero_activ)
-    if date_temp == heroes.Activ.date_now:
+    lvl_up_date = heroes.Hero.get_up_date(heroes.Activ.hero_activ)
+    # проверка на формат 'г-м-д'
+    lst_lvl_up_date = lvl_up_date.split('-')
+    if len(lst_lvl_up_date[0]) == 4:
+        corr_date_form = lst_lvl_up_date
+    else:
+        corr_date_form = lst_lvl_up_date[::-1]
+    print(corr_date_form, heroes.Activ.date_utc_now)
+    if corr_date_form == heroes.Activ.date_utc_now:
         mes = 'Дата сегодня уже обновлена'
         answer = messagebox.showinfo(title='lvlup', message=mes)
         # print(f'{type(answer)}, {answer=}')
     else:
-        if date_temp == '':
+        if lvl_up_date == '':
             mes = 'Последней записи нет. Запишем?'
         else:
-            mes = f'Последняя запись {date_temp}.\nПерезаписать дату?'
+            mes = f'Последняя запись {lvl_up_date}.\nПерезаписать дату?'
         answer = messagebox.askyesno(title='lvlup', message=mes)
     if answer and answer != 'ok':
         # print(f'{type(answer)}, {answer=}')
-        heroes.Hero.set_up_date(heroes.Activ.hero_activ)
+        save_date_lst = (heroes.Activ.date_utc_now.split('-'))[::-1]
+        save_date_str = '-'.join(save_date_lst)
+        heroes.Hero.set_up_date(heroes.Activ.hero_activ, value=save_date_str)
         displaying_values(info=True)
 
 
@@ -423,23 +477,21 @@ def set_timer1():
     heroes.Hero.set_time_entree(heroes.Activ.hero_activ, tim_entree)
     solid_memory.save_all_state_config(info=False)
 
-def set_param():
 
+def set_param():
     displaying_values(info=True)
+
+
+def n_w():
+    w1 = tool_win.Window(width_tool, height_tool, position_x_tool, position_y_tool)
 
 
 root = Tk()
 root.title(f' помощник "Метро 2033"')
 
-width = b_d.timer_x + 73  # Ширина
-# width = 371# Ширина
-height = b_d.line10 + b_d.height_line + 2  # Высота
-w = width - 371
-position_x = 1200 - w
-position_y = 50
-# root.geometry("370x362+1200+50")  # Ширина x Высота + положение X + положение Y
-# root.geometry(f'371x{b_d.line11 + b_d.height_line + 2}+1200+50')  # Ширина x Высота + положение X + положение Y
-root.geometry(f'{width}x{height}+{position_x}+{position_y}')  # Ширина x Высота + положение X + положение Y
+
+
+root.geometry(f'{width_root}x{height_root}+{position_x_root}+{position_y_root}')  # Ширина x Высота + положение X + положение Y
 root.resizable(False, False)
 
 gavr_vip = StringVar()
@@ -477,6 +529,7 @@ gady_wild = StringVar()
 mara_wild = StringVar()
 veles_wild = StringVar()
 
+# получение содержимого Combobox
 box_paths = touring.extraction_name_in_list(value=b_d.list_of_stations)
 box_paths.insert(0, 'домой')
 lang_var = StringVar(value=box_paths[0])
@@ -486,13 +539,14 @@ start_prog()
 # -------------------------------------------------------------
 
 # блок командных кнопок
+ttk.Button(text="set", width=5, command=n_w).place(x=b_d.col_8, y=b_d.line0)
 ttk.Button(text="КВ", width=10, command=kv_and_raid.kv).place(x=115, y=b_d.line4)
 ttk.Button(text=" Start ", width=10, command=start_pm).place(x=190, y=b_d.line4)
 ttk.Button(text='Save', width=12, command=displaying_values).place(x=265, y=b_d.line4)
 
-ttk.Button(text="set 24 h", width=8, command=set_timer24).place(x=b_d.timer_x, y=b_d.line4)
-ttk.Button(text="set 8 h ", width=8, command=set_timer8).place(x=b_d.timer_x, y=b_d.line5)
-ttk.Button(text="set 1 h ", width=8, command=set_timer1).place(x=b_d.timer_x, y=b_d.line6)
+ttk.Button(text="set 24 h", width=8, command=set_timer24).place(x=b_d.col_8, y=b_d.line4)
+ttk.Button(text="set 8 h ", width=8, command=set_timer8).place(x=b_d.col_8, y=b_d.line5)
+ttk.Button(text="set 1 h ", width=8, command=set_timer1).place(x=b_d.col_8, y=b_d.line6)
 
 ttk.Button(text="wild+kiki", width=9, command=wild_kiki).place(x=115, y=b_d.line5)
 ttk.Button(text="обход всех станций", width=18, command=collecting_gifts_at_stations).place(x=205, y=b_d.line5)
@@ -501,25 +555,25 @@ ttk.Button(text='рапорт W_R', width=12, command=complex_phrases.display_re
 ttk.Button(text='рапорт W', width=12, command=complex_phrases.display_report_wildman).place(x=200, y=b_d.line6)
 ttk.Button(text='рапорт E', width=12, command=complex_phrases.display_info_energy_all).place(x=285, y=b_d.line6)
 
-ttk.Label(text='            куда пойдем ?', width=21, background='#858585', foreground='#050505').place(x=156,
-                                                                                                        y=b_d.line7)
+# ttk.Label(text='            куда пойдем ?', width=21, background='#858585', foreground='#050505').place(x=156, y=b_d.line7)
+ttk.Label(root, text='куда пойдем ?', width=21, background='#858585', foreground='#050505', justify=RIGHT).place(x=156, y=b_d.line7)
 
 combobox = ttk.Combobox(textvariable=lang_var, values=box_paths, state="readonly", width=23)
 combobox.place(x=138, y=b_d.line8)
 combobox.bind("<<ComboboxSelected>>", get_target)
-ttk.Button(text='Паспортист', width=14, command=save_home_point).place(x=0, y=b_d.line8 - 2)
+ttk.Button(text='Паспортист', width=14, command=save_home_point).place(x=b_d.col_0, y=b_d.line8 - 2)
 
-ttk.Button(text="фото противника", width=16, command=create_img_arena_object).place(x=0, y=b_d.line9)
+ttk.Button(text="фото противника", width=16, command=create_img_arena_object).place(x=b_d.col_0, y=b_d.line9)
 ttk.Button(text="атака противника", width=16, command=kill).place(x=225, y=b_d.line9)
 ttk.Button(text="set_param", width=10, command=set_param).place(x=150, y=b_d.line10)
 
 timer_gady_label = ttk.Label()
 timer_gady_label.config(text="", font=("Helvetica", 12))  # , font=("Helvetica", 12)
-timer_gady_label.place(x=b_d.timer_x, y=b_d.gady_y)
+timer_gady_label.place(x=b_d.col_8, y=b_d.gady_y)
 
 timer_gavr_label = ttk.Label()
 timer_gavr_label.config(text="00:00:00", font=("Helvetica", 12))  # , font=("Helvetica", 12)
-timer_gavr_label.place(x=b_d.timer_x, y=b_d.gavr_y)
+timer_gavr_label.place(x=b_d.col_8, y=b_d.gavr_y)
 
 # timer_veles_label = ttk.Label()
 # timer_veles_label.config(text="00:00:00", font=("Helvetica", 12))  # , font=("Helvetica", 12)
@@ -527,26 +581,26 @@ timer_gavr_label.place(x=b_d.timer_x, y=b_d.gavr_y)
 
 timer_mara_label = ttk.Label()
 timer_mara_label.config(text="00:00:00", font=("Helvetica", 12))  # , font=("Helvetica", 12)
-timer_mara_label.place(x=b_d.timer_x, y=b_d.mara_y)
+timer_mara_label.place(x=b_d.col_8, y=b_d.mara_y)
 
-ttk.Button(text="Gady", width=5, command=change_gady).place(x=0, y=b_d.gady_y)
-ttk.Button(text="Gavr", width=5, command=change_gavr).place(x=0, y=b_d.gavr_y)
-# ttk.Button(text="Велес", width=5, command=change_veles).place(x=0, y=b_d.veles_y)
-ttk.Button(text="Мара", width=5, command=change_mara).place(x=0, y=b_d.mara_y)
+ttk.Button(text="Gady", width=5, command=change_gady).place(x=b_d.col_0, y=b_d.gady_y)
+ttk.Button(text="Gavr", width=5, command=change_gavr).place(x=b_d.col_0, y=b_d.gavr_y)
+# ttk.Button(text="Велес", width=5, command=change_veles).place(x=b_d.col_0, y=b_d.veles_y)
+ttk.Button(text="Мара", width=5, command=change_mara).place(x=b_d.col_0, y=b_d.mara_y)
 
-ttk.Button(text="VIP", width=5, command=tent_inspection).place(x=b_d.vip_x - b_d.s, y=b_d.label_line0 - 3)
-ttk.Button(text="kiki", width=5, command=kiki).place(x=b_d.kiki_x - b_d.s, y=b_d.label_line0 - 3)
-ttk.Button(text="wild", width=5, command=wild).place(x=b_d.wild_x - (b_d.s + 3), y=b_d.label_line0 - 3)
-ttk.Button(text="up", width=4, command=save_date_up).place(x=0, y=b_d.label_line0 - 3)
+ttk.Button(text="VIP", width=5, command=tent_inspection_marc).place(x=b_d.col_1 - b_d.s, y=b_d.label_line0 - 3)
+ttk.Button(text="kiki", width=5, command=kiki).place(x=b_d.col_2 - b_d.s, y=b_d.label_line0 - 3)
+ttk.Button(text="wild", width=5, command=wild).place(x=b_d.col_7 - (b_d.s + 3), y=b_d.label_line0 - 3)
+ttk.Button(text="up", width=4, command=save_date_up).place(x=b_d.col_0, y=b_d.label_line0 - 3)
 w_l = 3
 # блок инфо строк
 label_1 = ttk.Label()
 label_1.configure(textvariable=gady_vip, width=w_l)
-label_1.place(x=b_d.vip_x, y=b_d.gady_y)
+label_1.place(x=b_d.col_1, y=b_d.gady_y)
 
 label_2 = ttk.Label()
 label_2.configure(textvariable=gavr_vip, width=w_l)
-label_2.place(x=b_d.vip_x, y=b_d.gavr_y)
+label_2.place(x=b_d.col_1, y=b_d.gavr_y)
 
 # label_3 = ttk.Label()
 # label_3.configure(textvariable=veles_vip, width=w_l)
@@ -554,75 +608,75 @@ label_2.place(x=b_d.vip_x, y=b_d.gavr_y)
 
 label_4 = ttk.Label()
 label_4.configure(textvariable=mara_vip, width=w_l)
-label_4.place(x=b_d.vip_x, y=b_d.mara_y)
+label_4.place(x=b_d.col_1, y=b_d.mara_y)
 
 ttk.Label(text='|').place(x=b_d.separator_1, y=b_d.gady_y)
 ttk.Label(text='|').place(x=b_d.separator_1, y=b_d.gavr_y)
 # ttk.Label(text='|').place(x=b_d.separator_1, y=b_d.veles_y)
 ttk.Label(text='|').place(x=b_d.separator_1, y=b_d.mara_y)
 
-ttk.Label(textvariable=gavr_kiki).place(x=b_d.kiki_x, y=b_d.gavr_y)
-ttk.Label(textvariable=gady_kiki).place(x=b_d.kiki_x, y=b_d.gady_y)
+ttk.Label(textvariable=gavr_kiki).place(x=b_d.col_2, y=b_d.gavr_y)
+ttk.Label(textvariable=gady_kiki).place(x=b_d.col_2, y=b_d.gady_y)
 # ttk.Label(textvariable=veles_kiki).place(x=b_d.kiki_x, y=b_d.veles_y)
-ttk.Label(textvariable=mara_kiki).place(x=b_d.kiki_x, y=b_d.mara_y)
+ttk.Label(textvariable=mara_kiki).place(x=b_d.col_2, y=b_d.mara_y)
 
 ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.gady_y)
 ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.gavr_y)
 # ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.veles_y)
 ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.mara_y)
 
-ttk.Label(text="arah", width=5, background='#858585', foreground='#050505').place(x=b_d.arah_x - b_d.s,
+ttk.Label(text="arah", width=5, background='#858585', foreground='#050505').place(x=b_d.col_3 - b_d.s,
                                                                                   y=b_d.label_line0)
-ttk.Label(textvariable=gavr_arachne).place(x=b_d.arah_x, y=b_d.gavr_y)
-ttk.Label(textvariable=gady_arachne).place(x=b_d.arah_x, y=b_d.gady_y)
+ttk.Label(textvariable=gavr_arachne).place(x=b_d.col_3, y=b_d.gavr_y)
+ttk.Label(textvariable=gady_arachne).place(x=b_d.col_3, y=b_d.gady_y)
 # ttk.Label(textvariable=veles_arachne).place(x=b_d.arah_x, y=b_d.veles_y)
-ttk.Label(textvariable=mara_arachne).place(x=b_d.arah_x, y=b_d.mara_y)
+ttk.Label(textvariable=mara_arachne).place(x=b_d.col_3, y=b_d.mara_y)
 
 ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.gady_y)
 ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.gavr_y)
 # ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.veles_y)
 ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.mara_y)
 
-ttk.Label(text="rapt", width=5, background='#858585', foreground='#050505').place(x=b_d.rapt_x - b_d.s,
+ttk.Label(text="rapt", width=5, background='#858585', foreground='#050505').place(x=b_d.col_4 - b_d.s,
                                                                                   y=b_d.label_line0)
-ttk.Label(textvariable=gavr_raptor).place(x=b_d.rapt_x, y=b_d.gavr_y)
-ttk.Label(textvariable=gady_raptor).place(x=b_d.rapt_x, y=b_d.gady_y)
+ttk.Label(textvariable=gavr_raptor).place(x=b_d.col_4, y=b_d.gavr_y)
+ttk.Label(textvariable=gady_raptor).place(x=b_d.col_4, y=b_d.gady_y)
 # ttk.Label(textvariable=veles_raptor).place(x=b_d.rapt_x, y=b_d.veles_y)
-ttk.Label(textvariable=mara_raptor).place(x=b_d.rapt_x, y=b_d.mara_y)
+ttk.Label(textvariable=mara_raptor).place(x=b_d.col_4, y=b_d.mara_y)
 
 ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.gady_y)
 ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.gavr_y)
 # ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.veles_y)
 ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.mara_y)
 
-ttk.Label(text="w_rat", width=5, background='#858585', foreground='#050505').place(x=b_d.rat_x - b_d.s,
-                                                                                 y=b_d.label_line0)
-ttk.Label(textvariable=gavr_rat).place(x=b_d.rat_x, y=b_d.gavr_y)
-ttk.Label(textvariable=gady_rat).place(x=b_d.rat_x, y=b_d.gady_y)
+ttk.Label(text="w_rat", width=5, background='#858585', foreground='#050505').place(x=b_d.col_5 - b_d.s,
+                                                                                   y=b_d.label_line0)
+ttk.Label(textvariable=gavr_rat).place(x=b_d.col_5, y=b_d.gavr_y)
+ttk.Label(textvariable=gady_rat).place(x=b_d.col_5, y=b_d.gady_y)
 # ttk.Label(textvariable=veles_rat).place(x=b_d.rat_x, y=b_d.veles_y)
-ttk.Label(textvariable=mara_rat).place(x=b_d.rat_x, y=b_d.mara_y)
+ttk.Label(textvariable=mara_rat).place(x=b_d.col_5, y=b_d.mara_y)
 
 ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.gady_y)
 ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.gavr_y)
 # ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.veles_y)
 ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.mara_y)
 
-ttk.Label(text="gift", width=5, background='#858585', foreground='#050505').place(x=b_d.gift_x - b_d.s,
+ttk.Label(text="gift", width=5, background='#858585', foreground='#050505').place(x=b_d.col_6 - b_d.s,
                                                                                   y=b_d.label_line0)
-ttk.Label(textvariable=gavr_gift).place(x=b_d.gift_x, y=b_d.gavr_y)
-ttk.Label(textvariable=gady_gift).place(x=b_d.gift_x, y=b_d.gady_y)
+ttk.Label(textvariable=gavr_gift).place(x=b_d.col_6, y=b_d.gavr_y)
+ttk.Label(textvariable=gady_gift).place(x=b_d.col_6, y=b_d.gady_y)
 # ttk.Label(textvariable=veles_gift).place(x=b_d.gift_x, y=b_d.veles_y)
-ttk.Label(textvariable=mara_gift).place(x=b_d.gift_x, y=b_d.mara_y)
+ttk.Label(textvariable=mara_gift).place(x=b_d.col_6, y=b_d.mara_y)
 
 ttk.Label(text='|').place(x=b_d.separator_6, y=b_d.gady_y)
 ttk.Label(text='|').place(x=b_d.separator_6, y=b_d.gavr_y)
 # ttk.Label(text='|').place(x=b_d.separator_6, y=b_d.veles_y)
 ttk.Label(text='|').place(x=b_d.separator_6, y=b_d.mara_y)
 
-ttk.Label(textvariable=gavr_wild).place(x=b_d.wild_x, y=b_d.gavr_y)
-ttk.Label(textvariable=gady_wild).place(x=b_d.wild_x, y=b_d.gady_y)
+ttk.Label(textvariable=gavr_wild).place(x=b_d.col_7, y=b_d.gavr_y)
+ttk.Label(textvariable=gady_wild).place(x=b_d.col_7, y=b_d.gady_y)
 # ttk.Label(textvariable=veles_wild).place(x=b_d.wild_x, y=b_d.veles_y)
-ttk.Label(textvariable=mara_wild).place(x=b_d.wild_x, y=b_d.mara_y)
+ttk.Label(textvariable=mara_wild).place(x=b_d.col_7, y=b_d.mara_y)
 
 # блок выбора заданий
 difference_str_img = 8
@@ -630,11 +684,11 @@ line_img = b_d.line4 + 5
 imagePul = ImageTk.PhotoImage(file="img/overall/pulya.png")
 ttk.Button(root, image=imagePul, command=puli).place(x=56, y=line_img + 15)
 img_e1 = ImageTk.PhotoImage(file="img/overall/en1v3.png")
-ttk.Button(root, image=img_e1, command=en_1).place(x=0, y=line_img)
+ttk.Button(root, image=img_e1, command=en_1).place(x=b_d.col_0, y=line_img)
 img_e2 = ImageTk.PhotoImage(file="img/overall/en2v3.png")
-ttk.Button(root, image=img_e2, command=en_2).place(x=0, y=line_img + b_d.height_line + difference_str_img)
+ttk.Button(root, image=img_e2, command=en_2).place(x=b_d.col_0, y=line_img + b_d.height_line + difference_str_img)
 img_e3 = ImageTk.PhotoImage(file="img/overall/en3v3.png")
-ttk.Button(root, image=img_e3, command=en_3).place(x=0, y=line_img + b_d.height_line * 2 + difference_str_img * 2)
+ttk.Button(root, image=img_e3, command=en_3).place(x=b_d.col_0, y=line_img + b_d.height_line * 2 + difference_str_img * 2)
 #
 timer()
 root.mainloop()

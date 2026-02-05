@@ -111,7 +111,6 @@ def search_and_create_img_best_offer(*, person_identified=False):
 
         fun.vizit_to_station_master()
 
-    little_tasks = 'img/test/test_tasks/test_little_tasks/'
     path_little_tasks = b_p.tasks_little_temp
     # получаю по две картинки на строку для анализа
     get_screenshot_task_smol()

@@ -262,3 +262,7 @@ def find_link_money_token():
 def find_b_battle_end(confidence_param=None):
     pos = fund.locateCenterImg(name_img='img/b_battle_end.png', confidence=confidence_param)
     return pos
+
+def find_mark_left():
+    pos = fund.locateCenterImg(name_img='img/test/mark/mark_left.png')
+    return pos

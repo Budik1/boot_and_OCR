@@ -15,6 +15,11 @@ par_conf = 0.79
 oblast = (51, 707, 92, 111)
 
 
+def screen_size():
+    screen_width, screen_height = pyautogui.size()
+    return screen_width, screen_height
+
+
 def locCenterImg(name_img, confidence=0.9, region: tuple[int, int, int, int] | None = None, grayscale=None):
     pos_img = fun_down.locateCenterImg(name_img=name_img,
                                        confidence=confidence,
@@ -219,6 +224,10 @@ def date_time_now():
 
 
 def date_now():
+    """
+    Возвращает дату в формате Год-месяц-день
+    :return: str
+    """
     now = datetime.datetime.now()
     date = (now.strftime('%Y-%m-%d'))
     return date
@@ -231,6 +240,10 @@ def minutes_now():
 
 
 def date_and_time_in_name_file():
+    """
+    '%Y-%m-%d %H-%M-%S'
+    :return: str
+    """
     now = datetime.datetime.now()
     date_time_now_f = (now.strftime('%Y-%m-%d %H-%M-%S'))
     return date_time_now_f
@@ -568,8 +581,10 @@ def get_areas_task_big_3_line(width=77, height=42):
     return region_big_3
 
 
-def get_areas_task_big(width=77, height=42, refactor=None):
+def get_areas_task_big(width=77, height=42):
     """Получение значений "region=" для поиска заданий в больших регионах
+        :param width:
+        :param height:
         :return: кортеж из трех списков значений"""
     my_log_file('')
     my_log_file('fun.get_areas_task_big')
@@ -583,34 +598,18 @@ def get_areas_task_big(width=77, height=42, refactor=None):
     x_or, y_or = find_link_station_master_alt()
     x_an_pul = x_or + pul
     width += big
-    if refactor:
-        # print(f'{x_or=}, {y_or=}')
-        Mouse.move(pos=(x_or, y_or))
-        # print(f'{x_or=}, {y_or=}, {x_an_pul=}, {width}')
 
     # регион поиска 1 (позиция анализа)
     y_1an = int(y_or + pos_1)
     region1_big = [x_an_pul, y_1an, width, height]
-    if refactor:
-        # fun.Mouse.move(pos=(x_an_pul, y_1an))
-        # print(f'fun.get_areas_task_big {region1_big=}')
-        # print()
-        name_create_img = 'img/test/areas_task1.png'
-        foto(f'{name_create_img}', (x_an_pul, y_1an, width, height))
 
     # регион поиска 2 (позиция анализа)
     y_2an = int(y_or + pos_2)
     region2_big = [x_an_pul, y_2an, width, height]
-    if refactor:
-        name_create_img = 'img/test/areas_task2.png'
-        foto(f'{name_create_img}', (x_an_pul, y_2an, width, height))
 
     # регион поиска 3 (позиция анализа)
     y_3an = int(y_or + pos_3)
     region3_big = [x_an_pul, y_3an, width, height]
-    if refactor:
-        name_create_img = 'img/test/areas_task3.png'
-        foto(f'{name_create_img}', (x_an_pul, y_3an, width, height))
 
     return region1_big, region2_big, region3_big
 
@@ -907,9 +906,9 @@ def loc_now():
 
 def dif_days(*, date_old, date_today=date_utc_now()):
     """
-    Вычисляет разницу между двумя датами в днях
-    :param date_old: Прошедшая дата
-    :param date_today: Сегодняшняя дата
+    Вычисляет разницу между двумя датами в днях.
+    :param date_old: Прошедшая дата в формате "2025-11-29"
+    :param date_today: Сегодняшняя дата в формате "2025-11-29"
     :return: Количество в днях
     """
     list_date_old = date_old.split(sep='-')
@@ -917,8 +916,11 @@ def dif_days(*, date_old, date_today=date_utc_now()):
     par_year = 0
     par_month = 1
     par_day = 2
-    d_old = datetime.date(int(list_date_old[par_year]), int(list_date_old[par_month]), int(list_date_old[par_day]))
-    d_today = datetime.date(int(list_date_today[par_year]), int(list_date_today[par_month]),
+    d_old = datetime.date(int(list_date_old[par_year]),
+                          int(list_date_old[par_month]),
+                          int(list_date_old[par_day]))
+    d_today = datetime.date(int(list_date_today[par_year]),
+                            int(list_date_today[par_month]),
                             int(list_date_today[par_day]))
     dif = d_today - d_old
     # print('fun.dif_days ', dif.days)

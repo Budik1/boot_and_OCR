@@ -9,18 +9,17 @@ import station_master
 import color_text
 
 
-def get_ful_region_arena_tabl(*, check_point):
+def get_ful_region_arena_tabl():
     """
     Возвращает регион полной таблицы
-    :param check_point:
     :return:
     """
-    point_hall = check_point
-    # fun.Mouse.move(pos=hall, log=True, message_l='зал славы уже открыт')
-    # вычисление региона поиска
+    # маяки
+    point_hall = hall_is_open()
     pos_close = find_img.find_close()
+    # вычисление региона поиска
+    # вычисление сторон между маяками
     width_arena, height_arena = fun.distance(pos_upper=point_hall, pos_lower=pos_close)
-    # print(f'длина {width_arena=}, высота {height_arena=}')
     x, y = point_hall
     region_x = x - int(width_arena / 8.4)  #
     region_y = y + int(height_arena / 5.8)  #
@@ -31,9 +30,15 @@ def get_ful_region_arena_tabl(*, check_point):
 
 
 def get_height_line(*, full_region_arena):
+    """
+    Получить высоту строки таблицы арены
+    :param full_region_arena:
+    :return:
+    """
+    qty_lines = 6
     x, y, width_full, height_full = full_region_arena
     #  высота строки таблицы
-    height_line = int(height_full / 6)
+    height_line = int(height_full / qty_lines)
     return height_line
 
 
@@ -51,7 +56,7 @@ def hall_is_open():
 
 def create_img_arena_object():
     """Создаёт скрин arena_object из зала славы. Объект должен быть в верхней строке списка """
-    qty_segment = 106
+    qty_segment = 106  # 265
     # Определяю героя
     fun.selection_hero(show_name=False)
     # Получение пути для сохранения скрина противника
@@ -59,16 +64,15 @@ def create_img_arena_object():
     hero_name = heroes.Activ.name_file_
     path_hero_img = f'{path_img}{hero_name}/'
     # # ориентир на зал славы
-    hall = hall_is_open()
-    full_arena_region = get_ful_region_arena_tabl(check_point=hall)
+    full_arena_region = get_ful_region_arena_tabl()
     height_line = get_height_line(full_region_arena=full_arena_region)
     region_line1 = full_arena_region[0], full_arena_region[1], full_arena_region[2], height_line
 
     segment = int(full_arena_region[2] / qty_segment)
     # Создание картинки атакуемого персонажа
     # смещение внутри региона верхней левой точки на параметры (с увеличением смещение увеличивается)
-    tune_x_obj = segment * 9
-    tune_y_obj = segment
+    tune_x_obj = segment * 9  # 5*9=45 2*22=44
+    tune_y_obj = segment  # 5 2*2=4
     # смещение внутри региона правой нижней точки на параметр (с увеличением размер уменьшается)
     tune_s_obj = segment * 43
     tune_s_ar_obj = segment * 74
@@ -97,9 +101,9 @@ def kill():
         pos_or_v = fun.find_link_hall_of_glory()
         fun.Mouse.move_to_click(pos_click=pos_or_v, z_p_k=0.3, message_l='открыть зал славы')  # открыть зал славы
         # Ожидание открытия зала славы
-        hall = hall_is_open()
-        fun.Mouse.move(pos=hall, message_l='зал славы открыт')
-        ful_region = get_ful_region_arena_tabl(check_point=hall)
+        # hall = hall_is_open()
+        # fun.Mouse.move(pos=hall, message_l='зал славы открыт')
+        ful_region = get_ful_region_arena_tabl()
         height_line = get_height_line(full_region_arena=ful_region)
         region_line1 = ful_region[0], ful_region[1], ful_region[2], height_line
         fun.foto_pos(name_img=baza_paths.img_token, region=region_line1)
@@ -108,7 +112,7 @@ def kill():
                                                   hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))
         arena_object_region = region_line1
         fun.Mouse.move(pos=arena_object)
-        scroll_up = find_img.find_scroll_up()
+
         # Построчный поиск без смещения
         if arena_object is None:
             _it = 0
@@ -120,24 +124,45 @@ def kill():
                 arena_object = find_img.find_arena_object(region=region_next,
                                                           hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))
                 arena_object_region = region_next
+        scroll_up = find_img.find_scroll_up()
+        # scroll_down = find_img.find_scroll_down()
+        if scroll_up:
+            search_vector = 'up'
+        else:
+            search_vector = "down"
         while arena_object is None:
+            scroll_up = find_img.find_scroll_up()
+            # if scroll_up:
+            #     search_vector = 'up'
+            # else:
+            #     search_vector = "down"
+            scroll_down = find_img.find_scroll_down()
             region = region_line1
             # Если не найден раньше ищем со смещением списка в начало
-            while scroll_up and arena_object is None:
-                fun.Mouse.move_to_click(pos_click=scroll_up)
-                batt_attack = fun.await_arena(region)
-                fun.Mouse.move(pos=(batt_attack[0] - 70, batt_attack[1]),
-                               log=True, message_l='отвести в сторону от стрелки?')
+            # while scroll_up and arena_object is None:
+            if not arena_object and search_vector == 'up':
+                fun.Mouse.move_to_click(pos_click=scroll_up,
+                                        log=False, message_l="прокрутка вверх")
+                # batt_attack = fun.await_arena(region)
+                fun.Mouse.move(pos=(scroll_up[0] - 70, scroll_up[1]),
+                               log=False, message_l='отвести в сторону от стрелки?')
                 find_img.find_hall_of_glory_tabl()
                 arena_object = find_img.find_arena_object(region=region,
                                                           hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))
                 scroll_up = find_img.find_scroll_up()
-            if arena_object is None:  # Если не найден раньше ищем со смещением списка в конец
-                scroll_down = find_img.find_scroll_down()
-                fun.Mouse.move_to_click(pos_click=scroll_down)
+                if not scroll_up:
+                    search_vector = "down"
+            if not arena_object and search_vector == 'down':  # Если не найден раньше ищем со смещением списка в конец
+                fun.Mouse.move_to_click(pos_click=scroll_down,
+                                        log=False, message_l="прокрутка вниз")
+                fun.Mouse.move(pos=(scroll_down[0] - 70, scroll_down[1]),
+                               log=False, message_l='отвести в сторону от стрелки вниз?')
                 fun.await_arena(region)
                 arena_object = find_img.find_arena_object(region=region,
                                                           hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))
+                scroll_down = find_img.find_scroll_down()
+                if not scroll_down:
+                    search_vector = 'up'
             arena_object_region = region
         choice_of_the_attacked = find_img.find_choice_of_the_attacked(region=arena_object_region)
         fun.Mouse.move(pos=choice_of_the_attacked)

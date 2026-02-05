@@ -1,38 +1,33 @@
-import matplotlib.pyplot as plt
-import cv2
-import numpy as np
-from PIL import Image
-
-import a_test1
+from tkinter import *
+from tkinter import ttk
 
 
-def ramki():
-    # Загрузка изображения с помощью PIL
-    image_pil = Image.open('C:/python/bot_ocr1/img/test/test_tasks/arial_task_1_line_xp.png')
+class Window(Tk):
+    def __init__(self, name_win):
+        super().__init__()
 
-    # Преобразование изображения в массив numpy
-    image_np = cv2.cvtColor(np.array(image_pil), cv2.COLOR_RGB2BGR)
+        # конфигурация окна
+        self.title(name_win)
+        self.geometry("250x200")
 
-    # Преобразование изображения в оттенки серого
-    gray = cv2.cvtColor(image_np, cv2.COLOR_BGR2GRAY)
+        # определение кнопки
+        self.button_cl = ttk.Button(self, text="закрыть")
+        self.button_cl["command"] = self.button_destroy
+        self.button_cl.place(x=50, y=10)
 
-    # Выполнение операции поиска краев
-    edges = cv2.Canny(gray, 150, 200)
+        self.button_cr = ttk.Button(text="Создать окно")
+        self.button_cr['command'] = self.click
+        self.button_cr.place(x=10, y=100)
 
-    # Создание холста для отображения итогового изображения и краев
-    fig, axs = plt.subplots(1, 2, figsize=(10, 5))
+    def button_destroy(self):
+        self.destroy()
 
-    # Отображение исходного изображения на холсте
-    axs[0].imshow(image_pil)
-    axs[0].axis('off')
 
-    # Отображение краев на холсте
-    axs[1].imshow(edges, cmap='gray')
-    axs[1].axis('off')
+    def click(self):
+        window = Window(name_win='новое окно')
 
-    # Сохранение результата в файл
-    result_image = Image.fromarray(edges)
-    result_image.save('C:/python/bot_ocr1/img/test/test_tasks/edges.png')
 
-    # Отображение результата
-    plt.show()
+
+root = Window(name_win="главное окно")
+
+root.mainloop()

@@ -89,5 +89,5 @@ def start_p_m():
 
 
 def change_date():
-    if heroes.Activ.check_date_ == heroes.Activ.date_now:
+    if heroes.Activ.check_date_ == heroes.Activ.date_utc_now:
         pass

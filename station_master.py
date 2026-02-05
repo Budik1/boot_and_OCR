@@ -3,6 +3,7 @@ from time import sleep
 
 import color_text
 import fun
+import sounds
 import find_img
 import solid_memory
 import complex_phrases
@@ -408,6 +409,13 @@ def option_task_money():
     else:
         return
     while energy_availability == 1 and number_tasks > 0:
+        # Проверка на доступность палатки начстанции. Возможно собрана коллекция
+        tent_open = fun.find_link_station_master_alt()
+        while not tent_open:
+            fun.push_close_all_()
+            sounds.say_txt('Возможно собрана коллекция')
+            tent_open = fun.find_link_station_master_alt()
+
         region_1, region_2, region_3 = fun.get_areas_task_big()
 
         variant1, price_task1 = task_analysis(F'{path}{task[0]}', F'{path}{task[1]}', region_1)
@@ -441,7 +449,7 @@ def option_task_money():
             # получение картинки
             print('Попытка прочитать аппаратно')
             analiz = create_and_analiz_task_img.search_and_create_img_best_offer(person_identified=True)
-            print(f'{analiz=}')
+            # print(f'{analiz=}')
             conf_ = 0.95
             if not analiz:
                 create_and_analiz_task_img.get_screenshot_task_big()
