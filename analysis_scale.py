@@ -47,7 +47,7 @@ def cr_mark_img():
 
 
 def test_long(*, vizual=None):
-    DISTANCE = 760
+    NORM_DISTANCE = 760
     pos_left_corner = fun.locCenterImg(name_img='img/test/mark/mark_left.png', confidence=0.99)
     pos_right_corner = fun.locCenterImg(name_img='img/test/mark/mark_right.png', confidence=0.99)
 
@@ -74,7 +74,7 @@ def test_long(*, vizual=None):
             distance = x_left_cor - x_right_cor
         name_img = f'img/test/mark/long{distance}.png'
         fun.foto(path_name=name_img, region=(x_left_cor, y_left, distance, 5))
-        percentage_change = int((distance / DISTANCE) * 100)
+        percentage_change = int((distance / NORM_DISTANCE) * 100)
         print(f'Длина картинки {distance} пикселей. {int(percentage_change)}%')
     else:
         if not pos_left_corner:

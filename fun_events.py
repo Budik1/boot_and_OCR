@@ -1,10 +1,8 @@
 import time
 import pyautogui
 
-import heroes
-
-import solid_memory
 import fun
+import heroes
 
 
 def start_p_m():

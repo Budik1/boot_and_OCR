@@ -58,7 +58,9 @@ def transform_word_wilds(*, qty_wilds: int):
     return result
 
 
-def modification_name(*, old_path_name: object | str, modifier: object | str, new_path: object | str = None) -> str:
+def modification_name(*, old_path_name: object | str,
+                      modifier: object | str,
+                      new_path: object | str = None) -> str:
     """
     Использую для модификации имени файла при изменении. К родительскому имени добавляется модификатор.
     :param old_path_name: Родительский путь_имя.

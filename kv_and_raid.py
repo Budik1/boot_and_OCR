@@ -1,12 +1,15 @@
 import time
 from time import sleep
 
+import tools
+
 import fun
 import heroes
 import sounds
 import color_text
-import baza_paths as b_p
-import complex_phrases
+# import baza_paths as b_p
+from baza import baza_paths as b_p
+# import complex_phrases
 import find_img as find
 import color_text as myCt
 import solid_memory
@@ -21,7 +24,7 @@ def foto_danger():
     x += 862
     y += 485
     x_r, y_r = x, y
-    name_foto = fun.date_and_time_in_name_file() + ".png"
+    name_foto = tools.date_and_time_in_name_file() + ".png"
     fun.foto(('img/Cr/' + name_foto), (x_s, y_s, x_r, y_r))
     # print('foto')
 
@@ -44,7 +47,7 @@ def foto_result_round(*, pos_v, pos_n, path=b_p.result_round, sound=False):
     x_r = x2 - pos_x + 80 - 13
     y_r = y2 - pos_y - 20
     #
-    name_foto = fun.date_and_time_in_name_file() + ".png"
+    name_foto = tools.date_and_time_in_name_file() + ".png"
     fun.foto((path + name_foto), (pos_x, pos_y, x_r, y_r))
     if sound:
         sounds.sound_victory()
@@ -73,7 +76,7 @@ def foto_loot_kv(*, point_v, point_n):
     x_r = x2 - pos_x + 80 - 13
     y_r = y2 - pos_y - 20
     #
-    name_foto = fun.date_and_time_in_name_file() + ".png"
+    name_foto = tools.date_and_time_in_name_file() + ".png"
     fun.foto((path + name_foto), (pos_x, pos_y, x_r, y_r))
     return
 
@@ -211,7 +214,7 @@ def kv():
     stat, data_kv = solid_memory.reading_kv_config()
     solid_memory.set_values_kv(data_kv)
     heroes.gady.list_loot_kv = []
-    phrase_eff = complex_phrases.report_kv_efficiency()
+    phrase_eff = tools.report_kv_efficiency()
     print(phrase_eff[0])
     print(phrase_eff[1])
     print()
@@ -248,7 +251,7 @@ def kv():
                     solid_memory.save_kv_config(info=False)
 
                 battle(target_call=target_attack)
-                phrase_eff = complex_phrases.report_kv_efficiency()
+                phrase_eff = tools.report_kv_efficiency()
                 print(phrase_eff[0])
                 print(phrase_eff[1])
                 if phrase_eff[2]:
@@ -285,5 +288,5 @@ def loot():
     pos = x, y
     fun.Mouse.move(pos=pos, speed=2)
 
-    name_foto = fun.date_and_time_in_name_file() + ".png"
+    name_foto = tools.date_and_time_in_name_file() + ".png"
     fun.foto(('img/Cr/' + name_foto), (x_s, y_s, x_r, y_r))

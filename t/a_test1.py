@@ -8,7 +8,6 @@
 Прочитать.
 """
 
-import my_OCR
 from PIL import Image
 import matplotlib.pyplot as plt
 import cv2
@@ -16,9 +15,8 @@ import numpy as np
 import os
 
 import fun
-import sounds
-import baza_paths as b_p
-import mod_wold
+from t import baza_paths as b_p
+import tools
 
 
 def conversion_to_gray(*, name_img):
@@ -33,7 +31,7 @@ def conversion_to_gray(*, name_img):
     # Конвертируйте в оттенки серого методом 'L'
     image = image.convert('L')
     # Создайте новое имя файла добавив символы изменения.
-    new_name_img = mod_wold.modification_name(old_path_name=name_img, modifier='_gray')
+    new_name_img = tools.modification_name(old_path_name=name_img, modifier='_gray')
     # Сохраните изображение
     image.save(new_name_img)
     return new_name_img
@@ -58,7 +56,7 @@ def ramki(*, name_file):
     axs[1].axis('off')
     # Сохранение результата в файл
     result_image = Image.fromarray(edges)
-    mod_name_file = mod_wold.modification_name(old_path_name=name_file, modifier='_edges')
+    mod_name_file = tools.modification_name(old_path_name=name_file, modifier='_edges')
     result_image.save(mod_name_file)
     # Отображение результата
     plt.show()
@@ -115,7 +113,7 @@ def crop_smol_task_img(*, name_open):
         lower = i[3] + upper
         #  box=(left, upper, right, lower)
         img_crop = img.crop((left, upper, right, lower))
-        new_name = mod_wold.modification_name(old_path_name=name_open, modifier=i[4])
+        new_name = tools.modification_name(old_path_name=name_open, modifier=i[4])
         img_crop.save(new_name)
         lst_names.append(new_name)
     return lst_names
@@ -132,7 +130,7 @@ def crop_big_task_img(*, name_open):
         lower = i[3] + upper
         #  box=(left, upper, right, lower)
         img_crop = img.crop((left, upper, right, lower))
-        new_name = mod_wold.modification_name(old_path_name=name_open, modifier=i[4])
+        new_name = tools.modification_name(old_path_name=name_open, modifier=i[4])
         img_crop.save(new_name)
         lst_names.append(new_name)
     return lst_names
@@ -198,7 +196,7 @@ def change_color(name_img):
             if pixel_color in tar_col:
                 image_rgb.putpixel((x, y), replacement_color)
                 qty_point += 1
-    mod_name = mod_wold.modification_name(old_path_name=name_img, modifier='_gr')
+    mod_name = tools.modification_name(old_path_name=name_img, modifier='_gr')
     image_rgb.save(mod_name)
     print(f'Количество измененных точек {qty_point}')
     image_gr = Image.open(mod_name)

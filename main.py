@@ -5,12 +5,10 @@ from tkinter import messagebox
 from tkinter import ttk
 
 from PIL import ImageTk
-from torch.utils.hipify.hipify_python import value
 
-import baza_dannyx as b_d
-import baza_paths as b_p
+from baza import baza_dannyx as b_d
+from baza import baza_paths as b_p
 import color_text
-import complex_phrases
 import fun
 import fun_events
 import heroes
@@ -21,6 +19,7 @@ import revision_tents
 import solid_memory
 import station_master
 import touring
+import tools
 import tool_win
 from event_arena import create_img_arena_object, kill
 
@@ -30,7 +29,7 @@ fun.my_log_file("******* перезапуск программы *******")
 fun.my_log_file('*******                      *******')
 fun.my_log_file('')
 
-heroes.Activ.date_utc_now = fun.date_utc_now()
+heroes.Activ.date_utc_now = tools.date_utc_now()
 
 
 screen_width, screen_height = fun.screen_size() # получение разрешения экрана
@@ -73,8 +72,8 @@ def start_prog():
     else:
         displaying_values()
     # вывод инфо состояния
-    complex_phrases.display_smol_report_wildman()
-    complex_phrases.display_info_energy_all()
+    tools.display_smol_report_wildman()
+    tools.display_info_energy_all()
     # удаление файлов старше 10 дней
     check_list_directory1 = b_p.check_list_directory
     check_list_directory2 = []
@@ -169,7 +168,7 @@ def tent_inspection():
     hero = fun.selection_hero()
     ins = heroes.Hero.get_vip_all(heroes.Activ.hero_activ)
     if ins == 10:
-        print(complex_phrases.set_inspect_report())
+        print(tools.set_inspect_report())
         return
     else:
         vip_case_all = 0
@@ -211,7 +210,7 @@ def tent_inspection_marc():
     hero = fun.selection_hero()
     ins = heroes.Hero.get_vip_all(heroes.Activ.hero_activ)
     if ins == 10:
-        print(complex_phrases.set_inspect_report())
+        print(tools.set_inspect_report())
         return
     else:
         vip_case_all = 10
@@ -359,7 +358,7 @@ def save_date_up():
         corr_date_form = lst_lvl_up_date
     else:
         corr_date_form = lst_lvl_up_date[::-1]
-    print(corr_date_form, heroes.Activ.date_utc_now)
+    # print(corr_date_form, heroes.Activ.date_utc_now)
     if corr_date_form == heroes.Activ.date_utc_now:
         mes = 'Дата сегодня уже обновлена'
         answer = messagebox.showinfo(title='lvlup', message=mes)
@@ -388,38 +387,81 @@ def get_target(event):
 
 
 def timer():
+    # gady =============================================
+    # Получить таймер
     tim_gady = int(heroes.Hero.get_time_entree(heroes.gady) - time())
+    # Если не 0:
     if tim_gady > 0:
         hours = tim_gady // 3600
         minutes = (tim_gady - hours * 3600) // 60
         seconds = tim_gady % 60
         tim_gady -= 1
-        timer_gady_label.config(text=f"{hours:02d}:{minutes:02d}:{seconds:02d}")
+        #   Создать строку таймера
+        text_timer = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
     else:
-        date_up = heroes.Hero.get_up_date(heroes.gady)
-        if date_up != '':
-            number_days = fun.dif_days(date_old=date_up)
-            msg = f'{number_days} day ур'
-            # print(f'{msg=}')
-            timer_gady_label.config(text=msg)
-        else:
-            timer_gady_label.config(text="00:00:00")
+        text_timer = ''
+    # Получить date_up
+    date_up = heroes.Hero.get_up_date(heroes.gady)
+    #   если date_up:
+    if date_up:
+        #       Вычислить количество прошедших дней
+        date_today = tools.date_utc_now()
+        number_days = tools.dif_days(date_old=date_up, date_today=date_today)
+    #   иначе:
+    else:
+        #   количество прошедших дней = 0
+        number_days = 0
+    # Создать строку в виде
+    # если строка таймера не пуста:
+    if text_timer:
+        #       (кол.дней)таймер
+        timer_label_text = f'({number_days}){text_timer}'
+        timer_gady_label.config(font=("Helvetica", 10))
+    #   иначе:
+    else:
+        #       количество дней
+        timer_label_text = f'{number_days} day'
+        timer_gady_label.config(font=("Helvetica", 12))
+    timer_gady_label.config(text=timer_label_text)
+    # ==================================================
 
+    # gavr =============================================
+    # Получить таймер
     tim_gavr = int(heroes.Hero.get_time_entree(heroes.gavr) - time())
+    # Если не 0:
     if tim_gavr > 0:
         hours = tim_gavr // 3600
         minutes = (tim_gavr - hours * 3600) // 60
         seconds = tim_gavr % 60
         tim_gavr -= 1
-        timer_gavr_label.config(text=f"{hours:02d}:{minutes:02d}:{seconds:02d}")
+        #   Создать строку таймера
+        text_timer = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
     else:
-        date_up = heroes.Hero.get_up_date(heroes.gavr)
-        if date_up:
-            number_days = fun.dif_days(date_old=date_up)
-            msg = f'{number_days} day ур'
-            timer_gavr_label.config(text=msg)
-        else:
-            timer_gavr_label.config(text="00:00:00")
+        text_timer = ''
+    # Получить date_up
+    date_up = heroes.Hero.get_up_date(heroes.gavr)
+    #   если date_up:
+    if date_up:
+        #       Вычислить количество прошедших дней
+        date_today = tools.date_utc_now()
+        number_days = tools.dif_days(date_old=date_up, date_today=date_today)
+    #   иначе:
+    else:
+        #   количество прошедших дней = 0
+        number_days = 0
+    # Создать строку в виде
+    # если строка таймера не пуста:
+    if text_timer:
+        #       (кол.дней)таймер
+        timer_label_text = f'({number_days}){text_timer}'
+        timer_gavr_label.config(font=("Helvetica", 10))
+    #   иначе:
+    else:
+        #       количество дней
+        timer_label_text = f'{number_days} day'
+        timer_gavr_label.config(font=("Helvetica", 12))
+    timer_gavr_label.config(text=timer_label_text)
+    # ==================================================
 
     # tim_veles = int(heroes.Hero.get_time_entree(heroes.veles) - time())
     # if tim_veles > 0:
@@ -431,28 +473,67 @@ def timer():
     # else:
     #     timer_veles_label.config(text="00:00:00")
 
+    # ==================================================
+    # Получить таймер
     tim_mara = int(heroes.Hero.get_time_entree(heroes.mara) - time())
+    # Если не 0:
     if tim_mara > 0:
         hours = tim_mara // 3600
         minutes = (tim_mara - hours * 3600) // 60
         seconds = tim_mara % 60
         tim_mara -= 1
-        timer_mara_label.config(text=f"{hours:02d}:{minutes:02d}:{seconds:02d}")
+    #   Создать строку таймера
+        text_timer = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
     else:
-        date_up = heroes.Hero.get_up_date(heroes.mara)
-        if date_up:
-            number_days = fun.dif_days(date_old=date_up)
-            msg = f'{number_days} day ур'
-            timer_mara_label.config(text=msg)
-        else:
-            timer_mara_label.config(text="00:00:00")
+        text_timer = ''
+    # Получить date_up
+    date_up = heroes.Hero.get_up_date(heroes.mara)
+    #   если date_up:
+    if date_up:
+        #       Вычислить количество прошедших дней
+        date_today = tools.date_utc_now()
+        number_days = tools.dif_days(date_old=date_up, date_today=date_today)
+    #   иначе:
+    else:
+    #   количество прошедших дней = 0
+        number_days = 0
+    # Создать строку в виде
+    # если строка таймера не пуста:
+    if text_timer:
+        #       (кол.дней)таймер
+        timer_label_text = f'({number_days}){text_timer}'
+        timer_mara_label.config(font=("Helvetica", 10))
+    #   иначе:
+    else:
+    #       количество дней
+        timer_label_text = f'{number_days} day'
+        timer_mara_label.config(font=("Helvetica", 12))
+    timer_mara_label.config(text=timer_label_text)
+    # ==================================================
+
+    # if tim_mara > 0:
+    #     hours = tim_mara // 3600
+    #     minutes = (tim_mara - hours * 3600) // 60
+    #     seconds = tim_mara % 60
+    #     tim_mara -= 1
+    #     timer_mara_label.config(text=f"{hours:02d}:{minutes:02d}:{seconds:02d}")
+    # else:
+    #     date_up = heroes.Hero.get_up_date(heroes.mara)
+    #     if date_up:
+    #         date_today = tools.date_utc_now()
+    #         number_days = tools.dif_days(date_old=date_up, date_today=date_today)
+    #         msg = f'{number_days} day'
+    #         timer_mara_label.config(text=msg)
+    #     else:
+    #         timer_mara_label.config(text="00:00:00")
+
 
     tim = int(time())
     # hours_now = tim // 3600
     minutes_now = (tim - (tim // 3600) * 3600) // 60
     if minutes_now != heroes.temp_min:
         heroes.temp_min = minutes_now
-        heroes.time_now_ = fun.time_now()
+        heroes.time_now_ = tools.time_now()
 
     root.after(1000, timer)
 
@@ -551,9 +632,9 @@ ttk.Button(text="set 1 h ", width=8, command=set_timer1).place(x=b_d.col_8, y=b_
 ttk.Button(text="wild+kiki", width=9, command=wild_kiki).place(x=115, y=b_d.line5)
 ttk.Button(text="обход всех станций", width=18, command=collecting_gifts_at_stations).place(x=205, y=b_d.line5)
 
-ttk.Button(text='рапорт W_R', width=12, command=complex_phrases.display_report_w_rat).place(x=115, y=b_d.line6)
-ttk.Button(text='рапорт W', width=12, command=complex_phrases.display_report_wildman).place(x=200, y=b_d.line6)
-ttk.Button(text='рапорт E', width=12, command=complex_phrases.display_info_energy_all).place(x=285, y=b_d.line6)
+ttk.Button(text='рапорт W_R', width=12, command=tools.display_report_w_rat).place(x=115, y=b_d.line6)
+ttk.Button(text='рапорт W', width=12, command=tools.display_report_wildman).place(x=200, y=b_d.line6)
+ttk.Button(text='рапорт E', width=12, command=tools.display_info_energy_all).place(x=285, y=b_d.line6)
 
 # ttk.Label(text='            куда пойдем ?', width=21, background='#858585', foreground='#050505').place(x=156, y=b_d.line7)
 ttk.Label(root, text='куда пойдем ?', width=21, background='#858585', foreground='#050505', justify=RIGHT).place(x=156, y=b_d.line7)

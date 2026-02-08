@@ -3,7 +3,7 @@ import time
 import fun
 import sounds
 
-import baza_paths as b_p
+from t import baza_paths as b_p
 
 
 def cr_patron_img():

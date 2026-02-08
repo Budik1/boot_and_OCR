@@ -6,7 +6,7 @@ import fun
 import sounds
 import find_img
 import solid_memory
-import complex_phrases
+import tools
 import create_and_analiz_task_img
 
 import heroes
@@ -119,7 +119,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     mob_identified = 'white_rat'
 
                     print(myCt.tc_magenta(f'{Hero.get_qty_white_rat(Activ.hero_activ)} белая крыса'))
-                    print(complex_phrases.report_white_rat(hero=Activ.hero_activ))
+                    print(tools.report_white_rat(hero=Activ.hero_activ))
                 if name1_sand_rat and cycle:
                     cycle = False
                     mob_identified = 'sand_rat'
@@ -147,7 +147,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     cycle = False
 
                     print(f'{Hero.get_report_wildman_now(Activ.hero_activ)}')
-                    print(complex_phrases.report_wildman(hero=Activ.hero_activ))
+                    print(tools.report_wildman(hero=Activ.hero_activ))
                     mob_identified = "wildman"
 
                 if name6_kikimora and cycle:
@@ -305,7 +305,7 @@ def press_en(*, task_number, pos, value_energy):  #
         # print(f'{Activ.station_activ=}')
 
         ## Выполняю {3} задание,{ conf_=0.94}. Сейчас {3}, сегодня 20, всего 120
-        complex_phrases.display_report_energy_now(vers_in_print=vers_in_print,
+        tools.display_report_energy_now(vers_in_print=vers_in_print,
                                                   value_energy=value_energy)
         solid_memory.save_all_state_config(info=False)
         # Жду появления кнопки "пропустить бой"
@@ -323,7 +323,7 @@ def press_en(*, task_number, pos, value_energy):  #
 
         print(Hero.get_report_wildman_now(Activ.hero_activ))
         if Hero.get_wildman_count(Activ.hero_activ) != 0:
-            print(complex_phrases.report_wildman(hero=Activ.hero_activ))
+            print(tools.report_wildman(hero=Activ.hero_activ))
         else:
             print()
         sleep(1)
@@ -413,7 +413,7 @@ def option_task_money():
         tent_open = fun.find_link_station_master_alt()
         while not tent_open:
             fun.push_close_all_()
-            sounds.say_txt('Возможно собрана коллекция')
+            tools.sounds.say_txt('Возможно собрана коллекция')
             tent_open = fun.find_link_station_master_alt()
 
         region_1, region_2, region_3 = fun.get_areas_task_big()

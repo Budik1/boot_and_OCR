@@ -1,17 +1,5 @@
 from tkinter import *
 from tkinter import ttk
-from PIL import ImageTk
-import os
-
-import fun
-import station_master
-import baza_dannyx as b_d
-import baza_paths as b_p
-import heroes
-import create_and_analiz_task_img
-
-import stereotypes
-
 
 height_line =24
 line_0 = 0

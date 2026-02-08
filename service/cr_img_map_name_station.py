@@ -2,7 +2,6 @@ import color_text
 import fun
 import find_img
 import sounds
-import baza_dannyx as b_d
 
 
 def img_map_name():

@@ -9,11 +9,12 @@ import fun
 import heroes
 import color_text
 import solid_memory
-import sounds
+# import sounds
 import station_master
-# import a_serial_scrin_for_pm
-import baza_dannyx as b_d
+import tools
 import find_img
+
+from baza import baza_dannyx as b_d
 from heroes import Hero, Activ
 
 
@@ -93,17 +94,17 @@ def event_gifts():
             print(it, 'поиск закрыть в подарках')
         # print(close)
         # Создание имени
-        date_time = fun.date_and_time_in_name_file()
+        name_file_date_time = tools.date_and_time_in_name_file()
         # name_crop_img = fun.date_time_now()
         name_her = Hero.get_name_id(Activ.hero_activ)
         # name_img = f'img/tonelli/loot_gift_box/big/{name_her}/{date_time}.png'
-        name_img = f'img/tonelli/loot_gift_box/big/buf/{date_time}.png'
+        name_img = f'img/tonelli/loot_gift_box/big/buf/{name_file_date_time}.png'
         # проверить наличие
         name_loot = gift_station_service.check_loot(name_hero_dir=name_her)
         if not name_loot:
-            sounds.say_txt('содержимое не опознано')
+            tools.sounds.say_txt('содержимое не опознано')
             gift_station_service.cr_box_loot_img(name_create_img=name_img)
-            gift_station_service.tenderloin(name_fold=name_her, name_crop_img=date_time)
+            gift_station_service.tenderloin(name_fold=name_her, name_crop_img=name_file_date_time)
         elif name_loot.count('-') >= 3:
             pass
         elif len(name_loot) > 3:
@@ -120,7 +121,7 @@ def event_gifts():
                 phrase = translate(world=name_loot)
             else:
                 phrase = translate(world=name_loot)
-            sounds.say_txt(str(phrase))
+            tools.sounds.say_txt(str(phrase))
 
         # a_serial_scrin_for_pm.cr_other_img(name_create_img=name_img)
         fun.Mouse.move(pos=close, speed=1, log=True, message_l='нажал закрыть окно "подарок"')
@@ -411,15 +412,16 @@ def extraction_name_in_list(*, value: list) -> list:
     содержащий имена станций
     :param value:
     :return: """
-    def_name = 'touring.extraction_name_in_list'
-    fun.rap_explore(text=def_name)
+    # def_name = 'touring.extraction_name_in_list'
+    # def_name = a
+    # fun.rap_explore(text=def_name)
     list_name = []
     for name in value:
         # list_name.append(extraction_name(variable=name))
         list_name.append(name[0])
         # Перебирая полученный список пишет названия станций.
         # print(extraction_name(variable=name))
-    fun.rap_explore(text=def_name, ex=1)
+    # fun.rap_explore(text=def_name, ex=1)
     return list_name
 
 
@@ -594,7 +596,7 @@ def for_wilds():
             station_master.task_pos_item(1)
             print('энергия исчерпана')
             move_to_target(target_point='домой')
-        sounds.say_txt('вернулся домой))')
+        tools.sounds.say_txt('вернулся домой))')
         fun.rap_explore(text=def_name, ex=1)
         return
 
@@ -615,7 +617,7 @@ def for_kiki():
     minutes = int(finish_time // 60)  # количество минут
     seconds = round((finish_time % minutes), 2)
     print('Потрачено время', minutes, 'минут', seconds, 'сек.')
-    sounds.say_txt('вернулся домой))')
+    tools.sounds.say_txt('вернулся домой))')
     fun.rap_explore(text=def_name, ex=1)
     return
 
@@ -644,6 +646,6 @@ def sbor_podarkov(bypass_hero: list) -> None:
         move_to_target(target_point='ст. Павелецкая(Г)')
         move_to_target(target_point='ст. Третьяковская')
         move_to_target(target_point='домой')
-    sounds.say_txt('вернулся домой))')
+    tools.sounds.say_txt('вернулся домой))')
     fun.rap_explore(text=def_name, ex=1)
     return

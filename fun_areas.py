@@ -1,15 +1,4 @@
-import pyautogui
-import datetime
-from time import sleep, time
-
 # import fun
-import sounds
-import find_img
-import fun_down
-import baza_dannyx as b_d
-import color_text
-
-import heroes
 
 par_conf = 0.79
 oblast = (51, 707, 92, 111)

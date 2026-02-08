@@ -1,6 +1,7 @@
 import time
 
-import baza_dannyx as b_d
+# import baza_dannyx as b_d
+from baza import baza_dannyx as b_d
 import color_text
 
 nam = 0  # для подсчета чего?
@@ -129,21 +130,21 @@ class Hero:
         data_to_save = {
             'name': self.name_id,
             'time_start_kv': self.time_start_kv,
-
             'qty_duel_all': self.qty_duel_all,
             'qty_duel_all_victory': self.qty_duel_all_victory,
             'qty_duel_in_kv_all': self.qty_duel_in_kv_all,
             'qty_duel_in_kv_victory': self.qty_duel_in_kv_victory,
             'count_shoulder_straps_all': self.count_shoulder_straps_all,
             'count_shoulder_straps_kv': self.count_shoulder_straps_kv,
-            'list_loot': self.list_loot_kv,
-            'set_dist': self.set_dist,
+            # 'list_loot': self.list_loot_kv,
+            # 'set_dist': self.set_dist,
         }
         # отладка
         # print(f'вызов {__class__}')
         # конец отладки
         hero_id = Hero.get_id(self)
         list_kv_state[hero_id] = data_to_save
+        list_kv_state2[hero_id] = data_to_save
         return
 
     def set_state_kv(self):
@@ -169,7 +170,7 @@ class Hero:
             self.qty_duel_in_kv_all = 0
             self.qty_duel_in_kv_victory = 0
 
-        self.set_dist = data_kv.get('set_dist', {})
+        self.set_dist = data_kv.get('set_dist', set())
         self.qty_duel_all_victory = data_kv.get('gady.duel_victory_all', 0)
         self.qty_duel_all = data_kv.get('gady.duel_all', 0)
         self.count_shoulder_straps_all = data_kv.get('gady.count_shoulder_straps', 0)

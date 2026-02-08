@@ -1,15 +1,19 @@
 import pyautogui
-import datetime
+# import datetime
+import builtins
 from time import sleep, time
 
-# import fun
-import sounds
+# from icecream import ic
+# ic.configureOutput(includeContext=True)
+# print = ic
+
+import tools
 import find_img
 import fun_down
-import baza_dannyx as b_d
 import color_text
-
 import heroes
+from baza import baza_dannyx as b_d
+
 
 par_conf = 0.79
 oblast = (51, 707, 92, 111)
@@ -59,14 +63,15 @@ def wait_and_stop_img(*, name_img, region: tuple[int, int, int, int] | None = No
     return img_1
 
 
-def mouse_left_click(*, pos, message=False):
-    my_log_file('')
-    my_log_file(f'fun.mouse_left_click {pos=}')
-    if message:
-        print(f'fun.mouse_left_click {message=} {pos=}')
-    sounds.click_mouse()
-    pyautogui.hotkey('Ctrl')
-    pyautogui.click(pos)
+# ================ 07.02.2026
+# def mouse_left_click(*, pos, message=False):
+#     my_log_file('')
+#     my_log_file(f'fun.mouse_left_click {pos=}')
+#     if message:
+#         print(f'fun.mouse_left_click {message=} {pos=}')
+#     sounds.click_mouse()
+#     pyautogui.hotkey('Ctrl')
+#     pyautogui.click(pos)
 
 
 class Mouse:
@@ -111,7 +116,7 @@ class Mouse:
         my_log_file(f' {pos=}')
         if message:
             print(f'fun.Mouse.left_click {message_l=}')
-        sounds.click_mouse()
+        tools.sounds.click_mouse()
         pyautogui.hotkey('Ctrl')
         pyautogui.click(pos)
         return
@@ -178,75 +183,33 @@ class Mouse:
 
 
 def my_log_file(text):
-    date_ = date_now()
-    time_ = time_now()
+    date_ = tools.date_now()
+    time_ = tools.time_now()
     date_time = f'{date_} {time_}'
     file_name = date_ + ".txt"
     file_1 = open('log/' + str(file_name), 'a+', encoding='utf-8')
     try:
-        print(date_time, text, file=file_1)
+        # print = print()
+        builtins.print(date_time, text, file=file_1)
     except FileNotFoundError:
         # Если файл не найден, выводим сообщение об ошибке
-        print(f"Файл '{file_1}' не найден!")
+        builtins.print(f"Файл '{file_1}' не найден!")
     except IOError:
         # Если возникает ошибка ввода-вывода, выводим сообщение об ошибке
-        print("Произошла ошибка ввода-вывода при чтении файла!")
+        builtins.print("Произошла ошибка ввода-вывода при чтении файла!")
     except Exception as e:
         # Обработка других неожиданных исключений
-        print(f"Произошла неожиданная ошибка: {e}")
+        builtins.print(f"Произошла неожиданная ошибка: {e}")
     finally:
         file_1.close()
 
 
-def date_utc_now():
-    now = datetime.datetime.now(datetime.timezone.utc)
-    date_utc = (now.strftime('%Y-%m-%d'))  # год-месяц-день
-    return date_utc
 
 
-def time_now():
-    now = datetime.datetime.now()
-    # '%Y-%m-%d_%H:%M:%S' '%Y-%m-%d %H°%M\'\'%S\''
-    time_now_ = (now.strftime('%H:%M:%S'))
-    return time_now_
 
 
-def date_time_now():
-    """
-
-    :return:
-    """
-    now = datetime.datetime.now()
-    # '%Y-%m-%d_%H:%M:%S' '%Y-%m-%d %H°%M\'\'%S\''
-    date_time_now_ = (now.strftime('%Y-%m-%d %H:%M:%S'))
-    date = (now.strftime('%Y-%m-%d'))
-    return date_time_now_, date
 
 
-def date_now():
-    """
-    Возвращает дату в формате Год-месяц-день
-    :return: str
-    """
-    now = datetime.datetime.now()
-    date = (now.strftime('%Y-%m-%d'))
-    return date
-
-
-def minutes_now():
-    now = datetime.datetime.now()
-    minutes_now_ = (now.strftime('%M'))
-    return minutes_now_
-
-
-def date_and_time_in_name_file():
-    """
-    '%Y-%m-%d %H-%M-%S'
-    :return: str
-    """
-    now = datetime.datetime.now()
-    date_time_now_f = (now.strftime('%Y-%m-%d %H-%M-%S'))
-    return date_time_now_f
 
 
 def test_time(funk):
@@ -746,7 +709,7 @@ def work():
     my_log_file('')
     my_log_file('fun.work')
 
-    rest = get_rest_tim(h_max=22)
+    rest = tools.get_rest_tim(h_max=22)
 
     vizit_to_station_master()
     pos_work = find_img.find_work()
@@ -847,7 +810,8 @@ def get_region_lines_task():
     """
         Получение региона для трех строк с заданием
     """
-    print('get_region_lines_task')
+    module = str(__name__)
+    print(f'{module}.get_region_lines_task')
     pos_start = find_link_station_master()
     change_x = 280
     change_y = 90
@@ -904,29 +868,6 @@ def loc_now():
     return list_location
 
 
-def dif_days(*, date_old, date_today=date_utc_now()):
-    """
-    Вычисляет разницу между двумя датами в днях.
-    :param date_old: Прошедшая дата в формате "2025-11-29"
-    :param date_today: Сегодняшняя дата в формате "2025-11-29"
-    :return: Количество в днях
-    """
-    list_date_old = date_old.split(sep='-')
-    list_date_today = date_today.split(sep='-')
-    par_year = 0
-    par_month = 1
-    par_day = 2
-    d_old = datetime.date(int(list_date_old[par_year]),
-                          int(list_date_old[par_month]),
-                          int(list_date_old[par_day]))
-    d_today = datetime.date(int(list_date_today[par_year]),
-                            int(list_date_today[par_month]),
-                            int(list_date_today[par_day]))
-    dif = d_today - d_old
-    # print('fun.dif_days ', dif.days)
-    return dif.days
-
-
 def rap_explore(*, text, ex=''):
     """
     Рапорт использования.
@@ -938,22 +879,6 @@ def rap_explore(*, text, ex=''):
         ex = 'выход'
     print(color_text.tc_green(f'{text} {ex}'))
     return
-
-
-def get_rest_tim(*, h_max):
-    t_now = time_now()
-    h, m, s = t_now.split(':')
-    t_work = 8
-    rest_t = h_max - int(h)
-    if rest_t > 8:
-        t_work = 8
-    elif 8 >= rest_t > 5:
-        t_work = 5
-    elif 5 >= rest_t > 2:
-        t_work = 2
-    elif 2 >= rest_t > 1:
-        t_work = 1
-    return t_work
 
 
 def pos_parking():

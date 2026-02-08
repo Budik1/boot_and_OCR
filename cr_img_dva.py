@@ -2,7 +2,7 @@ import time
 import fun
 import sounds
 
-import baza_paths as b_p
+from baza import baza_paths as b_p
 
 
 def get_energy_line_1_img():

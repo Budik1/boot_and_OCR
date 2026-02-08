@@ -1,5 +1,6 @@
 import pyautogui
 from time import sleep
+
 import find_img as find
 import fun
 import heroes
@@ -32,7 +33,7 @@ def vip_click(region_search):
     sleep(1)
     pos_vip = find.find_b_vip(region_search=region_search)
     pyautogui.moveTo(pos_vip, duration=1)
-    fun.mouse_left_click(pos=pos_vip)
+    fun.Mouse.left_click(pos=pos_vip)
     # print('клик по VIP ' + str(pos_vip))
     sleep(1)
 

@@ -1,10 +1,10 @@
 """
 Сложные сообщения
 """
-import fun
+import tools
 import heroes
 import color_text
-import mod_wold
+
 
 
 def display_report_energy_now(*, vers_in_print, value_energy):
@@ -83,10 +83,10 @@ def display_smol_report_wildman():
     for key in heroes.hero_dict:
         name = key.rjust(8, ' ')
         q_days = str(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])).rjust(3, ' ')
-        days = (mod_wold.transform_word_days(qty_days=(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])))).rjust(5,
+        days = (tools.transform_word_days(qty_days=(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])))).rjust(5,
                                                                                                                      ' ')
         q_wild = str(heroes.Hero.get_wildman_count(heroes.hero_dict[key])).rjust(4)
-        wild = mod_wold.transform_word_wilds(qty_wilds=heroes.Hero.get_wildman_count(heroes.hero_dict[key])).rjust(8)
+        wild = tools.transform_word_wilds(qty_wilds=heroes.Hero.get_wildman_count(heroes.hero_dict[key])).rjust(8)
         print(f'{name}{q_days}{days}{q_wild}{wild}')
 
     return
@@ -153,8 +153,8 @@ def report_kv_efficiency():
         percent_vik_all = round((qty_all_victory / (qty_all / 100)), 1)
     else:
         percent_vik_all = 0
-    vik_all = mod_wold.transform_word_victory(qty_victory=qty_all_victory)
-    word_duel_al = mod_wold.transform_word_duel(qty_duel=qty_all)
+    vik_all = tools.transform_word_victory(qty_victory=qty_all_victory)
+    word_duel_al = tools.transform_word_duel(qty_duel=qty_all)
     text1 = color_text.tc_green(f'Всего {qty_all_victory} {vik_all} в {qty_all} {word_duel_al}')
     text2 = color_text.tc_magenta(f'({percent_vik_all}%)')
 
@@ -169,8 +169,8 @@ def report_kv_efficiency():
 
     qty_duel_in_kv_victory = heroes.Hero.get_qty_duel_in_kv_victory(activ_her)
     qty_duel_in_kv_all = heroes.Hero.get_qty_duel_in_kv_all(activ_her)
-    word_vik_in_kv = mod_wold.transform_word_victory(qty_victory=qty_duel_in_kv_victory)
-    word_duel_in_kv = mod_wold.transform_word_duel(qty_duel=qty_duel_in_kv_all)
+    word_vik_in_kv = tools.transform_word_victory(qty_victory=qty_duel_in_kv_victory)
+    word_duel_in_kv = tools.transform_word_duel(qty_duel=qty_duel_in_kv_all)
     if qty_duel_in_kv_all and qty_duel_in_kv_victory:
         percent_vik_kv = round((qty_duel_in_kv_victory / (qty_duel_in_kv_all / 100)), 1)
     else:

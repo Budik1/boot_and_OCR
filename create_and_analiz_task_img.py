@@ -1,7 +1,7 @@
 import fun
 import event_OCR
 import my_OCR
-import baza_paths as b_p
+from baza import baza_paths as b_p
 import heroes
 
 
@@ -91,7 +91,7 @@ def get_energy_value_in_line(*, line):
         pos_en = fun.locCenterImg(f'{path_energy_task}{img}', region=region_img[line], confidence=0.95)
         if pos_en:
             value_energy = fun.extraction_digit(item=img)
-            print(value_energy)
+            print(f'{value_energy=}')
             # fun.Mouse.move(pos=pos_en, speed=0.5)
     return value_energy
 
@@ -146,7 +146,7 @@ def search_and_create_img_best_offer(*, person_identified=False):
     # получение количества энергии в best_line и создание большого скрина задания
     if best_line:
         value_energy = get_energy_value_in_line(line=best_line - 1)
-        print(f'{heroes.Activ.name_file_=}')
+        # print(f'{heroes.Activ.name_file_=}')
         img = create_big_img_task_line(line=best_line - 1, value_energy=value_energy, hero=heroes.Activ.name_file_)
         print(f'создан {img}')
         result_found = True

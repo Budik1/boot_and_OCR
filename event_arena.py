@@ -1,6 +1,6 @@
 from time import sleep
 
-import baza_paths
+from baza import baza_paths as b_p
 import fun
 import find_img
 import heroes
@@ -60,7 +60,7 @@ def create_img_arena_object():
     # Определяю героя
     fun.selection_hero(show_name=False)
     # Получение пути для сохранения скрина противника
-    path_img = baza_paths.arena_object
+    path_img = b_p.arena_object
     hero_name = heroes.Activ.name_file_
     path_hero_img = f'{path_img}{hero_name}/'
     # # ориентир на зал славы
@@ -106,7 +106,7 @@ def kill():
         ful_region = get_ful_region_arena_tabl()
         height_line = get_height_line(full_region_arena=ful_region)
         region_line1 = ful_region[0], ful_region[1], ful_region[2], height_line
-        fun.foto_pos(name_img=baza_paths.img_token, region=region_line1)
+        fun.foto_pos(name_img=b_p.img_token, region=region_line1)
 
         arena_object = find_img.find_arena_object(region=region_line1,
                                                   hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))

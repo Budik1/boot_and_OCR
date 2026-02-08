@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
 
-import baza_dannyx as b_d
+from baza import baza_dannyx as b_d
 
 
 class Window(Tk):

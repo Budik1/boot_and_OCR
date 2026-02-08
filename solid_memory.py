@@ -11,9 +11,9 @@ from color_text import tc_green, tc_red
 def save_all_state_config_json():
     date_n = tools.date_now()
     time_n = tools.date_and_time_in_name_file()
-    path = f'temp_pack/{date_n}'
-    os_action.create_folder(path=path)
-    path_lst = ['config.json', f'temp_pack/{date_n}/config_{time_n}.json']
+    path_temp_folder = f'temp_pack/all/{date_n}'
+    os_action.create_folder(path=path_temp_folder)
+    path_lst = ['config.json', 'storage/config.json', f'{path_temp_folder}/config_{time_n}.json']
     for key in heroes.hero_dict:
         heroes.Hero.get_state_all(heroes.hero_dict[key])
     json_data = json.dumps(heroes.list_all_state, ensure_ascii=False)
@@ -24,14 +24,43 @@ def save_all_state_config_json():
 
 def save_kv_state_config_json():
     date_n = tools.date_now()
-    path_lst = ['config_kv.json', f'temp_pack/config_kv_{date_n}.json']
+    time_n = tools.date_and_time_in_name_file()
+    path_temp_folder = f'temp_pack/kv/kv_{date_n}'
+    os_action.create_folder(path=path_temp_folder)
+    path_lst = ['config_kv.json', 'storage/config_kv.json', f'{path_temp_folder}/config_kv {time_n}.json']
     for key in heroes.hero_dict:
         heroes.Hero.get_state_kv(heroes.hero_dict[key])
     json_data = json.dumps(heroes.list_kv_state2, ensure_ascii=False)
     for file_name_json in path_lst:
-        print(f'запись {file_name_json}')
+        # print(f'запись {file_name_json}')
         with open(file_name_json, 'w', encoding='utf-8') as file_:
             file_.write(json_data)
+
+
+def write_json_file(*, file_name, json_data, info=None):
+    rapport = ''
+    if info:
+        text = tc_green('запись состояния')
+        rapport = f"{file_name} {text}"
+    try:
+        with open(file_name, 'w', encoding='utf-8') as file_:
+            file_.write(json_data)
+    except FileNotFoundError:
+        # Если файл не найден, выводим сообщение об ошибке
+        text = tc_red(f'Файл  не найден!')
+        rapport = f'{file_name} {text}'
+    except IOError:
+        # Если возникает ошибка ввода-вывода, выводим сообщение об ошибке
+        text = tc_red('Произошла ошибка ввода-вывода при чтении файла!')
+        rapport = f"{file_name} {text}"
+    except Exception as e:
+        # Обработка других неожиданных исключений
+        text = tc_red(f'Произошла неожиданная ошибка: {e}')
+        rapport = f"{file_name} {text}"
+    finally:
+        if rapport != '':
+            print(f'{rapport=}')
+    return
 
 
 def save_all_state_config(info=True):
@@ -44,8 +73,6 @@ def save_all_state_config(info=True):
 
     for key in heroes.hero_dict:
         heroes.Hero.get_state_all(heroes.hero_dict[key])
-    # print('save')
-    # print(heroes.list_all_state)
     try:
         file1 = open(file_name, 'wb')
         pickle.dump(heroes.list_all_state, file1)
@@ -61,20 +88,56 @@ def save_all_state_config(info=True):
     except Exception as e:
         # Обработка других неожиданных исключений
         text = tc_red(f'Произошла неожиданная ошибка: {e}')
-        rapport = "{file_name} {text}"
+        rapport = f"{file_name} {text}"
     finally:
         if rapport != '':
             print(f'{rapport=}')
     return
 
 
-def reading_all_state_config(*, info=True):
-    file_name = 'config.bin'
-    file_name_json = 'temp_pack/config2026-02-04.json'
+def load_json_file(*, file_name, info=False):
+    """
+    Чтение json файла и обработка возможных ошибок.
+    :param file_name:
+    :param info:
+    :return result: Первый параметр True если чтение прошло без ошибок. Иначе False
+    :return data_load: Содержимое файла
+    """
     rapport = ''
+    data_load = None
     if info:
         text = tc_green("чтение состояния")
         rapport = f'{file_name} {text}'
+    try:
+        with open(file_name, 'r', encoding='utf-8') as f:
+            data_load = json.load(f)
+            result = True
+    except FileNotFoundError:
+        # Если файл не найден, выводим сообщение об ошибке
+        # print(f"Файл '{file_name}' не найден!")
+        rapport = f"Файл '{file_name}' не найден!"
+        result = False
+    except IOError:
+        # Если возникает ошибка ввода-вывода, выводим сообщение об ошибке
+        rapport = f"Произошла ошибка ввода-вывода при чтении '{file_name}' файла!"
+        result = False
+    except Exception as e:
+        # Обработка других неожиданных исключений
+        rapport = f"Файл '{file_name}'. Произошла неожиданная ошибка: {e}"
+        result = False
+    finally:
+        if rapport != '':
+            print(rapport)
+    return result, data_load
+
+
+def reading_all_state_config(*, info=True):
+    # file_name = 'config.bin'
+    file_name_json = 'config.json'
+    rapport = ''
+    if info:
+        text = tc_green("чтение состояния")
+        rapport = f'{file_name_json} {text}'
     try:
         # file1 = open(file_name, 'rb')
         # heroes.list_all_state = pickle.load(file1)
@@ -87,17 +150,17 @@ def reading_all_state_config(*, info=True):
     except FileNotFoundError:
         # Если файл не найден, выводим сообщение об ошибке
         # print(f"Файл '{file_name}' не найден!")
-        rapport = f"Файл '{file_name}' не найден!"
+        rapport = f"Файл '{file_name_json}' не найден!"
         result = False
         save_all_state_config()
     except IOError:
         # Если возникает ошибка ввода-вывода, выводим сообщение об ошибке
-        rapport = f"Произошла ошибка ввода-вывода при чтении '{file_name}' файла!"
+        rapport = f"Произошла ошибка ввода-вывода при чтении '{file_name_json}' файла!"
         result = False
         save_all_state_config()
     except Exception as e:
         # Обработка других неожиданных исключений
-        rapport = f"Файл '{file_name}'. Произошла неожиданная ошибка: {e}"
+        rapport = f"Файл '{file_name_json}'. Произошла неожиданная ошибка: {e}"
         result = False
         save_all_state_config()
     finally:

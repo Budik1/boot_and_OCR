@@ -1,5 +1,9 @@
 import pyautogui
 
+# from icecream import ic
+# ic.configureOutput(includeContext=True)
+# print = ic
+
 import find_img
 import fun
 from time import sleep
