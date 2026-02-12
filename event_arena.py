@@ -6,7 +6,7 @@ import find_img
 import heroes
 import solid_memory
 import station_master
-import color_text
+import tools.color_text as c_t
 
 
 def get_ful_region_arena_tabl():
@@ -174,7 +174,7 @@ def kill():
         fun.Mouse.move_to_click(pos_click=hero_vs_opponent_img, z_p_k=0.1)
 
         heroes.Hero.app_arena_count(heroes.Activ.hero_activ)
-        solid_memory.save_all_state_config(info=False)
+        solid_memory.save_all_state_config_json(info=False)
         # sleep(2)
         # print('переход в enemy_battle')
         res = station_master.enemy_battle(0.4, arena=True, add_up=False, dog_activ=False)
@@ -182,10 +182,10 @@ def kill():
         if res == "победа":
             vict_in_arena += 1
             heroes.Hero.app_arena_victory_count(heroes.Activ.hero_activ)
-            result_text = color_text.tc_yellow(F"победа,{vict_in_arena}")
-            solid_memory.save_all_state_config(info=False)
+            result_text = c_t.tc_yellow(F"победа,{vict_in_arena}")
+            solid_memory.save_all_state_config_json(info=False)
         else:
-            result_text = color_text.tc_red("поражение")
+            result_text = c_t.tc_red("поражение")
         boy_in_arena = heroes.Hero.get_arena_count(heroes.Activ.hero_activ)
         print(f"боёв {heroes.Hero.get_arena_count(heroes.Activ.hero_activ)}, {result_text}, следующий..")
         fun.find_link_hall_of_glory()

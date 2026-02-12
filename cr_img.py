@@ -2,8 +2,7 @@ import pyautogui
 from time import sleep
 
 import fun
-import sounds
-import find_img
+from t import sounds
 import find_img as find
 
 

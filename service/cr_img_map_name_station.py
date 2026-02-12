@@ -1,7 +1,7 @@
-import color_text
+import tools.color_text as c_t
 import fun
 import find_img
-import sounds
+from t import sounds
 
 
 def img_map_name():
@@ -129,9 +129,9 @@ def check_img(*, name=None):
         pos = fun.locCenterImg(img_check, confidence=0.99)
         if pos:
             # fun.Mouse.move(pos=pos, speed=1)
-            print(color_text.tc_green('Найден'))
+            print(c_t.tc_green('Найден'))
         else:
-            print(color_text.tc_red('не найден'))
+            print(c_t.tc_red('не найден'))
     return
 
 

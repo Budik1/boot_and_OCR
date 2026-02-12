@@ -10,9 +10,11 @@ from time import sleep, time
 import tools
 import find_img
 import fun_down
-import color_text
+import tools.color_text as c_t
 import heroes
 from baza import baza_dannyx as b_d
+from baza import baza_paths as b_p
+import os_action
 
 
 par_conf = 0.79
@@ -63,15 +65,7 @@ def wait_and_stop_img(*, name_img, region: tuple[int, int, int, int] | None = No
     return img_1
 
 
-# ================ 07.02.2026
-# def mouse_left_click(*, pos, message=False):
-#     my_log_file('')
-#     my_log_file(f'fun.mouse_left_click {pos=}')
-#     if message:
-#         print(f'fun.mouse_left_click {message=} {pos=}')
-#     sounds.click_mouse()
-#     pyautogui.hotkey('Ctrl')
-#     pyautogui.click(pos)
+
 
 
 class Mouse:
@@ -186,8 +180,10 @@ def my_log_file(text):
     date_ = tools.date_now()
     time_ = tools.time_now()
     date_time = f'{date_} {time_}'
+    path_file = b_p.log_path
+    os_action.create_folder(path=path_file)
     file_name = date_ + ".txt"
-    file_1 = open('log/' + str(file_name), 'a+', encoding='utf-8')
+    file_1 = open('txt/log/' + str(file_name), 'a+', encoding='utf-8')
     try:
         # print = print()
         builtins.print(date_time, text, file=file_1)
@@ -281,7 +277,7 @@ def push_close(speed_mouse=0.75, event=''):
     pos_close = find_img.find_close()
     # print(f'fun.push_close {pos_close=}')
     if pos_close:
-        event_mes = color_text.tc_cyan(f'{event}')
+        event_mes = c_t.tc_cyan(f'{event}')
         my_log_file(f'')
         my_log_file(f'fun.push_close {event_mes} {pos_close=}')
         print(f'fun.push_close {event_mes} {pos_close=}')
@@ -659,14 +655,14 @@ def selection_hero(*, show_name=True):
     hero = None
     if hero_gadya:
         if show_name:
-            print(color_text.tc_yellow('Гадя'))
+            print(c_t.tc_yellow('Гадя'))
         hero = 'Gady'
         heroes.hero_activ_name = 'Gady'
         heroes.Activ.name_file_ = 'gady'
         heroes.Activ.hero_activ = heroes.gady
     elif hero_gavr:
         if show_name:
-            print(color_text.tc_yellow('Гавр'))
+            print(c_t.tc_yellow('Гавр'))
         hero = 'Gavr'
         heroes.Activ.hero_activ_name = 'Gavr'
         heroes.Activ.name_file_ = 'gavr'
@@ -681,14 +677,14 @@ def selection_hero(*, show_name=True):
         # heroes.Activ.hero_activ = heroes.veles
     elif hero_mara:
         if show_name:
-            print(color_text.tc_yellow('Мар`яна'))
+            print(c_t.tc_yellow('Мар`яна'))
         hero = 'Mara'
         heroes.Activ.hero_activ_name = 'Mara'
         heroes.Activ.name_file_ = 'mara'
         heroes.Activ.hero_activ = heroes.mara
     else:
         if show_name:
-            print(color_text.tc_red("Невозможно опознать героя!! (("))
+            print(c_t.tc_red("Невозможно опознать героя!! (("))
             print()
 
         heroes.Activ.hero_activ = None
@@ -724,9 +720,9 @@ def verifi_img():
     pos = locCenterImg(name_img=path_img)
     if pos:
         Mouse.move(pos=pos)
-        print(color_text.tc_yellow(f'{path_img} - Найден )) все хорошо'))
+        print(c_t.tc_yellow(f'{path_img} - Найден )) все хорошо'))
     else:
-        print(color_text.tc_red(f'{path_img} - Не найден  !!'))
+        print(c_t.tc_red(f'{path_img} - Не найден  !!'))
     return
 
 
@@ -877,7 +873,7 @@ def rap_explore(*, text, ex=''):
     """
     if ex:
         ex = 'выход'
-    print(color_text.tc_green(f'{text} {ex}'))
+    print(c_t.tc_green(f'{text} {ex}'))
     return
 
 
@@ -900,6 +896,6 @@ def distance(*, pos_upper: tuple, pos_lower: tuple) -> tuple[int, int]:
     my_log_file(f'kv_and_raid.distance')
     x_upper, y_upper = pos_upper
     x_lower, y_lower = pos_lower
-    dist_x = x_lower - x_upper
-    dist_y = y_lower - y_upper
+    dist_x = int(x_lower) - int(x_upper)
+    dist_y = int(y_lower) - int(y_upper)
     return dist_x, dist_y

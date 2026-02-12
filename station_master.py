@@ -1,16 +1,14 @@
 """ Точки для отладки в press_en()"""
 from time import sleep
 
-import color_text
 import fun
-import sounds
 import find_img
 import solid_memory
-import tools
 import create_and_analiz_task_img
 
+import tools
+import tools.color_text as c_t
 import heroes
-import color_text as myCt
 from heroes import Hero, Activ
 
 conf_ = 0.95
@@ -65,7 +63,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     :param tour: Для учета мобов в тоннелях используется True
     :return:
     """
-    print(color_text.tc_green('station_master.enemy_battle'))
+    print(c_t.tc_green('station_master.enemy_battle'))
 
     fun.my_log_file(f'')
     fun.my_log_file('station_master.enemy_battle()')
@@ -105,42 +103,42 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     cycle = False
                     Hero.app_rat(Activ.hero_activ)
 
-                    print(myCt.tc_magenta(f'{Hero.get_qty_grey_rat(Activ.hero_activ)} серая крыса'))
+                    print(c_t.tc_magenta(f'{Hero.get_qty_grey_rat(Activ.hero_activ)} серая крыса'))
                     mob_identified = 'grey_rat'
                 if name1_black_rat and cycle:
                     cycle = False
                     mob_identified = 'black_rat'
 
-                    print(myCt.tc_magenta('черная крыса'))
+                    print(c_t.tc_magenta('черная крыса'))
                 if name1_white_rat and cycle:
                     cycle = False
                     # увеличение счетчика
                     Hero.app_white_rat(Activ.hero_activ)
                     mob_identified = 'white_rat'
 
-                    print(myCt.tc_magenta(f'{Hero.get_qty_white_rat(Activ.hero_activ)} белая крыса'))
+                    print(c_t.tc_magenta(f'{Hero.get_qty_white_rat(Activ.hero_activ)} белая крыса'))
                     print(tools.report_white_rat(hero=Activ.hero_activ))
                 if name1_sand_rat and cycle:
                     cycle = False
                     mob_identified = 'sand_rat'
 
-                    print(myCt.tc_magenta('песчаная крыса'))
+                    print(c_t.tc_magenta('песчаная крыса'))
                 if name2_spy and cycle:
                     cycle = False
                     mob_identified = 'spy'
 
-                    print(myCt.tc_magenta('шпион пойман'))
+                    print(c_t.tc_magenta('шпион пойман'))
                 if name3_smuggler and cycle:
                     cycle = False
                     mob_identified = 'smuggler'
 
-                    print(myCt.tc_magenta('контрабандист пойман'))
+                    print(c_t.tc_magenta('контрабандист пойман'))
                 if name4_arachne and cycle:
                     cycle = False
                     if tour:
                         Hero.app_arachne(Activ.hero_activ)
 
-                    print(myCt.tc_magenta(f'{Hero.get_qty_arachne(Activ.hero_activ)} арахна'))
+                    print(c_t.tc_magenta(f'{Hero.get_qty_arachne(Activ.hero_activ)} арахна'))
                     mob_identified = 'arachne'
 
                 if name5_wildman and cycle:
@@ -155,7 +153,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     if tour:
                         Hero.app_kiki(Activ.hero_activ)
 
-                    print(myCt.tc_magenta(f'{Hero.get_qty_kiki(Activ.hero_activ)} кикимора'))
+                    print(c_t.tc_magenta(f'{Hero.get_qty_kiki(Activ.hero_activ)} кикимора'))
                     mob_identified = 'kikimora'
 
                 if name7_raptor and cycle:
@@ -163,7 +161,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     if tour:
                         Hero.app_raptor(Activ.hero_activ)
 
-                    print(myCt.tc_magenta(f'{Hero.get_qty_raptor(Activ.hero_activ)} ящер'))
+                    print(c_t.tc_magenta(f'{Hero.get_qty_raptor(Activ.hero_activ)} ящер'))
                     mob_identified = 'raptor'
                 # нужен ли тут этот блок?
                 name1_grey_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_grey_rat.png', confidence=conf_mobs)
@@ -256,11 +254,11 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
         skip_battle1_end_ver = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
         fun.my_log_file(f'{skip_battle1_end_ver=}')
     if arena:
-        print(color_text.tc_green(f'выход из station_master.enemy_battle" {result}'))
+        print(c_t.tc_green(f'выход из station_master.enemy_battle" {result}'))
         fun.my_log_file(f'выход из station_master.enemy_battle" {result}')
     else:
-        print(color_text.tc_green(f'выход из station_master.enemy_battle"'))
-        solid_memory.save_all_state_config(info=False)
+        print(c_t.tc_green(f'выход из station_master.enemy_battle"'))
+        solid_memory.save_all_state_config_json(info=False)
         fun.my_log_file("выход из station_master.enemy_battle")
     return result
 
@@ -277,7 +275,7 @@ def press_en(*, task_number, pos, value_energy):  #
     """
     fun.my_log_file(f'')
     fun.my_log_file("station_master.press_en()")
-    print(color_text.tc_green(f'station_master.press_en'))
+    print(c_t.tc_green(f'station_master.press_en'))
     global energy_availability, conf_
     x = pos[0] - 100
     y = pos[1] - 20
@@ -302,12 +300,9 @@ def press_en(*, task_number, pos, value_energy):  #
         if value_energy == 7:
             Hero.app_raptor(Activ.hero_activ)
 
-        # print(f'{Activ.station_activ=}')
-
-        ## Выполняю {3} задание,{ conf_=0.94}. Сейчас {3}, сегодня 20, всего 120
         tools.display_report_energy_now(vers_in_print=vers_in_print,
                                                   value_energy=value_energy)
-        solid_memory.save_all_state_config(info=False)
+        solid_memory.save_all_state_config_json(info=False)
         # Жду появления кнопки "пропустить бой"
         wait_skip_battle_button()
         #
@@ -343,7 +338,7 @@ def task_analysis(img1, img2, region):
     :return: Point, int | None
     """
     fun.my_log_file('station_master.task_analysis()')
-    print(color_text.tc_green(f'station_master.task_analysis'))
+    print(c_t.tc_green(f'station_master.task_analysis'))
     global variable
     # fun.push_close_all_()
     fun.vizit_to_station_master()
@@ -362,7 +357,7 @@ def task_analysis(img1, img2, region):
 
 
 def move(pos , message=True, message_l=None):
-    print(color_text.tc_green(f'station_master.move'))
+    print(c_t.tc_green(f'station_master.move'))
     fun.my_log_file('station_master.move()')
     if message:
         print(f'station_master.move() {pos=}')
@@ -374,7 +369,7 @@ def move(pos , message=True, message_l=None):
 def station_task_list():
     """ Получение списка заданий """
     fun.my_log_file("station_master.station_task_list()")
-    print(color_text.tc_green(f'station_master.station_task_list()'))
+    print(c_t.tc_green(f'station_master.station_task_list()'))
     station = fun.loc_now()
     task_list = (station[4])
     return task_list
@@ -382,7 +377,7 @@ def station_task_list():
 
 def option_task_money():
     fun.my_log_file(f"station_master.option_task_money()")
-    print(color_text.tc_green(f'station_master.option_task_money()'))
+    print(c_t.tc_green(f'station_master.option_task_money()'))
 
     # print('station_master.option_task_money')
     global energy_availability, number_tasks  # , conf_
@@ -449,11 +444,11 @@ def option_task_money():
             # получение картинки
             print('Попытка прочитать аппаратно')
             analiz = create_and_analiz_task_img.search_and_create_img_best_offer(person_identified=True)
-            # print(f'{analiz=}')
+
             conf_ = 0.95
             if not analiz:
                 create_and_analiz_task_img.get_screenshot_task_big()
-                print(myCt.tc_cyan('задания не найдены, результаты "D:\\bot in br\\testOCR\\img\\test\\test_tasks\\test big tasks" '))
+                print(c_t.tc_cyan('Для ручного выбора результат "D:\\bot in br\\testOCR\\img\\test\\test_tasks\\test big tasks" '))
                 number_tasks = 1
                 energy_availability = 0
                 return
@@ -469,7 +464,7 @@ def option_task_money():
 def task_pos_item(task_num):
     """ Выбор по позиции задания """
     fun.my_log_file(f"station_master.task_pos_item({task_num=})")
-    print(color_text.tc_green(f'station_master.task_pos_item({task_num=})'))
+    print(c_t.tc_green(f'station_master.task_pos_item({task_num=})'))
     fun.selection_hero()
     list_location = fun.loc_now()
     heroes.Activ.station_activ = list_location[0]
@@ -486,7 +481,7 @@ def task_pos_item(task_num):
         # fun.push_close_all_(speed_mouse=0.75)
         fun.vizit_to_station_master()
         press_en(task_number=task_num, pos=region, value_energy=1)
-    print(myCt.tc_green(' Задания выполнены'))
+    print(c_t.tc_green(' Задания выполнены'))
     number_tasks = 1
     energy_availability = 1
     close = fun.locCenterImg(name_img='img/overall/close.png', confidence=0.9)

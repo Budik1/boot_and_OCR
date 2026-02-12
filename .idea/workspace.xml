@@ -4,89 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="05.02.2026">
-      <change afterPath="$PROJECT_DIR$/baza/variables.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/config.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/t/baza_dannyx.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/t/baza_paths.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/t/complex_phrases.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/color_text.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/sound/3a58f7b631d307f.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/sound/attack_warning_general.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/sound/bird.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/sound/fail.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/sound/fresh.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/sound/hurry_up.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/sound/mixkit-mouse-click-close-1113.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/sound/mouse-click.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/sound/mouse-click_g16wlmno.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/sound/relic.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/sound/success.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/sound/victory.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/sound/yagnenok.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/sound/zvuk4.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/sounds.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/word_processing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/txt/daily event.py" afterDir="false" />
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="Созданы пакеты">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis_scale.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis_scale.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baza_dannyx.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baza_paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/baza_paths.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/complex_phrases.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baza/baza_paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/baza_paths.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/color_text.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/config.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config_kv.json" beforeDir="false" afterPath="$PROJECT_DIR$/config_kv.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cr_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cr_img_dva.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img_dva.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create_and_analiz_task_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_and_analiz_task_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/event_arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_arena.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fun_areas.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun_areas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fun_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun_events.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/arena/gady/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/gady/arena_object.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/arena/gady/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/gady/object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_gady/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_gady/t2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_gady/t3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_gady/t3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_gady/t4.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_gady/t4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_gady/t5.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/station_master/tasks_gady/t5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/temp/tasks1_pul.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/temp/tasks1_pul.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/temp/tasks1_xp.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/temp/tasks1_xp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/temp/tasks2_pul.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/temp/tasks2_pul.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/temp/tasks2_xp.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/temp/tasks2_xp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/temp/tasks3_pul.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/temp/tasks3_pul.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/temp/tasks3_xp.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/temp/tasks3_xp.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kv_config2.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/make_stereotype_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/make_stereotype_ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mod_wold.py" beforeDir="false" afterPath="$PROJECT_DIR$/t/mod_wold.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_funk/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_funk/fun_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/baza_dannyx.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_funk/fun_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/phrases_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/os_action.py" beforeDir="false" afterPath="$PROJECT_DIR$/os_action.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/person.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/req.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/req.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/revision_tents.py" beforeDir="false" afterPath="$PROJECT_DIR$/revision_tents.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/cr_img_map_name_station.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/cr_img_map_name_station.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/cr_nam_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/cr_nam_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solid_memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/solid_memory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/3a58f7b631d307f.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/attack_warning_general.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/bird.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/fail.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/fresh.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/hurry_up.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/mixkit-mouse-click-close-1113.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/mouse-click.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/mouse-click_g16wlmno.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/relic.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/success.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/victory.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/yagnenok.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/zvuk4.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds.py" beforeDir="false" afterPath="$PROJECT_DIR$/sounds.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/t/a_test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/t/a_test1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/t/a_serial_scrin_for_pm.py" beforeDir="false" afterPath="$PROJECT_DIR$/t/a_serial_scrin_for_pm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/t/baza_dannyx.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/t/baza_paths.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/t/complex_phrases.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/t/img_stat_kv.py" beforeDir="false" afterPath="$PROJECT_DIR$/t/img_stat_kv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/t/mod_wold.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/t/картинки_маяки_для_браузера.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 22-12-30.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 22-12-41.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 22-52-45.json" beforeDir="false" />
@@ -135,7 +84,6 @@
       <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-41-14.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-42-32.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-42-52.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/config.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/temp_pack/config2026-02-01.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/temp_pack/config2026-02-02.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/temp_pack/config2026-02-03.json" beforeDir="false" />
@@ -143,16 +91,10 @@
       <change beforePath="$PROJECT_DIR$/temp_pack/config_2026-02-04 22-11-37.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/temp_pack/config_kv_2026-02-04.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/temp_pack/config_kv_2026-02-05.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/sample.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tool_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/tool_win.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tools/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/work_with_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/time_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/phrases_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/phrases_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/библиотеки.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/библиотеки.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/заметки.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/заметки.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/инфо станций.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/инфо станций.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/команды гит.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/команды гит.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/основная линия.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/основная линия.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txt/daily event.py" beforeDir="false" afterPath="$PROJECT_DIR$/txt/daily event.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,10 +234,10 @@
       <recent name="C:\python\bot_ocr1\stereotypes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\python\bot_ocr1\txt" />
-      <recent name="C:\python\bot_ocr1\baza" />
       <recent name="C:\python\bot_ocr1\t" />
       <recent name="C:\python\bot_ocr1" />
+      <recent name="C:\python\bot_ocr1\txt" />
+      <recent name="C:\python\bot_ocr1\baza" />
       <recent name="C:\python\bot_ocr1\service" />
     </key>
   </component>
@@ -403,11 +345,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/t" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="C:\python\bot_ocr1\t\tempo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tempo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testOCR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/t" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\python\bot_ocr1\tempo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -442,9 +406,9 @@
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.tempo (1)" />
+        <item itemvalue="Python.tempo (1)" />
+        <item itemvalue="Python.tempo (1)" />
         <item itemvalue="Python.make_stereotype_ui" />
-        <item itemvalue="Python.tempo" />
-        <item itemvalue="Python.analysis_scale" />
       </list>
     </recent_temporary>
   </component>
@@ -568,7 +532,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770252748065</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Созданы пакеты">
+      <option name="closed" value="true" />
+      <created>1770531952623</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1770531952623</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -595,7 +567,8 @@
     <MESSAGE value="09.01.26 touring.py дополнен словарь переводчика содержимого подарков на станциях. station_master.py Добавлен аппаратный анализ заданий. gift_station_service.py изменен адрес сохранения. create_and_analiz_task_img.py рефакторинг для лучшего чтения." />
     <MESSAGE value="11.01.26 рефакторинг event_arena.py" />
     <MESSAGE value="05.02.2026" />
-    <option name="LAST_COMMIT_MESSAGE" value="05.02.2026" />
+    <MESSAGE value="Созданы пакеты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Созданы пакеты" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -617,52 +590,52 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>91</line>
+          <line>90</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/touring.py</url>
-          <line>202</line>
+          <line>201</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>183</line>
+          <line>181</line>
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>146</line>
+          <line>136</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>287</line>
+          <line>285</line>
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>45</line>
+          <line>42</line>
           <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
-          <line>114</line>
+          <line>111</line>
           <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/service/cr_nam_img.py</url>
-          <line>165</line>
+          <line>164</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>75</line>
+          <line>73</line>
           <option name="timeStamp" value="136" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cr_img.py</url>
-          <line>100</line>
+          <line>99</line>
           <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -672,22 +645,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fun.py</url>
-          <line>537</line>
+          <line>533</line>
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>348</line>
+          <line>343</line>
           <option name="timeStamp" value="149" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>418</line>
+          <line>413</line>
           <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>647</line>
+          <line>595</line>
           <option name="timeStamp" value="151" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -699,6 +672,15 @@
           <url>file://$PROJECT_DIR$/../../p s nout/bot in br/testOCR/solid_memory.py</url>
           <line>126</line>
           <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/t/a_serial_scrin_for_pm.py</url>
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/solid_memory.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="155" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

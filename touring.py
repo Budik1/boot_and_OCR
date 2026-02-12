@@ -7,9 +7,8 @@ from pyscreeze import Point
 from t import gift_station_service
 import fun
 import heroes
-import color_text
+import tools.color_text as c_t
 import solid_memory
-# import sounds
 import station_master
 import tools
 import find_img
@@ -58,7 +57,7 @@ def bypass_len():
 
     bypass_temp.append(location_station[0])
     bypass = set(bypass_temp)
-    print(len(bypass))
+    # print(len(bypass))
     heroes.Hero.set_bypass_set(heroes.Activ.hero_activ, value_set=bypass)
 
 
@@ -67,7 +66,7 @@ def event_gifts():
     Поиск подарков на станции. Возвращает его позицию
     """
     bypass_len()
-    print(color_text.tc_green('touring.event_gifts'))
+    print(c_t.tc_green('touring.event_gifts'))
     fun.my_log_file(f'')
     fun.my_log_file('touring.event_gifts')
     sleep(1)
@@ -78,7 +77,7 @@ def event_gifts():
     fun.my_log_file(f'pos_gift = {pos_gift}')
     if pos_gift:
         Hero.app_gifts(Activ.hero_activ)
-        solid_memory.save_all_state_config(info=False)
+        solid_memory.save_all_state_config_json(info=False)
         # print(name_st, ' подарков ' , Hero.get_qty_gift(Activ.hero_activ))
         # x, y = pos_gift
         fun.Mouse.move(pos=pos_gift, speed=0.5, log=True, message_l='подарок найден')
@@ -127,14 +126,14 @@ def event_gifts():
         fun.Mouse.move(pos=close, speed=1, log=True, message_l='нажал закрыть окно "подарок"')
         fun.Mouse.left_click(pos=close, message=True, message_l='нажал закрыть окно "подарок"')
 
-        print(color_text.tc_green('touring.event_gifts выход'))
+        print(c_t.tc_green('touring.event_gifts выход'))
     return pos_gift
 
 
 def open_map():
     """Из окна станции открывает карту. На Тургеневской выход смещен"""
     print()
-    print(color_text.tc_green('touring.open_map'))
+    print(c_t.tc_green('touring.open_map'))
     fun.my_log_file(f'')
     fun.my_log_file('touring.open_map')
     location_station = fun.loc_now()
@@ -172,7 +171,7 @@ def open_map():
     # Убрать курсор с поля карты, чтобы ничего не перекрыл
     station_exit = fun.wait_static_pos(name_img='img/tonelli/station_exit.png')
     fun.Mouse.move(pos=station_exit, speed=0.1)
-    print(color_text.tc_green('touring.open_map выход'))
+    print(c_t.tc_green('touring.open_map выход'))
     return
 
 
@@ -183,7 +182,7 @@ def events_tunnel(name_st, st_id_file):
     :param st_id_file: имя файла ID станции
     """
     print()
-    print(color_text.tc_green('touring.events_tunnel'))
+    print(c_t.tc_green('touring.events_tunnel'))
     fun.my_log_file('touring.events_tunnel')
     fun.selection_hero(show_name=False)
 
@@ -247,7 +246,7 @@ def events_tunnel(name_st, st_id_file):
     else:
         print(name_st)  # название станции
     print()
-    print(color_text.tc_green(f'touring.events_tunnel выход'))
+    print(c_t.tc_green(f'touring.events_tunnel выход'))
     return
 
 
@@ -260,7 +259,7 @@ def poisk(search_object: str, param_confidence: float = 0.99) -> tuple[Point, fl
     :return:
     """
     print()
-    print(color_text.tc_green('touring.poisk'))
+    print(c_t.tc_green('touring.poisk'))
     fun.my_log_file('touring.poisk')
     sleep(1)
     pos_search = fun.locCenterImg(name_img=search_object, confidence=param_confidence)
@@ -270,7 +269,7 @@ def poisk(search_object: str, param_confidence: float = 0.99) -> tuple[Point, fl
         pos_search = fun.locCenterImg(name_img=search_object, confidence=param_confidence)
         # print(pos_search)
     print()
-    print(color_text.tc_green('touring.poisk выход'))
+    print(c_t.tc_green('touring.poisk выход'))
     return pos_search, param_confidence
 
 
@@ -283,7 +282,7 @@ def traffic_on_the_map(stan: list) -> None:
     :return: None
     """
     print()
-    print(color_text.tc_green('touring.traffic_on_the_map'))
+    print(c_t.tc_green('touring.traffic_on_the_map'))
     fun.my_log_file('touring.traffic_on_the_map')
     open_map()
     # sleep(1 * 2)
@@ -317,7 +316,7 @@ def traffic_on_the_map(stan: list) -> None:
     fun.Mouse.move_to_click(pos_click=next_station, move_time=0.2, z_p_k=0.3)
     events_tunnel(stan[0], stan[2])
     print()
-    print(color_text.tc_green('touring.traffic_on_the_map выход'))
+    print(c_t.tc_green('touring.traffic_on_the_map выход'))
     return
 
 
@@ -328,13 +327,13 @@ def travel(path_list: list) -> None:
     :return:
     """
     print()
-    print(color_text.tc_green('touring.travel'))
+    print(c_t.tc_green('touring.travel'))
     fun.my_log_file('touring.travel')
     for it in range(len(path_list)):
         k = it % len(path_list)
 
         traffic_on_the_map(path_list[k])
-    print(color_text.tc_green('touring.travel выход'))
+    print(c_t.tc_green('touring.travel выход'))
     return
 
 
@@ -344,7 +343,7 @@ def move_to_target(*, target_point, rapport=True):
     :param target_point: имя станции, например - 'ст. Чеховская'
     """
     print()
-    print(color_text.tc_green('touring.move_to_target'))
+    print(c_t.tc_green('touring.move_to_target'))
     # определяю героя
     her = fun.selection_hero()  #
     # while not her:
@@ -352,7 +351,7 @@ def move_to_target(*, target_point, rapport=True):
     #     fun.Mouse.move_to_click(pos_click=close)
     #     her = fun.selection_hero()
     if not her:
-        print(color_text.tc_yellow('Этот НИКТО никуда не пойдет)))'))
+        print(c_t.tc_yellow('Этот НИКТО никуда не пойдет)))'))
         return
     home_location = Hero.get_home_location(Activ.hero_activ)
     # print(home_location)
@@ -371,23 +370,23 @@ def move_to_target(*, target_point, rapport=True):
     # если указано 'домой'
     if target_point == 'домой':
         target_point = Hero.get_home_location(Activ.hero_activ)
-        mess = color_text.tc_cyan('своей палатке')
+        mess = c_t.tc_cyan('своей палатке')
     else:
-        mess = color_text.tc_cyan(target_point)
+        mess = c_t.tc_cyan(target_point)
     print(f'Прокладываю маршрут к {mess}')
 
     # получаю маршрут
     if start_point != 'станция не опознана':
         route_list = create_route_list(start=start_point, stop=target_point)
     else:
-        print(color_text.tc_red('no start_point'))
+        print(c_t.tc_red('no start_point'))
         return
 
     # движение по маршруту
     travel(path_list=route_list)
     if rapport:
         print(f'Пришел на {target_point}')
-    print(color_text.tc_green('touring.move_to_target выход'))
+    print(c_t.tc_green('touring.move_to_target выход'))
     return
 
 

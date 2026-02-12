@@ -8,7 +8,7 @@ from PIL import ImageTk
 
 from baza import baza_dannyx as b_d
 from baza import baza_paths as b_p
-import color_text
+import tools.color_text as c_t
 import fun
 import fun_events
 import heroes
@@ -31,16 +31,15 @@ fun.my_log_file('')
 
 heroes.Activ.date_utc_now = tools.date_utc_now()
 
-
-screen_width, screen_height = fun.screen_size() # получение разрешения экрана
-right_indent = 50 # отступ от правого края экрана
-top_indent = 50 # отступ от верхнего края экрана
+screen_width, screen_height = fun.screen_size()  # получение разрешения экрана
+right_indent = 50  # отступ от правого края экрана
+top_indent = 50  # отступ от верхнего края экрана
 
 width_root = b_d.lst_columns_root[-1] + 73  # Ширина окна Tk
 height_root = b_d.line9 + b_d.height_line + 2  # Высота окна Tk
 
-position_y_root = top_indent # отступ от верхнего края экрана для окна root
-position_x_root = screen_width - width_root - right_indent # отступ от правого края экрана для окна root
+position_y_root = top_indent  # отступ от верхнего края экрана для окна root
+position_x_root = screen_width - width_root - right_indent  # отступ от правого края экрана для окна root
 
 width_tool = width_root
 height_tool = height_root
@@ -51,81 +50,73 @@ position_x_tool = position_x_root
 def start_prog():
     state_file = solid_memory.reading_all_state_config()
     if state_file:
-        # print(tc_green('установка значений из файла'))
         try:
             solid_memory.setting_updatable_values()
-            # print(heroes.Activ.result_load)
         except KeyError:
-            print(color_text.tc_red('KeyError'))
+            print(c_t.tc_red('KeyError, Ошибка ключа в словаре сохранения'))
         except Exception as cod:
-            print(color_text.tc_red(f'Не понятно что произошло в updatable)). Код ошибки {cod}'))
+            print(c_t.tc_red(f'Не понятно что произошло в updatable)). Код ошибки {cod}'))
 
         try:
             solid_memory.setting_cumulative_values()
-            # print(heroes.Activ.result_load)
         except KeyError:
-            print(color_text.tc_red('KeyError'))
+            print(c_t.tc_red('KeyError, Ошибка ключа в словаре сохранения'))
         except Exception as cod:
-            print(color_text.tc_red(f'Не понятно что произошло в cumulative )). Код ошибки {cod}'))
+            print(c_t.tc_red(f'Не понятно что произошло в cumulative )). Код ошибки {cod}'))
 
         displaying_values(info=False)
     else:
         displaying_values()
+    # Чистка устаревших файлов и папок
+    print()
+    check_list_directory1 = b_p.check_list_directory
+    check_list_file = []
+    for directory in check_list_directory1:
+        check_list = os_action.get_lst_files(path=directory)
+        check_list_file += check_list
+    set_check_file = set(check_list_file)
+    os_action.check_files(old_day=10, check_list_file=set_check_file)
+    check_list_file2 = os_action.get_lst_files(path='temp_pack')
+    os_action.check_files(old_day=5, check_list_file=check_list_file2)
+    os_action.deleting_empty_folders(path='temp_pack')
     # вывод инфо состояния
     tools.display_smol_report_wildman()
     tools.display_info_energy_all()
-    # удаление файлов старше 10 дней
-    check_list_directory1 = b_p.check_list_directory
-    check_list_directory2 = []
-    lst = os.listdir('temp_pack')
-    for i in lst:
-        if not '.' in  i:
-            check_list_directory2.append(f'temp_pack/{i}/')
-
-    os_action.check_files(old_day=10, check_list_directory=check_list_directory1)
-    os_action.check_files(old_day=10, check_list_directory=check_list_directory2)
     return
 
 
 def displaying_values(info=True):
     if info:
-        solid_memory.save_all_state_config(info=True)
+        solid_memory.save_all_state_config_json(info=True)
     else:
-        solid_memory.save_all_state_config(info=False)
+        solid_memory.save_all_state_config_json(info=False)
 
     gady_rat.set(heroes.gady.white_rat_now)
     gavr_rat.set(heroes.gavr.white_rat_now)
-    # veles_rat.set(heroes.veles.grey_rat)
     mara_rat.set(heroes.mara.white_rat_now)
 
     gady_kiki.set(heroes.gady.kiki)
     gavr_kiki.set(heroes.gavr.kiki)
-    # veles_kiki.set(heroes.veles.kiki)
     mara_kiki.set(heroes.mara.kiki)
 
     gady_arachne.set(heroes.gady.arachne)
     gavr_arachne.set(heroes.gavr.arachne)
-    # veles_arachne.set(heroes.veles.arachne)
     mara_arachne.set(heroes.mara.arachne)
 
     gady_raptor.set(heroes.gady.raptor)
     gavr_raptor.set(heroes.gavr.raptor)
-    # veles_raptor.set(heroes.veles.raptor)
     mara_raptor.set(heroes.mara.raptor)
 
     gady_gift.set(heroes.gady.holiday_gift)
     gavr_gift.set(heroes.gavr.holiday_gift)
-    # veles_gift.set(heroes.veles.holiday_gift)
     mara_gift.set(heroes.mara.holiday_gift)
 
     gavr_vip.set(heroes.gavr.vip)
     gady_vip.set(heroes.gady.vip)
-    # veles_vip.set(heroes.veles.vip)
     mara_vip.set(heroes.mara.vip)
 
     gady_wild.set(heroes.gady.wildman)
     gavr_wild.set(heroes.gavr.wildman)
-    # veles_wild.set(heroes.veles.wildman)
     mara_wild.set(heroes.mara.wildman)
 
 
@@ -185,9 +176,6 @@ def tent_inspection():
             if hero == 'Mara':
                 vip_case_all += revision_tents.tent_raid()
                 heroes.mara.vip = vip_case_all
-            # if hero == 'Велес':
-            #     vip_case_all += revision_tents.tent_raid()
-            #     heroes.veles.vip = vip_case_all
             it_revision += 1
             print(f'{vip_case_all} из {it_revision} осмотренных')
             fun.move_friends_list_left()
@@ -199,8 +187,6 @@ def tent_inspection():
                     heroes.gavr.vip = vip_case_all
                 if hero == 'Mara':
                     heroes.mara.vip = vip_case_all
-                # if hero == 'Велес':
-                #     heroes.veles.vip = vip_case_all
         revision_tents.end_raid()
         displaying_values(info=False)
         return
@@ -229,23 +215,19 @@ def wild():
     hero = fun.selection_hero(show_name=False)
     if hero:
         heroes.Hero.app_wildman_days_count(heroes.Activ.hero_activ)
-        # print(Hero.get_days_count_wildman(Activ.hero_activ))
     else:
         print('герой не опознан')
         return
     touring.for_wilds()
     fun.work()
-    # Hero.a
     displaying_values(info=False)
 
 
 def wild_kiki():
     start_time = time()
-
     hero = fun.selection_hero()
     if hero:
         heroes.Hero.app_wildman_days_count(heroes.Activ.hero_activ)
-        # print(Hero.get_days_count_wildman(Activ.hero_activ))
     else:
         print('герой не опознан')
         return
@@ -272,7 +254,6 @@ def collecting_gifts_at_stations():
         # движение по маршруту
         touring.sbor_podarkov(bypass_hero)
         # получение количества станций на маршруте
-        # len_bypass = fun.get_len_bypass(bypass_hero)
         len_bypass = len(heroes.Hero.get_bypass_set(heroes.Activ.hero_activ))
         # получение количества собранных подарков
         q_gifts = heroes.Hero.get_qty_gift(heroes.Activ.hero_activ)
@@ -343,7 +324,6 @@ def save_home_point():
     location = fun.loc_now()[0]
     mes = F'Твой адрес - {address} .\nНовый адрес {location}. Сохранить?'
     answer = messagebox.askyesno(title='Паспортист ))', message=mes)
-    # print(f'{type(answer)}, {answer=}')
     if answer:
         heroes.Hero.setting_home(heroes.Activ.hero_activ, location)
     displaying_values(info=True)
@@ -358,11 +338,9 @@ def save_date_up():
         corr_date_form = lst_lvl_up_date
     else:
         corr_date_form = lst_lvl_up_date[::-1]
-    # print(corr_date_form, heroes.Activ.date_utc_now)
     if corr_date_form == heroes.Activ.date_utc_now:
         mes = 'Дата сегодня уже обновлена'
         answer = messagebox.showinfo(title='lvlup', message=mes)
-        # print(f'{type(answer)}, {answer=}')
     else:
         if lvl_up_date == '':
             mes = 'Последней записи нет. Запишем?'
@@ -370,7 +348,6 @@ def save_date_up():
             mes = f'Последняя запись {lvl_up_date}.\nПерезаписать дату?'
         answer = messagebox.askyesno(title='lvlup', message=mes)
     if answer and answer != 'ok':
-        # print(f'{type(answer)}, {answer=}')
         save_date_lst = (heroes.Activ.date_utc_now.split('-'))[::-1]
         save_date_str = '-'.join(save_date_lst)
         heroes.Hero.set_up_date(heroes.Activ.hero_activ, value=save_date_str)
@@ -390,13 +367,13 @@ def timer():
     # gady =============================================
     # Получить таймер
     tim_gady = int(heroes.Hero.get_time_entree(heroes.gady) - time())
-    # Если не 0:
+    # Если не 0 создать строку таймера
     if tim_gady > 0:
         hours = tim_gady // 3600
         minutes = (tim_gady - hours * 3600) // 60
         seconds = tim_gady % 60
         tim_gady -= 1
-        #   Создать строку таймера
+        #
         text_timer = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
     else:
         text_timer = ''
@@ -424,7 +401,6 @@ def timer():
         timer_gady_label.config(font=("Helvetica", 12))
     timer_gady_label.config(text=timer_label_text)
     # ==================================================
-
     # gavr =============================================
     # Получить таймер
     tim_gavr = int(heroes.Hero.get_time_entree(heroes.gavr) - time())
@@ -462,17 +438,6 @@ def timer():
         timer_gavr_label.config(font=("Helvetica", 12))
     timer_gavr_label.config(text=timer_label_text)
     # ==================================================
-
-    # tim_veles = int(heroes.Hero.get_time_entree(heroes.veles) - time())
-    # if tim_veles > 0:
-    #     hours = tim_veles // 3600
-    #     minutes = (tim_veles - hours * 3600) // 60
-    #     seconds = tim_veles % 60
-    #     tim_veles -= 1
-    #     timer_veles_label.config(text=f"{hours:02d}:{minutes:02d}:{seconds:02d}")
-    # else:
-    #     timer_veles_label.config(text="00:00:00")
-
     # ==================================================
     # Получить таймер
     tim_mara = int(heroes.Hero.get_time_entree(heroes.mara) - time())
@@ -482,7 +447,7 @@ def timer():
         minutes = (tim_mara - hours * 3600) // 60
         seconds = tim_mara % 60
         tim_mara -= 1
-    #   Создать строку таймера
+        #   Создать строку таймера
         text_timer = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
     else:
         text_timer = ''
@@ -495,7 +460,7 @@ def timer():
         number_days = tools.dif_days(date_old=date_up, date_today=date_today)
     #   иначе:
     else:
-    #   количество прошедших дней = 0
+        #   количество прошедших дней = 0
         number_days = 0
     # Создать строку в виде
     # если строка таймера не пуста:
@@ -505,28 +470,11 @@ def timer():
         timer_mara_label.config(font=("Helvetica", 10))
     #   иначе:
     else:
-    #       количество дней
+        #       количество дней
         timer_label_text = f'{number_days} day'
         timer_mara_label.config(font=("Helvetica", 12))
     timer_mara_label.config(text=timer_label_text)
     # ==================================================
-
-    # if tim_mara > 0:
-    #     hours = tim_mara // 3600
-    #     minutes = (tim_mara - hours * 3600) // 60
-    #     seconds = tim_mara % 60
-    #     tim_mara -= 1
-    #     timer_mara_label.config(text=f"{hours:02d}:{minutes:02d}:{seconds:02d}")
-    # else:
-    #     date_up = heroes.Hero.get_up_date(heroes.mara)
-    #     if date_up:
-    #         date_today = tools.date_utc_now()
-    #         number_days = tools.dif_days(date_old=date_up, date_today=date_today)
-    #         msg = f'{number_days} day'
-    #         timer_mara_label.config(text=msg)
-    #     else:
-    #         timer_mara_label.config(text="00:00:00")
-
 
     tim = int(time())
     # hours_now = tim // 3600
@@ -542,21 +490,21 @@ def set_timer24():
     fun.selection_hero(show_name=False)
     tim_entree = int(time() + b_d.timer24)  #
     heroes.Hero.set_time_entree(heroes.Activ.hero_activ, tim_entree)
-    solid_memory.save_all_state_config(info=False)
+    solid_memory.save_all_state_config_json(info=False)
 
 
 def set_timer8():
     fun.selection_hero(show_name=False)
     tim_entree = int(time() + b_d.timer8)  #
     heroes.Hero.set_time_entree(heroes.Activ.hero_activ, tim_entree)
-    solid_memory.save_all_state_config(info=False)
+    solid_memory.save_all_state_config_json(info=False)
 
 
 def set_timer1():
     fun.selection_hero(show_name=False)
     tim_entree = int(time() + b_d.timer1)  #
     heroes.Hero.set_time_entree(heroes.Activ.hero_activ, tim_entree)
-    solid_memory.save_all_state_config(info=False)
+    solid_memory.save_all_state_config_json(info=False)
 
 
 def set_param():
@@ -570,9 +518,8 @@ def n_w():
 root = Tk()
 root.title(f' помощник "Метро 2033"')
 
-
-
-root.geometry(f'{width_root}x{height_root}+{position_x_root}+{position_y_root}')  # Ширина x Высота + положение X + положение Y
+root.geometry(
+    f'{width_root}x{height_root}+{position_x_root}+{position_y_root}')  # Ширина x Высота + положение X + положение Y
 root.resizable(False, False)
 
 gavr_vip = StringVar()
@@ -637,7 +584,8 @@ ttk.Button(text='рапорт W', width=12, command=tools.display_report_wildman
 ttk.Button(text='рапорт E', width=12, command=tools.display_info_energy_all).place(x=285, y=b_d.line6)
 
 # ttk.Label(text='            куда пойдем ?', width=21, background='#858585', foreground='#050505').place(x=156, y=b_d.line7)
-ttk.Label(root, text='куда пойдем ?', width=21, background='#858585', foreground='#050505', justify=RIGHT).place(x=156, y=b_d.line7)
+ttk.Label(root, text='куда пойдем ?', width=21, background='#858585', foreground='#050505', justify=RIGHT).place(x=156,
+                                                                                                                 y=b_d.line7)
 
 combobox = ttk.Combobox(textvariable=lang_var, values=box_paths, state="readonly", width=23)
 combobox.place(x=138, y=b_d.line8)
@@ -769,7 +717,8 @@ ttk.Button(root, image=img_e1, command=en_1).place(x=b_d.col_0, y=line_img)
 img_e2 = ImageTk.PhotoImage(file="img/overall/en2v3.png")
 ttk.Button(root, image=img_e2, command=en_2).place(x=b_d.col_0, y=line_img + b_d.height_line + difference_str_img)
 img_e3 = ImageTk.PhotoImage(file="img/overall/en3v3.png")
-ttk.Button(root, image=img_e3, command=en_3).place(x=b_d.col_0, y=line_img + b_d.height_line * 2 + difference_str_img * 2)
+ttk.Button(root, image=img_e3, command=en_3).place(x=b_d.col_0,
+                                                   y=line_img + b_d.height_line * 2 + difference_str_img * 2)
 #
 timer()
 root.mainloop()

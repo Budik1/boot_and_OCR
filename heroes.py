@@ -2,7 +2,7 @@ import time
 
 # import baza_dannyx as b_d
 from baza import baza_dannyx as b_d
-import color_text
+import tools.color_text as c_t
 
 nam = 0  # для подсчета чего?
 temp_min = None
@@ -76,8 +76,8 @@ class Hero:
 
         self.danger = 0
         self.danger_victory = 0
-        self.list_loot_kv = []
-        self.set_dist = set()
+        self.list_loot_kv = list()
+        self.set_dist = list()
         self.bypass_set = set()
 
         self.count_shoulder_straps_all = 0
@@ -108,10 +108,12 @@ class Hero:
         return self.white_rat_count_all
 
     def get_set_dist(self):
-        return self.set_dist
+        lst_set_dist = self.set_dist
+        return lst_set_dist
 
     def set_set_dist(self, value):
-        self.set_dist = value
+        lst_set_dist = list(value)
+        self.set_dist = lst_set_dist
 
     def get_up_date(self):
         return self.lvl_up_date
@@ -136,11 +138,11 @@ class Hero:
             'qty_duel_in_kv_victory': self.qty_duel_in_kv_victory,
             'count_shoulder_straps_all': self.count_shoulder_straps_all,
             'count_shoulder_straps_kv': self.count_shoulder_straps_kv,
-            # 'list_loot': self.list_loot_kv,
-            # 'set_dist': self.set_dist,
+            'list_loot': self.list_loot_kv,
+            'set_dist': self.set_dist,
         }
         # отладка
-        # print(f'вызов {__class__}')
+        # print(f'вызов {__class__} {self.name_id}')
         # конец отладки
         hero_id = Hero.get_id(self)
         list_kv_state[hero_id] = data_to_save
@@ -151,6 +153,7 @@ class Hero:
         hero_id = Hero.get_id(self)
 
         data_kv = list_kv_state[hero_id]
+        # print(data_kv)
         time_now = time.time()
         time_check = data_kv['time_start_kv']
         if (time_now - time_check) < 3 * 3600:
@@ -160,22 +163,22 @@ class Hero:
             self.qty_duel_in_kv_all = data_kv.get('qty_duel_in_kv_all', 0)
             self.qty_duel_in_kv_victory = data_kv.get('qty_duel_in_kv_victory', 0)
             self.count_shoulder_straps_kv = data_kv.get('count_shoulder_straps_kv', 0)
-            self.list_loot_kv = data_kv.get('list_loot', [])
+            self.list_loot_kv = data_kv.get('list_loot', list())
 
         else:
             print('Время старта КВ обновилось')
             self.time_start_kv = time_now
-            self.list_loot_kv = []
+            self.list_loot_kv = list()
 
             self.qty_duel_in_kv_all = 0
             self.qty_duel_in_kv_victory = 0
 
-        self.set_dist = data_kv.get('set_dist', set())
-        self.qty_duel_all_victory = data_kv.get('gady.duel_victory_all', 0)
-        self.qty_duel_all = data_kv.get('gady.duel_all', 0)
-        self.count_shoulder_straps_all = data_kv.get('gady.count_shoulder_straps', 0)
-        if self == Activ.hero_activ:
-            print(f'{self.set_dist=} set_state_kv')
+        self.set_dist = data_kv.get('set_dist', list())
+        self.qty_duel_all_victory = data_kv.get('qty_duel_all_victory', 0)
+        self.qty_duel_all = data_kv.get('qty_duel_all', 0)
+        self.count_shoulder_straps_all = data_kv.get('count_shoulder_straps_all', 0)
+        # if self == Activ.hero_activ:
+            # print(f'{self.set_dist=} set_state_kv')
 
     #
     def get_state_all(self):
@@ -230,7 +233,7 @@ class Hero:
         # print(check_date_, Activ.date_now)
         # print(f'{hero_id=} {check_date_=}, {Activ.date_now=}')
         if check_date_ == Activ.date_utc_now:
-            Activ.result_load = (color_text.tc_blue('Даты совпадают'))
+            Activ.result_load = (c_t.tc_blue('Даты совпадают'))
 
             # мобы
             self.grey_rat = loaded_data.get('grey_rat_k', 0)
@@ -248,7 +251,7 @@ class Hero:
             self.wild_activ = loaded_data.get('wild_activ_k', 0)
             self.holiday_gift = loaded_data.get('holiday_gift_k', 0)
         else:
-            Activ.result_load = color_text.tc_blue('даты не совпадают, смена суток')
+            Activ.result_load = c_t.tc_blue('даты не совпадают, смена суток')
         # print(Activ.result_load)
         # print()
         # print(f'set_updatable_values {self.name_ru}')
@@ -462,7 +465,7 @@ class Hero:
 
     def get_report_wildman_now(self):
         if self.wildman:
-            return f'{color_text.tc_yellow(str(self.wildman))} {color_text.tc_green("за сегодня")}'
+            return f'{c_t.tc_yellow(str(self.wildman))} {c_t.tc_green("за сегодня")}'
         else:
             return f'по дикарям нет данных'  #
 

@@ -34,7 +34,6 @@ def create_big_img_task_line(*, line, value_energy, hero):
     Создание big_img задания нужной строки для OCR
     """
     'img/station_master/tasks_gavr'
-    task_hero: str = f'img/test/test_tasks/task/{hero}'
     path_hero = f'{b_p.task_hero}{hero}'
     # name =
     # смещение скриншота внутри региона

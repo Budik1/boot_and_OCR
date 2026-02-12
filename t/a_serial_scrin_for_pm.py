@@ -1,9 +1,9 @@
 import os
 
-import color_text
+import tools.color_text as c_t
 import find_img
 import fun
-import sounds
+import tools.sounds
 import person
 
 
@@ -17,14 +17,14 @@ def energy_img():
     # name_create_img = 'img/test/token.png'
     # проверить видимость
     list_en = os.listdir('../img/station_master/energy_value')
-    print(color_text.tc_cyan('Проверка'))
+    print(c_t.tc_cyan('Проверка'))
     for img_ in list_en:
         name_img = f'img/station_master/energy_value/{img_}'
         en = fun.locCenterImg(name_img, confidence=0.95)
         if en:
             fun.Mouse.move(pos=pos_mark, speed=1)
             fun.Mouse.move(pos=en, speed=1)
-            print(color_text.tc_green(img_))
+            print(c_t.tc_green(img_))
     # если не видно - создать
     ask = input('Всё увидел (y/n): ')
     if ask == 'y':
@@ -69,7 +69,7 @@ def energy_img():
         x_demo += change_x
         y_demo += change_y
         # fun.Mouse.move(pos=(x_demo, y_demo), speed=0.5)
-        msg = color_text.tc_yellow(f'{name_create_img} создан.')
+        msg = c_t.tc_yellow(f'{name_create_img} создан.')
         print(msg)
         fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
 
@@ -108,7 +108,7 @@ def hero_img():
     fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'{name_create_img}')
     # fun.mouse_move(pos=pos)
-    sounds.sound_vic()
+    tools.sounds.sound_vic()
     print('ok')
     return
 
@@ -234,7 +234,7 @@ def cr_other_img(name_create_img='img/test/token.png'):
             pass
     # pos = fun.locCenterImg(f'{name_create_img}')
     # fun.mouse_move(pos=pos)
-    sounds.sound_vic()
+    tools.sounds.sound_vic()
     # print(f'{name_create_img} сделано')
     # check_img(name=name_create_img)
     return
@@ -293,7 +293,7 @@ def cr_arena_img():
 
 
 def mob_name(name=None):
-    print(color_text.tc_green('cr_name_mob_img.mob_name'))
+    print(c_t.tc_green('cr_name_mob_img.mob_name'))
     skip_battle = fun.locCenterImg('img/overall/skip_battle.png')
     skip_battle1 = fun.locCenterImg('img/skip_battle.png')
     print(f'{skip_battle1=}')
@@ -316,7 +316,7 @@ def mob_name(name=None):
 
 
 def mob_id(name):
-    print(color_text.tc_green('cr_name_mob_img.mob_id'))
+    print(c_t.tc_green('cr_name_mob_img.mob_id'))
     q_print = 1
     con = 0.99
     print(f'поиск {name}')
@@ -476,7 +476,7 @@ def name_id_station():
             print('сделано')
         else:
             pass
-    sounds.sound_vic()
+    tools.sounds.sound_vic()
     return
 
 
@@ -554,7 +554,7 @@ def event_entry_img():
             pass
     # pos = fun.locCenterImg(f'{name_create_img}')
     # fun.mouse_move(pos=pos)
-    sounds.sound_vic()
+    tools.sounds.sound_vic()
     # print(f'{name_create_img} сделано')
     # check_img(name=name_create_img)
     return

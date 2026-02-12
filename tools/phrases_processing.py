@@ -3,7 +3,7 @@
 """
 import tools
 import heroes
-import color_text
+import tools.color_text as c_t
 
 
 
@@ -15,7 +15,7 @@ def display_report_energy_now(*, vers_in_print, value_energy):
         vers_in_print (str): пробел или значение {conf_=}
         value_energy (int): количество энергии потраченной на задание
     """
-    print(color_text.tc_blue(f'{vers_in_print}'  # {task_number} задание
+    print(c_t.tc_blue(f'{vers_in_print}'  # {task_number} задание
           f'Сейчас {value_energy}, '
           f'сегодня {heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)}, '
           f'всего/на Киевской: {heroes.Hero.get_energy_count_all(heroes.Activ.hero_activ)}/'
@@ -96,19 +96,19 @@ def report_white_rat(*, hero):
     #  Потрачено {} ед.эн.
     # {} эн на 1го.
 
-    text_22 = color_text.tc_green(' Потрачено ')  # 'Потрачено '
-    energy_w_rat_count_all = color_text.tc_yellow(f'{heroes.Hero.get_white_rat_energy(hero)}')  # 'XXX'
-    text_23 = color_text.tc_green(' ед.эн.')
+    text_22 = c_t.tc_green(' Потрачено ')  # 'Потрачено '
+    energy_w_rat_count_all = c_t.tc_yellow(f'{heroes.Hero.get_white_rat_energy(hero)}')  # 'XXX'
+    text_23 = c_t.tc_green(' ед.эн.')
     phrase2 = f'{text_22}{energy_w_rat_count_all}{text_23}'
 
     # количество энергии на одного
     if heroes.Hero.get_white_rat_count_all(hero):
         qty_wr = str(heroes.Hero.get_white_rat_count_all(hero))
-        val_all = color_text.tc_blue(qty_wr)
+        val_all = c_t.tc_blue(qty_wr)
         phrase3 = f' {val_all} шт.'
-        average_value_3 = color_text.tc_blue(
+        average_value_3 = c_t.tc_blue(
             f'{round(heroes.Hero.get_white_rat_energy(hero) / heroes.Hero.get_white_rat_count_all(hero), 4)}')  # '7'
-        text_32 = color_text.tc_green(' эн на 1ну крысу.')  # ' эн на 1го'
+        text_32 = c_t.tc_green(' эн на 1ну крысу.')  # ' эн на 1го'
         phrase1 = f'{average_value_3.rjust(17)}{text_32}'
         report_w_rat_hero = f'{phrase1}{phrase2}{phrase3}'
     else:
@@ -121,17 +121,17 @@ def report_wildman(*, hero):
     # {} эн на 1го.
     #  Потрачено {} ед.эн.
 
-    text_22 = color_text.tc_green(' Потрачено ')  # 'Потрачено '
-    energy_kiev_count_all = color_text.tc_yellow(f'{heroes.Hero.get_energy_kiev_count_all(hero)}')  # 'XXX'
-    text_23 = color_text.tc_green(' ед.эн.')
+    text_22 = c_t.tc_green(' Потрачено ')  # 'Потрачено '
+    energy_kiev_count_all = c_t.tc_yellow(f'{heroes.Hero.get_energy_kiev_count_all(hero)}')  # 'XXX'
+    text_23 = c_t.tc_green(' ед.эн.')
     phrase2 = f'{text_22}{energy_kiev_count_all}{text_23}'
 
     # количество энергии на одного
     if heroes.Hero.get_wildman_count(hero):
         # text_31 = color_text.tc_green(' Это ')
-        average_value_3 = color_text.tc_blue(
+        average_value_3 = c_t.tc_blue(
             f'{round(heroes.Hero.get_energy_kiev_count_all(hero) / heroes.Hero.get_wildman_count(hero), 4)}')  # '7'
-        text_32 = color_text.tc_green(' эн на 1го.')  # ' эн на 1го'
+        text_32 = c_t.tc_green(' эн на 1го.')  # ' эн на 1го'
         phrase1 = f'{average_value_3.rjust(17)}{text_32}'
         report_wildman_hero = f'{phrase1}{phrase2}'
     else:
@@ -155,8 +155,8 @@ def report_kv_efficiency():
         percent_vik_all = 0
     vik_all = tools.transform_word_victory(qty_victory=qty_all_victory)
     word_duel_al = tools.transform_word_duel(qty_duel=qty_all)
-    text1 = color_text.tc_green(f'Всего {qty_all_victory} {vik_all} в {qty_all} {word_duel_al}')
-    text2 = color_text.tc_magenta(f'({percent_vik_all}%)')
+    text1 = c_t.tc_green(f'Всего {qty_all_victory} {vik_all} в {qty_all} {word_duel_al}')
+    text2 = c_t.tc_magenta(f'({percent_vik_all}%)')
 
     qty_shoulder_straps_all = heroes.Hero.get_count_shoulder_straps_all(activ_her)
     if qty_shoulder_straps_all:
@@ -164,7 +164,7 @@ def report_kv_efficiency():
         phrase = f'{percent_straps_all}/1'
     else:
         phrase = ''
-    text3 = color_text.tc_yellow(f' Погоны {qty_shoulder_straps_all} ({phrase})')
+    text3 = c_t.tc_yellow(f' Погоны {qty_shoulder_straps_all} ({phrase})')
     phrase1 = f'{text1}{text2}{text3}'
 
     qty_duel_in_kv_victory = heroes.Hero.get_qty_duel_in_kv_victory(activ_her)
@@ -176,7 +176,7 @@ def report_kv_efficiency():
     else:
         percent_vik_kv = '0'
     qty_duel_loot = heroes.Hero.get_count_shoulder_straps_kv(activ_her)
-    phrase2 = color_text.tc_cyan(f'в кв {qty_duel_in_kv_victory} {word_vik_in_kv} в '
+    phrase2 = c_t.tc_cyan(f'в кв {qty_duel_in_kv_victory} {word_vik_in_kv} в '
                                  f'{qty_duel_in_kv_all} {word_duel_in_kv}'
                                  f'({percent_vik_kv}%). Погоны {qty_duel_loot}')
 
@@ -185,7 +185,7 @@ def report_kv_efficiency():
     if list_loot:
         phrase3 = ', '.join(list_loot)
     else:
-        phrase3 = []
+        phrase3 = ''
     return phrase1, phrase2, phrase3
 
 

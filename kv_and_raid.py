@@ -5,13 +5,10 @@ import tools
 
 import fun
 import heroes
-import sounds
-import color_text
-# import baza_paths as b_p
+from tools import sounds
+import tools.color_text as c_t
 from baza import baza_paths as b_p
-# import complex_phrases
 import find_img as find
-import color_text as myCt
 import solid_memory
 
 
@@ -63,7 +60,7 @@ def foto_loot_kv(*, point_v, point_n):
     """
     fun.my_log_file(f'')
     fun.my_log_file(f'kv_and_raid.foto_loot_kv')
-    path = b_p.loot_round # 'img/ kv/ result_round/ result_round_loot/'
+    path = b_p.loot_round  # 'img/ kv/ result_round/ result_round_loot/'
     #
     kor_x_v = 30 + 90 - 35
     kor_y_v = 5 + 127 - 17
@@ -128,17 +125,10 @@ def update_set_dist(*, value_dist):
     temp_list.append(value_dist)
     set_dist = set(temp_list)
     heroes.Hero.set_set_dist(heroes.Activ.hero_activ, set_dist)
-    # отладка
-    # min_dist = min(set_dist)
-    # max_dist = max(set_dist)
-    # print(f'{set_dist=}, {min_dist=}, {max_dist=}')
     return
 
 
-
-
-
-def battle(target_call):
+def battle(*, target_call):
     fun.my_log_file(f'')
     fun.my_log_file('kv_and_raid.battle')
     kv_skip_battle = find.find_kv_skip_battle()
@@ -163,28 +153,26 @@ def battle(target_call):
         danger = find.find_kv_danger()
         kv_close = find.find_kv_close()
     if danger:
-        dang = myCt.tc_magenta("опасный ")
+        dang = c_t.tc_magenta("опасный ")
         heroes.Hero.app_qty_danger(heroes.Activ.hero_activ)
     kv_close = find.find_kv_close()
     if kv_close:
         victory = find.find_victory_battle_in_kv()
         defeat = find.find_defeat_battle_in_kv()
         if victory:
-            result = myCt.tc_yellow("победа ")
+            result = c_t.tc_yellow("победа ")
 
             heroes.Hero.up_qty_duel_in_kv_victory(heroes.Activ.hero_activ)
-            # print(Hero.get_name_ru(Activ.hero_activ))
             fig, dist_report = fun.distance(pos_upper=victory, pos_lower=kv_close)
             update_set_dist(value_dist=dist_report)
             min_dist = min(heroes.Hero.get_set_dist(heroes.Activ.hero_activ))
             foto_result_round(pos_v=victory, pos_n=kv_close)
-            if dist_report > (min_dist/10 + min_dist):
+            if dist_report > (min_dist / 10 + min_dist):
                 heroes.Hero.up_count_shoulder_straps_all(heroes.Activ.hero_activ)
                 heroes.Hero.up_count_shoulder_straps_kv(heroes.Activ.hero_activ)
-                mes = color_text.tc_red('Погон!!')
+                mes = c_t.tc_red('Погон!!')
                 foto_result_round(pos_v=victory, pos_n=kv_close,
                                   path='img/kv/result_round/p/', sound=True)
-                # foto_loot_kv(point_v=victory, point_n=kv_close)
                 # опознать погон
                 name_loot = get_name_loot_kv()
                 # записать в лист
@@ -197,13 +185,13 @@ def battle(target_call):
                 heroes.Hero.app_danger_v(heroes.Activ.hero_activ)
                 foto_danger()
         elif defeat:
-            result = myCt.tc_red("поражение ")
+            result = c_t.tc_red("поражение ")
         else:
             heroes.Activ.duel_raid += 1
             result = heroes.Activ.duel_raid
         rapport_battle = f'{target_call} {dang}{result}{mes}'
         print(rapport_battle)
-        solid_memory.save_kv_config(info=False)
+        solid_memory.save_kv_state_config_json(info=False)
     fun.Mouse.move_to_click(pos_click=kv_close, z_p_k=0.3)
 
 
@@ -211,14 +199,13 @@ def kv():
     fun.my_log_file(f'')
     fun.my_log_file('kv_and_raid.kv')
     selection_hero_in_kv()
-    stat, data_kv = solid_memory.reading_kv_config()
-    solid_memory.set_values_kv(data_kv)
-    heroes.gady.list_loot_kv = []
+    solid_memory.reading_kv_config_json()
+    solid_memory.set_values_kv()
+
     phrase_eff = tools.report_kv_efficiency()
     print(phrase_eff[0])
     print(phrase_eff[1])
     print()
-    # print(color_text.tc_red('Время КВ установлено'))
     kv_reload = find.find_kv_reload()
     # fun.my_print_to_file(f'kv_reload {kv_reload}')
     fun.my_log_file("нажать 'обновить'")
@@ -248,7 +235,7 @@ def kv():
                 if qty_duel == 1:
                     print('Первый бой - истинное начало кв')
                     heroes.Hero.set_time_start_kv(self=heroes.Activ.hero_activ, value=time.time())
-                    solid_memory.save_kv_config(info=False)
+                    solid_memory.save_kv_state_config_json(info=False)
 
                 battle(target_call=target_attack)
                 phrase_eff = tools.report_kv_efficiency()
@@ -256,7 +243,6 @@ def kv():
                 print(phrase_eff[1])
                 if phrase_eff[2]:
                     print(phrase_eff[2])
-                # print(complex_phrases.report_shoulder_straps())
                 print()
             else:
                 it_w_a = 0

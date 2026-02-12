@@ -1,5 +1,5 @@
 import fun
-import color_text
+import tools.color_text as c_t
 
 
 def img():
@@ -23,7 +23,7 @@ def img_label_raid():
     img_1 = fun.locCenterImg(name_img=f'img/kv/tests/{name_file}.png')
     if img_1:
         fun.Mouse.move(pos=img_1, speed=1)
-        print(color_text.tc_cyan('Есть такой файл'))
+        print(c_t.tc_cyan('Есть такой файл'))
     else:
         kv_reload = fun.locCenterImg('img/kv/kv_reload.png', confidence=0.9)
         if kv_reload:

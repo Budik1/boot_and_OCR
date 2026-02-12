@@ -1,6 +1,6 @@
 import time
 import fun
-import sounds
+from t import sounds
 
 from baza import baza_paths as b_p
 
