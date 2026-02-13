@@ -4,95 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="Созданы пакеты">
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="Переработана процедура чтения\сохранения">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baza/baza_paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/baza_paths.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/color_text.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/config.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_kv.json" beforeDir="false" afterPath="$PROJECT_DIR$/config_kv.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config_kv.json" beforeDir="false" afterPath="$PROJECT_DIR$/temp_pack/all/config_kv.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cr_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cr_img_dva.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img_dva.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_and_analiz_task_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_and_analiz_task_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/event_arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_arena.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/arena/gady/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/gady/arena_object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/arena/gady/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/gady/object.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kv_config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kv_config.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kv_config2.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kv_config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/temp_pack/kv/kv_config.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/os_action.py" beforeDir="false" afterPath="$PROJECT_DIR$/os_action.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/cr_img_map_name_station.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/cr_img_map_name_station.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/cr_nam_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/cr_nam_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/person.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solid_memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/solid_memory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/t/a_serial_scrin_for_pm.py" beforeDir="false" afterPath="$PROJECT_DIR$/t/a_serial_scrin_for_pm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/t/baza_dannyx.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/t/baza_paths.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/t/complex_phrases.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/t/img_stat_kv.py" beforeDir="false" afterPath="$PROJECT_DIR$/t/img_stat_kv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/t/mod_wold.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/t/картинки_маяки_для_браузера.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 22-12-30.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 22-12-41.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 22-52-45.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 22-55-13.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 22-55-40.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 22-57-42.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 22-58-40.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 22-58-49.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 23-02-51.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 23-04-32.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 23-06-51.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 23-06-57.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 23-14-06.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-04/config_2026-02-04 23-15-02.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-05-16.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-06-54.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-08-06.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-08-32.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-10-36.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-10-51.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-13-55.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-14-10.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-16-45.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-17-00.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-20-04.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-20-19.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-21-53.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-22-09.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-25-05.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-25-20.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-28-22.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-29-24.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-30-27.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-31-07.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-31-41.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-32-34.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-33-28.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-34-31.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-35-55.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-37-28.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-37-59.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-38-42.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-39-33.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-39-56.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-40-26.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-41-14.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-42-32.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/2026-02-05/config_2026-02-05 06-42-52.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/config2026-02-01.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/config2026-02-02.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/config2026-02-03.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/config2026-02-04.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/config_2026-02-04 22-11-37.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/config_kv_2026-02-04.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pack/config_kv_2026-02-05.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/phrases_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/phrases_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/txt/daily event.py" beforeDir="false" afterPath="$PROJECT_DIR$/txt/daily event.py" afterDir="false" />
     </list>
@@ -234,11 +160,11 @@
       <recent name="C:\python\bot_ocr1\stereotypes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\python\bot_ocr1\temp_pack\kv" />
+      <recent name="C:\python\bot_ocr1\temp_pack\all" />
       <recent name="C:\python\bot_ocr1\t" />
       <recent name="C:\python\bot_ocr1" />
       <recent name="C:\python\bot_ocr1\txt" />
-      <recent name="C:\python\bot_ocr1\baza" />
-      <recent name="C:\python\bot_ocr1\service" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -540,7 +466,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770531952623</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Переработана процедура чтения\сохранения">
+      <option name="closed" value="true" />
+      <created>1770914159913</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1770914159913</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -568,7 +502,8 @@
     <MESSAGE value="11.01.26 рефакторинг event_arena.py" />
     <MESSAGE value="05.02.2026" />
     <MESSAGE value="Созданы пакеты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Созданы пакеты" />
+    <MESSAGE value="Переработана процедура чтения\сохранения" />
+    <option name="LAST_COMMIT_MESSAGE" value="Переработана процедура чтения\сохранения" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -645,7 +580,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fun.py</url>
-          <line>533</line>
+          <line>532</line>
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -660,7 +595,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>595</line>
+          <line>594</line>
           <option name="timeStamp" value="151" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -676,11 +611,6 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/t/a_serial_scrin_for_pm.py</url>
           <option name="timeStamp" value="154" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/solid_memory.py</url>
-          <line>64</line>
-          <option name="timeStamp" value="155" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

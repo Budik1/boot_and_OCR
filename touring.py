@@ -7,12 +7,12 @@ from pyscreeze import Point
 from t import gift_station_service
 import fun
 import heroes
-import tools.color_text as c_t
 import solid_memory
 import station_master
 import tools
 import find_img
 
+from tools import color_text as c_t
 from baza import baza_dannyx as b_d
 from heroes import Hero, Activ
 

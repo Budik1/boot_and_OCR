@@ -1,4 +1,3 @@
-import os
 from time import time
 from tkinter import *
 from tkinter import messagebox
@@ -8,7 +7,7 @@ from PIL import ImageTk
 
 from baza import baza_dannyx as b_d
 from baza import baza_paths as b_p
-import tools.color_text as c_t
+from tools import color_text as c_t
 import fun
 import fun_events
 import heroes

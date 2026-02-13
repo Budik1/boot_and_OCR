@@ -7,7 +7,7 @@ import solid_memory
 import create_and_analiz_task_img
 
 import tools
-import tools.color_text as c_t
+from tools import color_text as c_t
 import heroes
 from heroes import Hero, Activ
 

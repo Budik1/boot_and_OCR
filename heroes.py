@@ -1,8 +1,7 @@
 import time
 
-# import baza_dannyx as b_d
 from baza import baza_dannyx as b_d
-import tools.color_text as c_t
+from tools import color_text as c_t
 
 nam = 0  # для подсчета чего?
 temp_min = None

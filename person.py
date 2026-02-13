@@ -1,4 +1,5 @@
 import pyautogui
+from time import sleep
 
 # from icecream import ic
 # ic.configureOutput(includeContext=True)
@@ -6,7 +7,6 @@ import pyautogui
 
 import find_img
 import fun
-from time import sleep
 
 from heroes import Hero, Activ
 

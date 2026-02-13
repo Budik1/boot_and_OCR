@@ -7,7 +7,7 @@ import heroes
 from baza import baza_paths as b_p
 import tools
 import os_action
-import tools.color_text as c_t
+from tools import color_text as c_t
 
 
 def save_all_state_config_json(*, info=False):

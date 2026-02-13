@@ -1,12 +1,12 @@
 from time import sleep
 
-from baza import baza_paths as b_p
 import fun
 import find_img
 import heroes
 import solid_memory
 import station_master
-import tools.color_text as c_t
+from baza import baza_paths as b_p
+from tools import color_text as c_t
 
 
 def get_ful_region_arena_tabl():

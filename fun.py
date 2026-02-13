@@ -1,5 +1,4 @@
 import pyautogui
-# import datetime
 import builtins
 from time import sleep, time
 
@@ -10,11 +9,11 @@ from time import sleep, time
 import tools
 import find_img
 import fun_down
-import tools.color_text as c_t
 import heroes
+import os_action
+from tools import color_text as c_t
 from baza import baza_dannyx as b_d
 from baza import baza_paths as b_p
-import os_action
 
 
 par_conf = 0.79
