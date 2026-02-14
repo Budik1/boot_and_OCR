@@ -4,13 +4,13 @@ from typing import Any
 
 from pyscreeze import Point
 
-from t import gift_station_service
 import fun
 import heroes
 import solid_memory
 import station_master
 import tools
-import find_img
+from t import find_img
+from t import gift_station_service
 
 from tools import color_text as c_t
 from baza import baza_dannyx as b_d

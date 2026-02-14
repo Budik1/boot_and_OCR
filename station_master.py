@@ -7,8 +7,8 @@ import solid_memory
 import create_and_analiz_task_img
 
 import tools
-from tools import color_text as c_t
 import heroes
+from tools import color_text as c_t
 from heroes import Hero, Activ
 
 conf_ = 0.95

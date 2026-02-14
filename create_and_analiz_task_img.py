@@ -1,8 +1,8 @@
 import fun
 import event_OCR
+import heroes
 import my_OCR
 from baza import baza_paths as b_p
-import heroes
 
 
 def get_screenshot_task_big():

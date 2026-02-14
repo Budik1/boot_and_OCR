@@ -1,8 +1,9 @@
 import time
+
 import fun
-from tools import sounds
 
 from baza import baza_paths as b_p
+from tools import sounds
 
 
 def get_energy_line_1_img():

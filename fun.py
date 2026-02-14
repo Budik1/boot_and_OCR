@@ -6,14 +6,15 @@ from time import sleep, time
 # ic.configureOutput(includeContext=True)
 # print = ic
 
-import tools
 import find_img
 import fun_down
 import heroes
 import os_action
-from tools import color_text as c_t
+import tools
+
 from baza import baza_dannyx as b_d
 from baza import baza_paths as b_p
+from tools import color_text as c_t
 
 
 par_conf = 0.79

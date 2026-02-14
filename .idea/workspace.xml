@@ -4,21 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="Переработана процедура чтения\сохранения">
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="13.02.2026">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_kv.json" beforeDir="false" afterPath="$PROJECT_DIR$/temp_pack/all/config_kv.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cr_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cr_img_dva.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img_dva.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_arena.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/gady/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/gady/arena_object.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arena/gady/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/gady/object.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kv_config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/temp_pack/kv/kv_config.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/person.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solid_memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/solid_memory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_pack/all/config_kv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_pack/kv/kv_config.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/txt/daily event.py" beforeDir="false" afterPath="$PROJECT_DIR$/txt/daily event.py" afterDir="false" />
     </list>
@@ -147,17 +142,17 @@
     &quot;ToolWindow.Python Console.ShowToolbar&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/python/bot_ocr1/tools&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/python/bot_ocr1/t&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\python\bot_ocr1\t" />
       <recent name="C:\python\bot_ocr1\tools" />
       <recent name="C:\python\bot_ocr1\baza" />
       <recent name="C:\python\bot_ocr1\storage" />
       <recent name="C:\python\bot_ocr1\temp_pack" />
-      <recent name="C:\python\bot_ocr1\stereotypes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\python\bot_ocr1\temp_pack\kv" />
@@ -474,7 +469,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770914159913</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="13.02.2026">
+      <option name="closed" value="true" />
+      <created>1770998820584</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1770998820584</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -503,7 +506,8 @@
     <MESSAGE value="05.02.2026" />
     <MESSAGE value="Созданы пакеты" />
     <MESSAGE value="Переработана процедура чтения\сохранения" />
-    <option name="LAST_COMMIT_MESSAGE" value="Переработана процедура чтения\сохранения" />
+    <MESSAGE value="13.02.2026" />
+    <option name="LAST_COMMIT_MESSAGE" value="13.02.2026" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -595,7 +599,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>594</line>
+          <line>595</line>
           <option name="timeStamp" value="151" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

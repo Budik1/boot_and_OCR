@@ -1,15 +1,15 @@
 import time
 from time import sleep
 
-
 import fun
-import heroes
 import find_img as find
+import heroes
 import solid_memory
 import tools
+
+from baza import baza_paths as b_p
 from tools import color_text as c_t
 from tools import sounds
-from baza import baza_paths as b_p
 
 
 def foto_danger():

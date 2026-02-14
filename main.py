@@ -5,9 +5,6 @@ from tkinter import ttk
 
 from PIL import ImageTk
 
-from baza import baza_dannyx as b_d
-from baza import baza_paths as b_p
-from tools import color_text as c_t
 import fun
 import fun_events
 import heroes
@@ -20,6 +17,10 @@ import station_master
 import touring
 import tools
 import tool_win
+
+from baza import baza_dannyx as b_d
+from baza import baza_paths as b_p
+from tools import color_text as c_t
 from event_arena import create_img_arena_object, kill
 
 fun.my_log_file('')
