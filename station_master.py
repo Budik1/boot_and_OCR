@@ -53,7 +53,7 @@ def mob_indicator():
     return mob, name
 
 
-def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=False):
+def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=False) -> str:
     """
 
     :param prolong_:
@@ -61,14 +61,12 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     :param add_up:
     :param arena:
     :param tour: Для учета мобов в тоннелях используется True
-    :return:
+    :return: "победа" или "поражение"
     """
     print(c_t.tc_green('station_master.enemy_battle'))
 
     fun.my_log_file(f'')
     fun.my_log_file('station_master.enemy_battle()')
-    # fun.my_log_file(' поиск battle_end, skip_battle, dog')
-    # print('station_master.enemy_battle()')
 
     heroes.nam += 1
 
@@ -395,12 +393,12 @@ def option_task_money():
     if heroes.Activ.station_activ == 'ст. Киевская':
         if Activ.hero_activ == '':
             fun.selection_hero()
-        heroes.Hero.set_wild_activ(Activ.hero_activ)
+        # heroes.Hero.set_wild_activ(Activ.hero_activ)
+        heroes.Hero.app_wildman_days_count(heroes.Activ.hero_activ)
     hero = fun.selection_hero()
     # получаю путь заданий героя
     if hero:
         path = Hero.get_path_task(Activ.hero_activ)
-        # print(f'{path=}')
     else:
         return
     while energy_availability == 1 and number_tasks > 0:

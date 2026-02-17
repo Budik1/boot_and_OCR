@@ -512,7 +512,7 @@ def set_param():
 
 
 def n_w():
-    w1 = tool_win.Window(width_tool, height_tool, position_x_tool, position_y_tool)
+    w1 = tool_win.Window(width_tool, position_x_tool, position_y_tool)
 
 
 root = Tk()
