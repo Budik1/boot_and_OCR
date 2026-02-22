@@ -1,6 +1,7 @@
 import fun
 import find_img
 import stereotypes
+import tools
 
 
 def cr_mark_img():
@@ -19,19 +20,19 @@ def cr_mark_img():
     key = 'img/test/mark/mark_right.png'
     pos_start = img_dict[key][5]
     # показать привязку
-    # fun.Mouse.move(pos=pos_start, speed=1)
+    # tools.Mouse.move(pos=pos_start, speed=1)
     # найдем верхний угол
     x, y = pos_start
     x += img_dict[key][0]
     y += img_dict[key][1]
-    # fun.Mouse.move(pos=(x, y), speed=1)
+    # tools.Mouse.move(pos=(x, y), speed=1)
     # # найдем нижний угол
     x_demo, y_demo = x, y
     change_x = img_dict[key][2]
     change_y = img_dict[key][3]
     x_demo += change_x
     y_demo += change_y
-    # fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
+    # tools.mouse_move(pos=(x_demo, y_demo), show=show_move)
     # # собственно создание снимка
     if target_img == 'img/test/token.png':
         fun.foto(f'{target_img}', (x, y, change_x, change_y))
@@ -64,10 +65,10 @@ def test_long(*, vizual=None):
             if ans == 'y':
                 ans = input('Показать левый угол? (y/n): ')
                 if ans == 'y':
-                    fun.Mouse.move(pos=(x_left_cor, y_left_cor), speed=1)
+                    tools.Mouse.move(pos=(x_left_cor, y_left_cor), speed=1)
                 ans = input('Показать правый угол? (y/n): ')
                 if ans == 'y':
-                    fun.Mouse.move(pos=(x_right_cor, y_right_cor), speed=1)
+                    tools.Mouse.move(pos=(x_right_cor, y_right_cor), speed=1)
         if x_left_cor < x_right_cor:
             distance = x_right_cor - x_left_cor
         else:

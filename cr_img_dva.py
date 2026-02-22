@@ -3,6 +3,7 @@ import time
 import fun
 
 from baza import baza_paths as b_p
+import tools
 from tools import sounds
 
 
@@ -17,7 +18,7 @@ def get_energy_line_1_img():
     # регион поиска 1 (позиция анализа)
     x = x_or + xp_
     y = y_or + line_1 - shift_up
-    fun.Mouse.move(pos=(x, y), speed=1, show=show_move)
+    tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
     time.sleep(2)
     # # найдем нижний угол
     x_demo, y_demo = x, y
@@ -25,10 +26,10 @@ def get_energy_line_1_img():
     change_y = 23
     x_demo += change_x
     y_demo += change_y
-    fun.Mouse.move(pos=(x_demo, y_demo), speed=1, show=show_move)
+    tools.Mouse.move(pos=(x_demo, y_demo), speed=1, show=show_move)
     fun.foto(f'{path_img}{name_img}', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'{path_img}{name_img}')
-    fun.Mouse.move(pos=pos)
+    tools.Mouse.move(pos=pos)
     sounds.sound_vic()
     print('ok')
 
@@ -44,7 +45,7 @@ def get_energy_line_2_img():
     # регион поиска 1 (позиция анализа)
     x = x_or + xp_
     y = y_or + line_2 - shift_up
-    fun.Mouse.move(pos=(x, y), speed=1, show=show_move)
+    tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
     time.sleep(2)
     # # найдем нижний угол
     x_demo, y_demo = x, y
@@ -52,10 +53,10 @@ def get_energy_line_2_img():
     change_y = 23
     x_demo += change_x
     y_demo += change_y
-    fun.Mouse.move(pos=(x_demo, y_demo), speed=1, show=show_move)
+    tools.Mouse.move(pos=(x_demo, y_demo), speed=1, show=show_move)
     fun.foto(f'{path_img}{name_img}', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'{path_img}{name_img}')
-    fun.Mouse.move(pos=pos)
+    tools.Mouse.move(pos=pos)
     sounds.sound_vic()
     print('ok')
 
@@ -74,7 +75,7 @@ def get_energy_line_3_img():
     # регион поиска 1 (позиция анализа)
     x = x_or + xp_
     y = y_or + line_3 - shift_up
-    fun.Mouse.move(pos=(x, y), speed=1, show=show_move)
+    tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
     time.sleep(2)
     # # найдем нижний угол
     x_demo, y_demo = x, y
@@ -82,10 +83,10 @@ def get_energy_line_3_img():
     change_y = 23
     x_demo += change_x
     y_demo += change_y
-    fun.Mouse.move(pos=(x_demo, y_demo), speed=1, show=show_move)
+    tools.Mouse.move(pos=(x_demo, y_demo), speed=1, show=show_move)
     fun.foto(f'{path_img}{name_img}', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'{path_img}{name_img}')
-    fun.Mouse.move(pos=pos)
+    tools.Mouse.move(pos=pos)
     sounds.sound_vic()
     print('ok')
 
@@ -135,7 +136,7 @@ def get_price_energy():
         pos_en = fun.locCenterImg(f'{path_energy_task}{img}', region=region_img)
         if pos_en:
             print(fun.extraction_digit(item=img))
-            fun.Mouse.move(pos=pos_en, speed=0.5)
+            tools.Mouse.move(pos=pos_en, speed=0.5)
             time.sleep(1)
 
 
@@ -161,7 +162,7 @@ def region_task_line():
 
     x_demo += change_x
     y_demo += change_y
-    fun.Mouse.move(pos=(x_demo, y_demo), show=show_move)
+    tools.Mouse.move(pos=(x_demo, y_demo), show=show_move)
     fun.foto(f'{path_img}{name_img1}', (x, y, change_x, change_y))
     #
     name_img2 = 'arial_task_line_2.png'

@@ -3,6 +3,7 @@ from time import sleep
 import fun
 import find_img
 import heroes
+import tools
 import solid_memory
 import station_master
 
@@ -109,7 +110,7 @@ def kill():
         fun.selection_hero(show_name=True)
         # ориентир на зал славы
         pos_or_v = fun.find_link_hall_of_glory()
-        fun.Mouse.move_to_click(pos_click=pos_or_v, z_p_k=0.3, message_l='открыть зал славы')  # открыть зал славы
+        tools.Mouse.move_to_click(pos_click=pos_or_v, z_p_k=0.3, message='открыть зал славы')  # открыть зал славы
         # Ожидание открытия зала славы
         # hall = hall_is_open()
         # fun.Mouse.move(pos=hall, message_l='зал славы открыт')
@@ -121,7 +122,7 @@ def kill():
         arena_object = find_img.find_arena_object(region=region_line1,
                                                   hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))
         arena_object_region = region_line1
-        fun.Mouse.move(pos=arena_object)
+        tools.Mouse.move(pos=arena_object)
 
         # Построчный поиск без смещения
         if arena_object is None:
@@ -151,11 +152,11 @@ def kill():
             # Если не найден раньше ищем со смещением списка в начало
             # while scroll_up and arena_object is None:
             if not arena_object and search_vector == 'up':
-                fun.Mouse.move_to_click(pos_click=scroll_up,
-                                        log=False, message_l="прокрутка вверх")
+                tools.Mouse.move_to_click(pos_click=scroll_up,
+                                          log=False, message="прокрутка вверх")
                 # batt_attack = fun.await_arena(region)
-                fun.Mouse.move(pos=(scroll_up[0] - 70, scroll_up[1]),
-                               log=False, message_l='отвести в сторону от стрелки?')
+                tools.Mouse.move(pos=(scroll_up[0] - 70, scroll_up[1]),
+                                 log=False, message='отвести в сторону от стрелки?')
                 find_img.find_hall_of_glory_tabl()
                 arena_object = find_img.find_arena_object(region=region,
                                                           hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))
@@ -163,10 +164,10 @@ def kill():
                 if not scroll_up:
                     search_vector = "down"
             if not arena_object and search_vector == 'down':  # Если не найден раньше ищем со смещением списка в конец
-                fun.Mouse.move_to_click(pos_click=scroll_down,
-                                        log=False, message_l="прокрутка вниз")
-                fun.Mouse.move(pos=(scroll_down[0] - 70, scroll_down[1]),
-                               log=False, message_l='отвести в сторону от стрелки вниз?')
+                tools.Mouse.move_to_click(pos_click=scroll_down,
+                                          log=False, message="прокрутка вниз")
+                tools.Mouse.move(pos=(scroll_down[0] - 70, scroll_down[1]),
+                                 log=False, message='отвести в сторону от стрелки вниз?')
                 fun.await_arena(region)
                 arena_object = find_img.find_arena_object(region=region,
                                                           hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))
@@ -175,13 +176,13 @@ def kill():
                     search_vector = 'up'
             arena_object_region = region
         choice_of_the_attacked = find_img.find_choice_of_the_attacked(region=arena_object_region)
-        fun.Mouse.move(pos=choice_of_the_attacked)
-        fun.Mouse.move_to_click(pos_click=choice_of_the_attacked, z_p_k=0.5)
+        tools.Mouse.move(pos=choice_of_the_attacked)
+        tools.Mouse.move_to_click(pos_click=choice_of_the_attacked, z_p_k=0.5)
         hero_vs_opponent_img = find_img.find_attack_arena_opponent()
         while hero_vs_opponent_img is None:
             # sleep(0.1)
             hero_vs_opponent_img = find_img.find_attack_arena_opponent()
-        fun.Mouse.move_to_click(pos_click=hero_vs_opponent_img, z_p_k=0.1)
+        tools.Mouse.move_to_click(pos_click=hero_vs_opponent_img, z_p_k=0.1)
 
         heroes.Hero.app_arena_count(heroes.Activ.hero_activ)
         solid_memory.save_all_state_config_json(info=False)

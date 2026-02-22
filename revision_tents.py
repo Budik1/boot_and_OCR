@@ -3,6 +3,8 @@ from time import sleep
 
 import find_img as find
 import fun
+import tools
+
 import heroes
 
 speed_mouse = 1
@@ -33,7 +35,7 @@ def vip_click(region_search):
     sleep(1)
     pos_vip = find.find_b_vip(region_search=region_search)
     pyautogui.moveTo(pos_vip, duration=1)
-    fun.Mouse.left_click(pos=pos_vip)
+    tools.Mouse.left_click(pos=pos_vip)
     # print('клик по VIP ' + str(pos_vip))
     sleep(1)
 
@@ -41,8 +43,8 @@ def vip_click(region_search):
 def tent_detected(region_search):
     sleep(1)
     dom = find.find_b_tent(region_search=region_search)
-    fun.Mouse.move(pos= dom, speed=1)
-    fun.Mouse.left_click(pos=dom)
+    tools.Mouse.move(pos= dom, speed=1)
+    tools.Mouse.left_click(pos=dom)
     # print('клик по дом ' + str(dom))
     sleep(1)
 
@@ -51,8 +53,8 @@ def visit_to_tent():
     """Возвращает 1 если есть и 0 если пусто """
     visit = find.find_inspect_tent()
     if visit:
-        fun.Mouse.move(pos=visit, speed=1)
-        fun.Mouse.left_click(pos=visit)
+        tools.Mouse.move(pos=visit, speed=1)
+        tools.Mouse.left_click(pos=visit)
         cl = fun.push_close()
         if not cl:
             # print("клик обыск" + str(visit))
@@ -69,10 +71,10 @@ def end_raid():
     pyautogui.moveTo(200, 670)
     sleep(1)
     b_exit = find.find_b_exit()
-    fun.Mouse.move(pos= b_exit, speed=1)
-    fun.Mouse.left_click(pos=b_exit)
+    tools.Mouse.move(pos= b_exit, speed=1)
+    tools.Mouse.left_click(pos=b_exit)
     print('обход палаток окончен')
-    fun.Mouse.move(pos=(200, 670), speed=2)
+    tools.Mouse.move(pos=(200, 670), speed=2)
 
 
 def tent_raid():

@@ -1,4 +1,3 @@
-
 from time import sleep, time
 from typing import Any
 
@@ -18,6 +17,7 @@ from heroes import Hero, Activ
 
 
 def translate(world):
+    fun.log_with_caller(message='a')
     dikt_en_ru = {
         'Christmas_tree_star': 'новогодняя звезда',
         'Christmas_tree_garland': 'новогодняя гирлянда',
@@ -40,10 +40,12 @@ def translate(world):
         'stamp_40_kopeck': 'марка 40 копеек',
         'stamp_50_kopeck': 'марка 50 копеек',
     }
+    fun.log_with_caller(message='e')
     return dikt_en_ru.get(world, '')
 
 
 def bypass_len():
+    fun.log_with_caller(message='a')
     location_station = fun.loc_now()
 
     bypass_set_temp = heroes.Hero.get_bypass_set(heroes.Activ.hero_activ)
@@ -59,16 +61,16 @@ def bypass_len():
     bypass = set(bypass_temp)
     # print(len(bypass))
     heroes.Hero.set_bypass_set(heroes.Activ.hero_activ, value_set=bypass)
+    fun.log_with_caller(message='e')
+    return
 
 
 def event_gifts():
     """
     Поиск подарков на станции. Возвращает его позицию
     """
+    fun.log_with_caller(message='a')
     bypass_len()
-    print(c_t.tc_green('touring.event_gifts'))
-    fun.my_log_file(f'')
-    fun.my_log_file('touring.event_gifts')
     sleep(1)
     pos_gift = fun.locCenterImg(name_img='img/tonelli/gift.png', confidence=0.75)
     if not pos_gift:
@@ -80,8 +82,8 @@ def event_gifts():
         solid_memory.save_all_state_config_json(info=False)
         # print(name_st, ' подарков ' , Hero.get_qty_gift(Activ.hero_activ))
         # x, y = pos_gift
-        fun.Mouse.move(pos=pos_gift, speed=0.5, log=True, message_l='подарок найден')
-        fun.Mouse.left_click(pos=pos_gift, message=True, message_l=f'открыть подарок {pos_gift=}')
+        tools.Mouse.move(pos=pos_gift, speed=0.5, message='подарок найден')
+        tools.Mouse.left_click(pos=pos_gift, message=f'открыть подарок {pos_gift=}')
         # sleep(1 * 2)
         close = find_img.find_close()
         # если тормозит отрисовка, ожидает появление кнопки "закрыть"
@@ -123,33 +125,19 @@ def event_gifts():
             tools.sounds.say_txt(str(phrase))
 
         # a_serial_scrin_for_pm.cr_other_img(name_create_img=name_img)
-        fun.Mouse.move(pos=close, speed=1, log=True, message_l='нажал закрыть окно "подарок"')
-        fun.Mouse.left_click(pos=close, message=True, message_l='нажал закрыть окно "подарок"')
+        tools.Mouse.move(pos=close, speed=1,  message='нажал закрыть окно "подарок"')
+        tools.Mouse.left_click(pos=close,  message='нажал закрыть окно "подарок"')
 
         print(c_t.tc_green('touring.event_gifts выход'))
+    fun.log_with_caller(message='e')
     return pos_gift
 
 
 def open_map():
     """Из окна станции открывает карту. На Тургеневской выход смещен"""
-    print()
-    print(c_t.tc_green('touring.open_map'))
-    fun.my_log_file(f'')
-    fun.my_log_file('touring.open_map')
-    location_station = fun.loc_now()
+    def_name = fun.log_with_caller(message='a')
 
-    # bypass_set_temp = heroes.Hero.get_bypass_set(heroes.Activ.hero_activ)
-    # print(bypass_set_temp)
-    # if bypass_set_temp:
-    #     bypass_temp = list(bypass_set_temp)
-    #     print(bypass_temp)
-    # else:
-    #     bypass_temp = []
-    #     print(bypass_temp)
-    #
-    # bypass_temp.append(location_station[0])
-    # bypass = set(bypass_temp)
-    # heroes.Hero.set_bypass_set(heroes.Activ.hero_activ, value_set=bypass)
+    location_station = fun.loc_now()
 
     fun.my_log_file(f'выход из {location_station[0]}')
     # print(color_text.tc_cyan(f'выход из {location_station[0]}'))
@@ -159,19 +147,19 @@ def open_map():
         x = pos_or1[0] + 180
         y = pos_or1[1] + 205
         pos_run_out = x, y
-        fun.Mouse.move(pos=pos_run_out, speed=0.1)
+        tools.Mouse.move(pos=pos_run_out, speed=0.1)
     else:
         pos_or1 = find_img.find_info()
         x = pos_or1[0] + 300
         y = pos_or1[1] + 180
         pos_run_out = x, y
-        fun.Mouse.move(pos=pos_run_out, speed=0.1)
+        tools.Mouse.move(pos=pos_run_out, speed=0.1)
     # открыть карту
-    fun.Mouse.left_click(pos=pos_run_out)
+    tools.Mouse.left_click(pos=pos_run_out)
     # Убрать курсор с поля карты, чтобы ничего не перекрыл
     station_exit = fun.wait_static_pos(name_img='img/tonelli/station_exit.png')
-    fun.Mouse.move(pos=station_exit, speed=0.1)
-    print(c_t.tc_green('touring.open_map выход'))
+    tools.Mouse.move(pos=station_exit, speed=0.1)
+    fun.log_with_caller(message='e')
     return
 
 
@@ -181,9 +169,8 @@ def events_tunnel(name_st, st_id_file):
     :param name_st: название станции из списка
     :param st_id_file: имя файла ID станции
     """
-    print()
-    print(c_t.tc_green('touring.events_tunnel'))
-    fun.my_log_file('touring.events_tunnel')
+    fun.log_with_caller(message='a')
+
     fun.selection_hero(show_name=False)
 
     dog_activ = True
@@ -192,7 +179,7 @@ def events_tunnel(name_st, st_id_file):
 
     fun.my_log_file(f'{info=}, {id_st=}')
     parking = fun.pos_parking()
-    fun.Mouse.move(pos=parking, log=True, message_l='убрать указатель с поля в ожидании событий')
+    tools.Mouse.move(pos=parking,  message='убрать указатель с поля в ожидании событий')
     while not id_st:
         fun.close_popup_window()
         post = fun.locCenterImg(name_img='img/tonelli/post.png', confidence=0.8)
@@ -201,20 +188,20 @@ def events_tunnel(name_st, st_id_file):
         if skip_battle:
             station_master.enemy_battle(1, add_up=True, tour=True, dog_activ=dog_activ)  # вызов обработки события
             parking = fun.pos_parking()
-            fun.Mouse.move(pos=parking, log=True, message_l='убрать указатель с поля в ожидании событий')
+            tools.Mouse.move(pos=parking,  message='убрать указатель с поля в ожидании событий')
         if post:
             fun.my_log_file(f'post = {post}')
-            fun.Mouse.move(pos=post, speed=0.2, log=True, message_l='Пост обнаружен')
+            tools.Mouse.move(pos=post, speed=0.2,  message='Пост обнаружен')
             attack = find_img.find_tonelli_attack()
             entry = fun.locCenterImg(name_img='img/tonelli/entry_station.png', confidence=0.8)
 
             if entry:
                 fun.my_log_file(f'entry = {entry}')
-                fun.Mouse.move_to_click(pos_click=entry, move_time=0.2, z_p_k=0.1,
-                                        log=True, message_l='войти на станцию')
+                tools.Mouse.move_to_click(pos_click=entry, move_time=0.2, z_p_k=0.1,
+                                          message='войти на станцию')
                 parking = fun.pos_parking()
-                fun.Mouse.move(pos=parking, speed=0.5, show=True,
-                               log=True, message_l='убрать указатель с поля, после входа на станцию')
+                tools.Mouse.move(pos=parking, speed=0.5, show=True,
+                                 message='убрать указатель с поля, после входа на станцию')
                 entry = fun.locCenterImg(name_img='img/tonelli/entry_station.png', confidence=0.8)
                 while entry:
                     entry = fun.locCenterImg(name_img='img/tonelli/entry_station.png', confidence=0.8)
@@ -222,11 +209,11 @@ def events_tunnel(name_st, st_id_file):
                 if attack:
                     # dog_activ = False
                     fun.my_log_file(f'attack = {attack}')
-                    fun.Mouse.move_to_click(pos_click=attack, move_time=0.2, z_p_k=0.1, log=True,
-                                            message_l='атака поста')
+                    tools.Mouse.move_to_click(pos_click=attack, move_time=0.2, z_p_k=0.1,
+                                              message='атака поста')
                     parking = fun.pos_parking()
-                    fun.Mouse.move(pos=parking, speed=0.5, show=True,
-                                   log=True, message_l='убрать указатель с поля, после атаки поста')
+                    tools.Mouse.move(pos=parking, speed=0.5, show=True,
+                                     message='убрать указатель с поля, после атаки поста')
                     attack = find_img.find_tonelli_attack()
                     while attack:
                         attack = find_img.find_tonelli_attack()
@@ -238,15 +225,14 @@ def events_tunnel(name_st, st_id_file):
     # поиск и подсчет количества подарков
     pos_gift = event_gifts()
     # указать на id станции
-    fun.Mouse.move(pos=id_st, speed=0.2)
+    tools.Mouse.move(pos=id_st, speed=0.2)
     fun.my_log_file(f'pos_gift = {pos_gift}')
     if pos_gift:
         # Hero.app_gifts(Activ.hero_activ)
         print(name_st, ' подарков ', Hero.get_qty_gift(Activ.hero_activ))
     else:
         print(name_st)  # название станции
-    print()
-    print(c_t.tc_green(f'touring.events_tunnel выход'))
+    fun.log_with_caller(message='e')
     return
 
 
@@ -258,9 +244,8 @@ def poisk(search_object: str, param_confidence: float = 0.99) -> tuple[Point, fl
     :param param_confidence:
     :return:
     """
-    print()
-    print(c_t.tc_green('touring.poisk'))
-    fun.my_log_file('touring.poisk')
+    fun.log_with_caller(message='a')
+
     sleep(1)
     pos_search = fun.locCenterImg(name_img=search_object, confidence=param_confidence)
     while pos_search is None:
@@ -268,8 +253,7 @@ def poisk(search_object: str, param_confidence: float = 0.99) -> tuple[Point, fl
         # print('в поиске станции confidence=', param_confidence)
         pos_search = fun.locCenterImg(name_img=search_object, confidence=param_confidence)
         # print(pos_search)
-    print()
-    print(c_t.tc_green('touring.poisk выход'))
+    fun.log_with_caller(message='e')
     return pos_search, param_confidence
 
 
@@ -281,9 +265,7 @@ def traffic_on_the_map(stan: list) -> None:
     :param stan: (list):
     :return: None
     """
-    print()
-    print(c_t.tc_green('touring.traffic_on_the_map'))
-    fun.my_log_file('touring.traffic_on_the_map')
+    fun.log_with_caller(message='a')
     open_map()
     # sleep(1 * 2)
     ev_map = stan[3]
@@ -293,18 +275,18 @@ def traffic_on_the_map(stan: list) -> None:
     if ev_map == 'стрелка север' and next_station is None:
         pos_click = fun.locCenterImg(name_img='img/tonelli/mark_sever.png', confidence=0.85)
         fun.my_log_file(f'pos_click = {pos_click}, нажал на стрелку "север"')
-        fun.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
+        tools.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
         pos_click = fun.locCenterImg(name_img='img/tonelli/mark_sever.png', confidence=0.85)
         fun.my_log_file(f'pos_click = {pos_click}, нажал на стрелку "север"')
-        fun.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
+        tools.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
         # sleep(1)
     elif ev_map == 'стрелка юг' and next_station is None:
         pos_click = fun.locCenterImg(name_img='img/tonelli/mark_yug.png', confidence=0.85)
         fun.my_log_file(f'pos_click = {pos_click}, нажал на стрелку "юг"')
-        fun.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
+        tools.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
         pos_click = fun.locCenterImg(name_img='img/tonelli/mark_yug.png', confidence=0.85)
         fun.my_log_file(f'pos_click = {pos_click}, нажал на стрелку "юг"')
-        fun.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
+        tools.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
         # sleep(1)
     next_station = fun.locCenterImg(name_img=stan[1])
     confidence_poisk = 0.9
@@ -313,10 +295,9 @@ def traffic_on_the_map(stan: list) -> None:
     else:
         next_station, confidence_poisk = poisk(stan[1])
     fun.my_log_file(f'point_poisk = {next_station}, confidence_poisk = {confidence_poisk}')
-    fun.Mouse.move_to_click(pos_click=next_station, move_time=0.2, z_p_k=0.3)
+    tools.Mouse.move_to_click(pos_click=next_station, move_time=0.2, z_p_k=0.3)
     events_tunnel(stan[0], stan[2])
-    print()
-    print(c_t.tc_green('touring.traffic_on_the_map выход'))
+    fun.log_with_caller(message='e')
     return
 
 
@@ -326,14 +307,12 @@ def travel(path_list: list) -> None:
     :param path_list: (list): Список содержащий маршрут
     :return:
     """
-    print()
-    print(c_t.tc_green('touring.travel'))
-    fun.my_log_file('touring.travel')
+    fun.log_with_caller(message='a')
     for it in range(len(path_list)):
         k = it % len(path_list)
 
         traffic_on_the_map(path_list[k])
-    print(c_t.tc_green('touring.travel выход'))
+    fun.log_with_caller(message='e')
     return
 
 
@@ -342,13 +321,12 @@ def move_to_target(*, target_point, rapport=True):
     :param rapport: сообщение о прибытии
     :param target_point: имя станции, например - 'ст. Чеховская'
     """
-    print()
-    print(c_t.tc_green('touring.move_to_target'))
+    fun.log_with_caller(message='a')
     # определяю героя
     her = fun.selection_hero()  #
     # while not her:
     #     close = find_img.find_close()
-    #     fun.Mouse.move_to_click(pos_click=close)
+    #     tools.Mouse.move_to_click(pos_click=close)
     #     her = fun.selection_hero()
     if not her:
         print(c_t.tc_yellow('Этот НИКТО никуда не пойдет)))'))
@@ -386,7 +364,7 @@ def move_to_target(*, target_point, rapport=True):
     travel(path_list=route_list)
     if rapport:
         print(f'Пришел на {target_point}')
-    print(c_t.tc_green('touring.move_to_target выход'))
+    fun.log_with_caller(message='e')
     return
 
 
@@ -406,21 +384,20 @@ def create_new_list_only_name(*, massive):
     return new_list_road_name
 
 
-def extraction_name_in_list(*, value: list, call=False) -> list:
+def extraction_name_in_list(*, value: list) -> list:
     """ Получает список содержащий дорогу. Извлекает имена станций и помещает их в новый список. Возвращает список
     содержащий имена станций
     :param value:
     :return: """
-    # def_name = 'touring.extraction_name_in_list'
-    # def_name = a
-    fun.log_with_caller(message='a', print_message=call)
+
+    fun.log_with_caller(message='a')
     list_name = []
     for name in value:
         # list_name.append(extraction_name(variable=name))
         list_name.append(name[0])
         # Перебирая полученный список пишет названия станций.
         # print(extraction_name(variable=name))
-    fun.log_with_caller(message='e', print_message=call)
+    fun.log_with_caller(message='e')
     return list_name
 
 
@@ -430,7 +407,7 @@ def create_route_list(*, start: str, stop: str) -> list:
     :param stop: Имя станции
     :return: готовый список содержащий полный маршрут
     """
-    def_name = 'touring.create_route_list'
+
     fun.log_with_caller(message='a')
 
     # ========================================================================
@@ -440,7 +417,7 @@ def create_route_list(*, start: str, stop: str) -> list:
         :param route_names: лист маршрута из имен
         :return: Готовый list маршрута
         """
-        sub_def_name = 'touring.create_route_list.create_new_list_route'
+
         fun.log_with_caller(message='a')
         new_list_route = []
         for name in route_names:
@@ -526,9 +503,9 @@ def name_belonging_to_the_list(*, item: str):
     :param item: имя
     :return: список
     """
-    def_name = 'touring.name_belonging_to_the_list'
+
     fun.log_with_caller(message='a')
-    # print(type(item))
+
     list_road_names = create_new_list_only_name(massive=b_d.road_list)
 
     path_list = ['путь неопознан']
@@ -553,7 +530,7 @@ def for_wilds():
      на белых крыс потратить остаток,
      и домой на Фрунзенскую.
     """
-    def_name = 'touring.for_wilds'
+
     fun.log_with_caller(message='a')
 
     fun.my_log_file('touring.for_wilds')
@@ -602,7 +579,7 @@ def for_wilds():
 
 def for_kiki():
     """Маршрут определяется автоматически"""
-    def_name = 'touring.for_wilds'
+
     fun.log_with_caller(message='a')
     fun.my_log_file('touring.for_kiki')
     start_time = time()
@@ -622,11 +599,10 @@ def for_kiki():
 
 
 def sbor_podarkov(bypass_hero: list) -> None:
-    """Обход всех станций. По статичному списку
+    """Обход всех станций.
     :param bypass_hero:
     :return: None
     """
-    def_name = 'touring.sbor_podarkov'
     fun.log_with_caller(message='a')
     pers = fun.selection_hero()
     if pers in ['Gady', 'Gavr']:

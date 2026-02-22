@@ -4,6 +4,7 @@ import os_action
 from .time_processing import *
 from . import sounds
 from baza import baza_paths as b_p
+from baza import variables as var
 from time import sleep
 
 
@@ -45,22 +46,20 @@ class Mouse:
              pos: tuple,
              speed=0.2,
              show=True,
-             log=True,
-             message_l=None) -> None:
+             message=None) -> None:
         """
 
         :param pos:
         :param speed:
         :param show:
-        :param log:
-        :param message_l:
+        :param message:
         :return:
         """
         my_log_file('')
-        my_log_file(f'tolls.mouse.Mouse.move {message_l}')
+        my_log_file(f'tolls.mouse.Mouse.move {message}')
         my_log_file(f'{pos=}')
-        if log:
-            print(f'tolls.mouse.Mouse.move {message_l=}')
+        if var.Parameters.mouse_rapport:
+            print(f'tolls.mouse.Mouse.move {message=}')
         if show:
             pyautogui.moveTo(pos, duration=speed)
         return
@@ -70,21 +69,19 @@ class Mouse:
                       pos_click: tuple,
                       move_time: float = 0.75,
                       z_p_k: float = 0.05,
-                      log=True,
-                      message_l=None) -> None:
+                      message=None) -> None:
         """
         Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
 
         :param pos_click: Point
         :param move_time: время перемещения указателя мыши в секундах
         :param z_p_k: задержка перед кликом(float)
-        :param log:
-        :param message_l: цель клика
+        :param message: цель клика
         :return: None
         """
-        my_log_file(f'tolls.mouse.Mouse.move_to_click {message_l=}, {pos_click=}')
-        if log:
-            print(f'tolls.mouse.Mouse.move_to_click {message_l=}, {pos_click=}')
+        my_log_file(f'tolls.mouse.Mouse.move_to_click {message=}, {pos_click=}')
+        if var.Parameters.mouse_rapport:
+            print(f'tolls.mouse.Mouse.move_to_click {message=}, {pos_click=}')
         sleep(0.3)
         Mouse.move(pos=pos_click, speed=move_time)
         # print('должен быть клик')
@@ -96,20 +93,18 @@ class Mouse:
     @staticmethod
     def left_click(*,
                    pos: tuple,
-                   log=False,
-                   message_l=None) -> None:
+                   message=None) -> None:
         """
 
         :param pos:
-        :param log:
-        :param message_l:
+        :param message:
         :return:
         """
         my_log_file('')
-        my_log_file(f'tolls.mouse.Mouse.left_click {message_l}')
+        my_log_file(f'tolls.mouse.Mouse.left_click {message}')
         my_log_file(f' {pos=}')
-        if log:
-            print(f'tolls.mouse.Mouse.left_click {message_l=}')
+        if var.Parameters.mouse_rapport:
+            print(f'tolls.mouse.Mouse.left_click {message=}')
         sounds.click_mouse()
         pyautogui.hotkey('Ctrl')
         pyautogui.click(pos)
@@ -140,20 +135,18 @@ class Mouse:
                        pos_take: tuple,
                        pos_drop: tuple,
                        speed: float = 0.2,
-                       log=False,
-                       message_l=None) -> None:
+                       message=None) -> None:
         """
 
         :param pos_take:
         :param pos_drop:
         :param speed:
-        :param log:
-        :param message_l:
+        :param message:
         :return:
         """
-        my_log_file(f'tolls.mouse.Mouse.take_drag_drop {message_l}')
-        if log:
-            print(f'tolls.mouse.Mouse.take_drag_drop {message_l=}')
+        my_log_file(f'tolls.mouse.Mouse.take_drag_drop {message}')
+        if var.Parameters.mouse_rapport:
+            print(f'tolls.mouse.Mouse.take_drag_drop {message=}')
         pyautogui.mouseDown(pos_take)
         Mouse.move(pos=pos_drop, speed=speed)
         pyautogui.mouseUp()

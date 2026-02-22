@@ -1,6 +1,7 @@
 from time import sleep
 
 import fun
+import tools
 from station_master import enemy_battle
 
 
@@ -18,11 +19,11 @@ def search_friend():
     x_r = x - 78
     y_r = y - 350
     friend_battle_region = x_r, y_r, 155, 295
-    fun.Mouse.move(pos=pos_friend, speed=1)
-    fun.Mouse.move_to_click(pos_click=pos_friend, z_p_k=0.2)
+    tools.Mouse.move(pos=pos_friend, speed=1)
+    tools.Mouse.move_to_click(pos_click=pos_friend, z_p_k=0.2)
     dom = fun.locCenterImg('img/tents_R/b_tent.png', region=friend_battle_region, confidence=0.9)
     while not dom:
-        fun.Mouse.move_to_click(pos_click=pos_friend, z_p_k=0.2)
+        tools.Mouse.move_to_click(pos_click=pos_friend, z_p_k=0.2)
         dom = fun.locCenterImg('img/tents_R/b_tent.png', region=friend_battle_region, confidence=0.9)
     hero_vs_friend = fun.locCenterImg("img/frends/hero_vs_friend.png", region=friend_battle_region,
                                       confidence=0.95)  # 0.95 #  0.986
@@ -49,13 +50,13 @@ def friend_kill(required_quantity=5):  # требуемое количество
         if friend_battle_:
             print('Атакую')
             quantity_battle += 1
-            fun.Mouse.move_to_click(pos_click=friend_battle_, z_p_k=0.5)
+            tools.Mouse.move_to_click(pos_click=friend_battle_, z_p_k=0.5)
             hero_vs_opponent = fun.locCenterImg('img/frends/hero_vs_opponent.png', 0.9)
             while hero_vs_opponent is None:
                 sleep(0.1)
 
                 hero_vs_opponent = fun.locCenterImg('img/frends/hero_vs_opponent.png', 0.9)
-            fun.Mouse.move_to_click(pos_click=hero_vs_opponent, z_p_k=0.3)
+            tools.Mouse.move_to_click(pos_click=hero_vs_opponent, z_p_k=0.3)
             sleep(1)
             enemy_battle(0.5, arena=True)
             print(quantity_battle, 'quantity_battle')

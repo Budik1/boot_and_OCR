@@ -65,120 +65,6 @@ def wait_and_stop_img(*, name_img, region: tuple[int, int, int, int] | None = No
     return img_1
 
 
-class Mouse:
-
-    @staticmethod
-    def position_print():
-        print()
-        print('position()')
-        print(pyautogui.position())
-
-    @staticmethod
-    def move(*, pos: tuple, speed=0.2, show=True, log=False, message_l=None):
-        tools.Mouse.move(pos=pos, speed=speed, show=show, log=log, message_l=message_l)
-        # """
-        #
-        # :param pos:
-        # :param speed:
-        # :param show:
-        # :param log:
-        # :param message_l:
-        # :return:
-        # """
-        # my_log_file('')
-        # my_log_file(f'fun.Mouse.move {message_l}')
-        # my_log_file(f'{pos=}')
-        # if log:
-        #     print(f'fun.Mouse.move {message_l=}')
-        # if show:
-        #     pyautogui.moveTo(pos, duration=speed)
-        # return
-
-    @staticmethod
-    def left_click(*, pos, message=False, message_l=None):
-        tools.Mouse.left_click(pos=pos, log=message, message_l=message_l)
-        # """
-        #
-        # :param pos:
-        # :param message:
-        # :param message_l:
-        # :return:
-        # """
-        # my_log_file('')
-        # my_log_file(f'fun.Mouse.left_click {message_l}')
-        # my_log_file(f' {pos=}')
-        # if message:
-        #     print(f'fun.Mouse.left_click {message_l=}')
-        # tools.sounds.click_mouse()
-        # pyautogui.hotkey('Ctrl')
-        # pyautogui.click(pos)
-        # return
-
-    @staticmethod
-    def take_drag_drop_y(*, pos_take, distance, speed=0.2, ):  # message=None, message_l=None
-        tools.Mouse.take_drag_drop_y(pos_take=pos_take, distance=distance, speed=speed)
-        # """
-        #
-        # :param pos_take:
-        # :param distance:
-        # :param speed:
-        # :return:
-        # """
-        # pyautogui.mouseDown(pos_take)
-        # x, y = pos_take
-        # y += distance
-        # new_pos = x, y
-        # Mouse.move(pos=new_pos, speed=speed)
-        # pyautogui.mouseUp()
-        # return
-
-    @staticmethod
-    def take_drag_drop(*, pos_take: tuple, pos_drop: tuple, speed: float = 0.2, message=False, message_l=None) -> None:
-        tools.Mouse.take_drag_drop(pos_take=pos_take, pos_drop=pos_drop, speed=speed, log=message,
-                                   message_l=message_l)
-        # """
-        #
-        # :param pos_take:
-        # :param pos_drop:
-        # :param speed:
-        # :param message:
-        # :param message_l:
-        # :return:
-        # """
-        # my_log_file(f'fun.Mouse.take_drag_drop {message_l}')
-        # if message:
-        #     print(f'fun.Mouse.take_drag_drop {message_l=}')
-        # pyautogui.mouseDown(pos_take)
-        # Mouse.move(pos=pos_drop, speed=speed)
-        # pyautogui.mouseUp()
-        # return
-
-    @staticmethod
-    def move_to_click(*, pos_click: tuple, move_time: float = 0.75, z_p_k: float = 0.05, log=False,
-                      message_l=None) -> None:
-        tools.Mouse.move_to_click(pos_click=pos_click, move_time=move_time, z_p_k=z_p_k, log=log, message_l=message_l)
-        # """
-        # Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
-        #
-        # :param pos_click: Point
-        # :param move_time: время перемещения указателя мыши в секундах
-        # :param z_p_k: задержка перед кликом(float)
-        # :param log:
-        # :param message_l: цель клика
-        # :return: None
-        # """
-        # my_log_file(f'fun.Mouse.move_to_click {message_l=}, {pos_click=}')
-        # if log:
-        #     print(f'fun.Mouse.move_to_click {message_l=}, {pos_click=}')
-        # sleep(0.3)
-        # Mouse.move(pos=pos_click, speed=move_time)
-        # # print('должен быть клик')
-        # sleep(z_p_k)
-        # Mouse.left_click(pos=pos_click)
-        # sleep(0.18)
-        # return
-
-
 def my_log_file(text):
     date_ = tools.date_now()
     time_ = tools.time_now()
@@ -222,20 +108,20 @@ def station_gifts():
     pass
     gifts = locCenterImg('img/b_gifts.png', 0.91)
     pyautogui.moveTo(gifts, duration=1)
-    Mouse.left_click(pos=gifts)
+    tools.Mouse.left_click(pos=gifts)
     open_ = locCenterImg('img/b_gift_open.png', 0.9)
     while open_:
         pyautogui.moveTo(open_, duration=1)
-        Mouse.left_click(pos=open_)
+        tools.Mouse.left_click(pos=open_)
         sleep(1)
         thanks = locCenterImg('img/b_thanks.png', 0.9)
         pyautogui.moveTo(thanks, duration=1)
-        Mouse.left_click(pos=thanks)
+        tools.Mouse.left_click(pos=thanks)
         sleep(1)
         give = locCenterImg('img/b_give.png', 0.85)
         print(give)
         pyautogui.moveTo(give, duration=1)
-        Mouse.left_click(pos=give)
+        tools.Mouse.left_click(pos=give)
 
         open_ = locCenterImg('img/b_gift_open.png', 0.9)
 
@@ -258,10 +144,10 @@ def close_popup_window(speed_mouse=0.75):
     cancel = find_img.find_cancel()
     res = False
     if knob:
-        Mouse.move_to_click(pos_click=knob, move_time=speed_mouse, z_p_k=1)
+        tools.Mouse.move_to_click(pos_click=knob, move_time=speed_mouse, z_p_k=1)
         res = True
     if cancel:
-        Mouse.move_to_click(pos_click=cancel, move_time=speed_mouse, z_p_k=1)
+        tools.Mouse.move_to_click(pos_click=cancel, move_time=speed_mouse, z_p_k=1)
         res = True
     return res
 
@@ -276,7 +162,7 @@ def push_close(speed_mouse=0.75, event=''):
         my_log_file(f'')
         my_log_file(f'fun.push_close {event_mes} {pos_close=}')
         print(f'fun.push_close {event_mes} {pos_close=}')
-        Mouse.move_to_click(pos_click=pos_close, move_time=speed_mouse, z_p_k=0.1, log=True, message_l=event)
+        tools.Mouse.move_to_click(pos_click=pos_close, move_time=speed_mouse, z_p_k=0.1, log=True, message=event)
         close_flag = True
     else:
         close_flag = False
@@ -289,22 +175,22 @@ def exit_to_zero_screen():
     b_exit = find_img.find_b_exit()
     print(b_exit, 'b_exit')
     if b_exit:
-        Mouse.move_to_click(pos_click=b_exit, z_p_k=0.1)
+        tools.Mouse.move_to_click(pos_click=b_exit, z_p_k=0.1)
 
 
 def bonus():
     my_log_file('fun.bonus')
     # кнопка добавить
     add_bonus = locCenterImg('img/add.png', 0.8)
-    Mouse.move(pos=add_bonus, speed=1)
+    tools.Mouse.move(pos=add_bonus, speed=1)
     sleep(1)
-    Mouse.left_click(pos=add_bonus)
+    tools.Mouse.left_click(pos=add_bonus)
     sleep(2)
     # кнопка забрать
     take_bonus = locCenterImg('img/take.png', 0.9)
     if take_bonus:  # != None:
         pyautogui.moveTo(take_bonus, duration=1)
-        Mouse.left_click(pos=take_bonus)
+        tools.Mouse.left_click(pos=take_bonus)
         print('Бонус найден')
     else:
         print('Бонус не найден')
@@ -320,8 +206,8 @@ def move_friends_list_left():
     my_log_file('fun.move_friends_list_left')
     sleep(1)
     ar_right = locCenterImg('img/overall/b_arrow_right.png', 0.8)
-    Mouse.move(pos=ar_right, speed=1)
-    Mouse.left_click(pos=ar_right)
+    tools.Mouse.move(pos=ar_right, speed=1)
+    tools.Mouse.left_click(pos=ar_right)
     sleep(1)
     return 1
 
@@ -335,8 +221,8 @@ def move_friends_list_right():
     sleep(0.2)
     ar_right = locCenterImg('img/overall/b_arrow_left.png', 0.8)
 
-    Mouse.move(pos=ar_right, speed=1)
-    Mouse.left_click(pos=ar_right)
+    tools.Mouse.move(pos=ar_right, speed=1)
+    tools.Mouse.left_click(pos=ar_right)
     sleep(0.2)
     return 1
 
@@ -347,10 +233,10 @@ def move_friends_list_to_top():
     begin = locCenterImg('img/overall/b_begin.png', 0.96)
     if begin:  # если увидел
         # pyautogui.moveTo(begin, duration=1)
-        Mouse.move(pos=begin, speed=1)
+        tools.Mouse.move(pos=begin, speed=1)
         print(' перемотка в начало ')
         sleep(1)
-        Mouse.left_click(pos=begin)
+        tools.Mouse.left_click(pos=begin)
         print('клик в начало ' + str(begin))
     # pyautogui.moveTo(50, 600, duration=1)
     sleep(1)
@@ -576,7 +462,7 @@ def find_link_klan(show=True):
         print('no')
         pos_klan = find_img.find_klan()
         if pos_klan:
-            Mouse.move(pos=pos_klan, show=show)
+            tools.Mouse.move(pos=pos_klan, show=show)
 
     return pos_klan
 
@@ -603,7 +489,7 @@ def vizit_to_station_master():
     is_open_station()
     station_master = find_img.find_station_master()
     if station_master:
-        Mouse.move(pos=station_master, speed=0.4)
+        tools.Mouse.move(pos=station_master, speed=0.4)
         # print(" уже у начальника ")
         sleep(1 / 3)
     else:
@@ -616,11 +502,11 @@ def vizit_to_station_master():
         x1, y1 = pos_klan
         x1, y1 = x1 - 60, y1 + 300
         master = x1, y1
-        Mouse.move_to_click(pos_click=master, move_time=0.4, z_p_k=0.2)
+        tools.Mouse.move_to_click(pos_click=master, move_time=0.4, z_p_k=0.2)
         # print('зашел к начальнику')
         sleep(0.5)
         station_master = find_img.find_station_master()
-        Mouse.move(pos=station_master, speed=0.4)
+        tools.Mouse.move(pos=station_master, speed=0.4)
     return station_master
 
 
@@ -704,9 +590,9 @@ def work():
 
     vizit_to_station_master()
     pos_work = find_img.find_work()
-    Mouse.move_to_click(pos_click=pos_work)
+    tools.Mouse.move_to_click(pos_click=pos_work)
     work_rest_hour = find_img.find_work_rest_hour(rest=rest)
-    Mouse.move_to_click(pos_click=work_rest_hour)
+    tools.Mouse.move_to_click(pos_click=work_rest_hour)
     return
 
 
@@ -714,7 +600,7 @@ def verifi_img():
     path_img = input('Введи полное имя искомой картинки бес кавычек: ')
     pos = locCenterImg(name_img=path_img)
     if pos:
-        Mouse.move(pos=pos)
+        tools.Mouse.move(pos=pos)
         print(c_t.tc_yellow(f'{path_img} - Найден )) все хорошо'))
     else:
         print(c_t.tc_red(f'{path_img} - Не найден  !!'))
@@ -734,7 +620,7 @@ def ac():
     x, y = pos_my
     x -= 50
     y -= 50
-    Mouse.move_to_click(pos_click=(x, y), move_time=0.3, z_p_k=0.2)
+    tools.Mouse.move_to_click(pos_click=(x, y), move_time=0.3, z_p_k=0.2)
 
 
 def get_areas_energy_1():
@@ -863,7 +749,7 @@ def log_with_caller(message=None, print_message=True) -> str:
     :param message: 'a'=активация and 'e'=выход. Если None - без сообщения
     :return: строка f"[{module_name}.{func_name}: line-{line_no}] {message}"
     """
-    # Получение фрейма вызывающей функции level=logging.INFO
+    # Получение фрейма вызывающей функции
     current_frame = inspect.currentframe().f_back
     # Извлечение имени функции
     func_name = current_frame.f_code.co_name
@@ -880,7 +766,8 @@ def log_with_caller(message=None, print_message=True) -> str:
         context_message = f"[{module_name}.{func_name}: line-{line_no}] выход"
     else:
         context_message = f"[{module_name}.{func_name}: line-{line_no}]"
-    if print_message == baza.variables.Parameters.def_rapport:
+    my_log_file(context_message)
+    if baza.variables.Parameters.def_rapport:
         print(tools.color_text.tc_green(context_message))
     return context_message
 

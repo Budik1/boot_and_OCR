@@ -13,6 +13,7 @@ from tools import sounds
 
 
 def foto_danger():
+    fun.log_with_caller(message='a')
     kv_close = find.find_close()
     x, y = kv_close
     x -= 585
@@ -24,6 +25,7 @@ def foto_danger():
     name_foto = tools.date_and_time_in_name_file() + ".png"
     fun.foto(('img/Cr/' + name_foto), (x_s, y_s, x_r, y_r))
     # print('foto')
+    fun.log_with_caller(message='e')
 
 
 def foto_result_round(*, pos_v, pos_n, path=b_p.result_round, sound=False):
@@ -35,6 +37,7 @@ def foto_result_round(*, pos_v, pos_n, path=b_p.result_round, sound=False):
     :param sound:
     :return:
     """
+    fun.log_with_caller(message='a')
     # коррекция верхнего угла
     pos_x, pos_y = pos_v
     pos_x += 180
@@ -48,6 +51,7 @@ def foto_result_round(*, pos_v, pos_n, path=b_p.result_round, sound=False):
     fun.foto((path + name_foto), (pos_x, pos_y, x_r, y_r))
     if sound:
         sounds.sound_victory()
+    fun.log_with_caller(message='e')
     return
 
 
@@ -58,8 +62,7 @@ def foto_loot_kv(*, point_v, point_n):
     :param point_n: 
     :return: 
     """
-    fun.my_log_file(f'')
-    fun.my_log_file(f'kv_and_raid.foto_loot_kv')
+    fun.log_with_caller(message='a')
     path = b_p.loot_round  # 'img/ kv/ result_round/ result_round_loot/'
     #
     kor_x_v = 30 + 90 - 35
@@ -75,12 +78,12 @@ def foto_loot_kv(*, point_v, point_n):
     #
     name_foto = tools.date_and_time_in_name_file() + ".png"
     fun.foto((path + name_foto), (pos_x, pos_y, x_r, y_r))
+    fun.log_with_caller(message='e')
     return
 
 
 def get_name_loot_kv():
-    fun.my_log_file('')
-    fun.my_log_file('kv_and_raid.get_name_loot_kv')
+    fun.log_with_caller(message='a')
     dict_name_loot = {'сержант': 'img/kv/result_round/loot/p1.png',
                       'лейтенант': 'img/kv/result_round/loot/p2.png',
                       'капитан': 'img/kv/result_round/loot/p3.png',
@@ -92,31 +95,30 @@ def get_name_loot_kv():
         if name_loot:
             result = name
             break
+    fun.log_with_caller(message='e')
     return result
 
 
 def selection_hero_in_kv():
-    fun.my_log_file(f'')
-    fun.my_log_file(f'kv_and_raid.selection_hero_in_kv')
-
+    fun.log_with_caller(message='a')
     hero = fun.selection_hero()
     if not hero:
         exit_kv = find.find_exit_kv()
         if exit_kv:
-            fun.Mouse.move_to_click(pos_click=exit_kv)
+            tools.Mouse.move_to_click(pos_click=exit_kv)
         hero = fun.selection_hero()
     klan = fun.find_link_klan()
     if klan:
         x, y = klan
         x += 100
         pos = x, y
-        fun.Mouse.move_to_click(pos_click=pos)
+        tools.Mouse.move_to_click(pos_click=pos)
+    fun.log_with_caller(message='e')
     return hero
 
 
 def update_set_dist(*, value_dist):
-    fun.my_log_file(f'')
-    fun.my_log_file(f'kv_and_raid.update_set_dist')
+    fun.log_with_caller(message='a')
     temp_set_dist = heroes.Hero.get_set_dist(heroes.Activ.hero_activ)
     if temp_set_dist:
         temp_list = list(temp_set_dist)
@@ -125,12 +127,12 @@ def update_set_dist(*, value_dist):
     temp_list.append(value_dist)
     set_dist = set(temp_list)
     heroes.Hero.set_set_dist(heroes.Activ.hero_activ, set_dist)
+    fun.log_with_caller(message='e')
     return
 
 
 def battle(*, target_call):
-    fun.my_log_file(f'')
-    fun.my_log_file('kv_and_raid.battle')
+    fun.log_with_caller(message='a')
     kv_skip_battle = find.find_kv_skip_battle()
     fun.my_log_file(f'{kv_skip_battle} kv_skip_battle')
     danger = find.find_kv_danger()
@@ -147,7 +149,7 @@ def battle(*, target_call):
     while not kv_close:
         it_kv += 1
         if not danger and kv_skip_battle and it_kv >= 10:
-            fun.Mouse.move_to_click(pos_click=kv_skip_battle, z_p_k=0.5)
+            tools.Mouse.move_to_click(pos_click=kv_skip_battle, z_p_k=0.5)
         sleep(1)
         kv_skip_battle = find.find_kv_skip_battle()
         danger = find.find_kv_danger()
@@ -178,7 +180,6 @@ def battle(*, target_call):
                 # записать в лист
                 list_loot = heroes.Hero.get_list_loot(heroes.Activ.hero_activ)
                 list_loot.append(str(name_loot))
-
                 heroes.Hero.set_list_loot(heroes.Activ.hero_activ, list_loot)
 
             if danger:
@@ -192,16 +193,15 @@ def battle(*, target_call):
         rapport_battle = f'{target_call} {dang}{result}{mes}'
         print(rapport_battle)
         solid_memory.save_kv_state_config_json(info=False)
-    fun.Mouse.move_to_click(pos_click=kv_close, z_p_k=0.3)
+    tools.Mouse.move_to_click(pos_click=kv_close, z_p_k=0.3)
+    fun.log_with_caller(message='e')
 
 
 def kv():
-    fun.my_log_file(f'')
-    fun.my_log_file('kv_and_raid.kv')
+    fun.log_with_caller(message='a')
     selection_hero_in_kv()
     solid_memory.reading_kv_config_json()
     solid_memory.set_values_kv()
-
     phrase_eff = tools.report_kv_efficiency()
     print(phrase_eff[0])
     print(phrase_eff[1])
@@ -211,8 +211,7 @@ def kv():
     kv_reload = find.find_kv_reload()
     # fun.my_print_to_file(f'kv_reload {kv_reload}')
     fun.my_log_file("нажать 'обновить'")
-    fun.Mouse.move_to_click(pos_click=kv_reload, z_p_k=1)
-
+    tools.Mouse.move_to_click(pos_click=kv_reload, z_p_k=1)
     kv_wait_attack = find.find_kv_attack_for_money()
     attack = find.find_kv_attak()
     klan_war = find.find_klan_kv_label()
@@ -225,13 +224,13 @@ def kv():
             if it_w_a == 1:
                 # print("ждем возможность атаковать")
                 kv_reload = find.find_kv_reload()
-                fun.Mouse.move_to_click(pos_click=kv_reload, z_p_k=1)
+                tools.Mouse.move_to_click(pos_click=kv_reload, z_p_k=1)
         if attack:
             heroes.Hero.set_last_attack(heroes.Activ.hero_activ, value=time.time())
             if klan_war:
                 it_w_a = 0
                 heroes.Hero.up_qty_duel_in_kv_all(heroes.Activ.hero_activ)
-                fun.Mouse.move_to_click(pos_click=attack, move_time=0.01, z_p_k=0)
+                tools.Mouse.move_to_click(pos_click=attack, move_time=0.01, z_p_k=0)
                 qty_duel = heroes.Hero.get_qty_duel_in_kv_all(heroes.Activ.hero_activ)
                 target_attack = f'дуэль {qty_duel}'
                 if qty_duel == 1:
@@ -249,32 +248,31 @@ def kv():
             else:
                 it_w_a = 0
                 target_attack = 'Raid'
-                fun.Mouse.move_to_click(pos_click=attack, move_time=0.01, z_p_k=0)
+                tools.Mouse.move_to_click(pos_click=attack, move_time=0.01, z_p_k=0)
                 battle(target_call=target_attack)
         kv_wait_attack = find.find_kv_attack_for_money()
         attack = find.find_kv_attak()
         klan_war = find.find_klan_kv_label()
+    # fun.log_with_caller(message='e')
 
 
 def loot():
-    fun.my_log_file(f'')
-    fun.my_log_file(f'kv_and_raid.loot')
+    fun.log_with_caller(message='a')
     backpack = fun.locCenterImg('img/kv/backpack.png', confidence=0.9)
-    fun.Mouse.move(pos=backpack, speed=2)
-
+    tools.Mouse.move(pos=backpack, speed=2)
     x, y = backpack
     x -= 220
     x_s = x
     y -= 145
     y_s = y
     pos = x, y
-    fun.Mouse.move(pos=pos, speed=2)
+    tools.Mouse.move(pos=pos, speed=2)
     x += 755
     x_r = x
     y += 615
     y_r = y
     pos = x, y
-    fun.Mouse.move(pos=pos, speed=2)
-
+    tools.Mouse.move(pos=pos, speed=2)
     name_foto = tools.date_and_time_in_name_file() + ".png"
     fun.foto(('img/Cr/' + name_foto), (x_s, y_s, x_r, y_r))
+    fun.log_with_caller(message='e')

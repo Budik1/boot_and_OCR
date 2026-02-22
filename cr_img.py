@@ -3,7 +3,7 @@ from time import sleep
 
 import fun
 import find_img as find
-
+import tools
 from tools import sounds
 
 
@@ -40,12 +40,12 @@ def fashion():
     show_move = True
     pos_start = find.find_my_game2()
     # показать привязку
-    fun.Mouse.move(pos=pos_start, speed=1)
+    tools.Mouse.move(pos=pos_start, speed=1)
     # найдем верхний угол
     x, y = pos_start
     x -= 20
     y += 25 + 6
-    fun.Mouse.move(pos=(x, y), speed=1, show=show_move)
+    tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
     # # найдем нижний угол
     # x_demo, y_demo = x, y
     # change_x = 39
@@ -56,7 +56,7 @@ def fashion():
     # # собственно создание снимка
     # fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'{name_create_img}')
-    fun.Mouse.move(pos=pos)
+    tools.Mouse.move(pos=pos)
     sounds.sound_vic()
     print('ok')
     return
@@ -171,13 +171,13 @@ def work():
     # fun.mouse_move(pos=(x_demo, y_demo))
     fun.foto(f'img/overall/work.png', (x, y, change_x, change_y))
     pos_work = fun.locCenterImg(f'img/overall/work.png')
-    fun.Mouse.move(pos=pos_work)
+    tools.Mouse.move(pos=pos_work)
 
 
 def work_8_hour():
     fun.vizit_to_station_master()
     pos_work = fun.locCenterImg('img/overall/work.png')
-    fun.Mouse.move(pos=pos_work)
+    tools.Mouse.move(pos=pos_work)
     x, y = pos_work
     x -= 224
     y += 430
@@ -190,25 +190,25 @@ def work_8_hour():
     # fun.mouse_move(pos=(x_demo, y_demo))
     fun.foto(f'img/overall/work_8_hour.png', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'img/overall/work_8_hour.png')
-    fun.Mouse.move(pos=pos)
+    tools.Mouse.move(pos=pos)
 
 
 def station_exit():
     pos_close = find.find_close()
-    fun.Mouse.move(pos=pos_close, speed=1)
+    tools.Mouse.move(pos=pos_close, speed=1)
     x, y = pos_close
     x -= 600 - 6
     y -= 640 - 4
-    fun.Mouse.move(pos=(x, y), speed=1)
+    tools.Mouse.move(pos=(x, y), speed=1)
     x_demo, y_demo = x, y
     change_x = 290 - 6 - 2
     change_y = 50 - 4
     x_demo += change_x
     y_demo += change_y
-    fun.Mouse.move(pos=(x_demo, y_demo))
+    tools.Mouse.move(pos=(x_demo, y_demo))
     fun.foto(f'img/tonelli/station_exit.png', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'img/tonelli/station_exit.png')
-    fun.Mouse.move(pos=pos)
+    tools.Mouse.move(pos=pos)
 
 
 def button_expand():
@@ -223,16 +223,16 @@ def button_expand():
     change_y = 25
     x_demo += change_x
     y_demo += change_y
-    fun.Mouse.move(pos=(x_demo, y_demo))
+    tools.Mouse.move(pos=(x_demo, y_demo))
     fun.foto(f'img/overall/button_expand.png', (x, y, change_x, change_y))
     img_button_expand = fun.locCenterImg('img/overall/button_expand.png')
-    fun.Mouse.move(pos=img_button_expand, speed=1)
+    tools.Mouse.move(pos=img_button_expand, speed=1)
 
 
 def img_change_hero():
     # развернуть на весь экран
     img_button_expand = fun.locCenterImg('img/overall/button_expand.png')
-    fun.Mouse.move_to_click(pos_click=img_button_expand)
+    tools.Mouse.move_to_click(pos_click=img_button_expand)
     #
     sleep(0.2)
     pos_my = fun.locCenterImg('img/overall/my_game2.png', 0.8)
@@ -251,7 +251,7 @@ def img_change_hero():
     pos_menu_chenge_acc = fun.locCenterImg(change_hero)
     open_menu_chenge_acc = fun.locCenterImg('img/person/add_acc.png')
     if not open_menu_chenge_acc:
-        fun.Mouse.move_to_click(pos_click=pos_menu_chenge_acc)
+        tools.Mouse.move_to_click(pos_click=pos_menu_chenge_acc)
     img(pos_menu_chenge_acc)
 
 
@@ -276,19 +276,19 @@ def img(pos_clic):
     her_veles = fun.locCenterImg('img/person/change_hero_veles.png')
     if her_veles:
         print('her Veles')
-        fun.Mouse.move(pos=her_veles, speed=1)
+        tools.Mouse.move(pos=her_veles, speed=1)
         sleep(2)
     if her_gady:
         print('her Gady')
-        fun.Mouse.move(pos=her_gady, speed=1)
+        tools.Mouse.move(pos=her_gady, speed=1)
         sleep(2)
     if her_gavr:
         print('her Gavr')
-        fun.Mouse.move(pos=her_gavr, speed=1)
+        tools.Mouse.move(pos=her_gavr, speed=1)
         sleep(2)
     if her_mara:
         print('her Mara')
-        fun.Mouse.move(pos=her_mara, speed=1)
+        tools.Mouse.move(pos=her_mara, speed=1)
         sleep(2)
 
 
@@ -298,13 +298,13 @@ def img2(pos_clic):
     x, y = pos_clic
     x -= 95
     y += 97 + 130 + 35
-    fun.Mouse.move(pos=(x, y), speed=1)
+    tools.Mouse.move(pos=(x, y), speed=1)
     x_demo, y_demo = x, y
     change_x = 180
     change_y = 32
     x_demo += change_x
     y_demo += change_y
-    fun.Mouse.move(pos=(x_demo, y_demo))
+    tools.Mouse.move(pos=(x_demo, y_demo))
     fun.foto(f'img/person/change_hero/add_acc.png', (x, y, change_x, change_y))
 
 
@@ -312,7 +312,7 @@ def button_collapse():
     #
     # развернуть на весь экран
     img_button_expand = fun.locCenterImg('img/overall/button_expand.png')
-    fun.Mouse.move_to_click(pos_click=img_button_expand)
+    tools.Mouse.move_to_click(pos_click=img_button_expand)
     #
     pos_my = fun.locCenterImg('img/overall/my_game2.png', 0.8)
 
@@ -328,7 +328,7 @@ def button_collapse():
     # fun.Mouse.move(pos=(x_demo, y_demo))
     fun.foto(f'img/overall/button_collapse.png', (x, y, change_x, change_y))
     img_button_collapse = fun.locCenterImg('img/overall/button_collapse.png')
-    fun.Mouse.move(pos=img_button_collapse, speed=1)
+    tools.Mouse.move(pos=img_button_collapse, speed=1)
 
 
 def aktiv_win_game():
@@ -368,7 +368,7 @@ def info_img():
         y -= (pos_change[1] / 2) - 2
         fun.foto('img/overall/info.png', (x, y, pos_change[0], pos_change[1]))
     new_pos = fun.locCenterImg(name_img='img/overall/info.png')
-    fun.Mouse.move(pos=new_pos)
+    tools.Mouse.move(pos=new_pos)
     return
 
 
@@ -380,7 +380,7 @@ def dress():
     show_move = False
     pos_start = find.find_exit_person()
     # показать привязку
-    fun.Mouse.move(pos=pos_start, speed=1)
+    tools.Mouse.move(pos=pos_start, speed=1)
     # найдем верхний угол
     x, y = pos_start
     # x += 251, y -= 486 верхний правый слот
@@ -390,18 +390,18 @@ def dress():
     # x += 713, y += 125 слот обувь
     x += 713
     y -= 341
-    fun.Mouse.move(pos=(x, y), speed=1, show=show_move)
+    tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
     # найдем нижний угол
     x_demo, y_demo = x, y
     change_x = 89
     change_y = 89
     x_demo += change_x
     y_demo += change_y
-    fun.Mouse.move(pos=(x_demo, y_demo), show=show_move)
+    tools.Mouse.move(pos=(x_demo, y_demo), show=show_move)
 
     fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'{name_create_img}')
-    fun.Mouse.move(pos=pos)
+    tools.Mouse.move(pos=pos)
     sounds.sound_vic()
     print('ok')
     return
@@ -412,7 +412,7 @@ def dress_region():
     show_move = True
     pos_start = find.find_exit_person()
     # показать привязку
-    fun.Mouse.move(pos=pos_start, speed=1)
+    tools.Mouse.move(pos=pos_start, speed=1)
     # найдем верхний угол
     x, y = pos_start
     # x += 251, y -= 486 верхний правый слот
@@ -424,7 +424,7 @@ def dress_region():
     y -= 125 + 30
     top_pos = x, y
     print('слот обувь')
-    fun.Mouse.move(pos=top_pos, speed=1, show=show_move)
+    tools.Mouse.move(pos=top_pos, speed=1, show=show_move)
     # найдем нижний угол
     x_demo, y_demo = x, y
     change_x = 90 + 60
@@ -432,11 +432,11 @@ def dress_region():
     print(f'регион ({top_pos[0] - pos_start[0]}, {top_pos[1] - pos_start[1]}, {change_x}, {change_y})')
     x_demo += change_x
     y_demo += change_y
-    fun.Mouse.move(pos=(x_demo, y_demo), show=show_move)
+    tools.Mouse.move(pos=(x_demo, y_demo), show=show_move)
     #
     fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'{name_create_img}')
-    fun.Mouse.move(pos=pos)
+    tools.Mouse.move(pos=pos)
 
     print('ok')
 
@@ -446,14 +446,14 @@ def no_energy():
     show_move = True
     pos_start = find.find_station_master()
     # показать привязку
-    fun.Mouse.move(pos=pos_start, speed=1)
+    tools.Mouse.move(pos=pos_start, speed=1)
     # найдем верхний угол
     x, y = pos_start
     x += 270
     y += 455 + 7
     top_pos = x, y
     print('место')
-    fun.Mouse.move(pos=top_pos, speed=1, show=show_move)
+    tools.Mouse.move(pos=top_pos, speed=1, show=show_move)
     # # найдем нижний угол
     x_demo, y_demo = x, y
     change_x = 59
@@ -461,11 +461,11 @@ def no_energy():
     # # print(f'регион ({top_pos[0] - pos_start[0]}, {top_pos[1] - pos_start[1]}, {change_x}, {change_y})')
     x_demo += change_x
     y_demo += change_y
-    fun.Mouse.move(pos=(x_demo, y_demo), show=show_move)
+    tools.Mouse.move(pos=(x_demo, y_demo), show=show_move)
 
     fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'{name_create_img}')
-    fun.Mouse.move(pos=pos)
+    tools.Mouse.move(pos=pos)
     sounds.sound_vic()
     print(f'файл {name_create_img} создан')
 
