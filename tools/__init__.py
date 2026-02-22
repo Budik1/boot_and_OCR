@@ -1,6 +1,7 @@
 from .time_processing import *
 from .word_processing import *
 from .phrases_processing import *
+from .mouse import *
 
 from . import sounds
 from . import color_text

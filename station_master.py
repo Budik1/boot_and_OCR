@@ -192,7 +192,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                             dog = None
                             break
                 if dog:
-                    fun.Mouse.move_to_click(pos_click=dog, move_time=0.1, z_p_k=0.1,
+                    tools.Mouse.move_to_click(pos_click=dog, move_time=0.1, z_p_k=0.1,
                                             log=True, message_l=f'нажал на собаку {dog=}')
                     mes_pet = f'обнаружение пета {dog=}, {par_conf_pet=}'
                 print(mes_pet)
@@ -204,7 +204,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
             skip_battle = fun.locCenterImg(name_img='img/skip_battle.png', confidence=par_conf,)
 
             fun.my_log_file(f'{skip_battle=}')
-            fun.Mouse.move_to_click(pos_click=skip_battle, move_time=0.4, z_p_k=0.5,
+            tools.Mouse.move_to_click(pos_click=skip_battle, move_time=0.4, z_p_k=0.5,
                                     log=True, message_l='нажал пропустить бой')
 
         sleep(1 * prolong_)  # для задержки нажатия "пропустить бой"
@@ -213,7 +213,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
 
         battle_end = find_img.find_b_battle_end(confidence_param=par_conf)
         if battle_end:
-            fun.Mouse.move(pos=battle_end, speed=1)
+            tools.Mouse.move(pos=battle_end, speed=1)
         close = find_img.find_close()
 
         name1_grey_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_grey_rat.png', confidence=conf_mobs)
@@ -278,9 +278,9 @@ def press_en(*, task_number, pos, value_energy):  #
     x = pos[0] - 100
     y = pos[1] - 20
     pos_clik = x, y
-    fun.Mouse.move(pos=pos_clik)
+    tools.Mouse.move(pos=pos_clik, message_l=f'показал выбранное задание ({task_number})')
     # print('тут должен быть клик')                                        # для отладки раскомментировать
-    fun.Mouse.move_to_click(pos_click=pos_clik, move_time=0.4, z_p_k=1.5, log=True, message_l='нажал задание')  # для отладки закомментировать
+    tools.Mouse.move_to_click(pos_click=pos_clik, move_time=0.4, z_p_k=1.5, log=True, message_l=f'нажал {task_number} задание')  # для отладки закомментировать
     sleep(0.5)
     low_energy = find_img.find_low_energy_label()
     if not low_energy:
@@ -324,7 +324,7 @@ def press_en(*, task_number, pos, value_energy):  #
         while close:
             close = find_img.find_close()
             if close:
-                fun.Mouse.move_to_click(pos_click=close, z_p_k=0.5, log=True, message_l='нажал закрыть')
+                tools.Mouse.move_to_click(pos_click=close, z_p_k=0.5, log=True, message_l='нажал закрыть')
 
 
 def task_analysis(img1, img2, region):
@@ -360,7 +360,7 @@ def move(pos , message=True, message_l=None):
     if message:
         print(f'station_master.move() {pos=}')
     if pos:
-        fun.Mouse.move(pos=pos, speed=0.5)
+        tools.Mouse.move(pos=pos, speed=0.5)
         sleep(1)
 
 
@@ -413,17 +413,17 @@ def option_task_money():
 
         variant1, price_task1 = task_analysis(F'{path}{task[0]}', F'{path}{task[1]}', region_1)
         # print(f'{variant1=}, {price_task1=}')
-        fun.Mouse.move(pos=variant1)
+        tools.Mouse.move(pos=variant1)
         sleep(0.1)
 
         variant2, price_task2 = task_analysis(F'{path}{task[2]}', F'{path}{task[3]}', region_2)
         # print(f'{variant2}, {price_task2=}')
-        fun.Mouse.move(pos=variant2)
+        tools.Mouse.move(pos=variant2)
         sleep(0.1)
 
         variant3, price_task3 = task_analysis(F'{path}{task[4]}', F'{path}{task[5]}', region_3)
         # print(f'{variant3}, {price_task3=}')
-        fun.Mouse.move(pos=variant3)
+        tools.Mouse.move(pos=variant3)
         sleep(0.1)
 
         if variant1:
@@ -455,7 +455,7 @@ def option_task_money():
     energy_availability = 1
     close = find_img.find_close()
     while close:
-        fun.Mouse.move_to_click(pos_click=close, z_p_k=0.3)
+        tools.Mouse.move_to_click(pos_click=close, z_p_k=0.3)
         close = find_img.find_close()
 
 
@@ -486,5 +486,5 @@ def task_pos_item(task_num):
     # print(f'station_master.task_pos_item {close=}')
     while close:
         print(f'station_master.task_pos_item {close=}')
-        fun.Mouse.move_to_click(pos_click=close, z_p_k=0.3)
+        tools.Mouse.move_to_click(pos_click=close, z_p_k=0.3)
         close = fun.locCenterImg(name_img='img/overall/close.png', confidence=0.9)

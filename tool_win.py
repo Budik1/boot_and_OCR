@@ -1,43 +1,43 @@
 from tkinter import *
-from tkinter import messagebox
-from tkinter.messagebox import showinfo
 from tkinter import ttk
 
 from baza import baza_dannyx as b_d
 from baza import variables as var
 
 
-class Window(Tk):
-    def __init__(self, width_tool, position_x_tool, position_y_tool):
+class Window(Toplevel):
+    def __init__(self,root, width_tool, position_x_tool, position_y_tool):
         super().__init__()
-        height_tool = b_d.line5
+        # self.def_rap = 0
+        self.height_tool = b_d.line5
         # конфигурация окна
         self.title("окно настроек")
-        self.geometry(f'{width_tool}x{height_tool}+{position_x_tool}+{position_y_tool}')
+        self.geometry(f'{width_tool}x{self.height_tool}+{position_x_tool}+{position_y_tool}')
 
-        # определение кнопки
-        self.button = ttk.Button(self, text="закрыть")
-        self.button["command"] = self.button_clicked
-        self.button.place(x=b_d.col_0, y=height_tool - b_d.height_line)
+        self.def_rap = IntVar()
 
-        self.enabled = StringVar()
-        self.enabled_checkbutton = ttk.Checkbutton(self, text="Включить",
-                                                   # offvalue="Отключено", onvalue="Включено",
-                                                   variable=self.enabled,
-                                                   command=self.check_changed)
-        # self.enabled_checkbutton["command"] = self.check_changed
-        self.enabled_checkbutton.place(x=b_d.col_0, y=b_d.line0)
+        # кнопки
+        self.but_close = ttk.Button(self, text="закрыть")
+        self.but_close["command"] = lambda: self.destroy()
+        self.but_close.place(x=b_d.col_0, y=self.height_tool - b_d.height_line)
 
-        self.enabled_lbl = ttk.Label
-        self.en_lbl()
+        self.but_def_rapport = ttk.Button(self, text='вызов функций')
+        self.but_def_rapport["command"] = self.change_def_rapport_
+        self.but_def_rapport.place(x=b_d.col_0, y=b_d.line0)
 
-    def button_clicked(self):
-        self.destroy()
+        # label
+        self.lbl_def_rapport = ttk.Label(self, textvariable=self.def_rap)
+        self.lbl_def_rapport.place(x=b_d.col_0, y=b_d.line1)
+        # print(f"{var.Parameters.def_rapport=}")
 
-    def check_changed(self):
-        print(f"{self.enabled.get()=}")
 
-    def en_lbl(self):
-        self.enabled_lbl = ttk.Label(self, textvariable=self.enabled)
-        self.enabled_lbl.place(x=b_d.col_0, y=b_d.line1)
-        print(f"{self.enabled.get()=}")
+    # @staticmethod
+    def change_def_rapport_(self):
+        if var.Parameters.def_rapport:
+            var.Parameters.def_rapport = 0
+        else:
+            var.Parameters.def_rapport = 1
+        self.def_rap.set(var.Parameters.def_rapport)
+        print(var.Parameters.def_rapport)
+
+
