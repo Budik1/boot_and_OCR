@@ -15,6 +15,7 @@ def get_ful_region_arena_tabl():
     Возвращает регион полной таблицы
     :return:
     """
+    fun.log_with_caller(message='a')
     # маяки
     point_hall = hall_is_open()
     pos_close = find_img.find_close()
@@ -27,6 +28,7 @@ def get_ful_region_arena_tabl():
     region_width = width_arena + int(width_arena / 5.6)  # с увеличением числа уменьшается (5.6 - 530)
     region_height = height_arena - int(height_arena / 3.284)  # с увеличением числа увеличивается (3.284 - 360)
     full_region = (region_x, region_y, region_width, region_height)
+    fun.log_with_caller(message='e')
     return full_region
 
 
@@ -36,10 +38,12 @@ def get_height_line(*, full_region_arena):
     :param full_region_arena:
     :return:
     """
+    fun.log_with_caller(message='a')
     qty_lines = 6
     x, y, width_full, height_full = full_region_arena
     #  высота строки таблицы
     height_line = int(height_full / qty_lines)
+    fun.log_with_caller(message='e')
     return height_line
 
 
@@ -48,15 +52,18 @@ def hall_is_open():
     Ожидает отрисовки таблицы арены
     :return: позиция таблички арены
     """
+    fun.log_with_caller(message='a')
     hall = find_img.find_hall_of_glory_tabl()
     while not hall:
         sleep(0.1)
         hall = find_img.find_hall_of_glory_tabl()
+    fun.log_with_caller(message='e')
     return hall
 
 
 def create_img_arena_object():
     """Создаёт скрин arena_object из зала славы. Объект должен быть в верхней строке списка """
+    fun.log_with_caller(message='a')
     qty_segment = 106  # 265
     # Определяю героя
     fun.selection_hero(show_name=False)
@@ -84,9 +91,11 @@ def create_img_arena_object():
                  tune_x=tune_x_obj, tune_y=tune_y_obj, tune_s=tune_s_ar_obj, tune_v=tune_v_obj)
 
     print('фото сделано')
+    fun.log_with_caller(message='e')
 
 
 def kill():
+    fun.log_with_caller(message='a')
     # Определяю героя
     fun.selection_hero(show_name=False)
     # Получаю количество боёв на арене сегодня
@@ -190,3 +199,4 @@ def kill():
         boy_in_arena = heroes.Hero.get_arena_count(heroes.Activ.hero_activ)
         print(f"боёв {heroes.Hero.get_arena_count(heroes.Activ.hero_activ)}, {result_text}, следующий..")
         fun.find_link_hall_of_glory()
+    fun.log_with_caller(message='e')

@@ -205,6 +205,8 @@ def kv():
     phrase_eff = tools.report_kv_efficiency()
     print(phrase_eff[0])
     print(phrase_eff[1])
+    if phrase_eff[2]:
+        print(phrase_eff[2])
     print()
     kv_reload = find.find_kv_reload()
     # fun.my_print_to_file(f'kv_reload {kv_reload}')

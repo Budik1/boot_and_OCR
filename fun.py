@@ -1,5 +1,6 @@
 import pyautogui
 import builtins
+import inspect
 from time import sleep, time
 
 # from icecream import ic
@@ -11,11 +12,10 @@ import fun_down
 import heroes
 import os_action
 import tools
-
+import baza
 from baza import baza_dannyx as b_d
 from baza import baza_paths as b_p
 from tools import color_text as c_t
-
 
 par_conf = 0.79
 oblast = (51, 707, 92, 111)
@@ -65,9 +65,6 @@ def wait_and_stop_img(*, name_img, region: tuple[int, int, int, int] | None = No
     return img_1
 
 
-
-
-
 class Mouse:
 
     @staticmethod
@@ -78,102 +75,108 @@ class Mouse:
 
     @staticmethod
     def move(*, pos: tuple, speed=0.2, show=True, log=False, message_l=None):
-        """
-
-        :param pos:
-        :param speed:
-        :param show:
-        :param log:
-        :param message_l:
-        :return:
-        """
-        my_log_file('')
-        my_log_file(f'fun.Mouse.move {message_l}')
-        my_log_file(f'{pos=}')
-        if log:
-            print(f'fun.Mouse.move {message_l=}')
-        if show:
-            pyautogui.moveTo(pos, duration=speed)
-        return
+        tools.Mouse.move(pos=pos, speed=speed, show=show, log=log, message_l=message_l)
+        # """
+        #
+        # :param pos:
+        # :param speed:
+        # :param show:
+        # :param log:
+        # :param message_l:
+        # :return:
+        # """
+        # my_log_file('')
+        # my_log_file(f'fun.Mouse.move {message_l}')
+        # my_log_file(f'{pos=}')
+        # if log:
+        #     print(f'fun.Mouse.move {message_l=}')
+        # if show:
+        #     pyautogui.moveTo(pos, duration=speed)
+        # return
 
     @staticmethod
     def left_click(*, pos, message=False, message_l=None):
-        """
-
-        :param pos:
-        :param message:
-        :param message_l:
-        :return:
-        """
-        my_log_file('')
-        my_log_file(f'fun.Mouse.left_click {message_l}')
-        my_log_file(f' {pos=}')
-        if message:
-            print(f'fun.Mouse.left_click {message_l=}')
-        tools.sounds.click_mouse()
-        pyautogui.hotkey('Ctrl')
-        pyautogui.click(pos)
-        return
+        tools.Mouse.left_click(pos=pos, log=message, message_l=message_l)
+        # """
+        #
+        # :param pos:
+        # :param message:
+        # :param message_l:
+        # :return:
+        # """
+        # my_log_file('')
+        # my_log_file(f'fun.Mouse.left_click {message_l}')
+        # my_log_file(f' {pos=}')
+        # if message:
+        #     print(f'fun.Mouse.left_click {message_l=}')
+        # tools.sounds.click_mouse()
+        # pyautogui.hotkey('Ctrl')
+        # pyautogui.click(pos)
+        # return
 
     @staticmethod
     def take_drag_drop_y(*, pos_take, distance, speed=0.2, ):  # message=None, message_l=None
-        """
-        
-        :param pos_take: 
-        :param distance: 
-        :param speed: 
-        :return: 
-        """
-        pyautogui.mouseDown(pos_take)
-        x, y = pos_take
-        y += distance
-        new_pos = x, y
-        Mouse.move(pos=new_pos, speed=speed)
-        pyautogui.mouseUp()
-        return
+        tools.Mouse.take_drag_drop_y(pos_take=pos_take, distance=distance, speed=speed)
+        # """
+        #
+        # :param pos_take:
+        # :param distance:
+        # :param speed:
+        # :return:
+        # """
+        # pyautogui.mouseDown(pos_take)
+        # x, y = pos_take
+        # y += distance
+        # new_pos = x, y
+        # Mouse.move(pos=new_pos, speed=speed)
+        # pyautogui.mouseUp()
+        # return
 
     @staticmethod
     def take_drag_drop(*, pos_take: tuple, pos_drop: tuple, speed: float = 0.2, message=False, message_l=None) -> None:
-        """
-
-        :param pos_take:
-        :param pos_drop: 
-        :param speed: 
-        :param message:
-        :param message_l:
-        :return:
-        """
-        my_log_file(f'fun.Mouse.take_drag_drop {message_l}')
-        if message:
-            print(f'fun.Mouse.take_drag_drop {message_l=}')
-        pyautogui.mouseDown(pos_take)
-        Mouse.move(pos=pos_drop, speed=speed)
-        pyautogui.mouseUp()
-        return
+        tools.Mouse.take_drag_drop(pos_take=pos_take, pos_drop=pos_drop, speed=speed, log=message,
+                                   message_l=message_l)
+        # """
+        #
+        # :param pos_take:
+        # :param pos_drop:
+        # :param speed:
+        # :param message:
+        # :param message_l:
+        # :return:
+        # """
+        # my_log_file(f'fun.Mouse.take_drag_drop {message_l}')
+        # if message:
+        #     print(f'fun.Mouse.take_drag_drop {message_l=}')
+        # pyautogui.mouseDown(pos_take)
+        # Mouse.move(pos=pos_drop, speed=speed)
+        # pyautogui.mouseUp()
+        # return
 
     @staticmethod
     def move_to_click(*, pos_click: tuple, move_time: float = 0.75, z_p_k: float = 0.05, log=False,
                       message_l=None) -> None:
-        """
-        Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
-
-        :param pos_click: Point
-        :param move_time: время перемещения указателя мыши в секундах
-        :param z_p_k: задержка перед кликом(float)
-        :param log:
-        :param message_l: цель клика
-        :return: None
-        """
-        my_log_file(f'fun.Mouse.move_to_click {message_l=}, {pos_click=}')
-        if log:
-            print(f'fun.Mouse.move_to_click {message_l=}, {pos_click=}')
-        sleep(0.3)
-        Mouse.move(pos=pos_click, speed=move_time)
-        # print('должен быть клик')
-        sleep(z_p_k)
-        Mouse.left_click(pos=pos_click)
-        sleep(0.18)
-        return
+        tools.Mouse.move_to_click(pos_click=pos_click, move_time=move_time, z_p_k=z_p_k, log=log, message_l=message_l)
+        # """
+        # Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
+        #
+        # :param pos_click: Point
+        # :param move_time: время перемещения указателя мыши в секундах
+        # :param z_p_k: задержка перед кликом(float)
+        # :param log:
+        # :param message_l: цель клика
+        # :return: None
+        # """
+        # my_log_file(f'fun.Mouse.move_to_click {message_l=}, {pos_click=}')
+        # if log:
+        #     print(f'fun.Mouse.move_to_click {message_l=}, {pos_click=}')
+        # sleep(0.3)
+        # Mouse.move(pos=pos_click, speed=move_time)
+        # # print('должен быть клик')
+        # sleep(z_p_k)
+        # Mouse.left_click(pos=pos_click)
+        # sleep(0.18)
+        # return
 
 
 def my_log_file(text):
@@ -198,14 +201,6 @@ def my_log_file(text):
         builtins.print(f"Произошла неожиданная ошибка: {e}")
     finally:
         file_1.close()
-
-
-
-
-
-
-
-
 
 
 def test_time(funk):
@@ -854,9 +849,7 @@ def loc_now():
         pos = locCenterImg(name_img=img_station, confidence=0.99)
         if pos:
             list_location = b_d.list_of_stations[station]
-            Mouse.move(pos=pos, speed=0.1)
-            # print(f'{b_d.list_of_stations[station][2]}') # img/tonelli/id_stations/s_Chekhov.png
-            # print(f'имя станции старта - {list_location[0]}') # имя станции старта - ст. Чеховская
+            tools.Mouse.move(pos=pos, speed=0.1, )
             break
         else:
             pass
@@ -864,17 +857,32 @@ def loc_now():
     return list_location
 
 
-def rap_explore(*, text, ex=''):
+def log_with_caller(message=None, print_message=True) -> str:
     """
-    Рапорт использования.
-    :param text: Имя используемой функции.
-    :param ex:
-    :return:
+    :param print_message: вывод на экран
+    :param message: 'a'=активация and 'e'=выход. Если None - без сообщения
+    :return: строка f"[{module_name}.{func_name}: line-{line_no}] {message}"
     """
-    if ex:
-        ex = 'выход'
-    print(c_t.tc_green(f'{text} {ex}'))
-    return
+    # Получение фрейма вызывающей функции level=logging.INFO
+    current_frame = inspect.currentframe().f_back
+    # Извлечение имени функции
+    func_name = current_frame.f_code.co_name
+    # Извлечение номера строки
+    line_no = current_frame.f_lineno
+    # Извлечение имени модуля
+    module_name = inspect.getmodule(current_frame).__name__
+    # Важно освободить ссылку на фрейм для избежания утечек памяти
+    del current_frame
+    # Форматирование сообщения с контекстом
+    if message == 'a':
+        context_message = f"[{module_name}.{func_name}: line-{line_no}] вызов"
+    elif message == 'e':
+        context_message = f"[{module_name}.{func_name}: line-{line_no}] выход"
+    else:
+        context_message = f"[{module_name}.{func_name}: line-{line_no}]"
+    if print_message == baza.variables.Parameters.def_rapport:
+        print(tools.color_text.tc_green(context_message))
+    return context_message
 
 
 def pos_parking():

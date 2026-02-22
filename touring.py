@@ -396,31 +396,31 @@ def create_new_list_only_name(*, massive):
     :param massive: массив данных
     :return: Новый список только имена
     """
-    fun.rap_explore(text='touring.create_new_list_only_name')
+    fun.log_with_caller(message='a')
     new_list_road_name = []
     for i in range(len(massive)):
         # получаю списки содержащие дороги из списка дорог
         new_list_road_name.append(extraction_name_in_list(value=massive[i]))
 
-    fun.rap_explore(text='touring.create_new_list_only_name', ex=1)
+    fun.log_with_caller(message='e')
     return new_list_road_name
 
 
-def extraction_name_in_list(*, value: list) -> list:
+def extraction_name_in_list(*, value: list, call=False) -> list:
     """ Получает список содержащий дорогу. Извлекает имена станций и помещает их в новый список. Возвращает список
     содержащий имена станций
     :param value:
     :return: """
     # def_name = 'touring.extraction_name_in_list'
     # def_name = a
-    # fun.rap_explore(text=def_name)
+    fun.log_with_caller(message='a', print_message=call)
     list_name = []
     for name in value:
         # list_name.append(extraction_name(variable=name))
         list_name.append(name[0])
         # Перебирая полученный список пишет названия станций.
         # print(extraction_name(variable=name))
-    # fun.rap_explore(text=def_name, ex=1)
+    fun.log_with_caller(message='e', print_message=call)
     return list_name
 
 
@@ -431,7 +431,7 @@ def create_route_list(*, start: str, stop: str) -> list:
     :return: готовый список содержащий полный маршрут
     """
     def_name = 'touring.create_route_list'
-    fun.rap_explore(text=def_name)
+    fun.log_with_caller(message='a')
 
     # ========================================================================
     def create_new_list_route(*, route_names: list) -> list:
@@ -441,13 +441,13 @@ def create_route_list(*, start: str, stop: str) -> list:
         :return: Готовый list маршрута
         """
         sub_def_name = 'touring.create_route_list.create_new_list_route'
-        fun.rap_explore(text=sub_def_name)
+        fun.log_with_caller(message='a')
         new_list_route = []
         for name in route_names:
             for i in range(len(b_d.list_of_stations)):
                 if name in b_d.list_of_stations[i]:
                     new_list_route.append(b_d.list_of_stations[i])
-        fun.rap_explore(text=sub_def_name, ex=1)
+        fun.log_with_caller(message='e')
         return new_list_route
 
     # ========================================================================
@@ -516,7 +516,7 @@ def create_route_list(*, start: str, stop: str) -> list:
 
             full_route_names = path1 + alley + path2
 
-    fun.rap_explore(text=def_name, ex=1)
+    fun.log_with_caller(message='e')
     return create_new_list_route(route_names=full_route_names)
 
 
@@ -527,7 +527,7 @@ def name_belonging_to_the_list(*, item: str):
     :return: список
     """
     def_name = 'touring.name_belonging_to_the_list'
-    fun.rap_explore(text=def_name)
+    fun.log_with_caller(message='a')
     # print(type(item))
     list_road_names = create_new_list_only_name(massive=b_d.road_list)
 
@@ -536,7 +536,7 @@ def name_belonging_to_the_list(*, item: str):
         if item in list_road_names[i]:
             path_list = list_road_names[i]
             break
-    fun.rap_explore(text=def_name, ex=1)
+    fun.log_with_caller(message='e')
     return path_list
 
 
@@ -554,7 +554,7 @@ def for_wilds():
      и домой на Фрунзенскую.
     """
     def_name = 'touring.for_wilds'
-    fun.rap_explore(text=def_name)
+    fun.log_with_caller(message='a')
 
     fun.my_log_file('touring.for_wilds')
     fun.push_close_all_()
@@ -596,14 +596,14 @@ def for_wilds():
             print('энергия исчерпана')
             move_to_target(target_point='домой')
         tools.sounds.say_txt('вернулся домой))')
-        fun.rap_explore(text=def_name, ex=1)
+        fun.log_with_caller(message='e')
         return
 
 
 def for_kiki():
     """Маршрут определяется автоматически"""
     def_name = 'touring.for_wilds'
-    fun.rap_explore(text=def_name)
+    fun.log_with_caller(message='a')
     fun.my_log_file('touring.for_kiki')
     start_time = time()
     fun.push_close_all_()
@@ -617,7 +617,7 @@ def for_kiki():
     seconds = round((finish_time % minutes), 2)
     print('Потрачено время', minutes, 'минут', seconds, 'сек.')
     tools.sounds.say_txt('вернулся домой))')
-    fun.rap_explore(text=def_name, ex=1)
+    fun.log_with_caller(message='e')
     return
 
 
@@ -627,7 +627,7 @@ def sbor_podarkov(bypass_hero: list) -> None:
     :return: None
     """
     def_name = 'touring.sbor_podarkov'
-    fun.rap_explore(text=def_name)
+    fun.log_with_caller(message='a')
     pers = fun.selection_hero()
     if pers in ['Gady', 'Gavr']:
         move_to_target(target_point='ст. Пр-кт Вернадского')
@@ -646,5 +646,5 @@ def sbor_podarkov(bypass_hero: list) -> None:
         move_to_target(target_point='ст. Третьяковская')
         move_to_target(target_point='домой')
     tools.sounds.say_txt('вернулся домой))')
-    fun.rap_explore(text=def_name, ex=1)
+    fun.log_with_caller(message='e')
     return

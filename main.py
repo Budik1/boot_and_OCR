@@ -20,6 +20,7 @@ import tool_win
 
 from baza import baza_dannyx as b_d
 from baza import baza_paths as b_p
+from baza import variables as var
 from tools import color_text as c_t
 from event_arena import create_img_arena_object, kill
 
@@ -507,13 +508,48 @@ def set_timer1():
     solid_memory.save_all_state_config_json(info=False)
 
 
-def set_param():
-    displaying_values(info=True)
+def set_check_def():
+    print(f'{def_rapport.get()=}')
+    if def_rapport.get() == 1:
+        var.Parameters.def_rapport = True
+    else:
+        var.Parameters.def_rapport = False
 
+def set_check_mouse():
+    if mouse_rapport.get() == 1:
+        var.Parameters.mouse_rapport = True
+    else:
+        var.Parameters.mouse_rapport = False
 
-def n_w():
-    w1 = tool_win.Window(width_tool, position_x_tool, position_y_tool)
+def open_tool_win():
+    def change_def_rapport_():
+        if var.Parameters.def_rapport:
+            var.Parameters.def_rapport = 0
+        else:
+            var.Parameters.def_rapport = 1
+        def_rap.set(var.Parameters.def_rapport)
+        print(var.Parameters.def_rapport)
 
+    height_root2 = b_d.line5
+    root2 = Toplevel(root)
+    root2.title("окно настроек")
+    root2.geometry(f'{width_tool}x{height_root2}+{position_x_tool}+{position_y_tool}')
+    def_rap = IntVar()
+    # кнопки
+    but_close = ttk.Button(root2, text="закрыть")
+    but_close["command"] = lambda: root2.destroy()
+    but_close.place(x=b_d.col_0, y=height_root2 - b_d.height_line)
+
+    but_def_rapport = ttk.Button(root2, text='вызов функций')
+    but_def_rapport["command"] = change_def_rapport_
+    but_def_rapport.place(x=b_d.col_0, y=b_d.line0)
+
+    # label
+    lbl_def_rapport = ttk.Label(root2, textvariable=def_rap)
+    lbl_def_rapport.place(x=b_d.col_0, y=b_d.line1)
+
+def open_tool2_win():
+    tool_win.Window(root, width_tool, position_x_tool, position_y_tool)
 
 root = Tk()
 root.title(f' помощник "Метро 2033"')
@@ -521,44 +557,40 @@ root.title(f' помощник "Метро 2033"')
 root.geometry(
     f'{width_root}x{height_root}+{position_x_root}+{position_y_root}')  # Ширина x Высота + положение X + положение Y
 root.resizable(False, False)
+# root.attributes('-topmost', True)
+
+def_rapport = IntVar()
+mouse_rapport = IntVar()
 
 gavr_vip = StringVar()
 gady_vip = StringVar()
 mara_vip = IntVar()
-veles_vip = IntVar()
 
 gavr_rat = StringVar()
 gady_rat = StringVar()
 mara_rat = IntVar()
-veles_rat = IntVar()
 
 gavr_kiki = StringVar()
 gady_kiki = StringVar()
 mara_kiki = StringVar()
-veles_kiki = IntVar()
 
 gavr_arachne = StringVar()
 gady_arachne = StringVar()
 mara_arachne = IntVar()
-veles_arachne = IntVar()
 
 gavr_raptor = StringVar()
 gady_raptor = StringVar()
 mara_raptor = IntVar()
-veles_raptor = IntVar()
 
 gavr_gift = StringVar()
 gady_gift = StringVar()
 mara_gift = IntVar()
-veles_gift = IntVar()
 
 gavr_wild = StringVar()
 gady_wild = StringVar()
 mara_wild = StringVar()
-veles_wild = StringVar()
-
 # получение содержимого Combobox
-box_paths = touring.extraction_name_in_list(value=b_d.list_of_stations)
+box_paths = touring.extraction_name_in_list(value=b_d.list_of_stations, call=False)
 box_paths.insert(0, 'домой')
 lang_var = StringVar(value=box_paths[0])
 
@@ -567,7 +599,7 @@ start_prog()
 # -------------------------------------------------------------
 
 # блок командных кнопок
-ttk.Button(text="set", width=5, command=n_w).place(x=b_d.col_8, y=b_d.line0)
+ttk.Button(text="set", width=5, command=open_tool_win).place(x=b_d.col_8, y=b_d.line0)
 ttk.Button(text="КВ", width=10, command=kv_and_raid.kv).place(x=115, y=b_d.line4)
 ttk.Button(text=" Start ", width=10, command=start_pm).place(x=190, y=b_d.line4)
 ttk.Button(text='Save', width=12, command=displaying_values).place(x=265, y=b_d.line4)
@@ -583,9 +615,7 @@ ttk.Button(text='рапорт W_R', width=12, command=tools.display_report_w_rat
 ttk.Button(text='рапорт W', width=12, command=tools.display_report_wildman).place(x=200, y=b_d.line6)
 ttk.Button(text='рапорт E', width=12, command=tools.display_info_energy_all).place(x=285, y=b_d.line6)
 
-# ttk.Label(text='            куда пойдем ?', width=21, background='#858585', foreground='#050505').place(x=156, y=b_d.line7)
-ttk.Label(root, text='куда пойдем ?', width=21, background='#858585', foreground='#050505', justify=RIGHT).place(x=156,
-                                                                                                                 y=b_d.line7)
+ttk.Label(text='        куда пойдем ?', width=21, background='#858585', foreground='#050505').place(x=156, y=b_d.line7)
 
 combobox = ttk.Combobox(textvariable=lang_var, values=box_paths, state="readonly", width=23)
 combobox.place(x=138, y=b_d.line8)
@@ -593,8 +623,17 @@ combobox.bind("<<ComboboxSelected>>", get_target)
 ttk.Button(text='Паспортист', width=14, command=save_home_point).place(x=b_d.col_0, y=b_d.line8 - 2)
 
 ttk.Button(text="фото противника", width=16, command=create_img_arena_object).place(x=b_d.col_0, y=b_d.line9)
-ttk.Button(text="атака противника", width=16, command=kill).place(x=225, y=b_d.line9)
-ttk.Button(text="set_param", width=10, command=set_param).place(x=150, y=b_d.line10)
+ttk.Button(text="атака противника", width=16, command=kill).place(x=106, y=b_d.line9)# 225
+
+check_def = ttk.Checkbutton(text='вести', variable=def_rapport, command=set_check_def)
+check_def.place(x=300, y=b_d.line7)
+check_def_label = ttk.Label(text='def')
+check_def_label.place(x=355, y=b_d.line7)
+
+check_mouse = ttk.Checkbutton(text='вести', variable=mouse_rapport, command=set_check_mouse)
+check_mouse.place(x=300, y=b_d.line8)
+check_mouse_label = ttk.Label(text='mouse')
+check_mouse_label.place(x=355, y=b_d.line8)
 
 timer_gady_label = ttk.Label()
 timer_gady_label.config(text="", font=("Helvetica", 12))  # , font=("Helvetica", 12)
