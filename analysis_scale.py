@@ -13,11 +13,12 @@ def cr_mark_img():
     img_dict = {
         'img/test/mark/mark_left.png': (-423, 113, 19, 5, (), find_img.find_my_game2()),
         'img/test/mark/mark_right.png': (322, 113, 19, 5, (), find_img.find_my_game2()),
+        'img/mark_scale/mark_right_II.png': (322, 113, 19, 5, (), find_img.find_my_game2()),
 
     }
     # target_img = 'img/test/token.png'
 
-    key = 'img/test/mark/mark_right.png'
+    key = 'img/mark_scale/mark_right_II.png'
     pos_start = img_dict[key][5]
     # показать привязку
     # tools.Mouse.move(pos=pos_start, speed=1)
@@ -49,8 +50,8 @@ def cr_mark_img():
 
 def test_long(*, vizual=None):
     NORM_DISTANCE = 760
-    pos_left_corner = fun.locCenterImg(name_img='img/test/mark/mark_left.png', confidence=0.99)
-    pos_right_corner = fun.locCenterImg(name_img='img/test/mark/mark_right.png', confidence=0.99)
+    pos_left_corner = fun.locCenterImg(name_img='img/mark_scale/mark_left.png', confidence=0.99)
+    pos_right_corner = fun.locCenterImg(name_img='img/mark_scale/mark_right.png', confidence=0.99)
 
     if pos_left_corner and pos_right_corner:
         x_left, y_left = pos_left_corner
@@ -85,9 +86,9 @@ def test_long(*, vizual=None):
 
 
 # create_folder('img/Cr/wq/uy/hgt')
-# cr_mark_img()
+cr_mark_img()
 # test_long()
-stereotypes.interest_point.cr_img()
+# stereotypes.interest_point.cr_img()
 
 # Длина картинки 999 пикселей. 131%
 # Длина картинки 912 пикселей. 120%

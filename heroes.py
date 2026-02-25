@@ -19,7 +19,6 @@ class Activ:
     duel_raid = 0
     result_load = ''
     #
-    #
     hour_now = ''
     result_duel = ""
     value_energy = 0
@@ -33,6 +32,7 @@ class Hero:
         self.name_ru = name_ru_
         self.name_id = name_id
         self.id_ = _id
+        self.path_task = str()
         self.bypass = ()
 
         # обновляемые ежедневно
@@ -140,9 +140,6 @@ class Hero:
             'list_loot': self.list_loot_kv,
             'set_dist': self.set_dist,
         }
-        # отладка
-        # print(f'вызов {__class__} {self.name_id}')
-        # конец отладки
         hero_id = Hero.get_id(self)
         list_kv_state[hero_id] = data_to_save
         list_kv_state2[hero_id] = data_to_save
@@ -152,7 +149,6 @@ class Hero:
         hero_id = Hero.get_id(self)
 
         data_kv = list_kv_state[hero_id]
-        # print(data_kv)
         time_now = time.time()
         time_check = data_kv['time_start_kv']
         if (time_now - time_check) < 3 * 3600:
@@ -176,8 +172,6 @@ class Hero:
         self.qty_duel_all_victory = data_kv.get('qty_duel_all_victory', 0)
         self.qty_duel_all = data_kv.get('qty_duel_all', 0)
         self.count_shoulder_straps_all = data_kv.get('count_shoulder_straps_all', 0)
-        # if self == Activ.hero_activ:
-            # print(f'{self.set_dist=} set_state_kv')
 
     #
     def get_state_all(self):
@@ -197,7 +191,6 @@ class Hero:
             'arena_victory_count_k': self.arena_victory_count,
 
             'vip_k': self.vip,
-            # 'vip_k': self.holiday_gift,
             'energy_count_today_k': self.energy_count_today,
             'wild_activ_k': self.wild_activ,
             'holiday_gift_k': self.holiday_gift,
@@ -215,22 +208,13 @@ class Hero:
         }
         hero_id = Hero.get_id(self)
         list_all_state[hero_id] = data_to_save
-        # отладка
-        # home_location = data_to_save['home_location_k']
-        # check_date = data_to_save['check_date_k']
-        # print(f'get_state_all {self.name_ru=}, {home_location=}, {check_date=}')
-        # конец отладки
         return
 
     def set_updatable_values(self):
-        # print(f'Вызов set_updatable_values {self.name_ru}')
 
         hero_id = Hero.get_id(self)
-        # print(f'{list_all_state=}')
         loaded_data = list_all_state[hero_id]
         check_date_ = loaded_data.get('check_date_k', 0)
-        # print(check_date_, Activ.date_now)
-        # print(f'{hero_id=} {check_date_=}, {Activ.date_now=}')
         if check_date_ == Activ.date_utc_now:
             Activ.result_load = (c_t.tc_blue('Даты совпадают'))
 
@@ -251,13 +235,9 @@ class Hero:
             self.holiday_gift = loaded_data.get('holiday_gift_k', 0)
         else:
             Activ.result_load = c_t.tc_blue('даты не совпадают, смена суток')
-        # print(Activ.result_load)
-        # print()
-        # print(f'set_updatable_values {self.name_ru}')
         return
 
     def set_cumulative_values(self):
-        # print(f'Вызов set_cumulative_values {self.name_ru}')
 
         hero_id = Hero.get_id(self)
         loaded_data = list_all_state[hero_id]
@@ -271,12 +251,6 @@ class Hero:
         self.lvl_up_date = loaded_data.get('lvl_up_date_k', '')
         self.white_rat_count_all = loaded_data.get('white_rat_count_all', 0)
         self.energy_spent_searching_for_white_rats = loaded_data.get('energy_spent_searching_for_white_rats', 0)
-
-        # отладка
-
-        # print(f'set_cumulative_values {self.name_ru}, {self.lvl_up_date}') #
-        # print()
-        # конец отладки
 
     #
     def get_list_loot(self):
@@ -409,7 +383,6 @@ class Hero:
         if not self.wild_activ:
             self.wild_activ = True
             self.wildman_days_count += 1
-            # print(f'{self.name_ru} {self.days_count_wildman}')
 
     def set_wild_activ(self):
         self.wild_activ = Activ.date_utc_now
@@ -519,23 +492,14 @@ gavr = Hero(name_ru_='Гавр', name_en_='Gavr', name_id='gavr', _id=1)
 gavr.path_task = 'img/station_master/tasks_gavr/'
 gavr.bypass = b_d.bypass
 
-# veles = Hero(name_ru_='Велес', name_en_='Велес', name_id='veles', id_n=3)
-# veles.path_task = 'img/station_master/tasks_veles/'
-# veles.bypass = b_d.bypass_veles
-
 mara = Hero(name_ru_='Мара', name_en_='Mara', name_id='mara', _id=2)
 mara.path_task = 'img/station_master/tasks_mara/'
 mara.bypass = b_d.bypass_mara
 
-list_all_state = [{}, {}, {}]  #  #
-list_kv_state2 = [{}, {}, {}]  #  #
+list_all_state = [{}, {}, {}]  #
+list_kv_state2 = [{}, {}, {}]  #
 list_kv_state = [{}, {}, {}]
-hero_dict = {'Gady': gady, 'Gavr': gavr, 'Mara': mara, }  # 'Veles': veles
+hero_dict = {'Gady': gady, 'Gavr': gavr, 'Mara': mara, }
 #
 dict_all_state = {}
 dict_kv_state = {}
-
-# Activ.hero_activ = gady # значение, которое выдает fun.select_hero(True)
-# Hero.duel_kv(Activ.hero_activ)  # формат обращения к методу
-#
-# print(Hero.get_path_task(Activ.hero_activ))

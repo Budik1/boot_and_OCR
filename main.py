@@ -49,19 +49,19 @@ position_x_tool = position_x_root
 
 
 def start_prog():
-    state_file = solid_memory.reading_all_state_config()
+    state_file = solid_memory.reading_all_state_config(info=False)
     if state_file:
         try:
             solid_memory.setting_updatable_values()
         except KeyError:
-            print(c_t.tc_red('KeyError, Ошибка ключа в словаре сохранения'))
+            print(c_t.tc_red('KeyError, Ошибка ключа в словаре updatable'))
         except Exception as cod:
             print(c_t.tc_red(f'Не понятно что произошло в updatable)). Код ошибки {cod}'))
 
         try:
             solid_memory.setting_cumulative_values()
         except KeyError:
-            print(c_t.tc_red('KeyError, Ошибка ключа в словаре сохранения'))
+            print(c_t.tc_red('KeyError, Ошибка ключа в словаре cumulative'))
         except Exception as cod:
             print(c_t.tc_red(f'Не понятно что произошло в cumulative )). Код ошибки {cod}'))
 

@@ -135,7 +135,7 @@ def event_gifts():
 
 def open_map():
     """Из окна станции открывает карту. На Тургеневской выход смещен"""
-    def_name = fun.log_with_caller(message='a')
+    fun.log_with_caller(message='a')
 
     location_station = fun.loc_now()
 
@@ -598,9 +598,8 @@ def for_kiki():
     return
 
 
-def sbor_podarkov(bypass_hero: list) -> None:
+def sbor_podarkov() -> None:
     """Обход всех станций.
-    :param bypass_hero:
     :return: None
     """
     fun.log_with_caller(message='a')

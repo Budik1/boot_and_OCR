@@ -22,6 +22,10 @@ oblast = (51, 707, 92, 111)
 
 
 def screen_size():
+    """
+    Получение размеров экрана.
+    :return: ширина, высота
+    """
     screen_width, screen_height = pyautogui.size()
     return screen_width, screen_height
 
@@ -36,23 +40,23 @@ def locCenterImg(name_img, confidence=0.9, region: tuple[int, int, int, int] | N
 
 def wait_static_pos(*, name_img, region=None, confidence=0.99,
                     message=False, message_l=None):
-    my_log_file('')
-    my_log_file(f'fun.wait_static_pos {message_l}')
-    my_log_file(f'{name_img=}')
-    if message:
-        print(f'fun.wait_static_pos {message_l=}')
+    log_with_caller(message='a')
+    log_with_caller(message=message_l)
+    log_with_caller(message=name_img)
     pos = locCenterImg(name_img=name_img, region=region, confidence=confidence)
     while not pos:
         pos = locCenterImg(name_img=name_img, region=region, confidence=confidence)
     pos_img = locCenterImg(name_img=name_img, region=region, confidence=confidence)
+    log_with_caller(message='e')
     return pos_img
+
 
 
 def wait_and_stop_img(*, name_img, region: tuple[int, int, int, int] | None = None, confidence=0.9,
                       message=False, message_l=None):
-    my_log_file('')
-    my_log_file(f'fun.wait_and_stop_img {message_l}')
-    my_log_file(f'{name_img=}')
+    log_with_caller(message='a')
+    log_with_caller(message=message_l)
+    log_with_caller(message=name_img)
     if message:
         print(f'fun.wait_and_stop_img {message_l}')
     img_1 = locCenterImg(name_img=name_img, confidence=confidence, region=region)
@@ -62,6 +66,7 @@ def wait_and_stop_img(*, name_img, region: tuple[int, int, int, int] | None = No
         img_1 = locCenterImg(name_img=name_img, confidence=confidence, region=region)
         sleep(0.3)
         img_2 = locCenterImg(name_img=name_img, confidence=confidence, region=region)
+    log_with_caller(message='e')
     return img_1
 
 
@@ -127,19 +132,17 @@ def station_gifts():
 
 
 def push_close_all_(speed_mouse=0.75):
-    my_log_file('fun.push_close_all_')
+    log_with_caller(message='a')
     pos_close = find_img.find_close()
-    print(f'fun.push_close_all_ {pos_close=}')
     while pos_close:
         close_popup_window(speed_mouse)
         push_close(speed_mouse)
-        # sleep(1)
         pos_close = find_img.find_close()
-        print(f"fun.push_close_all_  цикл close {pos_close=}")
+    log_with_caller(message='e')
 
 
 def close_popup_window(speed_mouse=0.75):
-    my_log_file('fun.close_popup_window')
+    log_with_caller(message='a')
     knob = find_img.find_knob()
     cancel = find_img.find_cancel()
     res = False
@@ -149,37 +152,36 @@ def close_popup_window(speed_mouse=0.75):
     if cancel:
         tools.Mouse.move_to_click(pos_click=cancel, move_time=speed_mouse, z_p_k=1)
         res = True
+    log_with_caller(message='e')
     return res
 
 
 def push_close(speed_mouse=0.75, event=''):
-    my_log_file(f'')
-    my_log_file('fun.push_close')
+    log_with_caller(message='a')
     pos_close = find_img.find_close()
-    # print(f'fun.push_close {pos_close=}')
     if pos_close:
         event_mes = c_t.tc_cyan(f'{event}')
-        my_log_file(f'')
-        my_log_file(f'fun.push_close {event_mes} {pos_close=}')
-        print(f'fun.push_close {event_mes} {pos_close=}')
-        tools.Mouse.move_to_click(pos_click=pos_close, move_time=speed_mouse, z_p_k=0.1, log=True, message=event)
+        log_with_caller(message=f'{event_mes} {pos_close=}')
+        tools.Mouse.move_to_click(pos_click=pos_close, move_time=speed_mouse, z_p_k=0.1, message=event)
         close_flag = True
     else:
         close_flag = False
+    log_with_caller(message='e')
     return close_flag
 
 
 def exit_to_zero_screen():
-    my_log_file('fun.exit_to_zero_screen')
+    log_with_caller(message='a')
     push_close_all_()
     b_exit = find_img.find_b_exit()
-    print(b_exit, 'b_exit')
+    log_with_caller(message=f'{b_exit=}')
     if b_exit:
         tools.Mouse.move_to_click(pos_click=b_exit, z_p_k=0.1)
+    log_with_caller(message='e')
 
 
 def bonus():
-    my_log_file('fun.bonus')
+    log_with_caller(message='a')
     # кнопка добавить
     add_bonus = locCenterImg('img/add.png', 0.8)
     tools.Mouse.move(pos=add_bonus, speed=1)
@@ -196,6 +198,7 @@ def bonus():
         print('Бонус не найден')
     # кнопка закрыть
     push_close_all_()
+    log_with_caller(message='e')
 
 
 def move_friends_list_left():
@@ -203,12 +206,13 @@ def move_friends_list_left():
     Смещает список друзей в лево на одну позицию
     :return: 1
     """
-    my_log_file('fun.move_friends_list_left')
+    log_with_caller(message='a')
     sleep(1)
     ar_right = locCenterImg('img/overall/b_arrow_right.png', 0.8)
     tools.Mouse.move(pos=ar_right, speed=1)
     tools.Mouse.left_click(pos=ar_right)
     sleep(1)
+    log_with_caller(message='e')
     return 1
 
 
@@ -217,29 +221,29 @@ def move_friends_list_right():
     Смещает список друзей в право на одну позицию
     :return: 1
     """
-    my_log_file('fun.move_friends_list_right')
+    log_with_caller(message='a')
     sleep(0.2)
     ar_right = locCenterImg('img/overall/b_arrow_left.png', 0.8)
 
     tools.Mouse.move(pos=ar_right, speed=1)
     tools.Mouse.left_click(pos=ar_right)
     sleep(0.2)
+    log_with_caller(message='e')
     return 1
 
 
 def move_friends_list_to_top():
     """Смещает список друзей в лево в начало"""
-    my_log_file('fun.move_friends_list_to_top')
+    log_with_caller(message='a')
     begin = locCenterImg('img/overall/b_begin.png', 0.96)
     if begin:  # если увидел
-        # pyautogui.moveTo(begin, duration=1)
         tools.Mouse.move(pos=begin, speed=1)
         print(' перемотка в начало ')
         sleep(1)
         tools.Mouse.left_click(pos=begin)
         print('клик в начало ' + str(begin))
-    # pyautogui.moveTo(50, 600, duration=1)
     sleep(1)
+    log_with_caller(message='e')
     return
 
 
@@ -249,9 +253,10 @@ def foto(path_name, region: tuple[int, int, int, int] | object | None = None):
         :param path_name: имя файла
         :param region: регион (X, Y, ширина, высота). None - весь экран
     """
-    my_log_file('fun.foto')
+    log_with_caller(message='a')
     im1 = pyautogui.screenshot(region=region)
     im1.save(path_name)
+    log_with_caller(message='e')
     return
 
 
@@ -267,14 +272,15 @@ def foto_pos(name_img, region, tune_x=0, tune_y=0, tune_s=0, tune_v=0):
     :param name_img:
     :return:
     """
+    log_with_caller(message='a')
     # получает регион и корректировки снимка внутри него
     x_, y_, width_, height_ = region
     x_corrected = x_ + tune_x  # внесение изменений в параметр координаты "х"
     y_corrected = y_ + tune_y  # внесение изменений в параметр координаты "y"
     width_corrected = width_ - tune_s  # внесение изменений в параметр ширина "width"
     height_corrected = height_ - tune_v  # внесение изменений в параметр длинна "height"
-    # print(region, (x_corrected, y_corrected, width_corrected, height_corrected))
     foto(name_img, (x_corrected, y_corrected, width_corrected, height_corrected))
+    log_with_caller(message='e')
 
 
 def find_link_hall_of_glory():
@@ -282,7 +288,7 @@ def find_link_hall_of_glory():
     Закрыть если открыто, Tак как за чем-то может быть не видна позиция привязки
     :return: Point 'Зал славы'
     """
-    my_log_file('fun.find_link_hall_of_glory')
+    log_with_caller(message='a')
     close = find_img.find_close()
     while close:
         push_close_all_()
@@ -294,11 +300,12 @@ def find_link_hall_of_glory():
         sleep(0.2)
         point_hall_of_glory = find_img.find_hall_of_glory_icon()
     sleep(0.5)
+    log_with_caller(message='e')
     return point_hall_of_glory
 
 
 def find_link_station_master():
-    my_log_file('fun.find_link_station_master')
+    log_with_caller(message='a')
     station_master = find_img.find_station_master()
     pos_klan = find_img.find_klan()
     if station_master or pos_klan:
@@ -317,12 +324,12 @@ def find_link_station_master():
         sleep(0.5)
         point = pos_klan
         vizit_to_station_master()
+    log_with_caller(message='e')
     return point
 
 
 def find_link_station_master_alt():
-    my_log_file('')
-    my_log_file('fun.find_link_station_master_alt')
+    log_with_caller(message='a')
     station_master = find_img.find_station_master()
     pos_klan = find_img.find_klan()
     # Если нет ни того ни другого всё закрыть
@@ -335,15 +342,15 @@ def find_link_station_master_alt():
         my_log_file(f'{point=} если видно клан')
     else:
         point = find_img.find_station_master()
-    my_log_file(f'{point=}')
-    my_log_file('выход из fun.find_link_station_master_alt')
+    log_with_caller(message=f'{point=}')
+    log_with_caller(message='e')
     return point
 
 
 def get_areas_task_small(width=77, height=42):
     """Получение значений "region=" для поиска значений в малых регионах пуль и опыта
         :return: кортеж из шести списков значений"""
-    my_log_file('fun.get_areas_task_small')
+    log_with_caller(message='a')
     pul, xp_ = 404 - 34 - 10 + 1, 518 - 40 - 34 - 10 - 10 + 2
     line_1, line_2, line_3 = 160, 250, 340
 
@@ -367,11 +374,12 @@ def get_areas_task_small(width=77, height=42):
     region3_pul = [x_an_pul, y_3an, width, height]
     region3_xp = [x_an_xp, y_3an, width, height]
 
+    log_with_caller(message='e')
     return region1_pul, region2_pul, region3_pul, region1_xp, region2_xp, region3_xp
 
 
 def get_areas_task_big_1_line(width=77, height=42):
-    my_log_file('fun.get_areas_task_big_1')
+    log_with_caller(message='a')
     # width, height = 77, 42
     pul = 404
     pos_1 = 190
@@ -384,11 +392,12 @@ def get_areas_task_big_1_line(width=77, height=42):
     # регион поиска 1 (позиция анализа)
     y_1an = int(y_or + pos_1)
     region_big_1 = [x_an_pul, y_1an, width, height]
+    log_with_caller(message='e')
     return region_big_1
 
 
 def get_areas_task_big_2_line(width=77, height=42):
-    my_log_file('fun.get_areas_task_big_2')
+    log_with_caller(message='a')
     # width, height = 77, 42
     pul = 404
     pos_2 = 280
@@ -401,11 +410,12 @@ def get_areas_task_big_2_line(width=77, height=42):
     # регион поиска 2 (позиция анализа)
     y_2an = int(y_or + pos_2)
     region_big_2 = [x_an_pul, y_2an, width, height]
+    log_with_caller(message='e')
     return region_big_2
 
 
 def get_areas_task_big_3_line(width=77, height=42):
-    my_log_file('fun.get_areas_task_big_2')
+    log_with_caller(message='a')
     # width, height = 77, 42
     pul = 404
     pos_3 = 370
@@ -418,6 +428,7 @@ def get_areas_task_big_3_line(width=77, height=42):
     # регион поиска 2 (позиция анализа)
     y_3an = int(y_or + pos_3)
     region_big_3 = [x_an_pul, y_3an, width, height]
+    log_with_caller(message='e')
     return region_big_3
 
 
@@ -426,10 +437,7 @@ def get_areas_task_big(width=77, height=42):
         :param width:
         :param height:
         :return: кортеж из трех списков значений"""
-    my_log_file('')
-    my_log_file('fun.get_areas_task_big')
-    # my_print_to_file('fun.get_areas_task_big')
-    # print('')
+    log_with_caller(message='a')
     pul = 370
     # pos_1, pos_2, pos_3 = 217, 320, 423
     pos_1, pos_2, pos_3 = 160, 250, 340
@@ -450,20 +458,19 @@ def get_areas_task_big(width=77, height=42):
     # регион поиска 3 (позиция анализа)
     y_3an = int(y_or + pos_3)
     region3_big = [x_an_pul, y_3an, width, height]
-
+    log_with_caller(message='e')
     return region1_big, region2_big, region3_big
 
 
 def find_link_klan(show=True):
-    my_log_file('')
-    my_log_file('fun.find_link_klan')
+    log_with_caller(message='a')
     pos_klan = find_img.find_klan()
     while not pos_klan:
         print('no')
         pos_klan = find_img.find_klan()
         if pos_klan:
             tools.Mouse.move(pos=pos_klan, show=show)
-
+    log_with_caller(message='e')
     return pos_klan
 
 
@@ -472,20 +479,18 @@ def is_open_station():
 
     :return: Point station_master
     """
-    my_log_file('')
-    my_log_file('fun.is_open_station')
+    log_with_caller(message='a')
     open_station1 = find_img.find_link_money_token()
     while not open_station1:
         open_station1 = find_img.find_link_money_token()
+    log_with_caller(message='e')
 
 
 def vizit_to_station_master():
     """заходит в палатку к нач.станции
     :return: Point 'station_master'
     """
-    my_log_file('')
-    my_log_file('fun.vizit_to_station_master')
-    # print('fun.vizit_to_station_master')
+    log_with_caller(message='a')
     is_open_station()
     station_master = find_img.find_station_master()
     if station_master:
@@ -507,6 +512,7 @@ def vizit_to_station_master():
         sleep(0.5)
         station_master = find_img.find_station_master()
         tools.Mouse.move(pos=station_master, speed=0.4)
+    log_with_caller(message='e')
     return station_master
 
 
@@ -516,22 +522,18 @@ def find_lvl():
 
 
 def await_arena(region):
-    my_log_file('')
-    my_log_file('fun.await_arena')
+    log_with_caller(message='a')
     attack_arena_object = find_img.find_choice_of_the_attacked(region=region)
     while attack_arena_object is None:
         attack_arena_object = find_img.find_choice_of_the_attacked(region=region)
-    # mouse_move(pos=attack_arena_object)
+    log_with_caller(message='e')
     return attack_arena_object
 
 
 def selection_hero(*, show_name=True):
-    # print('fun.selection_hero')
-    my_log_file('')
-    my_log_file('fun.selection_hero')
+    log_with_caller(message='a')
     hero_gadya = find_img.find_her_gadya()
     hero_gavr = find_img.find_her_gavr()
-    hero_veles = find_img.find_her_veles()
     hero_mara = find_img.find_her_mara()
     hero = None
     if hero_gadya:
@@ -548,14 +550,6 @@ def selection_hero(*, show_name=True):
         heroes.Activ.hero_activ_name = 'Gavr'
         heroes.Activ.name_file_ = 'gavr'
         heroes.Activ.hero_activ = heroes.gavr
-    elif hero_veles:
-        pass
-        # if show_name:
-        #     print(myCt.tc_yellow('Велес'))
-        # hero = 'Велес'
-        # heroes.Activ.hero_activ_name = 'Велес'
-        # heroes.Activ.name_file_ = 'veles'
-        # heroes.Activ.hero_activ = heroes.veles
     elif hero_mara:
         if show_name:
             print(c_t.tc_yellow('Мар`яна'))
@@ -569,22 +563,22 @@ def selection_hero(*, show_name=True):
             print()
 
         heroes.Activ.hero_activ = None
+    log_with_caller(message='e')
     return hero
 
 
 def get_len_bypass(bypass_hero):
-    my_log_file('')
-    my_log_file('fun.get_len_bypass')
+    log_with_caller(message='a')
     arr2 = []
     for i in bypass_hero:
         if i not in arr2:
             arr2.append(i)
+    log_with_caller(message='e')
     return len(arr2)
 
 
 def work():
-    my_log_file('')
-    my_log_file('fun.work')
+    log_with_caller(message='a')
 
     rest = tools.get_rest_tim(h_max=22)
 
@@ -593,6 +587,7 @@ def work():
     tools.Mouse.move_to_click(pos_click=pos_work)
     work_rest_hour = find_img.find_work_rest_hour(rest=rest)
     tools.Mouse.move_to_click(pos_click=work_rest_hour)
+    log_with_caller(message='e')
     return
 
 
@@ -608,12 +603,15 @@ def verifi_img():
 
 
 def extraction_digit(*, item):
+    log_with_caller(message='a')
     """Извлекаю цифру из названия файла"""
     dig = int(''.join(c if c.isdigit() else ' ' for c in item))
+    log_with_caller(message='e')
     return dig
 
 
 def ac():
+    log_with_caller(message='a')
     pos_my = find_img.find_my_game2()
     while not pos_my:
         pos_my = find_img.find_my_game2()
@@ -621,9 +619,11 @@ def ac():
     x -= 50
     y -= 50
     tools.Mouse.move_to_click(pos_click=(x, y), move_time=0.3, z_p_k=0.2)
+    log_with_caller(message='e')
 
 
 def get_areas_energy_1():
+    log_with_caller(message='a')
     x_or, y_or = find_link_station_master()
     # регион поиска 1 (позиция анализа)
     x = x_or + 548
@@ -634,10 +634,12 @@ def get_areas_energy_1():
     change_y = 23
     x_demo += change_x
     y_demo += change_y
+    log_with_caller(message='e')
     return x, y, change_x, change_y
 
 
 def get_areas_energy_2():
+    log_with_caller(message='a')
     x_or, y_or = find_link_station_master()
     # регион поиска 1 (позиция анализа)
     x = x_or + 548
@@ -648,10 +650,12 @@ def get_areas_energy_2():
     change_y = 23
     x_demo += change_x
     y_demo += change_y
+    log_with_caller(message='e')
     return x, y, change_x, change_y
 
 
 def get_areas_energy_3():
+    log_with_caller(message='a')
     x_or, y_or = find_link_station_master()
     # регион поиска 1 (позиция анализа)
     x = x_or + 548
@@ -662,6 +666,7 @@ def get_areas_energy_3():
     change_y = 23
     x_demo += change_x
     y_demo += change_y
+    log_with_caller(message='e')
     return x, y, change_x, change_y
 
 
@@ -743,9 +748,8 @@ def loc_now():
     return list_location
 
 
-def log_with_caller(message=None, print_message=True) -> str:
+def log_with_caller(message=None) -> str:
     """
-    :param print_message: вывод на экран
     :param message: 'a'=активация and 'e'=выход. Если None - без сообщения
     :return: строка f"[{module_name}.{func_name}: line-{line_no}] {message}"
     """
@@ -765,7 +769,7 @@ def log_with_caller(message=None, print_message=True) -> str:
     elif message == 'e':
         context_message = f"[{module_name}.{func_name}: line-{line_no}] выход"
     else:
-        context_message = f"[{module_name}.{func_name}: line-{line_no}]"
+        context_message = f"[{module_name}.{func_name}: line-{line_no}] {message}"
     my_log_file(context_message)
     if baza.variables.Parameters.def_rapport:
         print(tools.color_text.tc_green(context_message))
