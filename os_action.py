@@ -66,6 +66,12 @@ def check_files(*, old_day: int, check_list_directory=None, check_list_file=None
 
 
 def create_folder(*, path, info=False):
+    """
+    При необходимости создаёт все вложенные папки.
+    :param path:
+    :param info:
+    :return:
+    """
     if not os.path.exists(path):
         os.makedirs(path)
     else:
@@ -74,8 +80,9 @@ def create_folder(*, path, info=False):
     return
 
 
-def check_folder(my_path):
+def check_folder_or_file(*, my_path):
     """
+    os.path.exists возвращает False при отсутствии искомой папки
     :param my_path: Путь к папке или файлу.
     :return: Bool
     """

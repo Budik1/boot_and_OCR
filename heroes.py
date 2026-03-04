@@ -1,7 +1,9 @@
 import time
 
 from baza import baza_dannyx as b_d
+from baza import baza_paths as b_p
 from tools import color_text as c_t
+from baza.baza_paths import actual_caliber
 
 nam = 0  # для подсчета чего?
 temp_min = None
@@ -485,15 +487,15 @@ class Hero:
 
 
 gady = Hero(name_ru_="Гадя", name_en_='Gady', name_id='gady', _id=0)
-gady.path_task = 'img/station_master/tasks_gady/'
+gady.path_task = b_p.gady_path_task
 gady.bypass = b_d.bypass
 
 gavr = Hero(name_ru_='Гавр', name_en_='Gavr', name_id='gavr', _id=1)
-gavr.path_task = 'img/station_master/tasks_gavr/'
+gavr.path_task = b_p.gavr_path_task
 gavr.bypass = b_d.bypass
 
 mara = Hero(name_ru_='Мара', name_en_='Mara', name_id='mara', _id=2)
-mara.path_task = 'img/station_master/tasks_mara/'
+mara.path_task = b_p.mara_path_task
 mara.bypass = b_d.bypass_mara
 
 list_all_state = [{}, {}, {}]  #

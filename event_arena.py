@@ -3,6 +3,7 @@ from time import sleep
 import fun
 import find_img
 import heroes
+import os_action
 import tools
 import solid_memory
 import station_master
@@ -117,12 +118,13 @@ def kill():
         ful_region = get_ful_region_arena_tabl()
         height_line = get_height_line(full_region_arena=ful_region)
         region_line1 = ful_region[0], ful_region[1], ful_region[2], height_line
-        fun.foto_pos(name_img=b_p.img_token, region=region_line1)
+        # os_action.create_folder(path=b_p.img_token)
+        # fun.foto_pos(name_img=(b_p.img_token + 'token.png'), region=region_line1)
 
         arena_object = find_img.find_arena_object(region=region_line1,
                                                   hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))
         arena_object_region = region_line1
-        tools.Mouse.move(pos=arena_object)
+        tools.Mouse.move(pos=arena_object, message='действие1')
         # Построчный поиск без смещения
         if arena_object is None:
             _it = 0

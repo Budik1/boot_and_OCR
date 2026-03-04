@@ -47,19 +47,20 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     heroes.nam += 1
 
     battle_end = find_img.find_b_battle_end(confidence_param=par_conf)
-    skip_battle = fun.locCenterImg(name_img='img/skip_battle.png', confidence=par_conf)
-    dog = fun.locCenterImg(name_img='img/dog_2.png', confidence=par_conf)
+    skip_battle = find_img.find_skip_battle()
+    dog = find_img.find_dog_2(par_conf_=0.79)
+    # print(f'{dog=}')
 
-    name1_grey_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_grey_rat.png', confidence=conf_mobs)
-    name1_white_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_white_rat.png', confidence=conf_mobs)
-    name1_black_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_black_rat.png', confidence=conf_mobs)
-    name1_sand_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_sand_rat.png', confidence=conf_mobs)
-    name2_spy = fun.locCenterImg(name_img='img/tonelli/mobi/name2_spy.png', confidence=conf_mobs)
-    name3_smuggler = fun.locCenterImg(name_img='img/tonelli/mobi/name3_smuggler.png', confidence=conf_mobs)
-    name4_arachne = fun.locCenterImg(name_img='img/tonelli/mobi/name4_arachne.png', confidence=conf_mobs)
-    name5_wildman = fun.locCenterImg(name_img='img/tonelli/mobi/name5_wildman.png', confidence=conf_mobs)
+    name1_grey_rat = find_img.find_name1_grey_rat()
+    name1_white_rat = find_img.find_name1_white_rat()
+    name1_black_rat = find_img.find_name1_black_rat()
+    name1_sand_rat = find_img.find_name1_sand_rat()
+    name2_spy = find_img.find_name2_spy()
+    name3_smuggler = find_img.find_name3_smuggler()
+    name4_arachne = find_img.find_name4_arachne()
+    name5_wildman = find_img.find_name5_wildman()
     name6_kikimora = find_img.find_name_kikimora()
-    name7_raptor = fun.locCenterImg(name_img='img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
+    name7_raptor = find_img.find_name7_raptor()
 
     duration_fight = 0
     dog_flag = True
@@ -134,18 +135,16 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     print(c_t.tc_magenta(f'{Hero.get_qty_raptor(Activ.hero_activ)} ящер'))
 
                 # нужен ли тут этот блок?
-                name1_grey_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_grey_rat.png', confidence=conf_mobs)
-                name1_white_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_white_rat.png',
-                                                   confidence=conf_mobs)
-                name1_black_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_black_rat.png',
-                                                   confidence=conf_mobs)
-                name1_sand_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_sand_rat.png', confidence=conf_mobs)
-                name2_spy = fun.locCenterImg(name_img='img/tonelli/mobi/name2_spy.png', confidence=conf_mobs)
-                name3_smuggler = fun.locCenterImg(name_img='img/tonelli/mobi/name3_smuggler.png', confidence=conf_mobs)
-                name4_arachne = fun.locCenterImg(name_img='img/tonelli/mobi/name4_arachne.png', confidence=conf_mobs)
-                name5_wildman = fun.locCenterImg(name_img='img/tonelli/mobi/name5_wildman.png', confidence=conf_mobs)
+                name1_grey_rat = find_img.find_name1_grey_rat()
+                name1_white_rat = find_img.find_name1_white_rat()
+                name1_black_rat = find_img.find_name1_black_rat()
+                name1_sand_rat = find_img.find_name1_sand_rat()
+                name2_spy = find_img.find_name2_spy()
+                name3_smuggler = find_img.find_name3_smuggler()
+                name4_arachne = find_img.find_name4_arachne()
+                name5_wildman = find_img.find_name5_wildman()
                 name6_kikimora = find_img.find_name_kikimora()
-                name7_raptor = fun.locCenterImg(name_img='img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
+                name7_raptor = find_img.find_name7_raptor()
 
         if dog_activ:
             if dog and dog_flag:
@@ -153,12 +152,12 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                 par_conf_pet = par_conf
                 mes_pet = f'обнаружение пета {dog=}, {par_conf_pet=}'
                 dog_flag = False
-                dog = fun.locCenterImg(name_img='img/dog_2.png', confidence=par_conf)
+                dog = find_img.find_dog_2(par_conf_=par_conf_pet)
                 if dog:
                     mes_pet = f'обнаружение пета {dog=}, {par_conf_pet=}'
                     while dog and dog[0] > 800:
                         par_conf_pet += 0.001
-                        dog = fun.locCenterImg(name_img='img/dog_2.png', confidence=par_conf_pet)
+                        dog = find_img.find_dog_2(par_conf_=par_conf_pet)
                         mes_pet = f'обнаружение пета {dog=}, {par_conf_pet=}'
                         if par_conf_pet > 0.999:
                             dog = None
@@ -174,7 +173,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
         if skip_battle and skip_battle_count and duration_fight == 4:  # нажать "пропустить бой"
             skip_battle_count = False
             # print('нажать "пропустить бой"')
-            skip_battle = fun.locCenterImg(name_img='img/skip_battle.png', confidence=par_conf, )
+            skip_battle = find_img.find_skip_battle()
 
             fun.my_log_file(f'{skip_battle=}')
             tools.Mouse.move_to_click(pos_click=skip_battle, move_time=0.4, z_p_k=0.5,
@@ -189,23 +188,23 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
             tools.Mouse.move(pos=battle_end, speed=1)
         close = find_img.find_close()
 
-        name1_grey_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_grey_rat.png', confidence=conf_mobs)
-        name1_white_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_white_rat.png', confidence=conf_mobs)
-        name1_black_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_black_rat.png', confidence=conf_mobs)
-        name1_sand_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_sand_rat.png', confidence=conf_mobs)
-        name2_spy = fun.locCenterImg(name_img='img/tonelli/mobi/name2_spy.png', confidence=conf_mobs)
-        name3_smuggler = fun.locCenterImg(name_img='img/tonelli/mobi/name3_smuggler.png', confidence=conf_mobs)
-        name4_arachne = fun.locCenterImg(name_img='img/tonelli/mobi/name4_arachne.png', confidence=conf_mobs)
-        name5_wildman = fun.locCenterImg(name_img='img/tonelli/mobi/name5_wildman.png', confidence=conf_mobs)
+        name1_grey_rat = find_img.find_name1_grey_rat()
+        name1_white_rat = find_img.find_name1_white_rat()
+        name1_black_rat = find_img.find_name1_black_rat()
+        name1_sand_rat = find_img.find_name1_sand_rat()
+        name2_spy = find_img.find_name2_spy()
+        name3_smuggler = find_img.find_name3_smuggler()
+        name4_arachne = find_img.find_name4_arachne()
+        name5_wildman = find_img.find_name5_wildman()
         name6_kikimora = find_img.find_name_kikimora()
-        name7_raptor = fun.locCenterImg(name_img='img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
+        name7_raptor = find_img.find_name7_raptor()
 
-        dog = fun.locCenterImg('img/dog.png', confidence=par_conf)
-        skip_battle = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
+        dog = find_img.find_dog_2(par_conf_=0.99)
+        skip_battle = find_img.find_skip_battle()
 
         if battle_end and close:  # нажать закрыть в конце боя
-            victory = fun.locCenterImg('img/arena/overall/victory_in_arena.png', confidence=par_conf)
-            defeat = fun.locCenterImg('img/arena/overall/defeat_in_arena.png', confidence=par_conf)
+            victory = find_img.find_victory_in_arena()
+            defeat = find_img.find_defeat_in_arena()
             if victory:
                 result = "победа"
             elif defeat:
@@ -218,11 +217,11 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
             if popup:
                 fun.push_close_all_()
 
-    skip_battle1_end_ver = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
+    skip_battle1_end_ver = find_img.find_skip_battle()
     fun.my_log_file(f'{skip_battle1_end_ver=}')
     while skip_battle1_end_ver:
         fun.push_close()
-        skip_battle1_end_ver = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
+        skip_battle1_end_ver = find_img.find_skip_battle()
         fun.my_log_file(f'{skip_battle1_end_ver=}')
     if arena:
         mes = f'{result} выход'
@@ -312,9 +311,8 @@ def task_analysis(img1, img2, region):
     global variable
     # fun.push_close_all_()
     fun.vizit_to_station_master()
-    variant1 = fun.locCenterImg(name_img=img1, confidence=conf_, region=region)
-    # v3 = pyautogui.locateCenterOnScreen(img2, minSearchTime=1.0, region=region, confidence=conf_)
-    variant2 = fun.locCenterImg(name_img=img2, confidence=conf_, region=region)
+    variant1 = find_img.find_img_param(path_name=img1, confidence=conf_, region=region)
+    variant2 = find_img.find_img_param(path_name=img2, confidence=conf_, region=region)
     if variant1:
         price_task = fun.extraction_digit(item=img1)
         val_1 = variant1
@@ -455,10 +453,10 @@ def task_pos_item(task_num):
     print(c_t.tc_green(' Задания выполнены'))
     number_tasks = 1
     energy_availability = 1
-    close = fun.locCenterImg(name_img='img/overall/close.png', confidence=0.9)
+    close = find_img.find_close()
     while close:
         print(f'station_master.task_pos_item {close=}')
         tools.Mouse.move_to_click(pos_click=close, z_p_k=0.3)
-        close = fun.locCenterImg(name_img='img/overall/close.png', confidence=0.9)
+        close = find_img.find_close()
     fun.log_with_caller(message='e')
     return

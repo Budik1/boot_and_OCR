@@ -255,6 +255,7 @@ def foto(path_name, region: tuple[int, int, int, int] | object | None = None):
     """
     log_with_caller(message='a')
     im1 = pyautogui.screenshot(region=region)
+    # Проверить наличие пути для создания файла!!!
     im1.save(path_name)
     log_with_caller(message='e')
     return
@@ -737,7 +738,8 @@ def loc_now():
     list_location = ['станция не опознана']
     for station in range(len(b_d.list_of_stations)):
         img_station = b_d.list_of_stations[station][2]
-        pos = locCenterImg(name_img=img_station, confidence=0.99)
+        # pos = locCenterImg(name_img=img_station, confidence=0.99)
+        pos = find_img.find_img_param(path_name=img_station, confidence=0.99)
         if pos:
             list_location = b_d.list_of_stations[station]
             tools.Mouse.move(pos=pos, speed=0.1, )

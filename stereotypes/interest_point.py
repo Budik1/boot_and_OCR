@@ -1,21 +1,29 @@
-import fun_down
+import os_action
+import tools
+
 import fun
+from find_img import find_img
+
+DEFAULT_DISTANCE = 760
 
 
-def get_left_corner():
+def get_left_corner() -> tuple:
     """
     Отправная точка всех построений.
     :return:
+    :return:
     """
-    pos = fun_down.locateCenterImg(name_img='./img/mark_scale/mark_left.png')
+    'img/mark_scale/corner/mark_left.png'
+    pos = fun.locCenterImg(name_img='./img/mark_scale/corner/mark_left.png', confidence=0.99)
     x, y, = pos
     x -= 7
     y += 2
     left_corner = x, y
     return left_corner
 
-def get_right_corner():
-    pos = fun_down.locateCenterImg(name_img='./img/mark_scale/mark_right.png')
+
+def get_right_corner() -> tuple:
+    pos = fun.locCenterImg(name_img='./img/mark_scale/corner/mark_right.png', confidence=0.99)
     x, y, = pos
     x += 8
     y += 2
@@ -23,9 +31,11 @@ def get_right_corner():
     return right_corner
 
 
-def get_skale():
-    NORM_DISTANCE = 760
-
+def get_caliber_corner():
+    """
+    Определение масштаба через расстояние между углами.
+    :return:
+    """
     left_corner = get_left_corner()
     right_corner = get_right_corner()
     if left_corner and right_corner:
@@ -37,16 +47,26 @@ def get_skale():
             distance = x_left_cor - x_right_cor
     else:
         print("углы не определены")
-        distance = None
-    value_large_scale = int(distance / NORM_DISTANCE)
-    return value_large_scale
+        distance = DEFAULT_DISTANCE
+    caliber = int((distance / DEFAULT_DISTANCE) * 100)
+    return caliber
+
+def get_caliber_line():
+    path_img_caliber = 'img/mark_scale/line'
+    lst_img = os_action.get_lst_files(path=path_img_caliber)
+    skale = None
+    for img in lst_img:
+        rez = find_img(img)
+        if rez:
+            skale = fun.extraction_digit(item=img)
+    return skale
 
 
 def cr_img():
     target_img = "None"
     # смещение по х, смещение по у, ширина, высота
     img_dict = {
-        'hero_fase': [(8 + 6, 8 + 6, 70 - 6 * 2, 70 - 6 * 2), ['gady', 'gavr', 'mara'] ]
+        'hero_fase': [((8 + 6), (8 + 6), (70 - 6 * 2), (70 - 6 * 2)), ['gady', 'gavr', 'mara']]
     }
     target_img = './img/test/token.png'
     #
@@ -79,3 +99,27 @@ def cr_img():
         else:
             print("выход без создания снимка")
     # sounds.sound_vic(block=False)
+
+
+def cr_img_line_button_pm(show=False):
+    left_cor = get_left_corner()
+    caliber = get_caliber_corner()
+    name_file_line_scale = f'line_button_pm_{caliber}.png'
+    path_scale = f'img/mark_scale/line/'
+    os_action.create_folder(path=path_scale)
+
+    x, y = left_cor
+    x += 220 * (caliber / 100)
+    y -= 130 * (caliber / 100)
+    tools.Mouse.move(pos=(x, y), speed=1, show=show)
+    x_demo, y_demo = x, y
+    change_x = 365 * (caliber / 100)
+    change_y = 30 * (caliber / 100)
+    x_demo += change_x
+    y_demo += change_y
+    tools.Mouse.move(pos=(x_demo, y_demo), speed=1, show=show)
+    if not os_action.check_folder_or_file(my_path=f'{path_scale}{name_file_line_scale}'):
+        fun.foto(path_name=f'{path_scale}{name_file_line_scale}', region=(x, y, change_x, change_y))
+
+
+get_caliber_line()

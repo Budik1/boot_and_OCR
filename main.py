@@ -14,9 +14,10 @@ import person
 import revision_tents
 import solid_memory
 import station_master
+import stereotypes
 import touring
 import tools
-import tool_win
+from x_scale import tool_win
 
 from baza import baza_dannyx as b_d
 from baza import baza_paths as b_p
@@ -47,8 +48,12 @@ height_tool = height_root
 position_y_tool = top_indent * 2 + height_root
 position_x_tool = position_x_root
 
+caliber = stereotypes.interest_point.get_caliber_line()
+if caliber == 100:
+    b_p.actual_caliber = 'default'
+print(f'{b_p.actual_caliber=}')
 
-def start_prog():
+def start_gui():
     state_file = solid_memory.reading_all_state_config(info=False)
     if state_file:
         try:
@@ -598,7 +603,7 @@ box_paths.insert(0, 'домой')
 lang_var = StringVar(value=box_paths[0])
 
 # -------------------------------------------------------------
-start_prog()
+start_gui()
 # -------------------------------------------------------------
 
 # блок командных кнопок
@@ -731,13 +736,13 @@ ttk.Label(textvariable=mara_wild).place(x=b_d.col_7, y=b_d.mara_y)
 # блок выбора заданий
 difference_str_img = 8
 line_img = b_d.line4 + 5
-imagePul = ImageTk.PhotoImage(file="img/overall/pulya.png")
+imagePul = ImageTk.PhotoImage(file=b_p.pulya_png)
 ttk.Button(root, image=imagePul, command=puli).place(x=56, y=line_img + 15)
-img_e1 = ImageTk.PhotoImage(file="img/overall/en1v3.png")
+img_e1 = ImageTk.PhotoImage(file=b_p.en1_png)
 ttk.Button(root, image=img_e1, command=en_1).place(x=b_d.col_0, y=line_img)
-img_e2 = ImageTk.PhotoImage(file="img/overall/en2v3.png")
+img_e2 = ImageTk.PhotoImage(file=b_p.en2_png)
 ttk.Button(root, image=img_e2, command=en_2).place(x=b_d.col_0, y=line_img + b_d.height_line + difference_str_img)
-img_e3 = ImageTk.PhotoImage(file="img/overall/en3v3.png")
+img_e3 = ImageTk.PhotoImage(file=b_p.en3_png)
 ttk.Button(root, image=img_e3, command=en_3).place(x=b_d.col_0,
                                                    y=line_img + b_d.height_line * 2 + difference_str_img * 2)
 #

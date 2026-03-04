@@ -1,5 +1,6 @@
 from PIL import Image
 
+from baza.baza_paths import actual_caliber
 
 import fun_down as fund
 
@@ -7,26 +8,19 @@ norm = 0.9
 par_conf = 0.79
 
 
-# def locCenterImg(*, name_img, confidence=0.9, region: tuple[int, int, int, int] | None = None):
-#     pos_img = pyautogui.locateCenterOnScreen(name_img,
-#                                              confidence=confidence,
-#                                              region=region)
-#     return pos_img
-
-
 def find_knob():
-    knob = fund.locateCenterImg(name_img='img/overall/knob.png')
+    knob = fund.locateCenterImg(name_img=f'img/{actual_caliber}/overall/knob.png')
     return knob
 
 
 def find_cancel():
-    cancel = fund.locateCenterImg(name_img='img/overall/cancel.png')
+    cancel = fund.locateCenterImg(name_img=f'img/{actual_caliber}/overall/cancel.png')
     return cancel
 
 
 def find_close():
-    kv_close = fund.locateCenterImg(name_img='img/kv/kv_close.png', confidence=par_conf)
-    close = fund.locateCenterImg(name_img='img/overall/close.png')
+    kv_close = fund.locateCenterImg(name_img=f'img/{actual_caliber}/kv/kv_close.png', confidence=par_conf)
+    close = fund.locateCenterImg(name_img=f'img/{actual_caliber}/overall/close.png')
     if kv_close:
         return kv_close
     elif close:
@@ -36,62 +30,66 @@ def find_close():
 
 
 def find_hall_of_glory_tabl():
-    hall = fund.locateCenterImg(name_img='img/arena/overall/hall_of_glory_tabl.png')
+    hall = fund.locateCenterImg(name_img=f'img/{actual_caliber}/arena/overall/hall_of_glory_tabl.png')
     return hall
 
 
 def find_hall_of_glory_icon():
-    point_hall_of_glory = fund.locateCenterImg(name_img='img/arena/overall/hall_of_glory_icon.png')
+    point_hall_of_glory = fund.locateCenterImg(name_img=f'img/{actual_caliber}/arena/overall/hall_of_glory_icon.png')
     return point_hall_of_glory
 
 
 def find_station_master():
-    station_master = fund.locateCenterImg(name_img='img/station_master/any/station_master.png', confidence=0.91)
+    station_master = fund.locateCenterImg(name_img=f'img/{actual_caliber}/station_master/any/station_master.png',
+                                          confidence=0.91)
     return station_master
 
 
 def find_klan():
-    pos_klan = fund.locateCenterImg(name_img='img/overall/klan.png', confidence=0.9)
+    pos_klan = fund.locateCenterImg(name_img=f'img/{actual_caliber}/overall/klan.png', confidence=0.9)
     return pos_klan
 
 
 def find_choice_of_the_attacked(*, region: tuple[int, int, int, int] | None = None):
-    attack = fund.locateCenterImg(name_img='img/arena/overall/choice_of_the_attacked.png', region=region)
+    attack = fund.locateCenterImg(name_img=f'img/{actual_caliber}/arena/overall/choice_of_the_attacked.png',
+                                  region=region)
     return attack
 
 
 def find_b_exit():
-    b_exit = fund.locateCenterImg(name_img='img/b_exit.png')
+    b_exit = fund.locateCenterImg(name_img=f'img/{actual_caliber}/overall/b_exit.png')
     return b_exit
 
 
 def find_arena_object(*, region, hero):
-    arena_object = fund.locateCenterImg(name_img=f"img/arena/{hero}/arena_object.png", region=region)  # 0.89
+    arena_object = fund.locateCenterImg(name_img=f"img/{actual_caliber}/arena/{hero}/arena_object.png",
+                                        region=region)  # 0.89
     return arena_object
 
 
 def find_scroll_up():
-    scroll_up = fund.locateCenterImg(name_img='img/arena/overall/scroll_up.png')
+    scroll_up = fund.locateCenterImg(name_img=f'img/{actual_caliber}/arena/overall/scroll_up.png')
     return scroll_up
 
 
 def find_scroll_down():
-    scroll_down = fund.locateCenterImg(name_img='img/arena/overall/scroll_down.png')
+    scroll_down = fund.locateCenterImg(name_img=f'img/{actual_caliber}/arena/overall/scroll_down.png')
     return scroll_down
 
 
 def find_attack_arena_opponent():
-    hero_vs_opponent = fund.locateCenterImg(name_img='img/arena/overall/attack_arena_opponent.png')
+    hero_vs_opponent = fund.locateCenterImg(name_img=f'img/{actual_caliber}/arena/overall/attack_arena_opponent.png')
     return hero_vs_opponent
 
 
 def find_her_gadya():
-    hero_gadya = fund.locateCenterImg(name_img='img/person/hero_id/gady/her_gadya.png')
+    hero_gadya = fund.locateCenterImg(name_img=f'img/{actual_caliber}/person/hero_id/gady/her_gadya.png')
     return hero_gadya
 
 
 def find_her_gavr():
-    list_link = ['img/person/hero_id/gavr/gavr_armor.png', 'img/person/hero_id/gavr/her_gavr.png']
+    list_link = [f'img/{actual_caliber}/person/hero_id/gavr/gavr_armor.png',
+                 f'img/{actual_caliber}/person/hero_id/gavr/her_gavr.png']
     img_link = None
     for link in list_link:
         her_gavr = fund.locateCenterImg(name_img=link)
@@ -102,167 +100,335 @@ def find_her_gavr():
 
 
 def find_her_veles():
-    her_veles = fund.locateCenterImg(name_img='img/person/hero_id/veles/her_veles.png')
+    her_veles = fund.locateCenterImg(name_img=f'img/{actual_caliber}/person/hero_id/veles/her_veles.png')
     return her_veles
 
 
 def find_her_mara():
-    her_mara = fund.locateCenterImg(name_img='img/person/hero_id/mara/her_mara.png')
+    her_mara = fund.locateCenterImg(name_img=f'img/{actual_caliber}/person/hero_id/mara/her_mara.png')
     return her_mara
 
 
 def find_work():
-    pos_work = fund.locateCenterImg(name_img='img/station_master/any/work_b.png')
+    pos_work = fund.locateCenterImg(name_img=f'img/{actual_caliber}/station_master/any/work_b.png')
     return pos_work
 
 
 def find_work_rest_hour(*, rest):
     # name_img = f'img/station_master/work_hour/work_{rest}h.png'
-    pos_work = fund.locateCenterImg(name_img=f'img/station_master/work_hour/work_{rest}h.png')
+    pos_work = fund.locateCenterImg(name_img=f'img/{actual_caliber}/station_master/work_hour/work_{rest}h.png')
     return pos_work
 
 
 def find_exit_kv():
-    exit_kv = fund.locateCenterImg(name_img='img/kv/exit_kv.png')
+    exit_kv = fund.locateCenterImg(name_img=f'img/{actual_caliber}/kv/exit_kv.png')
     return exit_kv
 
 
 def find_kv_close():
-    kv_close = fund.locateCenterImg(name_img='img/kv/kv_close.png')
+    kv_close = fund.locateCenterImg(name_img=f'img/{actual_caliber}/kv/kv_close.png')
     return kv_close
 
 
 def find_kv_skip_battle():
-    kv_skip_battle = fund.locateCenterImg(name_img='img/kv/kv_skip_battle.png', confidence=0.85)
+    kv_skip_battle = fund.locateCenterImg(name_img=f'img/{actual_caliber}/kv/kv_skip_battle.png', confidence=0.85)
     return kv_skip_battle
+
 
 def find_kv_skip_battle_test():
-    kv_skip_battle = fund.locateCenterImg(name_img='img/kv/kv_skip_battle_test.png', confidence=0.85)
-    # while not kv_skip_battle:
-    #     kv_skip_battle = fund.locateCenterImg(name_img='img/kv/kv_skip_battle_test.png', confidence=0.85)
+    kv_skip_battle = fund.locateCenterImg(name_img=f'img/{actual_caliber}/kv/kv_skip_battle_test.png', confidence=0.85)
     return kv_skip_battle
 
+
 def find_skip_battle():
-    skip_battle = fund.locateCenterImg(name_img='img/skip_battle.png', confidence=par_conf)
+    skip_battle = fund.locateCenterImg(name_img=f'img/{actual_caliber}/overall/skip_battle.png', confidence=par_conf)
+    # img/default/overall/skip_battle.png
     return skip_battle
 
 
 def find_kv_danger():
-    danger = fund.locateCenterImg(name_img='img/kv/kv_danger.png')
+    danger = fund.locateCenterImg(name_img=f'img/{actual_caliber}/kv/kv_danger.png')
     return danger
 
 
 def find_victory_battle_in_kv():
-    victory = fund.locateCenterImg(name_img='img/kv/victory_battle_in_kv.png', confidence=0.95)
+    victory = fund.locateCenterImg(name_img=f'img/{actual_caliber}/kv/victory_battle_in_kv.png', confidence=0.95)
     return victory
 
 
 def find_defeat_battle_in_kv():
-    defeat = fund.locateCenterImg(name_img='img/kv/defeat_battle_in_kv.png', confidence=0.95)
+    defeat = fund.locateCenterImg(name_img=f'img/{actual_caliber}/kv/defeat_battle_in_kv.png', confidence=0.95)
     return defeat
 
 
 def find_kv_reload():
-    kv_reload = fund.locateCenterImg(name_img='img/kv/kv_reload.png')
+    kv_reload = fund.locateCenterImg(name_img=f'img/{actual_caliber}/kv/kv_reload.png')
     return kv_reload
 
 
 def find_kv_attack_for_money():
-    attack_for_money = fund.locateCenterImg(name_img='img/kv/kv_attack for money.png')
+    attack_for_money = fund.locateCenterImg(name_img=f'img/{actual_caliber}/kv/kv_attack for money.png')
     return attack_for_money
 
 
 def find_kv_attak():
-    kv_attak = fund.locateCenterImg(name_img='img/kv/kv_attak.png')
+    kv_attak = fund.locateCenterImg(name_img=f'img/{actual_caliber}/kv/kv_attak.png')
     return kv_attak
 
 
 def find_b_vip(*, region_search):
-    pos_vip = fund.locateCenterImg(name_img='img/tents_R/b_vip.png', confidence=0.8, region=region_search)
+    pos_vip = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tents_R/b_vip.png', confidence=0.8,
+                                   region=region_search)
     return pos_vip
 
 
 def find_inspect_tent():
-    visit = fund.locateCenterImg(name_img="img/tents_R/inspect tent.png", confidence=0.8)
+    visit = fund.locateCenterImg(name_img=f"img/{actual_caliber}/tents_R/inspect tent.png", confidence=0.8)
     return visit
 
 
 def find_b_tent(*, region_search):
-    dom = fund.locateCenterImg(name_img='img/tents_R/b_tent.png', region=region_search, confidence=0.9)
+    dom = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tents_R/b_tent.png', region=region_search,
+                               confidence=0.9)
     return dom
 
 
 def find_setting():
-    pos_settings = fund.locateCenterImg(name_img='img/setting.png', confidence=0.9)
+    pos_settings = fund.locateCenterImg(name_img=f'img/{actual_caliber}/setting.png', confidence=0.9)
     return pos_settings
 
 
 def find_station_exit():
-    station_exit = fund.locateCenterImg(name_img='img/tonelli/station_exit.png', confidence=0.9)
+    station_exit = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/station_exit.png', confidence=0.9)
     return station_exit
 
+
 def find_tonelli_attack():
-    attack = fund.locateCenterImg(name_img='img/tonelli/attack.png')
+    attack = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/attack.png')
     return attack
 
+
 def find_info():
-    info = fund.locateCenterImg(name_img='img/overall/info.png') # img/overall/info.png
+    info = fund.locateCenterImg(name_img=f'img/{actual_caliber}/overall/info.png')  # img/overall/info.png
     return info
 
+
 def find_my_game2():
-    pos = fund.locateCenterImg(name_img='img/overall/my_game2.png')
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/overall/my_game2.png')
     return pos
 
 
 def find_button_expand():
-    pos = fund.locateCenterImg(name_img='img/overall/button_expand.png')
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/overall/button_expand.png')
     return pos
 
-def find_name(*, path_name):
-    pos = fund.locateCenterImg(name_img=path_name)
+
+def find_img_param(*, path_name, confidence, region=None):
+    pos = fund.locateCenterImg(name_img=path_name, confidence=confidence, region=region)
     return pos
+
+def find_img(name_img):
+    pos = fund.locateCenterImg(name_img=name_img)
+    return pos
+
 
 def find_smol_slot():
-    pos = fund.locateCenterImg(name_img='img/person/slots/smol_slot.png')
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/person/slots/smol_slot.png')
     return pos
+
 
 def find_exit_person():
-    pos = fund.locateCenterImg(name_img='img/person/exit_person.png')
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/person/exit_person.png')
     return pos
+
 
 def find_low_energy_label():
-    pos = fund.locateCenterImg(name_img='img/station_master/energy_indicator/low_energy_label.png', confidence=0.8)
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/station_master/energy_indicator/low_energy_label.png',
+                               confidence=0.8)
     return pos
+
 
 def find_no_energy():
-    pos = fund.locateCenterImg(name_img='img/station_master/energy_indicator/no_energy.png')
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/station_master/energy_indicator/no_energy.png')
     return pos
 
-def find_name_kikimora():
-    pos = fund.locateCenterImg(name_img='img/tonelli/mobi/name6_kikimora.png')
-    return pos
 
 def find_en_1():
-    pos = fund.locateCenterImg(name_img='img/station_master/energy_value/en_1.png')
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/station_master/energy_value/en_1.png')
     return pos
 
 
 def find_klan_kv_label():
-    pos = fund.locateCenterImg(name_img='img/kv/tests/klan_kv_label.png')
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/kv/tests/klan_kv_label.png')
     return pos
+
 
 def find_g():
-    pos_g = fund.locateCenterImg(name_img='img/overall/metro.png')
+    pos_g = fund.locateCenterImg(name_img=f'img/{actual_caliber}/overall/metro.png')
     return pos_g
 
+
 def find_link_money_token():
-    pos = fund.locateCenterImg(name_img='img/overall/link_money_token.png')
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/overall/link_money_token.png')
     return pos
+
 
 def find_b_battle_end(confidence_param=None):
-    pos = fund.locateCenterImg(name_img='img/b_battle_end.png', confidence=confidence_param)
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/b_battle_end.png', confidence=confidence_param)
     return pos
 
+
 def find_mark_left():
-    pos = fund.locateCenterImg(name_img='img/test/mark/mark_left.png')
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/test/mark/mark_left.png')
+    return pos
+
+def find_mark_sever():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/mark_sever.png')
+    return pos
+
+def find_mark_yug():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/mark_yug.png')
+    return pos
+
+
+def find_add_acc():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/person/change_hero/add_acc.png')
+    return pos
+
+
+def find_menu_acc_her_gadya():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/person/hero_id/gady/menu_acc_her_gadya.png')
+    return pos
+
+
+def find_menu_acc_her_gavr():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/person/hero_id/gavr/menu_acc_her_gavr.png')
+    return pos
+
+
+def find_menu_acc_her_mara():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/person/hero_id/mara/menu_acc_her_mara.png')
+    return pos
+
+
+def find_change_hero_gady():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/person/change_hero/change_hero_gady.png')
+    return pos
+
+
+def find_change_hero_gavr():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/person/change_hero/change_hero_gavr.png')
+    return pos
+
+
+def find_change_hero_mara():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/person/change_hero/change_hero_mara.png')
+    return pos
+
+
+def find_continue_gady():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/overall/event_entry/continue_gady.png')
+    return pos
+
+
+def find_continue_gavr():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/overall/event_entry/continue_gavr.png')
+    return pos
+
+
+def find_continue_mara():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/overall/event_entry/continue_mara.png')
+    return pos
+
+
+def find_my_game1():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/default/overall/my_game1.png')
+    return pos
+
+
+def find_dog_2(par_conf_):
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/overall/dog_2.png', confidence=par_conf_)
+    return pos
+
+
+def find_dog():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/dog.png')
+    return pos
+
+
+def find_name1_grey_rat():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/mobi/name1_grey_rat.png')
+    return pos
+
+
+def find_name1_white_rat():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/mobi/name1_white_rat.png')
+    return pos
+
+
+def find_name1_black_rat():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/mobi/name1_black_rat.png')
+    return pos
+
+
+def find_name1_sand_rat():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/mobi/name1_sand_rat.png')
+    return pos
+
+
+def find_name2_spy():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/mobi/name2_spy.png')
+    return pos
+
+
+def find_name3_smuggler():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/mobi/name3_smuggler.png')
+    return pos
+
+
+def find_name4_arachne():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/mobi/name4_arachne.png')
+    return pos
+
+
+def find_name5_wildman():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/mobi/name5_wildman.png')
+    return pos
+
+
+def find_name_kikimora():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/mobi/name6_kikimora.png')
+    return pos
+
+
+def find_name7_raptor():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/mobi/name7_raptor.png')
+    return pos
+
+
+def find_victory_in_arena():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/arena/overall/victory_in_arena.png')
+    return pos
+
+
+def find_defeat_in_arena():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/arena/overall/defeat_in_arena.png')
+    return pos
+
+
+def find_gift():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/gift.png')
+    return pos
+
+
+def find_gift2():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/gift2.png')
+    return pos
+
+def find_post():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/post.png')
+    return pos
+
+def find_entry_station():
+    pos = fund.locateCenterImg(name_img=f'img/{actual_caliber}/tonelli/entry_station.png')
     return pos

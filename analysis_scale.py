@@ -1,7 +1,24 @@
+"""
+# Длина картинки 999 пикселей. 131%
+# Длина картинки 912 пикселей. 120%
+# Длина картинки 833 пикселей. 109%
+# Длина картинки 760 пикселей. 100%
+# Длина картинки 694 пикселей. 91%
+# Длина картинки 633 пикселей. 83%
+# Длина картинки 578 пикселей. 76%
+# Длина картинки 528 пикселей. 69%
+# Длина картинки 482 пикселей. 63%
+# Длина картинки 440 пикселей. 57%
+# Длина картинки 401 пикселей. 52%
+# Длина картинки 367 пикселей. 48%
+"""
 import fun
 import find_img
 import stereotypes
 import tools
+import os_action
+
+DEFAULT_DISTANCE = 760
 
 
 def cr_mark_img():
@@ -11,14 +28,14 @@ def cr_mark_img():
     """
     target_img = 'заглушка'
     img_dict = {
-        'img/test/mark/mark_left.png': (-423, 113, 19, 5, (), find_img.find_my_game2()),
-        'img/test/mark/mark_right.png': (322, 113, 19, 5, (), find_img.find_my_game2()),
-        'img/mark_scale/mark_right_II.png': (322, 113, 19, 5, (), find_img.find_my_game2()),
+        'img/mark_scale/corner/mark_left.png': (-423, 113, 19, 5, (), find_img.find_my_game2()),
+        'img/mark_scale/corner/mark_right.png': (322, 113, 19, 5, (), find_img.find_my_game2()),
+        'img/mark_scale/corner/mark_right_II.png': (322, 113, 19, 5, (), find_img.find_my_game2()),
 
     }
-    # target_img = 'img/test/token.png'
+    # target_img = 'img/temp/test/token.png'
 
-    key = 'img/mark_scale/mark_right_II.png'
+    key = 'img/mark_scale/corner/mark_right_II.png'
     pos_start = img_dict[key][5]
     # показать привязку
     # tools.Mouse.move(pos=pos_start, speed=1)
@@ -49,7 +66,12 @@ def cr_mark_img():
 
 
 def test_long(*, vizual=None):
-    NORM_DISTANCE = 760
+    """
+    Получение соотношения имеющейся картины относительно 100%
+    :param vizual: Визуализация углов
+    :return:
+    """
+
     pos_left_corner = fun.locCenterImg(name_img='img/mark_scale/mark_left.png', confidence=0.99)
     pos_right_corner = fun.locCenterImg(name_img='img/mark_scale/mark_right.png', confidence=0.99)
 
@@ -61,6 +83,7 @@ def test_long(*, vizual=None):
         x_right, y_right = pos_right_corner
         x_right_cor = x_right + 8
         y_right_cor = y_right + 2
+
         if vizual:
             ans = input('Оба угла видны. Показать? (y/n): ')
             if ans == 'y':
@@ -76,29 +99,40 @@ def test_long(*, vizual=None):
             distance = x_left_cor - x_right_cor
         name_img = f'img/test/mark/long{distance}.png'
         fun.foto(path_name=name_img, region=(x_left_cor, y_left, distance, 5))
-        percentage_change = int((distance / NORM_DISTANCE) * 100)
-        print(f'Длина картинки {distance} пикселей. {int(percentage_change)}%')
+        caliber = int((distance / DEFAULT_DISTANCE) * 100)
+        print(f'Длина картинки {distance} пикселей. {int(caliber)}%')
     else:
         if not pos_left_corner:
             print('pos_left_corner no')
         if not pos_right_corner:
             print('pos_right_corner no')
+        caliber = None
+    return caliber
 
 
+# os_action.create_folder(path='img/Cr/wq/uy/hgt')
 # create_folder('img/Cr/wq/uy/hgt')
-cr_mark_img()
+# cr_mark_img()
 # test_long()
 # stereotypes.interest_point.cr_img()
+salute = 'Начнем знакомство.'
+ans_1 = 'Для начала назови героя, чтобы помощник с ним мог общаться: '
+ans_2 = ''
+msg_starting_point = 'Для корректного проведения калибровки перемести своего персонажа на ст. Новокузнецкая'
+name_pers = ''
+# Создание : img/{caliber}/person/hero_id/gady/her_gadya.png
+# Создание :img/{caliber}/person/hero_id/gady/menu_acc_her_gadya.png
+def silent_creation_mode():
+    img_dict = {
+        'img/test/mark/mark_left.png': (-423, 113, 19, 5, (), find_img.find_my_game2()),
+        'img/test/mark/mark_right.png': (322, 113, 19, 5, (), find_img.find_my_game2()),
+        'img/mark_scale/mark_right_II.png': (322, 113, 19, 5, (), find_img.find_my_game2()),
+    }
+    key = 'img/mark_scale/mark_right_II.png'
+    x, y = img_dict[key][5]
+    x += img_dict[key][0]
+    y += img_dict[key][1]
+    change_x = img_dict[key][2]
+    change_y = img_dict[key][3]
 
-# Длина картинки 999 пикселей. 131%
-# Длина картинки 912 пикселей. 120%
-# Длина картинки 833 пикселей. 109%
-# Длина картинки 760 пикселей. 100%
-# Длина картинки 694 пикселей. 91%
-# Длина картинки 633 пикселей. 83%
-# Длина картинки 578 пикселей. 76%
-# Длина картинки 528 пикселей. 69%
-# Длина картинки 482 пикселей. 63%
-# Длина картинки 440 пикселей. 57%
-# Длина картинки 401 пикселей. 52%
-# Длина картинки 367 пикселей. 48%
+    # fun.foto(f'{target_img}', (x, y, change_x, change_y))

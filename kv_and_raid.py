@@ -1,9 +1,11 @@
 import time
 from time import sleep
 
+import find_img
 import fun
 import find_img as find
 import heroes
+import os_action
 import solid_memory
 import tools
 
@@ -22,6 +24,8 @@ def foto_danger():
     x += 862
     y += 485
     x_r, y_r = x, y
+    # Проверить наличие пути для создания файла!!!
+    os_action.create_folder(path=b_p.danger)
     name_foto = tools.date_and_time_in_name_file() + ".png"
     fun.foto(('img/Cr/' + name_foto), (x_s, y_s, x_r, y_r))
     # print('foto')
@@ -46,6 +50,8 @@ def foto_result_round(*, pos_v, pos_n, path=b_p.result_round, sound=False):
     x2, y2 = pos_n
     x_r = x2 - pos_x + 80 - 13
     y_r = y2 - pos_y - 20
+    # Проверить наличие пути для создания файла!!!
+    os_action.create_folder(path=path)
     #
     name_foto = tools.date_and_time_in_name_file() + ".png"
     fun.foto((path + name_foto), (pos_x, pos_y, x_r, y_r))
@@ -91,7 +97,7 @@ def get_name_loot_kv():
                       'генерал': 'img/kv/result_round/loot/p5.png'}
     result = 'неопознан'
     for name in dict_name_loot:
-        name_loot = fun.locCenterImg(name_img=dict_name_loot[name])
+        name_loot = find_img.find_img(name_img=dict_name_loot[name])
         if name_loot:
             result = name
             break
