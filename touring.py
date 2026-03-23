@@ -14,7 +14,7 @@ from t import gift_station_service
 
 from tools import color_text as c_t
 from baza import baza_dannyx as b_d
-from baza.baza_paths import actual_caliber
+from baza.baza_paths import actual_caliber_folder
 from heroes import Hero, Activ
 
 
@@ -146,20 +146,20 @@ def open_map():
     # получение координат
     if location_station[0] == 'ст. Тургеневская':
         pos_or1 = fun.find_link_klan()
-        x = pos_or1[0] + 180
-        y = pos_or1[1] + 205
+        x = pos_or1[0] + (180 * b_d.caliber_percent)
+        y = pos_or1[1] + (205 * b_d.caliber_percent)
         pos_run_out = x, y
         tools.Mouse.move(pos=pos_run_out, speed=0.1)
     else:
         pos_or1 = find_img.find_info()
-        x = pos_or1[0] + 300
-        y = pos_or1[1] + 180
+        x = pos_or1[0] + (300 * b_d.caliber_percent)
+        y = pos_or1[1] + (180 * b_d.caliber_percent)
         pos_run_out = x, y
         tools.Mouse.move(pos=pos_run_out, speed=0.1)
     # открыть карту
     tools.Mouse.left_click(pos=pos_run_out)
     # Убрать курсор с поля карты, чтобы ничего не перекрыл
-    station_exit = fun.wait_static_pos(name_img=f'img/{actual_caliber}/tonelli/station_exit.png')
+    station_exit = fun.wait_static_pos(name_img=f'img/{actual_caliber_folder}/tonelli/station_exit.png')
     tools.Mouse.move(pos=station_exit, speed=0.1)
     fun.log_with_caller(message='e')
     return
@@ -561,7 +561,7 @@ def for_wilds():
                 # за белыми крысами на Пушкинской
                 print(f'нет доступных заданий. {col}')
                 move_to_target(target_point='ст. Пушкинская')
-                station_master.task_pos_item(1)
+                station_master.option_task_line(task_line=1)
                 col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
                 print(f'энергия исчерпана {col} потрачено сегодня')
         move_to_target(target_point='домой')
@@ -576,7 +576,7 @@ def for_wilds():
             # за белыми крысами на Пушкинской
             print(f'нет доступных заданий на Киевской, {col}')
             move_to_target(target_point='ст. Пушкинская')
-            station_master.task_pos_item(1)
+            station_master.option_task_line(task_line=1)
             print('энергия исчерпана')
             move_to_target(target_point='домой')
         tools.sounds.say_txt('вернулся домой))')

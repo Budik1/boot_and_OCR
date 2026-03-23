@@ -118,7 +118,6 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     cycle = False
                     mob_identified = "wildman"
                     print(f'{c_t.tc_magenta("дикарь пойман")}, {Hero.get_report_wildman_now(Activ.hero_activ)}')
-                    # print(tools.report_wildman(hero=Activ.hero_activ))
 
                 if name6_kikimora and cycle:
                     cycle = False
@@ -238,7 +237,7 @@ def press_en(*, task_number, pos, value_energy):  #
         task_number (int): номер строки заданий
         pos ( list[int]): регион его расположения
         value_energy (int): количество энергии нужной для задания
-        :param task_number:
+        :param task_number :
         :param pos: 
         :param value_energy:
     """
@@ -247,11 +246,11 @@ def press_en(*, task_number, pos, value_energy):  #
     x = pos[0] - 100
     y = pos[1] - 20
     pos_clik = x, y
-    tools.Mouse.move(pos=pos_clik, message=f'показал выбранное задание ({task_number})')
+    # tools.Mouse.move(pos=pos_clik, message=f'показал выбранное задание ({task_number})')
     # print('тут должен быть клик')                                        # для отладки раскомментировать
-    tools.Mouse.move_to_click(pos_click=pos_clik, move_time=0.4, z_p_k=1.5,
+    tools.Mouse.move_to_click(pos_click=pos_clik, move_time=0.4, z_p_k=0.3,
                               message=f'нажал {task_number} задание')  # для отладки закомментировать
-    sleep(0.5)
+    # sleep(0.5)
     low_energy = find_img.find_low_energy_label()
     if not low_energy:
         vers_in_print = "" if conf_ == 0.95 else f', conf_={conf_}. '
@@ -329,17 +328,6 @@ def task_analysis(img1, img2, region):
     return val_1, val_2
 
 
-# def move(pos, message=True, message_l=None):
-#     fun.log_with_caller(message='a')
-#
-#     if message:
-#         print(f'station_master.move() {pos=}')
-#     if pos:
-#         tools.Mouse.move(pos=pos, speed=0.5)
-#         sleep(1)
-#
-#     fun.log_with_caller(message='e')
-
 
 def station_task_list():
     """ Получение списка заданий """
@@ -386,15 +374,15 @@ def option_task_money():
 
         variant1, price_task1 = task_analysis(F'{path}{task[0]}', F'{path}{task[1]}', region_1)
         tools.Mouse.move(pos=variant1)
-        sleep(0.1)
+        # sleep(0.1)
 
         variant2, price_task2 = task_analysis(F'{path}{task[2]}', F'{path}{task[3]}', region_2)
         tools.Mouse.move(pos=variant2)
-        sleep(0.1)
+        # sleep(0.1)
 
         variant3, price_task3 = task_analysis(F'{path}{task[4]}', F'{path}{task[5]}', region_3)
         tools.Mouse.move(pos=variant3)
-        sleep(0.1)
+        # sleep(0.1)
 
         if variant1:
             press_en(task_number=1, pos=region_1, value_energy=price_task1)
@@ -415,9 +403,9 @@ def option_task_money():
 
             conf_ = 0.95
             if not analiz:
-                create_and_analiz_task_img.get_screenshot_task_big()
+                path = create_and_analiz_task_img.get_screenshot_task_big()
                 print(c_t.tc_cyan(
-                    'Для ручного выбора результат "D:/bot in br/testOCR/img/test/test_tasks/test big tasks" '))
+                    f'Для ручного выбора результат "C:/python/bot_ocr1{path}" '))
                 number_tasks = 1
                 energy_availability = 0
                 return
@@ -428,28 +416,32 @@ def option_task_money():
     while close:
         tools.Mouse.move_to_click(pos_click=close, z_p_k=0.3)
         close = find_img.find_close()
+    tools.sounds.say_txt('Задания выполнены.')
     fun.log_with_caller(message='e')
     return
 
 
-def task_pos_item(task_num):
+def option_task_line(*, task_line):
     """ Выбор по позиции задания """
     fun.log_with_caller(message='a')
+    # print(f'{task_line=}, {type(task_line)}')
     fun.selection_hero()
     list_location = fun.loc_now()
     heroes.Activ.station_activ = list_location[0]
     global energy_availability, number_tasks
     region_1, region_2, region_3 = fun.get_areas_task_big()
-    if task_num == 1:
+    if task_line == 1:
         region = region_1
-    elif task_num == 2:
+    elif task_line == 2:
         region = region_2
     else:
         region = region_3
 
     while energy_availability == 1 and number_tasks > 0:
         fun.vizit_to_station_master()
-        press_en(task_number=task_num, pos=region, value_energy=1)
+        # нужно получить значение потраченной энергии
+        en_value = create_and_analiz_task_img.get_energy_value_in_line(line=task_line - 1)
+        press_en(task_number=task_line, pos=region, value_energy=en_value)
     print(c_t.tc_green(' Задания выполнены'))
     number_tasks = 1
     energy_availability = 1

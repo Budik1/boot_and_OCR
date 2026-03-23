@@ -1,49 +1,48 @@
-actual_caliber = 'default'
 
-# main item
-pulya_png = f"img/{actual_caliber}/overall/pulya.png"
-en1_png = f"img/{actual_caliber}/overall/en1v3.png"
-en2_png = f"img/{actual_caliber}/overall/en2v3.png"
-en3_png = f"img/{actual_caliber}/overall/en3v3.png"
+actual_caliber_folder = 'default'
+
+path_folder_line_menu = 'img/mark_scale/line'
+
 #
-gady_path_task = f'img/{actual_caliber}/station_master/tasks_gady/'
-gavr_path_task = f'img/{actual_caliber}/station_master/tasks_gavr/'
-mara_path_task = f'img/{actual_caliber}/station_master/tasks_mara/'
+gady_path_task = f'img/default/station_master/tasks_gady/'
+gavr_path_task = f'img/default/station_master/tasks_gavr/'
+mara_path_task = f'img/default/station_master/tasks_mara/'
 #
-task_big = f'img/{actual_caliber}/test/test_tasks/'  # ?
-task_test = f'img/{actual_caliber}/test/test_img/'  # ?
-tasks_little_temp = f'img/{actual_caliber}/temp/tasks'
-num_path = f'img/{actual_caliber}/station_master/numbers/'
+manual_selection_tasks = 'img/temp/sample_tasks/'
+task_big = f'img/default/test/test_tasks/'  # ?
+task_test = f'img/default/test/test_img/'  # ?
+tasks_little_temp = f'img/default/temp/tasks'
+num_path = f'img/default/station_master/numbers/'
 
-energy_task_value = f'img/{actual_caliber}/station_master/energy_value/'
+energy_task_value = f'img/default/station_master/energy_value/'
 
-task_hero = f'img/{actual_caliber}/station_master/tasks_'
+task_hero = f'img/default/station_master/tasks_'
 # os_action
 retention_all = 'storage/config.json'
 retention_kv = 'storage/config_kv.json'
 
-result_round = f'img/{actual_caliber}/kv/temp/result_round/result_all_round/'
-loot_round = f'img/{actual_caliber}/kv/temp/result_round/result_round_loot/'
-danger = f'img/{actual_caliber}/kv/temp/danger/'
+result_round_temp = f'img/default/kv/temp/result_round/result_all_round/'
+result_round_p = f'img/default/kv/result_round/p/'
+danger = f'img/default/kv/temp/danger/'
 
-img_token = 'img/temp/test/'
+hero_id = f'img/default/person/hero_id/'
 
 log_path = 'txt/log/'
+img_token = 'img/temp/test/'
 
-check_list_directory = [log_path, 'img/Cr/', 'img/not_used/', 'img/test/arena/', result_round,
-                        'img/kv/result_round/result_all_round/'
+check_list_directory = [log_path, result_round_p, result_round_temp, img_token, danger
                         ]
 
-arena_object = f'img/{actual_caliber}/arena/'
+arena_object = f'img/default/arena/'
 list_work_directory = [
     # arena
-    f'img/{actual_caliber}/arena/overall/',
+    f'img/default/arena/overall/',
 
-    f'img/{actual_caliber}/overall/',
+    f'img/default/overall/',
 
-    f'img/{actual_caliber}/person/hero_id/gady/',
+    f'img/default/person/hero_id/gady/',
 
-    f'img/{actual_caliber}/station_master/any/',
+    f'img/default/station_master/any/',
 
-    f'img/{actual_caliber}/kv/',
+    f'img/default/kv/',
 ]

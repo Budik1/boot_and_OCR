@@ -15,6 +15,7 @@ import tools
 import baza
 from baza import baza_dannyx as b_d
 from baza import baza_paths as b_p
+from baza import paths_img as p_i
 from tools import color_text as c_t
 
 par_conf = 0.79
@@ -26,12 +27,14 @@ def screen_size():
     Получение размеров экрана.
     :return: ширина, высота
     """
+    log_with_caller(message='a')
     screen_width, screen_height = pyautogui.size()
+    log_with_caller(message='e')
     return screen_width, screen_height
 
 
 def locCenterImg(name_img, confidence=0.9, region: tuple[int, int, int, int] | None = None, grayscale=None):
-    pos_img = fun_down.locateCenterImg(name_img=name_img,
+    pos_img = fun_down.locateCenterImg(img=name_img,
                                        confidence=confidence,
                                        region=region,
                                        grayscale=grayscale)
@@ -49,7 +52,6 @@ def wait_static_pos(*, name_img, region=None, confidence=0.99,
     pos_img = locCenterImg(name_img=name_img, region=region, confidence=confidence)
     log_with_caller(message='e')
     return pos_img
-
 
 
 def wait_and_stop_img(*, name_img, region: tuple[int, int, int, int] | None = None, confidence=0.9,
@@ -337,7 +339,7 @@ def find_link_station_master_alt():
     if not pos_klan and not station_master:
         my_log_file(f'ничего не видно')
         push_close_all_()
-        pos_klan = wait_static_pos(name_img='img/overall/klan.png')
+        pos_klan = wait_static_pos(name_img=p_i.klan_png)
     if pos_klan:
         point = vizit_to_station_master()
         my_log_file(f'{point=} если видно клан')
@@ -467,7 +469,7 @@ def find_link_klan(show=True):
     log_with_caller(message='a')
     pos_klan = find_img.find_klan()
     while not pos_klan:
-        print('no')
+        print('no find_link_klan')
         pos_klan = find_img.find_klan()
         if pos_klan:
             tools.Mouse.move(pos=pos_klan, show=show)
@@ -516,10 +518,6 @@ def vizit_to_station_master():
     log_with_caller(message='e')
     return station_master
 
-
-def find_lvl():
-    my_log_file('fun.find_lvl')
-    pass
 
 
 def await_arena(region):
@@ -611,122 +609,45 @@ def extraction_digit(*, item):
     return dig
 
 
-def ac():
-    log_with_caller(message='a')
-    pos_my = find_img.find_my_game2()
-    while not pos_my:
-        pos_my = find_img.find_my_game2()
-    x, y = pos_my
-    x -= 50
-    y -= 50
-    tools.Mouse.move_to_click(pos_click=(x, y), move_time=0.3, z_p_k=0.2)
-    log_with_caller(message='e')
-
-
-def get_areas_energy_1():
-    log_with_caller(message='a')
-    x_or, y_or = find_link_station_master()
-    # регион поиска 1 (позиция анализа)
-    x = x_or + 548
-    y = y_or + 182
-    # # найдем нижний угол
-    x_demo, y_demo = x, y
-    change_x = 17
-    change_y = 23
-    x_demo += change_x
-    y_demo += change_y
-    log_with_caller(message='e')
-    return x, y, change_x, change_y
-
-
-def get_areas_energy_2():
-    log_with_caller(message='a')
-    x_or, y_or = find_link_station_master()
-    # регион поиска 1 (позиция анализа)
-    x = x_or + 548
-    y = y_or + 285
-    # # найдем нижний угол
-    x_demo, y_demo = x, y
-    change_x = 17
-    change_y = 23
-    x_demo += change_x
-    y_demo += change_y
-    log_with_caller(message='e')
-    return x, y, change_x, change_y
-
-
-def get_areas_energy_3():
-    log_with_caller(message='a')
-    x_or, y_or = find_link_station_master()
-    # регион поиска 1 (позиция анализа)
-    x = x_or + 548
-    y = y_or + 388
-    # # найдем нижний угол
-    x_demo, y_demo = x, y
-    change_x = 17
-    change_y = 23
-    x_demo += change_x
-    y_demo += change_y
-    log_with_caller(message='e')
-    return x, y, change_x, change_y
-
-
-def get_full_areal_tasks():
-    """
-    Получение региона заданий
-    """
-    pos_start = find_link_station_master()
-    # найдем верхний угол
-    x, y = pos_start
-    x += 300
-    y += 160
-    # # найдем нижний угол
-    x_demo, y_demo = x, y
-    change_x = 310
-    change_y = 320
-    x_demo += change_x
-    y_demo += change_y
-    return x, y, change_x, change_y
-
 
 def get_region_lines_task():
     """
         Получение региона для трех строк с заданием
     """
-    module = str(__name__)
-    print(f'{module}.get_region_lines_task')
+    log_with_caller(message='a')
     pos_start = find_link_station_master()
-    change_x = 280
-    change_y = 90
+
+    line_height = int(90 * b_d.caliber_percent)  # высота строки задания
+    line_length = int(280 * b_d.caliber_percent) # длина строки задания
+    offset_from_starting_point_x = int(270 * b_d.caliber_percent)
+    offset_from_starting_point_y = int(150 * b_d.caliber_percent)
+
     # найдем верхний угол
     x, y = pos_start
-    x += 270
-    y += 150
+    x += offset_from_starting_point_x
+    y_line_1 = y + offset_from_starting_point_y
 
-    x_demo, y_demo = x, y
+    x_demo = x + line_length
+    y_demo = y_line_1 + line_height
 
-    x_demo += change_x
-    y_demo += change_y
-
-    region_task_line1 = x, y, change_x, change_y
+    region_task_line1 = x, y_line_1, line_length, line_height
     #
-    x, y = pos_start
-    x += 270
-    y += 150 + 90
 
-    x_demo, y_demo = x, y
-    x_demo += change_x
-    y_demo += change_y
+    y_line_2 = y + offset_from_starting_point_y + line_height
 
-    region_task_line2 = x, y, change_x, change_y
+    x_demo = x + line_length
+    y_demo = y_line_2 + line_height
+
+    region_task_line2 = x, y_line_2, line_length, line_height
     #
-    x, y = pos_start
-    x += 270
-    y += 150 + 90 + 90
-    x_demo, y_demo = x, y
-    x_demo += change_x
-    y_demo += change_y
-    region_task_line3 = x, y, change_x, change_y
+
+    y_line_3 = y + offset_from_starting_point_y + (line_height * 2)
+
+    x_demo = x + line_length
+    y_demo = y_line_3 + line_height
+
+    region_task_line3 = x, y_line_3, line_length, line_height
+    log_with_caller(message='e')
     return region_task_line1, region_task_line2, region_task_line3
 
 

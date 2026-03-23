@@ -1,3 +1,4 @@
+import baza.baza_paths
 import os_action
 import tools
 
@@ -31,10 +32,15 @@ def get_right_corner() -> tuple:
     return right_corner
 
 
+def get_pos_line_menu(*, path) -> tuple:
+    pos = find_img(name_img=path)
+    return pos
+
+
 def get_caliber_corner():
     """
     Определение масштаба через расстояние между углами.
-    :return:
+    :return: Int
     """
     left_corner = get_left_corner()
     right_corner = get_right_corner()
@@ -51,27 +57,36 @@ def get_caliber_corner():
     caliber = int((distance / DEFAULT_DISTANCE) * 100)
     return caliber
 
-def get_caliber_line():
-    path_img_caliber = 'img/mark_scale/line'
+
+def get_caliber_line_menu():
+    """
+    Получает список доступных файлов картинок содержащих в названии значение масштаба и ищет совпадение.
+
+    :return: None / int
+    """
+    path_img_caliber = baza.baza_paths.path_folder_line_menu
     lst_img = os_action.get_lst_files(path=path_img_caliber)
     skale = None
     for img in lst_img:
         rez = find_img(img)
+        # print(rez, img)
+
         if rez:
+            # tools.Mouse.move(pos=rez, speed=1)
             skale = fun.extraction_digit(item=img)
+            break
     return skale
 
 
-def cr_img():
-    target_img = "None"
+def cr_img(mark, target_img=None):
     # смещение по х, смещение по у, ширина, высота
     img_dict = {
-        'hero_fase': [((8 + 6), (8 + 6), (70 - 6 * 2), (70 - 6 * 2)), ['gady', 'gavr', 'mara']]
+        'hero_fase': [((8 + 6), (8 + 6), (70 - 6 * 2), (70 - 6 * 2))]
     }
     target_img = './img/test/token.png'
     #
     key = 'hero_fase'
-    pos_start = get_left_corner()
+    pos_start = get_pos_line_menu(path=mark)
     lst_offsets = img_dict[key][0]
     # показать привязку
     # fun.Mouse.move(pos=pos_start, speed=1)
@@ -92,18 +107,23 @@ def cr_img():
         fun.foto(f'{target_img}', (x, y, change_x, change_y))
         print(f'{target_img} сделан')
     else:
-        answer = input(f"{key} Как сохранить? Варианты 1: ")
-        if answer == 'y':
-            fun.foto(f'{key}', (x, y, change_x, change_y))
-            print(f'{key} сделано')
-        else:
-            print("выход без создания снимка")
+
+        fun.foto(f'{key}', (x, y, change_x, change_y))
+        print(f'{key} сделано')
+
     # sounds.sound_vic(block=False)
 
 
-def cr_img_line_button_pm(show=False):
+def cr_img_line_button_pm(*, caliber=None, show=False):
+    """
+    Создает картинку
+    :param caliber:
+    :param show:
+    :return:
+    """
     left_cor = get_left_corner()
-    caliber = get_caliber_corner()
+    if not caliber:
+        caliber = get_caliber_corner()
     name_file_line_scale = f'line_button_pm_{caliber}.png'
     path_scale = f'img/mark_scale/line/'
     os_action.create_folder(path=path_scale)
@@ -120,6 +140,3 @@ def cr_img_line_button_pm(show=False):
     tools.Mouse.move(pos=(x_demo, y_demo), speed=1, show=show)
     if not os_action.check_folder_or_file(my_path=f'{path_scale}{name_file_line_scale}'):
         fun.foto(path_name=f'{path_scale}{name_file_line_scale}', region=(x, y, change_x, change_y))
-
-
-get_caliber_line()

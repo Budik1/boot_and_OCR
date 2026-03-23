@@ -1,3 +1,2 @@
-'act_calibr.py'
-'analysis_scale.py'
-'calibrator.py'
+class My:
+    actual_caliber = ''

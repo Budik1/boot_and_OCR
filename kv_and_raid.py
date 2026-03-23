@@ -10,6 +10,7 @@ import solid_memory
 import tools
 
 from baza import baza_paths as b_p
+from baza import paths_img as p_i
 from tools import color_text as c_t
 from tools import sounds
 
@@ -25,19 +26,19 @@ def foto_danger():
     y += 485
     x_r, y_r = x, y
     # Проверить наличие пути для создания файла!!!
-    os_action.create_folder(path=b_p.danger)
+    os_action.create_folder(path=b_p.danger)  # f'img/{actual_caliber}/kv/temp/danger/'
     name_foto = tools.date_and_time_in_name_file() + ".png"
-    fun.foto(('img/Cr/' + name_foto), (x_s, y_s, x_r, y_r))
+    fun.foto((b_p.danger + name_foto), (x_s, y_s, x_r, y_r))
     # print('foto')
     fun.log_with_caller(message='e')
 
 
-def foto_result_round(*, pos_v, pos_n, path=b_p.result_round, sound=False):
+def foto_result_round(*, pos_v, pos_n, path=b_p.result_round_temp, sound=False):
     """
 
     :param pos_v:
     :param pos_n:
-    :param path: 'img/ kv/ result_round/ result_all_round/'
+    :param path: f'img/{actual_caliber}/kv/temp/result_round/result_all_round/'
     :param sound:
     :return:
     """
@@ -55,46 +56,20 @@ def foto_result_round(*, pos_v, pos_n, path=b_p.result_round, sound=False):
     #
     name_foto = tools.date_and_time_in_name_file() + ".png"
     fun.foto((path + name_foto), (pos_x, pos_y, x_r, y_r))
+    # print('Создан фото ', (path + name_foto))
     if sound:
         sounds.sound_victory()
     fun.log_with_caller(message='e')
     return
 
 
-def foto_loot_kv(*, point_v, point_n):
-    """
-
-    :param point_v: 
-    :param point_n: 
-    :return: 
-    """
-    fun.log_with_caller(message='a')
-    path = b_p.loot_round  # 'img/ kv/ result_round/ result_round_loot/'
-    #
-    kor_x_v = 30 + 90 - 35
-    kor_y_v = 5 + 127 - 17
-    # коррекция верхнего угла
-    pos_x, pos_y = point_v
-    pos_x += 150 + kor_x_v
-    pos_y += 40 + kor_y_v
-    # коррекция нижнего угла
-    x2, y2 = point_n
-    x_r = x2 - pos_x + 80 - 13
-    y_r = y2 - pos_y - 20
-    #
-    name_foto = tools.date_and_time_in_name_file() + ".png"
-    fun.foto((path + name_foto), (pos_x, pos_y, x_r, y_r))
-    fun.log_with_caller(message='e')
-    return
-
-
 def get_name_loot_kv():
     fun.log_with_caller(message='a')
-    dict_name_loot = {'сержант': 'img/kv/result_round/loot/p1.png',
-                      'лейтенант': 'img/kv/result_round/loot/p2.png',
-                      'капитан': 'img/kv/result_round/loot/p3.png',
-                      'полковник': 'img/kv/result_round/loot/p4.png',
-                      'генерал': 'img/kv/result_round/loot/p5.png'}
+    dict_name_loot = {'сержант': p_i.p1_png,
+                      'лейтенант': p_i.p2_png,
+                      'капитан': p_i.p3_png,
+                      'полковник': p_i.p4_png,
+                      'генерал': p_i.p5_png}
     result = 'неопознан'
     for name in dict_name_loot:
         name_loot = find_img.find_img(name_img=dict_name_loot[name])
@@ -180,7 +155,7 @@ def battle(*, target_call):
                 heroes.Hero.up_count_shoulder_straps_kv(heroes.Activ.hero_activ)
                 mes = c_t.tc_red('Погон!!')
                 foto_result_round(pos_v=victory, pos_n=kv_close,
-                                  path='img/kv/result_round/p/', sound=True)
+                                  path=b_p.result_round_p, sound=True)
                 # опознать погон
                 name_loot = get_name_loot_kv()
                 # записать в лист
@@ -260,25 +235,3 @@ def kv():
         attack = find.find_kv_attak()
         klan_war = find.find_klan_kv_label()
     # fun.log_with_caller(message='e')
-
-
-def loot():
-    fun.log_with_caller(message='a')
-    backpack = fun.locCenterImg('img/kv/backpack.png', confidence=0.9)
-    tools.Mouse.move(pos=backpack, speed=2)
-    x, y = backpack
-    x -= 220
-    x_s = x
-    y -= 145
-    y_s = y
-    pos = x, y
-    tools.Mouse.move(pos=pos, speed=2)
-    x += 755
-    x_r = x
-    y += 615
-    y_r = y
-    pos = x, y
-    tools.Mouse.move(pos=pos, speed=2)
-    name_foto = tools.date_and_time_in_name_file() + ".png"
-    fun.foto(('img/Cr/' + name_foto), (x_s, y_s, x_r, y_r))
-    fun.log_with_caller(message='e')
