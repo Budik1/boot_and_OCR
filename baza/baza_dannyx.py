@@ -1,117 +1,161 @@
 # имя станции = [имя для Print, поиск на карте, ID станции, если её не видно на карте,[задания]]
 import baza.paths_img
-# from baza.baza_paths import actual_caliber_folder
 
-# from main import caliber
+task_11_22_33 = ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']
+task_12_23_34 = ['t1.png', 't2.png', 't2.png', 't3.png', 't3.png', 't4.png']
+task_11_22_77 = ['t1.png', 't1.png', 't2.png', 't2.png', 't7.png', 't7.png']
+task_22_33_77 = ['t2.png', 't2.png', 't3.png', 't3.png', 't7.png', 't7.png']
+task_23_34_45 = ['t2.png', 't3.png', 't3.png', 't4.png', 't4.png', 't5.png']
+task_0 = 0
+
+dir_arrow_south = 'стрелка юг'
+dir_arrow_north = 'стрелка север'
 
 st_alexs = ['ст. Алексеевская',
-            f'img/default/tonelli/map_item/k_Alexs.png',
-            f'img/default/tonelli/id_stations/s_Alexs.png', 0, []]
+            baza.paths_img.k_Alexs_png,
+            baza.paths_img.s_Alexs_png,
+            None,
+            []]
 st_biblioteka = ['ст. Библиотека им. Ленина',
-                 f'img/default/tonelli/map_item/k_Biblioteka.png',
-                 f'img/default/tonelli/id_stations/s_Biblioteka.png', 0,
-                 ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
+                 baza.paths_img.k_Biblioteka_png,
+                 baza.paths_img.s_Biblioteka_png,
+                 0,
+                 task_11_22_33]
 st_borov = ['ст. Боровицкая',
-            f'img/default/tonelli/map_item/k_Borov.png',
-            f'img/default/tonelli/id_stations/s_Borov.png', 'стрелка юг',
-            ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
+            baza.paths_img.k_Borov_png,
+            baza.paths_img.s_Borov_png,
+            dir_arrow_south,
+            task_11_22_33]
 st_chekhov = ['ст. Чеховская',
-              f'img/default/tonelli/map_item/k_Chekhov.png',
-              f'img/default/tonelli/id_stations/s_Chekhov.png',
-              'стрелка север', [0]]
+              baza.paths_img.k_Chekhov_png,
+              baza.paths_img.s_Chekhov_png,
+              dir_arrow_north,
+              task_0]
 st_communist = ['ст. Коммунистическая',
-                f'img/default/tonelli/map_item/k_Communist.png',
-                f'img/default/tonelli/id_stations/s_Communist.png', 0, []]
+                baza.paths_img.k_Communist_png,
+                baza.paths_img.s_Communist_png,
+                None,
+                []]
 st_cv_bulvar = ['ст. Цветной бульвар',
-                f'img/default/tonelli/map_item/k_Cvetnoy.png',
-                f'img/default/tonelli/id_stations/s_Cvetnoy.png', 0,
-                ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
+                baza.paths_img.k_Cvetnoy_png,
+                baza.paths_img.s_Cvetnoy_png,
+                None,
+                task_11_22_33]
 st_frunze = ['ст. Фрунзенская',
-             f'img/default/tonelli/map_item/k_Frunze.png',
-             f'img/default/tonelli/id_stations/s_Frunze.png', 0,
-             ['t2.png', 't2.png', 't3.png', 't3.png', 't7.png', 't7.png']]
+             baza.paths_img.k_Frunze_png,
+             baza.paths_img.s_Frunze_png,
+             None,
+             task_22_33_77]
 st_kiev = ['ст. Киевская',
-           f'img/default/tonelli/map_item/k_Kiev.png',
-           f'img/default/tonelli/id_stations/s_Kiev.png', 0,
-           ['t2.png', 't3.png', 't3.png', 't4.png', 't4.png', 't5.png']]
+           baza.paths_img.k_Kiev_png,
+           baza.paths_img.s_Kiev_png,
+           None,
+           task_23_34_45]
 st_kiev_a = ['ст. Киевская(A)',
-             f'img/default/tonelli/map_item/k_Kiev_a.png',
-             f'img/default/tonelli/id_stations/s_Kiev_a.png', 0, [0]]
+             baza.paths_img.k_Kiev_a_png,
+             baza.paths_img.s_Kiev_a_png,
+             None,
+             task_0]
 st_kitay = ['ст. Китай-город',
-            f'img/default/tonelli/map_item/k_Kitay.png',
-            f'img/default/tonelli/id_stations/s_Kitay.png',
-            'стрелка север', []]
+            baza.paths_img.k_Kitay_png,
+            baza.paths_img.s_Kitay_png,
+            dir_arrow_north,
+            []]
 st_kropot = ['ст. Кропоткинская',
-             f'img/default/tonelli/map_item/k_Kropotkin.png',
-             f'img/default/tonelli/id_stations/s_Kropotkin.png', 0,
-             [0]]
+             baza.paths_img.k_Kropotkin_png,
+             baza.paths_img.s_Kropotkin_png,
+             None,
+             task_0]
 st_k_most = ['ст. Кузнецкий мост',
-             f'img/default/tonelli/map_item/k_Kuzneckiy.png',
-             f'img/default/tonelli/id_stations/s_Kuzneckiy.png', 0,
-             ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
+             baza.paths_img.k_Kuzneckiy_png,
+             baza.paths_img.s_Kuzneckiy_png,
+             None,
+             task_11_22_33]
 st_novok = ['ст. Новокузнецкая',
-            f'img/default/tonelli/map_item/k_Novokuznec.png',
-            f'img/default/tonelli/id_stations/s_Novokuznec.png', 0,
-            ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
+            baza.paths_img.k_Novokuznec_png,
+            baza.paths_img.s_Novokuznec_png,
+            None,
+            task_11_22_33]
 st_park_g = ['ст. Парк культуры(Г)',
-             f'img/default/tonelli/map_item/k_Park_ganza.png',
-             f'img/default/tonelli/id_stations/s_Park_ganza.png', 0, [0]]
+             baza.paths_img.k_Park_ganza_png,
+             baza.paths_img.s_Park_ganza_png,
+             None,
+             task_0]
 st_park_kr = ['ст. Парк культуры(КР)',
-              f'img/default/tonelli/map_item/k_Park_kr.png',
-              f'img/default/tonelli/id_stations/s_Park_kr.png', 0,
-              ['t1.png', 't2.png', 't2.png', 't3.png', 't3.png', 't4.png']]
+              baza.paths_img.k_Park_kr_png,
+              baza.paths_img.s_Park_kr_png,
+              None,
+              task_12_23_34]
 st_pavelec = ['ст. Павелецкая',
-              f'img/default/tonelli/map_item/k_Pavelec.png',
-              f'img/default/tonelli/id_stations/s_Pavelec.png', 0,
-              ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
+              baza.paths_img.k_Pavelec_png,
+              baza.paths_img.s_Pavelec_png,
+              None,
+              task_11_22_33]
 st_pavelec_g = ['ст. Павелецкая(Г)',
-                f'img/default/tonelli/map_item/k_Pavelec_g.png',
-                f'img/default/tonelli/id_stations/s_Pavelec_g.png', 0,
-                ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
+                baza.paths_img.k_Pavelec_g_png,
+                baza.paths_img.s_Pavelec_g_png,
+                None,
+                task_11_22_33]
 st_polyanka = ['ст. Полянка',
-               f'img/default/tonelli/map_item/k_Polyanka.png',
-               f'img/default/tonelli/id_stations/s_Polyanka.png', 0, []]
+               baza.paths_img.k_Polyanka_png,
+               baza.paths_img.s_Polyanka_png,
+               None,
+               []]
 st_pr_kt_vernadskogo = ['ст. Пр-кт Вернадского',
-                        f'img/default/tonelli/map_item/k_Pr-kt_Vernadskogo.png',
-                        f'img/default/tonelli/id_stations/s_Pr-kt_Vernadskogo.png',
-                        0, []]
+                        baza.paths_img.k_Pr_kt_Vernadskogo_png,
+                        baza.paths_img.s_Pr_kt_Vernadskogo_png,
+                        None,
+                        []]
 st_pr_kt_mira = ['ст. Проспект мира',
                  baza.paths_img.k_Prospekt_png,
-                 f'img/default/tonelli/id_stations/s_Prospekt.png', 0,
+                 baza.paths_img.s_Prospekt_png,
+                 None,
                  []]
 st_pushkin = ['ст. Пушкинская',
-              f'img/default/tonelli/map_item/k_Pushkin.png',
-              f'img/default/tonelli/id_stations/s_Pushkin.png', 0,
-              ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
+              baza.paths_img.k_Pushkin_png,
+              baza.paths_img.s_Pushkin_png,
+              None,
+              task_11_22_33]
 st_riga = ['ст. Рижская',
-           f'img/default/tonelli/map_item/k_Rizgskaya.png',
-           f'img/default/tonelli/id_stations/s_Rizgskaya.png', 0, []]
+           baza.paths_img.k_Rizgskaya_png,
+           baza.paths_img.s_Rizgskaya_png,
+           None,
+           []]
 st_suxarev = ['ст. Сухаревская',
-              f'img/default/tonelli/map_item/k_Suxarev.png',
-              f'img/default/tonelli/id_stations/s_Suxarev.png', 0, []]
+              baza.paths_img.k_Suxarev_png,
+              baza.paths_img.s_Suxarev_png,
+              None,
+              []]
 st_teatr = ['ст. Театральная',
-            f'img/default/tonelli/map_item/k_Teatr.png',
-            f'img/default/tonelli/id_stations/s_Teatr.png',
-            'стрелка север', ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
+            baza.paths_img.k_Teatr_png,
+            baza.paths_img.s_Teatr_png,
+            dir_arrow_north,
+            task_11_22_33]
 st_tretya = ['ст. Третьяковская',
-             f'img/default/tonelli/map_item/k_Tretyakov.png',
-             f'img/default/tonelli/id_stations/s_Tretyakov.png',
-             'стрелка юг', [0]]
+             baza.paths_img.k_Tretyakov_png,
+             baza.paths_img.s_Tretyakov_png,
+             dir_arrow_south,
+             task_0]
 st_turgenev = ['ст. Тургеневская',
-               f'img/default/tonelli/map_item/k_Turgenev.png',
-               f'img/default/tonelli/id_stations/s_Turgenev.png', 0,
-               [0]]
+               baza.paths_img.k_Turgenev_png,
+               baza.paths_img.s_Turgenev_png,
+               None,
+               task_0]
 st_tver = ['ст. Тверская',
-           f'img/default/tonelli/map_item/k_Tver.png',
-           f'img/default/tonelli/id_stations/s_Tver.png', 0,
-           ['t1.png', 't1.png', 't2.png', 't2.png', 't3.png', 't3.png']]
+           baza.paths_img.k_Tver_png,
+           baza.paths_img.s_Tver_png,
+           None,
+           task_11_22_33]
 st_univer = ['ст. Университет',
-             f'img/default/tonelli/map_item/k_Univer.png',
-             f'img/default/tonelli/id_stations/s_Univer.png', 0,
-             ['t1.png', 't1.png', 't2.png', 't2.png', 't7.png', 't7.png']]
+             baza.paths_img.k_Univer_png,
+             baza.paths_img.s_Univer_png,
+             None,
+             task_11_22_77]
 st_vdnx = ['ст. ВДНХ',
-           f'img/default/tonelli/map_item/k_VDNX.png',
-           f'img/default/tonelli/id_stations/s_VDNX.png', 0, []]
+           baza.paths_img.k_VDNX_png,
+           baza.paths_img.s_VDNX_png,
+           None,
+           []]
 
 # пути-дороги
 # основная дорога
