@@ -83,10 +83,10 @@ class Mouse:
         if var.Parameters.mouse_rapport:
             print(f'tolls.mouse.Mouse.move_to_click {message=}, {pos_click=}')
         sleep(0.3)
-        Mouse.move(pos=pos_click, speed=move_time)
+        Mouse.move(pos=pos_click, speed=move_time, message=message)
         # print('должен быть клик')
         sleep(z_p_k)
-        Mouse.left_click(pos=pos_click)
+        Mouse.left_click(pos=pos_click, message=message)
         sleep(0.18)
         return
 

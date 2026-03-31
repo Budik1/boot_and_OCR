@@ -2,6 +2,7 @@ import fun
 import event_OCR
 import heroes
 import my_OCR
+import os_action
 from baza import baza_paths as b_p
 
 
@@ -11,7 +12,8 @@ def get_screenshot_task_big():
     :return:
     """
     # создание скринов заданий
-    path = 'img/test/test_tasks/test big tasks'
+    path = b_p.manual_selection_tasks
+    os_action.create_folder(path=path)
     # смещение скриншота внутри региона
     tune_x = 4  # смещение внутри региона в право
     tune_y = 4  # 1
@@ -21,12 +23,13 @@ def get_screenshot_task_big():
     ''
     ''
     region1_big, region2_big, region3_big = fun.get_areas_task_big()
-    fun.foto_pos(name_img=f'{path}/big_1.png', region=region1_big,
+    fun.foto_pos(name_img=f'{path}big_1.png', region=region1_big,
                  tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
-    fun.foto_pos(name_img=f'{path}/big_2.png', region=region2_big,
+    fun.foto_pos(name_img=f'{path}big_2.png', region=region2_big,
                  tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
-    fun.foto_pos(name_img=f'{path}/big_3.png', region=region3_big,
+    fun.foto_pos(name_img=f'{path}big_3.png', region=region3_big,
                  tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
+    return path
 
 
 def create_big_img_task_line(*, line, value_energy, hero):
@@ -43,7 +46,7 @@ def create_big_img_task_line(*, line, value_energy, hero):
     tune_v = 9  #
     region = fun.get_areas_task_big()
     name_img = f'{path_hero}/t{value_energy}.png'
-    fun.foto_pos(name_img=name_img, region=region[line],
+    fun.foto_pos(name_img=name_img, region=region[line - 1],
                  tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
     return name_img
 
@@ -82,6 +85,7 @@ def get_energy_value_in_line(*, line):
     """
     Получение значения количества энергии в линии
     """
+    # print(f'{line=}, {type(line)}')
     region_img = fun.get_region_lines_task()
     path_energy_task = b_p.energy_task_value
     value_energy = None
@@ -91,7 +95,6 @@ def get_energy_value_in_line(*, line):
         if pos_en:
             value_energy = fun.extraction_digit(item=img)
             print(f'{value_energy=}')
-            # fun.Mouse.move(pos=pos_en, speed=0.5)
     return value_energy
 
 
@@ -146,7 +149,7 @@ def search_and_create_img_best_offer(*, person_identified=False):
     if best_line:
         value_energy = get_energy_value_in_line(line=best_line - 1)
         # print(f'{heroes.Activ.name_file_=}')
-        img = create_big_img_task_line(line=best_line - 1, value_energy=value_energy, hero=heroes.Activ.name_file_)
+        img = create_big_img_task_line(line=best_line, value_energy=value_energy, hero=heroes.Activ.name_file_)
         print(f'создан {img}')
         result_found = True
     else:

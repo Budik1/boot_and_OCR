@@ -4,15 +4,17 @@ from typing import Any
 from pyscreeze import Point
 
 import fun
+
 import heroes
 import solid_memory
 import station_master
 import tools
-from t import find_img
+import find_img
 from t import gift_station_service
 
 from tools import color_text as c_t
 from baza import baza_dannyx as b_d
+from baza.baza_paths import actual_caliber_folder
 from heroes import Hero, Activ
 
 
@@ -72,9 +74,9 @@ def event_gifts():
     fun.log_with_caller(message='a')
     bypass_len()
     sleep(1)
-    pos_gift = fun.locCenterImg(name_img='img/tonelli/gift.png', confidence=0.75)
+    pos_gift = find_img.find_gift()
     if not pos_gift:
-        pos_gift_commune = fun.locCenterImg(name_img='img/tonelli/gift2.png', confidence=0.75)
+        pos_gift_commune = find_img.find_gift2()
         pos_gift = pos_gift_commune
     fun.my_log_file(f'pos_gift = {pos_gift}')
     if pos_gift:
@@ -144,20 +146,20 @@ def open_map():
     # получение координат
     if location_station[0] == 'ст. Тургеневская':
         pos_or1 = fun.find_link_klan()
-        x = pos_or1[0] + 180
-        y = pos_or1[1] + 205
+        x = pos_or1[0] + (180 * b_d.caliber_percent)
+        y = pos_or1[1] + (205 * b_d.caliber_percent)
         pos_run_out = x, y
         tools.Mouse.move(pos=pos_run_out, speed=0.1)
     else:
         pos_or1 = find_img.find_info()
-        x = pos_or1[0] + 300
-        y = pos_or1[1] + 180
+        x = pos_or1[0] + (300 * b_d.caliber_percent)
+        y = pos_or1[1] + (180 * b_d.caliber_percent)
         pos_run_out = x, y
         tools.Mouse.move(pos=pos_run_out, speed=0.1)
     # открыть карту
     tools.Mouse.left_click(pos=pos_run_out)
     # Убрать курсор с поля карты, чтобы ничего не перекрыл
-    station_exit = fun.wait_static_pos(name_img='img/tonelli/station_exit.png')
+    station_exit = fun.wait_static_pos(name_img=f'img/{actual_caliber_folder}/tonelli/station_exit.png')
     tools.Mouse.move(pos=station_exit, speed=0.1)
     fun.log_with_caller(message='e')
     return
@@ -174,15 +176,15 @@ def events_tunnel(name_st, st_id_file):
     fun.selection_hero(show_name=False)
 
     dog_activ = True
-    id_st = fun.locCenterImg(name_img=st_id_file)  # , confidence=0.85
-    info = fun.locCenterImg(name_img='img/overall/info.png', confidence=0.8)
+    id_st = find_img.find_img(path_img=st_id_file)
+    info = find_img.find_info()
 
     fun.my_log_file(f'{info=}, {id_st=}')
     parking = fun.pos_parking()
     tools.Mouse.move(pos=parking,  message='убрать указатель с поля в ожидании событий')
     while not id_st:
         fun.close_popup_window()
-        post = fun.locCenterImg(name_img='img/tonelli/post.png', confidence=0.8)
+        post = find_img.find_post()
         skip_battle = find_img.find_skip_battle()
         fun.my_log_file(f'skip_battle = {skip_battle}')
         if skip_battle:
@@ -193,7 +195,7 @@ def events_tunnel(name_st, st_id_file):
             fun.my_log_file(f'post = {post}')
             tools.Mouse.move(pos=post, speed=0.2,  message='Пост обнаружен')
             attack = find_img.find_tonelli_attack()
-            entry = fun.locCenterImg(name_img='img/tonelli/entry_station.png', confidence=0.8)
+            entry = find_img.find_entry_station()
 
             if entry:
                 fun.my_log_file(f'entry = {entry}')
@@ -202,9 +204,9 @@ def events_tunnel(name_st, st_id_file):
                 parking = fun.pos_parking()
                 tools.Mouse.move(pos=parking, speed=0.5, show=True,
                                  message='убрать указатель с поля, после входа на станцию')
-                entry = fun.locCenterImg(name_img='img/tonelli/entry_station.png', confidence=0.8)
+                entry = find_img.find_entry_station()
                 while entry:
-                    entry = fun.locCenterImg(name_img='img/tonelli/entry_station.png', confidence=0.8)
+                    entry = find_img.find_entry_station()
             else:
                 if attack:
                     # dog_activ = False
@@ -218,7 +220,7 @@ def events_tunnel(name_st, st_id_file):
                     while attack:
                         attack = find_img.find_tonelli_attack()
 
-        id_st = fun.locCenterImg(name_img=st_id_file)  # , confidence=0.85
+        id_st = find_img.find_img(path_img=st_id_file)
         fun.my_log_file(f'id_st = {id_st}')
 
     fun.my_log_file(name_st)
@@ -247,11 +249,11 @@ def poisk(search_object: str, param_confidence: float = 0.99) -> tuple[Point, fl
     fun.log_with_caller(message='a')
 
     sleep(1)
-    pos_search = fun.locCenterImg(name_img=search_object, confidence=param_confidence)
+    pos_search = find_img.find_img_param(path_name=search_object, confidence=param_confidence)
     while pos_search is None:
         param_confidence -= 0.01
         # print('в поиске станции confidence=', param_confidence)
-        pos_search = fun.locCenterImg(name_img=search_object, confidence=param_confidence)
+        pos_search = find_img.find_img_param(path_name=search_object, confidence=param_confidence)
         # print(pos_search)
     fun.log_with_caller(message='e')
     return pos_search, param_confidence
@@ -270,25 +272,30 @@ def traffic_on_the_map(stan: list) -> None:
     # sleep(1 * 2)
     ev_map = stan[3]
     fun.my_log_file(f'ev_map = {ev_map}')
-    next_station = fun.locCenterImg(name_img=stan[1], confidence=0.84)
+    # find_img.find_name_param
+    next_station = find_img.find_img_param(path_name=stan[1], confidence=0.84)
     fun.my_log_file(f'pos_stan = {next_station}, stan[1] = {stan[1]}')
     if ev_map == 'стрелка север' and next_station is None:
-        pos_click = fun.locCenterImg(name_img='img/tonelli/mark_sever.png', confidence=0.85)
+
+        pos_click = find_img.find_mark_sever()
         fun.my_log_file(f'pos_click = {pos_click}, нажал на стрелку "север"')
         tools.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
-        pos_click = fun.locCenterImg(name_img='img/tonelli/mark_sever.png', confidence=0.85)
+
+        pos_click = find_img.find_mark_sever()
         fun.my_log_file(f'pos_click = {pos_click}, нажал на стрелку "север"')
         tools.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
         # sleep(1)
     elif ev_map == 'стрелка юг' and next_station is None:
-        pos_click = fun.locCenterImg(name_img='img/tonelli/mark_yug.png', confidence=0.85)
+
+        pos_click = find_img.find_mark_yug()
         fun.my_log_file(f'pos_click = {pos_click}, нажал на стрелку "юг"')
         tools.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
-        pos_click = fun.locCenterImg(name_img='img/tonelli/mark_yug.png', confidence=0.85)
+
+        pos_click = find_img.find_mark_yug()
         fun.my_log_file(f'pos_click = {pos_click}, нажал на стрелку "юг"')
         tools.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
         # sleep(1)
-    next_station = fun.locCenterImg(name_img=stan[1])
+    next_station = find_img.find_img(path_img=stan[1])
     confidence_poisk = 0.9
     if next_station:
         next_station = fun.wait_and_stop_img(name_img=stan[1])
@@ -554,7 +561,7 @@ def for_wilds():
                 # за белыми крысами на Пушкинской
                 print(f'нет доступных заданий. {col}')
                 move_to_target(target_point='ст. Пушкинская')
-                station_master.task_pos_item(1)
+                station_master.option_task_line(task_line=1)
                 col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
                 print(f'энергия исчерпана {col} потрачено сегодня')
         move_to_target(target_point='домой')
@@ -569,7 +576,7 @@ def for_wilds():
             # за белыми крысами на Пушкинской
             print(f'нет доступных заданий на Киевской, {col}')
             move_to_target(target_point='ст. Пушкинская')
-            station_master.task_pos_item(1)
+            station_master.option_task_line(task_line=1)
             print('энергия исчерпана')
             move_to_target(target_point='домой')
         tools.sounds.say_txt('вернулся домой))')

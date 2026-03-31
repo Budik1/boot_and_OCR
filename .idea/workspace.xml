@@ -4,27 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="22.02.2026 # 2">
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="23.03.2026">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis_scale.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis_scale.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_arena.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fun_areas.py" beforeDir="false" afterPath="$PROJECT_DIR$/t/fun_areas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/arena/gady/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/gady/arena_object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/arena/gady/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/gady/object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/arena/gavr/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/gavr/arena_object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/arena/gavr/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/gavr/object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/arena/mara/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/mara/arena_object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/arena/mara/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/arena/mara/object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_gady/t2 test.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/station_master/tasks_gady/tNone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baza/baza_paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/baza_paths.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baza/paths_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/paths_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/find_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/find_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fun_down.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun_down.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stereotypes/interest_point.py" beforeDir="false" afterPath="$PROJECT_DIR$/stereotypes/interest_point.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/t/tasks_analiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/win_gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/tools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/txt/daily event.py" beforeDir="false" afterPath="$PROJECT_DIR$/txt/daily event.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x_scale/act.py" beforeDir="false" afterPath="$PROJECT_DIR$/x_scale/act.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="change_mouse" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,90 +65,93 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Python.a_pil_image (1).executor": "Run",
-    "Python.a_serial_scrin_for_pm (1).executor": "Run",
-    "Python.a_serial_scrin_for_pm.executor": "Run",
-    "Python.a_test1.executor": "Run",
-    "Python.analysis_scale.executor": "Run",
-    "Python.chage_color (1).executor": "Run",
-    "Python.chage_color.executor": "Run",
-    "Python.cr_img.executor": "Run",
-    "Python.cr_img_dva.executor": "Run",
-    "Python.cr_img_id_name_station (1).executor": "Run",
-    "Python.cr_img_id_name_station.executor": "Run",
-    "Python.cr_img_map_name_station.executor": "Run",
-    "Python.cr_img_mob.executor": "Run",
-    "Python.cr_img_points.executor": "Run",
-    "Python.cr_nam_img.executor": "Run",
-    "Python.cr_name_mob_img (1).executor": "Run",
-    "Python.cr_name_mob_img.executor": "Run",
-    "Python.createAndName_ui.executor": "Run",
-    "Python.create_and_analiz_img (1).executor": "Run",
-    "Python.create_and_analiz_img.executor": "Run",
-    "Python.create_img.executor": "Run",
-    "Python.display_info.executor": "Run",
-    "Python.event_arena.executor": "Run",
-    "Python.event_frend.executor": "Run",
-    "Python.flags.executor": "Run",
-    "Python.fun.executor": "Run",
-    "Python.generate_route.executor": "Run",
-    "Python.heroes.executor": "Run",
-    "Python.img_crop (1).executor": "Run",
-    "Python.img_crop.executor": "Run",
-    "Python.img_crop1.executor": "Run",
-    "Python.img_servis.executor": "Run",
-    "Python.img_stat_kv.executor": "Run",
-    "Python.info.executor": "Run",
-    "Python.info_messages.executor": "Run",
-    "Python.information_messages (1).executor": "Run",
-    "Python.interest_point.executor": "Run",
-    "Python.item_pos.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.make_stereotype_ui.executor": "Run",
-    "Python.map_tour.executor": "Run",
-    "Python.mess (1).executor": "Run",
-    "Python.mess.executor": "Run",
-    "Python.mini_gui.executor": "Run",
-    "Python.my_gui (1).executor": "Run",
-    "Python.my_gui.executor": "Run",
-    "Python.os_action.executor": "Run",
-    "Python.pos_value_energy.executor": "Run",
-    "Python.servis_cla.executor": "Run",
-    "Python.servis_ev.executor": "Run",
-    "Python.station_master.executor": "Run",
-    "Python.t_item (1).executor": "Run",
-    "Python.t_item.executor": "Run",
-    "Python.tasks_analiz.executor": "Run",
-    "Python.tem1.executor": "Run",
-    "Python.tempo (1).executor": "Run",
-    "Python.tempo.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.timer.executor": "Run",
-    "Python.win_gui.executor": "Run",
-    "Python.www.executor": "Run",
-    "Python.www1.executor": "Run",
-    "Python.www2.executor": "Run",
-    "Python.картинки_маяки.executor": "Run",
-    "Python.картинки_маяки_для_браузера.executor": "Run",
-    "Python.маяки_для PlayMachine.executor": "Run",
-    "Python.скрины для ПМ.executor": "Run",
-    "Python.создание скриншотов.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "ShowUsagesActions.previewPropertyKey": "true",
-    "ToolWindow.Python Console.ShowToolbar": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/python/bot_ocr1/t",
-    "settings.editor.selected.configurable": "configurable.group.tools"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Python.a_pil_image (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.a_serial_scrin_for_pm (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.a_serial_scrin_for_pm.executor&quot;: &quot;Run&quot;,
+    &quot;Python.a_test1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.act_calibr (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.analysis_scale.executor&quot;: &quot;Run&quot;,
+    &quot;Python.calibrator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.chage_color (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.chage_color.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_img.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_img_dva.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_img_id_name_station (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_img_id_name_station.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_img_map_name_station.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_img_mob.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_img_points.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_nam_img.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_name_mob_img (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_name_mob_img.executor&quot;: &quot;Run&quot;,
+    &quot;Python.createAndName_ui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.create_and_analiz_img (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.create_and_analiz_img.executor&quot;: &quot;Run&quot;,
+    &quot;Python.create_img.executor&quot;: &quot;Run&quot;,
+    &quot;Python.display_info.executor&quot;: &quot;Run&quot;,
+    &quot;Python.event_arena.executor&quot;: &quot;Run&quot;,
+    &quot;Python.event_frend.executor&quot;: &quot;Run&quot;,
+    &quot;Python.flags.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fun.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_route.executor&quot;: &quot;Run&quot;,
+    &quot;Python.heroes.executor&quot;: &quot;Run&quot;,
+    &quot;Python.img_crop (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.img_crop.executor&quot;: &quot;Run&quot;,
+    &quot;Python.img_crop1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.img_servis.executor&quot;: &quot;Run&quot;,
+    &quot;Python.img_stat_kv.executor&quot;: &quot;Run&quot;,
+    &quot;Python.info.executor&quot;: &quot;Run&quot;,
+    &quot;Python.info_messages.executor&quot;: &quot;Run&quot;,
+    &quot;Python.information_messages (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.interest_point.executor&quot;: &quot;Run&quot;,
+    &quot;Python.item_pos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.make_stereotype_ui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.map_tour.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mess (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.mess.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mini_gui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.my_gui (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.my_gui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.os_action.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pos_value_energy.executor&quot;: &quot;Run&quot;,
+    &quot;Python.servis_cla.executor&quot;: &quot;Run&quot;,
+    &quot;Python.servis_ev.executor&quot;: &quot;Run&quot;,
+    &quot;Python.station_master.executor&quot;: &quot;Run&quot;,
+    &quot;Python.t_item (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.t_item.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tasks_analiz.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tem1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tempo (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.tempo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tempo_calibr (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.timer.executor&quot;: &quot;Run&quot;,
+    &quot;Python.win_gui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.www.executor&quot;: &quot;Run&quot;,
+    &quot;Python.www1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.www2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.картинки_маяки.executor&quot;: &quot;Run&quot;,
+    &quot;Python.картинки_маяки_для_браузера.executor&quot;: &quot;Run&quot;,
+    &quot;Python.маяки_для PlayMachine.executor&quot;: &quot;Run&quot;,
+    &quot;Python.скрины для ПМ.executor&quot;: &quot;Run&quot;,
+    &quot;Python.создание скриншотов.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
+    &quot;ToolWindow.Python Console.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;caliber&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/python/bot_ocr1/t&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\python\bot_ocr1\t" />
@@ -165,11 +161,11 @@
       <recent name="C:\python\bot_ocr1\temp_pack" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\python\bot_ocr1\t" />
       <recent name="C:\python\bot_ocr1" />
-      <recent name="C:\python\bot_ocr1\img\mark_scale" />
-      <recent name="C:\python\bot_ocr1\temp_pack\kv" />
-      <recent name="C:\python\bot_ocr1\temp_pack\all" />
+      <recent name="C:\python\bot_ocr1\x_scale" />
+      <recent name="C:\python\bot_ocr1\img\mark_scale\corner" />
+      <recent name="C:\python\bot_ocr1\img\default\overall" />
+      <recent name="C:\python\bot_ocr1\img" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -179,7 +175,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="analysis_scale" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="act_calibr (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -192,7 +188,29 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis_scale.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/act_calibr.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="calibrator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testOCR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/calibrator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -232,33 +250,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/t" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/t/tempo.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tempo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testOCR" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\python\bot_ocr1\t\tempo.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tempo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -311,35 +307,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="win_gui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testOCR" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/win_gui.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.analysis_scale" />
-        <item itemvalue="Python.win_gui" />
         <item itemvalue="Python.tempo (1)" />
+        <item itemvalue="Python.calibrator" />
         <item itemvalue="Python.tempo" />
+        <item itemvalue="Python.act_calibr (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -511,7 +485,31 @@
       <option name="project" value="LOCAL" />
       <updated>1771775605691</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="25.02.2026 # 2">
+      <option name="closed" value="true" />
+      <created>1772035366777</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1772035366777</updated>
+    </task>
+    <task id="LOCAL-00021" summary="04.03.2026">
+      <option name="closed" value="true" />
+      <created>1772637319882</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1772637319882</updated>
+    </task>
+    <task id="LOCAL-00022" summary="23.03.2026">
+      <option name="closed" value="true" />
+      <created>1774283266700</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1774283266700</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -544,7 +542,10 @@
     <MESSAGE value="упорядочил импорт" />
     <MESSAGE value="17.02.2026" />
     <MESSAGE value="22.02.2026 # 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="22.02.2026 # 2" />
+    <MESSAGE value="25.02.2026 # 2" />
+    <MESSAGE value="04.03.2026" />
+    <MESSAGE value="23.03.2026" />
+    <option name="LAST_COMMIT_MESSAGE" value="23.03.2026" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -558,11 +559,6 @@
           <url>file://$PROJECT_DIR$/revision_tents.py</url>
           <line>87</line>
           <option name="timeStamp" value="102" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/find_img.py</url>
-          <line>198</line>
-          <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/service/cr_nam_img.py</url>
@@ -594,9 +590,39 @@
           <option name="timeStamp" value="154" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>118</line>
-          <option name="timeStamp" value="155" />
+          <url>file://$PROJECT_DIR$/person.py</url>
+          <line>226</line>
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fun.py</url>
+          <line>341</line>
+          <option name="timeStamp" value="164" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fun.py</url>
+          <line>612</line>
+          <option name="timeStamp" value="165" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>821</line>
+          <option name="timeStamp" value="166" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="167" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>167</line>
+          <option name="timeStamp" value="169" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>210</line>
+          <option name="timeStamp" value="170" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

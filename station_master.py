@@ -47,19 +47,20 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     heroes.nam += 1
 
     battle_end = find_img.find_b_battle_end(confidence_param=par_conf)
-    skip_battle = fun.locCenterImg(name_img='img/skip_battle.png', confidence=par_conf)
-    dog = fun.locCenterImg(name_img='img/dog_2.png', confidence=par_conf)
+    skip_battle = find_img.find_skip_battle()
+    dog = find_img.find_dog_2(par_conf_=0.79)
+    # print(f'{dog=}')
 
-    name1_grey_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_grey_rat.png', confidence=conf_mobs)
-    name1_white_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_white_rat.png', confidence=conf_mobs)
-    name1_black_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_black_rat.png', confidence=conf_mobs)
-    name1_sand_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_sand_rat.png', confidence=conf_mobs)
-    name2_spy = fun.locCenterImg(name_img='img/tonelli/mobi/name2_spy.png', confidence=conf_mobs)
-    name3_smuggler = fun.locCenterImg(name_img='img/tonelli/mobi/name3_smuggler.png', confidence=conf_mobs)
-    name4_arachne = fun.locCenterImg(name_img='img/tonelli/mobi/name4_arachne.png', confidence=conf_mobs)
-    name5_wildman = fun.locCenterImg(name_img='img/tonelli/mobi/name5_wildman.png', confidence=conf_mobs)
+    name1_grey_rat = find_img.find_name1_grey_rat()
+    name1_white_rat = find_img.find_name1_white_rat()
+    name1_black_rat = find_img.find_name1_black_rat()
+    name1_sand_rat = find_img.find_name1_sand_rat()
+    name2_spy = find_img.find_name2_spy()
+    name3_smuggler = find_img.find_name3_smuggler()
+    name4_arachne = find_img.find_name4_arachne()
+    name5_wildman = find_img.find_name5_wildman()
     name6_kikimora = find_img.find_name_kikimora()
-    name7_raptor = fun.locCenterImg(name_img='img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
+    name7_raptor = find_img.find_name7_raptor()
 
     duration_fight = 0
     dog_flag = True
@@ -117,7 +118,6 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     cycle = False
                     mob_identified = "wildman"
                     print(f'{c_t.tc_magenta("дикарь пойман")}, {Hero.get_report_wildman_now(Activ.hero_activ)}')
-                    # print(tools.report_wildman(hero=Activ.hero_activ))
 
                 if name6_kikimora and cycle:
                     cycle = False
@@ -134,18 +134,16 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     print(c_t.tc_magenta(f'{Hero.get_qty_raptor(Activ.hero_activ)} ящер'))
 
                 # нужен ли тут этот блок?
-                name1_grey_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_grey_rat.png', confidence=conf_mobs)
-                name1_white_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_white_rat.png',
-                                                   confidence=conf_mobs)
-                name1_black_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_black_rat.png',
-                                                   confidence=conf_mobs)
-                name1_sand_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_sand_rat.png', confidence=conf_mobs)
-                name2_spy = fun.locCenterImg(name_img='img/tonelli/mobi/name2_spy.png', confidence=conf_mobs)
-                name3_smuggler = fun.locCenterImg(name_img='img/tonelli/mobi/name3_smuggler.png', confidence=conf_mobs)
-                name4_arachne = fun.locCenterImg(name_img='img/tonelli/mobi/name4_arachne.png', confidence=conf_mobs)
-                name5_wildman = fun.locCenterImg(name_img='img/tonelli/mobi/name5_wildman.png', confidence=conf_mobs)
+                name1_grey_rat = find_img.find_name1_grey_rat()
+                name1_white_rat = find_img.find_name1_white_rat()
+                name1_black_rat = find_img.find_name1_black_rat()
+                name1_sand_rat = find_img.find_name1_sand_rat()
+                name2_spy = find_img.find_name2_spy()
+                name3_smuggler = find_img.find_name3_smuggler()
+                name4_arachne = find_img.find_name4_arachne()
+                name5_wildman = find_img.find_name5_wildman()
                 name6_kikimora = find_img.find_name_kikimora()
-                name7_raptor = fun.locCenterImg(name_img='img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
+                name7_raptor = find_img.find_name7_raptor()
 
         if dog_activ:
             if dog and dog_flag:
@@ -153,12 +151,12 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                 par_conf_pet = par_conf
                 mes_pet = f'обнаружение пета {dog=}, {par_conf_pet=}'
                 dog_flag = False
-                dog = fun.locCenterImg(name_img='img/dog_2.png', confidence=par_conf)
+                dog = find_img.find_dog_2(par_conf_=par_conf_pet)
                 if dog:
                     mes_pet = f'обнаружение пета {dog=}, {par_conf_pet=}'
                     while dog and dog[0] > 800:
                         par_conf_pet += 0.001
-                        dog = fun.locCenterImg(name_img='img/dog_2.png', confidence=par_conf_pet)
+                        dog = find_img.find_dog_2(par_conf_=par_conf_pet)
                         mes_pet = f'обнаружение пета {dog=}, {par_conf_pet=}'
                         if par_conf_pet > 0.999:
                             dog = None
@@ -174,7 +172,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
         if skip_battle and skip_battle_count and duration_fight == 4:  # нажать "пропустить бой"
             skip_battle_count = False
             # print('нажать "пропустить бой"')
-            skip_battle = fun.locCenterImg(name_img='img/skip_battle.png', confidence=par_conf, )
+            skip_battle = find_img.find_skip_battle()
 
             fun.my_log_file(f'{skip_battle=}')
             tools.Mouse.move_to_click(pos_click=skip_battle, move_time=0.4, z_p_k=0.5,
@@ -189,23 +187,23 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
             tools.Mouse.move(pos=battle_end, speed=1)
         close = find_img.find_close()
 
-        name1_grey_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_grey_rat.png', confidence=conf_mobs)
-        name1_white_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_white_rat.png', confidence=conf_mobs)
-        name1_black_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_black_rat.png', confidence=conf_mobs)
-        name1_sand_rat = fun.locCenterImg(name_img='img/tonelli/mobi/name1_sand_rat.png', confidence=conf_mobs)
-        name2_spy = fun.locCenterImg(name_img='img/tonelli/mobi/name2_spy.png', confidence=conf_mobs)
-        name3_smuggler = fun.locCenterImg(name_img='img/tonelli/mobi/name3_smuggler.png', confidence=conf_mobs)
-        name4_arachne = fun.locCenterImg(name_img='img/tonelli/mobi/name4_arachne.png', confidence=conf_mobs)
-        name5_wildman = fun.locCenterImg(name_img='img/tonelli/mobi/name5_wildman.png', confidence=conf_mobs)
+        name1_grey_rat = find_img.find_name1_grey_rat()
+        name1_white_rat = find_img.find_name1_white_rat()
+        name1_black_rat = find_img.find_name1_black_rat()
+        name1_sand_rat = find_img.find_name1_sand_rat()
+        name2_spy = find_img.find_name2_spy()
+        name3_smuggler = find_img.find_name3_smuggler()
+        name4_arachne = find_img.find_name4_arachne()
+        name5_wildman = find_img.find_name5_wildman()
         name6_kikimora = find_img.find_name_kikimora()
-        name7_raptor = fun.locCenterImg(name_img='img/tonelli/mobi/name7_raptor.png', confidence=conf_mobs)
+        name7_raptor = find_img.find_name7_raptor()
 
-        dog = fun.locCenterImg('img/dog.png', confidence=par_conf)
-        skip_battle = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
+        dog = find_img.find_dog_2(par_conf_=0.99)
+        skip_battle = find_img.find_skip_battle()
 
         if battle_end and close:  # нажать закрыть в конце боя
-            victory = fun.locCenterImg('img/arena/overall/victory_in_arena.png', confidence=par_conf)
-            defeat = fun.locCenterImg('img/arena/overall/defeat_in_arena.png', confidence=par_conf)
+            victory = find_img.find_victory_in_arena()
+            defeat = find_img.find_defeat_in_arena()
             if victory:
                 result = "победа"
             elif defeat:
@@ -218,11 +216,11 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
             if popup:
                 fun.push_close_all_()
 
-    skip_battle1_end_ver = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
+    skip_battle1_end_ver = find_img.find_skip_battle()
     fun.my_log_file(f'{skip_battle1_end_ver=}')
     while skip_battle1_end_ver:
         fun.push_close()
-        skip_battle1_end_ver = fun.locCenterImg('img/skip_battle.png', confidence=par_conf)
+        skip_battle1_end_ver = find_img.find_skip_battle()
         fun.my_log_file(f'{skip_battle1_end_ver=}')
     if arena:
         mes = f'{result} выход'
@@ -239,7 +237,7 @@ def press_en(*, task_number, pos, value_energy):  #
         task_number (int): номер строки заданий
         pos ( list[int]): регион его расположения
         value_energy (int): количество энергии нужной для задания
-        :param task_number:
+        :param task_number :
         :param pos: 
         :param value_energy:
     """
@@ -248,11 +246,11 @@ def press_en(*, task_number, pos, value_energy):  #
     x = pos[0] - 100
     y = pos[1] - 20
     pos_clik = x, y
-    tools.Mouse.move(pos=pos_clik, message=f'показал выбранное задание ({task_number})')
+    # tools.Mouse.move(pos=pos_clik, message=f'показал выбранное задание ({task_number})')
     # print('тут должен быть клик')                                        # для отладки раскомментировать
-    tools.Mouse.move_to_click(pos_click=pos_clik, move_time=0.4, z_p_k=1.5,
+    tools.Mouse.move_to_click(pos_click=pos_clik, move_time=0.4, z_p_k=0.3,
                               message=f'нажал {task_number} задание')  # для отладки закомментировать
-    sleep(0.5)
+    # sleep(0.5)
     low_energy = find_img.find_low_energy_label()
     if not low_energy:
         vers_in_print = "" if conf_ == 0.95 else f', conf_={conf_}. '
@@ -312,9 +310,10 @@ def task_analysis(img1, img2, region):
     global variable
     # fun.push_close_all_()
     fun.vizit_to_station_master()
-    variant1 = fun.locCenterImg(name_img=img1, confidence=conf_, region=region)
-    # v3 = pyautogui.locateCenterOnScreen(img2, minSearchTime=1.0, region=region, confidence=conf_)
-    variant2 = fun.locCenterImg(name_img=img2, confidence=conf_, region=region)
+    # print(f'{img1=}')
+    # print(f'{img2=}')
+    variant1 = find_img.find_img_param(path_name=img1, confidence=conf_, region=region)
+    variant2 = find_img.find_img_param(path_name=img2, confidence=conf_, region=region)
     if variant1:
         price_task = fun.extraction_digit(item=img1)
         val_1 = variant1
@@ -331,17 +330,6 @@ def task_analysis(img1, img2, region):
     return val_1, val_2
 
 
-# def move(pos, message=True, message_l=None):
-#     fun.log_with_caller(message='a')
-#
-#     if message:
-#         print(f'station_master.move() {pos=}')
-#     if pos:
-#         tools.Mouse.move(pos=pos, speed=0.5)
-#         sleep(1)
-#
-#     fun.log_with_caller(message='e')
-
 
 def station_task_list():
     """ Получение списка заданий """
@@ -357,9 +345,9 @@ def option_task_money():
     global energy_availability, number_tasks  # , conf_
     # price_task = None
     conf_ = 0.95
-
     # определяю локацию
     fun.push_close_all_()
+    fun.selection_hero(show_name=False)
     list_location = fun.loc_now()
     # получаю список доступных заданий
     task = list_location[4]
@@ -367,7 +355,7 @@ def option_task_money():
     heroes.Activ.station_activ = list_location[0]
 
     if heroes.Activ.station_activ == 'ст. Киевская':
-        if Activ.hero_activ == '':
+        if not Activ.hero_activ:
             fun.selection_hero()
         heroes.Hero.app_wildman_days_count(heroes.Activ.hero_activ)
     hero = fun.selection_hero()
@@ -388,15 +376,15 @@ def option_task_money():
 
         variant1, price_task1 = task_analysis(F'{path}{task[0]}', F'{path}{task[1]}', region_1)
         tools.Mouse.move(pos=variant1)
-        sleep(0.1)
+        # sleep(0.1)
 
         variant2, price_task2 = task_analysis(F'{path}{task[2]}', F'{path}{task[3]}', region_2)
         tools.Mouse.move(pos=variant2)
-        sleep(0.1)
+        # sleep(0.1)
 
         variant3, price_task3 = task_analysis(F'{path}{task[4]}', F'{path}{task[5]}', region_3)
         tools.Mouse.move(pos=variant3)
-        sleep(0.1)
+        # sleep(0.1)
 
         if variant1:
             press_en(task_number=1, pos=region_1, value_energy=price_task1)
@@ -410,16 +398,16 @@ def option_task_money():
             conf_ -= 0.005
             conf_ = round(conf_, 3)
 
-        if conf_ <= 0.92:
+        if conf_ <= 0.935:
             # получение картинки
             print('Попытка прочитать аппаратно')
             analiz = create_and_analiz_task_img.search_and_create_img_best_offer(person_identified=True)
 
             conf_ = 0.95
             if not analiz:
-                create_and_analiz_task_img.get_screenshot_task_big()
+                path = create_and_analiz_task_img.get_screenshot_task_big()
                 print(c_t.tc_cyan(
-                    'Для ручного выбора результат "D:/bot in br/testOCR/img/test/test_tasks/test big tasks" '))
+                    f'Для ручного выбора результат "C:/python/bot_ocr1{path}" '))
                 number_tasks = 1
                 energy_availability = 0
                 return
@@ -430,35 +418,39 @@ def option_task_money():
     while close:
         tools.Mouse.move_to_click(pos_click=close, z_p_k=0.3)
         close = find_img.find_close()
+    tools.sounds.say_txt('Задания выполнены.')
     fun.log_with_caller(message='e')
     return
 
 
-def task_pos_item(task_num):
+def option_task_line(*, task_line):
     """ Выбор по позиции задания """
     fun.log_with_caller(message='a')
+    # print(f'{task_line=}, {type(task_line)}')
     fun.selection_hero()
     list_location = fun.loc_now()
     heroes.Activ.station_activ = list_location[0]
     global energy_availability, number_tasks
     region_1, region_2, region_3 = fun.get_areas_task_big()
-    if task_num == 1:
+    if task_line == 1:
         region = region_1
-    elif task_num == 2:
+    elif task_line == 2:
         region = region_2
     else:
         region = region_3
 
     while energy_availability == 1 and number_tasks > 0:
         fun.vizit_to_station_master()
-        press_en(task_number=task_num, pos=region, value_energy=1)
+        # нужно получить значение потраченной энергии
+        en_value = create_and_analiz_task_img.get_energy_value_in_line(line=task_line - 1)
+        press_en(task_number=task_line, pos=region, value_energy=en_value)
     print(c_t.tc_green(' Задания выполнены'))
     number_tasks = 1
     energy_availability = 1
-    close = fun.locCenterImg(name_img='img/overall/close.png', confidence=0.9)
+    close = find_img.find_close()
     while close:
         print(f'station_master.task_pos_item {close=}')
         tools.Mouse.move_to_click(pos_click=close, z_p_k=0.3)
-        close = fun.locCenterImg(name_img='img/overall/close.png', confidence=0.9)
+        close = find_img.find_close()
     fun.log_with_caller(message='e')
     return

@@ -27,25 +27,52 @@ def set_inspect_report():
     return fraze
 
 
-def display_info_energy_all():
-    print()
-    print('Расход энергии')
-
+def display_info_energy_all_2():
+    # найти значение длинны самого длинного имени
+    len_name = []
+    len_energy_count_today = []
+    len_energy_count_all = []
+    len_en_kiev = []
+    len_dif = []
     for key in heroes.hero_dict:
-        name = key.rjust(8, " ")
-        energy_count_today = str(heroes.Hero.get_energy_count_today(heroes.hero_dict[key])).rjust(3, " ")
-        energy_count_all = str(heroes.Hero.get_energy_count_all(heroes.hero_dict[key])).rjust(6, " ")
-        now = "сегодня-".rjust(10, " ")
-        all_ = 'всего:'.rjust(8, ' ')
-        en_kiev = str(heroes.Hero.get_energy_kiev_count_all(heroes.hero_dict[key])).ljust(5, ' ')
-        dif = str(int(energy_count_all) - int(en_kiev)).rjust(5, ' ')
-        print(
-            f'{name}{now}{energy_count_today}{all_}'
-            f'{energy_count_all}/{en_kiev}'
-            f'{dif}')
+        len_name.append(len(key))
+        len_energy_count_today.append(len(str(heroes.Hero.get_energy_count_today(heroes.hero_dict[key]))))
+        len_energy_count_all.append(len(str(heroes.Hero.get_energy_count_all(heroes.hero_dict[key]))))
+        len_en_kiev.append(len(str(heroes.Hero.get_energy_kiev_count_all(heroes.hero_dict[key]))))
+        len_dif.append(len(str(
+            heroes.Hero.get_energy_count_all(heroes.hero_dict[key]) - heroes.Hero.get_energy_kiev_count_all(heroes.hero_dict[key]))))
+        # len_dif_up_dif.append(len(str(heroes.Hero.get_dif_up_days(hero_dict[key]))))
+    rjust_name = max(len_name)
+    rjust_en_count_today = max(len_energy_count_today) + 1
+    rjust_en_count_all = max(len_energy_count_all) + 1
+    ljust_en_kiev = max(len_en_kiev) + 1
+    ljust_dif = max(len_dif) + 1
+    phrase_zagl_1 = 'Расход энергии'
+    char0 = '    '
+    char1 = '/'
+    char2 = ' '
+    len_now = 9
+    len_all_ = 8
+    print()
+    # "Расход энергии"
+    print(phrase_zagl_1)  #
+    for key in heroes.hero_dict:
+        # print(len(key))
+        w_name = key.rjust(rjust_name, " ")
+        energy_count_today = (str(heroes.Hero.get_energy_count_today(heroes.hero_dict[key])).
+                              rjust(rjust_en_count_today, " "))
+        energy_count_all = (str(heroes.Hero.get_energy_count_all(heroes.hero_dict[key])).
+                            rjust(rjust_en_count_all, " "))
+        w_now = "сегодня:".rjust(len_now, " ")
+        w_all = 'всего:'.rjust(len_all_, ' ')
+        en_kiev = (str(heroes.Hero.get_energy_kiev_count_all(heroes.hero_dict[key])).
+                   ljust(ljust_en_kiev, ' '))
+        dif = (str(int(energy_count_all) - int(en_kiev)).
+               ljust(ljust_dif, ' '))
+
+        print(f'{char0}{w_name}{w_now}{energy_count_today}{w_all}{energy_count_all}{char1}{en_kiev}{dif}{char2}')
     print()
     return
-
 
 def display_home_location_hero(*, her):
     home_location = heroes.Hero.get_home_location(her)
@@ -91,6 +118,39 @@ def display_smol_report_wildman():
 
     return
 
+def display_smol_report_wildman_1():
+    """
+    gady 0 дней, 0 дикарей
+    :return:
+    """
+    print()
+    print('Wildman')
+    char0 = '    '
+    len_name = []
+    len_q_days = []
+    len_world_days = []
+    len_q_wild = []
+    len_world_wild = []
+    for key in heroes.hero_dict:
+        len_name.append(len(key))
+        len_q_days.append(len(str(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key]))))
+        len_world_days.append(len(tools.transform_word_days(qty_days=(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])))))
+        len_q_wild.append(len(str(heroes.Hero.get_wildman_count(heroes.hero_dict[key]))))
+        len_world_wild.append(len(tools.transform_word_wilds(qty_wilds=heroes.Hero.get_wildman_count(heroes.hero_dict[key]))))
+    rjust_name = max(len_name)
+    rjust_q_days = max(len_q_days)+ 1
+    rjust_world_days = max(len_world_days) + 1
+    rjust_q_wild = max(len_q_wild) + 1
+    rjust_world_wild = max(len_world_wild) + 1
+    for key in heroes.hero_dict:
+        name = key.rjust(rjust_name)
+        q_days = str(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])).rjust(rjust_q_days)
+        world_days = ((tools.transform_word_days(qty_days=(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])))).
+                rjust(rjust_world_days))
+        q_wild = str(heroes.Hero.get_wildman_count(heroes.hero_dict[key])).rjust(rjust_q_wild)
+        world_wild = tools.transform_word_wilds(qty_wilds=heroes.Hero.get_wildman_count(heroes.hero_dict[key])).ljust(rjust_world_wild)
+        print(f'{char0}{name}{q_days}{world_days}{q_wild} {world_wild}')
+    return
 
 def report_white_rat(*, hero):
     #  Потрачено {} ед.эн.

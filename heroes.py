@@ -1,7 +1,9 @@
 import time
 
 from baza import baza_dannyx as b_d
+from baza import baza_paths as b_p
 from tools import color_text as c_t
+from baza.baza_paths import actual_caliber_folder
 
 nam = 0  # для подсчета чего?
 temp_min = None
@@ -19,16 +21,12 @@ class Activ:
     duel_raid = 0
     result_load = ''
     #
-    hour_now = ''
-    result_duel = ""
-    value_energy = 0
 
 
 class Hero:
 
-    def __init__(self, name_ru_, name_en_, name_id, _id):
+    def __init__(self, name_ru_, name_id, _id):
         # статичные
-        self.name_en = name_en_
         self.name_ru = name_ru_
         self.name_id = name_id
         self.id_ = _id
@@ -90,6 +88,35 @@ class Hero:
         self.time_entree = 0
 
         self.duel_raid = 0
+
+        self.xp_in_level = '0'
+        self.value_xp_in_day = '0'
+        self.collect_xp = '0'
+        self.day_in_lvl = '0'
+
+    def get_day_in_lvl(self):
+        return self.day_in_lvl
+
+    def set_day_in_lvl(self, value):
+        self.day_in_lvl = value
+
+    def get_collect_xp(self):
+        return self.collect_xp
+
+    def set_collect_xp(self, value):
+        self.collect_xp = value
+
+    def get_value_xp_in_day(self):
+        return self.value_xp_in_day
+
+    def set_value_xp_in_day(self, value):
+        self.value_xp_in_day = value
+
+    def get_xp_in_level(self):
+        return self.xp_in_level
+
+    def set_xp_in_level(self, value):
+        self.xp_in_level = value
 
     def get_bypass_set(self):
         return self.bypass_set
@@ -205,6 +232,9 @@ class Hero:
             'lvl_up_date_k': self.lvl_up_date,
             'white_rat_count_all': self.white_rat_count_all,
             'energy_spent_searching_for_white_rats': self.energy_spent_searching_for_white_rats,
+            'xp_in_level': self.xp_in_level,
+            'value_xp_in_day': self.value_xp_in_day,
+            'collect_xp': self.collect_xp
         }
         hero_id = Hero.get_id(self)
         list_all_state[hero_id] = data_to_save
@@ -241,7 +271,9 @@ class Hero:
 
         hero_id = Hero.get_id(self)
         loaded_data = list_all_state[hero_id]
-        home_location_v = loaded_data['home_location_k']
+        self.collect_xp = loaded_data.get('collect_xp', 0)
+        self.xp_in_level = loaded_data.get('xp_in_level', 0)
+        self.value_xp_in_day = loaded_data.get('value_xp_in_day', 0)
         self.home_location = loaded_data.get('home_location_k', 'бомж')
         self.energy_count_all = loaded_data.get('energy_count_all_k', 0)
         self.wildman_count = loaded_data.get('wildman_count_k', 0)
@@ -477,23 +509,20 @@ class Hero:
     def get_name_ru(self):
         return self.name_ru
 
-    def get_name_en(self):
-        return self.name_en
-
     def get_name_id(self):
         return self.name_id
 
 
-gady = Hero(name_ru_="Гадя", name_en_='Gady', name_id='gady', _id=0)
-gady.path_task = 'img/station_master/tasks_gady/'
+gady = Hero(name_ru_="Гадя", name_id='gady', _id=0)
+gady.path_task = b_p.gady_path_task
 gady.bypass = b_d.bypass
 
-gavr = Hero(name_ru_='Гавр', name_en_='Gavr', name_id='gavr', _id=1)
-gavr.path_task = 'img/station_master/tasks_gavr/'
+gavr = Hero(name_ru_='Гавр', name_id='gavr', _id=1)
+gavr.path_task = b_p.gavr_path_task
 gavr.bypass = b_d.bypass
 
-mara = Hero(name_ru_='Мара', name_en_='Mara', name_id='mara', _id=2)
-mara.path_task = 'img/station_master/tasks_mara/'
+mara = Hero(name_ru_='Мара', name_id='mara', _id=2)
+mara.path_task = b_p.mara_path_task
 mara.bypass = b_d.bypass_mara
 
 list_all_state = [{}, {}, {}]  #
