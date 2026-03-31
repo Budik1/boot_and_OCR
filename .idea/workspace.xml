@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="23.03.2026">
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="31.03.2026">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baza/baza_paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/baza_paths.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baza/baza_dannyx.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/baza_dannyx.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/baza/paths_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/paths_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/find_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/find_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fun_down.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun_down.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stereotypes/interest_point.py" beforeDir="false" afterPath="$PROJECT_DIR$/stereotypes/interest_point.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txt/daily event.py" beforeDir="false" afterPath="$PROJECT_DIR$/txt/daily event.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x_scale/act.py" beforeDir="false" afterPath="$PROJECT_DIR$/x_scale/act.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -309,10 +299,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.tempo (1)" />
-        <item itemvalue="Python.calibrator" />
         <item itemvalue="Python.tempo" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.calibrator" />
         <item itemvalue="Python.act_calibr (1)" />
       </list>
     </recent_temporary>
@@ -509,7 +499,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774283266700</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="31.03.2026">
+      <option name="closed" value="true" />
+      <created>1774926686534</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1774926686534</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -545,7 +543,9 @@
     <MESSAGE value="25.02.2026 # 2" />
     <MESSAGE value="04.03.2026" />
     <MESSAGE value="23.03.2026" />
-    <option name="LAST_COMMIT_MESSAGE" value="23.03.2026" />
+    <MESSAGE value="31.03.2026" />
+    <MESSAGE value="31.03.2026 рефакторинг" />
+    <option name="LAST_COMMIT_MESSAGE" value="31.03.2026 рефакторинг" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
