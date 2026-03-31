@@ -61,3 +61,5 @@ b_tent_png = 'img/default/tents_R/b_tent.png'
 # tonelli
 station_exit_png = 'img/default/tonelli/station_exit.png'
 tonelli_attack_png = 'img/default/tonelli/attack.png'
+
+k_Prospekt_png = f'img/{actual_caliber_folder}/tonelli/map_item/k_Prospekt.png'
