@@ -4,28 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="04.03.2026">
-      <change afterPath="$PROJECT_DIR$/baza/paths_img.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/x_scale/act.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="23.03.2026">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baza/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baza/baza_dannyx.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/baza_dannyx.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/baza/baza_paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/baza_paths.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calibrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/calibrator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_and_analiz_task_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_and_analiz_task_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baza/paths_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/paths_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/find_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/find_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fun_down.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun_down.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stereotypes/interest_point.py" beforeDir="false" afterPath="$PROJECT_DIR$/stereotypes/interest_point.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/phrases_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/phrases_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/tools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/txt/daily event.py" beforeDir="false" afterPath="$PROJECT_DIR$/txt/daily event.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x_scale/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/x_scale/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x_scale/info.py" beforeDir="false" afterPath="$PROJECT_DIR$/x_scale/info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x_scale/act.py" beforeDir="false" afterPath="$PROJECT_DIR$/x_scale/act.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -318,8 +310,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.calibrator" />
         <item itemvalue="Python.tempo (1)" />
+        <item itemvalue="Python.calibrator" />
         <item itemvalue="Python.tempo" />
         <item itemvalue="Python.act_calibr (1)" />
       </list>
@@ -509,7 +501,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772637319882</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="23.03.2026">
+      <option name="closed" value="true" />
+      <created>1774283266700</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1774283266700</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -544,7 +544,8 @@
     <MESSAGE value="22.02.2026 # 2" />
     <MESSAGE value="25.02.2026 # 2" />
     <MESSAGE value="04.03.2026" />
-    <option name="LAST_COMMIT_MESSAGE" value="04.03.2026" />
+    <MESSAGE value="23.03.2026" />
+    <option name="LAST_COMMIT_MESSAGE" value="23.03.2026" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -589,29 +590,9 @@
           <option name="timeStamp" value="154" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/txt/daily event.py</url>
-          <line>2</line>
-          <option name="timeStamp" value="156" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/person.py</url>
           <line>226</line>
           <option name="timeStamp" value="158" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/find_img.py</url>
-          <line>186</line>
-          <option name="timeStamp" value="160" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/find_img.py</url>
-          <line>268</line>
-          <option name="timeStamp" value="161" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/find_img.py</url>
-          <line>348</line>
-          <option name="timeStamp" value="162" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fun.py</url>
@@ -632,6 +613,16 @@
           <url>file://$PROJECT_DIR$/kv_and_raid.py</url>
           <line>67</line>
           <option name="timeStamp" value="167" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>167</line>
+          <option name="timeStamp" value="169" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>210</line>
+          <option name="timeStamp" value="170" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

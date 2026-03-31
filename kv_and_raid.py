@@ -72,7 +72,7 @@ def get_name_loot_kv():
                       'генерал': p_i.p5_png}
     result = 'неопознан'
     for name in dict_name_loot:
-        name_loot = find_img.find_img(name_img=dict_name_loot[name])
+        name_loot = find_img.find_img(path_img=dict_name_loot[name])
         if name_loot:
             result = name
             break

@@ -176,7 +176,7 @@ def events_tunnel(name_st, st_id_file):
     fun.selection_hero(show_name=False)
 
     dog_activ = True
-    id_st = find_img.find_img(name_img=st_id_file)
+    id_st = find_img.find_img(path_img=st_id_file)
     info = find_img.find_info()
 
     fun.my_log_file(f'{info=}, {id_st=}')
@@ -220,7 +220,7 @@ def events_tunnel(name_st, st_id_file):
                     while attack:
                         attack = find_img.find_tonelli_attack()
 
-        id_st = find_img.find_img(name_img=st_id_file)
+        id_st = find_img.find_img(path_img=st_id_file)
         fun.my_log_file(f'id_st = {id_st}')
 
     fun.my_log_file(name_st)
@@ -295,7 +295,7 @@ def traffic_on_the_map(stan: list) -> None:
         fun.my_log_file(f'pos_click = {pos_click}, нажал на стрелку "юг"')
         tools.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
         # sleep(1)
-    next_station = find_img.find_img(name_img=stan[1])
+    next_station = find_img.find_img(path_img=stan[1])
     confidence_poisk = 0.9
     if next_station:
         next_station = fun.wait_and_stop_img(name_img=stan[1])

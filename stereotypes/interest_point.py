@@ -33,7 +33,7 @@ def get_right_corner() -> tuple:
 
 
 def get_pos_line_menu(*, path) -> tuple:
-    pos = find_img(name_img=path)
+    pos = find_img(path_img=path)
     return pos
 
 
@@ -66,14 +66,14 @@ def get_caliber_line_menu():
     """
     path_img_caliber = baza.baza_paths.path_folder_line_menu
     lst_img = os_action.get_lst_files(path=path_img_caliber)
-    skale = None
+    skale = 'default'
     for img in lst_img:
         rez = find_img(img)
         # print(rez, img)
 
         if rez:
             # tools.Mouse.move(pos=rez, speed=1)
-            skale = fun.extraction_digit(item=img)
+            skale = str(fun.extraction_digit(item=img))
             break
     return skale
 

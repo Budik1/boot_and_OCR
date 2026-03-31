@@ -310,6 +310,8 @@ def task_analysis(img1, img2, region):
     global variable
     # fun.push_close_all_()
     fun.vizit_to_station_master()
+    # print(f'{img1=}')
+    # print(f'{img2=}')
     variant1 = find_img.find_img_param(path_name=img1, confidence=conf_, region=region)
     variant2 = find_img.find_img_param(path_name=img2, confidence=conf_, region=region)
     if variant1:
@@ -343,9 +345,9 @@ def option_task_money():
     global energy_availability, number_tasks  # , conf_
     # price_task = None
     conf_ = 0.95
-
     # определяю локацию
     fun.push_close_all_()
+    fun.selection_hero(show_name=False)
     list_location = fun.loc_now()
     # получаю список доступных заданий
     task = list_location[4]
@@ -353,7 +355,7 @@ def option_task_money():
     heroes.Activ.station_activ = list_location[0]
 
     if heroes.Activ.station_activ == 'ст. Киевская':
-        if Activ.hero_activ == '':
+        if not Activ.hero_activ:
             fun.selection_hero()
         heroes.Hero.app_wildman_days_count(heroes.Activ.hero_activ)
     hero = fun.selection_hero()
@@ -396,7 +398,7 @@ def option_task_money():
             conf_ -= 0.005
             conf_ = round(conf_, 3)
 
-        if conf_ <= 0.92:
+        if conf_ <= 0.935:
             # получение картинки
             print('Попытка прочитать аппаратно')
             analiz = create_and_analiz_task_img.search_and_create_img_best_offer(person_identified=True)

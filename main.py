@@ -51,7 +51,7 @@ position_y_tool = top_indent * 2 + height_root
 position_x_tool = position_x_root
 
 b_d.caliber = stereotypes.interest_point.get_caliber_line_menu()
-if b_d.caliber == 100:
+if b_d.caliber == '100':
     b_p.actual_caliber_folder = 'default'
 else:
     b_p.actual_caliber_folder = b_d.caliber
@@ -165,7 +165,7 @@ def puli():
     displaying_values(info=False)
 
 
-def kiki():
+def for_kiki():
     touring.for_kiki()
     fun.work()
     displaying_values(info=False)
@@ -551,12 +551,12 @@ def set_lbl_lvl():
     :return:
     """
     fun.selection_hero(show_name=False)
-    if heroes.Hero.get_xp_in_level(heroes.Activ.hero_activ) == 0:
-        # удалить пробелы и проверить все знаки цифры
-        len_lvl_value_hero = len_lvl_value_entry.get()
+    collected_xp = collect_xp_entry.get()
+    len_lvl_value_hero = len_lvl_value_entry.get()
+    if heroes.Hero.get_xp_in_level(heroes.Activ.hero_activ) != len_lvl_value_hero:
+        # проверить все знаки цифры
         heroes.Hero.set_xp_in_level(heroes.Activ.hero_activ, len_lvl_value_hero)
 
-    collected_xp = collect_xp_entry.get()
     heroes.Hero.set_collect_xp(heroes.Activ.hero_activ, collected_xp)
     value_len_lvl = heroes.Hero.get_xp_in_level(heroes.Activ.hero_activ)
     # print(value_len_lvl, type(value_len_lvl))
@@ -717,15 +717,15 @@ len_deys_gady_label.config(text='(136.7 d)', font=("Helvetica", 9))
 len_deys_gady_label.place(x=b_d.col_9, y=b_d.gady_y)
 
 len_deys_gavr_label = ttk.Label()
-len_deys_gavr_label.config(text='(3.8 d)', font=("Helvetica", 9))
+len_deys_gavr_label.config(text='(3.7 d)', font=("Helvetica", 9))
 len_deys_gavr_label.place(x=b_d.col_9, y=b_d.gavr_y)
 
 len_deys_mara_label = ttk.Label()
 len_deys_mara_label.config(text='(38.4 d)', font=("Helvetica", 9))
 len_deys_mara_label.place(x=b_d.col_9, y=b_d.mara_y)
 
-ttk.Label(text='xp уровня').place(x=b_d.col_9 + 6, y=b_d.line4)
-ttk.Label(text='пройдено').place(x=b_d.col_9 + 6, y=b_d.line6)
+ttk.Label(text='xp уровня').place(x=b_d.col_9 + 8, y=b_d.line4)
+ttk.Label(text='пройдено').place(x=b_d.col_9 + 8, y=b_d.line6)
 
 len_lvl_value_entry = ttk.Entry()
 len_lvl_value_entry.config(textvariable=len_lvl, width=8)
@@ -741,7 +741,7 @@ ttk.Button(text="Gavr", width=5, command=change_gavr).place(x=b_d.col_0, y=b_d.g
 ttk.Button(text="Мара", width=5, command=change_mara).place(x=b_d.col_0, y=b_d.mara_y)
 
 ttk.Button(text="VIP", width=5, command=tent_inspection_marc).place(x=b_d.col_1 - b_d.s, y=b_d.label_line0 - 3)
-ttk.Button(text="kiki", width=5, command=kiki).place(x=b_d.col_2 - b_d.s, y=b_d.label_line0 - 3)
+ttk.Button(text="kiki", width=5, command=for_kiki).place(x=b_d.col_2 - b_d.s, y=b_d.label_line0 - 3)
 ttk.Button(text="wild", width=5, command=wild).place(x=b_d.col_7 - (b_d.s + 3), y=b_d.label_line0 - 3)
 ttk.Button(text="up", width=4, command=save_date_up).place(x=b_d.col_0, y=b_d.label_line0 - 3)
 w_l = 3
