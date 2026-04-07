@@ -67,14 +67,14 @@ class Mouse:
     @staticmethod
     def move_to_click(*,
                       pos_click: tuple,
-                      move_time: float = 0.75,
+                      speed: float = 0.75,
                       z_p_k: float = 0.05,
                       message=None) -> None:
         """
         Поместить указатель мыши по координатам и кликнуть, учитывая задержку.
 
         :param pos_click: Point
-        :param move_time: время перемещения указателя мыши в секундах
+        :param speed: время перемещения указателя мыши в секундах
         :param z_p_k: задержка перед кликом(float)
         :param message: цель клика
         :return: None
@@ -83,7 +83,7 @@ class Mouse:
         if var.Parameters.mouse_rapport:
             print(f'tolls.mouse.Mouse.move_to_click {message=}, {pos_click=}')
         sleep(0.3)
-        Mouse.move(pos=pos_click, speed=move_time, message=message)
+        Mouse.move(pos=pos_click, speed=speed, message=message)
         # print('должен быть клик')
         sleep(z_p_k)
         Mouse.left_click(pos=pos_click, message=message)

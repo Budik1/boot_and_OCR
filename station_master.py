@@ -162,7 +162,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                             dog = None
                             break
                 if dog:
-                    tools.Mouse.move_to_click(pos_click=dog, move_time=0.1, z_p_k=0.1,
+                    tools.Mouse.move_to_click(pos_click=dog, speed=0.1, z_p_k=0.1,
                                               message=f'нажал на собаку {dog=}')
                     mes_pet = f'обнаружение пета {dog=}, {par_conf_pet=}'
                 if log_pet:
@@ -175,7 +175,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
             skip_battle = find_img.find_skip_battle()
 
             fun.my_log_file(f'{skip_battle=}')
-            tools.Mouse.move_to_click(pos_click=skip_battle, move_time=0.4, z_p_k=0.5,
+            tools.Mouse.move_to_click(pos_click=skip_battle, speed=0.4, z_p_k=0.5,
                                       message='нажал пропустить бой')
 
         sleep(1 * prolong_)  # для задержки нажатия "пропустить бой"
@@ -248,7 +248,7 @@ def press_en(*, task_number, pos, value_energy):  #
     pos_clik = x, y
     # tools.Mouse.move(pos=pos_clik, message=f'показал выбранное задание ({task_number})')
     # print('тут должен быть клик')                                        # для отладки раскомментировать
-    tools.Mouse.move_to_click(pos_click=pos_clik, move_time=0.4, z_p_k=0.3,
+    tools.Mouse.move_to_click(pos_click=pos_clik, speed=0.4, z_p_k=0.3,
                               message=f'нажал {task_number} задание')  # для отладки закомментировать
     # sleep(0.5)
     low_energy = find_img.find_low_energy_label()

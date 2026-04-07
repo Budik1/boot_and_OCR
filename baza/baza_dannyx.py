@@ -31,11 +31,12 @@ st_chekhov = ['ст. Чеховская',
               baza.paths_img.s_Chekhov_png,
               dir_arrow_north,
               task_0]
-st_communist = ['ст. Коммунистическая',
-                baza.paths_img.k_Communist_png,
-                baza.paths_img.s_Communist_png,
-                None,
-                []]
+# st_communist = ['ст. Коммунистическая', baza.paths_img.k_Communist_png, baza.paths_img.s_Communist_png, None, []]
+st_sport = ['ст. Спортивная',
+            baza.paths_img.k_Sport_png,
+            baza.paths_img.s_Sport_png,
+            None,
+            []]
 st_cv_bulvar = ['ст. Цветной бульвар',
                 baza.paths_img.k_Cvetnoy_png,
                 baza.paths_img.s_Cvetnoy_png,
@@ -159,7 +160,7 @@ st_vdnx = ['ст. ВДНХ',
 
 # пути-дороги
 # основная дорога
-grand_road = [st_pr_kt_vernadskogo, st_univer, st_communist, st_frunze, st_park_kr, st_kropot, st_biblioteka, st_borov,
+grand_road = [st_pr_kt_vernadskogo, st_univer, st_sport, st_frunze, st_park_kr, st_kropot, st_biblioteka, st_borov,
               st_chekhov, st_tver, st_teatr, st_novok, st_tretya, st_kitay, st_turgenev, st_suxarev, st_pr_kt_mira,
               st_riga, st_alexs, st_vdnx]
 # допдороги (ответвления)
@@ -173,7 +174,7 @@ novok_pavelec = [st_novok, st_pavelec, st_pavelec_g]
 road_list = (grand_road, park_kiev_a, borov_polyanka, chekhov_bulvar, tver_most, novok_pavelec)
 # все станции
 list_of_stations = [st_kiev, st_riga,
-                    st_pr_kt_vernadskogo, st_univer, st_communist, st_frunze, st_park_kr, st_park_g, st_kiev_a,
+                    st_pr_kt_vernadskogo, st_univer, st_sport, st_frunze, st_park_kr, st_park_g, st_kiev_a,
                     st_kropot, st_biblioteka, st_borov, st_polyanka, st_chekhov, st_cv_bulvar, st_tver, st_pushkin,
                     st_k_most, st_teatr, st_novok, st_pavelec, st_pavelec_g, st_tretya, st_kitay, st_turgenev,
                     st_suxarev, st_pr_kt_mira, st_alexs, st_vdnx, ]
@@ -188,7 +189,7 @@ bypass = [
     st_tretya, st_novok, st_teatr, st_tver, st_pushkin, st_k_most, st_pushkin,
     st_chekhov, st_cv_bulvar, st_chekhov,
     st_borov, st_polyanka, st_borov, st_biblioteka, st_kropot, st_park_kr, st_frunze,
-    st_communist, st_univer, st_pr_kt_vernadskogo, st_univer, st_communist,
+    st_sport, st_univer, st_pr_kt_vernadskogo, st_univer, st_sport,
     st_frunze]
 # сбор подарков для Мар`яны
 bypass_mara = [
@@ -212,8 +213,8 @@ frunze_kikimory = [st_park_kr, st_kropot, st_biblioteka, st_borov, st_chekhov, s
 
 #
 frunze_kiev = [st_park_kr, st_park_g, st_kiev]
-kiev_univer = [st_park_g, st_park_kr, st_frunze, st_communist, st_univer]
-univer_frunze = [st_communist, st_frunze]
+kiev_univer = [st_park_g, st_park_kr, st_frunze, st_sport, st_univer]
+univer_frunze = [st_sport, st_frunze]
 
 #
 energy_capacity = ('en1.png', 'en2.png', 'en3.png', 'en4.png', 'en5.png', 'en6.png', 'en7.png')
@@ -265,7 +266,7 @@ col_5 = step_col * 5 + s
 col_6 = step_col * 6 + s
 col_7 = step_col * 7 + s
 col_8 = step_col * 8 - 9
-col_9 = step_col * 9 -3
+col_9 = step_col * 9 - 3
 lst_columns_root = [col_1, col_2, col_3, col_4, col_5, col_6, col_7, col_8, col_9]
 
 separator_1 = col_2 - 18

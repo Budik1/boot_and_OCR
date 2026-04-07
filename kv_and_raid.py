@@ -211,7 +211,7 @@ def kv():
             if klan_war:
                 it_w_a = 0
                 heroes.Hero.up_qty_duel_in_kv_all(heroes.Activ.hero_activ)
-                tools.Mouse.move_to_click(pos_click=attack, move_time=0.01, z_p_k=0)
+                tools.Mouse.move_to_click(pos_click=attack, speed=0.01, z_p_k=0)
                 qty_duel = heroes.Hero.get_qty_duel_in_kv_all(heroes.Activ.hero_activ)
                 target_attack = f'дуэль {qty_duel}'
                 if qty_duel == 1:
@@ -229,7 +229,7 @@ def kv():
             else:
                 it_w_a = 0
                 target_attack = 'Raid'
-                tools.Mouse.move_to_click(pos_click=attack, move_time=0.01, z_p_k=0)
+                tools.Mouse.move_to_click(pos_click=attack, speed=0.01, z_p_k=0)
                 battle(target_call=target_attack)
         kv_wait_attack = find.find_kv_attack_for_money()
         attack = find.find_kv_attak()

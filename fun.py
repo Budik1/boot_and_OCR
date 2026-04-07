@@ -149,10 +149,10 @@ def close_popup_window(speed_mouse=0.75):
     cancel = find_img.find_cancel()
     res = False
     if knob:
-        tools.Mouse.move_to_click(pos_click=knob, move_time=speed_mouse, z_p_k=1)
+        tools.Mouse.move_to_click(pos_click=knob, speed=speed_mouse, z_p_k=1)
         res = True
     if cancel:
-        tools.Mouse.move_to_click(pos_click=cancel, move_time=speed_mouse, z_p_k=1)
+        tools.Mouse.move_to_click(pos_click=cancel, speed=speed_mouse, z_p_k=1)
         res = True
     log_with_caller(message='e')
     return res
@@ -164,7 +164,7 @@ def push_close(speed_mouse=0.75, event=''):
     if pos_close:
         event_mes = c_t.tc_cyan(f'{event}')
         log_with_caller(message=f'{event_mes} {pos_close=}')
-        tools.Mouse.move_to_click(pos_click=pos_close, move_time=speed_mouse, z_p_k=0.1, message=event)
+        tools.Mouse.move_to_click(pos_click=pos_close, speed=speed_mouse, z_p_k=0.1, message=event)
         close_flag = True
     else:
         close_flag = False
@@ -510,7 +510,7 @@ def vizit_to_station_master():
         x1, y1 = pos_klan
         x1, y1 = x1 - 60, y1 + 300
         master = x1, y1
-        tools.Mouse.move_to_click(pos_click=master, move_time=0.4, z_p_k=0.2)
+        tools.Mouse.move_to_click(pos_click=master, speed=0.4, z_p_k=0.2)
         # print('зашел к начальнику')
         sleep(0.5)
         station_master = find_img.find_station_master()

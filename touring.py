@@ -199,7 +199,7 @@ def events_tunnel(name_st, st_id_file):
 
             if entry:
                 fun.my_log_file(f'entry = {entry}')
-                tools.Mouse.move_to_click(pos_click=entry, move_time=0.2, z_p_k=0.1,
+                tools.Mouse.move_to_click(pos_click=entry, speed=0.2, z_p_k=0.1,
                                           message='войти на станцию')
                 parking = fun.pos_parking()
                 tools.Mouse.move(pos=parking, speed=0.5, show=True,
@@ -211,7 +211,7 @@ def events_tunnel(name_st, st_id_file):
                 if attack:
                     # dog_activ = False
                     fun.my_log_file(f'attack = {attack}')
-                    tools.Mouse.move_to_click(pos_click=attack, move_time=0.2, z_p_k=0.1,
+                    tools.Mouse.move_to_click(pos_click=attack, speed=0.2, z_p_k=0.1,
                                               message='атака поста')
                     parking = fun.pos_parking()
                     tools.Mouse.move(pos=parking, speed=0.5, show=True,
@@ -279,21 +279,21 @@ def traffic_on_the_map(stan: list) -> None:
 
         pos_click = find_img.find_mark_sever()
         fun.my_log_file(f'pos_click = {pos_click}, нажал на стрелку "север"')
-        tools.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
+        tools.Mouse.move_to_click(pos_click=pos_click, speed=0.1, z_p_k=0.1)
 
         pos_click = find_img.find_mark_sever()
         fun.my_log_file(f'pos_click = {pos_click}, нажал на стрелку "север"')
-        tools.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
+        tools.Mouse.move_to_click(pos_click=pos_click, speed=0.1, z_p_k=0.1)
         # sleep(1)
     elif ev_map == 'стрелка юг' and next_station is None:
 
         pos_click = find_img.find_mark_yug()
         fun.my_log_file(f'pos_click = {pos_click}, нажал на стрелку "юг"')
-        tools.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
+        tools.Mouse.move_to_click(pos_click=pos_click, speed=0.1, z_p_k=0.1)
 
         pos_click = find_img.find_mark_yug()
         fun.my_log_file(f'pos_click = {pos_click}, нажал на стрелку "юг"')
-        tools.Mouse.move_to_click(pos_click=pos_click, move_time=0.1, z_p_k=0.1)
+        tools.Mouse.move_to_click(pos_click=pos_click, speed=0.1, z_p_k=0.1)
         # sleep(1)
     next_station = find_img.find_img(path_img=stan[1])
     confidence_poisk = 0.9
@@ -302,7 +302,7 @@ def traffic_on_the_map(stan: list) -> None:
     else:
         next_station, confidence_poisk = poisk(stan[1])
     fun.my_log_file(f'point_poisk = {next_station}, confidence_poisk = {confidence_poisk}')
-    tools.Mouse.move_to_click(pos_click=next_station, move_time=0.2, z_p_k=0.3)
+    tools.Mouse.move_to_click(pos_click=next_station, speed=0.2, z_p_k=0.3)
     events_tunnel(stan[0], stan[2])
     fun.log_with_caller(message='e')
     return

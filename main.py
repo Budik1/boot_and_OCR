@@ -713,15 +713,15 @@ timer_mara_label.config(text="00:00:00", font=("Helvetica", 12))  # , font=("Hel
 timer_mara_label.place(x=b_d.col_8, y=b_d.mara_y)
 
 len_deys_gady_label = ttk.Label()
-len_deys_gady_label.config(text='(136.7 d)', font=("Helvetica", 9))
+len_deys_gady_label.config(text='(99.4 d)', font=("Helvetica", 9))
 len_deys_gady_label.place(x=b_d.col_9, y=b_d.gady_y)
 
 len_deys_gavr_label = ttk.Label()
-len_deys_gavr_label.config(text='(3.7 d)', font=("Helvetica", 9))
+len_deys_gavr_label.config(text='(3.5 d)', font=("Helvetica", 9))
 len_deys_gavr_label.place(x=b_d.col_9, y=b_d.gavr_y)
 
 len_deys_mara_label = ttk.Label()
-len_deys_mara_label.config(text='(38.4 d)', font=("Helvetica", 9))
+len_deys_mara_label.config(text='(58.1 d)', font=("Helvetica", 9))
 len_deys_mara_label.place(x=b_d.col_9, y=b_d.mara_y)
 
 ttk.Label(text='xp уровня').place(x=b_d.col_9 + 8, y=b_d.line4)

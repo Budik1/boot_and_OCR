@@ -66,7 +66,7 @@ def get_caliber_line_menu():
     """
     path_img_caliber = baza.baza_paths.path_folder_line_menu
     lst_img = os_action.get_lst_files(path=path_img_caliber)
-    skale = 'default'
+    skale = None
     for img in lst_img:
         rez = find_img(img)
         # print(rez, img)
@@ -129,12 +129,12 @@ def cr_img_line_button_pm(*, caliber=None, show=False):
     os_action.create_folder(path=path_scale)
 
     x, y = left_cor
-    x += 220 * (caliber / 100)
-    y -= 130 * (caliber / 100)
+    x += 220 * (int(caliber) / 100)
+    y -= 130 * (int(caliber) / 100)
     tools.Mouse.move(pos=(x, y), speed=1, show=show)
     x_demo, y_demo = x, y
-    change_x = 365 * (caliber / 100)
-    change_y = 30 * (caliber / 100)
+    change_x = 365 * (int(caliber) / 100)
+    change_y = 30 * (int(caliber) / 100)
     x_demo += change_x
     y_demo += change_y
     tools.Mouse.move(pos=(x_demo, y_demo), speed=1, show=show)

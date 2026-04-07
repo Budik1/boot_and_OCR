@@ -102,6 +102,8 @@ def kill():
     fun.log_with_caller(message='a')
     # Определяю героя
     fun.selection_hero(show_name=False)
+    cursor_offset = 20
+    speed_cursor = 0.05
     # Получаю количество боёв на арене сегодня
     boy_in_arena = heroes.Hero.get_arena_count(heroes.Activ.hero_activ)
     # Получаю количество побед в боях на арене сегодня
@@ -142,26 +144,33 @@ def kill():
         else:
             search_vector = "down"
         while arena_object is None:
-            scroll_up = find_img.find_scroll_up()
-            scroll_down = find_img.find_scroll_down()
+            # scroll_up = find_img.find_scroll_up()
+            # scroll_down = find_img.find_scroll_down()
             region = region_line1
             # Если не найден раньше ищем со смещением списка в начало
             if not arena_object and search_vector == 'up':
+                scroll_up = find_img.find_scroll_up()
                 tools.Mouse.move_to_click(pos_click=scroll_up,
+                                          speed=0.1,
                                           message="прокрутка вверх")
-                tools.Mouse.move(pos=(scroll_up[0] - 70, scroll_up[1]),
-                                 message='отвести в сторону от стрелки?')
+                tools.Mouse.move(pos=(scroll_up[0] + cursor_offset, scroll_up[1]),
+                                 speed=0.1,
+                                 message=f'{cursor_offset=} отвести в сторону от стрелки?')
                 find_img.find_hall_of_glory_tabl()
                 arena_object = find_img.find_arena_object(region=region,
                                                           hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))
                 scroll_up = find_img.find_scroll_up()
                 if not scroll_up:
                     search_vector = "down"
-            if not arena_object and search_vector == 'down':  # Если не найден раньше ищем со смещением списка в конец
+            # Если не найден раньше ищем со смещением списка в конец
+            if not arena_object and search_vector == 'down':
+                scroll_down = find_img.find_scroll_down()
                 tools.Mouse.move_to_click(pos_click=scroll_down,
+                                          speed=0.1,
                                           message="прокрутка вниз")
-                tools.Mouse.move(pos=(scroll_down[0] - 70, scroll_down[1]),
-                                 message='отвести в сторону от стрелки вниз?')
+                tools.Mouse.move(pos=(scroll_down[0] + cursor_offset, scroll_down[1]),
+                                 speed=0.1,
+                                 message=f'{cursor_offset=} отвести в сторону от стрелки вниз?')
                 fun.await_arena(region)
                 arena_object = find_img.find_arena_object(region=region,
                                                           hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))
