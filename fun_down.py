@@ -11,6 +11,7 @@ def locateCenterImg(img: str, confidence=0.9, region: tuple[int, int, int, int] 
         path_list = img.split(sep='/')
         fold = path_list[1]
         name_file = path_list[-1]
+        print(f'{img=}')
         print(f'Видимо в масштабе {fold} файла "{name_file}" ещё нет')
         print()
         pos_img = None

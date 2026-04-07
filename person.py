@@ -234,7 +234,7 @@ def change_acc(*, change_hero_name):
     }
 
     change_hero = di_change_hero[change_hero_name]
-    tools.Mouse.move_to_click(pos_click=change_hero, move_time=move_time, z_p_k=0.2, message='нажать выбранный пункт меню')
+    tools.Mouse.move_to_click(pos_click=change_hero, speed=move_time, z_p_k=0.2, message='нажать выбранный пункт меню')
     # проверка начала процесса смены
     # print('ожидание начала процесса смены')
     scrin_change = fun.selection_hero(show_name=False)
@@ -259,7 +259,7 @@ def change_acc(*, change_hero_name):
         continue_heroes = dikt_continue[change_hero_name]
         # print('Поиск "продолжить как.."')
         if continue_heroes:
-            tools.Mouse.move_to_click(pos_click=continue_heroes, move_time=move_time, z_p_k=0.2, message="продолжить как.." )
+            tools.Mouse.move_to_click(pos_click=continue_heroes, speed=move_time, z_p_k=0.2, message="продолжить как..")
     pos_info = find_img.find_info()
     while not pos_info:
         pos_info = find_img.find_info()

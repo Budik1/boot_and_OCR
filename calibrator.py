@@ -12,40 +12,39 @@ color_sys = tools.color_text.tc_cyan
 
 
 ### 1 Действие:
-# Определить масштаб.
-caliber = str(stereotypes.interest_point.get_caliber_line_menu())
-print_log(caliber, type(caliber), log=view_log)
-if caliber:
-    check_img_caliber_line_menu = True
-else:
-    caliber = str(stereotypes.interest_point.get_caliber_corner())
-    check_img_caliber_line_menu = False
-# переопределить переменную для путей
-baza.baza_paths.actual_caliber_folder = caliber
+# Определить масштаб по строке кнопок меню.
+caliber_lm = stereotypes.interest_point.get_caliber_line_menu()
+print_log(caliber_lm, type(caliber_lm), log=view_log)
+if not caliber_lm:
+    # если масштаб по строке не определён, определяю по углам.
+    print('Определение масштаба по меню не получилось')
+    print('Определяю масштаб по углам')
+    caliber_lm = str(stereotypes.interest_point.get_caliber_corner())
+    stereotypes.interest_point.cr_img_line_button_pm(caliber=caliber_lm)
+# переопределить переменную для путей ???
+baza.baza_paths.actual_caliber_folder = caliber_lm
 
 print()
-print(f'Определён масштаб = {caliber}')
-print(f'Папка масштаба = {baza.baza_paths.actual_caliber_folder}')
+print(f'Определён масштаб = {caliber_lm}, {type(caliber_lm)=}')
+# print(f'Папка масштаба = {baza.baza_paths.actual_caliber_folder}')
 #
-check_folder_caliber = os_action.check_folder_or_file(my_path=f'img/{caliber}')
-print_log('определение масштаба по меню',check_folder_caliber, log=view_log)
+check_folder_caliber = os_action.check_folder_or_file(my_path=f'img/{caliber_lm}')
 if not check_folder_caliber:
-    os_action.create_folder(path=f'img/{caliber}')
-if not check_img_caliber_line_menu:
-    stereotypes.interest_point.cr_img_line_button_pm(caliber=caliber)
+    os_action.create_folder(path=f'img/{caliber_lm}')
+
 
 ### 2 Действие:
 # Попробовать опознать персонажа
-pers_name = x_scale.act.get_pers_name(skale=caliber)
+pers_name = x_scale.act.get_pers_name()
 if pers_name:
     capitalize_pers_name = pers_name.capitalize()
     print(F'Опознан {capitalize_pers_name}')
 else:
-    print('Персонаж не опознан))')
+    print('Персонаж не опознан ))')
     print('Будем знакомиться. Выбери имя')
     name = input('Gady(1), Gavr(2), Mara(3) : ')
     hero_name_dict = {'1': 'gady', '2': 'gavr', '3': 'mara'}
-    x_scale.act.cr_pers_png(name=hero_name_dict[name], skale=caliber)
+    x_scale.act.cr_pers_png(name=hero_name_dict[name], skale=caliber_lm)
 
 
 # print(color_sys('Для корректного проведения калибровки перемести своего персонажа на ст. Киевская или ст. Фрунзенская'))

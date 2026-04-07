@@ -4,10 +4,638 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="31.03.2026">
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="реф baza">
+      <change afterPath="$PROJECT_DIR$/img/100/person/hero_id/gady/her_gady.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/100/person/hero_id/gavr/her_gavr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/arena/gady/arena_object.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/arena/gady/object.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/arena/gavr/arena_object.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/arena/gavr/object.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/arena/mara/arena_object.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/arena/mara/object.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/arena/overall/arena_tabl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/arena/overall/attack_arena_opponent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/arena/overall/choice_of_the_attacked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/arena/overall/defeat_in_arena.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/arena/overall/hall_of_glory_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/arena/overall/hall_of_glory_tabl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/arena/overall/scroll_down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/arena/overall/scroll_up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/arena/overall/victory_in_arena.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/b_battle_end.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/b_battle_end_gp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/b_energy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/b_exit1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/b_gift_open.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/b_gifts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/b_give.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/b_p_otk2r.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/b_thanks.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/clan_var.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/close_gp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/del_en1v2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/del_en2v2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/del_en3v2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/dog.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/end_list_top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/frends/f_gangster.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/frends/f_ganza.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/frends/f_red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/frends/f_reich.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/frends/hero_vs_friend.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/frends/hero_vs_opponent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/backpack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/defeat_battle_in_kv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/exit_kv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/kv_attack for money.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/kv_attak.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/kv_close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/kv_danger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/kv_reload.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/kv_skip_battle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/kv_skip_battle_test.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/kv_victory.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/mining_loot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/loot/p1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/loot/p2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/loot/p3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/loot/p4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/loot/p5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-28 18-59-46.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-28 19-09-51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-28 20-25-22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-29 09-01-09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-30 06-56-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-30 07-01-04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-30 07-46-17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-30 08-32-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-30 19-05-34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-30 20-16-07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-30 20-41-18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-31 07-32-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-31 07-58-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-19 17-06-07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-19 17-21-14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-19 17-26-16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-19 17-31-17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-19 17-56-28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-19 18-01-31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-19 18-06-38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-19 18-11-39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-19 18-16-44.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-19 18-21-49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-19 18-26-49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-19 18-31-58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-19 18-42-03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-20 19-04-42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-20 19-09-44.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-20 19-14-47.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-20 19-29-58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-20 19-35-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-20 19-40-04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-20 19-45-07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-20 19-55-13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-20 20-00-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-20 20-10-18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-20 20-15-16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-20 20-20-23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-20 20-25-25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-20 20-30-27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-20 20-40-31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 18-49-09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 18-54-03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 18-59-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 19-04-16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 19-09-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 19-14-16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 19-19-27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 19-24-29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 19-29-31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 19-39-36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 19-44-34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 19-49-39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 19-54-43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 19-59-38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 20-04-41.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 20-09-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 20-14-53.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 20-19-55.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 20-24-58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 20-30-00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 20-34-56.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-21 20-45-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-22 19-28-33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-22 19-33-38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-22 19-38-26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-22 19-43-43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-22 19-48-34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-22 19-53-38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-22 20-03-53.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-22 20-08-54.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-22 20-13-56.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-22 20-19-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-22 20-24-04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-22 20-34-08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-22 20-39-10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-22 20-49-17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 19-36-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 19-41-08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 19-46-10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 19-51-14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 19-56-16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 20-01-19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 20-06-22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 20-16-27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 20-21-30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 20-26-32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 20-31-32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 20-36-36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 20-41-38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 20-46-32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 20-51-42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 21-06-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 21-16-52.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 21-26-58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-23 21-32-00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 22-01-17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 22-06-19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 22-16-28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 22-21-31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 22-26-33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 22-31-36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 22-36-38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 22-41-40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 22-46-42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 22-51-45.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 22-56-48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 23-01-51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 23-06-53.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 23-11-57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 23-16-53.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 23-22-03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 23-27-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 23-32-08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 23-37-10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-25 23-47-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-26 20-02-07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-26 20-12-11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-26 20-22-16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-26 20-32-21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-26 20-37-24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-26 20-42-27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-26 20-52-31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-26 20-57-30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-26 21-02-36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-26 21-07-38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-26 21-12-41.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-26 21-17-44.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-26 21-22-46.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-26 21-27-42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-26 21-32-49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-26 21-42-51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-27 19-04-41.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-27 19-24-49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-27 19-29-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-27 19-39-57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-27 19-45-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-27 19-55-03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-27 20-05-12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-27 20-15-16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-27 20-20-18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-27 20-30-23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-27 20-35-25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-27 20-40-27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-27 20-45-29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_all_round/2026-02-27 20-50-33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/2025-09-02 08-50-34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/2025-09-03 08-56-55.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/2025-09-06 08-01-27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/2025-09-07 19-21-39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/2025-09-08 19-14-31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/2025-09-10 19-13-40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/2025-09-12 20-25-07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/2025-09-13 20-51-00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/2025-09-13 20-56-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/2025-09-14 20-08-57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/2025-09-15 09-11-08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/2025-09-16 07-30-36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/2025-09-18 08-26-56.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/2025-11-29 19-50-04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/2025-12-03 19-56-32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/2025-12-04 20-08-30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/result_round/result_round_loot/p1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 18-49-39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 18-54-43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 18-59-46.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-04-49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-09-51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-14-53.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-19-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-24-57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-29-59.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-35-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-45-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-50-08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-55-10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-00-11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-05-14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-10-16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-15-18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-20-19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-25-22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-30-23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-35-26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-40-29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-45-31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 08-30-47.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 08-35-57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 08-41-00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 08-51-04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 08-56-06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 09-01-08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 09-06-11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 19-15-38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 19-20-38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 19-25-42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 19-35-42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 19-50-54.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 19-55-55.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 20-00-58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 20-21-07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 20-26-11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 20-31-11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 20-46-21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 20-51-23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 20-56-25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 06-40-52.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 06-45-56.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 06-51-00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 06-56-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-01-04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-06-06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-11-08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-16-11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-21-13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-26-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-31-17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-41-21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-46-17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-56-28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 08-01-40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 08-06-54.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 08-22-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 08-32-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 08-37-07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 18-50-19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 18-55-19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-00-32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-05-34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-10-37.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-15-38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-20-33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-25-43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-30-43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-35-47.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-40-51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-50-54.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-55-53.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-01-00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-06-03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-11-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-16-07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-21-09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-26-11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-31-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-36-13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-41-18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-46-18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-31 07-32-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-31 07-53-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-31 07-58-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/tests/klan_kv_label.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/tests/klan_raid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/tests/kv_.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/tests/kv_vic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/kv/victory_battle_in_kv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/nagrada.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/b1_begin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/b_arrow_left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/b_arrow_right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/b_begin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/b_exit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/button_collapse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/button_expand.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/cancel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/dog_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/en1v3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/en2v3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/en3v3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/event_entry/aktiv_win.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/event_entry/aktiv_win_game2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/event_entry/continue_gady.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/event_entry/continue_gavr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/event_entry/continue_mara.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/event_entry/continue_veles.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/event_entry/gam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/event_entry/pos_t.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/event_entry/pos_t2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/event_entry/transmitted data.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/icon_game.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/icon_in_desktop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/info.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/info1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/klan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/knob.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/link_money_token.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/metro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/my_game1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/my_game2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/pulya.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/s_p_close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/setting.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/skip_battle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/overall/slider_v.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/change_hero/add_acc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/change_hero/change_hero_gady.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/change_hero/change_hero_gavr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/change_hero/change_hero_mara.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/change_hero/change_hero_veles.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/collections.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/dress/jacket_bourbon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/dress/trousers_bourbon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/exit_person.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/hero_id/gady/her_gady.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/hero_id/gady/her_gadya_test.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/hero_id/gady/menu_acc_her_gadya.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/hero_id/gavr/gavr_armor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/hero_id/gavr/her_gavr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/hero_id/gavr/menu_acc_her_gavr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/hero_id/mara/her_mara.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/hero_id/mara/menu_acc_her_mara.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/inventory.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/orden.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/slots/empty slot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/slots/gloves_point.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/slots/jacket_point.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/slots/shoes_point.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/slots/smol_slot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/person/slots/trousers_point.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/reyt_object.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/spec_proposal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/any/station_master.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/any/work_b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/energy_indicator/low_energy_label.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/energy_indicator/no_energy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/energy_value/en_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/energy_value/en_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/energy_value/en_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/energy_value/en_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/energy_value/en_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/energy_value/en_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/2a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/8_.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/8a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/all.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/all2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/patron.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/xp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/start_tasks/big_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/start_tasks/big_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/start_tasks/big_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t3 test.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_mara_temp/t1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_mara_temp/t2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_mara_temp/t3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_mara_temp/t4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_veles/t1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_veles/t2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_veles/t3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_veles/t4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_veles/t5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_veles/t6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/tasks_veles/t7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/work_hour/work_1h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/work_hour/work_2h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/work_hour/work_30m.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/work_hour/work_5h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/station_master/work_hour/work_8h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/take.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/temp/del_polzun.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/temp/tasks1_pul.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/temp/tasks1_xp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/temp/tasks2_pul.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/temp/tasks2_xp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/temp/tasks3_pul.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/temp/tasks3_xp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tents_R/b_tent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tents_R/b_vip.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tents_R/inspect tent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tents_R/visit_to_tent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/mark/long.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/mark/long760.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/new_cr/full win game.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_img/gavr_ful_arial_task.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_img/gavr_ful_arial_task_xp_1_line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_img/gavr_ful_arial_task_xp_1_line_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_img/gavr_ful_arial_task_xp_1_line_graygr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_img/mara_ful_arial_task.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_img/mara_ful_arial_task_xp_1_line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_img/mara_ful_arial_task_xp_1_line_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_img/mara_ful_arial_task_xp_1_line_gray_gr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_img/mara_ful_arial_task_xp_1_line_graygr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_img/tura_ful_arial_task.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_imggadyful_arial_task.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/arial_task.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/arial_task_1_line_xp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/arial_task_1_line_xp_r.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/arial_task_1_line_xp_r_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/arial_task_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/arial_task_line_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/arial_task_line_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/arial_task_line_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/edges.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/green_bak.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/task/gady/tNone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/task/gavr/t5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/task/gavr/tNone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/test big tasks/big_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/test big tasks/big_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/test big tasks/big_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/test_little_tasks/1_pul.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/test_little_tasks/1_xp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/test_little_tasks/2_pul.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/test_little_tasks/2_pul_1_line_xp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/test_little_tasks/2_pul_1_line_xp_blu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/test_little_tasks/2_pul_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/test_little_tasks/2_xp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/test_little_tasks/3_pul.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/test_little_tasks/3_xp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/test_tasks/test_little_tasks/3_xp__.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/test/token.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/attack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/entry_station.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/gift.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/gift2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Alexs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Biblioteka.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Borov.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Chekhov.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Communist.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Cvetnoy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Frunze.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Kiev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Kiev_a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Kitay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Kropotkin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Kuzneckiy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Novokuznec.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Park_ganza.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Park_kr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Pavelec.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Pavelec_g.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Polyanka.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Pr-kt_Vernadskogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Prospekt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Pushkin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Rizgskaya.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Suxarev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Teatr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Tretyakov.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Turgenev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Tver.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Univer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_VDNX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/all/Christmas_tree_ball.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/all/Christmas_tree_branch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/all/Christmas_tree_cracker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/all/Christmas_tree_garland.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/all/Christmas_tree_star.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/all/cp_1_sergeant.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/all/cp_2_lieutenant.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/all/cp_3_captain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/all/cp_4_colonel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/all/cp_5_general.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/all/feed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/all/jetton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/all/stamp_10_kopeck.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/all/stamp_30_kopeck.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/all/stamp_40_kopeck.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/all/stamp_50_kopeck.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/buf/big.lnk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/gady/1005_bullets.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/gady/335_bullets.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/gady/670_bullets.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/gavr/240_bullets.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/gavr/480_bullets.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/gavr/720_bullets.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/mara/135_bullets.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/mara/270_bullets.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/big/mara/405_bullets.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/loot_gift_box/many.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Alexs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Biblioteka.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Borov.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Chekhov.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Communist.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Cvetnoy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Frunze.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Kiev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Kiev_a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Kitay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Kropotkin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Kuzneckiy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Novokuznec.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Park_ganza.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Park_kr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Pavelec.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Pavelec_g.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Polyanka.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Pr-kt_Vernadskogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Pr-kt_Vernadskogo_.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Prospekt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Pushkin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Rizgskaya.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Suxarev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Teatr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Tretyakov.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Turgenev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Tver.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Univer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_VDNX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/mark_sever.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/mark_yug.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/mobi/name1_black_rat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/mobi/name1_grey_rat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/mobi/name1_sand_rat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/mobi/name1_white_rat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/mobi/name2_spy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/mobi/name3_smuggler.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/mobi/name4_arachne.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/mobi/name5_wildman.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/mobi/name6_kikimora.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/mobi/name7_raptor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/post.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/default/tonelli/station_exit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/mark_scale/corner/mark_left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/mark_scale/corner/mark_right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/mark_scale/corner/mark_right_II.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/mark_scale/line/line_button_pm_100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/mark_scale/line/line_button_pm_109.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/mark_scale/line/line_button_pm_83.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/mark_scale/line/line_button_pm_91.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/temp/tok.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/config_kv.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/baza/baza_dannyx.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/baza_dannyx.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/baza/paths_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/paths_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calibrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/calibrator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_arena.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fun_down.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun_down.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/person.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/cr_img_map_name_station.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img_map_name_station.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stereotypes/interest_point.py" beforeDir="false" afterPath="$PROJECT_DIR$/stereotypes/interest_point.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/config.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/t/a_serial_scrin_for_pm.py" beforeDir="false" afterPath="$PROJECT_DIR$/a_serial_scrin_for_pm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/mouse.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/mouse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/touring.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txt/daily event.py" beforeDir="false" afterPath="$PROJECT_DIR$/txt/daily event.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x_scale/act.py" beforeDir="false" afterPath="$PROJECT_DIR$/x_scale/act.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +667,16 @@
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Budik1/boot_and_OCR.git&quot;,
     &quot;accountId&quot;: &quot;4da32438-f606-4368-a8f1-aef0eb95ca1b&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;Budik1&quot;,
+    &quot;repository&quot;: &quot;boot_and_OCR&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -72,6 +710,7 @@
     &quot;Python.cr_img_dva.executor&quot;: &quot;Run&quot;,
     &quot;Python.cr_img_id_name_station (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.cr_img_id_name_station.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cr_img_map_name_station (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.cr_img_map_name_station.executor&quot;: &quot;Run&quot;,
     &quot;Python.cr_img_mob.executor&quot;: &quot;Run&quot;,
     &quot;Python.cr_img_points.executor&quot;: &quot;Run&quot;,
@@ -165,7 +804,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="act_calibr (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="a_serial_scrin_for_pm" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -178,7 +817,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/act_calibr.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/a_serial_scrin_for_pm.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -187,7 +826,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="calibrator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="cr_img_map_name_station (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -200,7 +839,29 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/calibrator.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cr_img_map_name_station.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cr_img_map_name_station" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testOCR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/service" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\python\bot_ocr1\cr_img_map_name_station.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -253,57 +914,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tempo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testOCR" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/t" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\python\bot_ocr1\tempo.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tempo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testOCR" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\python\bot_ocr1\t\tempo.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.tempo (1)" />
-        <item itemvalue="Python.tempo" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.calibrator" />
-        <item itemvalue="Python.act_calibr (1)" />
+        <item itemvalue="Python.tempo (1)" />
+        <item itemvalue="Python.cr_img_map_name_station (1)" />
+        <item itemvalue="Python.cr_img_map_name_station" />
+        <item itemvalue="Python.a_serial_scrin_for_pm" />
       </list>
     </recent_temporary>
   </component>
@@ -507,7 +1124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774926686534</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="реф baza">
+      <option name="closed" value="true" />
+      <created>1774942140034</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1774942140034</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -545,7 +1170,8 @@
     <MESSAGE value="23.03.2026" />
     <MESSAGE value="31.03.2026" />
     <MESSAGE value="31.03.2026 рефакторинг" />
-    <option name="LAST_COMMIT_MESSAGE" value="31.03.2026 рефакторинг" />
+    <MESSAGE value="реф baza" />
+    <option name="LAST_COMMIT_MESSAGE" value="реф baza" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -571,8 +1197,8 @@
           <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/cr_img_map_name_station.py</url>
-          <line>102</line>
+          <url>file://$PROJECT_DIR$/cr_img_map_name_station.py</url>
+          <line>103</line>
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -586,7 +1212,7 @@
           <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/t/a_serial_scrin_for_pm.py</url>
+          <url>file://$PROJECT_DIR$/a_serial_scrin_for_pm.py</url>
           <option name="timeStamp" value="154" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -623,6 +1249,36 @@
           <url>file://$PROJECT_DIR$/main.py</url>
           <line>210</line>
           <option name="timeStamp" value="170" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/calibrator.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="171" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/x_scale/act.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="172" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/txt/daily event.py</url>
+          <line>84</line>
+          <option name="timeStamp" value="173" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/txt/daily event.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/txt/daily event.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/txt/daily event.py</url>
+          <line>87</line>
+          <option name="timeStamp" value="176" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
