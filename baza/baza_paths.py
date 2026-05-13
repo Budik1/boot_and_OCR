@@ -19,6 +19,7 @@ task_hero = 'img/default/station_master/tasks_'
 # os_action
 retention_all = 'storage/config.json'
 retention_kv = 'storage/config_kv.json'
+change_json = 'C:/Users/chenge/config.json'
 
 result_round_temp = 'img/default/kv/temp/result_round/result_all_round/'
 result_round_p = 'img/default/kv/result_round/p/'

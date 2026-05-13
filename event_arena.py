@@ -3,13 +3,14 @@ from time import sleep
 import fun
 import find_img
 import heroes
-import os_action
+# import os_action
 import tools
 import solid_memory
 import station_master
 
 from baza import baza_paths as b_p
 from tools import color_text as c_t
+from baza import variables as var
 
 
 def get_ful_region_arena_tabl():
@@ -189,7 +190,10 @@ def kill():
         heroes.Hero.app_arena_count(heroes.Activ.hero_activ)
         solid_memory.save_all_state_config_json(info=False)
         #
-        res = station_master.enemy_battle(0.4, arena=True, add_up=False, dog_activ=False)
+        res = station_master.enemy_battle(0.4,
+                                          arena=True,
+                                          add_up=False,
+                                          dog_activ=var.Parameters.pet_active)
         if res == "победа":
             vict_in_arena += 1
             heroes.Hero.app_arena_victory_count(heroes.Activ.hero_activ)

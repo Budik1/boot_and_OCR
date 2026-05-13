@@ -107,6 +107,8 @@ def update_set_dist(*, value_dist):
         temp_list = []
     temp_list.append(value_dist)
     set_dist = set(temp_list)
+    print(f'dist_report={value_dist}')
+    print(f'{set_dist=}')
     heroes.Hero.set_set_dist(heroes.Activ.hero_activ, set_dist)
     fun.log_with_caller(message='e')
     return
@@ -147,10 +149,11 @@ def battle(*, target_call):
 
             heroes.Hero.up_qty_duel_in_kv_victory(heroes.Activ.hero_activ)
             fig, dist_report = fun.distance(pos_upper=victory, pos_lower=kv_close)
+
             update_set_dist(value_dist=dist_report)
             min_dist = min(heroes.Hero.get_set_dist(heroes.Activ.hero_activ))
             foto_result_round(pos_v=victory, pos_n=kv_close)
-            if dist_report > (min_dist / 10 + min_dist):
+            if dist_report > (min_dist / 5 + min_dist):
                 heroes.Hero.up_count_shoulder_straps_all(heroes.Activ.hero_activ)
                 heroes.Hero.up_count_shoulder_straps_kv(heroes.Activ.hero_activ)
                 mes = c_t.tc_red('Погон!!')

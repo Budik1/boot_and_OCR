@@ -21,6 +21,7 @@ def get_actual_path(*, path: str) -> str:
             # Действий не производим
             actual_path = path
         else:
+
             actual_path = path.replace('default', baza.baza_paths.actual_caliber_folder)
     # Путь не зависит от масштаба.
     else:

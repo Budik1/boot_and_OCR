@@ -1,15 +1,21 @@
 .idea
 .venv
-img/test
-/img/Cr/
-/log/
+img/temp/
+img/default/temp/
+img/default/kv/temp/
+img/default/test
+
+txt/log
 study_open_file_end_edit.py
-service/t_shelve.py
+service
 tempo.py
 план.txt
 /img/kv/result_round/
-/img/kv/result_round/result_round_loot/
-/img/kv/result_round/result_all_round/
+temp_pack
 
 
-/t/a_pil_image.py
+t
+
+fish
+РЫБ.py
+find_fish_img.py
