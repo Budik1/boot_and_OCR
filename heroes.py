@@ -96,6 +96,8 @@ class Hero:
         self.level_duration_in_days = '0'
         self.collect_xp = '0'
         self.day_in_lvl = '0'
+        self.change_lvl_duration_in_days_char = '='
+        self.color_label = 'blue'
 
     def get_day_in_lvl(self):
         return self.day_in_lvl
@@ -108,6 +110,19 @@ class Hero:
 
     def set_collect_xp(self, value):
         self.collect_xp = value
+
+    def get_color_label(self):
+        return self.color_label
+
+    def set_color_label(self, color):
+        self.color_label = color
+
+    def get_char_change_duration_level(self):
+        return self.change_lvl_duration_in_days_char
+
+    def set_char_change_duration_level(self, char):
+        self.change_lvl_duration_in_days_char = char
+
 
     def get_level_duration_in_days(self):
         return self.level_duration_in_days
@@ -219,6 +234,8 @@ class Hero:
             # арена
             'arena_count_k': self.arena_count,
             'arena_victory_count_k': self.arena_victory_count,
+            'change_lvl_duration_in_days_char': self.change_lvl_duration_in_days_char,
+            'color_label': self.color_label,
 
             'vip_k': self.vip,
             'energy_count_today_k': self.energy_count_today,
@@ -286,6 +303,8 @@ class Hero:
         self.lvl_up_date = loaded_data.get('lvl_up_date_k', '')
         self.white_rat_count_all = loaded_data.get('white_rat_count_all', 0)
         self.energy_spent_searching_for_white_rats = loaded_data.get('energy_spent_searching_for_white_rats', 0)
+        self.change_lvl_duration_in_days_char = loaded_data.get('change_lvl_duration_in_days_char', '=')
+        self.color_label = loaded_data.get('color_label', 'blue')
 
     #
     def get_list_loot(self):

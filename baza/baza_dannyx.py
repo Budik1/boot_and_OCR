@@ -267,6 +267,7 @@ col_6 = step_col * 6 + s
 col_7 = step_col * 7 + s
 col_8 = step_col * 8 - 9
 col_9 = step_col * 9 - 3
+col_10 = step_col * 10
 lst_columns_root = [col_1, col_2, col_3, col_4, col_5, col_6, col_7, col_8, col_9]
 
 separator_1 = col_2 - 18

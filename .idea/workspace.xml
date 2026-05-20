@@ -4,269 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="реф baza">
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="13.05.26">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baza/baza_paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/baza_paths.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baza/variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/variables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_arena.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baza/baza_dannyx.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/baza_dannyx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baza/paths_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/paths_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/default/arena/gady/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/arena/gady/arena_object.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/default/arena/gady/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/arena/gady/object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/arena/gavr/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/arena/gavr/arena_object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/arena/gavr/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/arena/gavr/object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-28 18-59-46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-28 19-09-51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-28 20-25-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-29 09-01-09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-30 06-56-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-30 07-01-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-30 07-46-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-30 08-32-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-30 19-05-34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-30 20-16-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-30 20-41-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-31 07-32-50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-03-31 07-58-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-04-01 19-27-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-04-01 19-32-27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-04-01 19-37-31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-04-01 20-53-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-04-02 08-27-42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-04-02 08-32-45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-04-02 19-45-40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-04-02 20-31-00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-04-03 07-38-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-04-04 07-56-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-04-04 08-16-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-04-04 19-59-38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-04-04 20-49-58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/result_round/p/2026-04-06 20-21-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 18-49-39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 18-54-43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 18-59-46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-04-49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-09-51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-14-53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-19-50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-24-57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-29-59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-35-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-45-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-50-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 19-55-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-00-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-05-14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-10-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-15-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-20-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-25-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-30-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-35-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-40-29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-28 20-45-31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 08-30-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 08-35-57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 08-41-00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 08-51-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 08-56-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 09-01-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 09-06-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 19-15-38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 19-20-38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 19-25-42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 19-35-42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 19-50-54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 19-55-55.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 20-00-58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 20-21-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 20-26-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 20-31-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 20-46-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 20-51-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-29 20-56-25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 06-40-52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 06-45-56.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 06-51-00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 06-56-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-01-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-06-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-11-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-16-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-21-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-26-15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-31-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-41-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-46-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 07-56-28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 08-01-40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 08-06-54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 08-22-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 08-32-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 08-37-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 18-50-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 18-55-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-00-32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-05-34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-10-37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-15-38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-20-33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-25-43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-30-43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-35-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-40-51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-50-54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 19-55-53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-01-00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-06-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-11-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-16-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-21-09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-26-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-31-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-36-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-41-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-30 20-46-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-31 07-32-50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-31 07-53-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-03-31 07-58-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 07-49-37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 07-59-41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 08-14-48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 19-07-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 19-12-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 19-17-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 19-22-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 19-27-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 19-32-27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 19-37-31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 19-42-32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 19-47-25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 19-52-37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 19-57-35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 20-07-45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 20-12-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 20-17-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 20-22-52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 20-27-52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 20-32-50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 20-37-59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 20-43-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 20-48-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 20-53-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-01 20-58-09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 08-22-39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 08-27-42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 08-32-45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 19-20-27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 19-30-33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 19-40-38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 19-45-39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 19-50-42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 19-55-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 20-00-48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 20-05-50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 20-15-54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 20-20-56.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 20-25-58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 20-31-00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 20-36-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 20-41-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 20-46-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 20-51-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 21-01-14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 21-06-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-02 21-11-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 07-23-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 07-33-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 07-38-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 07-43-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 07-48-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 07-53-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 08-08-36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 08-13-38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 08-23-43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 08-28-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 08-33-49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 08-38-51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 08-48-54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 08-53-59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 09-04-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 09-09-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 20-23-45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 20-38-54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 20-43-57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 20-49-00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 20-54-00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 20-59-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 21-25-29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 21-30-31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 21-35-34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 21-40-30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 21-45-38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 21-50-40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 21-55-42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 22-05-44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 22-10-41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 22-15-51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-03 22-20-53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 07-56-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 08-01-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 08-11-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 08-16-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 08-21-29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 08-26-32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 08-31-35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 08-36-32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 08-41-40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 08-51-43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 09-03-33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 19-44-34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 19-59-38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 20-04-43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 20-09-46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 20-14-46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 20-24-53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 20-34-46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 20-45-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 20-49-58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 21-05-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 21-20-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 21-25-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-04 21-30-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-06 19-45-53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-06 19-51-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-06 20-01-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-06 20-11-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-06 20-16-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-06 20-21-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-06 20-41-27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-06 20-46-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-06 20-51-25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-06 20-56-27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-06 21-01-34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-06 21-11-44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-06 21-26-52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-06 21-31-55.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/kv/temp/result_round/result_all_round/2026-04-06 21-36-58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t4.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t5.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/temp/tasks1_pul.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/temp/tasks1_pul.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/temp/tasks1_xp.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/temp/tasks1_xp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/temp/tasks2_pul.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/temp/tasks2_pul.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/temp/tasks2_xp.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/temp/tasks2_xp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/temp/tasks3_pul.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/temp/tasks3_pul.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/temp/tasks3_xp.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/temp/tasks3_xp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/temp/token.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/temp/token.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/kv_and_raid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solid_memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/solid_memory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/glos.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/glos.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/config_kv.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/config_kv.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/t/img_crop1.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_crop1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/txt/daily event.py" beforeDir="false" afterPath="$PROJECT_DIR$/txt/daily event.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x_scale/act.py" beforeDir="false" afterPath="$PROJECT_DIR$/x_scale/act.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,10 +40,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Budik1&quot;
-  }
+  &quot;lastFilter&quot;: {}
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
@@ -361,6 +109,7 @@
     &quot;Python.heroes.executor&quot;: &quot;Run&quot;,
     &quot;Python.img_crop (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.img_crop.executor&quot;: &quot;Run&quot;,
+    &quot;Python.img_crop1 (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.img_crop1.executor&quot;: &quot;Run&quot;,
     &quot;Python.img_servis.executor&quot;: &quot;Run&quot;,
     &quot;Python.img_stat_kv.executor&quot;: &quot;Run&quot;,
@@ -458,7 +207,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="cr_img_map_name_station (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="img_crop1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -471,7 +220,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cr_img_map_name_station.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/img_crop1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -480,7 +229,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="cr_img_map_name_station" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="img_crop1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -489,11 +238,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/service" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/t" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\python\bot_ocr1\cr_img_map_name_station.py" />
+      <option name="SCRIPT_NAME" value="C:\python\bot_ocr1\img_crop1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -549,10 +298,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.img_crop1 (1)" />
+        <item itemvalue="Python.img_crop1" />
         <item itemvalue="Python.РЫБ" />
         <item itemvalue="Python.tempo (1)" />
-        <item itemvalue="Python.cr_img_map_name_station (1)" />
-        <item itemvalue="Python.cr_img_map_name_station" />
       </list>
     </recent_temporary>
   </component>
@@ -764,7 +513,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774942140034</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="13.05.26">
+      <option name="closed" value="true" />
+      <created>1778691892309</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1778691892309</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -803,7 +560,8 @@
     <MESSAGE value="31.03.2026" />
     <MESSAGE value="31.03.2026 рефакторинг" />
     <MESSAGE value="реф baza" />
-    <option name="LAST_COMMIT_MESSAGE" value="реф baza" />
+    <MESSAGE value="13.05.26" />
+    <option name="LAST_COMMIT_MESSAGE" value="13.05.26" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -864,7 +622,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>843</line>
+          <line>873</line>
           <option name="timeStamp" value="166" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -874,12 +632,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>173</line>
+          <line>176</line>
           <option name="timeStamp" value="169" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>216</line>
+          <line>219</line>
           <option name="timeStamp" value="170" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -894,33 +652,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/txt/daily event.py</url>
-          <line>89</line>
+          <line>90</line>
           <option name="timeStamp" value="173" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/txt/daily event.py</url>
-          <line>90</line>
+          <line>91</line>
           <option name="timeStamp" value="174" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/txt/daily event.py</url>
-          <line>91</line>
-          <option name="timeStamp" value="175" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/txt/daily event.py</url>
-          <line>92</line>
+          <line>94</line>
           <option name="timeStamp" value="176" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>727</line>
+          <line>751</line>
           <option name="timeStamp" value="177" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/heroes.py</url>
           <line>95</line>
           <option name="timeStamp" value="179" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/txt/daily event.py</url>
+          <line>93</line>
+          <option name="timeStamp" value="180" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

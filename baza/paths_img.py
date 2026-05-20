@@ -48,6 +48,8 @@ pulya_png = 'img/default/overall/pulya.png'
 en1_png = 'img/default/overall/en1v3.png'
 en2_png = 'img/default/overall/en2v3.png'
 en3_png = 'img/default/overall/en3v3.png'
+vektor_down_grin = 'img/temp/vektor_down_grin_7x18.jpg'
+vektor_up_red = 'img/temp/vektor_up_red_7x18.jpg'
 
 # station_master
 station_master_png = 'img/default/station_master/any/station_master.png'
