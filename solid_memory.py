@@ -13,7 +13,7 @@ def save_all_state_config_json(*, info=False):
     time_n = tools.date_and_time_in_name_file()
     path_temp_folder = f'temp_pack/all/{date_n}'
     os_action.create_folder(path=path_temp_folder)
-    path_lst = ['storage/config.json', f'{path_temp_folder}/config_{time_n}.json']
+    path_lst = ['storage/config.json', f'{path_temp_folder}/config_{time_n}.json', b_p.change_json]
     for key in heroes.hero_dict:
         heroes.Hero.get_state_all(heroes.hero_dict[key])
     json_data = json.dumps(heroes.list_all_state, ensure_ascii=False)
@@ -95,8 +95,7 @@ def load_json_file(*, file_name, info=False):
         # Обработка других неожиданных исключений
         tx1 = c_t.tc_red("Файл ")
         tx3 = c_t.tc_red(f". Произошла неожиданная ошибка: {e}")
-        rapport = f"{tx1}{tx2}{tx3}"
-        rapport = f"{file_name}"
+        rapport = f"{tx1} '{file_name}' {tx2}{tx3}"
         result = False
     finally:
         if rapport:
@@ -105,7 +104,7 @@ def load_json_file(*, file_name, info=False):
 
 
 def reading_all_state_config(*, info=True):
-    file_name_json = b_p.retention_all
+    file_name_json = b_p.change_json
     rapport = ''
     result = True
     if info:

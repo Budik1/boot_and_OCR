@@ -4,3 +4,4 @@ class Parameters:
 
     def_rapport = False
     mouse_rapport = False
+    pet_active = False

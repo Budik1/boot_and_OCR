@@ -1,6 +1,6 @@
 from time import time
 from tkinter import *
-from tkinter import messagebox
+from tkinter import messagebox, BooleanVar
 from tkinter import ttk
 
 from PIL import ImageTk
@@ -17,7 +17,7 @@ import station_master
 import stereotypes
 import touring
 import tools
-import  x_scale
+import x_scale
 
 from baza import baza_dannyx as b_d
 from baza import baza_paths as b_p
@@ -58,6 +58,7 @@ else:
 fun.selection_hero(show_name=False)
 print(f'{b_p.actual_caliber_folder=}')
 
+
 def start_gui():
     state_file = solid_memory.reading_all_state_config(info=False)
     if state_file:
@@ -93,6 +94,7 @@ def start_gui():
     # вывод инфо состояния
     tools.display_smol_report_wildman_1()
     tools.display_info_energy_all_2()
+    # changeColor(her_active=fun.selection_hero(show_name=False))
     return
 
 
@@ -129,6 +131,13 @@ def displaying_values(info=True):
     gady_wild.set(heroes.gady.wildman)
     gavr_wild.set(heroes.gavr.wildman)
     mara_wild.set(heroes.mara.wildman)
+
+    gady_level_duration_in_days.set(heroes.gady.level_duration_in_days)
+    gavr_level_duration_in_days.set(heroes.gavr.level_duration_in_days)
+    mara_level_duration_in_days.set(heroes.mara.level_duration_in_days)
+    char_lvl_gady.set(heroes.gady.change_lvl_duration_in_days_char)
+    char_lvl_gavr.set(heroes.gavr.change_lvl_duration_in_days_char)
+    char_lvl_mara.set(heroes.mara.change_lvl_duration_in_days_char)
 
     if heroes.Activ.hero_activ:
         len_lvl.set(heroes.Hero.get_xp_in_level(heroes.Activ.hero_activ))
@@ -223,7 +232,7 @@ def tent_inspection_marc():
         if hero == 'Mara':
             heroes.mara.vip = vip_case_all
     displaying_values(info=False)
-    changeColor(her_active=fun.selection_hero(show_name=False))
+    changeColor(her_active=hero)
     return
 
 
@@ -370,6 +379,7 @@ def save_date_up():
 
 
 def get_target(event):
+    fun.selection_hero(show_name=False)
     selection = combobox.get()
     touring.move_to_target(target_point=selection)
     if selection == 'домой':
@@ -394,7 +404,6 @@ def timer():
         text_timer = ''
     # Получить date_up
     date_up = heroes.Hero.get_up_date(heroes.gady)
-    #   если date_up:
     if date_up:
         #       Вычислить количество прошедших дней
         date_today = tools.date_utc_now()
@@ -416,6 +425,7 @@ def timer():
         timer_gady_label.config(font=("Helvetica", 12))
     timer_gady_label.config(text=timer_label_text)
     heroes.Hero.set_day_in_lvl(heroes.gady, number_days_gady)
+
     # ==================================================
     # gavr =============================================
     # Получить таймер
@@ -432,7 +442,6 @@ def timer():
         text_timer = ''
     # Получить date_up
     date_up = heroes.Hero.get_up_date(heroes.gavr)
-    #   если date_up:
     if date_up:
         #       Вычислить количество прошедших дней
         date_today = tools.date_utc_now()
@@ -454,6 +463,7 @@ def timer():
         timer_gavr_label.config(font=("Helvetica", 12))
     timer_gavr_label.config(text=timer_label_text)
     heroes.Hero.set_day_in_lvl(heroes.gavr, number_days_gavr)
+
     # ==================================================
     # ==================================================
     # Получить таймер
@@ -470,7 +480,6 @@ def timer():
         text_timer = ''
     # Получить date_up
     date_up = heroes.Hero.get_up_date(heroes.mara)
-    #   если date_up:
     if date_up:
         #       Вычислить количество прошедших дней
         date_today = tools.date_utc_now()
@@ -494,14 +503,17 @@ def timer():
     heroes.Hero.set_day_in_lvl(heroes.mara, number_days_mara)
 
     # ==================================================
-
+    vektor_gady_label.config(textvariable=char_lvl_gady, foreground=heroes.gady.get_color_label(),
+                             font=("Arial Black", 12))
+    vektor_gavr_label.config(textvariable=char_lvl_gavr, foreground=heroes.gavr.get_color_label(),
+                             font=("Arial Black", 12))
+    vektor_mara_label.config(textvariable=char_lvl_mara, foreground=heroes.mara.get_color_label(),
+                             font=("Arial Black", 12))
     tim = int(time())
-    # hours_now = tim // 3600
     minutes_now = (tim - (tim // 3600) * 3600) // 60
     if minutes_now != heroes.temp_min:
         heroes.temp_min = minutes_now
         heroes.time_now_ = tools.time_now()
-
 
     root.after(1000, timer)
 
@@ -532,7 +544,6 @@ def set_check_def():
         var.Parameters.def_rapport = True
     else:
         var.Parameters.def_rapport = False
-    # print(f'{def_rapport.get()=}')
 
 
 def set_check_mouse():
@@ -540,6 +551,11 @@ def set_check_mouse():
         var.Parameters.mouse_rapport = True
     else:
         var.Parameters.mouse_rapport = False
+
+
+def set_pet_activ():
+    var.Parameters.pet_active = pet_act.get()
+    print(f'{var.Parameters.pet_active=}')
 
 
 def set_lbl_lvl():
@@ -551,29 +567,48 @@ def set_lbl_lvl():
     :return:
     """
     fun.selection_hero(show_name=False)
+    #
+    temp_lvl_duration = heroes.Hero.get_level_duration_in_days(heroes.Activ.hero_activ)
+    # Получить количество набранного опыта.
     collected_xp = collect_xp_entry.get()
-    len_lvl_value_hero = len_lvl_value_entry.get()
-    if heroes.Hero.get_xp_in_level(heroes.Activ.hero_activ) != len_lvl_value_hero:
-        # проверить все знаки цифры
-        heroes.Hero.set_xp_in_level(heroes.Activ.hero_activ, len_lvl_value_hero)
-
     heroes.Hero.set_collect_xp(heroes.Activ.hero_activ, collected_xp)
+    # Получить длинна уровня в хр.
+    len_lvl_value = len_lvl_value_entry.get()
+    if heroes.Hero.get_xp_in_level(heroes.Activ.hero_activ) != len_lvl_value:
+        # проверить все знаки цифры
+        heroes.Hero.set_xp_in_level(heroes.Activ.hero_activ, len_lvl_value)
+    #
     value_len_lvl = heroes.Hero.get_xp_in_level(heroes.Activ.hero_activ)
-    # print(value_len_lvl, type(value_len_lvl))
+    #
     value_collect_xp = heroes.Hero.get_collect_xp(heroes.Activ.hero_activ)
-    # print(value_collect_xp, type(value_collect_xp))
+    #
     value_day_in_lvl = heroes.Hero.get_day_in_lvl(heroes.Activ.hero_activ)
     int_len_lvl = value_len_lvl.replace(' ', '')
     int_collect_xp = value_collect_xp.replace(' ', '')
     int_day_in_lvl = value_day_in_lvl
     if int_day_in_lvl == 0:
         int_day_in_lvl = 1
-    xp_in_day = int(int_collect_xp)/int(int_day_in_lvl)
-    qty_day_in_lvl = round(int(int_len_lvl)/int(xp_in_day), 1)
-    # print(f'{qty_day_in_lvl=}')
-    # print(f'{int_day_in_lvl=}')
-    rezult_one_point = round((qty_day_in_lvl - int_day_in_lvl), 1)
+    xp_in_day = int(int_collect_xp) / int(int_day_in_lvl)
+    level_duration_in_days = round(int(int_len_lvl) / int(xp_in_day), 1)
+    #
+    rezult_one_point = round((level_duration_in_days - int_day_in_lvl), 1)
     print(f'Осталось {rezult_one_point} дней до следующего уровня')
+    heroes.Hero.set_level_duration_in_days(heroes.Activ.hero_activ, value=level_duration_in_days)
+    temp_duration_0 = round(temp_lvl_duration, 0)
+    days_duration_0 = round(level_duration_in_days, 0)
+    if temp_duration_0 == days_duration_0:
+        img_label = '='
+        color = 'blue'
+    elif temp_duration_0 < days_duration_0:
+        img_label = '⇧'
+        color = 'red'
+    else:
+        img_label = '⇩'
+        color = 'green'
+    heroes.Hero.set_char_change_duration_level(heroes.Activ.hero_activ, char=img_label)
+    heroes.Hero.set_color_label(heroes.Activ.hero_activ, color=color)
+
+    displaying_values(info=False)
 
 
 def open_tool_win():
@@ -618,13 +653,23 @@ root.resizable(False, False)
 
 def_rapport = IntVar()
 mouse_rapport = IntVar()
+pet_act = BooleanVar()
 
 len_lvl = StringVar()
 xp_lvl = StringVar()
-day_in_lvl_gady = StringVar()
-day_in_lvl_gavr = StringVar()
-day_in_lvl_mara = StringVar()
-mid_res = StringVar()
+
+# day_in_lvl_gady = StringVar()
+# day_in_lvl_gavr = StringVar()
+# day_in_lvl_mara = StringVar()
+
+gady_level_duration_in_days = StringVar()
+gavr_level_duration_in_days = StringVar()
+mara_level_duration_in_days = StringVar()
+char_lvl_gady = StringVar()
+char_lvl_gavr = StringVar()
+char_lvl_mara = StringVar()
+
+# mid_res = StringVar()
 
 gavr_vip = StringVar()
 gady_vip = StringVar()
@@ -653,6 +698,7 @@ mara_gift = IntVar()
 gavr_wild = StringVar()
 gady_wild = StringVar()
 mara_wild = StringVar()
+
 # получение содержимого Combobox
 box_paths = touring.extraction_name_in_list(value=b_d.list_of_stations)
 box_paths.insert(0, 'домой')
@@ -700,6 +746,9 @@ check_mouse.place(x=300, y=b_d.line8)
 check_mouse_label = ttk.Label(text='mouse')
 check_mouse_label.place(x=355, y=b_d.line8)
 
+check_pet = ttk.Checkbutton(text='Пет актив', variable=pet_act, command=set_pet_activ)
+check_pet.place(x=300, y=b_d.line9)
+
 timer_gady_label = ttk.Label()
 timer_gady_label.config(text="", font=("Helvetica", 12))  # , font=("Helvetica", 12)
 timer_gady_label.place(x=b_d.col_8, y=b_d.gady_y)
@@ -713,16 +762,22 @@ timer_mara_label.config(text="00:00:00", font=("Helvetica", 12))  # , font=("Hel
 timer_mara_label.place(x=b_d.col_8, y=b_d.mara_y)
 
 len_deys_gady_label = ttk.Label()
-len_deys_gady_label.config(text='(99.4 d)', font=("Helvetica", 9))
-len_deys_gady_label.place(x=b_d.col_9, y=b_d.gady_y)
+len_deys_gady_label.config(textvariable=gady_level_duration_in_days, font=("Helvetica", 9))
+len_deys_gady_label.place(x=b_d.col_9 + 5, y=b_d.gady_y)
+vektor_gady_label = ttk.Label()
+vektor_gady_label.place(x=b_d.col_10, y=b_d.gady_y)  # + 50
 
 len_deys_gavr_label = ttk.Label()
-len_deys_gavr_label.config(text='(3.5 d)', font=("Helvetica", 9))
-len_deys_gavr_label.place(x=b_d.col_9, y=b_d.gavr_y)
+len_deys_gavr_label.config(textvariable=gavr_level_duration_in_days, font=("Helvetica", 9))
+len_deys_gavr_label.place(x=b_d.col_9 + 5, y=b_d.gavr_y)
+vektor_gavr_label = ttk.Label()
+vektor_gavr_label.place(x=b_d.col_10, y=b_d.gavr_y)
 
 len_deys_mara_label = ttk.Label()
-len_deys_mara_label.config(text='(58.1 d)', font=("Helvetica", 9))
-len_deys_mara_label.place(x=b_d.col_9, y=b_d.mara_y)
+len_deys_mara_label.config(textvariable=mara_level_duration_in_days, font=("Helvetica", 9))
+len_deys_mara_label.place(x=b_d.col_9 + 5, y=b_d.mara_y)
+vektor_mara_label = ttk.Label()
+vektor_mara_label.place(x=b_d.col_10, y=b_d.mara_y)
 
 ttk.Label(text='xp уровня').place(x=b_d.col_9 + 8, y=b_d.line4)
 ttk.Label(text='пройдено').place(x=b_d.col_9 + 8, y=b_d.line6)
@@ -734,7 +789,6 @@ len_lvl_value_entry.place(x=b_d.col_9 + 15, y=b_d.line5)
 collect_xp_entry = ttk.Entry()
 collect_xp_entry.config(textvariable=xp_lvl, width=8)
 collect_xp_entry.place(x=b_d.col_9 + 15, y=b_d.line7)
-
 
 ttk.Button(text="Gady", width=5, command=change_gady).place(x=b_d.col_0, y=b_d.gady_y)
 ttk.Button(text="Gavr", width=5, command=change_gavr).place(x=b_d.col_0, y=b_d.gavr_y)
@@ -813,8 +867,6 @@ ttk.Label(text='|').place(x=b_d.separator_6, y=b_d.mara_y)
 ttk.Label(textvariable=gavr_wild).place(x=b_d.col_7, y=b_d.gavr_y)
 ttk.Label(textvariable=gady_wild).place(x=b_d.col_7, y=b_d.gady_y)
 ttk.Label(textvariable=mara_wild).place(x=b_d.col_7, y=b_d.mara_y)
-
-
 
 # блок выбора заданий
 difference_str_img = 8
