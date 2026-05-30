@@ -4,19 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="13.05.26">
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="20.05.26">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baza/baza_dannyx.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/baza_dannyx.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baza/paths_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/baza/paths_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_and_analiz_task_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_and_analiz_task_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/default/arena/gady/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/arena/gady/arena_object.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/default/arena/gady/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/arena/gady/object.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/arena/gavr/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/arena/gavr/arena_object.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/arena/gavr/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/arena/gavr/object.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t4.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t5.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t4.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t5.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t7.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gavr/t7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t4.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t5.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_mara/t5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/temp/tasks1_pul.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/temp/tasks1_pul.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/temp/tasks1_xp.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/temp/tasks1_xp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/temp/tasks2_pul.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/temp/tasks2_pul.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/temp/tasks2_xp.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/temp/tasks2_xp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/temp/tasks3_pul.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/temp/tasks3_pul.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default/temp/tasks3_xp.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/temp/tasks3_xp.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/glos.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/glos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/config_kv.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/config_kv.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/t/img_crop1.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_crop1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/txt/daily event.py" beforeDir="false" afterPath="$PROJECT_DIR$/txt/daily event.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,11 +188,11 @@
       <recent name="C:\python\bot_ocr1\storage" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\python\bot_ocr1\t" />
       <recent name="C:\python\bot_ocr1" />
       <recent name="C:\python\bot_ocr1\x_scale" />
       <recent name="C:\python\bot_ocr1\img\mark_scale\corner" />
       <recent name="C:\python\bot_ocr1\img\default\overall" />
-      <recent name="C:\python\bot_ocr1\img" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -207,7 +224,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="img_crop1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="img_crop1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testOCR" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -216,11 +233,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/t" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/img_crop1.py" />
+      <option name="SCRIPT_NAME" value="C:\python\bot_ocr1\t\img_crop1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -238,11 +255,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/t" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\python\bot_ocr1\img_crop1.py" />
+      <option name="SCRIPT_NAME" value="C:\python\bot_ocr1\t\img_crop1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -298,7 +315,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.img_crop1 (1)" />
         <item itemvalue="Python.img_crop1" />
         <item itemvalue="Python.РЫБ" />
         <item itemvalue="Python.tempo (1)" />
@@ -521,7 +537,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778691892309</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="20.05.26">
+      <option name="closed" value="true" />
+      <created>1779292961215</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1779292961215</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -536,7 +560,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="удалил test-файлы" />
     <MESSAGE value="поменял местами кнопки на/с бульвара" />
     <MESSAGE value="смена машины" />
     <MESSAGE value="Включил вывод информации. В os_action.get_data_creation_file добавил параметр info и его логику." />
@@ -561,7 +584,8 @@
     <MESSAGE value="31.03.2026 рефакторинг" />
     <MESSAGE value="реф baza" />
     <MESSAGE value="13.05.26" />
-    <option name="LAST_COMMIT_MESSAGE" value="13.05.26" />
+    <MESSAGE value="20.05.26" />
+    <option name="LAST_COMMIT_MESSAGE" value="20.05.26" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -616,11 +640,6 @@
           <option name="timeStamp" value="164" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/fun.py</url>
-          <line>612</line>
-          <option name="timeStamp" value="165" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
           <line>873</line>
           <option name="timeStamp" value="166" />
@@ -652,17 +671,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/txt/daily event.py</url>
-          <line>90</line>
+          <line>91</line>
           <option name="timeStamp" value="173" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/txt/daily event.py</url>
-          <line>91</line>
+          <line>92</line>
           <option name="timeStamp" value="174" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/txt/daily event.py</url>
-          <line>94</line>
+          <line>95</line>
           <option name="timeStamp" value="176" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -677,8 +696,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/txt/daily event.py</url>
-          <line>93</line>
+          <line>94</line>
           <option name="timeStamp" value="180" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/station_master.py</url>
+          <line>374</line>
+          <option name="timeStamp" value="181" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

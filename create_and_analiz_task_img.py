@@ -11,6 +11,7 @@ def get_screenshot_task_big():
     Создание трех картинок по линиям
     :return:
     """
+    fun.log_with_caller(message='a')
     # создание скринов заданий
     path = b_p.manual_selection_tasks
     os_action.create_folder(path=path)
@@ -29,6 +30,7 @@ def get_screenshot_task_big():
                  tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
     fun.foto_pos(name_img=f'{path}big_3.png', region=region3_big,
                  tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
+    fun.log_with_caller(message='e')
     return path
 
 
@@ -36,8 +38,10 @@ def create_big_img_task_line(*, line, value_energy, hero):
     """
     Создание big_img задания нужной строки для OCR
     """
+    fun.log_with_caller(message='a')
     'img/station_master/tasks_gavr'
-    path_hero = f'{b_p.task_hero}{hero}'
+    path = f'{b_p.task_hero}{hero}'
+    os_action.create_folder(path=path)
     # name =
     # смещение скриншота внутри региона
     tune_x = 4  #
@@ -45,9 +49,10 @@ def create_big_img_task_line(*, line, value_energy, hero):
     tune_s = 21  # 21 с увеличением регион уменьшается
     tune_v = 9  #
     region = fun.get_areas_task_big()
-    name_img = f'{path_hero}/t{value_energy}.png'
+    name_img = f'{path}/t{value_energy}.png'
     fun.foto_pos(name_img=name_img, region=region[line - 1],
                  tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
+    fun.log_with_caller(message='e')
     return name_img
 
 
@@ -56,9 +61,11 @@ def get_screenshot_task_smol():
     Создание шести маленьких картинок
     :return:
     """
+    fun.log_with_caller(message='a')
     # создание скринов заданий
     little_tasks = 'img/test/test_tasks/test_little_tasks/'
     path = b_p.tasks_little_temp
+    os_action.create_folder(path=path)
     # смещение скриншота внутри региона
     tune_x = 4  # 4 смещение от верхнего угла региона
     tune_y = 4  # 4
@@ -78,6 +85,7 @@ def get_screenshot_task_smol():
                  tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
     fun.foto_pos(name_img=f'{path}3_xp.png', region=region3_xp,
                  tune_x=tune_x, tune_y=tune_y, tune_s=tune_s, tune_v=tune_v)
+    fun.log_with_caller(message='e')
     return
 
 
@@ -85,6 +93,7 @@ def get_energy_value_in_line(*, line):
     """
     Получение значения количества энергии в линии
     """
+    fun.log_with_caller(message='a')
     # print(f'{line=}, {type(line)}')
     region_img = fun.get_region_lines_task()
     path_energy_task = b_p.energy_task_value
@@ -95,15 +104,18 @@ def get_energy_value_in_line(*, line):
         if pos_en:
             value_energy = fun.extraction_digit(item=img)
             print(f'{value_energy=}')
+    fun.log_with_caller(message='e')
     return value_energy
 
 
-def search_and_create_img_best_offer(*, person_identified=False):
+def search_and_create_img_best_offer(*, person_identified=False, manual=False):
     """
     Анализ заданий.
+    :param manual:
     :param person_identified: Персонаж опознан. 'True' если опознан. Иначе 'False'
     :return:
     """
+    fun.log_with_caller(message='a')
     result_found = False
     if person_identified:
         res = fun.selection_hero()
@@ -119,41 +131,45 @@ def search_and_create_img_best_offer(*, person_identified=False):
 
     # анализ заданий
     # анализ первой строки
-    list_1_pul = my_OCR.recognized(f'{path_little_tasks}1_pul.png')
-    print(f'{list_1_pul=}')
-    list_1_xp = my_OCR.recognized(f'{path_little_tasks}1_xp.png')
-    print(f'{list_1_xp=}')
-    # анализ второй строки
-    list_2_pul = my_OCR.recognized(f'{path_little_tasks}2_pul.png')
-    print(f'{list_2_pul=}')
-    list_2_xp = my_OCR.recognized(f'{path_little_tasks}2_xp.png')
-    print(f'{list_2_xp=}')
-    # анализ третьей строки
-    list_3_pul = my_OCR.recognized(f'{path_little_tasks}3_pul.png')
-    print(f'{list_3_pul=}')
-    list_3_xp = my_OCR.recognized(f'{path_little_tasks}3_xp.png')
-    print(f'{list_3_xp=}')
+    if not manual:
+        list_1_pul = my_OCR.recognized(f'{path_little_tasks}1_pul.png')
+        print(f'{list_1_pul=}')
+        list_1_xp = my_OCR.recognized(f'{path_little_tasks}1_xp.png')
+        print(f'{list_1_xp=}')
+        # анализ второй строки
+        list_2_pul = my_OCR.recognized(f'{path_little_tasks}2_pul.png')
+        print(f'{list_2_pul=}')
+        list_2_xp = my_OCR.recognized(f'{path_little_tasks}2_xp.png')
+        print(f'{list_2_xp=}')
+        # анализ третьей строки
+        list_3_pul = my_OCR.recognized(f'{path_little_tasks}3_pul.png')
+        print(f'{list_3_pul=}')
+        list_3_xp = my_OCR.recognized(f'{path_little_tasks}3_xp.png')
+        print(f'{list_3_xp=}')
 
-    # поиск номера строки лучшего предложения
-    bene = list(event_OCR.find_tasks_benefit(list_1_pul, list_1_xp, list_2_pul, list_2_xp, list_3_pul, list_3_xp))
-    best_line = None
-    if 4 in bene:
-        best_line = bene.index(4) + 1
-        print(f'line {best_line} надо сохранять')
-    else:
-        if (1, 2) in bene:
-            best_line = bene.index(0) + 1
-        print(f'line {best_line} надо сохранять')
+        # поиск номера строки лучшего предложения
+        bene = list(event_OCR.find_tasks_benefit(list_1_pul, list_1_xp, list_2_pul, list_2_xp, list_3_pul, list_3_xp))
+        print(f'{bene=}')
+        best_line = None
+        if 4 in bene:
+            best_line = bene.index(4) + 1
+            print(f'line {best_line} надо сохранять')
 
-    # получение количества энергии в best_line и создание большого скрина задания
-    if best_line:
-        value_energy = get_energy_value_in_line(line=best_line - 1)
-        # print(f'{heroes.Activ.name_file_=}')
-        img = create_big_img_task_line(line=best_line, value_energy=value_energy, hero=heroes.Activ.name_file_)
-        print(f'создан {img}')
-        result_found = True
-    else:
-        print('Строка с результатом "4x1" не найдена')
+        else:
+            if (1, 2) in bene:
+                best_line = bene.index(0) + 1
+            print(f'line {best_line} надо сохранять')
+
+        # получение количества энергии в best_line и создание большого скрина задания
+        if best_line:
+            value_energy = get_energy_value_in_line(line=best_line - 1)
+            # print(f'{heroes.Activ.name_file_=}')
+            img = create_big_img_task_line(line=best_line, value_energy=value_energy, hero=heroes.Activ.name_file_)
+            print(f'создан {img}')
+            result_found = True
+        else:
+            print('Строка с результатом "4x1" не найдена')
+    fun.log_with_caller(message='e')
     return result_found
 
 
@@ -164,12 +180,14 @@ def select_best_offer():
     :return:    list_line - список результатов оценки
                 line_number - количество проанализированных линий
     """
-
+    fun.log_with_caller(message='a')
     def rating_task(*, analiz_line_number):
+        fun.log_with_caller(message='a')
         path_little_tasks = b_p.tasks_little_temp
         pul = my_OCR.recognized(f'{path_little_tasks}{analiz_line_number}_pul.png')
         xp = my_OCR.recognized(f'{path_little_tasks}{analiz_line_number}_xp.png')
         bene = event_OCR.find_benefit(pul=pul, xp=xp)
+        fun.log_with_caller(message='e')
         return bene
 
     line_number = 0
@@ -182,4 +200,5 @@ def select_best_offer():
             break
         else:
             list_line.append(line_number)
+    fun.log_with_caller(message='e')
     return list_line, line_number

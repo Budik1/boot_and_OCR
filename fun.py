@@ -354,7 +354,8 @@ def get_areas_task_small(width=77, height=42):
     """Получение значений "region=" для поиска значений в малых регионах пуль и опыта
         :return: кортеж из шести списков значений"""
     log_with_caller(message='a')
-    pul, xp_ = 404 - 34 - 10 + 1, 518 - 40 - 34 - 10 - 10 + 2
+    pul= 361 - 30
+    xp_ = pul + 65
     line_1, line_2, line_3 = 160, 250, 340
 
     x_or, y_or = find_link_station_master_alt()
@@ -441,7 +442,7 @@ def get_areas_task_big(width=77, height=42):
         :param height:
         :return: кортеж из трех списков значений"""
     log_with_caller(message='a')
-    pul = 370
+    pul = 334 #370
     # pos_1, pos_2, pos_3 = 217, 320, 423
     pos_1, pos_2, pos_3 = 160, 250, 340
     big = 56  # 56
@@ -452,17 +453,17 @@ def get_areas_task_big(width=77, height=42):
 
     # регион поиска 1 (позиция анализа)
     y_1an = int(y_or + pos_1)
-    region1_big = [x_an_pul, y_1an, width, height]
+    region_1_line_big = [x_an_pul, y_1an, width, height]
 
     # регион поиска 2 (позиция анализа)
     y_2an = int(y_or + pos_2)
-    region2_big = [x_an_pul, y_2an, width, height]
+    region_2_line_big = [x_an_pul, y_2an, width, height]
 
     # регион поиска 3 (позиция анализа)
     y_3an = int(y_or + pos_3)
-    region3_big = [x_an_pul, y_3an, width, height]
+    region_3_line_big = [x_an_pul, y_3an, width, height]
     log_with_caller(message='e')
-    return region1_big, region2_big, region3_big
+    return region_1_line_big, region_2_line_big, region_3_line_big
 
 
 def find_link_klan(show=True):
