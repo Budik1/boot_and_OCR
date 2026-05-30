@@ -243,7 +243,7 @@ def press_en(*, task_number, pos, value_energy):  #
     """
     fun.log_with_caller(message='a')
     global energy_availability, conf_
-    x = pos[0] - 100
+    x = pos[0] - 70
     y = pos[1] - 20
     pos_clik = x, y
     # tools.Mouse.move(pos=pos_clik, message=f'показал выбранное задание ({task_number})')
@@ -399,7 +399,7 @@ def option_task_money():
             conf_ = round(conf_, 3)
 
         if conf_ <= 0.935:
-            # получение картинки
+            # # получение картинки
             print('Попытка прочитать аппаратно')
             analiz = create_and_analiz_task_img.search_and_create_img_best_offer(person_identified=True)
 
@@ -407,11 +407,11 @@ def option_task_money():
             if not analiz:
                 path = create_and_analiz_task_img.get_screenshot_task_big()
                 print(c_t.tc_cyan(
-                    f'Для ручного выбора результат "C:/python/bot_ocr1{path}" '))
+                    f'Для ручного выбора результат "C:/python/bot_ocr1/{path}" '))
                 number_tasks = 1
                 energy_availability = 0
                 return
-
+            # return
     number_tasks = 1
     energy_availability = 1
     close = find_img.find_close()

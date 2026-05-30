@@ -585,15 +585,15 @@ def set_lbl_lvl():
     value_day_in_lvl = heroes.Hero.get_day_in_lvl(heroes.Activ.hero_activ)
     int_len_lvl = value_len_lvl.replace(' ', '')
     int_collect_xp = value_collect_xp.replace(' ', '')
-    int_day_in_lvl = value_day_in_lvl
-    if int_day_in_lvl == 0:
-        int_day_in_lvl = 1
-    xp_in_day = int(int_collect_xp) / int(int_day_in_lvl)
+    if value_day_in_lvl == 0:
+        value_day_in_lvl = 1
+    xp_in_day = int(int_collect_xp) / int(value_day_in_lvl)
     level_duration_in_days = round(int(int_len_lvl) / int(xp_in_day), 1)
-    #
-    rezult_one_point = round((level_duration_in_days - int_day_in_lvl), 1)
-    print(f'Осталось {rezult_one_point} дней до следующего уровня')
     heroes.Hero.set_level_duration_in_days(heroes.Activ.hero_activ, value=level_duration_in_days)
+    #
+    rezult_one_point = round((level_duration_in_days - value_day_in_lvl), 1)
+    print(f'Осталось {rezult_one_point} дней до следующего уровня')
+    #
     temp_duration_0 = round(temp_lvl_duration, 0)
     days_duration_0 = round(level_duration_in_days, 0)
     if temp_duration_0 == days_duration_0:
