@@ -1,4 +1,5 @@
-from PIL import Image
+# from PIL import Image
+import tools
 from x_scale.act import get_actual_path
 from baza import paths_img as p_i
 from baza.baza_paths import actual_caliber_folder
@@ -469,3 +470,27 @@ def find_post():
 def find_entry_station():
     pos = fund.locateCenterImg(img=f'img/{actual_caliber_folder}/tonelli/entry_station.png')
     return pos
+
+def find_patron_mark(*, region):
+    name_img = 'img/default/station_master/numbers/patron_mark.png'
+    pos = fund.locateCenterImg(img=name_img, region=region)
+    size = tools.img_processing.get_size_img(name_img=name_img)
+    return pos, size
+
+def find_xp_mark(*, region):
+    name_img = 'img/default/station_master/numbers/xp_mark.png'
+    pos = fund.locateCenterImg(img=name_img, region=region)
+    size = tools.img_processing.get_size_img(name_img=name_img)
+    return pos, size
+
+def find_event_patron_mark(*, region):
+    name_img='img/default/station_master/numbers/event_patron_mark.png'
+    pos = fund.locateCenterImg(img=name_img, region=region)
+    size = tools.img_processing.get_size_img(name_img=name_img)
+    return pos, size
+
+def find_event_xp_mark(*, region):
+    name_img = 'img/default/station_master/numbers/event_xp_mark.png'
+    pos = fund.locateCenterImg(img=name_img, region=region)
+    size = tools.img_processing.get_size_img(name_img=name_img)
+    return pos, size

@@ -8,6 +8,14 @@ hour = 3600
 day = 24 * 3600
 two_weeks = 14 * 24 * 3600
 
+def del_all_file_in_dir(*, path_dir):
+    em_dir = check_folder_or_file(my_path=path_dir)
+    if em_dir:
+        lst_file = get_lst_files(path=path_dir)
+        for file in lst_file:
+            os.remove(file)
+
+
 
 def check_and_del_file(*, check_file, old_day):
     creation_time = get_data_creation_file(check_file=check_file, info=False)
@@ -70,14 +78,16 @@ def create_folder(*, path, info=False):
     При необходимости создаёт все вложенные папки.
     :param path:
     :param info:
-    :return:
+    :return: Необходимость каких либо действий. Если создана - False, иначе - True.
     """
     if not os.path.exists(path):
         os.makedirs(path)
+        info_act = False
     else:
         if info:
             print(f"Папка `{path}` уже существует, всё в порядке!")
-    return
+        info_act = True
+    return info_act
 
 
 def check_folder_or_file(*, my_path):

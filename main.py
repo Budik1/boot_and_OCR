@@ -555,7 +555,6 @@ def set_check_mouse():
 
 def set_pet_activ():
     var.Parameters.pet_active = pet_act.get()
-    print(f'{var.Parameters.pet_active=}')
 
 
 def set_lbl_lvl():

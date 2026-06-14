@@ -10,7 +10,7 @@ mara_path_task = 'img/default/station_master/tasks_mara/'
 manual_selection_tasks = 'img/temp/sample_tasks/'
 task_big = 'img/default/test/test_tasks/'  # ?
 task_test = 'img/default/test/test_img/'  # ?
-tasks_little_temp = 'img/default/temp/tasks'
+tasks_little_temp = 'img/default/temp/tasks/'
 num_path = 'img/default/station_master/numbers/'
 
 energy_task_value = 'img/default/station_master/energy_value/'
@@ -23,6 +23,10 @@ change_json = 'C:/Users/chenge/config.json'
 
 result_round_temp = 'img/default/kv/temp/result_round/result_all_round/'
 result_round_p = 'img/default/kv/result_round/p/'
+result_round_full = 'img/default/kv/result_round/full_result_all_round/'
+
+
+result_round_p_full = 'img/default/kv/result_round/p_full/'
 danger = 'img/default/kv/temp/danger/'
 
 hero_id = 'img/default/person/hero_id/'
@@ -30,7 +34,7 @@ hero_id = 'img/default/person/hero_id/'
 log_path = 'txt/log/'
 img_token = 'img/temp/test/'
 
-check_list_directory = [log_path, result_round_p, result_round_temp, img_token, danger
+check_list_directory = [log_path, result_round_full, result_round_p, result_round_p_full, result_round_temp, img_token, danger
                         ]
 
 arena_object = 'img/default/arena/'

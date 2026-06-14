@@ -469,5 +469,37 @@ def no_energy():
     sounds.sound_vic()
     print(f'файл {name_create_img} создан')
 
+
+def fashion111():
+    """
+        образец
+        """
+    # name_create_img = 'img/default/station_master/numbers/event_patron_mark.png'
+    name_create_img = 'img/default/station_master/numbers/event_xp_mark.png'
+    show_move = True
+    pos_start = find.find_station_master()
+    # показать привязку
+    tools.Mouse.move(pos=pos_start, speed=1)
+    # найдем верхний угол
+    x, y = pos_start
+    x += 485
+    y += 150+111
+    tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
+    # # найдем нижний угол
+    x_demo, y_demo = x, y
+    change_x = 16
+    change_y = 16
+    x_demo += change_x
+    y_demo += change_y
+    tools.Mouse.move(pos=(x_demo, y_demo), show=show_move)
+    # # собственно создание снимка
+    fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
+    pos = fun.locCenterImg(f'{name_create_img}')
+    tools.Mouse.move(pos=pos)
+    # sounds.sound_vic()
+    print(f'ok {name_create_img} {pos=}')
+    return
+
 # info_img()
 # energy_img()
+# fashion111()

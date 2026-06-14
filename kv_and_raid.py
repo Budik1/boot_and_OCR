@@ -63,6 +63,29 @@ def foto_result_round(*, pos_v, pos_n, path=b_p.result_round_temp, sound=False):
     return
 
 
+def foto_full_result_round(*, res, pos_r, pos_n):
+    path = b_p.result_round_full
+    x_r = 754
+    y_r = 472
+    if res == 'v':
+        # коррекция верхнего угла от результата
+        pos_x_r, pos_y_r = pos_r
+        pos_x_r -= 231
+        pos_y_r -= 143
+    else:
+        # коррекция верхнего угла от результата
+        pos_x_r, pos_y_r = pos_r
+        pos_x_r -= 241
+        pos_y_r -= 165
+        # коррекция нижнего угла
+
+    os_action.create_folder(path=path)
+    name_foto_r = tools.date_and_time_in_name_file() + "_r.png"
+    fun.foto((path + name_foto_r), (pos_x_r, pos_y_r, x_r, y_r))
+    sounds.say_txt('фото раунда сделано')
+    return
+
+
 def get_name_loot_kv():
     fun.log_with_caller(message='a')
     dict_name_loot = {'сержант': p_i.p1_png,
@@ -131,7 +154,7 @@ def battle(*, target_call):
     it_kv = 0
     while not kv_close:
         it_kv += 1
-        if not danger and kv_skip_battle and it_kv >= 10:
+        if target_call != 'Raid' and kv_skip_battle and it_kv >= 10:
             tools.Mouse.move_to_click(pos_click=kv_skip_battle, z_p_k=0.5)
         sleep(1)
         kv_skip_battle = find.find_kv_skip_battle()
@@ -145,11 +168,10 @@ def battle(*, target_call):
         victory = find.find_victory_battle_in_kv()
         defeat = find.find_defeat_battle_in_kv()
         if victory:
+            foto_full_result_round(res='v', pos_n=kv_close, pos_r=victory)
             result = c_t.tc_yellow("победа ")
-
             heroes.Hero.up_qty_duel_in_kv_victory(heroes.Activ.hero_activ)
             fig, dist_report = fun.distance(pos_upper=victory, pos_lower=kv_close)
-
             update_set_dist(value_dist=dist_report)
             min_dist = min(heroes.Hero.get_set_dist(heroes.Activ.hero_activ))
             foto_result_round(pos_v=victory, pos_n=kv_close)
@@ -165,11 +187,11 @@ def battle(*, target_call):
                 list_loot = heroes.Hero.get_list_loot(heroes.Activ.hero_activ)
                 list_loot.append(str(name_loot))
                 heroes.Hero.set_list_loot(heroes.Activ.hero_activ, list_loot)
-
             if danger:
                 heroes.Hero.app_danger_v(heroes.Activ.hero_activ)
                 foto_danger()
         elif defeat:
+            foto_full_result_round(res='d', pos_n=kv_close, pos_r=defeat)
             result = c_t.tc_red("поражение ")
         else:
             heroes.Activ.duel_raid += 1

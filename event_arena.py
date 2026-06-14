@@ -72,7 +72,7 @@ def create_img_arena_object():
     fun.selection_hero(show_name=False)
     # Получение пути для сохранения скрина противника
     path_img = b_p.arena_object
-    hero_name = heroes.Activ.name_file_
+    hero_name = heroes.Activ.name_for_file_
     path_hero_img = f'{path_img}{hero_name}/'
     # # ориентир на зал славы
     # Получение размеров таблицы

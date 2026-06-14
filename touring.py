@@ -547,24 +547,17 @@ def for_wilds():
         move_to_target(target_point='ст. Киевская')
         station_master.option_task_money()
         col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
-        print(f'нет доступных заданий. {col}')
         if col in [30, 50]:
-            print(f'энергия исчерпана {col} потрачено сегодня')
+            print('энергия исчерпана')
+            move_to_target(target_point='домой')
         else:
-            move_to_target(target_point='ст. Парк культуры(КР)')
-            station_master.option_task_money()
-            col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
-            print(f'нет доступных заданий. {col}')
-            if col in [30, 50]:
-                print(f'энергия исчерпана {col} потрачено сегодня')
-            else:
-                # за белыми крысами на Пушкинской
-                print(f'нет доступных заданий. {col}')
-                move_to_target(target_point='ст. Пушкинская')
-                station_master.option_task_line(task_line=1)
-                col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
-                print(f'энергия исчерпана {col} потрачено сегодня')
-        move_to_target(target_point='домой')
+            # за белыми крысами на Пушкинской
+            print(f'нет доступных заданий на Киевской, {col}')
+            move_to_target(target_point='ст. Пушкинская')
+            station_master.option_task_line(task_line=1)
+            print('энергия исчерпана')
+            move_to_target(target_point='домой')
+        tools.sounds.say_txt('вернулся домой))')
     else:
         move_to_target(target_point='ст. Киевская')
         station_master.option_task_money()

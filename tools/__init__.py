@@ -6,3 +6,4 @@ from .tools import *
 
 from . import sounds
 from . import color_text
+from . import img_processing

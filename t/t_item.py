@@ -1,33 +1,8 @@
-from tkinter import *
-from tkinter import ttk
+img1='img/default/station_master/tasks_gady/t1.png'
 
-
-class Window(Tk):
-    def __init__(self, name_win):
-        super().__init__()
-
-        # конфигурация окна
-        self.title(name_win)
-        self.geometry("250x200")
-
-        # определение кнопки
-        self.button_cl = ttk.Button(self, text="закрыть")
-        self.button_cl["command"] = self.button_destroy
-        self.button_cl.place(x=50, y=10)
-
-        self.button_cr = ttk.Button(text="Создать окно")
-        self.button_cr['command'] = self.click
-        self.button_cr.place(x=10, y=100)
-
-    def button_destroy(self):
-        self.destroy()
-
-
-    def click(self):
-        window = Window(name_win='новое окно')
-
-
-
-root = Window(name_win="главное окно")
-
-root.mainloop()
+img1_alt_split = img1.split('.')
+img1_alt_split[0] += 'event'
+img1_alt ='.'.join(img1_alt_split)
+print(img1_alt)
+# img1_alt.join(img1_name_mod, img1_alt_split[1])
+# print(img1_alt)

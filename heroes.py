@@ -17,7 +17,7 @@ class Activ:
     hero_activ_name = ''  # значение переменной
     check_date_ = ''
     date_utc_now = ''
-    name_file_ = None
+    name_for_file_ = None
     station_activ = ''
     qty_vip = 0
     duel_raid = 0
@@ -195,7 +195,8 @@ class Hero:
 
         data_kv = list_kv_state[hero_id]
         time_now = time.time()
-        time_check = data_kv['time_start_kv']
+        # time_check = data_kv['time_start_kv']
+        time_check = data_kv.get('time_start_kv', 0)
         if (time_now - time_check) < 3 * 3600:
             print('Время старта КВ не изменилось')
             self.time_start_kv = data_kv.get('time_start_kv', 0)
@@ -491,9 +492,13 @@ class Hero:
 
     def get_report_wildman_now(self):
         if self.wildman:
-            return f'{c_t.tc_yellow(str(self.wildman))} {c_t.tc_green("за сегодня")}'
+            ph1 = self.wildman
+            ph2 = "за сегодня"
         else:
-            return f'по дикарям нет данных'  #
+            ph1 = 'по дикарям нет данных'
+            ph2 = ''
+            # return 'по дикарям нет данных'
+        return ph1, ph2
 
     def get_days_count_wildman(self):
         return self.wildman_days_count

@@ -43,8 +43,3 @@ def find_tasks_benefit(value_1_pul, value_1_xp, value_2_pul, value_2_xp, value_3
     print()
     print(f'{rez_1=}, {rez_2=}, {rez_3=}')
     return rez_1, rez_2, rez_3
-
-
-def visualization_lvl_result(list_lvl):
-    rezult = list_lvl[0]
-    print(f"{list_lvl}")

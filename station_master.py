@@ -1,8 +1,10 @@
 """ Точки для отладки в press_en()"""
+import os
 from time import sleep
 
 import fun
 import find_img
+import os_action
 import solid_memory
 import create_and_analiz_task_img
 
@@ -69,6 +71,8 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     count_mob_identified = 0
     cycle = True
     result = None
+    phrase = ''
+    to_say = False # Поменять на True если фраза не пуста
     while not battle_end:
         if add_up:
             while not mob_identified and count_mob_identified <= 3:
@@ -100,24 +104,39 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                 if name2_spy and cycle:
                     cycle = False
                     mob_identified = 'spy'
-                    print(c_t.tc_magenta('шпион пойман'))
+                    phrase = 'шпион пойман'
+                    to_say = True
+                    print(c_t.tc_magenta(text=phrase))
+
 
                 if name3_smuggler and cycle:
                     cycle = False
                     mob_identified = 'smuggler'
-                    print(c_t.tc_magenta('контрабандист пойман'))
+                    phrase = 'контрабандист пойман'
+                    to_say = True
+                    print(c_t.tc_magenta(text=phrase))
 
                 if name4_arachne and cycle:
                     cycle = False
                     mob_identified = 'arachne'
                     if tour:
                         Hero.app_arachne(Activ.hero_activ)
-                    print(c_t.tc_magenta(f'{Hero.get_qty_arachne(Activ.hero_activ)} арахна'))
+                    ph1 = 'арахна'
+                    ph2 = Hero.get_qty_arachne(Activ.hero_activ)
+                    print(type(ph2))
+                    phrase = f'{ph2} {ph1} '
+                    to_say = True
+                    print(c_t.tc_magenta(text=phrase))
 
                 if name5_wildman and cycle:
                     cycle = False
                     mob_identified = "wildman"
-                    print(f'{c_t.tc_magenta("дикарь пойман")}, {Hero.get_report_wildman_now(Activ.hero_activ)}')
+                    ph1 = "дикарь пойман"
+                    ph2 = Hero.get_report_wildman_now(Activ.hero_activ)
+                    text = f'{c_t.tc_magenta(ph1)},{c_t.tc_yellow(str(ph2[0]))}, {c_t.tc_green(ph2[1])}'
+                    phrase = ph1 + str(ph2[0]) + ph2[1]
+                    to_say = True
+                    print(text)
 
                 if name6_kikimora and cycle:
                     cycle = False
@@ -131,8 +150,15 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     mob_identified = 'raptor'
                     if tour:
                         Hero.app_raptor(Activ.hero_activ)
-                    print(c_t.tc_magenta(f'{Hero.get_qty_raptor(Activ.hero_activ)} ящер'))
+                    ph1 = Hero.get_qty_raptor(Activ.hero_activ)
+                    ph2 = 'ящер'
+                    phrase = ph1, ph2
+                    to_say = True
+                    print(c_t.tc_magenta(f'{ph1} {ph2}'))
 
+                if to_say:
+                    tools.sounds.say_txt(phrase=phrase)
+                    to_say = False
                 # нужен ли тут этот блок?
                 name1_grey_rat = find_img.find_name1_grey_rat()
                 name1_white_rat = find_img.find_name1_white_rat()
@@ -282,8 +308,12 @@ def press_en(*, task_number, pos, value_energy):  #
 
         if Hero.get_qty_wildman(Activ.hero_activ) == 'x':
             Hero.zero_wildman(Activ.hero_activ)
-
-        print(Hero.get_report_wildman_now(Activ.hero_activ))
+        ph2 = Hero.get_report_wildman_now(Activ.hero_activ)
+        if ph2[1]:
+            text = f'{c_t.tc_yellow(str(ph2[0]))}, {c_t.tc_green(ph2[1])}'
+        else:
+            text = f'{c_t.tc_yellow(str(ph2[0]))}'
+        print(text)
         if Hero.get_wildman_count(Activ.hero_activ) != 0:
             print(tools.report_wildman(hero=Activ.hero_activ))
         else:
@@ -312,8 +342,23 @@ def task_analysis(img1, img2, region):
     fun.vizit_to_station_master()
     # print(f'{img1=}')
     # print(f'{img2=}')
+
+    img1_alt_split = img1.split('.')
+    img1_alt_split[0] += 'event'
+    img1_alt = '.'.join(img1_alt_split)
+
+    img2_alt_split = img2.split('.')
+    img2_alt_split[0] += 'event'
+    img2_alt = '.'.join(img2_alt_split)
+
     variant1 = find_img.find_img_param(path_name=img1, confidence=conf_, region=region)
+    img_1a = os_action.check_folder_or_file(my_path=img1_alt)
+    if not variant1 and img_1a:
+        variant1 = find_img.find_img_param(path_name=img1_alt, confidence=conf_, region=region)
     variant2 = find_img.find_img_param(path_name=img2, confidence=conf_, region=region)
+    img_2a = os_action.check_folder_or_file(my_path=img2_alt)
+    if not variant2 and img_2a:
+        variant2 = find_img.find_img_param(path_name=img2_alt, confidence=conf_, region=region)
     if variant1:
         price_task = fun.extraction_digit(item=img1)
         val_1 = variant1
@@ -372,7 +417,7 @@ def option_task_money():
             tools.sounds.say_txt('Возможно собрана коллекция')
             tent_open = fun.find_link_station_master_alt()
 
-        region_1, region_2, region_3 = fun.get_areas_task_big()
+        region_1, region_2, region_3 = fun.get_full_areas_task()
 
         variant1, price_task1 = task_analysis(F'{path}{task[0]}', F'{path}{task[1]}', region_1)
         tools.Mouse.move(pos=variant1)
@@ -405,9 +450,11 @@ def option_task_money():
 
             conf_ = 0.95
             if not analiz:
-                path = create_and_analiz_task_img.get_screenshot_task_big()
-                print(c_t.tc_cyan(
-                    f'Для ручного выбора результат "C:/python/bot_ocr1/{path}" '))
+                path = create_and_analiz_task_img.get_imgs_task_big_manual_select()
+                full_path = f'C:/python/bot_ocr1/{path}'
+                print(c_t.tc_cyan(f'Для ручного выбора результат "{full_path}" '))
+                os.startfile(full_path)
+                #
                 number_tasks = 1
                 energy_availability = 0
                 return

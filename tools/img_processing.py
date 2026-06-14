@@ -18,4 +18,12 @@ def crop_shoulder_straps():
     return
 
 
-# crop_shoulder_straps()
+def get_size_img(*, name_img):
+    """
+    Получение размеров картинки.
+    :param name_img: Путь/имя картинки.
+    :return: Ширина, высота.
+    """
+    img = Image.open(name_img)
+    width, height = img.size
+    return width, height
