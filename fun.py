@@ -3,10 +3,6 @@ import builtins
 import inspect
 from time import sleep, time
 
-# from icecream import ic
-# ic.configureOutput(includeContext=True)
-# print = ic
-
 import find_img
 import fun_down
 import heroes
@@ -72,7 +68,31 @@ def wait_and_stop_img(*, name_img, region: tuple[int, int, int, int] | None = No
     return img_1
 
 
-def my_log_file(text):
+def pr_in_file(*, text, mod_name='smol'):
+    # pass
+    date_ = tools.date_now()
+    time_ = tools.time_now()
+    date_time = f'{date_} {time_}'
+    path_file = b_p.log_path
+    os_action.create_folder(path=path_file)
+    file_name_v = f'{date_} {mod_name}.txt'
+    try:
+        with open(path_file + str(file_name_v), 'a+', encoding='utf-8') as file_2:
+            # Операции с файлом
+            write_text = f'{date_time} {text} \n'
+            file_2.write(write_text)  # Добавление данных в конец
+    except FileNotFoundError:
+        # Если файл не найден, выводим сообщение об ошибке
+        builtins.print(f"Файл '{file_2}' не найден!")
+    except IOError:
+        # Если возникает ошибка ввода-вывода, выводим сообщение об ошибке
+        builtins.print(f"Произошла ошибка ввода-вывода при чтении {file_name_v} файла!")
+    except Exception as e:
+        # Обработка других неожиданных исключений
+        builtins.print(f"При обработке файла {file_name_v} произошла неожиданная ошибка: {e}")
+
+
+def my_log_file(text, mod_name=''):
     date_ = tools.date_now()
     time_ = tools.time_now()
     date_time = f'{date_} {time_}'
@@ -81,7 +101,6 @@ def my_log_file(text):
     file_name = date_ + ".txt"
     file_1 = open('txt/log/' + str(file_name), 'a+', encoding='utf-8')
     try:
-        # print = print()
         builtins.print(date_time, text, file=file_1)
     except FileNotFoundError:
         # Если файл не найден, выводим сообщение об ошибке
@@ -772,7 +791,7 @@ def log_with_caller(message=None) -> str:
 
 
 def pos_parking():
-    m_g = find_img.find_my_game2()
+    m_g = find_img.find_park_point()
     x, y = m_g
     y -= 40
     parking = x, y

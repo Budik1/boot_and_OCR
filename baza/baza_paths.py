@@ -37,6 +37,8 @@ img_token = 'img/temp/test/'
 check_list_directory = [log_path, result_round_full, result_round_p, result_round_p_full, result_round_temp, img_token, danger
                         ]
 
+loot_gift_box = 'img/default/tonelli/loot_gift_box'
+
 arena_object = 'img/default/arena/'
 list_work_directory = [
     # arena

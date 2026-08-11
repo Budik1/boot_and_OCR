@@ -41,6 +41,7 @@ cansel_png = 'img/default/overall/cancel.png'
 setting_png = 'img/default/overall/setting.png'
 info_png = 'img/default/overall/info.png'
 my_game2_png = 'img/default/overall/my_game2.png'
+park_point = 'img/default/overall/park_point.png'
 button_expand_png = 'img/default/overall/button_expand.png'
 
 # main item
@@ -54,6 +55,8 @@ vektor_up_red = 'img/temp/vektor_up_red_7x18.jpg'
 # station_master
 station_master_png = 'img/default/station_master/any/station_master.png'
 work_b_png = 'img/default/station_master/any/work_b.png'
+
+
 
 # tents_R
 b_vip_png = 'img/default/tents_R/b_vip.png'

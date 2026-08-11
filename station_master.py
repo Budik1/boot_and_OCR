@@ -13,16 +13,18 @@ import heroes
 from tools import color_text as c_t
 from heroes import Hero, Activ
 
+
 conf_ = 0.95
 par_conf = 0.799
 conf_mobs = 0.99
 energy_availability = 1
 number_tasks = 1
 variable = None
+target_name = 'smol'
 
 find = {
     'name': 'def',
-    'name_kikimora': find_img.find_name_kikimora(),
+    'name_kikimora': find_img.find_name6_kikimora(),
 }
 
 
@@ -51,7 +53,6 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     battle_end = find_img.find_b_battle_end(confidence_param=par_conf)
     skip_battle = find_img.find_skip_battle()
     dog = find_img.find_dog_2(par_conf_=0.79)
-    # print(f'{dog=}')
 
     name1_grey_rat = find_img.find_name1_grey_rat()
     name1_white_rat = find_img.find_name1_white_rat()
@@ -61,7 +62,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     name3_smuggler = find_img.find_name3_smuggler()
     name4_arachne = find_img.find_name4_arachne()
     name5_wildman = find_img.find_name5_wildman()
-    name6_kikimora = find_img.find_name_kikimora()
+    name6_kikimora = find_img.find_name6_kikimora()
     name7_raptor = find_img.find_name7_raptor()
 
     duration_fight = 0
@@ -81,40 +82,55 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     cycle = False
                     mob_identified = 'grey_rat'
                     Hero.app_rat(Activ.hero_activ)
-                    print(c_t.tc_magenta(f'{Hero.get_qty_grey_rat(Activ.hero_activ)} серая крыса'))
+                    text = f'{Hero.get_qty_grey_rat(Activ.hero_activ)} серая крыса'
+                    print(c_t.tc_magenta(text=text))
+                    fun.pr_in_file(text=text, mod_name=target_name)
 
                 if name1_black_rat and cycle:
                     cycle = False
                     mob_identified = 'black_rat'
-                    print(c_t.tc_magenta('черная крыса'))
+                    text = 'черная крыса'
+                    print(c_t.tc_magenta(text=text))
+                    fun.pr_in_file(text=text, mod_name=target_name)
 
                 if name1_white_rat and cycle:
                     cycle = False
                     mob_identified = 'white_rat'
                     # увеличение счетчика
                     Hero.app_white_rat(Activ.hero_activ)
-                    print(c_t.tc_magenta(f'{Hero.get_qty_white_rat(Activ.hero_activ)} белая крыса'))
-                    print(tools.report_white_rat(hero=Activ.hero_activ))
+                    text_1 = f'{Hero.get_qty_white_rat(Activ.hero_activ)} белая крыса'
+                    print(c_t.tc_magenta(text=text_1))
+                    fun.pr_in_file(text=text_1, mod_name=target_name)
+                    text_2_c = tools.report_white_rat_c(hero=Activ.hero_activ)
+                    text_2_g = tools.report_white_rat_bw(hero=Activ.hero_activ)
+
+                    print(text_2_c)
+                    fun.pr_in_file(text=text_2_g, mod_name=target_name)
 
                 if name1_sand_rat and cycle:
                     cycle = False
                     mob_identified = 'sand_rat'
-                    print(c_t.tc_magenta('песчаная крыса'))
+                    text = 'песчаная крыса'
+                    print(c_t.tc_magenta(text=text))
+                    fun.pr_in_file(text=text, mod_name=target_name)
 
                 if name2_spy and cycle:
                     cycle = False
                     mob_identified = 'spy'
                     phrase = 'шпион пойман'
                     to_say = True
-                    print(c_t.tc_magenta(text=phrase))
 
+                    print(c_t.tc_magenta(text=phrase))
+                    fun.pr_in_file(text=phrase, mod_name=target_name)
 
                 if name3_smuggler and cycle:
                     cycle = False
                     mob_identified = 'smuggler'
                     phrase = 'контрабандист пойман'
                     to_say = True
+
                     print(c_t.tc_magenta(text=phrase))
+                    fun.pr_in_file(text=phrase, mod_name=target_name)
 
                 if name4_arachne and cycle:
                     cycle = False
@@ -123,27 +139,31 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                         Hero.app_arachne(Activ.hero_activ)
                     ph1 = 'арахна'
                     ph2 = Hero.get_qty_arachne(Activ.hero_activ)
-                    print(type(ph2))
                     phrase = f'{ph2} {ph1} '
                     to_say = True
                     print(c_t.tc_magenta(text=phrase))
+                    fun.pr_in_file(text=phrase, mod_name=target_name)
 
                 if name5_wildman and cycle:
                     cycle = False
                     mob_identified = "wildman"
                     ph1 = "дикарь пойман"
                     ph2 = Hero.get_report_wildman_now(Activ.hero_activ)
-                    text = f'{c_t.tc_magenta(ph1)},{c_t.tc_yellow(str(ph2[0]))}, {c_t.tc_green(ph2[1])}'
+                    text_c = f'{c_t.tc_magenta(ph1)},{c_t.tc_yellow(str(ph2[0]))}, {c_t.tc_green(ph2[1])}'
                     phrase = ph1 + str(ph2[0]) + ph2[1]
                     to_say = True
-                    print(text)
+                    print(text_c)
+                    fun.pr_in_file(text=phrase, mod_name=target_name)
+
 
                 if name6_kikimora and cycle:
                     cycle = False
                     mob_identified = 'kikimora'
                     if tour:
                         Hero.app_kiki(Activ.hero_activ)
-                    print(c_t.tc_magenta(f'{Hero.get_qty_kiki(Activ.hero_activ)} кикимора'))
+                    text_g = f'{Hero.get_qty_kiki(Activ.hero_activ)} кикимора'
+                    print(c_t.tc_magenta(text_g))
+                    fun.pr_in_file(text=text_g, mod_name=target_name)
 
                 if name7_raptor and cycle:
                     cycle = False
@@ -154,7 +174,9 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     ph2 = 'ящер'
                     phrase = ph1, ph2
                     to_say = True
-                    print(c_t.tc_magenta(f'{ph1} {ph2}'))
+                    text = f'{ph1} {ph2}'
+                    print(c_t.tc_magenta(text=text))
+                    fun.pr_in_file(text=text, mod_name=target_name)
 
                 if to_say:
                     tools.sounds.say_txt(phrase=phrase)
@@ -168,7 +190,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                 name3_smuggler = find_img.find_name3_smuggler()
                 name4_arachne = find_img.find_name4_arachne()
                 name5_wildman = find_img.find_name5_wildman()
-                name6_kikimora = find_img.find_name_kikimora()
+                name6_kikimora = find_img.find_name6_kikimora()
                 name7_raptor = find_img.find_name7_raptor()
 
         if dog_activ:
@@ -193,6 +215,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     mes_pet = f'обнаружение пета {dog=}, {par_conf_pet=}'
                 if log_pet:
                     print(mes_pet)
+                    fun.pr_in_file(text=mes_pet, mod_name=target_name)
         if skip_battle and skip_battle_count:
             duration_fight += 1
         if skip_battle and skip_battle_count and duration_fight == 4:  # нажать "пропустить бой"
@@ -221,7 +244,7 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
         name3_smuggler = find_img.find_name3_smuggler()
         name4_arachne = find_img.find_name4_arachne()
         name5_wildman = find_img.find_name5_wildman()
-        name6_kikimora = find_img.find_name_kikimora()
+        name6_kikimora = find_img.find_name6_kikimora()
         name7_raptor = find_img.find_name7_raptor()
 
         dog = find_img.find_dog_2(par_conf_=0.99)
@@ -293,8 +316,10 @@ def press_en(*, task_number, pos, value_energy):  #
         if value_energy == 7:
             Hero.app_raptor(Activ.hero_activ)
 
-        tools.display_report_energy_now(vers_in_print=vers_in_print,
-                                        value_energy=value_energy)
+        text_report_color = tools.report_energy_now_color(vers_in_print=vers_in_print, value_energy=value_energy)
+        print(text_report_color)
+        text_report_bw = tools.report_energy_now_bw(vers_in_print=vers_in_print, value_energy=value_energy)
+        fun.pr_in_file(text=text_report_bw, mod_name=target_name)
         solid_memory.save_all_state_config_json(info=False)
         # Жду появления кнопки "пропустить бой"
         wait_skip_battle_button()
@@ -308,16 +333,21 @@ def press_en(*, task_number, pos, value_energy):  #
 
         if Hero.get_qty_wildman(Activ.hero_activ) == 'x':
             Hero.zero_wildman(Activ.hero_activ)
-        ph2 = Hero.get_report_wildman_now(Activ.hero_activ)
-        if ph2[1]:
-            text = f'{c_t.tc_yellow(str(ph2[0]))}, {c_t.tc_green(ph2[1])}'
+        ph2_0, ph2_1 = Hero.get_report_wildman_now(Activ.hero_activ)
+        if ph2_1:
+            text = f'{c_t.tc_yellow(str(ph2_0))}, {c_t.tc_green(ph2_1)}'
         else:
-            text = f'{c_t.tc_yellow(str(ph2[0]))}'
+            text = f'{c_t.tc_yellow(str(ph2_0))}'
         print(text)
+        fun.pr_in_file(text=f'{ph2_0}, {ph2_1}', mod_name=target_name)
         if Hero.get_wildman_count(Activ.hero_activ) != 0:
-            print(tools.report_wildman(hero=Activ.hero_activ))
+            text_c = tools.report_wildman_c(hero=Activ.hero_activ)
+            text_bw = tools.report_wildman_bw(hero=Activ.hero_activ)
+            print(text_c)
+            fun.pr_in_file(text=text_bw, mod_name=target_name)
         else:
             print()
+            fun.pr_in_file(text='', mod_name=target_name)
         sleep(1)
         close = find_img.find_close()
         while close:
@@ -439,13 +469,18 @@ def option_task_money():
             press_en(task_number=3, pos=region_3, value_energy=price_task3)
 
         if variant1 == variant2 == variant3:
-            print(F'confidence={conf_}')
+            text = F'confidence={conf_}'
+            print(text)
+            fun.pr_in_file(text=text, mod_name=target_name)
+
             conf_ -= 0.005
             conf_ = round(conf_, 3)
 
         if conf_ <= 0.935:
             # # получение картинки
-            print('Попытка прочитать аппаратно')
+            text = 'Попытка прочитать аппаратно'
+            print(text)
+            fun.pr_in_file(text=text, mod_name=target_name)
             analiz = create_and_analiz_task_img.search_and_create_img_best_offer(person_identified=True)
 
             conf_ = 0.95
@@ -491,7 +526,9 @@ def option_task_line(*, task_line):
         # нужно получить значение потраченной энергии
         en_value = create_and_analiz_task_img.get_energy_value_in_line(line=task_line - 1)
         press_en(task_number=task_line, pos=region, value_energy=en_value)
-    print(c_t.tc_green(' Задания выполнены'))
+    text_g = ' Задания выполнены'
+    print(c_t.tc_green(text=text_g))
+    fun.pr_in_file(text=text_g, mod_name=target_name)
     number_tasks = 1
     energy_availability = 1
     close = find_img.find_close()

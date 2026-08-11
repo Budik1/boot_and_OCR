@@ -28,9 +28,9 @@ def cr_mark_img():
     """
     target_img = 'заглушка'
     img_dict = {
-        'img/mark_scale/corner/mark_left.png': (-423, 113, 19, 5, (), find_img.find_my_game2()),
-        'img/mark_scale/corner/mark_right.png': (322, 113, 19, 5, (), find_img.find_my_game2()),
-        'img/mark_scale/corner/mark_right_II.png': (322, 113, 19, 5, (), find_img.find_my_game2()),
+        'img/mark_scale/corner/mark_left.png': (-423, 113, 19, 5, (), find_img.find_park_point()),
+        'img/mark_scale/corner/mark_right.png': (322, 113, 19, 5, (), find_img.find_park_point()),
+        'img/mark_scale/corner/mark_right_II.png': (322, 113, 19, 5, (), find_img.find_park_point()),
 
     }
     # target_img = 'img/temp/test/token.png'
@@ -124,9 +124,9 @@ name_pers = ''
 # Создание :img/{caliber}/person/hero_id/gady/menu_acc_her_gadya.png
 def silent_creation_mode():
     img_dict = {
-        'img/test/mark/mark_left.png': (-423, 113, 19, 5, (), find_img.find_my_game2()),
-        'img/test/mark/mark_right.png': (322, 113, 19, 5, (), find_img.find_my_game2()),
-        'img/mark_scale/mark_right_II.png': (322, 113, 19, 5, (), find_img.find_my_game2()),
+        'img/test/mark/mark_left.png': (-423, 113, 19, 5, (), find_img.find_park_point()),
+        'img/test/mark/mark_right.png': (322, 113, 19, 5, (), find_img.find_park_point()),
+        'img/mark_scale/mark_right_II.png': (322, 113, 19, 5, (), find_img.find_park_point()),
     }
     key = 'img/mark_scale/mark_right_II.png'
     x, y = img_dict[key][5]

@@ -5,6 +5,7 @@ import find_img
 import fun
 import tools.sounds
 import person
+import tools
 
 
 # Создание картинок значения энергии.
@@ -22,8 +23,8 @@ def energy_img():
         name_img = f'img/station_master/energy_value/{img_}'
         en = fun.locCenterImg(name_img, confidence=0.95)
         if en:
-            fun.Mouse.move(pos=pos_mark, speed=1)
-            fun.Mouse.move(pos=en, speed=1)
+            tools.Mouse.move(pos=pos_mark, speed=1)
+            tools.Mouse.move(pos=en, speed=1)
             print(c_t.tc_green(img_))
     # если не видно - создать
     ask = input('Всё увидел (y/n): ')
@@ -294,12 +295,10 @@ def cr_arena_img():
 
 def mob_name(name=None):
     print(c_t.tc_green('cr_name_mob_img.mob_name'))
-    skip_battle = fun.locCenterImg('img/overall/skip_battle.png')
-    skip_battle1 = fun.locCenterImg('img/skip_battle.png')
-    print(f'{skip_battle1=}')
-    print(f'{skip_battle=}')
+
+    skip_battle = find_img.find_skip_battle()
     while not skip_battle:
-        skip_battle = fun.locCenterImg('img/overall/skip_battle.png')
+        skip_battle = find_img.find_skip_battle()
     if skip_battle:
         x, y = skip_battle
         x += 70
@@ -312,7 +311,7 @@ def mob_name(name=None):
         x_demo += change_x
         y_demo += change_y
         # fun.mouse_move(pos=(x_demo, y_demo))
-        fun.foto(f'img/tonelli/mobi/{name}.png', (x, y, change_x, change_y))
+        fun.foto(f'img/default/tonelli/mobi/{name}11.png', (x, y, change_x, change_y))
 
 
 def mob_id(name):
@@ -320,12 +319,9 @@ def mob_id(name):
     q_print = 1
     con = 0.99
     print(f'поиск {name}')
-    skip_battle = fun.locCenterImg('img/overall/skip_battle.png')
-    # skip_battle1 = fun.locCenterImg('img/skip_battle.png')
-    # print(f'{skip_battle=}')
+    skip_battle = find_img.find_skip_battle()
     while not skip_battle:
-        skip_battle = fun.locCenterImg('img/overall/skip_battle.png')
-        # skip_battle1 = fun.locCenterImg('img/skip_battle.png')
+        skip_battle = find_img.find_skip_battle()
         if q_print > 0:
             print(f'{skip_battle=}')
         q_print -= 1
@@ -333,59 +329,59 @@ def mob_id(name):
     # sleep(2)
     # 1
     # серая *
-    name_gray_rat = fun.locCenterImg('img/tonelli/mobi/name1_grey_rat.png', confidence=con)
+    name_gray_rat = find_img.find_name1_grey_rat()
     # черная *
-    name_black_rat = fun.locCenterImg('img/tonelli/mobi/name1_black_rat.png', confidence=con)
+    name_black_rat = find_img.find_name1_black_rat()
     # белая *
-    name_white_rat = fun.locCenterImg('img/tonelli/mobi/name1_white_rat.png', confidence=con)
+    name_white_rat = find_img.find_name1_white_rat()
     # песчаная *
-    name_sand_rat = fun.locCenterImg('img/tonelli/mobi/name1_sand_rat.png', confidence=con)
+    name_sand_rat = find_img.find_name1_sand_rat()
     # 2 шпион
-    name_spy = fun.locCenterImg('img/tonelli/mobi/name2_spy.png', confidence=con)
+    name_spy = find_img.find_name2_spy()
     # 3 контра
-    name_smuggler = fun.locCenterImg('img/tonelli/mobi/name3_smuggler.png', confidence=con)
+    name_smuggler = find_img.find_name3_smuggler()
     # 4 паук
-    name_arachne = fun.locCenterImg('img/tonelli/mobi/name4_arachne.png', confidence=con)
+    name_arachne = find_img.find_name4_arachne()
     # 5 дикарь *
-    name_wildman = fun.locCenterImg('img/tonelli/mobi/name5_wildman.png', confidence=con)
+    name_wildman = find_img.find_name5_wildman()
     # 6 кикимора *
-    name_kiki = fun.locCenterImg('img/tonelli/mobi/name6_kikimora.png', confidence=con)
+    name_kiki = find_img.find_name6_kikimora()
     # 7 ящер *
-    name_raptor = fun.locCenterImg('img/tonelli/mobi/name7_raptor.png', confidence=con)
+    name_raptor = find_img.find_name7_raptor()
 
     # 1 серая
     if name_gray_rat:
-        fun.Mouse.move(pos=name_gray_rat, speed=0.5)
+        tools.Mouse.move(pos=name_gray_rat, speed=0.5)
         print('серая крыса поймана')
         return
     # 1 белая
     elif name_white_rat:
-        fun.Mouse.move(pos=name_white_rat, speed=0.5)
+        tools.Mouse.move(pos=name_white_rat, speed=0.5)
         print('белая крыса поймана')
         return
     # 1 черная
     elif name_black_rat:
-        fun.Mouse.move(pos=name_black_rat, speed=0.5)
+        tools.Mouse.move(pos=name_black_rat, speed=0.5)
         print('черная крыса поймана')
         return
     # 1 песчаная
     elif name_sand_rat:
-        fun.Mouse.move(pos=name_sand_rat, speed=0.5)
+        tools.Mouse.move(pos=name_sand_rat, speed=0.5)
         print('песчаная крыса поймана')
         return
     # 2 шпион
     elif name_spy:
-        fun.Mouse.move(pos=name_spy, speed=0.5)
+        tools.Mouse.move(pos=name_spy, speed=0.5)
         print('шпион пойман')
         return
     # 3 контра
     elif name_smuggler:
-        fun.Mouse.move(pos=name_smuggler, speed=0.5)
+        tools.Mouse.move(pos=name_smuggler, speed=0.5)
         print('контра пойман')
         return
     # 4 паук
     elif name_arachne:
-        fun.Mouse.move(pos=name_arachne, speed=0.5)
+        tools.Mouse.move(pos=name_arachne, speed=0.5)
         print('арахна пойман')
         return
     # 5 дикарь
@@ -400,11 +396,11 @@ def mob_id(name):
     elif name_raptor:
         print('ящер пойман')
         return
-    # создание картинки
     else:
+        # создание картинки
         print('моб не опознан')
         mob_name(name)
-        print(f'результат "img/tonelli/mobi/{name}"')
+        print(f'результат "img/default/tonelli/mobi/{name}11.png"')
         return
 
 
@@ -563,7 +559,7 @@ def event_entry_img():
 
 # event_entry_img()
 # hero_img()
-name_id_station()
+# name_id_station()
 
 # cr_arena_img()
 
@@ -575,7 +571,7 @@ name_id_station()
 # mob_id(name='name1_grey_rat')
 # mob_id(name='name1_black_rat')
 # mob_id(name='name1_white_rat')
-# mob_id(name='name1_sand_rat')
+mob_id(name='name1_sand_rat')
 
 ## mob_id(name='name4_arachne')
 # mob_id(name='name5_wildman')

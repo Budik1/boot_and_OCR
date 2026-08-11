@@ -38,7 +38,7 @@ def fashion():
         """
     name_create_img = 'img/overall/link_money_token.png'
     show_move = True
-    pos_start = find.find_my_game2()
+    pos_start = find.find_park_point()
     # показать привязку
     tools.Mouse.move(pos=pos_start, speed=1)
     # найдем верхний угол
@@ -500,6 +500,6 @@ def fashion111():
     print(f'ok {name_create_img} {pos=}')
     return
 
-# info_img()
+info_img()
 # energy_img()
 # fashion111()

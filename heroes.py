@@ -555,7 +555,7 @@ mara.bypass = b_d.bypass_mara
 list_all_state = [{}, {}, {}]  #
 list_kv_state2 = [{}, {}, {}]  #
 list_kv_state = [{}, {}, {}]
-hero_dict = {'Gady': gady, 'Gavr': gavr, 'Mara': mara, }
+hero_dict = {'Gady': gady } #  , 'Gavr': gavr, 'Mara': mara,
 #
 dict_all_state = {}
 dict_kv_state = {}

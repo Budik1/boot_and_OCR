@@ -10,10 +10,12 @@ import solid_memory
 import station_master
 import tools
 import find_img
+
 from t import gift_station_service
 
 from tools import color_text as c_t
 from baza import baza_dannyx as b_d
+import baza.baza_paths as b_p
 from baza.baza_paths import actual_caliber_folder
 from heroes import Hero, Activ
 
@@ -101,7 +103,7 @@ def event_gifts():
         # name_crop_img = fun.date_time_now()
         name_her = Hero.get_name_id(Activ.hero_activ)
         # name_img = f'img/tonelli/loot_gift_box/big/{name_her}/{date_time}.png'
-        name_img = f'img/tonelli/loot_gift_box/big/buf/{name_file_date_time}.png'
+        name_img = f'{b_p.loot_gift_box}/big/buf/{name_file_date_time}.png'
         # проверить наличие
         name_loot = gift_station_service.check_loot(name_hero_dir=name_her)
         if not name_loot:

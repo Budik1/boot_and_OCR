@@ -241,8 +241,8 @@ def find_info():
     return info
 
 
-def find_my_game2():
-    actual_path = get_actual_path(path=p_i.my_game2_png)
+def find_park_point():
+    actual_path = get_actual_path(path=p_i.park_point)
     pos = fund.locateCenterImg(img=actual_path)
     return pos
 
@@ -432,7 +432,7 @@ def find_name5_wildman():
     return pos
 
 
-def find_name_kikimora():
+def find_name6_kikimora():
     pos = fund.locateCenterImg(img=f'img/{actual_caliber_folder}/tonelli/mobi/name6_kikimora.png')
     return pos
 

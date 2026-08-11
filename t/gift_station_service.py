@@ -1,8 +1,10 @@
 import os
-import fun
-import find_img
 from PIL import Image
 
+import os_action
+import fun
+import find_img
+import baza.baza_paths as b_p
 
 def tests_img_value_energy():
     master = find_img.find_station_master()
@@ -43,9 +45,9 @@ def tenderloin(*, name_fold, name_crop_img):
     :param name_crop_img:
     :return:
     """
-    down_obl = [50, 50, 59, 59, f'img/tonelli/loot_gift_box/big/buf/{name_crop_img}_down.png']
-    up_obl = [25, 5, 88, 30, f'img/tonelli/loot_gift_box/big/buf/{name_crop_img}_up.png']
-    name_open = f'img/tonelli/loot_gift_box/big/buf/{name_crop_img}.png'
+    down_obl = [50, 50, 59, 59, f'{b_p.loot_gift_box}/big/buf/{name_crop_img}_down.png']
+    up_obl = [25, 5, 88, 30, f'{b_p.loot_gift_box}/big/buf/{name_crop_img}_up.png']
+    name_open = f'{b_p.loot_gift_box}/big/buf/{name_crop_img}.png'
     img = Image.open(name_open)
     #  box=(left, upper, right, lower)
     for i in [down_obl, up_obl]:
@@ -68,8 +70,9 @@ def check_loot(*, name_hero_dir):
     :return:
     """
     name_img_ = None
-    directory_big_hero = f'img/tonelli/loot_gift_box/big/{name_hero_dir}'
-    directory_big_all = 'img/tonelli/loot_gift_box/big/all'
+    directory_big_hero = f'{b_p.loot_gift_box}/big/{name_hero_dir}'
+    directory_big_all = f'{b_p.loot_gift_box}/big/all'
+
     list_dir_hero = os.listdir(directory_big_hero)
     list_dir_all = os.listdir(directory_big_all)
     list_dir_general = []
