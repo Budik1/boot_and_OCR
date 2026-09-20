@@ -13,11 +13,16 @@ def save_all_state_config_json(*, info=False):
     time_n = tools.date_and_time_in_name_file()
     path_temp_folder = f'temp_pack/all/{date_n}'
     os_action.create_folder(path=path_temp_folder)
-    path_lst = ['storage/config.json', f'{path_temp_folder}/config_{time_n}.json', b_p.change_json]
+    fold = os_action.check_folder_or_file(my_path=b_p.change_json)
+    if not fold:
+        print('Нет папки сохранения. Создаю))')
+        os_action.create_folder(path=b_p.change_json)
+    path_lst = ['storage/config.json', f'{path_temp_folder}/config_{time_n}.json', f'{b_p.change_json}/config.json']
     for key in heroes.hero_dict:
         heroes.Hero.get_state_all(heroes.hero_dict[key])
     json_data = json.dumps(heroes.list_all_state, ensure_ascii=False)
     for file_name_json in path_lst:
+        print(f'Создаю {file_name_json}')
         write_json_file(file_name=file_name_json, json_data=json_data, info=info)
 
 
@@ -104,7 +109,7 @@ def load_json_file(*, file_name, info=False):
 
 
 def reading_all_state_config(*, info=True):
-    file_name_json = b_p.change_json
+    file_name_json = b_p.retention_all
     rapport = ''
     result = True
     if info:
