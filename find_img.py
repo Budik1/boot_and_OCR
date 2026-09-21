@@ -10,7 +10,7 @@ import fun_down as fund
 
 norm = 0.9
 par_conf = 0.79
-img = None
+# img = None
 
 
 def find_knob():
@@ -40,88 +40,66 @@ def find_close():
 def find_hall_of_glory_tabl():
     actual_path = get_actual_path(path=p_i.hall_of_glory_tabl_png)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_hall_of_glory_icon():
     actual_path = get_actual_path(path=p_i.hall_of_glory_icon_png)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_station_master():
     actual_path = get_actual_path(path=p_i.station_master_png)
     img = fund.locateCenterImg(img=actual_path, confidence=0.91)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_klan():
     actual_path = get_actual_path(path=p_i.klan_png)
     img = fund.locateCenterImg(img=actual_path, confidence=0.9)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_choice_of_the_attacked(*, region: tuple[int, int, int, int] | None = None):
     actual_path = get_actual_path(path=p_i.choice_of_the_attacked_png)
     img = fund.locateCenterImg(img=actual_path, region=region)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_b_exit():
     actual_path = get_actual_path(path=p_i.b_exit_png)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_arena_object(*, region, hero):
     actual_path = get_actual_path(path=f"img/default/arena/{hero}/arena_object.png")
     img = fund.locateCenterImg(img=actual_path, region=region)  # 0.89
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_scroll_up():
     actual_path = get_actual_path(path=p_i.scroll_up_png)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_scroll_down():
     actual_path = get_actual_path(path=p_i.scroll_down_png)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_attack_arena_opponent():
     actual_path = get_actual_path(path=p_i.attack_arena_opponent_png)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_her_gadya():
     actual_path = get_actual_path(path=p_i.gady_id)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
@@ -147,192 +125,144 @@ def find_her_mara():
 def find_work():
     actual_path = get_actual_path(path=p_i.work_b_png)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_work_rest_hour(*, rest):
     actual_path = get_actual_path(path=f'img/default/station_master/work_hour/work_{rest}h.png')
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_exit_kv():
     actual_path = get_actual_path(path=p_i.exit_kv_png)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_kv_close():
     actual_path = get_actual_path(path=p_i.kv_close_png)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_kv_skip_battle():
     actual_path = get_actual_path(path=p_i.kv_skip_battle_png)
     img = fund.locateCenterImg(img=actual_path, confidence=0.85)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_kv_skip_battle_test():
     actual_path = get_actual_path(path=p_i.kv_skip_battle_test_png)
     img = fund.locateCenterImg(img=actual_path, confidence=0.85)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_skip_battle():
     actual_path = get_actual_path(path=p_i.skip_battle_png)
     img = fund.locateCenterImg(img=actual_path, confidence=par_conf)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_kv_danger():
     actual_path = get_actual_path(path=p_i.kv_danger_png)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_victory_battle_in_kv():
     actual_path = get_actual_path(path=p_i.victory_battle_in_kv_png)
     img = fund.locateCenterImg(img=actual_path, confidence=0.95)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_defeat_battle_in_kv():
     actual_path = get_actual_path(path=p_i.defeat_battle_in_kv_png)
     img = fund.locateCenterImg(img=actual_path, confidence=0.95)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_kv_reload():
     actual_path = get_actual_path(path=p_i.kv_reload_png)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_kv_attack_for_money():
     actual_path  = get_actual_path(path=p_i.kv_attack_for_money_png)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_kv_attak():
     actual_path = get_actual_path(path=p_i.kv_attak_png)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_b_vip(*, region_search):
     actual_path = get_actual_path(path=p_i.b_vip_png)
     img = fund.locateCenterImg(img=actual_path, confidence=0.8, region=region_search)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_inspect_tent():
     actual_path = get_actual_path(path=p_i.inspect_tent_png)
     img = fund.locateCenterImg(img=actual_path, confidence=0.8)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_b_tent(*, region_search):
     actual_path  = get_actual_path(path=p_i.b_tent_png)
     img = fund.locateCenterImg(img=actual_path, region=region_search, confidence=0.9)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_setting():
     actual_path = get_actual_path(path=p_i.setting_png)
     img = fund.locateCenterImg(img=actual_path, confidence=0.9)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_station_exit():
     actual_path = get_actual_path(path=p_i.station_exit_png)
     img = fund.locateCenterImg(img=actual_path, confidence=0.9)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_tonelli_attack():
     actual_path = get_actual_path(path=p_i.tonelli_attack_png)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_info():
     actual_path = get_actual_path(path=p_i.info_png)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_park_point():
     actual_path = get_actual_path(path=p_i.park_point)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_button_expand():
     actual_path = get_actual_path(path=p_i.button_expand_png)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_img_param(*, path_name, confidence, region=None):
     actual_path = get_actual_path(path=path_name)
     img = fund.locateCenterImg(img=actual_path, confidence=confidence, region=region)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 
 def find_img(path_img):
     actual_path = get_actual_path(path=path_img)
     img = fund.locateCenterImg(img=actual_path)
-    if not img:
-        print(f'{actual_path=}')
     return img
 
 

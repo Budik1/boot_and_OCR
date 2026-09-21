@@ -30,7 +30,7 @@ def get_energy_line_1_img():
     fun.foto(f'{path_img}{name_img}', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'{path_img}{name_img}')
     tools.Mouse.move(pos=pos)
-    sounds.sound_vic()
+    # sounds.sound_vic()
     print('ok')
 
 
@@ -57,7 +57,7 @@ def get_energy_line_2_img():
     fun.foto(f'{path_img}{name_img}', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'{path_img}{name_img}')
     tools.Mouse.move(pos=pos)
-    sounds.sound_vic()
+    # sounds.sound_vic()
     print('ok')
 
 
@@ -87,7 +87,7 @@ def get_energy_line_3_img():
     fun.foto(f'{path_img}{name_img}', (x, y, change_x, change_y))
     pos = fun.locCenterImg(f'{path_img}{name_img}')
     tools.Mouse.move(pos=pos)
-    sounds.sound_vic()
+    # sounds.sound_vic()
     print('ok')
 
 
@@ -121,7 +121,7 @@ def arial_task():
     fun.foto(f'{path_img}{name_img}', (x, y, change_x, change_y))
     # pos = fun.locCenterImg(f'{path_img}{name_img}')
     # fun.Mouse.move(pos=pos)
-    sounds.sound_vic(block=False)
+    # sounds.sound_vic(block=False)
     print(f'{path_img}{name_img} создан')
     print('ok')
     # print(x, y, change_x, change_y)

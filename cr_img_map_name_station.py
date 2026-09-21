@@ -47,18 +47,21 @@ def img_map_name():
     pos_start = find_img.find_station_exit()
 
     map_dict = {
-        'img/tonelli/station_exit.png': (522, 555, 249, 35),
-        'img/default/tonelli/map_item/k_Park_kr.png': (-60, 213, 113, 32, 'с фрунзе'),
-        'img/default/tonelli/map_item/k_Park_ganza.png': (-60, 304, 113, 32, 'с Парк-кр'),
-        'img/default/tonelli/map_item/k_Frunze.png': (45, 343, 120, 32, 'с Парк-кр'),
-        'img/default/tonelli/map_item/k_Kiev.png': (-7, 119, 98, 32, 'с Парк-г'),
-        'img/default/tonelli/map_item/k_Kiev_a.png': (-40, 296, 90, 32, 'с Киевской'),
-        'img/default/tonelli/map_item/k_Communist.png': (46, 352, 120, 32, 'с фрунзе'),
         'img/default/tonelli/map_item/k_Sport.png': (46, 413, 110, 31, 'с фрунзе'),
+        'img/default/tonelli/map_item/k_Univer.png': (46, 465, 120, 32, 'с Спортивной'),
+        'img/default/tonelli/map_item/k_Pr-kt_Vernadskogo.png': (46, 517, 200, 32),
+        'img/default/tonelli/map_item/k_Frunze.png': (45, 373, 120, 32, 'с Парк-кр'),
+        'img/default/tonelli/map_item/k_Kropotkin.png': (140, 235, 145, 32),
+        'img/default/tonelli/map_item/k_Park_ganza.png': (-60, 334, 113, 32, 'с Парк-кр'),
+        'img/default/tonelli/map_item/k_Park_kr.png': (-60, 273, 113, 32, 'с фрунзе'),
+        'img/default/tonelli/map_item/k_Kiev.png': (-7, 179, 98, 32, 'с Парк-г'),
+        'img/default/tonelli/map_item/k_Kiev_a.png': (-40, 326, 90, 32, 'с Киевской'),
 
-        'img/default/tonelli/map_item/k_Univer.png': (46, 404, 120, 32, 'с Коммун'),
-        'img/default/tonelli/map_item/k_Pr-kt_Vernadskogo.png': (46, 456, 200, 32),
-        'img/default/tonelli/map_item/k_Kropotkin.png': (140, 205, 145, 32),
+        'img/tonelli/station_exit.png': (522, 555, 249, 35),
+
+
+        'img/default/tonelli/map_item/k_Communist.png': (46, 352, 120, 32, 'с фрунзе'),
+
         'img/default/tonelli/map_item/k_Biblioteka.png': (-28, 179, 200, 32, 'с кропот'),
         'img/default/tonelli/map_item/k_Borov.png': (243, 244, 110, 32, 'с Biblioteka'),
         'img/default/tonelli/map_item/k_Polyanka.png': (192, 352, 80, 32, 'с Borov'),
@@ -85,58 +88,114 @@ def img_map_name():
     }
 
     alt_name_create_img = 'img/temp/token.png'
-    name_create_img = 'img/default/tonelli/map_item/k_Sport.png'
-    # # собственно создание снимка
-    if name_create_img == 'img/temp/token.png':
-        # показать привязку
-        key = 'img/default/tonelli/map_item/k_Sport.png'
-        # найдем верхний угол
-        print(type(pos_start))
-        x, y = pos_start
-        print(x, y)
-        tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
-        x += map_dict[key][0]
-        y += map_dict[key][1]
-        # tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
-
-        # # # найдем нижний угол
-        x_demo, y_demo = x, y
-        change_x = map_dict[key][2]
-        change_y = map_dict[key][3]
-        x_demo += change_x
-        y_demo += change_y
-        # fun.Mouse.move(pos=(x_demo, y_demo), show=show_move)
+    path_img = 'img/default/tonelli/map_item/'
+    name_create_img = f'{path_img}k_Kiev_a.png'
+    x, y = pos_start
+    # tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
+    x += map_dict[name_create_img][0]
+    y += map_dict[name_create_img][1]
+    # # найдем нижний угол
+    x_demo, y_demo = x, y
+    change_x = map_dict[name_create_img][2]
+    change_y = map_dict[name_create_img][3]
+    x_demo += change_x
+    y_demo += change_y
+    q = input(f"{name_create_img} сохранить?(y/n) Или сделать {alt_name_create_img} (t): ")
+    if q == 'y':
         fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
         print(f'{name_create_img} сделано')
+    elif q == 't':
+        fun.foto(f'{alt_name_create_img}', (x, y, change_x, change_y))
+        print(f'{alt_name_create_img} сделано')
     else:
-        x, y = pos_start
-        tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
-        x += map_dict[name_create_img][0]
-        y += map_dict[name_create_img][1]
-        # # найдем нижний угол
-        x_demo, y_demo = x, y
-        change_x = map_dict[name_create_img][2]
-        change_y = map_dict[name_create_img][3]
-        x_demo += change_x
-        y_demo += change_y
-        q = input(f"{name_create_img} сохранить?(y/n) Или сделать {alt_name_create_img} (t): ")
-        if q == 'y':
-            fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
-            print(f'{name_create_img} сделано')
-        elif q == 't':
-            fun.foto(f'{alt_name_create_img}', (x, y, change_x, change_y))
-            print(f'{alt_name_create_img} сделано')
-        else:
-            pass
-    pos = fun.locCenterImg(f'{name_create_img}')
+        pass
+    # pos = fun.locCenterImg(f'{name_create_img}')
     # fun.Mouse.move(pos=pos)
-    sounds.sound_vic()
+    # sounds.sound_vic()
     # print(f'{name_create_img} сделано')
     # check_img(name=name_create_img)
     return
 
-# 'img/default/tonelli/station_exit.png'
-# 'img/default/tonelli/station_exit.png'
+
+def name_id_station():
+    """
+    Добавить название файла в конец списка.
+    Создать(заменить) файл
+           """
+    names_list = [
+        'img/default/tonelli/id_stations/s_Communist.png',
+        'img/default/tonelli/id_stations/s_Frunze.png',
+        'img/default/tonelli/id_stations/s_Park_kr.png',
+        'img/default/tonelli/id_stations/s_Park_ganza.png',
+        'img/default/tonelli/id_stations/s_Kiev.png',
+        'img/default/tonelli/id_stations/s_Kropotkin.png',
+        'img/default/tonelli/id_stations/s_Biblioteka.png',
+        'img/default/tonelli/id_stations/s_Borov.png',
+        'img/default/tonelli/id_stations/s_Polyanka.png',
+        'img/default/tonelli/id_stations/s_Chekhov.png',
+        'img/default/tonelli/id_stations/s_Tver.png',
+        'img/default/tonelli/id_stations/s_Pushkin.png',
+        'img/default/tonelli/id_stations/s_Kuzneckiy.png',
+        'img/default/tonelli/id_stations/s_Cvetnoy.png',
+        'img/default/tonelli/id_stations/s_Teatr.png',
+        'img/default/tonelli/id_stations/s_Novokuznec.png',
+        'img/default/tonelli/id_stations/s_Pavelec.png',
+        'img/default/tonelli/id_stations/s_Pavelec_g.png',
+        'img/default/tonelli/id_stations/s_Tretyakov.png',
+        'img/default/tonelli/id_stations/s_Kitay.png',
+        'img/default/tonelli/id_stations/s_Turgenev.png',
+        'img/default/tonelli/id_stations/s_Suxarev.png',
+        'img/default/tonelli/id_stations/s_Prospekt.png',
+        'img/default/tonelli/id_stations/s_Rizgskaya.png',
+        'img/default/tonelli/id_stations/s_Alexs.png',
+        'img/default/tonelli/id_stations/s_VDNX.png',
+
+        'img/default/tonelli/id_stations/s_Kiev.png',
+        'img/default/tonelli/id_stations/s_Park_ganza.png',
+        'img/default/tonelli/id_stations/s_Park_kr.png',
+        'img/default/tonelli/id_stations/s_Frunze.png',
+        'img/default/tonelli/id_stations/s_Sport.png',
+        'img/default/tonelli/id_stations/s_Univer.png',
+        'img/default/tonelli/id_stations/s_Pr-kt_Vernadskogo.png',
+
+    ]
+    test_img = 'img/temp/token.png'
+    # name_create_img = test_img
+    name_create_img = names_list[-1]
+    show_move = False
+    pos_start = find_img.find_info()
+    # показать привязку
+    tools.Mouse.move(pos=pos_start, speed=1, show=show_move)
+    # найдем верхний угол
+    x, y = pos_start
+    x += 80
+    y += 450
+    tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
+    # # найдем нижний угол
+    x_demo, y_demo = x, y
+    change_x = 370
+    change_y = 27
+    x_demo += change_x
+    y_demo += change_y
+    tools.Mouse.move(pos=(x_demo, y_demo), show=show_move)
+    # # собственно создание снимка
+    if name_create_img == test_img:
+        fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
+        # pos = fun.locCenterImg(f'{name_create_img}')
+        # fun.mouse_move(pos=pos)
+        print(f'{test_img} сделано')
+    else:
+        q = input(f"{name_create_img} сохранить? (y/n): ")
+        if q == 'y':
+            fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
+            pos = fun.locCenterImg(f'{name_create_img}')
+            tools.Mouse.move(pos=pos, show=show_move)
+            print('сделано')
+        else:
+            pass
+    # tools.sounds.sound_vic()
+    return
+
 
 def check_img(*, name=None):
     img_check = name
@@ -199,7 +258,5 @@ def entry_img():
     return
 
 
-
-img_map_name()
-
-
+# img_map_name()
+# name_id_station()
