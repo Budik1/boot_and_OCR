@@ -791,7 +791,7 @@ def log_with_caller(message=None) -> str:
 
 
 def pos_parking():
-    m_g = find_img.find_park_point()
+    m_g = find_img.find_info()
     x, y = m_g
     y -= 40
     parking = x, y

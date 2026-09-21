@@ -35,13 +35,5 @@ def dress():
     return
 
 
-dress()
-# pos_x = 460
-# pos_y = 645
-# sh_x = 120
-# sh_y = 30
-# tools.Mouse.move(pos=(pos_x, pos_y))
-# tools.Mouse.move(pos=(pos_x + sh_x, pos_y + sh_y))
-# "C:\python/bot_ocr1\img\default\overall\close.png"
-# name_img = "C:\python/bot_ocr1\img\default\overall\close.png"
-# fun.foto(path_name=name_img, region=(pos_x, pos_y, sh_x, sh_y))
+# dress()
+print(find.find_info())

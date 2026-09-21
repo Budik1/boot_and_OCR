@@ -65,9 +65,9 @@ print(f'{b_p.actual_caliber_folder=}')
 
 def start_gui():
     # Определить наличие файла сохранения
-    state_file = solid_memory.reading_all_state_config(info=True)
+    state_file = solid_memory.reading_all_state_config(info=False)
     if state_file:
-        print('Файл сохранения прочтён.')
+        # print('Файл сохранения прочтён.')
         try:
             solid_memory.setting_updatable_values()
         except KeyError:

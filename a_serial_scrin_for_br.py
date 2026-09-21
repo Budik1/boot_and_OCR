@@ -409,61 +409,68 @@ def name_id_station():
     Добавить название файла в конец списка.
     Создать(заменить) файл
            """
-    names_list = ['img/tonelli/id_stations/s_Pr-kt_Vernadskogo.png',
-                  'img/tonelli/id_stations/s_Univer.png',
-                  'img/tonelli/id_stations/s_Communist.png',
-                  'img/tonelli/id_stations/s_Frunze.png',
-                  'img/tonelli/id_stations/s_Park_kr.png',
-                  'img/tonelli/id_stations/s_Park_ganza.png',
-                  'img/tonelli/id_stations/s_Kiev.png',
-                  'img/tonelli/id_stations/s_Kropotkin.png',
-                  'img/tonelli/id_stations/s_Biblioteka.png',
-                  'img/tonelli/id_stations/s_Borov.png',
-                  'img/tonelli/id_stations/s_Polyanka.png',
-                  'img/tonelli/id_stations/s_Chekhov.png',
-                  'img/tonelli/id_stations/s_Tver.png',
-                  'img/tonelli/id_stations/s_Pushkin.png',
-                  'img/tonelli/id_stations/s_Kuzneckiy.png',
-                  'img/tonelli/id_stations/s_Cvetnoy.png',
-                  'img/tonelli/id_stations/s_Teatr.png',
-                  'img/tonelli/id_stations/s_Novokuznec.png',
-                  'img/tonelli/id_stations/s_Pavelec.png',
-                  'img/tonelli/id_stations/s_Pavelec_g.png',
-                  'img/tonelli/id_stations/s_Tretyakov.png',
-                  'img/tonelli/id_stations/s_Kitay.png',
-                  'img/tonelli/id_stations/s_Turgenev.png',
-                  'img/tonelli/id_stations/s_Suxarev.png',
-                  'img/tonelli/id_stations/s_Prospekt.png',
-                  'img/tonelli/id_stations/s_Rizgskaya.png',
-                  'img/tonelli/id_stations/s_Alexs.png',
-                  'img/tonelli/id_stations/s_VDNX.png',
-                  'img/default/tonelli/id_stations/s_Sport.png'
+    names_list = ['img/default/tonelli/id_stations/s_Pr-kt_Vernadskogo.png',
+                  'img/default/tonelli/id_stations/s_Univer.png',
+                  'img/default/tonelli/id_stations/s_Communist.png',
+                  'img/default/tonelli/id_stations/s_Frunze.png',
+                  'img/default/tonelli/id_stations/s_Park_kr.png',
+                  'img/default/tonelli/id_stations/s_Park_ganza.png',
+                  'img/default/tonelli/id_stations/s_Kiev.png',
+                  'img/default/tonelli/id_stations/s_Kropotkin.png',
+                  'img/default/tonelli/id_stations/s_Biblioteka.png',
+                  'img/default/tonelli/id_stations/s_Borov.png',
+                  'img/default/tonelli/id_stations/s_Polyanka.png',
+                  'img/default/tonelli/id_stations/s_Chekhov.png',
+                  'img/default/tonelli/id_stations/s_Tver.png',
+                  'img/default/tonelli/id_stations/s_Pushkin.png',
+                  'img/default/tonelli/id_stations/s_Kuzneckiy.png',
+                  'img/default/tonelli/id_stations/s_Cvetnoy.png',
+                  'img/default/tonelli/id_stations/s_Teatr.png',
+                  'img/default/tonelli/id_stations/s_Novokuznec.png',
+                  'img/default/tonelli/id_stations/s_Pavelec.png',
+                  'img/default/tonelli/id_stations/s_Pavelec_g.png',
+                  'img/default/tonelli/id_stations/s_Tretyakov.png',
+                  'img/default/tonelli/id_stations/s_Kitay.png',
+                  'img/default/tonelli/id_stations/s_Turgenev.png',
+                  'img/default/tonelli/id_stations/s_Suxarev.png',
+                  'img/default/tonelli/id_stations/s_Prospekt.png',
+                  'img/default/tonelli/id_stations/s_Rizgskaya.png',
+                  'img/default/tonelli/id_stations/s_Alexs.png',
+                  'img/default/tonelli/id_stations/s_VDNX.png',
+                  'img/default/tonelli/id_stations/s_Sport.png',
+
+
+                  'img/default/tonelli/id_stations/s_Kiev.png',
+                  'img/default/tonelli/id_stations/s_Park_ganza.png',
+                  'img/default/tonelli/id_stations/s_Park_kr.png',
+                  'img/default/tonelli/id_stations/s_Frunze.png',
 
                   ]
-    # name_create_img = 'img/test/token.png'
+    test_img = 'img/temp/token.png'
+    # name_create_img = test_img
     name_create_img = names_list[-1]
     show_move = True
     pos_start = find_img.find_info()
     # показать привязку
-    # fun.mouse_move(pos=pos_start, speed=1)
+    tools.Mouse.move(pos=pos_start, speed=1)
     # найдем верхний угол
     x, y = pos_start
     x += 80
     y += 450
-    # fun.mouse_move(pos=(x, y), speed=1, show=show_move)
+    tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
     # # найдем нижний угол
     x_demo, y_demo = x, y
     change_x = 250 + 120
     change_y = 27
     x_demo += change_x
     y_demo += change_y
-    # fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
+    tools.Mouse.move(pos=(x_demo, y_demo), show=show_move)
     # # собственно создание снимка
-    if name_create_img == 'img/test/token.png':
+    if name_create_img == test_img:
         fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
         # pos = fun.locCenterImg(f'{name_create_img}')
         # fun.mouse_move(pos=pos)
-        print('img/test/token.png сделано')
+        print(f'{test_img} сделано')
     else:
         q = input(f"{name_create_img} сохранить? (y/n): ")
         if q == 'y':
@@ -473,7 +480,7 @@ def name_id_station():
             print('сделано')
         else:
             pass
-    tools.sounds.sound_vic()
+    # tools.sounds.sound_vic()
     return
 
 
@@ -559,7 +566,7 @@ def event_entry_img():
 
 # event_entry_img()
 # hero_img()
-# name_id_station()
+name_id_station()
 
 # cr_arena_img()
 
@@ -571,7 +578,7 @@ def event_entry_img():
 # mob_id(name='name1_grey_rat')
 # mob_id(name='name1_black_rat')
 # mob_id(name='name1_white_rat')
-mob_id(name='name1_sand_rat')
+# mob_id(name='name1_sand_rat')
 
 ## mob_id(name='name4_arachne')
 # mob_id(name='name5_wildman')

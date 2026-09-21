@@ -154,6 +154,8 @@ def open_map():
         tools.Mouse.move(pos=pos_run_out, speed=0.1)
     else:
         pos_or1 = find_img.find_info()
+        # print(f"{pos_or1=}")
+        # print(f"{b_d.caliber_percent=}")
         x = pos_or1[0] + (300 * b_d.caliber_percent)
         y = pos_or1[1] + (180 * b_d.caliber_percent)
         pos_run_out = x, y
@@ -161,8 +163,14 @@ def open_map():
     # открыть карту
     tools.Mouse.left_click(pos=pos_run_out)
     # Убрать курсор с поля карты, чтобы ничего не перекрыл
-    station_exit = fun.wait_static_pos(name_img=f'img/{actual_caliber_folder}/tonelli/station_exit.png')
+    station_exit = find_img.find_station_exit()
+    while not station_exit:
+        station_exit = find_img.find_station_exit()
+    # print()
+    # print(f'{station_exit=}')
+    # print()
     tools.Mouse.move(pos=station_exit, speed=0.1)
+
     fun.log_with_caller(message='e')
     return
 
@@ -254,7 +262,7 @@ def poisk(search_object: str, param_confidence: float = 0.99) -> tuple[Point, fl
     pos_search = find_img.find_img_param(path_name=search_object, confidence=param_confidence)
     while pos_search is None:
         param_confidence -= 0.01
-        # print('в поиске станции confidence=', param_confidence)
+        print('в поиске станции confidence=', param_confidence)
         pos_search = find_img.find_img_param(path_name=search_object, confidence=param_confidence)
         # print(pos_search)
     fun.log_with_caller(message='e')
@@ -366,7 +374,8 @@ def move_to_target(*, target_point, rapport=True):
     if start_point != 'станция не опознана':
         route_list = create_route_list(start=start_point, stop=target_point)
     else:
-        print(c_t.tc_red('no start_point'))
+        # print(f'{start_point=}')
+        print(c_t.tc_red('no start_point'), f'{start_point=}')
         return
 
     # движение по маршруту

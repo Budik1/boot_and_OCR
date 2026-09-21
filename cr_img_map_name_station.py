@@ -48,43 +48,43 @@ def img_map_name():
 
     map_dict = {
         'img/tonelli/station_exit.png': (522, 555, 249, 35),
-        'img/tonelli/map_item/k_Park_kr.png': (-60, 213, 113, 32, 'с фрунзе'),
-        'img/tonelli/map_item/k_Park_ganza.png': (-60, 304, 113, 32, 'с Парк-кр'),
-        'img/tonelli/map_item/k_Frunze.png': (45, 343, 120, 32, 'с Парк-кр'),
-        'img/tonelli/map_item/k_Kiev.png': (-7, 119, 98, 32, 'с Парк-г'),
-        'img/tonelli/map_item/k_Kiev_a.png': (-40, 296, 90, 32, 'с Киевской'),
-        'img/tonelli/map_item/k_Communist.png': (46, 352, 120, 32, 'с фрунзе'),
-        'img/default/tonelli/map_item/k_Sport.png': (46, 352, 110, 32, 'с фрунзе'),
+        'img/default/tonelli/map_item/k_Park_kr.png': (-60, 213, 113, 32, 'с фрунзе'),
+        'img/default/tonelli/map_item/k_Park_ganza.png': (-60, 304, 113, 32, 'с Парк-кр'),
+        'img/default/tonelli/map_item/k_Frunze.png': (45, 343, 120, 32, 'с Парк-кр'),
+        'img/default/tonelli/map_item/k_Kiev.png': (-7, 119, 98, 32, 'с Парк-г'),
+        'img/default/tonelli/map_item/k_Kiev_a.png': (-40, 296, 90, 32, 'с Киевской'),
+        'img/default/tonelli/map_item/k_Communist.png': (46, 352, 120, 32, 'с фрунзе'),
+        'img/default/tonelli/map_item/k_Sport.png': (46, 413, 110, 31, 'с фрунзе'),
 
-        'img/tonelli/map_item/k_Univer.png': (46, 404, 120, 32, 'с Коммун'),
-        'img/tonelli/map_item/k_Pr-kt_Vernadskogo.png': (46, 456, 200, 32),
-        'img/tonelli/map_item/k_Kropotkin.png': (140, 205, 145, 32),
-        'img/tonelli/map_item/k_Biblioteka.png': (-28, 179, 200, 32, 'с кропот'),
-        'img/tonelli/map_item/k_Borov.png': (243, 244, 110, 32, 'с Biblioteka'),
-        'img/tonelli/map_item/k_Polyanka.png': (192, 352, 80, 32, 'с Borov'),
-        'img/tonelli/map_item/k_Chekhov.png': (192, 114, 95, 32, 'с Borov'),
-        'img/tonelli/map_item/k_Pushkin.png': (-3, 194, 113, 32, 'с Chekhov'),
-        'img/tonelli/map_item/k_Cvetnoy.png': (50, 157, 130, 32, 'с Chekhov'),
-        'img/tonelli/map_item/k_Teatr.png': (337, 444, 70, 32, 'с Tver'),
-        'img/tonelli/map_item/k_Tver.png': (30, 243, 86, 32, 'с Chekhov'),
-        'img/tonelli/map_item/k_Novokuznec.png': (240, 457, 86, 23, 'с Teatr'),
-        'img/tonelli/map_item/k_Tretyakov.png': (-10, 271, 86, 32, 'с Novokuznec'),
-        'img/tonelli/mark_sever.png': (144, 27, 50, 32),
-        'img/tonelli/mark_yug.png': (144, 487, 50, 32),
-        'img/tonelli/map_item/k_Kuzneckiy.png': (332, 257, 86, 32, 'с Pushkin'),
-        'img/tonelli/map_item/k_Pavelec.png': (296, 361, 100, 32, 'с Pushkin'),
-        'img/tonelli/map_item/k_Pavelec_g.png': (249, 290, 106, 32, 'с Pavelec'),
-        'img/tonelli/map_item/k_Kitay.png': (299, 152, 100, 32, 'с Tretyakov'),
-        'img/tonelli/map_item/k_Turgenev.png': (151, 169, 124, 32, 'с Kitay'),
-        'img/tonelli/map_item/k_Suxarev.png': (173, 186, 116, 32, 'с Turgenev'),
-        'img/tonelli/map_item/k_Prospekt.png': (110, 138, 133, 32, 'с Suxarev'),
-        'img/tonelli/map_item/k_Rizgskaya.png': (120, 207, 75, 32, 'с Prospekt'),
-        'img/tonelli/map_item/k_Alexs.png': (78, 180, 124, 32, 'с Rizgskaya'),
-        'img/tonelli/map_item/k_VDNX.png': (149, 127, 55, 32, 'с Rizgskaya'),
+        'img/default/tonelli/map_item/k_Univer.png': (46, 404, 120, 32, 'с Коммун'),
+        'img/default/tonelli/map_item/k_Pr-kt_Vernadskogo.png': (46, 456, 200, 32),
+        'img/default/tonelli/map_item/k_Kropotkin.png': (140, 205, 145, 32),
+        'img/default/tonelli/map_item/k_Biblioteka.png': (-28, 179, 200, 32, 'с кропот'),
+        'img/default/tonelli/map_item/k_Borov.png': (243, 244, 110, 32, 'с Biblioteka'),
+        'img/default/tonelli/map_item/k_Polyanka.png': (192, 352, 80, 32, 'с Borov'),
+        'img/default/tonelli/map_item/k_Chekhov.png': (192, 114, 95, 32, 'с Borov'),
+        'img/default/tonelli/map_item/k_Pushkin.png': (-3, 194, 113, 32, 'с Chekhov'),
+        'img/default/tonelli/map_item/k_Cvetnoy.png': (50, 157, 130, 32, 'с Chekhov'),
+        'img/default/tonelli/map_item/k_Teatr.png': (337, 444, 70, 32, 'с Tver'),
+        'img/default/tonelli/map_item/k_Tver.png': (30, 243, 86, 32, 'с Chekhov'),
+        'img/default/tonelli/map_item/k_Novokuznec.png': (240, 457, 86, 23, 'с Teatr'),
+        'img/default/tonelli/map_item/k_Tretyakov.png': (-10, 271, 86, 32, 'с Novokuznec'),
+        'img/default/tonelli/mark_sever.png': (144, 27, 50, 32),
+        'img/default/tonelli/mark_yug.png': (144, 487, 50, 32),
+        'img/default/tonelli/map_item/k_Kuzneckiy.png': (332, 257, 86, 32, 'с Pushkin'),
+        'img/default/tonelli/map_item/k_Pavelec.png': (296, 361, 100, 32, 'с Pushkin'),
+        'img/default/tonelli/map_item/k_Pavelec_g.png': (249, 290, 106, 32, 'с Pavelec'),
+        'img/default/tonelli/map_item/k_Kitay.png': (299, 152, 100, 32, 'с Tretyakov'),
+        'img/default/tonelli/map_item/k_Turgenev.png': (151, 169, 124, 32, 'с Kitay'),
+        'img/default/tonelli/map_item/k_Suxarev.png': (173, 186, 116, 32, 'с Turgenev'),
+        'img/default/tonelli/map_item/k_Prospekt.png': (110, 138, 133, 32, 'с Suxarev'),
+        'img/default/tonelli/map_item/k_Rizgskaya.png': (120, 207, 75, 32, 'с Prospekt'),
+        'img/default/tonelli/map_item/k_Alexs.png': (78, 180, 124, 32, 'с Rizgskaya'),
+        'img/default/tonelli/map_item/k_VDNX.png': (149, 127, 55, 32, 'с Rizgskaya'),
 
     }
 
-    # name_create_img = 'img/temp/token.png'
+    alt_name_create_img = 'img/temp/token.png'
     name_create_img = 'img/default/tonelli/map_item/k_Sport.png'
     # # собственно создание снимка
     if name_create_img == 'img/temp/token.png':
@@ -110,6 +110,7 @@ def img_map_name():
         print(f'{name_create_img} сделано')
     else:
         x, y = pos_start
+        tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
         x += map_dict[name_create_img][0]
         y += map_dict[name_create_img][1]
         # # найдем нижний угол
@@ -118,10 +119,13 @@ def img_map_name():
         change_y = map_dict[name_create_img][3]
         x_demo += change_x
         y_demo += change_y
-        q = input(f"{name_create_img} сохранить? (y/n): ")
+        q = input(f"{name_create_img} сохранить?(y/n) Или сделать {alt_name_create_img} (t): ")
         if q == 'y':
             fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
             print(f'{name_create_img} сделано')
+        elif q == 't':
+            fun.foto(f'{alt_name_create_img}', (x, y, change_x, change_y))
+            print(f'{alt_name_create_img} сделано')
         else:
             pass
     pos = fun.locCenterImg(f'{name_create_img}')
@@ -197,4 +201,5 @@ def entry_img():
 
 
 img_map_name()
+
 

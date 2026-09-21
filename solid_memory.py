@@ -22,7 +22,7 @@ def save_all_state_config_json(*, info=False):
         heroes.Hero.get_state_all(heroes.hero_dict[key])
     json_data = json.dumps(heroes.list_all_state, ensure_ascii=False)
     for file_name_json in path_lst:
-        print(f'Создаю {file_name_json}')
+        # print(f'Создаю {file_name_json}')
         write_json_file(file_name=file_name_json, json_data=json_data, info=info)
 
 
