@@ -1,4 +1,4 @@
-
+import baza.baza_paths as b_p
 # arena
 hall_of_glory_tabl_png = 'img/default/arena/overall/hall_of_glory_tabl.png'
 hall_of_glory_icon_png = 'img/default/arena/overall/hall_of_glory_icon.png'
@@ -129,3 +129,6 @@ s_Park_ganza_png = 'img/default/tonelli/id_stations/s_Park_ganza.png'
 s_Park_kr_png = 'img/default/tonelli/id_stations/s_Park_kr.png'
 s_Pavelec_png = 'img/default/tonelli/id_stations/s_Pavelec.png'
 s_Pavelec_g_png = 'img/default/tonelli/id_stations/s_Pavelec_g.png'
+
+
+token_png = f'{b_p.dir_token}token.png'

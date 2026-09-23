@@ -145,10 +145,16 @@ def get_areas_task_small_alt():
     region_patron_2_line = x_point_2patron, y_point_2patron, length_2, height_img
     # 3==================
     pos_patron3, sp = find_img.find_patron_mark(region=region_line3)
-    pos_xp3, sx = find_img.find_xp_mark(region=region_line3)
+    print(f'{pos_patron3=}')
     if not pos_patron3:
         pos_patron3, sp = find_img.find_event_patron_mark(region=region_line3)
+        print(f'{pos_patron3=} event')
+    pos_xp3, sx = find_img.find_xp_mark(region=region_line3)
+    print(f'{pos_xp3=}')
+    if not pos_xp3:
         pos_xp3, sx = find_img.find_event_xp_mark(region=region_line3)
+        print(f'{pos_xp3=} event')
+
     # получаю длину картинки
     length_3 = pos_xp3[0] - pos_patron3[0] - sp[0]
     # получаю позицию начала картинки

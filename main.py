@@ -8,14 +8,14 @@ from PIL import ImageTk
 import fun
 import fun_events
 import heroes
-import kv_and_raid
+import event_kv_and_raid
 import os_action
 import person
 import revision_tents
 import solid_memory
 import station_master
 import stereotypes
-import touring
+import event_touring
 import tools
 import x_scale
 

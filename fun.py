@@ -564,6 +564,9 @@ def find_link_klan(show=True):
     while not pos_klan:
         print('no find_link_klan')
         pos_klan = find_img.find_klan()
+        pos_close = find_img.find_close()
+        if pos_close:
+            tools.Mouse.move_to_click(pos_click=pos_close)
         if pos_klan:
             tools.Mouse.move(pos=pos_klan, show=show)
     log_with_caller(message='e')

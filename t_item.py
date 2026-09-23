@@ -1,5 +1,6 @@
 import find_img as find
 import baza.paths_img as p_i
+import baza.baza_paths as b_p
 import tools
 import fun
 import pyautogui
@@ -35,5 +36,5 @@ def dress():
     return
 
 
-# dress()
-print(find.find_info())
+tools.img_processing.crop_shoulder_straps(name_to_save=p_i.p5_png,
+                                          name_open='img/default/kv/result_round/p/2026-09-23 20-14-10.png')

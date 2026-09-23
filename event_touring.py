@@ -156,7 +156,7 @@ def open_map():
         pos_or1 = find_img.find_info()
         # print(f"{pos_or1=}")
         # print(f"{b_d.caliber_percent=}")
-        x = pos_or1[0] + (300 * b_d.caliber_percent)
+        x = pos_or1[0] + (302 * b_d.caliber_percent)
         y = pos_or1[1] + (180 * b_d.caliber_percent)
         pos_run_out = x, y
         tools.Mouse.move(pos=pos_run_out, speed=0.1)

@@ -87,7 +87,7 @@ def img_map_name():
 
     }
 
-    alt_name_create_img = 'img/temp/token.png'
+    test_img = 'img/temp/token.png'
     path_img = 'img/default/tonelli/map_item/'
     name_create_img = f'{path_img}k_Kiev_a.png'
     x, y = pos_start
@@ -100,13 +100,13 @@ def img_map_name():
     change_y = map_dict[name_create_img][3]
     x_demo += change_x
     y_demo += change_y
-    q = input(f"{name_create_img} сохранить?(y/n) Или сделать {alt_name_create_img} (t): ")
+    q = input(f"{name_create_img} сохранить?(y/n) Или сделать {test_img} (t): ")
     if q == 'y':
         fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
         print(f'{name_create_img} сделано')
     elif q == 't':
-        fun.foto(f'{alt_name_create_img}', (x, y, change_x, change_y))
-        print(f'{alt_name_create_img} сделано')
+        fun.foto(f'{test_img}', (x, y, change_x, change_y))
+        print(f'{test_img} сделано')
     else:
         pass
     # pos = fun.locCenterImg(f'{name_create_img}')
@@ -160,7 +160,6 @@ def name_id_station():
 
     ]
     test_img = 'img/temp/token.png'
-    # name_create_img = test_img
     name_create_img = names_list[-1]
     show_move = False
     pos_start = find_img.find_info()
@@ -179,21 +178,17 @@ def name_id_station():
     y_demo += change_y
     tools.Mouse.move(pos=(x_demo, y_demo), show=show_move)
     # # собственно создание снимка
-    if name_create_img == test_img:
-        fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
-        # pos = fun.locCenterImg(f'{name_create_img}')
-        # fun.mouse_move(pos=pos)
+    q = input(f"{name_create_img} сохранить?(y/n) Или сделать {test_img} (t): ")
+    if  q == 'y':
+        fun.foto(path_name=name_create_img, region=(x, y, change_x, change_y))
+        pos = fun.locCenterImg(f'{name_create_img}')
+        tools.Mouse.move(pos=pos, show=show_move)
+        print(f'{name_create_img}сделано')
+    elif q == 't':
+        fun.foto(path_name=test_img, region=(x, y, change_x, change_y))
         print(f'{test_img} сделано')
     else:
-        q = input(f"{name_create_img} сохранить? (y/n): ")
-        if q == 'y':
-            fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
-            pos = fun.locCenterImg(f'{name_create_img}')
-            tools.Mouse.move(pos=pos, show=show_move)
-            print('сделано')
-        else:
-            pass
-    # tools.sounds.sound_vic()
+        pass
     return
 
 
@@ -203,8 +198,10 @@ def check_img(*, name=None):
         pos = fun.locCenterImg(img_check, confidence=0.99)
         if pos:
             # fun.Mouse.move(pos=pos, speed=1)
+            print(name)
             print(c_t.tc_green('Найден'))
         else:
+            print(name)
             print(c_t.tc_red('не найден'))
     return
 
@@ -260,3 +257,4 @@ def entry_img():
 
 # img_map_name()
 # name_id_station()
+check_img(name='img/default/tonelli/map_item/k_Frunze.png')

@@ -4,91 +4,16 @@ import fun
 
 from baza import baza_paths as b_p
 import tools
-from tools import sounds
+# from tools import sounds
+
+line_1, line_2, line_3 = 217, 320, 423
+xp_ = 548
+shift_up = 35
+change_x = 40  # 17
+change_y = 23
 
 
-def get_energy_line_1_img():
-    path_img = b_p.energy_task_value
-    name_img = 'en_1.png'
-    show_move = False
-    xp_ = 518 + 30
-    line_1, line_2, line_3 = 217, 320, 423
-    shift_up = 35
-    x_or, y_or = fun.find_link_station_master()
-    # регион поиска 1 (позиция анализа)
-    x = x_or + xp_
-    y = y_or + line_1 - shift_up
-    tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
-    time.sleep(2)
-    # # найдем нижний угол
-    x_demo, y_demo = x, y
-    change_x = 40  # 17
-    change_y = 23
-    x_demo += change_x
-    y_demo += change_y
-    tools.Mouse.move(pos=(x_demo, y_demo), speed=1, show=show_move)
-    fun.foto(f'{path_img}{name_img}', (x, y, change_x, change_y))
-    pos = fun.locCenterImg(f'{path_img}{name_img}')
-    tools.Mouse.move(pos=pos)
-    # sounds.sound_vic()
-    print('ok')
 
-
-def get_energy_line_2_img():
-    path_img = b_p.energy_task_value
-    name_img = 'en_4.png'
-    show_move = False
-    xp_ = 518 + 30
-    line_1, line_2, line_3 = 217, 320, 423
-    shift_up = 35
-    x_or, y_or = fun.find_link_station_master()
-    # регион поиска 1 (позиция анализа)
-    x = x_or + xp_
-    y = y_or + line_2 - shift_up
-    tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
-    time.sleep(2)
-    # # найдем нижний угол
-    x_demo, y_demo = x, y
-    change_x = 40  # 17
-    change_y = 23
-    x_demo += change_x
-    y_demo += change_y
-    tools.Mouse.move(pos=(x_demo, y_demo), speed=1, show=show_move)
-    fun.foto(f'{path_img}{name_img}', (x, y, change_x, change_y))
-    pos = fun.locCenterImg(f'{path_img}{name_img}')
-    tools.Mouse.move(pos=pos)
-    # sounds.sound_vic()
-    print('ok')
-
-
-def get_energy_line_3_img():
-    # energy_task_value: str = 'img/station_master/energy_value/'
-
-    path_img = b_p.energy_task_value
-    name_img = 'en_5.png'
-
-    show_move = False
-    xp_ = 518 + 30
-    line_1, line_2, line_3 = 217, 320, 423
-    shift_up = 35
-    x_or, y_or = fun.find_link_station_master()
-    # регион поиска 1 (позиция анализа)
-    x = x_or + xp_
-    y = y_or + line_3 - shift_up
-    tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
-    time.sleep(2)
-    # # найдем нижний угол
-    x_demo, y_demo = x, y
-    change_x = 40  # 17
-    change_y = 23
-    x_demo += change_x
-    y_demo += change_y
-    tools.Mouse.move(pos=(x_demo, y_demo), speed=1, show=show_move)
-    fun.foto(f'{path_img}{name_img}', (x, y, change_x, change_y))
-    pos = fun.locCenterImg(f'{path_img}{name_img}')
-    tools.Mouse.move(pos=pos)
-    # sounds.sound_vic()
-    print('ok')
 
 
 def arial_task():
@@ -111,21 +36,21 @@ def arial_task():
     # fun.Mouse.move(pos=(x, y), speed=1, show=show_move)
     # # найдем нижний угол
     x_demo, y_demo = x, y
-    change_x = 268# - 6
-    change_y = 260# - 2
-    x_demo += change_x
-    y_demo += change_y
+    change_x_full = 268  # - 6
+    change_y_full = 260  # - 2
+    x_demo += change_x_full
+    y_demo += change_y_full
     # fun.Mouse.move(pos=(x_demo, y_demo), show=show_move)
     # # собственно создание снимка
     'img/ test/ test_tasks/arial_task.png'
-    fun.foto(f'{path_img}{name_img}', (x, y, change_x, change_y))
+    fun.foto(f'{path_img}{name_img}', (x, y, change_x_full, change_y_full))
     # pos = fun.locCenterImg(f'{path_img}{name_img}')
     # fun.Mouse.move(pos=pos)
     # sounds.sound_vic(block=False)
     print(f'{path_img}{name_img} создан')
     print('ok')
     # print(x, y, change_x, change_y)
-    return x, y, change_x, change_y
+    return x, y, change_x_full, change_y_full
 
 
 def get_price_energy():
@@ -141,7 +66,6 @@ def get_price_energy():
 
 
 def region_task_line():
-
     # big_task = 'img/test/test_tasks/'
     path_img = b_p.task_big
     name_img1 = 'arial_task_line_1.png'
@@ -186,6 +110,3 @@ def region_task_line():
     y_demo += change_y
     # fun.Mouse.move(pos=(x_demo, y_demo), show=show_move)
     fun.foto(f'{path_img}{name_img3}', (x, y, change_x, change_y))
-
-
-

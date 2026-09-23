@@ -10,6 +10,7 @@ mara_path_task = 'img/default/station_master/tasks_mara/'
 manual_selection_tasks = 'img/temp/sample_tasks/'
 task_big = 'img/default/test/test_tasks/'  # ?
 task_test = 'img/default/test/test_img/'  # ?
+dir_test = 'img/default/test/'
 tasks_little_temp = 'img/default/temp/tasks/'
 num_path = 'img/default/station_master/numbers/'
 
@@ -32,9 +33,9 @@ danger = 'img/default/kv/temp/danger/'
 hero_id = 'img/default/person/hero_id/'
 
 log_path = 'txt/log/'
-img_token = 'img/temp/test/'
+dir_token = 'img/temp/'
 
-check_list_directory = [log_path, result_round_full, result_round_p, result_round_p_full, result_round_temp, img_token, danger
+check_list_directory = [log_path, result_round_full, result_round_p, result_round_p_full, result_round_temp, dir_token, danger
                         ]
 
 loot_gift_box = 'img/default/tonelli/loot_gift_box'

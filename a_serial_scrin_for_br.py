@@ -6,6 +6,7 @@ import fun
 import tools.sounds
 import person
 import tools
+import baza.baza_paths as b_p
 
 
 # Создание картинок значения энергии.
@@ -17,10 +18,10 @@ def energy_img():
     pos_mark = find_img.find_station_master()
     # name_create_img = 'img/test/token.png'
     # проверить видимость
-    list_en = os.listdir('../img/station_master/energy_value')
+    list_en = os.listdir(b_p.energy_task_value)
     print(c_t.tc_cyan('Проверка'))
     for img_ in list_en:
-        name_img = f'img/station_master/energy_value/{img_}'
+        name_img = f'{b_p.energy_task_value}{img_}'
         en = fun.locCenterImg(name_img, confidence=0.95)
         if en:
             tools.Mouse.move(pos=pos_mark, speed=1)
@@ -31,6 +32,8 @@ def energy_img():
     if ask == 'y':
         return
     else:
+        path_img = ''
+        name_img_en = ''
         nam_line = None
         val_en = None
         while not nam_line:
@@ -47,12 +50,17 @@ def energy_img():
                 val_en = int(input('Какое количество энергии на этой строке?(цифрой): '))
                 if 1 <= val_en <= 7:
                     print(val_en, 'хорошо.')
+                    name_img_en = f'en_{val_en}.png'
+                    path_img = b_p.energy_task_value
                 else:
                     print('надо от 1 до 7')
             except ValueError:
                 print('Это должна быть цифра')
-
-        name_create_img = f'img/station_master/energy_value/en_{val_en}.png'
+        ask_create_token = input('Создать token ? (y/n): ')
+        if ask_create_token == 'y':
+            path_img = b_p.dir_token
+            name_img_en = 'token.png'
+        name_create_img = f'{path_img}{name_img_en}'
 
         e_line = 128 + (90 * (nam_line - 1))
         e_line_1 = 128
@@ -114,45 +122,20 @@ def hero_img():
     return
 
 
-def cr_other_img(name_create_img='img/test/token.png'):
+def cr_other_img():
     """
     
     :return: 
     """
-    # name_create_img = 'img/overall/event_entry/pos_t.png'
-    # name_create_img = 'img/tonelli/gift2.png'
-    # name_create_img = 'img/tonelli/gift.png'
-    # name_create_img = 'img/tonelli/loot_gift_box/feed3.png'
-    # name_create_img = 'img/tonelli/loot_gift_box/many.png'
-    # name_create_img = 'img/tonelli/loot_gift_box/p3.png'
-    # name_create_img = 'img/tonelli/loot_gift_box/p4.png'
-    # name_create_img = 'img/tonelli/loot_gift_box/big/720.png'
-
-    # name_create_img = 'img/tonelli/loot_gift_box/ng1.png'
-    # name_create_img = 'img/tonelli/loot_gift_box/ng2.png'
-    # name_create_img = 'img/tonelli/loot_gift_box/ng3.png'
-    # name_create_img = 'img/tonelli/loot_gift_box/ng4.png'
-    # name_create_img = 'img/tonelli/loot_gift_box/marc30.png'
-
-    # name_create_img = 'img/station_master/any/work_b.png'
-    # name_create_img = 'img/station_master/work_hour/work_30m.png'
-    # name_create_img = 'img/station_master/work_hour/work_1h.png'
-    # name_create_img = 'img/station_master/work_hour/work_2h.png'
-    # name_create_img = 'img/station_master/work_hour/work_5h.png'
-    # name_create_img = 'img/station_master/work_hour/work_8h.png'
-    # name_create_img = 'img/overall/klan.png'
-    # name_create_img = 'img/kv/kv_attak.png'
-    name_create_img = 'img/overall/knob.png'
-    name_create_img = 'img/arena/overall/hall_of_glory_icon.png'
-    name_create_img = 'img/arena/overall/hall_of_glory_tabl.png'
+    test_img = 'token.png'
 
     img_dict = {
-        'img/b_battle_end.png': (-330, -404, 170, 30, (), find_img.find_close()),
-        'img/station_master/energy_indicator/low_energy_label.png': (-274, -140, 320, 120, (), find_img.find_close()),
-        'img/kv/kv_attack for money.png': (-145, 275, 220, 40, (), find_img.find_kv_reload()),
+        'img/default/b_battle_end.png': (-330, -404, 170, 30, (), find_img.find_close()),
+        'img/default/station_master/energy_indicator/low_energy_label.png': (-274, -140, 320, 120, (), find_img.find_close()),
+        'img/default/kv/kv_attack for money.png': (-145, 275, 220, 40, (), find_img.find_kv_reload()),
         'img/kv/kv_attak.png': (-145, 275, 220, 40, (), find_img.find_kv_reload()),
         'img/overall/link_money_token.png': (389, -55, 32, 32, (), find_img.find_info()),
-        'img/overall/klan.png': (33, -13, 37, 32, (), find_img.find_info()),
+        'img/default/overall/klan.png': (33, -13, 37, 32, find_img.find_info()),
         'img/kv/kv_skip_battle.png': (-48, -21, 96, 37, (), find_img.find_kv_skip_battle_test()),
         'img/overall/event_entry/pos_t.png': (246, -85, 32, 62, (), find_img.find_info()),
         'img/tonelli/gift2.png': (148, 313, 32, 19, (), find_img.find_info()),
@@ -181,62 +164,37 @@ def cr_other_img(name_create_img='img/test/token.png'):
         'img/overall/knob.png': (-496, -463, 16, 16, (), find_img.find_close()),
         'img/arena/overall/hall_of_glory_icon.png': (592, -58, 50, 47, (), find_img.find_info()),
         'img/arena/overall/hall_of_glory_tabl.png': (-521, -534, 142, 31, (), find_img.find_close()),
+        'img/default/tonelli/entry_station.png': (-138, 274, 151, 31, find_img.find_post()),
+        'img/default/station_master/numbers/event_patron_mark.png': (431, 353, 16, 16, find_img.find_station_master()),
+        'img/default/station_master/numbers/event_xp_mark.png': (486, 353, 16, 16, find_img.find_station_master()),
 
     }
-    # name_create_img = 'img/test/token.png'
+    name_create_img = 'img/default/station_master/numbers/event_xp_mark.png'
+    pos_start = img_dict[name_create_img][4]
 
-    key = 'img/arena/overall/hall_of_glory_tabl.png'
-    pos_start = img_dict[key][5]
-
+    ask = input(f'{name_create_img} сохранить (y/n) или сделать {test_img} (t)?: ')
     # # собственно создание снимка
-    if name_create_img == 'img/test/token.png':
-        # показать привязку
-        # fun.mouse_move(pos=(pos_start), speed=1)
-        # найдем верхний угол
-        x, y = pos_start
-        x += img_dict[key][0]
-        y += img_dict[key][1]
-        # fun.Mouse.move(pos=(x, y), speed=1)
-        # # найдем нижний угол
-        x_demo, y_demo = x, y
-        change_x = img_dict[key][2]
-        change_y = img_dict[key][3]
-        x_demo += change_x
-        y_demo += change_y
-        # fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
-        fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
-        print(f'{name_create_img} сделан')
+
+    x, y = pos_start
+    x += img_dict[name_create_img][0]
+    y += img_dict[name_create_img][1]
+    # # найдем нижний угол
+    x_demo, y_demo = x, y
+    change_x = img_dict[name_create_img][2]
+    change_y = img_dict[name_create_img][3]
+    x_demo += change_x
+    y_demo += change_y
+    region_img = (x, y, change_x, change_y)
+    if ask == 'y':
+        name_foto = f'{name_create_img}'
+        fun.foto(path_name=name_foto, region=region_img)
+    elif ask == 't':
+        name_foto = f'{b_p.dir_token}{test_img}'
+        fun.foto(path_name=name_foto, region=region_img)
     else:
-        if key != name_create_img:
-            x, y = pos_start
-            x += img_dict[key][0]
-            y += img_dict[key][1]
-            # # найдем нижний угол
-            x_demo, y_demo = x, y
-            change_x = img_dict[key][2]
-            change_y = img_dict[key][3]
-            x_demo += change_x
-            y_demo += change_y
-        else:
-            x, y = pos_start
-            x += img_dict[name_create_img][0]
-            y += img_dict[name_create_img][1]
-            # # найдем нижний угол
-            x_demo, y_demo = x, y
-            change_x = img_dict[name_create_img][2]
-            change_y = img_dict[name_create_img][3]
-            x_demo += change_x
-            y_demo += change_y
-        q = input(f"{name_create_img}  сохранить? (y/n): ")
-        if q == 'y':
-            fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
-            print(f'{name_create_img} сделано')
-        else:
-            pass
-    # pos = fun.locCenterImg(f'{name_create_img}')
-    # fun.mouse_move(pos=pos)
-    tools.sounds.sound_vic()
-    # print(f'{name_create_img} сделано')
+        name_foto = 'Фото не'
+
+    print(f'{name_foto} сделано')
     # check_img(name=name_create_img)
     return
 
@@ -404,86 +362,6 @@ def mob_id(name):
         return
 
 
-def name_id_station():
-    """
-    Добавить название файла в конец списка.
-    Создать(заменить) файл
-           """
-    names_list = ['img/default/tonelli/id_stations/s_Pr-kt_Vernadskogo.png',
-                  'img/default/tonelli/id_stations/s_Univer.png',
-                  'img/default/tonelli/id_stations/s_Communist.png',
-                  'img/default/tonelli/id_stations/s_Frunze.png',
-                  'img/default/tonelli/id_stations/s_Park_kr.png',
-                  'img/default/tonelli/id_stations/s_Park_ganza.png',
-                  'img/default/tonelli/id_stations/s_Kiev.png',
-                  'img/default/tonelli/id_stations/s_Kropotkin.png',
-                  'img/default/tonelli/id_stations/s_Biblioteka.png',
-                  'img/default/tonelli/id_stations/s_Borov.png',
-                  'img/default/tonelli/id_stations/s_Polyanka.png',
-                  'img/default/tonelli/id_stations/s_Chekhov.png',
-                  'img/default/tonelli/id_stations/s_Tver.png',
-                  'img/default/tonelli/id_stations/s_Pushkin.png',
-                  'img/default/tonelli/id_stations/s_Kuzneckiy.png',
-                  'img/default/tonelli/id_stations/s_Cvetnoy.png',
-                  'img/default/tonelli/id_stations/s_Teatr.png',
-                  'img/default/tonelli/id_stations/s_Novokuznec.png',
-                  'img/default/tonelli/id_stations/s_Pavelec.png',
-                  'img/default/tonelli/id_stations/s_Pavelec_g.png',
-                  'img/default/tonelli/id_stations/s_Tretyakov.png',
-                  'img/default/tonelli/id_stations/s_Kitay.png',
-                  'img/default/tonelli/id_stations/s_Turgenev.png',
-                  'img/default/tonelli/id_stations/s_Suxarev.png',
-                  'img/default/tonelli/id_stations/s_Prospekt.png',
-                  'img/default/tonelli/id_stations/s_Rizgskaya.png',
-                  'img/default/tonelli/id_stations/s_Alexs.png',
-                  'img/default/tonelli/id_stations/s_VDNX.png',
-                  'img/default/tonelli/id_stations/s_Sport.png',
-
-
-                  'img/default/tonelli/id_stations/s_Kiev.png',
-                  'img/default/tonelli/id_stations/s_Park_ganza.png',
-                  'img/default/tonelli/id_stations/s_Park_kr.png',
-                  'img/default/tonelli/id_stations/s_Frunze.png',
-
-                  ]
-    test_img = 'img/temp/token.png'
-    # name_create_img = test_img
-    name_create_img = names_list[-1]
-    show_move = True
-    pos_start = find_img.find_info()
-    # показать привязку
-    tools.Mouse.move(pos=pos_start, speed=1)
-    # найдем верхний угол
-    x, y = pos_start
-    x += 80
-    y += 450
-    tools.Mouse.move(pos=(x, y), speed=1, show=show_move)
-    # # найдем нижний угол
-    x_demo, y_demo = x, y
-    change_x = 250 + 120
-    change_y = 27
-    x_demo += change_x
-    y_demo += change_y
-    tools.Mouse.move(pos=(x_demo, y_demo), show=show_move)
-    # # собственно создание снимка
-    if name_create_img == test_img:
-        fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
-        # pos = fun.locCenterImg(f'{name_create_img}')
-        # fun.mouse_move(pos=pos)
-        print(f'{test_img} сделано')
-    else:
-        q = input(f"{name_create_img} сохранить? (y/n): ")
-        if q == 'y':
-            fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
-            pos = fun.locCenterImg(f'{name_create_img}')
-            tools.Mouse.move(pos=pos)
-            print('сделано')
-        else:
-            pass
-    # tools.sounds.sound_vic()
-    return
-
-
 def event_entry_img():
     """
     Создание картинок необходимых при смене аккаунта.
@@ -564,10 +442,10 @@ def event_entry_img():
     return
 
 
+# energy_img()
 # event_entry_img()
 # hero_img()
-name_id_station()
-
+cr_other_img()
 # cr_arena_img()
 
 # task_img()
