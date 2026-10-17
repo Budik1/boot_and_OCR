@@ -292,7 +292,7 @@ def press_en(*, task_number, pos, value_energy):  #
     """
     fun.log_with_caller(message='a')
     global energy_availability, conf_
-    x = pos[0] - 70
+    x = pos[0] + 5
     y = pos[1] - 20
     pos_clik = x, y
     # tools.Mouse.move(pos=pos_clik, message=f'показал выбранное задание ({task_number})')
@@ -485,8 +485,8 @@ def option_task_money():
 
             conf_ = 0.95
             if not analiz:
-                path = create_and_analiz_task_img.get_imgs_task_big_manual_select()
-                full_path = f'C:/python/bot_ocr1/{path}'
+                path = create_and_analiz_task_img.get_big_img_task_manual_select()
+                full_path = f'D:/python/boot_and_OCR/{path}'
                 print(c_t.tc_cyan(f'Для ручного выбора результат "{full_path}" '))
                 os.startfile(full_path)
                 #

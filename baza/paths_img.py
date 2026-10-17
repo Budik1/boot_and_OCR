@@ -20,7 +20,7 @@ p3_png = 'img/default/kv/result_round/loot/p3.png'
 p4_png = 'img/default/kv/result_round/loot/p4.png'
 p5_png = 'img/default/kv/result_round/loot/p5.png'
 
-kv_close_png = 'img/default/kv/kv_close.png'
+kv_close_png = f'{b_p.kv}kv_close.png'
 exit_kv_png = 'img/default/kv/exit_kv.png'
 kv_skip_battle_png = 'img/default/kv/kv_skip_battle.png'
 kv_skip_battle_test_png = 'img/default/kv/kv_skip_battle_test.png'

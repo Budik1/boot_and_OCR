@@ -40,7 +40,7 @@ right_indent = 50  # отступ от правого края экрана
 top_indent = 50  # отступ от верхнего края экрана
 
 width_root = b_d.lst_columns_root[-1] + 73  # Ширина окна Tk
-height_root = b_d.line7+ b_d.height_line + 2  # Высота окна Tk
+height_root = b_d.line7 + b_d.height_line + 2  # Высота окна Tk
 
 position_y_root = top_indent  # отступ от верхнего края экрана для окна root
 position_x_root = screen_width - width_root - right_indent  # отступ от правого края экрана для окна root
@@ -82,9 +82,9 @@ def start_gui():
         except Exception as cod:
             print(c_t.tc_red(f'Не понятно что произошло в cumulative )). Код ошибки {cod}'))
 
-        displaying_values(info=False)
+        change_values(info=False)
     else:
-        displaying_values()
+        change_values()
     # Чистка устаревших файлов и папок
     print()
     check_list_directory1 = b_p.check_list_directory
@@ -94,8 +94,10 @@ def start_gui():
         check_list_file += check_list
     set_check_file = set(check_list_file)
     os_action.check_files(old_day=10, check_list_file=set_check_file)
+
     check_list_file2 = os_action.get_lst_files(path='temp_pack')
     os_action.check_files(old_day=5, check_list_file=check_list_file2)
+
     os_action.deleting_empty_folders(path='temp_pack')
     # вывод инфо состояния
     tools.display_smol_report_wildman_1()
@@ -104,7 +106,7 @@ def start_gui():
     return
 
 
-def displaying_values(info=True):
+def change_values(info=True):
     if info:
         solid_memory.save_all_state_config_json(info=True)
     else:
@@ -152,7 +154,7 @@ def displaying_values(info=True):
 
 def start_pm():
     fun_events.start_p_m()
-    displaying_values(info=False)
+    change_values(info=False)
 
 
 def bonus():
@@ -162,28 +164,28 @@ def bonus():
 def en_1():
     station_master.option_task_line(task_line=1)
 
-    displaying_values(info=False)
+    change_values(info=False)
 
 
 def en_2():
     station_master.option_task_line(task_line=2)
-    displaying_values(info=False)
+    change_values(info=False)
 
 
 def en_3():
     station_master.option_task_line(task_line=3)
-    displaying_values(info=False)
+    change_values(info=False)
 
 
 def puli():
     station_master.option_task_money()
-    displaying_values(info=False)
+    change_values(info=False)
 
 
 def for_kiki():
-    touring.for_kiki()
+    event_touring.for_kiki()
     fun.work()
-    displaying_values(info=False)
+    change_values(info=False)
 
 
 def tent_inspection():
@@ -221,7 +223,7 @@ def tent_inspection():
                 if hero == 'Mara':
                     heroes.mara.vip = vip_case_all
         revision_tents.end_raid()
-        displaying_values(info=False)
+        change_values(info=False)
         return
 
 
@@ -241,7 +243,7 @@ def tent_inspection_marc():
             heroes.gavr.vip = vip_case_all
         if hero == 'Mara':
             heroes.mara.vip = vip_case_all
-    displaying_values(info=False)
+    change_values(info=False)
     changeColor(her_active=hero)
     return
 
@@ -253,9 +255,9 @@ def wild():
     else:
         print('герой не опознан')
         return
-    touring.for_wilds()
+    event_touring.for_wilds()
     fun.work()
-    displaying_values(info=False)
+    change_values(info=False)
 
 
 def wild_kiki():
@@ -266,10 +268,10 @@ def wild_kiki():
     else:
         print('герой не опознан')
         return
-    touring.for_wilds()
-    touring.for_kiki()
+    event_touring.for_wilds()
+    event_touring.for_kiki()
     fun.work()
-    displaying_values(info=False)
+    change_values(info=False)
 
     finish_time = float(time() - start_time)  # общее количество секунд
     minutes = int(finish_time // 60)  # количество минут
@@ -286,7 +288,7 @@ def collecting_gifts_at_stations():
     # получение маршрута для определенного героя
     if hero:
         # движение по маршруту
-        touring.sbor_podarkov()
+        event_touring.sbor_podarkov()
         # получение количества станций на маршруте
         len_bypass = len(heroes.Hero.get_bypass_set(heroes.Activ.hero_activ))
         # получение количества собранных подарков
@@ -296,7 +298,7 @@ def collecting_gifts_at_stations():
         return
     # вывод информации
     print(f'На {len_bypass} станциях собрано {q_gifts} подарков')
-    displaying_values(info=False)
+    change_values(info=False)
     fun.work()
 
     finish_time = float(time() - start_time)  # общее количество секунд
@@ -311,11 +313,11 @@ def collecting_gifts_at_stations():
 
 def changeColor(*, her_active):
     if her_active == 'Gady':
-        label_1.configure(background="yellow")
+        gady_vip_label.configure(background="yellow")
     else:
-        label_1.configure(background='white')
+        gady_vip_label.configure(background='white')
     # if her_active == 'Gavr':
-        # label_2.configure(background="yellow")
+    # label_2.configure(background="yellow")
     # else:
     #     label_2.configure(background='white')
     # if her_active == 'Велес':
@@ -330,25 +332,25 @@ def changeColor(*, her_active):
 
 def change_gady():
     person.change_acc(change_hero_name='gady')
-    displaying_values(info=False)
+    change_values(info=False)
     changeColor(her_active=fun.selection_hero(show_name=False))
 
 
 def change_gavr():
     person.change_acc(change_hero_name='gavr')
-    displaying_values(info=False)
+    change_values(info=False)
     changeColor(her_active=fun.selection_hero(show_name=False))
 
 
 def change_veles():
     person.change_acc(change_hero_name='veles')
-    displaying_values(info=False)
+    change_values(info=False)
     changeColor(her_active=fun.selection_hero(show_name=False))
 
 
 def change_mara():
     person.change_acc(change_hero_name='mara')
-    displaying_values(info=False)
+    change_values(info=False)
     changeColor(her_active=fun.selection_hero(show_name=False))
 
 
@@ -360,7 +362,7 @@ def save_home_point():
     answer = messagebox.askyesno(title='Паспортист ))', message=mes)
     if answer:
         heroes.Hero.setting_home(heroes.Activ.hero_activ, location)
-    displaying_values(info=True)
+    change_values(info=True)
 
 
 def save_date_up():
@@ -385,16 +387,16 @@ def save_date_up():
         save_date_lst = (heroes.Activ.date_utc_now.split('-'))[::-1]
         save_date_str = '-'.join(save_date_lst)
         heroes.Hero.set_up_date(heroes.Activ.hero_activ, value=save_date_str)
-        displaying_values(info=True)
+        change_values(info=True)
 
 
 def get_target(event):
     fun.selection_hero(show_name=False)
     selection = combobox.get()
-    touring.move_to_target(target_point=selection)
+    event_touring.move_to_target(target_point=selection)
     if selection == 'домой':
         fun.work()
-    displaying_values(info=False)
+    change_values(info=False)
     return
 
 
@@ -515,6 +517,14 @@ def timer():
     # ==================================================
     vektor_gady_label.config(textvariable=char_lvl_gady, foreground=heroes.gady.get_color_label(),
                              font=("Arial Black", 12))
+    # change_values(info=False)
+    gady_vip_label.configure(textvariable=gady_vip)
+    gady_kiki_label.configure(textvariable=gady_kiki)
+    gady_arachne_label.configure(textvariable=gady_arachne)
+    gady_raptor_label.configure(textvariable=gady_raptor)
+    gady_rat_label.configure(textvariable=gady_rat)
+    gady_gift_label.configure(textvariable=gady_gift)
+    gady_wild_label.configure(textvariable=gady_wild)
     # vektor_gavr_label.config(textvariable=char_lvl_gavr, foreground=heroes.gavr.get_color_label(),
     #                          font=("Arial Black", 12))
     # vektor_mara_label.config(textvariable=char_lvl_mara, foreground=heroes.mara.get_color_label(),
@@ -575,6 +585,7 @@ def set_lbl_lvl():
     Длину уровня / среднее значение
     :return:
     """
+    # print('Вызов "set_lbl_lvl()"')
     fun.selection_hero(show_name=False)
     #
     temp_lvl_duration = heroes.Hero.get_level_duration_in_days(heroes.Activ.hero_activ)
@@ -617,7 +628,7 @@ def set_lbl_lvl():
     heroes.Hero.set_char_change_duration_level(heroes.Activ.hero_activ, char=img_label)
     heroes.Hero.set_color_label(heroes.Activ.hero_activ, color=color)
 
-    displaying_values(info=False)
+    change_values(info=False)
 
 
 def open_tool_win():
@@ -658,7 +669,6 @@ root.title(f' помощник "Метро 2033"')
 root.geometry(
     f'{width_root}x{height_root}+{position_x_root}+{position_y_root}')  # Ширина x Высота + положение X + положение Y
 root.resizable(False, False)
-# root.attributes('-topmost', True)
 
 def_rapport = IntVar()
 mouse_rapport = IntVar()
@@ -667,50 +677,26 @@ pet_act = BooleanVar()
 len_lvl = StringVar()
 xp_lvl = StringVar()
 
-# day_in_lvl_gady = StringVar()
-# day_in_lvl_gavr = StringVar()
-# day_in_lvl_mara = StringVar()
-
 gady_level_duration_in_days = StringVar()
-# gavr_level_duration_in_days = StringVar()
-# mara_level_duration_in_days = StringVar()
 
 char_lvl_gady = StringVar()
-# char_lvl_gavr = StringVar()
-# char_lvl_mara = StringVar()
-
-# mid_res = StringVar()
 
 gady_vip = StringVar()
-# gavr_vip = StringVar()
-# mara_vip = IntVar()
 
 gady_rat = StringVar()
-# gavr_rat = StringVar()
-# mara_rat = IntVar()
 
 gady_kiki = StringVar()
-# gavr_kiki = StringVar()
-# mara_kiki = StringVar()
 
 gady_arachne = StringVar()
-# gavr_arachne = StringVar()
-# mara_arachne = IntVar()
 
 gady_raptor = StringVar()
-# gavr_raptor = StringVar()
-# mara_raptor = IntVar()
 
 gady_gift = StringVar()
-# gavr_gift = StringVar()
-# mara_gift = IntVar()
 
 gady_wild = StringVar()
-# gavr_wild = StringVar()
-# mara_wild = StringVar()
 
 # получение содержимого Combobox
-box_paths = touring.extraction_name_in_list(value=b_d.list_of_stations)
+box_paths = event_touring.extraction_name_in_list(value=b_d.list_of_stations)
 box_paths.insert(0, 'домой')
 lang_var = StringVar(value=box_paths[0])
 
@@ -721,9 +707,9 @@ start_gui()
 # блок командных кнопок
 ttk.Button(text="set", width=5, command=open_tool_win).place(x=b_d.col_8, y=b_d.line0)
 ttk.Button(text="d/lvl", width=7, command=set_lbl_lvl).place(x=b_d.col_9, y=b_d.line0)
-ttk.Button(text="КВ", width=10, command=kv_and_raid.kv).place(x=115, y=b_d.line2)
+ttk.Button(text="КВ", width=10, command=event_kv_and_raid.kv).place(x=115, y=b_d.line2)
 ttk.Button(text=" Start ", width=10, command=start_pm).place(x=190, y=b_d.line2)
-ttk.Button(text='Save', width=12, command=displaying_values).place(x=265, y=b_d.line2)
+ttk.Button(text='Save', width=12, command=change_values).place(x=265, y=b_d.line2)
 
 ttk.Button(text="set 24 h", width=8, command=set_timer24).place(x=b_d.col_8, y=b_d.line2)
 ttk.Button(text="set 8 h ", width=8, command=set_timer8).place(x=b_d.col_8, y=b_d.line3)
@@ -763,31 +749,11 @@ timer_gady_label = ttk.Label()
 timer_gady_label.config(text="", font=("Helvetica", 12))  # , font=("Helvetica", 12)
 timer_gady_label.place(x=b_d.col_8, y=b_d.gady_y)
 
-# timer_gavr_label = ttk.Label()
-# timer_gavr_label.config(text="00:00:00", font=("Helvetica", 12))  # , font=("Helvetica", 12)
-# timer_gavr_label.place(x=b_d.col_8, y=b_d.gavr_y)
-
-# timer_mara_label = ttk.Label()
-# timer_mara_label.config(text="00:00:00", font=("Helvetica", 12))  # , font=("Helvetica", 12)
-# timer_mara_label.place(x=b_d.col_8, y=b_d.mara_y)
-
 len_deys_gady_label = ttk.Label()
 len_deys_gady_label.config(textvariable=gady_level_duration_in_days, font=("Helvetica", 9))
 len_deys_gady_label.place(x=b_d.col_9 + 5, y=b_d.gady_y)
 vektor_gady_label = ttk.Label()
 vektor_gady_label.place(x=b_d.col_10, y=b_d.gady_y)  # + 50
-
-# len_deys_gavr_label = ttk.Label()
-# len_deys_gavr_label.config(textvariable=gavr_level_duration_in_days, font=("Helvetica", 9))
-# len_deys_gavr_label.place(x=b_d.col_9 + 5, y=b_d.gavr_y)
-# vektor_gavr_label = ttk.Label()
-# vektor_gavr_label.place(x=b_d.col_10, y=b_d.gavr_y)
-
-# len_deys_mara_label = ttk.Label()
-# len_deys_mara_label.config(textvariable=mara_level_duration_in_days, font=("Helvetica", 9))
-# len_deys_mara_label.place(x=b_d.col_9 + 5, y=b_d.mara_y)
-# vektor_mara_label = ttk.Label()
-# vektor_mara_label.place(x=b_d.col_10, y=b_d.mara_y)
 
 ttk.Label(text='xp уровня').place(x=b_d.col_9 + 8, y=b_d.line2)
 ttk.Label(text='пройдено').place(x=b_d.col_9 + 8, y=b_d.line4)
@@ -801,82 +767,51 @@ collect_xp_entry.config(textvariable=xp_lvl, width=8)
 collect_xp_entry.place(x=b_d.col_9 + 15, y=b_d.line5)
 
 ttk.Button(text="Gady", width=5, command=change_gady).place(x=b_d.col_0, y=b_d.gady_y)
-# ttk.Button(text="Gavr", width=5, command=change_gavr).place(x=b_d.col_0, y=b_d.gavr_y)
-# ttk.Button(text="Мара", width=5, command=change_mara).place(x=b_d.col_0, y=b_d.mara_y)
 
 ttk.Button(text="VIP", width=5, command=tent_inspection_marc).place(x=b_d.col_1 - b_d.s, y=b_d.label_line0 - 3)
 ttk.Button(text="kiki", width=5, command=for_kiki).place(x=b_d.col_2 - b_d.s, y=b_d.label_line0 - 3)
 ttk.Button(text="wild", width=5, command=wild).place(x=b_d.col_7 - (b_d.s + 3), y=b_d.label_line0 - 3)
 ttk.Button(text="up", width=4, command=save_date_up).place(x=b_d.col_0, y=b_d.label_line0 - 3)
 w_l = 3
+
 # блок инфо строк
-label_1 = ttk.Label()
-label_1.configure(textvariable=gady_vip, width=w_l)
-label_1.place(x=b_d.col_1, y=b_d.gady_y)
-
-# label_2 = ttk.Label()
-# label_2.configure(textvariable=gavr_vip, width=w_l)
-# label_2.place(x=b_d.col_1, y=b_d.gavr_y)
-
-# label_4 = ttk.Label()
-# label_4.configure(textvariable=mara_vip, width=w_l)
-# label_4.place(x=b_d.col_1, y=b_d.mara_y)
-
-ttk.Label(text='|').place(x=b_d.separator_1, y=b_d.gady_y)
-# ttk.Label(text='|').place(x=b_d.separator_1, y=b_d.gavr_y)
-# ttk.Label(text='|').place(x=b_d.separator_1, y=b_d.mara_y)
-
-ttk.Label(textvariable=gady_kiki).place(x=b_d.col_2, y=b_d.gady_y)
-# ttk.Label(textvariable=gavr_kiki).place(x=b_d.col_2, y=b_d.gavr_y)
-# ttk.Label(textvariable=mara_kiki).place(x=b_d.col_2, y=b_d.mara_y)
-
-ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.gady_y)
-# ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.gavr_y)
-# ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.mara_y)
 
 ttk.Label(text="arah", width=5, background='#858585', foreground='#050505').place(x=b_d.col_3 - b_d.s,
                                                                                   y=b_d.label_line0)
-ttk.Label(textvariable=gady_arachne).place(x=b_d.col_3, y=b_d.gady_y)
-# ttk.Label(textvariable=gavr_arachne).place(x=b_d.col_3, y=b_d.gavr_y)
-# ttk.Label(textvariable=mara_arachne).place(x=b_d.col_3, y=b_d.mara_y)
-
-ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.gady_y)
-# ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.gavr_y)
-# ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.mara_y)
-
 ttk.Label(text="rapt", width=5, background='#858585', foreground='#050505').place(x=b_d.col_4 - b_d.s,
                                                                                   y=b_d.label_line0)
-ttk.Label(textvariable=gady_raptor).place(x=b_d.col_4, y=b_d.gady_y)
-# ttk.Label(textvariable=gavr_raptor).place(x=b_d.col_4, y=b_d.gavr_y)
-# ttk.Label(textvariable=mara_raptor).place(x=b_d.col_4, y=b_d.mara_y)
-
-ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.gady_y)
-# ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.gavr_y)
-# ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.mara_y)
-
 ttk.Label(text="w_rat", width=5, background='#858585', foreground='#050505').place(x=b_d.col_5 - b_d.s,
                                                                                    y=b_d.label_line0)
-ttk.Label(textvariable=gady_rat).place(x=b_d.col_5, y=b_d.gady_y)
-# ttk.Label(textvariable=gavr_rat).place(x=b_d.col_5, y=b_d.gavr_y)
-# ttk.Label(textvariable=mara_rat).place(x=b_d.col_5, y=b_d.mara_y)
-
-ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.gady_y)
-# ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.gavr_y)
-# ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.mara_y)
-
 ttk.Label(text="gift", width=5, background='#858585', foreground='#050505').place(x=b_d.col_6 - b_d.s,
                                                                                   y=b_d.label_line0)
-ttk.Label(textvariable=gady_gift).place(x=b_d.col_6, y=b_d.gady_y)
-# ttk.Label(textvariable=gavr_gift).place(x=b_d.col_6, y=b_d.gavr_y)
-# ttk.Label(textvariable=mara_gift).place(x=b_d.col_6, y=b_d.mara_y)
 
+ttk.Label(text='|').place(x=b_d.separator_1, y=b_d.gady_y)
+ttk.Label(text='|').place(x=b_d.separator_2, y=b_d.gady_y)
+ttk.Label(text='|').place(x=b_d.separator_3, y=b_d.gady_y)
+ttk.Label(text='|').place(x=b_d.separator_4, y=b_d.gady_y)
+ttk.Label(text='|').place(x=b_d.separator_5, y=b_d.gady_y)
 ttk.Label(text='|').place(x=b_d.separator_6, y=b_d.gady_y)
-# ttk.Label(text='|').place(x=b_d.separator_6, y=b_d.gavr_y)
-# ttk.Label(text='|').place(x=b_d.separator_6, y=b_d.mara_y)
 
-ttk.Label(textvariable=gady_wild).place(x=b_d.col_7, y=b_d.gady_y)
-# ttk.Label(textvariable=gavr_wild).place(x=b_d.col_7, y=b_d.gavr_y)
-# ttk.Label(textvariable=mara_wild).place(x=b_d.col_7, y=b_d.mara_y)
+gady_vip_label = ttk.Label()
+gady_vip_label.place(x=b_d.col_1, y=b_d.gady_y)
+
+gady_kiki_label = ttk.Label()
+gady_kiki_label.place(x=b_d.col_2, y=b_d.gady_y)
+
+gady_arachne_label = ttk.Label()
+gady_arachne_label.place(x=b_d.col_3, y=b_d.gady_y)
+
+gady_raptor_label = ttk.Label()
+gady_raptor_label.place(x=b_d.col_4, y=b_d.gady_y)
+
+gady_rat_label = ttk.Label()
+gady_rat_label.place(x=b_d.col_5, y=b_d.gady_y)
+
+gady_gift_label = ttk.Label()
+gady_gift_label.place(x=b_d.col_6, y=b_d.gady_y)
+
+gady_wild_label = ttk.Label()
+gady_wild_label.place(x=b_d.col_7, y=b_d.gady_y)
 
 # блок выбора заданий
 difference_str_img = 8

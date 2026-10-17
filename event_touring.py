@@ -154,7 +154,10 @@ def open_map():
         tools.Mouse.move(pos=pos_run_out, speed=0.1)
     else:
         pos_or1 = find_img.find_info()
-        # print(f"{pos_or1=}")
+        while not pos_or1:
+            pos_or1 = find_img.find_info()
+            #
+            # print(f"{pos_or1=}")
         # print(f"{b_d.caliber_percent=}")
         x = pos_or1[0] + (302 * b_d.caliber_percent)
         y = pos_or1[1] + (180 * b_d.caliber_percent)
@@ -190,8 +193,8 @@ def events_tunnel(name_st, st_id_file):
     info = find_img.find_info()
 
     fun.my_log_file(f'{info=}, {id_st=}')
-    parking = fun.pos_parking()
-    tools.Mouse.move(pos=parking,  message='убрать указатель с поля в ожидании событий')
+    # parking = fun.pos_parking()
+    # tools.Mouse.move(pos=parking,  message='убрать указатель с поля в ожидании событий')
     while not id_st:
         fun.close_popup_window()
         post = find_img.find_post()
@@ -199,8 +202,8 @@ def events_tunnel(name_st, st_id_file):
         fun.my_log_file(f'skip_battle = {skip_battle}')
         if skip_battle:
             station_master.enemy_battle(1, add_up=True, tour=True, dog_activ=dog_activ)  # вызов обработки события
-            parking = fun.pos_parking()
-            tools.Mouse.move(pos=parking,  message='убрать указатель с поля в ожидании событий')
+            # parking = fun.pos_parking()
+            # tools.Mouse.move(pos=parking,  message='убрать указатель с поля в ожидании событий')
         if post:
             fun.my_log_file(f'post = {post}')
             tools.Mouse.move(pos=post, speed=0.2,  message='Пост обнаружен')
@@ -211,9 +214,9 @@ def events_tunnel(name_st, st_id_file):
                 fun.my_log_file(f'entry = {entry}')
                 tools.Mouse.move_to_click(pos_click=entry, speed=0.2, z_p_k=0.1,
                                           message='войти на станцию')
-                parking = fun.pos_parking()
-                tools.Mouse.move(pos=parking, speed=0.5, show=True,
-                                 message='убрать указатель с поля, после входа на станцию')
+                # parking = fun.pos_parking()
+                # tools.Mouse.move(pos=parking, speed=0.5, show=True,
+                #                  message='убрать указатель с поля, после входа на станцию')
                 entry = find_img.find_entry_station()
                 while entry:
                     entry = find_img.find_entry_station()

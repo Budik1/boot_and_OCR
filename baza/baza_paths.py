@@ -2,16 +2,18 @@ actual_caliber_folder: str = 'default'
 
 path_folder_line_menu = 'img/mark_scale/line'
 
+map_item = 'img/default/tonelli/map_item/'
+
 #
 gady_path_task = 'img/default/station_master/tasks_gady/'
 gavr_path_task = 'img/default/station_master/tasks_gavr/'
 mara_path_task = 'img/default/station_master/tasks_mara/'
 #
 manual_selection_tasks = 'img/temp/sample_tasks/'
+tasks_little_temp = 'img/default/temp/tasks/'
 task_big = 'img/default/test/test_tasks/'  # ?
 task_test = 'img/default/test/test_img/'  # ?
 dir_test = 'img/default/test/'
-tasks_little_temp = 'img/default/temp/tasks/'
 num_path = 'img/default/station_master/numbers/'
 
 energy_task_value = 'img/default/station_master/energy_value/'
@@ -22,6 +24,7 @@ retention_all = 'storage/config.json'
 retention_kv = 'storage/config_kv.json'
 change_json = 'D:/Users/chenge'
 
+kv = 'img/default/kv/'
 result_round_temp = 'img/default/kv/temp/result_round/result_all_round/'
 result_round_p = 'img/default/kv/result_round/p/'
 result_round_full = 'img/default/kv/result_round/full_result_all_round/'

@@ -377,8 +377,10 @@ def get_areas_task_small(width=77, height=42):
     xp_ = pul + 65
     line_1, line_2, line_3 = 160, 250, 340
 
-    x_or, y_or = find_link_station_master_alt()
-
+    point = find_link_station_master_alt()
+    while not point:
+        point = find_link_station_master_alt()
+    x_or, y_or = point
     x_an_xp = x_or + xp_
     x_an_pul = x_or + pul
 
@@ -401,57 +403,57 @@ def get_areas_task_small(width=77, height=42):
     return region1_pul, region2_pul, region3_pul, region1_xp, region2_xp, region3_xp
 
 
-def get_areas_task_small_alt():
-    # получаю регионы наград
-    region_line1, region_line2, region_line3 = get_full_areas_task()
-    height_img = 31
-
-    # получаю позицию значка патрона
-    pos_patron1 = find_img.find_patron_mark(region=region_line1)
-    pos_patron2 = find_img.find_patron_mark(region=region_line2)
-    pos_patron3 = find_img.find_patron_mark(region=region_line3)
-
-    # получаю позицию значка хр
-    pos_xp1 = find_img.find_xp_mark(region=region_line1)
-    pos_xp2 = find_img.find_xp_mark(region=region_line2)
-    pos_xp3 = find_img.find_xp_mark(region=region_line3)
-    # получаю длину картинки
-    length_1 = pos_xp1[0] - pos_patron1[0] - 22
-    length_2 = pos_xp2[0] - pos_patron2[0] - 22
-    length_3 = pos_xp3[0] - pos_patron3[0] - 22
-
-    # получаю позицию начала картинки
-    x_point_1patron = pos_patron1[0] - length_1 - 10
-    x_point_1xp = pos_xp1[0] - length_1 - 10
-
-    y_point_1patron = pos_patron1[1] - int(height_img / 2)
-    y_point_1xp = pos_xp1[1] - int(height_img / 2)
-
-    region_xp_1_line = x_point_1xp, y_point_1xp, length_1, height_img
-    region_patron_1_line = x_point_1patron, y_point_1patron, length_1, height_img
-
-    #
-    x_point_2xp = pos_xp2[0] - length_2 - 10
-    x_point_2patron = pos_patron2[0] - length_2 - 10
-
-    y_point_2xp = pos_xp2[1] - int(height_img / 2)
-    y_point_2patron = pos_patron2[1] - int(height_img / 2)
-
-    region_xp_2_line = x_point_2xp, y_point_2xp, length_2, height_img
-    region_patron_2_line = x_point_2patron, y_point_2patron, length_2, height_img
-    # 3
-    x_point_3xp = pos_xp3[0] - length_3 - 10
-    x_point_3patron = pos_patron3[0] - length_3 - 10
-
-    y_point_3xp = pos_xp3[1] - int(height_img / 2)
-    y_point_3patron = pos_patron3[1] - int(height_img / 2)
-
-    region_xp_3_line = x_point_3xp, y_point_3xp, length_3, height_img
-    region_patron_3_line = x_point_3patron, y_point_3patron, length_3, height_img
-
-    return (region_xp_1_line, region_patron_1_line,
-            region_xp_2_line, region_patron_2_line,
-            region_xp_3_line, region_patron_3_line)
+# def get_areas_task_small_alt():
+#     # получаю регионы наград
+#     region_line1, region_line2, region_line3 = get_full_areas_task()
+#     height_img = 31
+#
+#     # получаю позицию значка патрона
+#     pos_patron1 = find_img.find_patron_mark(region=region_line1)
+#     pos_patron2 = find_img.find_patron_mark(region=region_line2)
+#     pos_patron3 = find_img.find_patron_mark(region=region_line3)
+#
+#     # получаю позицию значка хр
+#     pos_xp1 = find_img.find_xp_mark(region=region_line1)
+#     pos_xp2 = find_img.find_xp_mark(region=region_line2)
+#     pos_xp3 = find_img.find_xp_mark(region=region_line3)
+#     # получаю длину картинки
+#     length_1 = pos_xp1[0] - pos_patron1[0] - 22
+#     length_2 = pos_xp2[0] - pos_patron2[0] - 22
+#     length_3 = pos_xp3[0] - pos_patron3[0] - 22
+#
+#     # получаю позицию начала картинки
+#     x_point_1patron = pos_patron1[0] - length_1 - 10
+#     x_point_1xp = pos_xp1[0] - length_1 - 10
+#
+#     y_point_1patron = pos_patron1[1] - int(height_img / 2)
+#     y_point_1xp = pos_xp1[1] - int(height_img / 2)
+#
+#     region_xp_1_line = x_point_1xp, y_point_1xp, length_1, height_img
+#     region_patron_1_line = x_point_1patron, y_point_1patron, length_1, height_img
+#
+#     #
+#     x_point_2xp = pos_xp2[0] - length_2 - 10
+#     x_point_2patron = pos_patron2[0] - length_2 - 10
+#
+#     y_point_2xp = pos_xp2[1] - int(height_img / 2)
+#     y_point_2patron = pos_patron2[1] - int(height_img / 2)
+#
+#     region_xp_2_line = x_point_2xp, y_point_2xp, length_2, height_img
+#     region_patron_2_line = x_point_2patron, y_point_2patron, length_2, height_img
+#     # 3
+#     x_point_3xp = pos_xp3[0] - length_3 - 10
+#     x_point_3patron = pos_patron3[0] - length_3 - 10
+#
+#     y_point_3xp = pos_xp3[1] - int(height_img / 2)
+#     y_point_3patron = pos_patron3[1] - int(height_img / 2)
+#
+#     region_xp_3_line = x_point_3xp, y_point_3xp, length_3, height_img
+#     region_patron_3_line = x_point_3patron, y_point_3patron, length_3, height_img
+#
+#     return (region_xp_1_line, region_patron_1_line,
+#             region_xp_2_line, region_patron_2_line,
+#             region_xp_3_line, region_patron_3_line)
 
 
 def get_areas_task_big_1_line(width=77, height=42):
@@ -538,7 +540,7 @@ def get_areas_task_big(width=77, height=42):
     return region_1_line_big, region_2_line_big, region_3_line_big
 
 
-def get_full_areas_task(width=185, height=42):
+def get_full_areas_task(width=255, height=42):
     """
     Полный регион поля награды за задание
     :param width: ширина
@@ -546,15 +548,25 @@ def get_full_areas_task(width=185, height=42):
     :return: кортеж из трех списков
     """
     pos_1, pos_2, pos_3 = 160, 250, 340
-    (point_x, point_y) = find_link_station_master_alt()
+    point = find_link_station_master_alt()
+    while not point:
+        point = find_link_station_master_alt()
+    point_x, point_y = point
     # расчет
-    x_search_start = point_x + 320
+    x_search_start = point_x + 250# 305
     line1_top = point_y + pos_1
     line2_top = point_y + pos_2
     line3_top = point_y + pos_3
     region_line1 = [x_search_start, line1_top, width, height]
     region_line2 = [x_search_start, line2_top, width, height]
     region_line3 = [x_search_start, line3_top, width, height]
+    # name1 = f'{b_p.tasks_little_temp}line1big.png'
+    # name2 = f'{b_p.tasks_little_temp}line2big.png'
+    # name3 = f'{b_p.tasks_little_temp}line3big.png'
+    # print(name1)
+    # foto(path_name=name1, region=region_line1)
+    # foto(path_name=name2, region=region_line2)
+    # foto(path_name=name3, region=region_line3)
     return region_line1, region_line2, region_line3
 
 
@@ -627,8 +639,10 @@ def await_arena(region):
 def selection_hero(*, show_name=True):
     log_with_caller(message='a')
     hero_gadya = find_img.find_her_gadya()
-    hero_gavr = find_img.find_her_gavr()
-    hero_mara = find_img.find_her_mara()
+    q_search = 0
+    if not hero_gadya and q_search <= 5:
+        hero_gadya = find_img.find_her_gadya()
+        q_search += 1
     hero = None
     if hero_gadya:
         if show_name:
@@ -637,20 +651,6 @@ def selection_hero(*, show_name=True):
         heroes.hero_activ_name = 'Gady'
         heroes.Activ.name_for_file_ = 'gady'
         heroes.Activ.hero_activ = heroes.gady
-    elif hero_gavr:
-        if show_name:
-            print(c_t.tc_yellow('Гавр'))
-        hero = 'Gavr'
-        heroes.Activ.hero_activ_name = 'Gavr'
-        heroes.Activ.name_for_file_ = 'gavr'
-        heroes.Activ.hero_activ = heroes.gavr
-    elif hero_mara:
-        if show_name:
-            print(c_t.tc_yellow('Мар`яна'))
-        hero = 'Mara'
-        heroes.Activ.hero_activ_name = 'Mara'
-        heroes.Activ.name_for_file_ = 'mara'
-        heroes.Activ.hero_activ = heroes.mara
     else:
         if show_name:
             print(c_t.tc_red("Невозможно опознать героя!! (("))

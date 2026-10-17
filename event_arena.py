@@ -113,7 +113,7 @@ def kill():
     print(f"боёв {heroes.Hero.get_arena_count(heroes.Activ.hero_activ)}, побед {vict_in_arena}, следующий..")
     while boy_in_arena < 101:
         # Проверка на смену героя
-        fun.selection_hero(show_name=True)
+        # fun.selection_hero(show_name=True)
         # ориентир на зал славы
         pos_or_v = fun.find_link_hall_of_glory()
         tools.Mouse.move_to_click(pos_click=pos_or_v, z_p_k=0.3, message='открыть зал славы')  # открыть зал славы
@@ -150,32 +150,40 @@ def kill():
             region = region_line1
             # Если не найден раньше ищем со смещением списка в начало
             if not arena_object and search_vector == 'up':
+                q_up = 0
                 scroll_up = find_img.find_scroll_up()
-                tools.Mouse.move_to_click(pos_click=scroll_up,
-                                          speed=0.1,
-                                          message="прокрутка вверх")
-                tools.Mouse.move(pos=(scroll_up[0] + cursor_offset, scroll_up[1]),
-                                 speed=0.1,
-                                 message=f'{cursor_offset=} отвести в сторону от стрелки?')
+                while not scroll_up and q_up <= 5:
+                    scroll_up = find_img.find_scroll_up()
+                    q_up += 1
+                if scroll_up:
+                    tools.Mouse.move_to_click(pos_click=scroll_up,
+                                              speed=0.1,
+                                              message="прокрутка вверх")
+                    tools.Mouse.move(pos=(scroll_up[0] + cursor_offset, scroll_up[1]),
+                                     speed=0.1,
+                                     message=f'{cursor_offset=} отвести в сторону от стрелки?')
                 find_img.find_hall_of_glory_tabl()
                 arena_object = find_img.find_arena_object(region=region,
                                                           hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))
-                scroll_up = find_img.find_scroll_up()
                 if not scroll_up:
                     search_vector = "down"
             # Если не найден раньше ищем со смещением списка в конец
             if not arena_object and search_vector == 'down':
+                q_down = 0
                 scroll_down = find_img.find_scroll_down()
-                tools.Mouse.move_to_click(pos_click=scroll_down,
-                                          speed=0.1,
-                                          message="прокрутка вниз")
-                tools.Mouse.move(pos=(scroll_down[0] + cursor_offset, scroll_down[1]),
-                                 speed=0.1,
-                                 message=f'{cursor_offset=} отвести в сторону от стрелки вниз?')
-                fun.await_arena(region)
+                while not scroll_up and q_down <= 5:
+                    scroll_down = find_img.find_scroll_down()
+                    q_down += 1
+                if scroll_down:
+                    tools.Mouse.move_to_click(pos_click=scroll_down,
+                                              speed=0.1,
+                                              message="прокрутка вниз")
+                    tools.Mouse.move(pos=(scroll_down[0] + cursor_offset, scroll_down[1]),
+                                     speed=0.1,
+                                     message=f'{cursor_offset=} отвести в сторону от стрелки вниз?')
+                find_img.find_hall_of_glory_tabl()
                 arena_object = find_img.find_arena_object(region=region,
                                                           hero=heroes.Hero.get_name_id(heroes.Activ.hero_activ))
-                scroll_down = find_img.find_scroll_down()
                 if not scroll_down:
                     search_vector = 'up'
             arena_object_region = region

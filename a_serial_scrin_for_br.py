@@ -1,5 +1,6 @@
 import os
 
+import baza.paths_img
 import tools.color_text as c_t
 import find_img
 import fun
@@ -7,6 +8,7 @@ import tools.sounds
 import person
 import tools
 import baza.baza_paths as b_p
+import baza.paths_img as p_i
 
 
 # Создание картинок значения энергии.
@@ -92,9 +94,9 @@ def hero_img():
     'img/test/token.png' путь тестовой картинки
     :return:
     """
-    # name_create_img = 'img/test/token.png'
-    # name_create_img = 'img/person/hero_id/gady/her_gadya.png'
-    name_create_img = 'img/person/hero_id/mara/her_mara.png'
+    # name_create_img = 'img/temp/token.png'
+    name_create_img = 'img/default/person/hero_id/gady/her_gady.png'
+    # name_create_img = 'img/person/hero_id/mara/her_mara.png'
     # name_create_img = 'img/person/hero_id/gavr/her_gavr.png'
     # name_create_img = 'img/person/hero_id/gavr/gavr_armor.png'
     show_move = False
@@ -122,6 +124,60 @@ def hero_img():
     return
 
 
+def cr_station_master_img():
+    """
+
+    :return:
+    """
+    test_img = 'token.png'
+
+    img_dict = {
+        'img/default/station_master/energy_indicator/low_energy_label.png': (-274, -140, 320, 120, find_img.find_close()),
+        'img/station_master/any/work_b.png': (405, -6, 65, 29, find_img.find_station_master()),
+        'img/station_master/work_hour/work_30m.png': (250, 137, 160, 27, find_img.find_station_master()),
+        'img/station_master/work_hour/work_1h.png': (250, 194, 160, 25, find_img.find_station_master()),
+        'img/station_master/work_hour/work_2h.png': (250, 260, 160, 25, find_img.find_station_master()),
+        'img/station_master/work_hour/work_5h.png': (250, 260 + 65, 160, 25, find_img.find_station_master()),
+        'img/station_master/work_hour/work_8h.png': (250, 260 + 65 + 65, 160, 25, find_img.find_station_master()),
+        'img/default/station_master/numbers/event_patron_mark.png': (431, 353, 16, 16, find_img.find_station_master()),
+        'img/default/station_master/numbers/event_xp_mark.png': (486, 353, 16, 16, find_img.find_station_master()),
+        'img/default/station_master/numbers/patron_mark.png': (409, 352, 19, 19, find_img.find_station_master()),
+        'img/default/station_master/numbers/xp_mark.png': (477, 352, 19, 19, find_img.find_station_master()),
+
+    }
+    name_create_img = 'img/default/station_master/numbers/xp_mark.png'
+    pos_start = img_dict[name_create_img][4]
+
+    # # собственно создание снимка
+
+    x, y = pos_start
+    x += img_dict[name_create_img][0]
+    y += img_dict[name_create_img][1]
+    ask_m = input('Mouse ? (y/n) :')
+    if ask_m == 'y':
+        tools.Mouse.move(pos=(x, y))
+    # # найдем нижний угол
+    x_demo, y_demo = x, y
+    change_x = img_dict[name_create_img][2]
+    change_y = img_dict[name_create_img][3]
+    x_demo += change_x
+    y_demo += change_y
+    region_img = (x, y, change_x, change_y)
+    ask = input(f'{name_create_img} сохранить (y/n) или сделать {test_img} (t)?: ')
+    if ask == 'y':
+        name_foto = f'{name_create_img}'
+        fun.foto(path_name=name_foto, region=region_img)
+    elif ask == 't':
+        name_foto = f'{b_p.dir_token}{test_img}'
+        fun.foto(path_name=name_foto, region=region_img)
+    else:
+        name_foto = 'Фото не'
+
+    print(f'{name_foto} сделано')
+    # check_img(name=name_create_img)
+    return
+
+
 def cr_other_img():
     """
     
@@ -130,54 +186,58 @@ def cr_other_img():
     test_img = 'token.png'
 
     img_dict = {
-        'img/default/b_battle_end.png': (-330, -404, 170, 30, (), find_img.find_close()),
-        'img/default/station_master/energy_indicator/low_energy_label.png': (-274, -140, 320, 120, (), find_img.find_close()),
-        'img/default/kv/kv_attack for money.png': (-145, 275, 220, 40, (), find_img.find_kv_reload()),
-        'img/kv/kv_attak.png': (-145, 275, 220, 40, (), find_img.find_kv_reload()),
-        'img/overall/link_money_token.png': (389, -55, 32, 32, (), find_img.find_info()),
+        'img/default/b_battle_end.png': (-330, -404, 170, 30, find_img.find_close()),
+        'img/default/station_master/energy_indicator/low_energy_label.png': (-274, -140, 320, 120,
+                                                                             find_img.find_close()),
+        'img/default/kv/kv_attack for money.png': (-145, 275, 220, 40, find_img.find_kv_reload()),
+        'img/kv/kv_attak.png': (-145, 275, 220, 40, find_img.find_kv_reload()),
+        'img/overall/link_money_token.png': (389, -55, 32, 32, find_img.find_info()),
         'img/default/overall/klan.png': (33, -13, 37, 32, find_img.find_info()),
-        'img/kv/kv_skip_battle.png': (-48, -21, 96, 37, (), find_img.find_kv_skip_battle_test()),
-        'img/overall/event_entry/pos_t.png': (246, -85, 32, 62, (), find_img.find_info()),
-        'img/tonelli/gift2.png': (148, 313, 32, 19, (), find_img.find_info()),
-        'img/tonelli/gift.png': (160, 315, 20, 19, (), find_img.find_info()),
-        'img/tonelli/loot_gift_box/feed3.png': (-4, -90, 60, 59, (), find_img.find_close()),
-        'img/tonelli/loot_gift_box/many.png': (30, -134, 28, 27, (), find_img.find_close()),
+        'img/kv/kv_skip_battle.png': (-48, -21, 96, 37, find_img.find_kv_skip_battle_test()),
+        'img/overall/event_entry/pos_t.png': (246, -85, 32, 62, find_img.find_info()),
+        'img/tonelli/gift2.png': (148, 313, 32, 19, find_img.find_info()),
+        'img/tonelli/gift.png': (160, 315, 20, 19, find_img.find_info()),
+        'img/tonelli/loot_gift_box/feed3.png': (-4, -90, 60, 59, find_img.find_close()),
+        'img/tonelli/loot_gift_box/many.png': (30, -134, 28, 27, find_img.find_close()),
 
-        'img/tonelli/loot_gift_box/big/720.png': (-54, -140, 119, 119, (), find_img.find_close()),
+        'img/tonelli/loot_gift_box/big/720.png': (-54, -140, 119, 119, find_img.find_close()),
 
-        'img/tonelli/loot_gift_box/p3.png': (-4, -90, 60, 59, (), find_img.find_close()),
-        'img/tonelli/loot_gift_box/p4.png': (-4, -90, 60, 59, (), find_img.find_close()),
+        'img/tonelli/loot_gift_box/p3.png': (-4, -90, 60, 59, find_img.find_close()),
+        'img/tonelli/loot_gift_box/p4.png': (-4, -90, 60, 59, find_img.find_close()),
 
-        'img/tonelli/loot_gift_box/ng1.png': (-4, -90, 60, 59, (), find_img.find_close()),
-        'img/tonelli/loot_gift_box/ng2.png': (-4, -90, 60, 59, (), find_img.find_close()),
-        'img/tonelli/loot_gift_box/ng3.png': (-4, -90, 60, 59, (), find_img.find_close()),
-        'img/tonelli/loot_gift_box/ng4.png': (-4, -90, 60, 59, (), find_img.find_close()),
+        'img/tonelli/loot_gift_box/ng1.png': (-4, -90, 60, 59, find_img.find_close()),
+        'img/tonelli/loot_gift_box/ng2.png': (-4, -90, 60, 59, find_img.find_close()),
+        'img/tonelli/loot_gift_box/ng3.png': (-4, -90, 60, 59, find_img.find_close()),
+        'img/tonelli/loot_gift_box/ng4.png': (-4, -90, 60, 59, find_img.find_close()),
 
-        'img/tonelli/loot_gift_box/marc1.png': (-4, -90, 60, 59, (), find_img.find_close()),
-        'img/station_master/any/work_b.png': (405, -6, 65, 29, (), find_img.find_station_master()),
-        'img/station_master/work_hour/work_30m.png': (250, 137, 160, 27, (), find_img.find_station_master()),
-        'img/station_master/work_hour/work_1h.png': (250, 194, 160, 25, (), find_img.find_station_master()),
-        'img/station_master/work_hour/work_2h.png': (250, 260, 160, 25, (), find_img.find_station_master()),
-        'img/station_master/work_hour/work_5h.png': (250, 260 + 65, 160, 25, (), find_img.find_station_master()),
-        'img/station_master/work_hour/work_8h.png': (250, 260 + 65 + 65, 160, 25, (), find_img.find_station_master()),
+        'img/tonelli/loot_gift_box/marc1.png': (-4, -90, 60, 59, find_img.find_close()),
+        'img/station_master/any/work_b.png': (405, -6, 65, 29, find_img.find_station_master()),
+        'img/station_master/work_hour/work_30m.png': (250, 137, 160, 27, find_img.find_station_master()),
+        'img/station_master/work_hour/work_1h.png': (250, 194, 160, 25, find_img.find_station_master()),
+        'img/station_master/work_hour/work_2h.png': (250, 260, 160, 25, find_img.find_station_master()),
+        'img/station_master/work_hour/work_5h.png': (250, 260 + 65, 160, 25, find_img.find_station_master()),
+        'img/station_master/work_hour/work_8h.png': (250, 260 + 65 + 65, 160, 25, find_img.find_station_master()),
 
-        'img/overall/knob.png': (-496, -463, 16, 16, (), find_img.find_close()),
-        'img/arena/overall/hall_of_glory_icon.png': (592, -58, 50, 47, (), find_img.find_info()),
-        'img/arena/overall/hall_of_glory_tabl.png': (-521, -534, 142, 31, (), find_img.find_close()),
+        'img/default/overall/knob.png': (-675, -7, 16, 16, find_img.find_close()),
+        'img/arena/overall/hall_of_glory_icon.png': (592, -58, 50, 47, find_img.find_info()),
+        'img/arena/overall/hall_of_glory_tabl.png': (-521, -534, 142, 31, find_img.find_close()),
         'img/default/tonelli/entry_station.png': (-138, 274, 151, 31, find_img.find_post()),
         'img/default/station_master/numbers/event_patron_mark.png': (431, 353, 16, 16, find_img.find_station_master()),
         'img/default/station_master/numbers/event_xp_mark.png': (486, 353, 16, 16, find_img.find_station_master()),
+        'img/default/station_master/numbers/patron_mark.png': (409, 352, 19, 19, find_img.find_station_master()),
 
     }
-    name_create_img = 'img/default/station_master/numbers/event_xp_mark.png'
+    name_create_img = 'img/default/station_master/numbers/patron_mark.png'
     pos_start = img_dict[name_create_img][4]
 
-    ask = input(f'{name_create_img} сохранить (y/n) или сделать {test_img} (t)?: ')
     # # собственно создание снимка
 
     x, y = pos_start
     x += img_dict[name_create_img][0]
     y += img_dict[name_create_img][1]
+    ask_m = input('Mouse ? (y/n) :')
+    if ask_m == 'y':
+        tools.Mouse.move(pos=(x, y))
     # # найдем нижний угол
     x_demo, y_demo = x, y
     change_x = img_dict[name_create_img][2]
@@ -185,6 +245,7 @@ def cr_other_img():
     x_demo += change_x
     y_demo += change_y
     region_img = (x, y, change_x, change_y)
+    ask = input(f'{name_create_img} сохранить (y/n) или сделать {test_img} (t)?: ')
     if ask == 'y':
         name_foto = f'{name_create_img}'
         fun.foto(path_name=name_foto, region=region_img)
@@ -204,12 +265,12 @@ def cr_arena_img():
 
     :return:
     """
-    target_img = 'заглушка'
+    # test_img = 'заглушка'
     img_dict = {
         'img/arena/overall/hall_of_glory_icon.png': (592, -58, 50, 47, (), find_img.find_info()),
         'img/arena/overall/hall_of_glory_tabl.png': (-521, -534, 142, 31, (), find_img.find_close()),
         'img/arena/overall/attack.png': (423, 96, 46, 46, (), find_img.find_hall_of_glory_tabl()),
-        'img/arena/overall/scroll_down.png': (477, 421, 24, 33, (), find_img.find_hall_of_glory_tabl()),
+        baza.paths_img.scroll_down_png: (478, 424, 24, 33, (), find_img.find_hall_of_glory_tabl()),
         'img/arena/overall/scroll_up.png': (477, 84, 24, 33, (), find_img.find_hall_of_glory_tabl()),
         'img/arena/overall/arena_tabl.png': (-436, -505, 84, 30, (), find_img.find_close()),
         'img/arena/overall/hero_vs_opponent.png': (-432, -84, 262, 56, (), find_img.find_close()),
@@ -218,9 +279,9 @@ def cr_arena_img():
         'img/arena/overall/defeat_in_arena.png': (-96, -252, 153, 41, (), find_img.find_close()),
 
     }
-    target_img = 'img/test/token.png'
+    test_img = baza.paths_img.token_png
 
-    key = 'img/arena/overall/scroll_down.png'
+    key = baza.paths_img.scroll_down_png
     pos_start = img_dict[key][5]
     # показать привязку
     # fun.Mouse.move(pos=pos_start, speed=1)
@@ -237,17 +298,15 @@ def cr_arena_img():
     y_demo += change_y
     # fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
     # # собственно создание снимка
-    if target_img == 'img/test/token.png':
-        fun.foto(f'{target_img}', (x, y, change_x, change_y))
-        print(f'{target_img} сделан')
+    ask = input(f'kreate {key} (y/n) or token (t) :')
+    if ask == 't':
+        fun.foto(path_name=f'{test_img}', region=(x, y, change_x, change_y))
+        print(f'{test_img} сделан')
+    elif ask == 'y':
+        fun.foto(path_name=f'{key}', region=(x, y, change_x, change_y))
+        print(f'{key} сделан')
     else:
-        answer = input(f"{key}  сохранить? (y/n): ")
-        if answer == 'y':
-            fun.foto(f'{key}', (x, y, change_x, change_y))
-            print(f'{key} сделано')
-        else:
-            print("выход без создания снимка")
-    # sounds.sound_vic(block=False)
+        print("выход без создания снимка")
     return
 
 
@@ -445,8 +504,9 @@ def event_entry_img():
 # energy_img()
 # event_entry_img()
 # hero_img()
-cr_other_img()
-# cr_arena_img()
+# cr_other_img()
+cr_arena_img()
+# cr_station_master_img()
 
 # task_img()
 # mob_id(name='name6_kikimora')

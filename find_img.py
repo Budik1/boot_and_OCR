@@ -81,13 +81,13 @@ def find_arena_object(*, region, hero):
 
 def find_scroll_up():
     actual_path = get_actual_path(path=p_i.scroll_up_png)
-    img = fund.locateCenterImg(img=actual_path)
+    img = fund.locateCenterImg(img=actual_path, confidence=0.88)
     return img
 
 
 def find_scroll_down():
     actual_path = get_actual_path(path=p_i.scroll_down_png)
-    img = fund.locateCenterImg(img=actual_path)
+    img = fund.locateCenterImg(img=actual_path, confidence=0.88)
     return img
 
 
@@ -99,7 +99,7 @@ def find_attack_arena_opponent():
 
 def find_her_gadya():
     actual_path = get_actual_path(path=p_i.gady_id)
-    img = fund.locateCenterImg(img=actual_path)
+    img = fund.locateCenterImg(img=actual_path, confidence=0.89, grayscale=True)
     return img
 
 
@@ -444,7 +444,9 @@ def find_name7_raptor():
 
 
 def find_victory_in_arena():
-    pos = fund.locateCenterImg(img=f'img/{actual_caliber_folder}/arena/overall/victory_in_arena.png')
+    pos = fund.locateCenterImg(img=f'img/{actual_caliber_folder}/arena/overall/victory_in_arena.png',
+                               confidence=0.89,
+                               grayscale=True)
     return pos
 
 
@@ -473,6 +475,12 @@ def find_entry_station():
     return pos
 
 def find_patron_mark(*, region):
+    """
+
+    :param region:
+    :return: 1 параметр - координата
+    :return: 2 параметр - размер картинки
+    """
     name_img = 'img/default/station_master/numbers/patron_mark.png'
     pos = fund.locateCenterImg(img=name_img, region=region)
     size = tools.img_processing.get_size_img(name_img=name_img)
@@ -492,6 +500,13 @@ def find_event_patron_mark(*, region):
 
 def find_event_xp_mark(*, region):
     name_img = 'img/default/station_master/numbers/event_xp_mark.png'
+    pos = fund.locateCenterImg(img=name_img, region=region)
+    size = tools.img_processing.get_size_img(name_img=name_img)
+    return pos, size
+
+
+def find_colon_mark(*, region):
+    name_img = 'img/default/station_master/numbers/colon.png'
     pos = fund.locateCenterImg(img=name_img, region=region)
     size = tools.img_processing.get_size_img(name_img=name_img)
     return pos, size
