@@ -204,7 +204,8 @@ def battle(*, target_call):
         else:
             heroes.Activ.duel_raid += 1
             result_c = heroes.Activ.duel_raid
-        rapport_battle_c = f'{target_call} {dang_c}{result_c}{mes_c}'
+        time_ = c_t.tc_yellow(tools.time_now_smol())
+        rapport_battle_c = f'{time_} {target_call} {dang_c}{result_c}{mes_c}'
         rapport_battle_g = f'{target_call} {dang_g}{result_g}{mes_g}'
 
         print(rapport_battle_c)

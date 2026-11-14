@@ -547,10 +547,12 @@ def get_full_areas_task(width=255, height=42):
     :param height: высота
     :return: кортеж из трех списков
     """
+    # print('start "get_full_areas_task"')
     pos_1, pos_2, pos_3 = 160, 250, 340
     point = find_link_station_master_alt()
     while not point:
         point = find_link_station_master_alt()
+        print('поиск открытой палатки')
     point_x, point_y = point
     # расчет
     x_search_start = point_x + 250# 305

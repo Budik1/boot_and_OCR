@@ -226,9 +226,9 @@ def events_tunnel(name_st, st_id_file):
                     fun.my_log_file(f'attack = {attack}')
                     tools.Mouse.move_to_click(pos_click=attack, speed=0.2, z_p_k=0.1,
                                               message='атака поста')
-                    parking = fun.pos_parking()
-                    tools.Mouse.move(pos=parking, speed=0.5, show=True,
-                                     message='убрать указатель с поля, после атаки поста')
+                    # parking = fun.pos_parking()
+                    # tools.Mouse.move(pos=parking, speed=0.5, show=True,
+                    #                  message='убрать указатель с поля, после атаки поста')
                     attack = find_img.find_tonelli_attack()
                     while attack:
                         attack = find_img.find_tonelli_attack()
@@ -575,17 +575,8 @@ def for_wilds():
     else:
         move_to_target(target_point='ст. Киевская')
         station_master.option_task_money()
-        col = heroes.Hero.get_energy_count_today(heroes.Activ.hero_activ)
-        if col in [30, 50]:
-            print('энергия исчерпана')
-            move_to_target(target_point='домой')
-        else:
-            # за белыми крысами на Пушкинской
-            print(f'нет доступных заданий на Киевской, {col}')
-            move_to_target(target_point='ст. Пушкинская')
-            station_master.option_task_line(task_line=1)
-            print('энергия исчерпана')
-            move_to_target(target_point='домой')
+        print('энергия исчерпана')
+        move_to_target(target_point='домой')
         tools.sounds.say_txt('вернулся домой))')
         fun.log_with_caller(message='e')
         return

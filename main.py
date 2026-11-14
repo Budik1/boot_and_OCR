@@ -100,8 +100,8 @@ def start_gui():
 
     os_action.deleting_empty_folders(path='temp_pack')
     # вывод инфо состояния
-    tools.display_smol_report_wildman_1()
-    tools.display_info_energy_all_2()
+    tools.display_smol_report_wildman()
+    tools.display_info_energy_all()
     # changeColor(her_active=fun.selection_hero(show_name=False))
     return
 
@@ -720,7 +720,7 @@ ttk.Button(text="обход всех станций", width=18, command=collecti
 
 ttk.Button(text='рапорт Б_Кр', width=12, command=tools.display_report_w_rat).place(x=115, y=b_d.line4)
 ttk.Button(text='рапорт Д-ри', width=12, command=tools.display_report_wildman).place(x=200, y=b_d.line4)
-ttk.Button(text='рапорт Эн', width=12, command=tools.display_info_energy_all_2).place(x=285, y=b_d.line4)
+ttk.Button(text='рапорт Эн', width=12, command=tools.display_info_energy_all).place(x=285, y=b_d.line4)
 
 ttk.Label(text='        куда пойдем ?', width=21, background='#858585', foreground='#050505').place(x=156, y=b_d.line5)
 

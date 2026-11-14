@@ -43,7 +43,7 @@ def set_inspect_report():
     return fraze
 
 
-def display_info_energy_all_2():
+def display_info_energy_all():
     # найти значение длинны самого длинного имени
     len_name = []
     len_energy_count_today = []
@@ -119,26 +119,7 @@ def display_report_w_rat():
     return
 
 
-# def display_smol_report_wildman():
-#     """
-#     gady 0 дней, 0 дикарей
-#     :return:
-#     """
-#     print()
-#     for key in heroes.hero_dict:
-#         name = key.rjust(8, ' ')
-#         q_days = str(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])).rjust(3, ' ')
-#         days = (tools.transform_word_days(qty_days=(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])))).rjust(
-#             5,
-#             ' ')
-#         q_wild = str(heroes.Hero.get_wildman_count(heroes.hero_dict[key])).rjust(4)
-#         wild = tools.transform_word_wilds(qty_wilds=heroes.Hero.get_wildman_count(heroes.hero_dict[key])).rjust(8)
-#         print(f'{name}{q_days}{days}{q_wild}{wild}')
-#
-#     return
-
-
-def display_smol_report_wildman_1():
+def display_smol_report_wildman():
     """
     gady 0 дней, 0 дикарей
     :return:
@@ -167,11 +148,13 @@ def display_smol_report_wildman_1():
     for key in heroes.hero_dict:
         name = key.rjust(rjust_name)
         q_days = str(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])).rjust(rjust_q_days)
-        world_days = ((tools.transform_word_days(qty_days=(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])))).
-                      rjust(rjust_world_days))
-        q_wild = str(heroes.Hero.get_wildman_count(heroes.hero_dict[key])).rjust(rjust_q_wild)
-        world_wild = tools.transform_word_wilds(qty_wilds=heroes.Hero.get_wildman_count(heroes.hero_dict[key])).ljust(
-            rjust_world_wild)
+        world_days = ((tools.transform_word_days(
+            qty_days=(heroes.Hero.get_days_count_wildman(heroes.hero_dict[key])))).rjust(rjust_world_days))
+        q_wild_1 = str(heroes.Hero.get_wildman_count(heroes.hero_dict[key])).rjust(rjust_q_wild)
+        q_wild_2 = str(heroes.Hero.get_wildman_all_count(heroes.hero_dict[key]))
+        q_wild = f'{q_wild_1}/{q_wild_2}'
+        world_wild = tools.transform_word_wilds(
+            qty_wilds=heroes.Hero.get_wildman_all_count(heroes.hero_dict[key])).ljust(rjust_world_wild)
         print(f'{char0}{name}{q_days}{world_days}{q_wild} {world_wild}')
     return
 

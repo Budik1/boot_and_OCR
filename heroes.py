@@ -42,10 +42,12 @@ class Hero:
         self.white_rat_now = 0
         self.white_rat_count_all = 0
         self.kiki = 0  #
-        self.arachne = 0  #
+        self.arachne = 0
+        self.arachne_all_count = 0#
         self.raptor = 0  #
         self.wildman = 'x'
         self.wildman_count = 0
+        self.wildman_all_count = 0
         self.wild_activ = False
 
         self.loot_touring = []
@@ -229,6 +231,7 @@ class Hero:
             'grey_rat_k': self.grey_rat,
             'white_rat_k': self.white_rat_now,
             'arachne_k': self.arachne,
+            'arachne_all_count_k': self.arachne_all_count,
             'wildman_k': self.wildman,
             'kiki_k': self.kiki,
             'raptor_k': self.raptor,
@@ -247,6 +250,7 @@ class Hero:
             'home_location_k': self.home_location,
             'energy_count_all_k': self.energy_count_all,
             'wildman_count_k': self.wildman_count,
+            'wildman_all_count_k':self.wildman_all_count,
             'wildman_days_count_k': self.wildman_days_count,
             'time_entree_k': self.time_entree,
             'energy_kiev_count_all_k': self.energy_kiev_count_all,
@@ -298,7 +302,9 @@ class Hero:
         self.home_location = loaded_data.get('home_location_k', 'бомж')
         self.energy_count_all = loaded_data.get('energy_count_all_k', 0)
         self.wildman_count = loaded_data.get('wildman_count_k', 0)
+        self.wildman_all_count = loaded_data.get('wildman_all_count_k', 0)
         self.wildman_days_count = loaded_data.get('wildman_days_count_k', 0)
+        self.arachne_all_count = loaded_data.get('arachne_all_count_k', 0)
         self.time_entree = loaded_data.get('time_entree_k', 0)
         self.energy_kiev_count_all = loaded_data.get('energy_kiev_count_all_k', 0)
         self.lvl_up_date = loaded_data.get('lvl_up_date_k', '')
@@ -454,12 +460,23 @@ class Hero:
     def app_arachne(self):
         self.arachne += 1
 
+    def app_arachne_all_count(self):
+        if self.arachne_all_count == 0:
+            self.arachne_all_count = int(input('Значение достижения: '))
+        self.arachne_all_count += 1
+
     def app_raptor(self):
         self.raptor += 1
 
     def app_wildman(self):
         self.wildman += 1
         self.wildman_count += 1
+        if self.wildman_all_count == 0:
+            self.wildman_all_count = int(input('Значение достижения: '))
+        self.wildman_all_count += 1
+
+    def app_wildman_all_count(self):
+        self.wildman_all_count += 1
 
     def zero_wildman(self):
         self.wildman = 0
@@ -509,6 +526,9 @@ class Hero:
     def get_qty_arachne(self):
         return self.arachne
 
+    def get_arachne_all_count(self):
+        return self.arachne_all_count
+
     def get_qty_raptor(self):
         return self.raptor
 
@@ -523,6 +543,9 @@ class Hero:
 
     def get_wildman_count(self):
         return self.wildman_count
+
+    def get_wildman_all_count(self):
+        return self.wildman_all_count
 
     def get_qty_kiki(self):
         return self.kiki

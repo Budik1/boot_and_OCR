@@ -8,13 +8,13 @@ hour = 3600
 day = 24 * 3600
 two_weeks = 14 * 24 * 3600
 
+
 def del_all_file_in_dir(*, path_dir):
     em_dir = check_folder_or_file(my_path=path_dir)
     if em_dir:
         lst_file = get_lst_files(path=path_dir)
         for file in lst_file:
             os.remove(file)
-
 
 
 def check_and_del_file(*, check_file, old_day):
@@ -68,7 +68,8 @@ def check_files(*, old_day: int, check_list_directory=None, check_list_file=None
     word_file = tools.transform_word_file(qty_files=qty_filez_verif)
     word_day = tools.transform_word_days(qty_days=old_day)
     # 177 файлов сроком хранения  прошли проверку. 0 удалено
-    print(f'{qty_filez_verif} {word_file}, сроком хранения {old_day} {word_day}, прошли проверку. {var.qty_del_files} удалено')
+    print(
+        f'{qty_filez_verif} {word_file}, сроком хранения {old_day} {word_day}, прошли проверку. {var.qty_del_files} удалено')
     var.qty_del_files = 0
     return qty_filez_verif,
 
@@ -92,7 +93,7 @@ def create_folder(*, path, info=False):
 
 def check_folder_or_file(*, my_path):
     """
-    os.path.exists возвращает False при отсутствии искомой папки
+    os.path.exists возвращает False при отсутствии искомого
     :param my_path: Путь к папке или файлу.
     :return: Bool
     """
@@ -134,3 +135,15 @@ def deleting_empty_folders(path='temp_pack'):
             os.rmdir(check_dirs)
     print(f'Удалено {qty_folder_del} пустых директорий')
     print()
+
+
+def rename_file(*, sours, target):
+    ask = input(f'{target} заменить? (y/n) :')
+    if ask == 'y':
+        ff = check_folder_or_file(my_path=target)
+        if ff:
+            os.remove(target)
+        os.rename(sours, target)
+        print('Изменения внесены.')
+    else:
+        print('Изменений не внесено.')

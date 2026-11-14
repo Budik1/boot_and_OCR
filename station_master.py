@@ -135,11 +135,13 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                 if name4_arachne and cycle:
                     cycle = False
                     mob_identified = 'arachne'
+                    Hero.app_arachne_all_count(Activ.hero_activ)
                     if tour:
                         Hero.app_arachne(Activ.hero_activ)
                     ph1 = 'арахна'
                     ph2 = Hero.get_qty_arachne(Activ.hero_activ)
-                    phrase = f'{ph2} {ph1} '
+                    ph3 = Hero.get_arachne_all_count(Activ.hero_activ)
+                    phrase = f'{ph2} {ph1} /{ph3}/ '
                     to_say = True
                     print(c_t.tc_magenta(text=phrase))
                     fun.pr_in_file(text=phrase, mod_name=target_name)
@@ -149,7 +151,9 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
                     mob_identified = "wildman"
                     ph1 = "дикарь пойман"
                     ph2 = Hero.get_report_wildman_now(Activ.hero_activ)
-                    text_c = f'{c_t.tc_magenta(ph1)},{c_t.tc_yellow(str(ph2[0]))}, {c_t.tc_green(ph2[1])}'
+                    ph3 = Hero.get_wildman_all_count(Activ.hero_activ)
+                    ph2_c = f'{str(ph2[0])}/{str(ph3)}'
+                    text_c = f'{c_t.tc_magenta(ph1)}, {c_t.tc_yellow(ph2_c)}' # , {c_t.tc_green(ph2[1])}
                     phrase = ph1 + str(ph2[0]) + ph2[1]
                     to_say = True
                     print(text_c)
@@ -375,20 +379,35 @@ def task_analysis(img1, img2, region):
 
     img1_alt_split = img1.split('.')
     img1_alt_split[0] += 'event'
-    img1_alt = '.'.join(img1_alt_split)
+    img1_event1 = '.'.join(img1_alt_split)
+
+    img1_alt2_split=img1.split('.')
+    img1_alt2_split[0] += 'event2'
+    img1_event2 = '.'.join(img1_alt2_split)
 
     img2_alt_split = img2.split('.')
     img2_alt_split[0] += 'event'
-    img2_alt = '.'.join(img2_alt_split)
+    img2_event1 = '.'.join(img2_alt_split)
 
+    img2_alt2_split = img2.split('.')
+    img2_alt2_split[0] += 'event2'
+    img2_event2 = '.'.join(img2_alt2_split)
     variant1 = find_img.find_img_param(path_name=img1, confidence=conf_, region=region)
-    img_1a = os_action.check_folder_or_file(my_path=img1_alt)
-    if not variant1 and img_1a:
-        variant1 = find_img.find_img_param(path_name=img1_alt, confidence=conf_, region=region)
+    img1_ev1 = os_action.check_folder_or_file(my_path=img1_event1)
+    if img1_ev1 and not variant1:
+        variant1 = find_img.find_img_param(path_name=img1_event1, confidence=conf_, region=region)
+    img1_ev2 = os_action.check_folder_or_file(my_path=img1_event2)
+    if img1_ev2 and not variant1:
+        variant1 = find_img.find_img_param(path_name=img1_event2, confidence=conf_, region=region)
+
     variant2 = find_img.find_img_param(path_name=img2, confidence=conf_, region=region)
-    img_2a = os_action.check_folder_or_file(my_path=img2_alt)
-    if not variant2 and img_2a:
-        variant2 = find_img.find_img_param(path_name=img2_alt, confidence=conf_, region=region)
+    img2_ev1 = os_action.check_folder_or_file(my_path=img2_event1)
+    if img2_ev1 and not variant2:
+        variant2 = find_img.find_img_param(path_name=img2_event1,confidence=conf_, region=region)
+    img2_ev2 = os_action.check_folder_or_file(my_path=img2_event2)
+    if img2_ev2 and not variant2:
+        variant2 = find_img.find_img_param(path_name=img2_event2, confidence=conf_, region=region)
+
     if variant1:
         price_task = fun.extraction_digit(item=img1)
         val_1 = variant1

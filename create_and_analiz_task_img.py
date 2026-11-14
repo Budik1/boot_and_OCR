@@ -42,6 +42,8 @@ def get_big_img_task_manual_select():
 
 
 def get_big_img_areas(*, region_line):
+
+
     article_event = ''
 
     pos_patron = None
@@ -49,26 +51,31 @@ def get_big_img_areas(*, region_line):
     while not pos_patron:
         pos_patron_m, size_patron = find_img.find_patron_mark(region=region_line)
         pos_patron_event, size_patron = find_img.find_event_patron_mark(region=region_line)
+        pos_patron_event2, size_patron = find_img.find_event2_patron_mark(region=region_line)
         if pos_patron_m:
             pos_patron = pos_patron_m
             article_event = ''
         if pos_patron_event:
             pos_patron = pos_patron_event
             article_event = 'event'
-
-
+        if pos_patron_event2:
+            pos_patron = pos_patron_event2
+            article_event = 'event2'
     pos_xp = None
     size_xp = None
     while not pos_xp:
         pos_xp_m, size_xp = find_img.find_xp_mark(region=region_line)
         pos_xp_event, size_xp = find_img.find_event_xp_mark(region=region_line)
+        pos_xp_event2, size_xp = find_img.find_event2_xp_mark(region=region_line)
         if pos_xp_m:
             pos_xp = pos_xp_m
             article_event = ''
         if pos_xp_event:
             pos_xp = pos_xp_event
             article_event = 'event'
-
+        if pos_xp_event2:
+            pos_xp = pos_xp_event2
+            article_event = 'event2'
     pos_colon_mark = None
     size_colon = None
     while not pos_colon_mark:
@@ -117,10 +124,12 @@ def create_big_img_task_line(*, line, value_energy, hero):
     return name_img
 
 
-def get_areas_task_smol_line1(*, region_line, height_img, setting=False):
+def get_areas_task_smol_line(*, region_line, height_img, setting=False):
+    print('start "get_areas_task_smol_line"')
     if setting:
+        n_line = input('Номер строки: ')
         path = b_p.tasks_little_temp
-        name_img = f'{path}line1.png'
+        name_img = f'{path}line{n_line}.png'
         fun.foto_pos(name_img=name_img, region=region_line)
     # 1==================
     # получаю позицию значка патрона
@@ -128,31 +137,44 @@ def get_areas_task_smol_line1(*, region_line, height_img, setting=False):
 
     pos_patron = None
     size_patron = None
+    article_event = ''
     while not pos_patron:
         pos_patron_m, size_patron = find_img.find_patron_mark(region=region_line)
         pos_patron_event, size_patron = find_img.find_event_patron_mark(region=region_line)
+        pos_patron_event2, size_patron = find_img.find_event2_patron_mark(region=region_line)
         if pos_patron_m:
             pos_patron = pos_patron_m
             article_event = ''
         if pos_patron_event:
             pos_patron = pos_patron_event
             article_event = 'event'
+        if pos_patron_event2:
+            pos_patron = pos_patron_event2
+            article_event = 'event2'
+        print(f'reg mark patron {article_event}')
 
     pos_xp = None
     size_xp = None
     while not pos_xp:
+
         pos_xp_m, size_xp = find_img.find_xp_mark(region=region_line)
         pos_xp_event, size_xp = find_img.find_event_xp_mark(region=region_line)
+        pos_xp_event2, size_xp = find_img.find_event2_xp_mark(region=region_line)
+
         if pos_xp_m:
             pos_xp = pos_xp_m
             article_event = ''
         if pos_xp_event:
             pos_xp = pos_xp_event
             article_event = 'event'
-
+        if pos_xp_event2:
+            pos_xp = pos_xp_event2
+            article_event = 'event2'
+        print(f'reg mark xp {article_event}')
     pos_colon_mark = None
     size_colon = None
     while not pos_colon_mark:
+        print('reg mark colon')
         pos_colon_mark, size_colon = find_img.find_colon_mark(region=region_line)
 
     # получаю длину картинки
@@ -173,10 +195,10 @@ def get_areas_task_smol_line1(*, region_line, height_img, setting=False):
     return region_patron_line, region_xp_line
 
 
-def get_areas_task_smol_line2(*, region_line2, height_img, setting=False):
+def get_areas_task_smol_line2(*, region_line, height_img, setting=False):
     """
 
-    :param region_line2: Область обработки
+    :param region_line: Область обработки
     :param height_img:
     :param setting:
     :return:Регион двух картинок
@@ -184,12 +206,12 @@ def get_areas_task_smol_line2(*, region_line2, height_img, setting=False):
     if setting:
         path = b_p.tasks_little_temp
         name_img2 = f'{path}line2.png'
-        fun.foto_pos(name_img=name_img2, region=region_line2)
-    pos_patron2, sp = find_img.find_patron_mark(region=region_line2)
-    pos_xp2, sx = find_img.find_xp_mark(region=region_line2)
+        fun.foto_pos(name_img=name_img2, region=region_line)
+    pos_patron2, sp = find_img.find_patron_mark(region=region_line)
+    pos_xp2, sx = find_img.find_xp_mark(region=region_line)
     if not pos_patron2:
-        pos_patron2, sp = find_img.find_event_patron_mark(region=region_line2)
-        pos_xp2, sx = find_img.find_event_xp_mark(region=region_line2)
+        pos_patron2, sp = find_img.find_event_patron_mark(region=region_line)
+        pos_xp2, sx = find_img.find_event_xp_mark(region=region_line)
     # получаю длину картинки
     length_2 = pos_xp2[0] - pos_patron2[0] - sp[0] - 10
     # получаю позицию начала картинки
@@ -236,6 +258,7 @@ def get_screenshot_task_smol(manual=False, setting=False):
     Создание шести маленьких картинок для анализа.
     :return:
     """
+    print('start "get_screenshot_task_smol"')
     fun.log_with_caller(message='a')
     # создание скринов заданий
     path = b_p.tasks_little_temp
@@ -246,9 +269,9 @@ def get_screenshot_task_smol(manual=False, setting=False):
     ar_l1, ar_l2, ar_l3 = fun.get_full_areas_task()
     # скрины маленькие
     height_img = 30
-    pul_rl1, xp_rl1 = get_areas_task_smol_line1(region_line=ar_l1, height_img=height_img, setting=setting)
-    pul_rl2, xp_rl2 = get_areas_task_smol_line2(region_line2=ar_l2, height_img=height_img, setting=setting)
-    pul_rl3, xp_rl3 = get_areas_task_smol_line3(region_line3=ar_l3, height_img=height_img, setting=setting)
+    pul_rl1, xp_rl1 = get_areas_task_smol_line(region_line=ar_l1, height_img=height_img, setting=setting)
+    pul_rl2, xp_rl2 = get_areas_task_smol_line(region_line=ar_l2, height_img=height_img, setting=setting)
+    pul_rl3, xp_rl3 = get_areas_task_smol_line(region_line=ar_l3, height_img=height_img, setting=setting)
     if setting:
         print(f'{pul_rl1=}')
         print(f'{pul_rl2=}')
@@ -302,6 +325,7 @@ def search_and_create_img_best_offer(*, person_identified=False, manual=False, a
         while not res:
             fun.push_close()
             res = fun.selection_hero()
+            print('Попытка опознать героя')
 
         fun.vizit_to_station_master()
 

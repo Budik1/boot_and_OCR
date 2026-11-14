@@ -10,6 +10,8 @@ import fun_down as fund
 
 norm = 0.9
 par_conf = 0.79
+
+
 # img = None
 
 
@@ -189,7 +191,7 @@ def find_kv_reload():
 
 
 def find_kv_attack_for_money():
-    actual_path  = get_actual_path(path=p_i.kv_attack_for_money_png)
+    actual_path = get_actual_path(path=p_i.kv_attack_for_money_png)
     img = fund.locateCenterImg(img=actual_path)
     return img
 
@@ -213,7 +215,7 @@ def find_inspect_tent():
 
 
 def find_b_tent(*, region_search):
-    actual_path  = get_actual_path(path=p_i.b_tent_png)
+    actual_path = get_actual_path(path=p_i.b_tent_png)
     img = fund.locateCenterImg(img=actual_path, region=region_search, confidence=0.9)
     return img
 
@@ -474,6 +476,7 @@ def find_entry_station():
     pos = fund.locateCenterImg(img=f'img/{actual_caliber_folder}/tonelli/entry_station.png')
     return pos
 
+
 def find_patron_mark(*, region):
     """
 
@@ -482,9 +485,10 @@ def find_patron_mark(*, region):
     :return: 2 параметр - размер картинки
     """
     name_img = 'img/default/station_master/numbers/patron_mark.png'
-    pos = fund.locateCenterImg(img=name_img, region=region)
+    pos = fund.locateCenterImg(img=name_img, region=region, confidence=0.89)
     size = tools.img_processing.get_size_img(name_img=name_img)
     return pos, size
+
 
 def find_xp_mark(*, region):
     name_img = 'img/default/station_master/numbers/xp_mark.png'
@@ -492,11 +496,13 @@ def find_xp_mark(*, region):
     size = tools.img_processing.get_size_img(name_img=name_img)
     return pos, size
 
+
 def find_event_patron_mark(*, region):
-    name_img='img/default/station_master/numbers/event_patron_mark.png'
+    name_img = 'img/default/station_master/numbers/event_patron_mark.png'
     pos = fund.locateCenterImg(img=name_img, region=region)
     size = tools.img_processing.get_size_img(name_img=name_img)
     return pos, size
+
 
 def find_event_xp_mark(*, region):
     name_img = 'img/default/station_master/numbers/event_xp_mark.png'
@@ -507,6 +513,20 @@ def find_event_xp_mark(*, region):
 
 def find_colon_mark(*, region):
     name_img = 'img/default/station_master/numbers/colon.png'
+    pos = fund.locateCenterImg(img=name_img, region=region)
+    size = tools.img_processing.get_size_img(name_img=name_img)
+    return pos, size
+
+
+def find_event2_patron_mark(*, region):
+    name_img = 'img/default/station_master/numbers/event2_patron_mark.png'
+    pos = fund.locateCenterImg(img=name_img, region=region)
+    size = tools.img_processing.get_size_img(name_img=name_img)
+    return pos, size
+
+
+def find_event2_xp_mark(*, region):
+    name_img = 'img/default/station_master/numbers/event2_xp_mark.png'
     pos = fund.locateCenterImg(img=name_img, region=region)
     size = tools.img_processing.get_size_img(name_img=name_img)
     return pos, size

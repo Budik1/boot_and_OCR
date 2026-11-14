@@ -1,10 +1,11 @@
 import os
 
 import baza.paths_img
+import os_action
 import tools.color_text as c_t
 import find_img
 import fun
-import tools.sounds
+# import tools.sounds
 import person
 import tools
 import baza.baza_paths as b_p
@@ -218,16 +219,18 @@ def cr_other_img():
         'img/station_master/work_hour/work_5h.png': (250, 260 + 65, 160, 25, find_img.find_station_master()),
         'img/station_master/work_hour/work_8h.png': (250, 260 + 65 + 65, 160, 25, find_img.find_station_master()),
 
-        'img/default/overall/knob.png': (-675, -7, 16, 16, find_img.find_close()),
+        'img/default/overall/knob.png': (-497, -465, 16, 16, find_img.find_close()),
         'img/arena/overall/hall_of_glory_icon.png': (592, -58, 50, 47, find_img.find_info()),
         'img/arena/overall/hall_of_glory_tabl.png': (-521, -534, 142, 31, find_img.find_close()),
         'img/default/tonelli/entry_station.png': (-138, 274, 151, 31, find_img.find_post()),
-        'img/default/station_master/numbers/event_patron_mark.png': (431, 353, 16, 16, find_img.find_station_master()),
-        'img/default/station_master/numbers/event_xp_mark.png': (486, 353, 16, 16, find_img.find_station_master()),
+        'img/default/station_master/numbers/event_patron_mark.png': (431, 263, 16, 16, find_img.find_station_master()),
+        'img/default/station_master/numbers/event2_patron_mark.png': (431, 353, 16, 16, find_img.find_station_master()),
+        'img/default/station_master/numbers/event_xp_mark.png': (486, 263, 16, 16, find_img.find_station_master()),
+        'img/default/station_master/numbers/event2_xp_mark.png': (486, 353, 16, 16, find_img.find_station_master()),
         'img/default/station_master/numbers/patron_mark.png': (409, 352, 19, 19, find_img.find_station_master()),
-
+        p_i.close_png: (0, 0, 0, 0,find_img.find_scroll_down() )
     }
-    name_create_img = 'img/default/station_master/numbers/patron_mark.png'
+    name_create_img = 'img/default/overall/knob.png'
     pos_start = img_dict[name_create_img][4]
 
     # # собственно создание снимка
@@ -467,14 +470,12 @@ def event_entry_img():
         x, y = pos_start
         x += img_dict[key][0]
         y += img_dict[key][1]
-        # fun.mouse_move(pos=(x, y), speed=1)
         # # найдем нижний угол
         x_demo, y_demo = x, y
         change_x = img_dict[key][2]
         change_y = img_dict[key][3]
         x_demo += change_x
         y_demo += change_y
-        # fun.mouse_move(pos=(x_demo, y_demo), show=show_move)
         fun.foto(f'{name_create_img}', (x, y, change_x, change_y))
         print(f'{name_create_img} сделан')
     else:
@@ -493,19 +494,16 @@ def event_entry_img():
             print(f'{name_create_img} сделано')
         else:
             pass
-    # pos = fun.locCenterImg(f'{name_create_img}')
-    # fun.mouse_move(pos=pos)
     tools.sounds.sound_vic()
-    # print(f'{name_create_img} сделано')
-    # check_img(name=name_create_img)
     return
 
 
+# os_action.rename_file(sours='img/temp/token.png', target='img/default/overall/knob.png')
+# cr_other_img()
 # energy_img()
 # event_entry_img()
 # hero_img()
-# cr_other_img()
-cr_arena_img()
+# cr_arena_img()
 # cr_station_master_img()
 
 # task_img()

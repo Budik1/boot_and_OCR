@@ -17,6 +17,11 @@ def time_now() -> str:
     time_now_ = (now.strftime('%H:%M:%S'))
     return time_now_
 
+def time_now_smol():
+    now = datetime.datetime.now()
+    time_now_smol_ = (now.strftime('%H:%M'))
+    return time_now_smol_
+
 
 def date_now() -> str:
     """
