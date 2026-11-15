@@ -181,7 +181,6 @@ def cr_station_master_img():
 
 def cr_other_img():
     """
-    
     :return: 
     """
     test_img = 'token.png'
@@ -228,9 +227,10 @@ def cr_other_img():
         'img/default/station_master/numbers/event_xp_mark.png': (486, 263, 16, 16, find_img.find_station_master()),
         'img/default/station_master/numbers/event2_xp_mark.png': (486, 353, 16, 16, find_img.find_station_master()),
         'img/default/station_master/numbers/patron_mark.png': (409, 352, 19, 19, find_img.find_station_master()),
+        'img/default/station_master/any/meat.png':(-400, -64, 150, 30, find_img.find_close()),
         p_i.close_png: (0, 0, 0, 0,find_img.find_scroll_down() )
     }
-    name_create_img = 'img/default/overall/knob.png'
+    name_create_img = 'img/default/station_master/any/meat.png'
     pos_start = img_dict[name_create_img][4]
 
     # # собственно создание снимка
@@ -498,7 +498,9 @@ def event_entry_img():
     return
 
 
-# os_action.rename_file(sours='img/temp/token.png', target='img/default/overall/knob.png')
+os_action.rename_file(
+    sours='img/temp/token.png',
+    target='img/default/station_master/any/meat.png')
 # cr_other_img()
 # energy_img()
 # event_entry_img()

@@ -284,6 +284,14 @@ def enemy_battle(prolong_=2.0, dog_activ=True, add_up=True, arena=False, tour=Fa
     return result
 
 
+def meat_ev():
+    close = find_img.find_close()
+    tools.Mouse.move_to_click(pos_click=close, z_p_k=0.5, message='нажал закрыть')
+    meat_pos = find_img.find_meat()
+    tools.Mouse.move_to_click(pos_click=meat_pos, message='нажал "съесть мясо"')
+
+
+
 def press_en(*, task_number, pos, value_energy):  #
     """
     Args:
@@ -301,10 +309,44 @@ def press_en(*, task_number, pos, value_energy):  #
     pos_clik = x, y
     # tools.Mouse.move(pos=pos_clik, message=f'показал выбранное задание ({task_number})')
     # print('тут должен быть клик')                                        # для отладки раскомментировать
-    tools.Mouse.move_to_click(pos_click=pos_clik, speed=0.4, z_p_k=0.3,
+    tools.Mouse.move_to_click(pos_click=pos_clik, speed=0.4, z_p_k=0.2,
                               message=f'нажал {task_number} задание')  # для отладки закомментировать
     # sleep(0.5)
     low_energy = find_img.find_low_energy_label()
+    if low_energy:
+        if heroes.Activ.meat_qty:
+            heroes.Activ.meat_qty -= 1
+            print(f'Осталось мяса {heroes.Activ.meat_qty}')
+            meat_ev()
+            tools.Mouse.move_to_click(pos_click=pos_clik, speed=0.4, z_p_k=0.2,
+                                      message=f'нажал {task_number} задание')
+            low_energy = None
+        else:
+            energy_availability = 0
+
+            if Hero.get_qty_wildman(Activ.hero_activ) == 'x':
+                Hero.zero_wildman(Activ.hero_activ)
+            ph2_0, ph2_1 = Hero.get_report_wildman_now(Activ.hero_activ)
+            if ph2_1:
+                text = f'{c_t.tc_yellow(str(ph2_0))}, {c_t.tc_green(ph2_1)}'
+            else:
+                text = f'{c_t.tc_yellow(str(ph2_0))}'
+            print(text)
+            fun.pr_in_file(text=f'{ph2_0}, {ph2_1}', mod_name=target_name)
+            if Hero.get_wildman_count(Activ.hero_activ) != 0:
+                text_c = tools.report_wildman_c(hero=Activ.hero_activ)
+                text_bw = tools.report_wildman_bw(hero=Activ.hero_activ)
+                print(text_c)
+                fun.pr_in_file(text=text_bw, mod_name=target_name)
+            else:
+                print()
+                fun.pr_in_file(text='', mod_name=target_name)
+            sleep(1)
+            close = find_img.find_close()
+            while close:
+                close = find_img.find_close()
+                if close:
+                    tools.Mouse.move_to_click(pos_click=close, z_p_k=0.5, message='нажал закрыть')
     if not low_energy:
         vers_in_print = "" if conf_ == 0.95 else f', conf_={conf_}. '
         # увеличение счетчиков
@@ -332,32 +374,7 @@ def press_en(*, task_number, pos, value_energy):  #
 
         energy_availability = 1  # для выполнения всех заданий
         # energy_availability = 0 # для выполнения одного задания
-    else:
-        energy_availability = 0
 
-        if Hero.get_qty_wildman(Activ.hero_activ) == 'x':
-            Hero.zero_wildman(Activ.hero_activ)
-        ph2_0, ph2_1 = Hero.get_report_wildman_now(Activ.hero_activ)
-        if ph2_1:
-            text = f'{c_t.tc_yellow(str(ph2_0))}, {c_t.tc_green(ph2_1)}'
-        else:
-            text = f'{c_t.tc_yellow(str(ph2_0))}'
-        print(text)
-        fun.pr_in_file(text=f'{ph2_0}, {ph2_1}', mod_name=target_name)
-        if Hero.get_wildman_count(Activ.hero_activ) != 0:
-            text_c = tools.report_wildman_c(hero=Activ.hero_activ)
-            text_bw = tools.report_wildman_bw(hero=Activ.hero_activ)
-            print(text_c)
-            fun.pr_in_file(text=text_bw, mod_name=target_name)
-        else:
-            print()
-            fun.pr_in_file(text='', mod_name=target_name)
-        sleep(1)
-        close = find_img.find_close()
-        while close:
-            close = find_img.find_close()
-            if close:
-                tools.Mouse.move_to_click(pos_click=close, z_p_k=0.5, message='нажал закрыть')
     fun.log_with_caller(message='e')
     return
 

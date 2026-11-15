@@ -4,54 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="18.10.2026">
-      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/event2_patron_mark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/default/station_master/numbers/event2_xp_mark.png" afterDir="false" />
+    <list default="true" id="e0a1e967-d478-44dd-befc-22d0a521cdf2" name="Changes" comment="14.11.2026">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a_serial_scrin_for_br.py" beforeDir="false" afterPath="$PROJECT_DIR$/a_serial_scrin_for_br.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cr_img_map_name_station.py" beforeDir="false" afterPath="$PROJECT_DIR$/cr_img_map_name_station.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_and_analiz_task_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_and_analiz_task_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_kv_and_raid.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_kv_and_raid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_touring.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_touring.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/find_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/find_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/fun.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroes.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/arena/gady/arena_object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/arena/gady/arena_object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/arena/gady/object.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/arena/gady/object.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/overall/knob.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/overall/knob.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/station_master/numbers/event_patron_mark.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/numbers/event_patron_mark.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/station_master/numbers/event_xp_mark.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/numbers/event_xp_mark.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t4.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t5.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t7.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/station_master/tasks_gady/t7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Alexs.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Alexs.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Kiev_a.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Kiev_a.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Kitay.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Kitay.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Prospekt.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Prospekt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Rizgskaya.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Rizgskaya.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Suxarev.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Suxarev.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Tretyakov.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Tretyakov.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Turgenev.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_Turgenev.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_VDNX.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/id_stations/s_VDNX.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Alexs.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Alexs.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Kiev_a.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Kiev_a.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Kitay.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Kitay.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Prospekt.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Prospekt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Rizgskaya.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Rizgskaya.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Suxarev.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Suxarev.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Turgenev.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_Turgenev.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/default/tonelli/map_item/k_VDNX.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/default/tonelli/map_item/k_VDNX.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/temp/token.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/os_action.py" beforeDir="false" afterPath="$PROJECT_DIR$/os_action.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/station_master.py" beforeDir="false" afterPath="$PROJECT_DIR$/station_master.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/config_kv.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/config_kv.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/t_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/t_item.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/phrases_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/phrases_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/time_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/time_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txt/daily event.py" beforeDir="false" afterPath="$PROJECT_DIR$/txt/daily event.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +157,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/python/boot_and_OCR/img/default/tonelli/map_item&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -335,8 +297,8 @@
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.a_serial_scrin_for_br (1)" />
-        <item itemvalue="Python.cr_img_map_name_station" />
         <item itemvalue="Python.t_item (1)" />
+        <item itemvalue="Python.cr_img_map_name_station" />
         <item itemvalue="Python.create_and_analiz_task_img" />
       </list>
     </recent_temporary>
@@ -613,7 +575,15 @@
       <option name="project" value="LOCAL" />
       <updated>1792263636787</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="14.11.2026">
+      <option name="closed" value="true" />
+      <created>1794636911200</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1794636911200</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -628,7 +598,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="07,01,26" />
     <MESSAGE value="07,01,26 чистка незанятых в проекте файлов" />
     <MESSAGE value="09.01.26 touring.py дополнен словарь переводчика содержимого подарков на станциях. station_master.py Добавлен аппаратный анализ заданий. gift_station_service.py изменен адрес сохранения. create_and_analiz_task_img.py рефакторинг для лучшего чтения." />
     <MESSAGE value="11.01.26 рефакторинг event_arena.py" />
@@ -653,7 +622,8 @@
     <MESSAGE value="21,09,26 2. в find_img.py убрал вывод сообщения при отсутствии совпадений" />
     <MESSAGE value="23.09.2026" />
     <MESSAGE value="18.10.2026" />
-    <option name="LAST_COMMIT_MESSAGE" value="18.10.2026" />
+    <MESSAGE value="14.11.2026" />
+    <option name="LAST_COMMIT_MESSAGE" value="14.11.2026" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -704,17 +674,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>822</line>
+          <line>824</line>
           <option name="timeStamp" value="166" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>184</line>
+          <line>188</line>
           <option name="timeStamp" value="169" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>231</line>
+          <line>235</line>
           <option name="timeStamp" value="170" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -744,7 +714,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/heroes.py</url>
-          <line>97</line>
+          <line>98</line>
           <option name="timeStamp" value="179" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -754,7 +724,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>530</line>
+          <line>547</line>
           <option name="timeStamp" value="181" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -763,7 +733,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/station_master.py</url>
-          <line>414</line>
+          <line>431</line>
           <option name="timeStamp" value="183" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -791,7 +761,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>402</line>
+          <line>406</line>
           <option name="timeStamp" value="199" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -825,7 +795,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/a_serial_scrin_for_br.py</url>
-          <line>221</line>
+          <line>220</line>
           <option name="timeStamp" value="233" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

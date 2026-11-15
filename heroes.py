@@ -22,6 +22,7 @@ class Activ:
     qty_vip = 0
     duel_raid = 0
     result_load = ''
+    meat_qty = 0
     #
 
 

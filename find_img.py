@@ -530,3 +530,8 @@ def find_event2_xp_mark(*, region):
     pos = fund.locateCenterImg(img=name_img, region=region)
     size = tools.img_processing.get_size_img(name_img=name_img)
     return pos, size
+
+def find_meat():
+    name_img = 'img/default/station_master/any/meat.png'
+    pos = fund.locateCenterImg(img=name_img)
+    return pos

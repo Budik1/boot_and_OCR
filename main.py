@@ -178,6 +178,10 @@ def en_3():
 
 
 def puli():
+    qty_meat = meat_entry.get()
+    if qty_meat:
+        heroes.Activ.meat_qty = int(qty_meat)
+    print(f'{qty_meat=}')
     station_master.option_task_money()
     change_values(info=False)
 
@@ -676,23 +680,16 @@ pet_act = BooleanVar()
 
 len_lvl = StringVar()
 xp_lvl = StringVar()
+meat = StringVar()
 
 gady_level_duration_in_days = StringVar()
-
 char_lvl_gady = StringVar()
-
 gady_vip = StringVar()
-
 gady_rat = StringVar()
-
 gady_kiki = StringVar()
-
 gady_arachne = StringVar()
-
 gady_raptor = StringVar()
-
 gady_gift = StringVar()
-
 gady_wild = StringVar()
 
 # получение содержимого Combobox
@@ -816,8 +813,13 @@ gady_wild_label.place(x=b_d.col_7, y=b_d.gady_y)
 # блок выбора заданий
 difference_str_img = 8
 line_img = b_d.line2 + 5
+
+meat_entry = ttk.Entry()
+meat_entry.config(textvariable=meat, width=2)
+meat_entry.place(x=76, y=b_d.line5)
+
 imagePul = ImageTk.PhotoImage(file=p_i.pulya_png)
-ttk.Button(root, image=imagePul, command=puli).place(x=56, y=line_img + 15)
+ttk.Button(root, image=imagePul, command=puli).place(x=56, y=line_img)
 img_e1 = ImageTk.PhotoImage(file=p_i.en1_png)
 ttk.Button(root, image=img_e1, command=en_1).place(x=b_d.col_0, y=line_img)
 img_e2 = ImageTk.PhotoImage(file=p_i.en2_png)
